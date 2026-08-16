@@ -1,0 +1,14 @@
+# Static site: landing at /, room planner at /roomplanner/
+[build]
+  publish = "."
+
+# Trailing-slash tidy-up so /roomplanner resolves
+[[redirects]]
+  from = "/roomplanner"
+  to = "/roomplanner/"
+  status = 301
+
+[[redirects]]
+  from = "/planner"
+  to = "/roomplanner/"
+  status = 301

@@ -1,0 +1,15 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor / tooling
+.vscode/
+.idea/
+.impeccable/
+*.log
+
+# local preview
+.netlify/
+.vercel/
+node_modules/

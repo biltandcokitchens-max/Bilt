@@ -1,0 +1,10 @@
+# Keep line endings sane across Windows and the Linux build hosts
+* text=auto eol=lf
+
+# Binary assets — never touch these
+*.woff2 binary
+*.jpg   binary
+*.png   binary
+*.mp4   binary
+*.gif   binary
+*.xlsx  binary
