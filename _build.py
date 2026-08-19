@@ -139,8 +139,9 @@ if os.path.exists(hero_path):
     # The page controller binds the OLD hero's film to #bl-video / #bl-cap.
     # Those IDs left with the old hero, so that block now throws inside
     # componentDidMount and takes everything after it down with it — the
-    # live price demo and all 18 [data-rev] reveals. Excise just that
-    # block; the new hero does its own scrubbing in js/hero.js.
+    # live price demo and every [data-rev] reveal on the page (count drifts
+    # as sections are added; don't rely on an exact number here). Excise
+    # just that block; the new hero does its own scrubbing in js/hero.js.
     start = html.find('// scroll-scrubbed hero film')
     end = html.find('// live price demo', start) if start >= 0 else -1
     if start >= 0 and end > start:
@@ -164,8 +165,8 @@ if os.path.exists(hero_path):
 rv = open(os.path.join(SITE, '_reviews.html'), encoding='utf-8').read()
 
 _vis = html.find('id="bl-visit"')
-_end = html.find('</section>', _vis) + len('</section>')
 assert _vis > 0, 'bl-visit section not found -- cannot place reviews'
+_end = html.find('</section>', _vis) + len('</section>')
 html = html[:_end] + chr(10) + rv + html[_end:]
 
 # Renumber every eyebrow by document order. A count-limited replace would
@@ -306,7 +307,6 @@ print('reordered: planner, range, spec, drawing-to-bench, visit+reviews, prove, 
 # renumber every eyebrow by document order (trade keeps no number -- it's
 # off the primary narrative now, so it reads as a standalone offer, not
 # step N of a sequence)
-import re as _re
 html = html.replace('<span>03 / Trade</span>', '<span>Trade</span>', 1)
 _n = [0]
 def _seq(m):
@@ -315,7 +315,7 @@ def _seq(m):
 # strict: only true numbered eyebrows ("NN / Title") match -- this must
 # NOT be loosened to an optional prefix, or it starts rewriting every
 # <span> on the page (nav labels, delivery-area chips, footer text).
-html = _re.sub(r'<span>\d{2} / ([^<]*)</span>', _seq, html)
+html = re.sub(r'<span>\d{2} / ([^<]*)</span>', _seq, html)
 print('renumbered %d sequential section eyebrows' % _n[0])
 
 # ---------- the missing dissonance -> reveal arc ----------

@@ -62,7 +62,7 @@ No framework, no build tooling, no dependencies. Plain HTML/CSS/ES modules, depl
 
 If you're taking this to a real framework (Next.js, Astro, whatever) — this is the point to actually do it. The Python-assembly approach was a way to iterate fast without a toolchain while content was still being locked down. It has served its purpose; don't inherit it.
 
-**Typography:** Archivo (headlines, variable weight/stretch), IBM Plex Mono (eyebrows, labels, monospace numerics), both self-hosted woff2.
+**Typography:** Newsreader (body copy, serif), Archivo (headlines, variable weight/stretch), IBM Plex Mono (eyebrows, labels, monospace numerics), all self-hosted woff2.
 
 **Color tokens** (`:root` in `index.html`):
 ```css
@@ -94,18 +94,20 @@ The running order was deliberately re-sequenced (see §4 for the reasoning). Cur
 |---|---|---|---|
 | — | `bl-top` | "Beautiful kitchens. Smarter by design." | Hero. Scroll-scrubbed video (desktop/tablet), static image fallback (mobile). **Locked — do not redesign.** |
 | — | `bl-convert` | "See your kitchen. See your price." | Low-commitment CTA strip immediately post-hero. Locked in position. |
+| — | `bl-why` | "A kitchen quote should be a number, not a negotiation." | Un-numbered belief-statement beat, right after the hero/convert strip and before the problem/shift/price arc begins. States why BILT exists before any argument is made. |
 | 01 | `bl-problem` | "Why does buying a kitchen still feel so complicated?" | Builds dissonance before any price is shown. 3-up grid: opaque quotes / showroom overhead / slow process. |
 | 02 | `bl-shift` | "A smarter way to buy a beautiful kitchen." | Old-way/BILT-way two-column comparison. No competitor is named. |
 | 03 | `bl-price` | "Start with a better number." | The reveal. Big walnut-accent numeral, **$4,490**, "Kitchens from." Copy: *"The number changes with your kitchen — never with our margin."* |
 | 04 | `bl-planner` | "Draw the room. Watch the price move." | Live interactive demo — the proof-of-possibility beat. Carries the stats strip (lead time, min order, etc.) at its foot. |
 | 05 | `bl-range` | "Kitchenettes, priced on the page." | The three real tiles: Compact / Granny flat / Tiny home, each with mm run, price, one-line description, real photography. |
 | 06 | `bl-spec` | "What you are actually buying." | Board / edge / hardware / benchtop spec sheet. Currently reusing a kitchen photo as a stand-in for a real cabinet-detail macro shot — flagged in §6. |
-| 07 | *(anonymous `<section>`, no id — sits between `bl-spec` and `bl-visit`)* | "Five steps, no surprises." | "From drawing to bench" — the five-step process. |
-| 08 | `bl-visit` | "The finishes, in your hands." | Tiny home display invitation — real installed kitchen, walk in and open the drawers. |
-| 09 | `bl-reviews` | "Everyone arrives a little sceptical." | Three real testimonials (Sarah Wallace/Rockhampton, Brian T./Gladstone, Betty Miller/Caboolture), 5-star, no fabricated review count. |
-| 10 | *(anonymous `<section>`, no id — sits between `bl-reviews` and `bl-trade`)* | "A short list of true things." | "What we can prove" — kept deliberately short; only substantiated claims. |
+| 07 | `bl-smart` | "Every cabinet can go further." | Motorized/smart storage showcase — pull-down overheads, blind-corner pull-outs, drop-down drying rack. |
+| 08 | *(anonymous `<section>`, no id — sits between `bl-smart` and `bl-visit`)* | "Five steps, no surprises." | "From drawing to bench" — the five-step process. |
+| 09 | `bl-visit` | "The finishes, in your hands." | Tiny home display invitation — real installed kitchen, walk in and open the drawers. |
+| 10 | `bl-reviews` | "Everyone arrives a little sceptical." | Three real testimonials (Sarah Wallace/Rockhampton, Brian T./Gladstone, Betty Miller/Caboolture), 5-star, no fabricated review count. |
+| 11 | *(anonymous `<section>`, no id — sits between `bl-reviews` and `bl-trade`)* | "A short list of true things." | "What we can prove" — kept deliberately short; only substantiated claims. |
 | — | `bl-trade` | "Wholesale, without the container." | Un-numbered eyebrow (deliberately demoted — trade is a secondary audience, not part of the primary homeowner narrative). Comparison table: BILT vs offshore container vs local cabinetmaker across price visibility, lead time, minimum order, sizing. |
-| 11 | `bl-faq` | — | Objection-clearing `<details>` accordion immediately before the close. |
+| 12 | `bl-faq` | — | Objection-clearing `<details>` accordion immediately before the close. |
 | — | `bl-contact` | "Draw it. See the price." | Final CTA: Open the planner / Book a viewing / Email us. |
 
 ---
@@ -152,6 +154,8 @@ This isn't decorative — every section above maps to one beat, in this order, a
                   viewing." Free, reversible, no commitment. That's the
                   whole trick: it shouldn't feel like a close.
 ```
+
+`bl-why` sits as an unnumbered mood beat right after the hero, ahead of beat 1 above — it states the company's belief ("a kitchen quote should be a number, not a negotiation") before the problem/shift/price argument begins. It is not the MINE beat: beat 6 (§ above) is still an open, unbuilt gap on the page — `bl-why` speaks to why BILT exists, not to personalizing the outcome to the visitor's own space, so it does not resolve that flagged item.
 
 **Governing rule, stated explicitly by the owner and worth repeating to whoever builds on this:** *BILT should never sell a kitchen immediately.* Every CTA on the page is an invitation to explore (the planner, a viewing), never a hard commercial ask. If a future section reads like "buy now," it's off-brand — flag it rather than shipping it.
 

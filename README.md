@@ -113,6 +113,26 @@ you scrolled. Nothing should now leave the hero reading as blank at any scroll p
 Below 768px none of the scrubbing applies: the still becomes a banner above the words,
 the composition is static, and **the video is never fetched**.
 
+### Hand-patched sections (not reproduced by `_build.py`)
+
+Same caveat as the hero above, but for a handful of later additions that were made by
+hand-editing `index.html` directly rather than through the design bundle. `_build.py`
+has no knowledge of any of these — a rebuild will silently discard all of them:
+
+- `id="bl-smart"` ("07 / Storage that thinks ahead") — full section, added directly to
+  `index.html`
+- `id="bl-why"` ("Why we do this") — full section, added directly to `index.html`
+- The three range-tile photos (Compact/Granny flat/Tiny home cards), now pointing at
+  `img-stock/compact.jpg`, `img-stock/granny-flat.jpg`, and `img-stock/tiny-home.jpg`
+  instead of the generated `assets/*.jpg`
+- The three finish-strip photos in the "Come and see it" section
+  (`img-stock/finish-brass.jpg`, `img-stock/finish-gunmetal.jpg`,
+  `img-stock/finish-copper.jpg`)
+- The `bl-why` photo (`img-stock/why-we-do-this.jpg`)
+
+If `_build.py` is run again, these must be manually reapplied afterward — same as
+`hero.html`/`css/hero.css`/`js/hero.js`.
+
 ---
 
 ## Before this takes real orders
