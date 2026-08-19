@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>Bilt Studio — cut-to-size cabinetry, Gold Coast &amp; Brisbane</title><meta name="description" content="Cut-to-size flat pack cabinetry. Plan your kitchen, see the price as you go, and get the cut list before you pay."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2316130F'/><path d='M8 8h9a5 5 0 0 1 0 10H8zM8 18h10a5 5 0 0 1 0 10H8z' fill='none' stroke='%238A5E3A' stroke-width='2.6'/></svg>"><script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/32d32c34.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/2ccc6499.js"};</script>
+<html><head><title>Bilt Studio — cut-to-size cabinetry, Gold Coast &amp; Brisbane</title><meta name="description" content="Cut-to-size flat pack cabinetry. Plan your kitchen, see the price as you go, and get the cut list before you pay."><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2316130F'/><path d='M8 8h9a5 5 0 0 1 0 10H8zM8 18h10a5 5 0 0 1 0 10H8z' fill='none' stroke='%238A5E3A' stroke-width='2.6'/></svg>"><link rel="stylesheet" href="css/hero.css"><script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/32d32c34.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/2ccc6499.js"};</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/d46265b5.js"></script>
@@ -216,41 +216,103 @@ input[type=range]{accent-color:#8A5E3A}
   </div>
 </header>
 
-<section id="bl-top" style="position:relative;height:340vh">
-  <div style="position:sticky;top:0;height:100svh;overflow:hidden">
-    <video id="bl-video" muted="muted" playsinline="playsinline" preload="auto" poster="assets/9b18d7c7.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-      <source src="assets/5b16f42b.mp4" type="video/mp4">
-    </video>
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,15,.72) 0%,rgba(22,19,15,.1) 34%,rgba(22,19,15,.1) 56%,rgba(22,19,15,.9) 100%)"></div>
-    <div style="position:absolute;inset:0;z-index:3;display:grid;align-content:space-between;padding:5.5rem clamp(1.25rem,5vw,5rem) clamp(1.75rem,5vh,3rem)">
-      <div>
-        <p style="margin:0 0 clamp(1.25rem,4vh,2.25rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#B4AB9E">Brisbane · Sunshine Coast · Rockhampton</p>
-        <h1 style="margin:0;font-family:'Archivo',sans-serif;font-weight:800;font-stretch:120%;font-size:clamp(2.9rem,11.5vw,8.5rem);line-height:.86;letter-spacing:-.03em;text-transform:uppercase;max-width:14ch">Building your kitchen</h1>
-        <div style="display:flex;align-items:center;gap:.85rem;margin-top:clamp(1.25rem,3.5vh,2rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#B4AB9E">
-          <span style="display:block;width:clamp(2rem,8vw,5rem);height:1px;background:#8A5E3A"></span>
-          <span>Cut to the millimetre · Flat pack · Queensland</span>
-        </div>
+<!-- ==================================================================
+     HERO — scroll-reveal
+     Injected into index.html by _build.py, replacing the generated
+     #bl-top section. Styles in css/hero.css, behaviour in js/hero.js.
+     ================================================================== -->
+<section id="bl-top" class="hero" data-hero>
+  <div class="hero__track">
+    <div class="hero__stage">
+
+      <!-- Media sits behind the words and is revealed by scroll.
+           Desktop/tablet scrub the video; mobile shows the still. -->
+      <div class="hero__media" data-hero-media aria-hidden="true">
+        <!-- On mobile this still IS the hero image and sits above the
+             fold, so it keeps default fetch priority rather than being
+             deprioritised for the desktop case where it starts hidden. -->
+        <img class="hero__still" src="assets/9b18d7c7.jpg" alt="" decoding="async">
+        <!-- src is held in data-src so nothing is fetched until the hero
+             is near the viewport and the words are already painted -->
+        <video class="hero__video" data-hero-video
+               data-src="assets/5b16f42b.mp4"
+               muted playsinline preload="none" tabindex="-1"
+               poster="assets/9b18d7c7.jpg"></video>
+        <div class="hero__scrim"></div>
       </div>
-      <div style="display:grid;gap:1.5rem">
-        <p id="bl-cap" style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#B4AB9E;min-height:1.2em;transition:opacity .45s var(--ease)">Cut to your millimetres. Delivered flat.</p>
-        <a href="#bl-planner" style="display:inline-flex;align-items:center;gap:.7rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#B4AB9E;justify-self:start">
-          <span style="display:block;width:3rem;height:1px;background:#8D9698;position:relative;overflow:hidden"><span style="position:absolute;inset:0;background:#E7E4DD;transform:translateX(-100%);animation:sweep 2.8s var(--ease) infinite"></span></span>
-          Keep scrolling
-        </a>
+
+      <div class="hero__inner">
+        <p class="hero__brand" data-hero-el="brand">BILT STUDIO</p>
+
+        <h1 class="hero__headline">
+          <span class="hero__line" data-hero-el="line1">Beautiful kitchens.</span>
+          <span class="hero__line" data-hero-el="line2">Smarter by design.</span>
+        </h1>
+
+        <p class="hero__sub" data-hero-el="sub">
+          <span class="hero__sub-lead">Architectural kitchens, intelligently sourced.</span>
+          <span class="hero__sub-rest">Premium materials, considered design and transparent
+            pricing — without the traditional showroom markup.</span>
+        </p>
+
+        <div class="hero__cta" data-hero-el="cta">
+          <a class="hero__btn hero__btn--primary" href="/roomplanner/#/plan" data-track="hero-design">
+            Design your kitchen
+          </a>
+          <a class="hero__btn hero__btn--ghost" href="#bl-range" data-track="hero-explore">
+            Explore kitchens
+          </a>
+        </div>
+
+        <p class="hero__meta">Direct sourced · Designed in Australia · Transparent pricing</p>
+      </div>
+
+      <div class="hero__hint" data-hero-el="hint" aria-hidden="true">
+        <span class="hero__hint-rule"></span>Keep scrolling
       </div>
     </div>
   </div>
 </section>
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1px;background:rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)">
-  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">1 mm</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Cabinet width increments</p></div>
-  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">2 min</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">To a priced layout</p></div>
-  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums"><span style="color:#8A5E3A">[LEAD]</span> wks</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Lead time, not twelve</p></div>
-  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">0</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Minimum order</p></div>
-</div>
+<!-- Post-hero conversion -->
+<section class="convert" id="bl-convert">
+  <div class="convert__inner">
+    <h2 class="convert__head">See your kitchen. See your price.</h2>
+    <p class="convert__body">
+      Design your kitchen in minutes.<br>
+      No showroom appointment. No sales pressure. No waiting for a quote.
+    </p>
+    <a class="convert__link" href="/roomplanner/#/plan" data-track="hero-start">
+      Start designing <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="bl-problem" style="padding:clamp(4.5rem,12vh,8rem) 0 0"><p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>01 / The problem</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p><div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem"><h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Why does buying a kitchen<br>still feel so complicated?</h2><p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:40ch;font-weight:300">Quotes that vary wildly for a similar-looking kitchen. Costs that appear after you have already committed. <em style="font-style:italic;color:#E7E4DD">Weeks of showroom appointments before you see a real number.</em></p></div><div data-rev="1" data-three="1" style="display:grid;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)"><div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:1.3rem;letter-spacing:-.01em">Opaque quotes</h3><p style="margin:.6rem 0 0;font-size:.9375rem;line-height:1.5;color:#B4AB9E;font-weight:300">You rarely find out what is actually driving the number.</p></div><div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:1.3rem;letter-spacing:-.01em">Showroom overhead</h3><p style="margin:.6rem 0 0;font-size:.9375rem;line-height:1.5;color:#B4AB9E;font-weight:300">Layers of mark-up between the factory and your kitchen.</p></div><div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:1.3rem;letter-spacing:-.01em">A slow process</h3><p style="margin:.6rem 0 0;font-size:.9375rem;line-height:1.5;color:#B4AB9E;font-weight:300">Weeks of appointments before anyone tells you a price.</p></div></div></section>
+<section id="bl-shift" style="padding:clamp(4.5rem,12vh,8rem) 0 0"><p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>02 / The BILT shift</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p><div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem"><h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">A smarter way to buy<br>a beautiful kitchen.</h2><p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">More of your budget goes into the kitchen. <em style="font-style:italic;color:#E7E4DD">Fewer unnecessary layers get in the way of it.</em></p></div><div data-rev="1" data-two="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)"><div style="background:#16130F;padding:clamp(2rem,5vh,2.75rem) clamp(1.25rem,5vw,3rem);display:grid;gap:0;align-content:start"><p style="margin:0 0 1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#6F6A61">The old way</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#8D9698;font-weight:300">Layers of showroom overhead</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#8D9698;font-weight:300">Multiple mark-ups</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#8D9698;font-weight:300">A long sales process</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#8D9698;font-weight:300">A quote you cannot see into</p></div><div style="background:#16130F;padding:clamp(2rem,5vh,2.75rem) clamp(1.25rem,5vw,3rem);display:grid;gap:0;align-content:start;border-top:1px solid rgba(141,150,152,.22)"><p style="margin:0 0 1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#8A5E3A">The BILT way</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#E7E4DD;font-weight:300">Intelligent sourcing</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#E7E4DD;font-weight:300">Design-led configurations</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#E7E4DD;font-weight:300">A price you can see move as you build</p><p style="margin:0;padding:.75rem 0;border-top:1px dotted rgba(141,150,152,.25);font-size:1rem;color:#E7E4DD;font-weight:300">Direct to your kitchen</p></div></div></section>
+<section id="bl-price" style="padding:clamp(4.5rem,12vh,8rem) 0 0"><p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>03 / Start with a better number</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p><div data-rev="1" style="padding:clamp(2.5rem,7vh,4rem) clamp(1.25rem,5vw,5rem) clamp(3rem,8vh,4.5rem);border-top:1px solid rgba(141,150,152,.22);text-align:center"><p style="margin:0;font-size:clamp(1.1rem,1rem + .4vw,1.35rem);color:#B4AB9E;font-weight:300">A beautiful kitchen.<br>Without the traditional kitchen price.</p><b style="display:block;margin:clamp(1.25rem,3vh,2rem) 0 0;font-family:'Archivo',sans-serif;font-weight:800;font-stretch:118%;font-size:clamp(3rem,6rem + 2vw,7.5rem);line-height:.9;letter-spacing:-.03em;color:#8A5E3A;font-variant-numeric:tabular-nums">$4,490</b><p style="margin:1rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698">Kitchens from</p><p style="margin:1.5rem auto 0;font-size:.95rem;line-height:1.6;color:#8D9698;max-width:38ch;font-weight:300">Final pricing depends on your configuration, finishes, appliances and delivery. The number changes with your kitchen &mdash; never with our margin.</p><div style="display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:2rem"><a href="/roomplanner/#/plan" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid #E7E4DD;background:#E7E4DD;color:#16130F;transition:all .25s var(--ease)">Explore your kitchen</a><a href="#bl-spec" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid rgba(231,228,221,.35);transition:all .25s var(--ease)">See how BILT works</a></div></div></section>
 <section id="bl-planner" style="background:#1D1A15;border-bottom:1px solid rgba(141,150,152,.22);padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>01 / The planner</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>04 / The planner</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
   <div style="display:grid;gap:0;grid-template-columns:1fr" data-two="1">
     <div>
       <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
@@ -297,10 +359,48 @@ input[type=range]{accent-color:#8A5E3A}
       <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;line-height:1.6;color:#8D9698"><span style="color:#8A5E3A">[PLACEHOLDER RATES]</span> Demonstration of how the planner costs a room — substitute real rates before publishing. Not a quote. Your figure is fixed in writing before anything is manufactured.</p>
     </div>
   </div>
-</section>
-
-<section id="bl-spec" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>02 / Anatomy of a cabinet</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:1px;background:rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22);margin-top:clamp(3rem,7vh,4.5rem)">
+  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">1 mm</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Cabinet width increments</p></div>
+  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">2 min</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">To a priced layout</p></div>
+  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums"><span style="color:#8A5E3A">8&ndash;12</span> wks</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Lead time, not open-ended</p></div>
+  <div style="background:#16130F;padding:clamp(1.5rem,4vh,2.25rem) clamp(1.25rem,3vw,2rem)"><p style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.2vw,2.4rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums">0</p><p style="margin:.4rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:#8D9698">Minimum order</p></div>
+</div></section><section id="bl-range" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>05 / The signature range</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Kitchenettes,<br>priced on the page.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">Built for tiny homes, granny flats and short-stay. <em style="font-style:italic;color:#E7E4DD">The price is the price</em> — and every one of them can be redrawn to your dimensions in the planner.</p>
+  </div>
+  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/compact.jpg" alt="Compact kitchenette in soft white with a single bowl sink." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Compact</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">2400</span> mm run · single bowl</p>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">4,590</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">The studio and short-stay unit. Base run, overheads, benchtop, sink and mixer.</p>
+      </div>
+    </article>
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/granny-flat.jpg" alt="Mid-size kitchenette with tall pantry." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Granny flat</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">2700</span> mm run · tall pantry</p>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">5,500</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">The one that has to work as a real kitchen. Adds a full-height pantry and a second drawer bank.</p>
+      </div>
+    </article>
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/tiny-home.jpg" alt="Kitchenette with island in dark walnut." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Tiny home</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">3000</span> mm run · island option</p>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">7,500</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">Drawn for a build on wheels — weight, depth and door swing all accounted for.</p>
+      </div>
+    </article>
+  </div>
+</section><section id="bl-spec" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>06 / Anatomy of a cabinet</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
   <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
     <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">What you are<br>actually buying.</h2>
     <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">A flat pack kitchen is a set of decisions about board, edge, hinge and runner. <em style="font-style:italic;color:#E7E4DD">Here are ours, in writing.</em></p>
@@ -310,35 +410,156 @@ input[type=range]{accent-color:#8A5E3A}
       <img src="assets/631f5ad4.jpg" alt="Cabinet carcass detail — board edge, hinge and drawer runner." style="width:100%;height:100%;object-fit:cover;opacity:.55;position:absolute;inset:0">
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,15,.35),rgba(22,19,15,.85))"></div>
       <div style="position:absolute;left:8%;top:22%;display:flex;align-items:center;gap:.6rem"><span style="width:2.5rem;height:1px;background:#8A5E3A"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:#E7E4DD">Carcass · <span style="color:#8A5E3A">[BOARD]</span></span></div>
-      <div style="position:absolute;left:8%;top:47%;display:flex;align-items:center;gap:.6rem"><span style="width:4.5rem;height:1px;background:#8A5E3A"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:#E7E4DD">Hinges · <span style="color:#8A5E3A">[BRAND]</span></span></div>
-      <div style="position:absolute;left:8%;top:70%;display:flex;align-items:center;gap:.6rem"><span style="width:3.25rem;height:1px;background:#8A5E3A"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:#E7E4DD">Runners · <span style="color:#8A5E3A">[BRAND]</span></span></div>
+      <div style="position:absolute;left:8%;top:47%;display:flex;align-items:center;gap:.6rem"><span style="width:4.5rem;height:1px;background:#8A5E3A"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:#E7E4DD">Hinges · <span style="color:#8A5E3A">Blum</span></span></div>
+      <div style="position:absolute;left:8%;top:70%;display:flex;align-items:center;gap:.6rem"><span style="width:3.25rem;height:1px;background:#8A5E3A"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:#E7E4DD">Runners · <span style="color:#8A5E3A">Blum</span></span></div>
     </div>
     <div style="background:#16130F;display:grid;align-content:center;gap:0;padding:clamp(1.5rem,4vh,2.5rem) 0">
       <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Board</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">[BOARD SPEC]</span></span></div>
       <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Edging</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">[EDGE]</span></span></div>
-      <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Hardware</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">[HINGE + RUNNER BRAND]</span></span></div>
-      <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Benchtop</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">[STONE / LAMINATE OPTIONS]</span></span></div>
+      <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Hardware</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">Blum CLIP top BLUMOTION hinges, Blum TANDEMBOX antaro runners</span></span></div>
+      <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Benchtop</span><span style="text-align:right;color:#C9C3B8"><span style="color:#8A5E3A">Quartz &amp; granite standard, marble available as an upgrade</span></span></div>
       <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);border-bottom:1px solid rgba(141,150,152,.18);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Width increment</span><span style="text-align:right;color:#C9C3B8">1 mm</span></div>
       <div style="display:flex;justify-content:space-between;gap:2rem;padding:1rem clamp(1.25rem,3vw,2.25rem);font-family:'IBM Plex Mono',monospace;font-size:.75rem"><span style="color:#8D9698;letter-spacing:.06em;text-transform:uppercase">Supplied</span><span style="text-align:right;color:#C9C3B8">Flat pack · setout drawings included</span></div>
     </div>
   </div>
+</section><section id="bl-smart" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>07 / Storage that thinks ahead</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Every cabinet<br>can go further.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">Soft-close is the standard. <em style="font-style:italic;color:#E7E4DD">Motion is the option.</em> Pull-down overheads, blind-corner pull-outs and lift systems &mdash; drawn into your layout in the planner, not bolted on after.</p>
+  </div>
+  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/tech-pantry-lift.jpg" alt="Pull-down overhead pantry storage, lowered to counter height." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Pull-down overheads</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">Brings the top shelf down to where you can actually reach it. No stepstool.</p>
+      </div>
+    </article>
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/tech-corner-pullout.jpg" alt="Blind-corner cabinet with pull-out storage trays extended." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Blind-corner pull-outs</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">The dead corner every kitchen wastes, turned into two full-depth trays that swing out with the door.</p>
+      </div>
+    </article>
+    <article style="background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/tech-plate-rack.jpg" alt="Overhead cabinet with a drop-down plate and dish rack extended above the sink." style="width:100%;aspect-ratio:4/3;object-fit:cover">
+      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
+        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Drop-down drying racks</h4>
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
+        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">Sits over the sink, out of sight until you lower it. The dish rack disappears when you're done.</p>
+      </div>
+    </article>
+  </div>
+</section><section style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>08 / From drawing to bench</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Five steps,<br>no surprises.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">You always know what happens next, and what it costs, before it happens.</p>
+  </div>
+  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-five="1">
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 01</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Draw &amp; price</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">In the planner, in about two minutes. Free, no login.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 02</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Choose finishes</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Against the real sample booklets, at the display or posted to you.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 03</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Written quote</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Fixed price and setout drawings to check. Nothing charged yet.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 04</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Cut to size</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300"><span style="color:#8A5E3A">8&ndash;12</span> weeks from accepted quote to dispatch.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 05</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Delivered flat</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Labelled, with drawings and hardware. You, your builder or your cabinetmaker installs.</p></div>
+  </div>
+</section><section id="bl-visit" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>09 / Come and see it</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">The finishes,<br>in your hands.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">One kitchen is installed and in daily use in our tiny home display — so you can open the drawers and see the hardware. <em style="font-style:italic;color:#E7E4DD">The stone and cabinetry sample booklets are there too</em>, which is the real reason to come: you choose your finishes against the actual samples and we quote you on the spot.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.7rem;padding:0 clamp(1.25rem,5vw,5rem) clamp(2.5rem,7vh,4rem)">
+    <a href="#bl-contact" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid #E7E4DD;background:#E7E4DD;color:#16130F;transition:all .25s var(--ease)" style-hover="background:#8A5E3A;border-color:#8A5E3A;color:#E7E4DD">Book a viewing</a>
+  </div>
+  <img src="assets/70fc7b0a.jpg" alt="Charred black timber cladding on the tiny home display." style="width:100%;height:clamp(22rem,70vh,42rem);object-fit:cover">
+  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
+    <figure style="margin:0;background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/finish-brass.jpg" alt="Brushed brass tap and sink finish sample." style="width:100%;aspect-ratio:1/1;object-fit:cover">
+      <figcaption style="padding:1rem clamp(1.1rem,2.5vw,1.75rem) 1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698">Brushed brass</figcaption>
+    </figure>
+    <figure style="margin:0;background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/finish-gunmetal.jpg" alt="Matte gunmetal tap finish sample." style="width:100%;aspect-ratio:1/1;object-fit:cover">
+      <figcaption style="padding:1rem clamp(1.1rem,2.5vw,1.75rem) 1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698">Matte gunmetal</figcaption>
+    </figure>
+    <figure style="margin:0;background:#16130F;display:grid;align-content:start">
+      <img src="img-stock/finish-copper.jpg" alt="Brushed copper sink and tap finish sample." style="width:100%;aspect-ratio:1/1;object-fit:cover">
+      <figcaption style="padding:1rem clamp(1.1rem,2.5vw,1.75rem) 1.4rem;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698">Brushed copper</figcaption>
+    </figure>
+  </div>
+  <div style="background:#221E19;padding:clamp(2.25rem,6vh,4rem) clamp(1.25rem,5vw,5rem);border-bottom:1px solid rgba(141,150,152,.22)">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>Where we deliver</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Brisbane</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Sunshine Coast</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Rockhampton</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Elsewhere by arrangement</span>
+    </div>
+    <p style="margin:1.25rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;line-height:1.6;color:#8D9698">Display is in Queensland and open by appointment — the address is confirmed when you book.</p>
+  </div>
 </section>
-
-<div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22);margin-top:clamp(4.5rem,12vh,8rem)" data-two="1">
-  <a href="#bl-trade" style="background:#16130F;padding:clamp(2.25rem,6vh,3.75rem) clamp(1.25rem,5vw,5rem);display:grid;gap:1rem;align-content:start;transition:background .35s var(--ease)" style-hover="background:#221E19">
-    <h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.5rem);line-height:1;letter-spacing:-.02em">I'm building.</h3>
-    <p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300;max-width:34ch">Wholesale pricing for tiny home makers, builders and renovators. Price a kitchen in minutes, order as many as you need.</p>
-    <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#8A5E3A">Trade pricing →</span>
-  </a>
-  <a href="#bl-range" style="background:#16130F;padding:clamp(2.25rem,6vh,3.75rem) clamp(1.25rem,5vw,5rem);display:grid;gap:1rem;align-content:start;transition:background .35s var(--ease)" style-hover="background:#221E19">
-    <h3 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.5rem);line-height:1;letter-spacing:-.02em">It's my kitchen.</h3>
-    <p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300;max-width:34ch">Signature kitchenettes at published prices, or a custom layout drawn to your room in the planner.</p>
-    <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#8A5E3A">See the range →</span>
-  </a>
-</div>
-
-<section id="bl-trade" style="background:#F4F2EE;color:#16130F;padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#6F6A61;display:flex;gap:1rem;align-items:center"><span>03 / Trade</span><span style="flex:1;height:1px;background:rgba(22,19,15,.18)"></span></p>
+<!-- 07 / What buyers say ................................................. -->
+<section id="bl-reviews" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>10 / What buyers say</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Everyone arrives<br>a little sceptical.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:44ch;font-weight:300">The same note runs through all three of these reviews &mdash; <em style="font-style:italic;color:#E7E4DD">the price sounded too good, so they drove out to look.</em> None of them left without buying.</p>
+  </div>
+  <div data-three data-rev="1" style="display:grid;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)">
+    <figure data-rev="1" style="margin:0;background:#1D1A15;border:1px solid rgba(141,150,152,.22);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
+      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
+      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#E7E4DD">Glad we took the chance</blockquote>
+      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.95rem;line-height:1.6;color:#B4AB9E;font-weight:300;flex:1">
+        <p style="margin:0">We honestly hadn't heard of BILT before and were a little hesitant at first.</p>
+        <p style="margin:0">But we took the drive out to have a look and I'm glad we did.</p>
+        <p style="margin:0">Once we saw the kitchen in person, the quality and finish spoke for itself. It was brand new, still packaged and exactly what we were looking for.</p>
+        <p style="margin:0">For what we paid compared to what similar kitchens were costing elsewhere, we're extremely happy with it.</p>
+        <p style="margin:0">Definitely worth going to have a look.</p>
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#8D9698;border-top:1px solid rgba(141,150,152,.22);padding-top:1rem;margin-top:.25rem">Sarah Wallace<br><span style="color:#6E7476">Rockhampton</span></figcaption>
+    </figure>
+    <figure data-rev="1" style="margin:0;background:#1D1A15;border:1px solid rgba(141,150,152,.22);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
+      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
+      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#E7E4DD">Everyone thinks we spent more</blockquote>
+      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.95rem;line-height:1.6;color:#B4AB9E;font-weight:300;flex:1">
+        <p style="margin:0">Could not be happier with our kitchen.</p>
+        <p style="margin:0">The funny thing is, pretty much everyone who's come over since we installed it has asked who did our kitchen and assumed we spent a lot more than we actually did 😂</p>
+        <p style="margin:0">We originally found it through Facebook, went and had a look and bought it from there. Really straightforward process and exactly what we were looking for.</p>
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#8D9698;border-top:1px solid rgba(141,150,152,.22);padding-top:1rem;margin-top:.25rem">Brian T.<br><span style="color:#6E7476">Gladstone</span></figcaption>
+    </figure>
+    <figure data-rev="1" style="margin:0;background:#1D1A15;border:1px solid rgba(141,150,152,.22);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
+      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
+      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#E7E4DD">Wasn't sure at first</blockquote>
+      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:.95rem;line-height:1.6;color:#B4AB9E;font-weight:300;flex:1">
+        <p style="margin:0">Honestly, I was a little unsure at first because I found the kitchen through Facebook and the price seemed pretty cheap compared to everything else we had been looking at.</p>
+        <p style="margin:0">Went and had a look at it though and was actually surprised by the quality. Once we saw it in person, it was a pretty easy decision. It looked even better than we expected.</p>
+        <p style="margin:0">Really happy with it and Luke was easy to deal with the whole way through.</p>
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:#8D9698;border-top:1px solid rgba(141,150,152,.22);padding-top:1rem;margin-top:.25rem">Betty Miller<br><span style="color:#6E7476">Caboolture</span></figcaption>
+    </figure>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;padding:clamp(2rem,5vh,3rem) clamp(1.25rem,5vw,5rem) 0">
+    <a href="#bl-visit" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid #E7E4DD;background:#E7E4DD;color:#16130F;transition:all .25s var(--ease)">Come and see it yourself</a>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698">Reviews published with the buyers' permission</span>
+  </div>
+</section><section style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>11 / What we can prove</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">A short list of true things.</h2>
+    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">This is a young business. <em style="font-style:italic;color:#E7E4DD">We would rather show you three things that are true</em> than a page of things that sound good.</p>
+  </div>
+  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">One kitchen, installed</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">In the tiny home display, in daily use, photographed for this site. Open by appointment — and it is one kitchen, not a showroom floor.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">The samples are real</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">Stone and cabinetry booklets on site. You choose from the actual finish, not a photograph of it.</p></div>
+    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">The price is the price</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">What the planner shows is what we sell at. Fixed in writing before anything is manufactured.</p></div>
+  </div>
+</section><section id="bl-trade" style="background:#F4F2EE;color:#16130F;padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#6F6A61;display:flex;gap:1rem;align-items:center"><span>Trade</span><span style="flex:1;height:1px;background:rgba(22,19,15,.18)"></span></p>
   <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
     <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Wholesale, without the container.</h2>
     <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#4A453D;max-width:38ch;font-weight:300">Our wholesale pricing lands where offshore supply lands — <em style="font-style:italic;color:#16130F">without the LC, the twelve-week wait, the customs broker or the pallet you can't send back.</em></p>
@@ -346,7 +567,7 @@ input[type=range]{accent-color:#8A5E3A}
   <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(22,19,15,.14);border-top:1px solid rgba(22,19,15,.14);border-bottom:1px solid rgba(22,19,15,.14)" data-three="1">
     <div style="background:#F4F2EE;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">No minimum order</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#4A453D;font-weight:300">One kitchen or fifteen. You are not buying a container to get the price.</p></div>
     <div style="background:#F4F2EE;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">Price in minutes</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#4A453D;font-weight:300">Quote your client from the planner while you're still standing in their kitchen.</p></div>
-    <div style="background:#F4F2EE;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">Someone local to call</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#4A453D;font-weight:300"><span style="color:#8A5E3A">[LEAD TIME]</span> week lead time, and a phone number in Queensland when a door arrives damaged.</p></div>
+    <div style="background:#F4F2EE;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.25rem,3vw,2rem)"><h4 style="margin:0 0 .6rem;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.1875rem;letter-spacing:-.01em">Someone local to call</h4><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#4A453D;font-weight:300"><span style="color:#8A5E3A">8&ndash;12</span> week lead time, and a phone number in Queensland when a door arrives damaged.</p></div>
   </div>
 
   <div data-rev="1" style="padding:clamp(2.5rem,7vh,4rem) clamp(1.25rem,5vw,5rem) 0;overflow-x:auto">
@@ -363,7 +584,7 @@ input[type=range]{accent-color:#8A5E3A}
       <div style="padding:.85rem 1rem;border-bottom:1px solid rgba(22,19,15,.1);font-size:1rem;font-weight:300;color:#4A453D">After a measure-up</div>
 
       <div style="padding:.85rem 1rem .85rem 0;border-bottom:1px solid rgba(22,19,15,.1);font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#6F6A61">Lead time</div>
-      <div style="padding:.85rem 1rem;border-bottom:1px solid rgba(22,19,15,.1);background:rgba(22,19,15,.04);font-size:1rem;font-weight:300"><span style="color:#8A5E3A">[LEAD]</span> weeks</div>
+      <div style="padding:.85rem 1rem;border-bottom:1px solid rgba(22,19,15,.1);background:rgba(22,19,15,.04);font-size:1rem;font-weight:300"><span style="color:#8A5E3A">8&ndash;12</span> weeks</div>
       <div style="padding:.85rem 1rem;border-bottom:1px solid rgba(22,19,15,.1);font-size:1rem;font-weight:300;color:#4A453D">10–14 weeks</div>
       <div style="padding:.85rem 1rem;border-bottom:1px solid rgba(22,19,15,.1);font-size:1rem;font-weight:300;color:#4A453D">6–10 weeks</div>
 
@@ -383,97 +604,8 @@ input[type=range]{accent-color:#8A5E3A}
     <a href="#bl-contact" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid rgba(22,19,15,.3);color:#16130F;transition:all .25s var(--ease)" style-hover="background:#16130F;color:#E7E4DD;border-color:#16130F">Request a trade account</a>
     <a href="#bl-contact" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid rgba(22,19,15,.3);color:#16130F;transition:all .25s var(--ease)" style-hover="background:#16130F;color:#E7E4DD;border-color:#16130F">Book a 15-minute walkthrough</a>
   </div>
-</section>
-
-<section id="bl-range" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>04 / The signature range</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
-  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
-    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Kitchenettes,<br>priced on the page.</h2>
-    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">Built for tiny homes, granny flats and short-stay. <em style="font-style:italic;color:#E7E4DD">The price is the price</em> — and every one of them can be redrawn to your dimensions in the planner.</p>
-  </div>
-  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
-    <article style="background:#16130F;display:grid;align-content:start">
-      <img src="assets/a38b481c.jpg" alt="Compact kitchenette in soft white with a single bowl sink." style="width:100%;aspect-ratio:4/3;object-fit:cover">
-      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
-        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Compact</h4>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">[SIZE]</span> mm run · single bowl</p>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">[PRICE]</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
-        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">The studio and short-stay unit. Base run, overheads, benchtop, sink and mixer.</p>
-      </div>
-    </article>
-    <article style="background:#16130F;display:grid;align-content:start">
-      <img src="assets/631f5ad4.jpg" alt="Mid-size kitchenette with tall pantry." style="width:100%;aspect-ratio:4/3;object-fit:cover">
-      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
-        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Granny flat</h4>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">[SIZE]</span> mm run · tall pantry</p>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">[PRICE]</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
-        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">The one that has to work as a real kitchen. Adds a full-height pantry and a second drawer bank.</p>
-      </div>
-    </article>
-    <article style="background:#16130F;display:grid;align-content:start">
-      <img src="assets/146b2552.jpg" alt="Kitchenette with island in dark walnut." style="width:100%;aspect-ratio:4/3;object-fit:cover">
-      <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
-        <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Tiny home</h4>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#8D9698"><span style="color:#8A5E3A">[SIZE]</span> mm run · island option</p>
-        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:1rem;color:#E7E4DD">$<span style="color:#8A5E3A">[PRICE]</span> <small style="color:#8D9698;font-size:.6875rem">flat pack, delivered</small></p>
-        <p style="margin:0;font-size:1rem;line-height:1.5;color:#C9C3B8;font-weight:300">Drawn for a build on wheels — weight, depth and door swing all accounted for.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>05 / From drawing to bench</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
-  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
-    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Five steps,<br>no surprises.</h2>
-    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">You always know what happens next, and what it costs, before it happens.</p>
-  </div>
-  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-five="1">
-    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 01</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Draw &amp; price</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">In the planner, in about two minutes. Free, no login.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 02</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Choose finishes</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Against the real sample booklets, at the display or posted to you.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 03</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Written quote</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Fixed price and setout drawings to check. Nothing charged yet.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 04</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Cut to size</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300"><span style="color:#8A5E3A">[LEAD]</span> weeks from accepted quote to dispatch.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4vh,2.5rem) clamp(1.1rem,2.5vw,1.6rem);display:grid;gap:.6rem;align-content:start"><span style="font-family:'IBM Plex Mono',monospace;font-size:.625rem;letter-spacing:.14em;color:#8A5E3A">STEP 05</span><h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.0625rem;letter-spacing:-.01em">Delivered flat</h4><p style="margin:0;font-size:.9375rem;line-height:1.5;color:#C9C3B8;font-weight:300">Labelled, with drawings and hardware. You, your builder or your cabinetmaker installs.</p></div>
-  </div>
-</section>
-
-<section id="bl-visit" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>06 / Come and see it</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
-  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
-    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">The finishes,<br>in your hands.</h2>
-    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">One kitchen is installed and in daily use in our tiny home display — so you can open the drawers and see the hardware. <em style="font-style:italic;color:#E7E4DD">The stone and cabinetry sample booklets are there too</em>, which is the real reason to come: you choose your finishes against the actual samples and we quote you on the spot.</p>
-  </div>
-  <div style="display:flex;flex-wrap:wrap;gap:.7rem;padding:0 clamp(1.25rem,5vw,5rem) clamp(2.5rem,7vh,4rem)">
-    <a href="#bl-contact" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid #E7E4DD;background:#E7E4DD;color:#16130F;transition:all .25s var(--ease)" style-hover="background:#8A5E3A;border-color:#8A5E3A;color:#E7E4DD">Book a viewing</a>
-  </div>
-  <img src="assets/70fc7b0a.jpg" alt="Charred black timber cladding on the tiny home display." style="width:100%;height:clamp(22rem,70vh,42rem);object-fit:cover">
-  <div style="background:#221E19;padding:clamp(2.25rem,6vh,4rem) clamp(1.25rem,5vw,5rem);border-bottom:1px solid rgba(141,150,152,.22)">
-    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>Where we deliver</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
-    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Brisbane</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Sunshine Coast</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Rockhampton</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(141,150,152,.4);padding:.5rem .8rem;color:#B4AB9E">Elsewhere by arrangement</span>
-    </div>
-    <p style="margin:1.25rem 0 0;font-family:'IBM Plex Mono',monospace;font-size:.625rem;line-height:1.6;color:#8D9698">Display is in Queensland and open by appointment — the address is confirmed when you book.</p>
-  </div>
-</section>
-
-<section style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>07 / What we can prove</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
-  <div data-rev="1" style="padding:clamp(2rem,6vh,3.25rem) clamp(1.25rem,5vw,5rem) clamp(2.25rem,6vh,3.5rem);max-width:56rem">
-    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">A short list of true things.</h2>
-    <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#D8D3C9;max-width:38ch;font-weight:300">This is a young business. <em style="font-style:italic;color:#E7E4DD">We would rather show you three things that are true</em> than a page of things that sound good.</p>
-  </div>
-  <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(141,150,152,.22);border-top:1px solid rgba(141,150,152,.22);border-bottom:1px solid rgba(141,150,152,.22)" data-three="1">
-    <div style="background:#16130F;padding:clamp(1.75rem,4.5vh,2.5rem) clamp(1.1rem,2.5vw,1.75rem)"><b style="display:block;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.125rem;margin-bottom:.5rem">One kitchen, installed</b><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">In the tiny home display, in daily use, photographed for this site. Open by appointment — and it is one kitchen, not a showroom floor.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4.5vh,2.5rem) clamp(1.1rem,2.5vw,1.75rem)"><b style="display:block;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.125rem;margin-bottom:.5rem">The samples are real</b><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">Stone and cabinetry booklets on site. You choose from the actual finish, not a photograph of it.</p></div>
-    <div style="background:#16130F;padding:clamp(1.75rem,4.5vh,2.5rem) clamp(1.1rem,2.5vw,1.75rem)"><b style="display:block;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:108%;font-size:1.125rem;margin-bottom:.5rem">The price is the price</b><p style="margin:0;font-size:1.0625rem;line-height:1.5;color:#C9C3B8;font-weight:300">What the planner shows is what we sell at. Fixed in writing before anything is manufactured.</p></div>
-  </div>
-</section>
-
-<section id="bl-faq" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
-  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>08 / Questions</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
+</section><section id="bl-faq" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
+  <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#8D9698;display:flex;gap:1rem;align-items:center"><span>12 / Questions</span><span style="flex:1;height:1px;background:rgba(141,150,152,.28)"></span></p>
   <div data-rev="1" style="max-width:60rem;padding-inline:clamp(1.25rem,5vw,5rem);margin-top:clamp(1.5rem,4vh,2.5rem)">
     <details style="border-bottom:1px solid rgba(141,150,152,.22)"><summary style="cursor:pointer;list-style:none;padding:1.3rem 0;display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;font-family:'Archivo',sans-serif;font-weight:600;font-stretch:106%;font-size:1.125rem">Is it flat pack or assembled?<span style="font-family:'IBM Plex Mono',monospace;color:#8A5E3A">+</span></summary><p style="margin:0 0 1.4rem;color:#C9C3B8;font-weight:300;max-width:58ch;line-height:1.55"><span style="color:#8A5E3A">[CONFIRM]</span> Cabinetry is supplied flat pack, cut to your dimensions, with hardware and assembly instructions included.</p></details>
     <details style="border-bottom:1px solid rgba(141,150,152,.22)"><summary style="cursor:pointer;list-style:none;padding:1.3rem 0;display:flex;justify-content:space-between;gap:1.5rem;align-items:baseline;font-family:'Archivo',sans-serif;font-weight:600;font-stretch:106%;font-size:1.125rem">Who installs it?<span style="font-family:'IBM Plex Mono',monospace;color:#8A5E3A">+</span></summary><p style="margin:0 0 1.4rem;color:#C9C3B8;font-weight:300;max-width:58ch;line-height:1.55">You do, your builder does, or your cabinetmaker does. We supply full setout drawings so any competent installer can fit it. We are a supplier, not a building contractor.</p></details>
@@ -543,26 +675,6 @@ class Component extends DCLogic {
     addEventListener('scroll',()=>{if(!t){requestAnimationFrame(measure);t=true}},{passive:true});
     measure();
 
-    // scroll-scrubbed hero film
-    const film=q('#bl-top'), vid=q('#bl-video'), cap=q('#bl-cap');
-    const CAPS=['Cut to your millimetres. Delivered flat.','Any width you like — not the module.','Priced before anything is manufactured.'];
-    let dur=0, scrubbable=false;
-    vid.addEventListener('loadedmetadata',()=>{
-      dur=vid.duration||0;
-      scrubbable=dur>0&&isFinite(dur)&&!reduce;
-      if(!scrubbable){vid.loop=true;vid.play().catch(()=>{});}
-    });
-    let t2=false;
-    const scrub=()=>{
-      if(!scrubbable) return;
-      const total=film.offsetHeight-innerHeight;
-      const p=Math.min(1,Math.max(0,-film.getBoundingClientRect().top/total));
-      vid.currentTime=p*dur;
-      const i=Math.min(CAPS.length-1,Math.floor(p*CAPS.length));
-      if(cap.textContent!==CAPS[i]){cap.style.opacity=0;setTimeout(()=>{cap.textContent=CAPS[i];cap.style.opacity=1},180);}
-    };
-    addEventListener('scroll',()=>{if(!t2){requestAnimationFrame(()=>{scrub();t2=false});t2=true}},{passive:true});
-
     // live price demo — PLACEHOLDER RATES
     const RATE={base:0.62,over:0.34,tall:480,bench:1.5};
     const len=q('#bl-len');
@@ -595,4 +707,4 @@ class Component extends DCLogic {
 </script>
 
 
-</body></html>
+<script src="js/hero.js" defer></script></body></html>

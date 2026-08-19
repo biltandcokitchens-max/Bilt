@@ -1,0 +1,71 @@
+<!-- ==================================================================
+     HERO — scroll-reveal
+     Injected into index.html by _build.py, replacing the generated
+     #bl-top section. Styles in css/hero.css, behaviour in js/hero.js.
+     ================================================================== -->
+<section id="bl-top" class="hero" data-hero>
+  <div class="hero__track">
+    <div class="hero__stage">
+
+      <!-- Media sits behind the words and is revealed by scroll.
+           Desktop/tablet scrub the video; mobile shows the still. -->
+      <div class="hero__media" data-hero-media aria-hidden="true">
+        <!-- On mobile this still IS the hero image and sits above the
+             fold, so it keeps default fetch priority rather than being
+             deprioritised for the desktop case where it starts hidden. -->
+        <img class="hero__still" src="assets/9b18d7c7.jpg" alt="" decoding="async">
+        <!-- src is held in data-src so nothing is fetched until the hero
+             is near the viewport and the words are already painted -->
+        <video class="hero__video" data-hero-video
+               data-src="assets/5b16f42b.mp4"
+               muted playsinline preload="none" tabindex="-1"
+               poster="assets/9b18d7c7.jpg"></video>
+        <div class="hero__scrim"></div>
+      </div>
+
+      <div class="hero__inner">
+        <p class="hero__brand" data-hero-el="brand">BILT STUDIO</p>
+
+        <h1 class="hero__headline">
+          <span class="hero__line" data-hero-el="line1">Beautiful kitchens.</span>
+          <span class="hero__line" data-hero-el="line2">Smarter by design.</span>
+        </h1>
+
+        <p class="hero__sub" data-hero-el="sub">
+          <span class="hero__sub-lead">Architectural kitchens, intelligently sourced.</span>
+          <span class="hero__sub-rest">Premium materials, considered design and transparent
+            pricing — without the traditional showroom markup.</span>
+        </p>
+
+        <div class="hero__cta" data-hero-el="cta">
+          <a class="hero__btn hero__btn--primary" href="/roomplanner/#/plan" data-track="hero-design">
+            Design your kitchen
+          </a>
+          <a class="hero__btn hero__btn--ghost" href="#bl-range" data-track="hero-explore">
+            Explore kitchens
+          </a>
+        </div>
+
+        <p class="hero__meta">Direct sourced · Designed in Australia · Transparent pricing</p>
+      </div>
+
+      <div class="hero__hint" data-hero-el="hint" aria-hidden="true">
+        <span class="hero__hint-rule"></span>Keep scrolling
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Post-hero conversion -->
+<section class="convert" id="bl-convert">
+  <div class="convert__inner">
+    <h2 class="convert__head">See your kitchen. See your price.</h2>
+    <p class="convert__body">
+      Design your kitchen in minutes.<br>
+      No showroom appointment. No sales pressure. No waiting for a quote.
+    </p>
+    <a class="convert__link" href="/roomplanner/#/plan" data-track="hero-start">
+      Start designing <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>

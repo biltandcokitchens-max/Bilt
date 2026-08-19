@@ -1,0 +1,344 @@
+/* ==================================================================
+   BILT STUDIO — hero
+   The kitchen film fills the frame from the first paint and is scrubbed
+   by scroll position. The words arrive over it in order on load.
+
+   Palette is a neutral near-black with off-white type and no accent
+   colour at all — the film is the only thing with hue in this section.
+   Note this is cooler than the warm #16130F the sections below use.
+   ================================================================== */
+
+.hero {
+  --h-ink: #0a0a0a;          /* near-black, not pure */
+  --h-plaster: #f5f5f5;      /* off-white */
+  --h-navy: #1E3A5F;         /* the one filled control */
+  --h-navy-hi: #274B78;
+  --h-ease: cubic-bezier(.22, .61, .36, 1);
+
+  position: relative;
+  background: var(--h-ink);
+  color: var(--h-plaster);
+}
+
+/* The track is tall; the stage sticks while you scroll through it,
+   which is what gives the film somewhere to scrub. */
+.hero__track { height: 340vh; }
+@media (max-width: 767px) { .hero__track { height: auto; } }
+
+.hero__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  /* block, not flex: the media and the words stack here, and as flex
+     siblings in a row the image band collapses to nothing */
+  .hero__stage {
+    position: static;
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+  }
+}
+
+/* ---------------- media ----------------
+   The film is the hero. It is present from the first paint — never
+   faded up from black — so the page never shows an empty screen. The
+   still underneath carries it until the video has frames to scrub. */
+.hero__media {
+  position: absolute;
+  inset: 0;
+}
+.hero__still,
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* the still is the fallback and the mobile image; the video covers it
+   once it has enough data to scrub */
+.hero__video { opacity: 0; transition: opacity .6s var(--h-ease); }
+.hero__video.is-ready { opacity: 1; }
+
+/* The film is the subject now, so this is the lightest wash that still
+   holds the type. Weighted to the left, where the words sit, and to the
+   very bottom, so the middle of the frame stays open. */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(10,10,10,.76) 0%, rgba(10,10,10,.44) 46%, rgba(10,10,10,.06) 100%),
+    linear-gradient(to top, rgba(10,10,10,.62) 0%, rgba(10,10,10,0) 38%);
+}
+
+/* ---------------- words ---------------- */
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 80px clamp(1.25rem, 5vw, 5rem) 120px;
+}
+@media (max-width: 767px) {
+  .hero__inner { padding: 56px 1.25rem 48px; }
+}
+
+.hero__brand {
+  margin: 0 0 clamp(2rem, 6vh, 4rem);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .8125rem;
+  font-weight: 400;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.hero__headline {
+  margin: 0;
+  font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 800;
+  font-stretch: 116%;
+  text-transform: uppercase;
+  /* mobile 28-36 · tablet 36-48 · desktop 48-64, held by breakpoint
+     rather than one clamp so each band lands where the brief puts it */
+  font-size: clamp(1.75rem, 7.4vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  max-width: 18ch;
+}
+.hero__line { display: block; }
+.hero__line + .hero__line { margin-top: .08em; }
+
+@media (min-width: 768px) {
+  .hero__headline { font-size: clamp(2.25rem, 4.6vw, 3rem); }   /* 36-48 */
+}
+@media (min-width: 1100px) {
+  .hero__headline { font-size: clamp(3rem, 4.2vw, 4rem); }      /* 48-64 */
+}
+
+.hero__sub {
+  margin: clamp(2.5rem, 6vh, 3.75rem) 0 0;
+  max-width: 46ch;
+  font-size: clamp(1.125rem, 1.35vw, 1.5rem);   /* 18-24 */
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(245, 245, 245, .84);
+}
+.hero__sub-lead { display: block; color: var(--h-plaster); }
+/* the long second sentence is mobile-only; desktop keeps the one line */
+.hero__sub-rest { display: none; }
+@media (max-width: 767px) {
+  .hero__sub-rest { display: block; margin-top: .5rem; }
+}
+
+
+/* ---------------- the load-in ----------------
+   Wordmark first, then the headline a line at a time, then the
+   positioning line and the buttons. Driven by a single class the
+   script adds once the hero is mounted, so the order is declared here
+   rather than being recomputed on every scroll frame. */
+.hero__brand,
+.hero__line,
+.hero__cta,
+.hero__hint {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity .8s var(--h-ease), transform .8s var(--h-ease);
+  will-change: opacity, transform;
+}
+.hero.is-in .hero__brand,
+.hero.is-in .hero__line,
+.hero.is-in .hero__cta,
+.hero.is-in .hero__hint { opacity: 1; transform: none; }
+
+/* The subheading arrives as you scroll rather than on load. Only hidden
+   when the script has taken charge of scrubbing — so if JS never runs,
+   or on mobile and reduced-motion, it is simply visible. */
+.hero.is-scrub .hero__sub {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  will-change: opacity, transform;
+}
+
+/* An even 0.2s cadence. The wordmark and the scroll hint bracket the
+   composition, so they lead together at 0s and the headline reads down
+   from there. */
+.hero.is-in .hero__hint                     { transition-delay: 0s; }
+.hero.is-in .hero__brand                    { opacity: .7; transition-delay: 0s; }
+.hero.is-in [data-hero-el="line1"]          { transition-delay: .2s; }
+.hero.is-in [data-hero-el="line2"]          { transition-delay: .4s; }
+.hero.is-in .hero__cta                      { transition-delay: .6s; }
+
+/* ---------------- calls to action ---------------- */
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: clamp(2.25rem, 5vh, 3rem);
+}
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.875rem;
+  font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: .9375rem;          /* 15 */
+  font-weight: 500;
+  letter-spacing: .5px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .25s var(--h-ease), color .25s var(--h-ease),
+              border-color .25s var(--h-ease);
+}
+.hero__btn--primary {
+  background: var(--h-navy);
+  color: #ffffff;
+  border-color: var(--h-navy);
+}
+.hero__btn--primary:hover,
+.hero__btn--primary:focus-visible {
+  background: var(--h-navy-hi);
+  border-color: var(--h-navy-hi);
+}
+/* outlined, and it stays outlined — no fill on hover */
+.hero__btn--ghost {
+  background: none;
+  color: var(--h-plaster);
+  border-color: rgba(245, 245, 245, .42);
+}
+.hero__btn--ghost:hover,
+.hero__btn--ghost:focus-visible {
+  border-color: var(--h-plaster);
+}
+.hero__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+
+@media (max-width: 767px) {
+  .hero__cta { flex-direction: column; gap: .625rem; }
+  .hero__btn { width: 100%; padding: 1.0625rem 1rem; }
+}
+
+/* the strap line only shows on mobile, per the brief */
+.hero__meta {
+  display: none;
+  margin: 2.25rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(231, 228, 221, .16);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .6875rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(231, 228, 221, .55);
+}
+@media (max-width: 767px) { .hero__meta { display: block; } }
+
+.hero__hint {
+  position: absolute;
+  left: clamp(1.25rem, 5vw, 5rem);
+  bottom: 2.25rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .6875rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(231, 228, 221, .5);
+}
+.hero__hint-rule { width: 46px; height: 1px; background: currentColor; display: block; }
+@media (max-width: 767px) { .hero__hint { display: none; } }
+
+/* ---------------- mobile + reduced motion: everything visible ------- */
+@media (max-width: 767px) {
+  .hero__media { opacity: 1; transform: none; }
+  .hero__brand,
+  .hero__line,
+  .hero__sub,
+  .hero__cta { opacity: 1; transform: none; }
+  .hero__stage { background: var(--h-ink); }
+  /* the still becomes a banner above the words rather than a backdrop */
+  .hero__media {
+    position: relative;
+    height: 58vw;
+    max-height: 340px;
+    inset: auto;
+  }
+  .hero__scrim {
+    background: linear-gradient(to top, rgba(22,19,15,.96) 2%, rgba(22,19,15,0) 70%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__media,
+  .hero__line,
+  .hero__sub,
+  .hero__cta,
+  .hero__hint { opacity: 1 !important; transform: none !important; }
+  .hero__brand { opacity: .7 !important; transform: none !important; }
+  /* no staggered arrival — the composition is simply there */
+  .hero__brand,
+  .hero__line,
+  .hero__sub,
+  .hero__cta,
+  .hero__hint { transition: none !important; transition-delay: 0s !important; }
+  .hero__track { height: auto; }
+  .hero__stage { position: static; height: auto; }
+}
+
+/* ==================================================================
+   POST-HERO CONVERSION
+   ================================================================== */
+.convert {
+  background: #1D1A15;
+  border-bottom: 1px solid rgba(141, 150, 152, .22);
+  color: #E7E4DD;
+}
+.convert__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: clamp(4rem, 11vh, 7rem) clamp(1.25rem, 5vw, 5rem);
+}
+.convert__head {
+  margin: 0;
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  max-width: 20ch;
+}
+.convert__body {
+  margin: 1.5rem 0 0;
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.65;
+  color: rgba(231, 228, 221, .74);
+}
+.convert__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 2rem;
+  padding-bottom: .35rem;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: .8125rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #E7E4DD;
+  border-bottom: 1px solid rgba(231, 228, 221, .4);
+  transition: color .25s var(--h-ease, ease), border-color .25s var(--h-ease, ease), gap .25s var(--h-ease, ease);
+}
+.convert__link:hover,
+.convert__link:focus-visible {
+  color: #8A5E3A;
+  border-color: #8A5E3A;
+  gap: 1rem;
+}

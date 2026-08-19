@@ -83,6 +83,36 @@ python _build.py
 It is deliberately non-destructive — it will not delete `roomplanner/` while a local
 preview server is holding it open.
 
+### The hero
+
+The landing bundle's own hero is replaced at build time by `hero.html`, styled by
+`css/hero.css` and driven by `js/hero.js`. Edit those three files, not `index.html` —
+a rebuild overwrites `index.html` entirely.
+
+Two things about this section are easy to break:
+
+- **The page is React.** The design tool's runtime parses the `<x-dc>` template and
+  mounts it into `#dc-root` *after* scripts run, so `hero.js` binds on a MutationObserver
+  and ignores the inert template copy. A plain `querySelector` at startup finds the wrong
+  node — or nothing — and the hero silently never moves.
+- **The old hero's film lived in the page controller**, bound to `#bl-video` and `#bl-cap`.
+  Those IDs left with the old markup, so `_build.py` excises that block. Without it the
+  controller throws inside `componentDidMount` and takes the live price demo and all the
+  `[data-rev]` reveals down with it.
+
+The kitchen film fills the frame from the first paint and is **scrubbed by scroll
+position** across a 340vh sticky track — it is never played. The words are not tied to
+scroll: they arrive once on load, in order (wordmark, headline line one, line two,
+positioning line, buttons), driven by the `is-in` class and the transition delays in
+`css/hero.css`. Retiming the load-in is a CSS edit, not a JS one.
+
+That split is deliberate. An earlier version drove the text from scroll too, which meant
+the page's first paint was an empty black screen and the composition only assembled once
+you scrolled. Nothing should now leave the hero reading as blank at any scroll position.
+
+Below 768px none of the scrubbing applies: the still becomes a banner above the words,
+the composition is static, and **the video is never fetched**.
+
 ---
 
 ## Before this takes real orders

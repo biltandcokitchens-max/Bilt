@@ -13,3 +13,5 @@ desktop.ini
 .netlify/
 .vercel/
 node_modules/
+
+__pycache__/
