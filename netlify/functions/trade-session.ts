@@ -7,8 +7,10 @@ export default async (req: Request, _context: Context) => {
   }
 
   let body: Record<string, unknown>;
+  let token: unknown;
   try {
     body = await req.json();
+    ({ token } = body);
   } catch {
     return new Response(JSON.stringify({ valid: false }), {
       status: 200,
@@ -16,7 +18,6 @@ export default async (req: Request, _context: Context) => {
     });
   }
 
-  const { token } = body;
   if (typeof token !== "string") {
     return new Response(JSON.stringify({ valid: false }), {
       status: 200,
