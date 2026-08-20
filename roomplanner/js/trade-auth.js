@@ -4,7 +4,15 @@
 
 export const TRADE_SESSION_KEY = 'bilt.trade.session';
 
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function lsGet(key) {
+  try { return localStorage.getItem(key); } catch (e) { /* private mode — carry on */ return null; }
+}
+function lsSet(key, val) {
+  try { localStorage.setItem(key, val); } catch (e) { /* private mode — carry on */ }
+}
+function lsRemove(key) {
+  try { localStorage.removeItem(key); } catch (e) { /* private mode — carry on */ }
+}
 
 async function postJSON(path, body) {
   try {
@@ -21,11 +29,17 @@ async function postJSON(path, body) {
 }
 
 export async function checkTradeSession() {
-  const token = localStorage.getItem(TRADE_SESSION_KEY);
+  const token = lsGet(TRADE_SESSION_KEY);
   if (!token) return { valid: false };
   const { ok, data } = await postJSON('/.netlify/functions/trade-session', { token });
-  if (!ok || !data.valid) {
-    localStorage.removeItem(TRADE_SESSION_KEY);
+  if (!ok) {
+    /* Transport failure (offline, 500, Functions unavailable) — not proof the
+       token is invalid. Report "not valid" for this page load but leave the
+       stored token alone so a transient failure doesn't force a re-login. */
+    return { valid: false };
+  }
+  if (!data.valid) {
+    lsRemove(TRADE_SESSION_KEY);
     return { valid: false };
   }
   return { valid: true, businessName: data.businessName };
@@ -34,19 +48,19 @@ export async function checkTradeSession() {
 export async function submitTradeSignup(fields) {
   const { ok, data } = await postJSON('/.netlify/functions/trade-signup', fields);
   if (!ok) return { ok: false, error: data.error || 'Something went wrong. Try again.' };
-  localStorage.setItem(TRADE_SESSION_KEY, data.token);
+  lsSet(TRADE_SESSION_KEY, data.token);
   return { ok: true, businessName: data.businessName };
 }
 
 export async function submitTradeLogin(email, password) {
   const { ok, data } = await postJSON('/.netlify/functions/trade-login', { email, password });
   if (!ok) return { ok: false, error: data.error || 'Something went wrong. Try again.' };
-  localStorage.setItem(TRADE_SESSION_KEY, data.token);
+  lsSet(TRADE_SESSION_KEY, data.token);
   return { ok: true, businessName: data.businessName };
 }
 
 export function tradeLogout() {
-  localStorage.removeItem(TRADE_SESSION_KEY);
+  lsRemove(TRADE_SESSION_KEY);
 }
 
 export function viewTradeLogin() {

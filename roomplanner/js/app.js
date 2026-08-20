@@ -103,6 +103,9 @@ const MUTATING = new Set([
   'bt', 'roomdim', 'shape', 'resetroom', 'selw', 'selh', 'seld', 'sely', 'selfin',
 ]);
 
+/* Gates the toggle's reachability, not the discount rate's discoverability —
+   the 22% figure and pricing formula still ship in this public JS by design,
+   a scoped tradeoff made deliberately, not an oversight. */
 const isTrade = () => tradeSession.valid && state.mode === 'trade';
 const uid = () => Math.random().toString(36).slice(2, 9);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -206,7 +209,7 @@ function viewShop() {
     <div class="hero-card">
       <div class="callout info" style="margin-bottom:14px">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex:none"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01" stroke-linecap="round"/></svg>
-        <div>You're seeing <b>${isTrade() ? 'trade pricing, ex GST' : 'homeowner pricing, inc GST'}</b>. Switch it up in the header.</div>
+        <div>You're seeing <b>${isTrade() ? 'trade pricing, ex GST' : 'homeowner pricing, inc GST'}</b>. ${tradeSession.valid ? 'Switch it up in the header.' : 'Trade pricing? Log in via the header.'}</div>
       </div>
       <div class="steps" style="grid-template-columns:1fr">
         <div class="step"><div class="n">01</div><h3>Configure</h3><p>Drag a dimension, pick a board. The elevation redraws live.</p></div>
@@ -1584,11 +1587,15 @@ function route() {
 function renderChrome() {
   const seg = $('#modeSeg');
   if (tradeSession.valid) {
+    seg.setAttribute('role', 'group');
+    seg.setAttribute('aria-label', 'Pricing mode');
     seg.innerHTML = `
       <button data-act="mode" data-mode="trade" type="button">Trade</button>
       <button data-act="mode" data-mode="retail" type="button">Homeowner</button>`;
     document.querySelectorAll('[data-act="mode"]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === state.mode));
   } else {
+    seg.removeAttribute('role');
+    seg.removeAttribute('aria-label');
     seg.innerHTML = `<a class="btn btn-ghost" href="#/trade-login">Trade login</a>`;
   }
 
@@ -2008,31 +2015,38 @@ document.addEventListener('submit', async (e) => {
   const errEl = form.querySelector('#tradeAuthErr');
   errEl.hidden = true;
 
-  const result = form.id === 'tradeLoginForm'
-    ? await submitTradeLogin(form.email.value, form.password.value)
-    : await submitTradeSignup({
-        businessName: form.businessName.value,
-        abn: form.abn.value,
-        website: form.website.value,
-        address: form.address.value,
-        phone: form.phone.value,
-        email: form.email.value,
-        password: form.password.value,
-        tradeType: form.tradeType.value,
-        yearsInBusiness: Number(form.yearsInBusiness.value),
-        kitchensPerYear: Number(form.kitchensPerYear.value),
-      });
+  const submitBtn = form.querySelector('button[type="submit"]');
+  if (submitBtn) submitBtn.disabled = true;
 
-  if (!result.ok) {
-    errEl.textContent = result.error;
-    errEl.hidden = false;
-    return;
+  try {
+    const result = form.id === 'tradeLoginForm'
+      ? await submitTradeLogin(form.email.value, form.password.value)
+      : await submitTradeSignup({
+          businessName: form.businessName.value,
+          abn: form.abn.value,
+          website: form.website.value,
+          address: form.address.value,
+          phone: form.phone.value,
+          email: form.email.value,
+          password: form.password.value,
+          tradeType: form.tradeType.value,
+          yearsInBusiness: Number(form.yearsInBusiness.value),
+          kitchensPerYear: Number(form.kitchensPerYear.value),
+        });
+
+    if (!result.ok) {
+      errEl.textContent = result.error;
+      errEl.hidden = false;
+      return;
+    }
+
+    tradeSession = { valid: true, businessName: result.businessName };
+    state.mode = 'trade';
+    save();
+    location.hash = '#/plan';
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
   }
-
-  tradeSession = { valid: true, businessName: result.businessName };
-  state.mode = 'trade';
-  save();
-  location.hash = '#/plan';
 });
 
 window.addEventListener('hashchange', route);
@@ -2045,5 +2059,9 @@ route();
 checkTradeSession().then((session) => {
   tradeSession = session;
   if (!session.valid && state.mode === 'trade') { state.mode = 'retail'; save(); }
-  route();
-});
+  /* Only re-run route() when the session result actually changes what
+     should render (e.g. no longer trade-mode) — otherwise a full route()
+     re-renders the current view (including re-mounting #/plan's 3D scene)
+     while it's still mid-mount, doubling the WebGL context/RAF loop. */
+  if (session.valid || state.mode !== 'retail') route(); else renderChrome();
+}).catch(() => { /* session check failed — page already booted retail/anon, carry on */ });
