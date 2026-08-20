@@ -19,11 +19,15 @@ import {
   gaps, overhang, itemHeight, wallExtents, levelFloor,
 } from './room.js';
 import { wallElevation, roomPlan } from './planview.js';
+import {
+  checkTradeSession, submitTradeSignup, submitTradeLogin,
+  tradeLogout, viewTradeLogin, viewTradeSignup,
+} from './trade-auth.js';
 
 /* ---------------- state ---------------- */
 const LS = 'kerf.v2';
 const state = {
-  mode: 'trade',
+  mode: 'retail',
   theme: null,
   cat: 'all',
   cart: [],
@@ -45,6 +49,7 @@ const state = {
   elevOpen: false,
   vis: { uppers: true, dims: true, doors: true },
 };
+let tradeSession = { valid: false };
 
 function save() {
   try {
@@ -58,7 +63,7 @@ function load() {
   try {
     const d = JSON.parse(localStorage.getItem(LS) || '{}');
     Object.assign(state, {
-      mode: d.mode || 'trade', theme: d.theme || null,
+      mode: d.mode === 'trade' ? 'trade' : 'retail', theme: d.theme || null,
       cart: Array.isArray(d.cart) ? d.cart : [], jobName: d.jobName || '',
       room: d.room && d.room.walls ? normaliseRoom(d.room) : null,
     });
@@ -98,7 +103,7 @@ const MUTATING = new Set([
   'bt', 'roomdim', 'shape', 'resetroom', 'selw', 'selh', 'seld', 'sely', 'selfin',
 ]);
 
-const isTrade = () => state.mode === 'trade';
+const isTrade = () => tradeSession.valid && state.mode === 'trade';
 const uid = () => Math.random().toString(36).slice(2, 9);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const $ = (sel) => document.querySelector(sel);
@@ -1563,6 +1568,10 @@ function route() {
     view.innerHTML = viewQuote();
   } else if (h === '#/how') {
     view.innerHTML = viewHow();
+  } else if (h === '#/trade-login') {
+    view.innerHTML = viewTradeLogin();
+  } else if (h === '#/trade-signup') {
+    view.innerHTML = viewTradeSignup();
   } else {
     state.cfg = null; state.pid = null; state.editing = null;
     view.innerHTML = viewShop();
@@ -1573,10 +1582,19 @@ function route() {
 }
 
 function renderChrome() {
-  document.querySelectorAll('[data-act="mode"]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === state.mode));
+  const seg = $('#modeSeg');
+  if (tradeSession.valid) {
+    seg.innerHTML = `
+      <button data-act="mode" data-mode="trade" type="button">Trade</button>
+      <button data-act="mode" data-mode="retail" type="button">Homeowner</button>`;
+    document.querySelectorAll('[data-act="mode"]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.mode === state.mode));
+  } else {
+    seg.innerHTML = `<a class="btn btn-ghost" href="#/trade-login">Trade login</a>`;
+  }
+
   const n = $('#notice');
   n.innerHTML = isTrade()
-    ? `<span><span class="dot"></span><b>Trade account</b></span><span>${Math.round(SETTINGS.tradeDiscount * 100)}% off list, applied</span><span>Prices shown <b>ex GST</b></span><span>Free delivery over ${money0(SETTINGS.freeDeliveryOver)}</span>`
+    ? `<span><span class="dot"></span><b>${esc(tradeSession.businessName || 'Trade account')}</b></span><span>${Math.round(SETTINGS.tradeDiscount * 100)}% off list, applied</span><span>Prices shown <b>ex GST</b></span><span>Free delivery over ${money0(SETTINGS.freeDeliveryOver)}</span><span><a href="#" data-act="trade-logout">Log out</a></span>`
     : `<span><span class="dot"></span>Homeowner pricing</span><span>All prices <b>include GST</b></span><span>Free metro delivery over ${money0(SETTINGS.freeDeliveryOver)}</span><span>Flat pack or assembled</span>`;
 }
 
@@ -1618,6 +1636,7 @@ document.addEventListener('click', (e) => {
   }
 
   if (act === 'mode') { state.mode = el.dataset.mode; save(); route(); return; }
+  if (act === 'trade-logout') { e.preventDefault(); tradeLogout(); tradeSession = { valid: false }; state.mode = 'retail'; save(); route(); return; }
   if (act === 'theme') {
     state.theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     applyTheme(); save();
@@ -1981,6 +2000,41 @@ document.addEventListener('keydown', (e) => {
   else if ((k === 'z' && e.shiftKey) || k === 'y') { e.preventDefault(); stepHistory(history.future, history.past); }
 });
 
+document.addEventListener('submit', async (e) => {
+  const form = e.target;
+  if (form.id !== 'tradeLoginForm' && form.id !== 'tradeSignupForm') return;
+  e.preventDefault();
+
+  const errEl = form.querySelector('#tradeAuthErr');
+  errEl.hidden = true;
+
+  const result = form.id === 'tradeLoginForm'
+    ? await submitTradeLogin(form.email.value, form.password.value)
+    : await submitTradeSignup({
+        businessName: form.businessName.value,
+        abn: form.abn.value,
+        website: form.website.value,
+        address: form.address.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        password: form.password.value,
+        tradeType: form.tradeType.value,
+        yearsInBusiness: Number(form.yearsInBusiness.value),
+        kitchensPerYear: Number(form.kitchensPerYear.value),
+      });
+
+  if (!result.ok) {
+    errEl.textContent = result.error;
+    errEl.hidden = false;
+    return;
+  }
+
+  tradeSession = { valid: true, businessName: result.businessName };
+  state.mode = 'trade';
+  save();
+  location.hash = '#/plan';
+});
+
 window.addEventListener('hashchange', route);
 
 /* ---------------- boot ---------------- */
@@ -1988,3 +2042,8 @@ load();
 applyTheme();
 if (!state.jobName) state.jobName = 'Kitchen — 14 Hillcrest Ave';
 route();
+checkTradeSession().then((session) => {
+  tradeSession = session;
+  if (!session.valid && state.mode === 'trade') { state.mode = 'retail'; save(); }
+  route();
+});
