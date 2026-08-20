@@ -18,6 +18,8 @@
 - **Current default is unsafe and must change.** Today `state.mode` defaults to `'trade'` in both the initial state object (`app.js:26`) and `load()`'s fallback (`app.js:61`) — meaning a brand-new visitor with no localStorage history currently sees trade pricing by default, not just "anyone can click a toggle." This plan changes both defaults to `'retail'`.
 - **Preview/local server:** `netlify dev` (not the existing `npx serve` static server used elsewhere in this project) is required for any task that touches a Function or the database, since `npx serve` cannot execute Netlify Functions. Run it from `site/` (where `netlify.toml` lives).
 - **Netlify CLI version:** 26.0.0+ required for `netlify database` commands. If a `netlify database` subcommand is unrecognized, run `npm install -g netlify-cli@latest` first.
+- **Do not set `config.path` to a Function's own default invocation path.** Discovered during Task 4: `netlify dev` (confirmed on netlify-cli 27.1.2) refuses to route requests to a Function whose `config.path` is identical to its default path (`/.netlify/functions/<filename>`) — every request gets a generic `405` instead of reaching the handler. Since none of these three Functions need a custom path (the default filename-based path is exactly what's wanted), `config` should declare only `method`, with no `path` key at all. (This correction was applied to Tasks 5 and 6 below after Task 4 hit it; Task 4's own file was already fixed directly.)
+- **Drizzle insert errors from a unique-constraint violation put the actual Postgres message in `err.cause.message`, not `err.message`.** Discovered during Task 4: `err.message` on a thrown `DrizzleQueryError` is just `"Failed query: insert into ..."` — it never contains "unique"/"duplicate". Any code that needs to detect a duplicate-key error must check `err.cause?.message` (guarding that `cause` is an `Error`) in addition to `err.message`. This only affects Task 4 in this plan (no other task performs a duplicate-sensitive insert).
 - **Never hand-run DDL or apply migrations to a hosted (preview/production) database.** Migration files are generated and committed; the Netlify deploy applies them. Only `netlify database migrations apply` (against the **local** dev database) is run directly, and only in Task 2.
 - Spec source of truth: `site/docs/superpowers/specs/2026-08-20-trade-account-gating-design.md`. Field list, table shape, and out-of-scope items must match it exactly.
 
@@ -454,7 +456,6 @@ export default async (req: Request, _context: Context) => {
 };
 
 export const config: Config = {
-  path: "/.netlify/functions/trade-login",
   method: ["POST"],
 };
 ```
@@ -543,7 +544,6 @@ export default async (req: Request, _context: Context) => {
 };
 
 export const config: Config = {
-  path: "/.netlify/functions/trade-session",
   method: ["POST"],
 };
 ```
