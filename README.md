@@ -8,17 +8,25 @@ Cut-to-size cabinetry. Marketing site and the room planner, deployed as one stat
 /assets/          images, video, self-hosted woff2
 ```
 
-No build step, no dependencies, no framework. Plain HTML, CSS and ES modules.
+The marketing site and planner shell are plain HTML, CSS and ES modules — no build step for
+those. Trade account gating (signup/login/session) adds `netlify/functions/` (TypeScript,
+run through esbuild by Netlify) with real npm dependencies in `package.json` (Drizzle ORM,
+bcryptjs, jsonwebtoken, `@netlify/database`) — see `package.json` and `netlify/functions/`.
 
 ---
 
 ## Deploy
 
-Point Netlify or Vercel at this repository. Publish directory is the repo root, build
-command is empty.
+Point Netlify at this repository. Publish directory is the repo root, build command is
+empty (Netlify builds the Functions itself). `netlify.toml` is committed for this.
 
-`netlify.toml` and `vercel.json` are both committed — each host reads its own and ignores
-the other, so the same repo deploys to either without changes.
+`vercel.json` is also committed, but Netlify and Vercel are **not** interchangeable
+anymore: Vercel has no equivalent of `netlify/functions/`, so trade-signup, trade-login and
+trade-session would all 404 there. Per the client-side handling in
+`roomplanner/js/trade-auth.js`, a 404/transport failure on `trade-session` degrades
+gracefully (the visitor is just treated as logged-out for that page load, no stored session
+is destroyed) rather than crashing — but trade signup/login would be simply unusable on a
+Vercel deploy. Netlify is the only supported target for this feature.
 
 `_headers` caches `/assets/*` and the vendored three.js for a year, and forces the app's
 own CSS and JS to revalidate so a deploy takes effect immediately.

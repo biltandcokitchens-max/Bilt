@@ -2,7 +2,9 @@
 
 **For:** incoming web developer
 **Date:** 19 Aug 2026
-**Live at:** biltstudio.com.au (Netlify, static, no build step)
+**Live at:** biltstudio.com.au (Netlify — the landing page is still static/no-build, but the
+room planner's trade accounts now run on real Netlify Functions with npm dependencies; see
+`README.md`. Netlify is the only supported deploy target as of that feature.)
 **Repo root:** `/site` — this doc lives at `/site/BILT_STUDIO_HANDOFF.md`
 
 This is a working handoff, not a spec. Everything under "Current build" is real and deployed. Everything under "Direction from here" is an approved creative brief that hasn't been built yet. Don't blend them without checking with the owner first — a few things in the brief conflict with decisions already locked in (see §5).

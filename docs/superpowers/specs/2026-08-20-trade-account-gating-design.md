@@ -179,5 +179,10 @@ trade pricing returns.
 - Password reset / forgot-password flow — not raised by the user; flag as
   a follow-up if this ships and gets real signups, since accounts with no
   recovery path will eventually generate support requests.
+- Rate limiting / throttling on `trade-login` — not implemented in this
+  pass. Each login attempt runs a bcrypt cost-10 compare, a real CPU cost;
+  without a limit an attacker (or a buggy client) can drive sustained
+  compute load via repeated attempts. Flag as a follow-up alongside
+  password reset above.
 - Any change to the landing page (`site/index.html`) — this is entirely
   scoped to the room planner sub-app.
