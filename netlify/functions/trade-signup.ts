@@ -16,17 +16,19 @@ export default async (req: Request, _context: Context) => {
     return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405 });
   }
 
-  let body: Record<string, unknown>;
+  let businessName: unknown, abn: unknown, website: unknown, address: unknown, phone: unknown,
+    email: unknown, password: unknown, tradeType: unknown, yearsInBusiness: unknown, kitchensPerYear: unknown;
   try {
-    body = await req.json();
+    const body = await req.json();
+    ({
+      businessName, abn, website, address, phone, email, password,
+      tradeType, yearsInBusiness, kitchensPerYear,
+    } = body);
   } catch {
     return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
   }
 
-  const {
-    businessName, abn, website, address, phone, email, password,
-    tradeType, yearsInBusiness, kitchensPerYear,
-  } = body;
+  if (typeof email === "string") email = email.trim().toLowerCase();
 
   if (!isNonEmptyString(businessName)) return badRequest("Business name is required.");
   if (!isNonEmptyString(abn) || !/^\d{11}$/.test(abn.replace(/\s/g, ""))) {
@@ -61,7 +63,7 @@ export default async (req: Request, _context: Context) => {
       website: isNonEmptyString(website) ? website.trim() : null,
       address: address.trim(),
       phone: phone.trim(),
-      email: email.trim().toLowerCase(),
+      email,
       passwordHash,
       tradeType,
       yearsInBusiness,

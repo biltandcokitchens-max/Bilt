@@ -26,7 +26,7 @@ export function signSession(payload: SessionPayload): string {
 
 export function verifySession(token: string): SessionPayload | null {
   try {
-    const decoded = jwt.verify(token, SECRET());
+    const decoded = jwt.verify(token, SECRET(), { algorithms: ["HS256"] });
     if (typeof decoded === "string") return null;
     const { sub, businessName } = decoded as Record<string, unknown>;
     if (typeof sub !== "string" || typeof businessName !== "string") return null;

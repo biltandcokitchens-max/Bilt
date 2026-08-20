@@ -16,14 +16,15 @@ export default async (req: Request, _context: Context) => {
     return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405 });
   }
 
-  let body: Record<string, unknown>;
+  let email: unknown;
+  let password: unknown;
   try {
-    body = await req.json();
+    const body = await req.json();
+    ({ email, password } = body);
   } catch {
     return new Response(JSON.stringify({ error: "Invalid JSON body" }), { status: 400 });
   }
 
-  const { email, password } = body;
   if (typeof email !== "string" || typeof password !== "string") return INVALID();
 
   const [account] = await db
