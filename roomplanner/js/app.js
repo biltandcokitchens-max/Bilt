@@ -556,6 +556,7 @@ function refresh() { renderDrawing(); renderDetail(); renderPrice(); }
    ROOM PLANNER
    ================================================================== */
 let scene3d = null;
+let mounting3d = false; // true while mount3d() has an in-flight dynamic import, to block a concurrent second mount
 let threeFailed = false;
 
 function roomPrice() {
@@ -1065,9 +1066,11 @@ function plRoomTotals() {
 }
 
 async function mount3d() {
+  if (mounting3d || scene3d) return;             // already mounted, or a mount is already in flight
   const el = $('#stage3d');
   if (!el) return;
   if (threeFailed) { showStageMsg('3D unavailable — the three.js module could not be loaded. The planner still works from the elevation and plan views.'); return; }
+  mounting3d = true;
   try {
     const mod = await import('./three-view.js');
     if (!$('#stage3d')) return;                 // navigated away while loading
@@ -1125,6 +1128,8 @@ async function mount3d() {
     showStageMsg(offline
       ? '3D unavailable — three.js could not be fetched. Check the connection; the elevation and plan views below still work and pricing is unaffected.'
       : `3D failed to build: ${err.message}. The elevation and plan views below still work and pricing is unaffected.`);
+  } finally {
+    mounting3d = false;
   }
 }
 
@@ -1136,6 +1141,7 @@ function showStageMsg(text) {
 
 function unmount3d() {
   if (scene3d) { try { scene3d.dispose(); } catch (e) { /* already gone */ } scene3d = null; }
+  mounting3d = false; // don't leave a stale in-flight flag if we navigate away mid-import
 }
 
 /* ---------------- job view ---------------- */
