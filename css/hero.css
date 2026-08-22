@@ -3,16 +3,16 @@
    The kitchen film fills the frame from the first paint and is scrubbed
    by scroll position. The words arrive over it in order on load.
 
-   Palette is a neutral near-black with off-white type and no accent
-   colour at all — the film is the only thing with hue in this section.
-   Note this is cooler than the warm #16130F the sections below use.
+   Palette is warm paper with near-black type and no accent colour at
+   all — the film is the only thing with hue in this section. The hero
+   shares the page ground so the fold reads as one surface.
    ================================================================== */
 
 .hero {
-  --h-ink: #0a0a0a;          /* near-black, not pure */
-  --h-plaster: #f5f5f5;      /* off-white */
-  --h-navy: #1E3A5F;         /* the one filled control */
-  --h-navy-hi: #274B78;
+  --h-ink: #F4F2EE;          /* warm paper — the hero shares the page ground */
+  --h-plaster: #16130F;      /* the type colour carried on that ground */
+  --h-navy: #16130F;         /* the one filled control */
+  --h-navy-hi: #8A5E3A;
   --h-ease: cubic-bezier(.22, .61, .36, 1);
 
   position: relative;
@@ -74,8 +74,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(10,10,10,.76) 0%, rgba(10,10,10,.44) 46%, rgba(10,10,10,.06) 100%),
-    linear-gradient(to top, rgba(10,10,10,.62) 0%, rgba(10,10,10,0) 38%);
+    linear-gradient(to right, rgba(244,242,238,.93) 0%, rgba(244,242,238,.72) 38%, rgba(244,242,238,.20) 66%, rgba(244,242,238,0) 100%),
+    linear-gradient(to top, rgba(244,242,238,.58) 0%, rgba(244,242,238,0) 30%);
 }
 
 /* ---------------- words ---------------- */
@@ -129,7 +129,7 @@
   font-size: clamp(1.125rem, 1.35vw, 1.5rem);   /* 18-24 */
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(245, 245, 245, .84);
+  color: rgba(22, 19, 15, .74);
 }
 .hero__sub-lead { display: block; color: var(--h-plaster); }
 /* the long second sentence is mobile-only; desktop keeps the one line */
@@ -199,7 +199,7 @@
 }
 .hero__btn--primary {
   background: var(--h-navy);
-  color: #ffffff;
+  color: #F4F2EE;
   border-color: var(--h-navy);
 }
 .hero__btn--primary:hover,
@@ -211,13 +211,13 @@
 .hero__btn--ghost {
   background: none;
   color: var(--h-plaster);
-  border-color: rgba(245, 245, 245, .42);
+  border-color: rgba(22, 19, 15, .34);
 }
 .hero__btn--ghost:hover,
 .hero__btn--ghost:focus-visible {
   border-color: var(--h-plaster);
 }
-.hero__btn:focus-visible { outline: 2px solid #ffffff; outline-offset: 3px; }
+.hero__btn:focus-visible { outline: 2px solid #F4F2EE; outline-offset: 3px; }
 
 @media (max-width: 767px) {
   .hero__cta { flex-direction: column; gap: .625rem; }
@@ -229,12 +229,12 @@
   display: none;
   margin: 2.25rem 0 0;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(231, 228, 221, .16);
+  border-top: 1px solid rgba(22, 19, 15, .14);
   font-family: 'IBM Plex Mono', ui-monospace, monospace;
   font-size: .6875rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(231, 228, 221, .55);
+  color: rgba(22, 19, 15, .50);
 }
 @media (max-width: 767px) { .hero__meta { display: block; } }
 
@@ -250,7 +250,7 @@
   font-size: .6875rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(231, 228, 221, .5);
+  color: rgba(22, 19, 15, .46);
 }
 .hero__hint-rule { width: 46px; height: 1px; background: currentColor; display: block; }
 @media (max-width: 767px) { .hero__hint { display: none; } }
@@ -271,7 +271,7 @@
     inset: auto;
   }
   .hero__scrim {
-    background: linear-gradient(to top, rgba(22,19,15,.96) 2%, rgba(22,19,15,0) 70%);
+    background: linear-gradient(to top, rgba(244,242,238,.97) 2%, rgba(244,242,238,0) 70%);
   }
 }
 
@@ -296,9 +296,9 @@
    POST-HERO CONVERSION
    ================================================================== */
 .convert {
-  background: #1D1A15;
-  border-bottom: 1px solid rgba(141, 150, 152, .22);
-  color: #E7E4DD;
+  background: #EFEBE3;
+  border-bottom: 1px solid rgba(22, 19, 15, .13);
+  color: #16130F;
 }
 .convert__inner {
   max-width: 1500px;
@@ -319,7 +319,7 @@
   max-width: 48ch;
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   line-height: 1.65;
-  color: rgba(231, 228, 221, .74);
+  color: rgba(22, 19, 15, .66);
 }
 .convert__link {
   display: inline-flex;
@@ -332,8 +332,8 @@
   letter-spacing: .1em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #E7E4DD;
-  border-bottom: 1px solid rgba(231, 228, 221, .4);
+  color: #16130F;
+  border-bottom: 1px solid rgba(22, 19, 15, .32);
   transition: color .25s var(--h-ease, ease), border-color .25s var(--h-ease, ease), gap .25s var(--h-ease, ease);
 }
 .convert__link:hover,
