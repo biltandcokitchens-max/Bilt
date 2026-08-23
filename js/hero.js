@@ -24,8 +24,6 @@
      `small` is still watched so crossing the breakpoint re-syncs. */
   const isStatic = () => reduced.matches;
 
-  /* Fraction of the clip skipped at the start — see paint(). */
-  const VIDEO_START = 0.25;
 
   let hero = null, parts = null, media = null, video = null;
 
@@ -46,14 +44,11 @@
        permanently invisible. */
     if (video && video.readyState >= 2 && Number.isFinite(video.duration)) {
       if (!video.classList.contains('is-ready')) video.classList.add('is-ready');
-      /* The film opens on a pale, flat pan that reads as an empty hero, so
-         scroll is mapped onto the part of the clip that actually has a
-         kitchen in it. The skip is set from the PORTRAIT crop, not the full
-         frame: object-fit:cover on a phone shows only the centre slice, and
-         that slice stays washed out for roughly twice as long as the whole
-         frame suggests (sampled worst at t=1.8 — mean luma 140, sd 26 —
-         against sd 45 by t=2.6 and sd 54 at the end). */
-      const target = (VIDEO_START + p * (1 - VIDEO_START)) * video.duration;
+      /* Scroll maps onto the whole clip — every frame gets shown. The
+         opening seconds are the palest part of the film (on the portrait
+         crop, worst at t=1.8: mean luma 140, sd 26), which is why the wash
+         over it is kept light rather than the footage being skipped. */
+      const target = p * video.duration;
       if (Math.abs(video.currentTime - target) > 0.03) video.currentTime = target;
     }
 
