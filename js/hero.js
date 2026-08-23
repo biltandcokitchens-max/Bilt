@@ -20,9 +20,9 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const small = matchMedia('(max-width: 767px)');
 
-  /* Mobile and reduced-motion get the still composition, which CSS
-     already paints; scrubbing simply stays out of the way. */
-  const isStatic = () => small.matches || reduced.matches;
+  /* Only reduced-motion opts out of the scrub now — phones scrub too.
+     `small` is still watched so crossing the breakpoint re-syncs. */
+  const isStatic = () => reduced.matches;
 
   let hero = null, parts = null, media = null, video = null;
 
@@ -79,9 +79,8 @@
   /* --- the film ---------------------------------------------------
      The still is in the markup and paints immediately; the video is
      fetched as soon as the hero is anywhere near the viewport and fades
-     over the still once it can be scrubbed. On small screens it is
-     never fetched at all — 876KB is not worth spending on a phone for
-     an effect that needs a mouse-driven scroll to read. */
+     over the still once it can be scrubbed. Phones fetch it too — the
+     file is ~0.9MB, which is the price of the effect on mobile. */
   function loadVideo() {
     if (!video || video.dataset.loaded || isStatic()) return;
     video.dataset.loaded = '1';
@@ -94,6 +93,16 @@
     // a video that will not load is not worth an error to anyone: the
     // poster still sits behind it and carries the composition
     video.addEventListener('error', () => video.classList.remove('is-ready'), { once: true });
+
+    /* iOS will not decode frames for a video that has never played, so
+       setting currentTime on it silently does nothing and the film sits
+       on frame zero. Muted + playsinline lets this run without a user
+       gesture; pausing on the same tick keeps it a scrub rather than
+       playback. Desktop does not need it and is unharmed by it. */
+    const kick = video.play();
+    if (kick && typeof kick.then === 'function') {
+      kick.then(() => { video.pause(); paint(progress()); }).catch(() => {});
+    }
   }
 
   let near = null;

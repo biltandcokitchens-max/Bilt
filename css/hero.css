@@ -23,7 +23,8 @@
 /* The track is tall; the stage sticks while you scroll through it,
    which is what gives the film somewhere to scrub. */
 .hero__track { height: 340vh; }
-@media (max-width: 767px) { .hero__track { height: auto; } }
+/* shorter travel on a phone: 340vh of scrub is a lot of thumb */
+@media (max-width: 767px) { .hero__track { height: 240vh; } }
 
 .hero__stage {
   position: sticky;
@@ -35,15 +36,9 @@
   align-items: center;
 }
 @media (max-width: 767px) {
-  /* block, not flex: the media and the words stack here, and as flex
-     siblings in a row the image band collapses to nothing */
-  .hero__stage {
-    position: static;
-    display: block;
-    height: auto;
-    min-height: 0;
-    padding: 0;
-  }
+  /* the stage sticks here too now, so the film scrubs behind the words
+     rather than sitting above them as a banner */
+  .hero__stage { min-height: 0; }
 }
 
 /* ---------------- media ----------------
@@ -253,25 +248,19 @@
   color: rgba(22, 19, 15, .46);
 }
 .hero__hint-rule { width: 46px; height: 1px; background: currentColor; display: block; }
-@media (max-width: 767px) { .hero__hint { display: none; } }
+/* the hint is the instruction for the scrub, so it stays on mobile */
 
 /* ---------------- mobile + reduced motion: everything visible ------- */
 @media (max-width: 767px) {
   .hero__media { opacity: 1; transform: none; }
-  .hero__brand,
-  .hero__line,
-  .hero__sub,
-  .hero__cta { opacity: 1; transform: none; }
   .hero__stage { background: var(--h-ink); }
-  /* the still becomes a banner above the words rather than a backdrop */
-  .hero__media {
-    position: relative;
-    height: 58vw;
-    max-height: 340px;
-    inset: auto;
-  }
+  /* A narrow column puts type across the full width, so the wash has to
+     cover more of the frame than the desktop left-weighted one does --
+     while still leaving the right edge readable as photography. */
   .hero__scrim {
-    background: linear-gradient(to top, rgba(244,242,238,.97) 2%, rgba(244,242,238,0) 70%);
+    background:
+      linear-gradient(to right, rgba(244,242,238,.94) 0%, rgba(244,242,238,.78) 50%, rgba(244,242,238,.48) 100%),
+      linear-gradient(to top, rgba(244,242,238,.58) 0%, rgba(244,242,238,0) 46%);
   }
 }
 
