@@ -69,8 +69,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to right, rgba(244,242,238,.93) 0%, rgba(244,242,238,.72) 38%, rgba(244,242,238,.20) 66%, rgba(244,242,238,0) 100%),
-    linear-gradient(to top, rgba(244,242,238,.58) 0%, rgba(244,242,238,0) 30%);
+    linear-gradient(to right, rgba(244,242,238,.80) 0%, rgba(244,242,238,.56) 38%, rgba(244,242,238,.12) 66%, rgba(244,242,238,0) 100%),
+    linear-gradient(to top, rgba(244,242,238,.38) 0%, rgba(244,242,238,0) 26%);
 }
 
 /* ---------------- words ---------------- */
@@ -259,8 +259,8 @@
      while still leaving the right edge readable as photography. */
   .hero__scrim {
     background:
-      linear-gradient(to right, rgba(244,242,238,.94) 0%, rgba(244,242,238,.78) 50%, rgba(244,242,238,.48) 100%),
-      linear-gradient(to top, rgba(244,242,238,.58) 0%, rgba(244,242,238,0) 46%);
+      linear-gradient(to right, rgba(244,242,238,.72) 0%, rgba(244,242,238,.62) 55%, rgba(244,242,238,.52) 100%),
+      linear-gradient(to top, rgba(244,242,238,.34) 0%, rgba(244,242,238,0) 40%);
   }
 }
 
