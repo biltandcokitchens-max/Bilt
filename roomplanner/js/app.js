@@ -367,7 +367,7 @@ function renderControls() {
 
   /* boards */
   h += `<div class="ctrl">
-    <div class="ctrl-label">Carcass board <small>$${MATERIALS[c.material].rate}/m²</small></div>
+    <div class="ctrl-label">Carcass board <small>${esc(MATERIALS[c.material].sub || "")}</small></div>
     ${swatchGroup(MATERIALS, 'material', c.material)}
   </div>`;
 
@@ -968,7 +968,7 @@ function plStyleControls() {
       ${Object.entries(MATERIALS).map(([k, v]) => `
         <button class="sw" data-act="rstyle" data-key="material" data-val="${k}" aria-pressed="${room.style.material === k}" type="button">
           <span class="dot" style="background:${v.swatch}"></span>
-          <span class="txt"><b>${esc(v.name)}</b><span>$${v.rate}/m²</span></span>
+          <span class="txt"><b>${esc(v.name)}</b><span>${esc(v.sub || "")}</span></span>
         </button>`).join('')}
     </div>
     <div class="pl-sub">Doors &amp; fronts</div>
@@ -1031,7 +1031,7 @@ function plBenchControls() {
       ${Object.entries(BENCHTOPS).map(([k, v]) => `
         <button class="sw" data-act="bt" data-key="material" data-val="${k}" aria-pressed="${room.bt.material === k}" type="button">
           <span class="dot" style="background:${v.swatch}"></span>
-          <span class="txt"><b>${esc(v.name)}</b><span>$${v.rate}/m²</span></span>
+          <span class="txt"><b>${esc(v.name)}</b><span>${esc(v.sub || "")}</span></span>
         </button>`).join('')}
     </div>
     <div class="pl-sub">Edge</div>
