@@ -231,6 +231,71 @@ input[type=range]{accent-color:#8A5E3A}
   /* snapping fights assistive scrolling for some users */
   #bl-reviews-rail{ scroll-snap-type:none; }
 }
+
+/* ---------------- testimonial cards ----------------
+   One family per card instead of three: the quote and the story are both
+   Newsreader (the site's reading face), so the card reads as a person
+   talking rather than as UI. Only the attribution stays mono. */
+.rv{
+  margin:0;
+  background:#F4F2EE;
+  border:1px solid rgba(22,19,15,.13);
+  padding:clamp(1.6rem,3.2vw,2.25rem);
+  display:flex;
+  flex-direction:column;
+  gap:1.15rem;
+}
+.rv__stars{ display:flex; gap:.25rem; color:#8A5E3A; line-height:0; }
+.rv__quote{
+  margin:0;
+  font-family:'Newsreader',Georgia,serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.5rem,1.15rem + .9vw,1.9rem);
+  line-height:1.18;
+  letter-spacing:-.015em;
+  color:#16130F;
+  text-wrap:balance;
+}
+.rv__body{ display:flex; flex-direction:column; gap:.7rem; color:#4A453D; }
+.rv__body p{ margin:0; font-size:1rem; line-height:1.6; font-weight:300; }
+/* pinned, so the attribution line agrees across cards of unequal length */
+.rv__by{
+  margin-top:auto;
+  padding-top:1.1rem;
+  border-top:1px solid rgba(22,19,15,.13);
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.55rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6875rem; letter-spacing:.1em; text-transform:uppercase;
+}
+.rv__name{ color:#16130F; }
+.rv__loc{ color:#6F6A61; }
+.rv__loc::before{ content:"·"; margin-right:.55rem; }
+
+/* Scroll-driven emphasis: the card at the centre of the rail comes
+   forward. Uses a view timeline on the rail's own scroll axis, so it is
+   literally driven by the scrub rather than by a scroll listener.
+   Guarded -- browsers without it simply get the static rail. */
+@media (max-width: 819px){
+  @supports (animation-timeline: view(x)){
+    #bl-reviews-rail{ scroll-timeline: none; }
+    #bl-reviews-rail > .rv{
+      view-timeline-axis: inline;
+      view-timeline-name: --rv;
+      animation: rv-focus linear both;
+      animation-timeline: view(inline);
+      animation-range: cover 12% cover 88%;
+    }
+    @keyframes rv-focus{
+      0%   { opacity:.5; transform:scale(.94); }
+      50%  { opacity:1;  transform:scale(1); }
+      100% { opacity:.5; transform:scale(.94); }
+    }
+  }
+  @media (prefers-reduced-motion: reduce){
+    #bl-reviews-rail > .rv{ animation:none; opacity:1; transform:none; }
+  }
+}
 </style>
 </helmet>
 
@@ -423,40 +488,7 @@ input[type=range]{accent-color:#8A5E3A}
     <h2 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(2.3rem,7.5vw,5rem);line-height:.94;letter-spacing:-.03em">Everyone arrives<br>a little sceptical.</h2>
     <p style="margin:clamp(1.3rem,3.5vh,2rem) 0 0;font-size:clamp(1.1rem,1rem + .55vw,1.5rem);line-height:1.45;color:#4A453D;max-width:44ch;font-weight:300">The same note runs through all three of these reviews &mdash; <em style="font-style:italic;color:#16130F">the price sounded too good, so they drove out to look.</em> None of them left without buying.</p>
   </div>
-  <div id="bl-reviews-rail" data-three="1" data-rev="1" style="display:grid;gap:1px;background:rgba(22,19,15,.13);border-top:1px solid rgba(22,19,15,.13);border-bottom:1px solid rgba(22,19,15,.13)">
-    <figure style="margin:0;background:#EFEBE3;border:1px solid rgba(22,19,15,.13);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
-      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
-      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#16130F">Glad we took the chance</blockquote>
-      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:1rem;line-height:1.6;color:#6F6A61;font-weight:300;flex:1">
-        <p style="margin:0">We honestly hadn't heard of BILT before and were a little hesitant at first.</p>
-        <p style="margin:0">But we took the drive out to have a look and I'm glad we did.</p>
-        <p style="margin:0">Once we saw the kitchen in person, the quality and finish spoke for itself. It was brand new, still packaged and exactly what we were looking for.</p>
-        <p style="margin:0">For what we paid compared to what similar kitchens were costing elsewhere, we're extremely happy with it.</p>
-        <p style="margin:0">Definitely worth going to have a look.</p>
-      </div>
-      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61;border-top:1px solid rgba(22,19,15,.13);padding-top:1rem;margin-top:.25rem">Sarah Wallace<br><span style="color:#6F6A61">Rockhampton</span></figcaption>
-    </figure>
-    <figure style="margin:0;background:#EFEBE3;border:1px solid rgba(22,19,15,.13);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
-      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
-      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#16130F">Everyone thinks we spent more</blockquote>
-      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:1rem;line-height:1.6;color:#6F6A61;font-weight:300;flex:1">
-        <p style="margin:0">Could not be happier with our kitchen.</p>
-        <p style="margin:0">The funny thing is, pretty much everyone who's come over since we installed it has asked who did our kitchen and assumed we spent a lot more than we actually did 😂</p>
-        <p style="margin:0">We originally found it through Facebook, went and had a look and bought it from there. Really straightforward process and exactly what we were looking for.</p>
-      </div>
-      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61;border-top:1px solid rgba(22,19,15,.13);padding-top:1rem;margin-top:.25rem">Brian T.<br><span style="color:#6F6A61">Gladstone</span></figcaption>
-    </figure>
-    <figure style="margin:0;background:#EFEBE3;border:1px solid rgba(22,19,15,.13);padding:clamp(1.5rem,3.2vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem">
-      <div aria-label="Five out of five stars" style="font-size:.85rem;letter-spacing:.22em;color:#8A5E3A;line-height:1">★★★★★</div>
-      <blockquote style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:112%;font-size:clamp(1.3rem,1rem + .75vw,1.7rem);line-height:1.1;letter-spacing:-.02em;color:#16130F">Wasn't sure at first</blockquote>
-      <div style="display:flex;flex-direction:column;gap:.75rem;font-size:1rem;line-height:1.6;color:#6F6A61;font-weight:300;flex:1">
-        <p style="margin:0">Honestly, I was a little unsure at first because I found the kitchen through Facebook and the price seemed pretty cheap compared to everything else we had been looking at.</p>
-        <p style="margin:0">Went and had a look at it though and was actually surprised by the quality. Once we saw it in person, it was a pretty easy decision. It looked even better than we expected.</p>
-        <p style="margin:0">Really happy with it and Luke was easy to deal with the whole way through.</p>
-      </div>
-      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61;border-top:1px solid rgba(22,19,15,.13);padding-top:1rem;margin-top:.25rem">Betty Miller<br><span style="color:#6F6A61">Caboolture</span></figcaption>
-    </figure>
-  </div>
+  <div id="bl-reviews-rail" data-three="1" data-rev="1" style="display:grid;gap:1px;background:rgba(22,19,15,.13);border-top:1px solid rgba(22,19,15,.13);border-bottom:1px solid rgba(22,19,15,.13)"><figure class="rv"><div class="rv__stars" role="img" aria-label="Five out of five stars"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg></div><blockquote class="rv__quote">“Glad we took the chance”</blockquote><div class="rv__body"><p>We honestly hadn't heard of BILT before and were a little hesitant at first.</p><p>But we took the drive out to have a look and I'm glad we did.</p><p>Once we saw the kitchen in person, the quality and finish spoke for itself. It was brand new, still packaged and exactly what we were looking for.</p><p>For what we paid compared to what similar kitchens were costing elsewhere, we're extremely happy with it.</p><p>Definitely worth going to have a look.</p></div><figcaption class="rv__by"><span class="rv__name">Sarah Wallace</span><span class="rv__loc">Rockhampton</span></figcaption></figure><figure class="rv"><div class="rv__stars" role="img" aria-label="Five out of five stars"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg></div><blockquote class="rv__quote">“Everyone thinks we spent more”</blockquote><div class="rv__body"><p>Could not be happier with our kitchen.</p><p>The funny thing is, pretty much everyone who's come over since we installed it has asked who did our kitchen and assumed we spent a lot more than we actually did 😂</p><p>We originally found it through Facebook, went and had a look and bought it from there. Really straightforward process and exactly what we were looking for.</p></div><figcaption class="rv__by"><span class="rv__name">Brian T.</span><span class="rv__loc">Gladstone</span></figcaption></figure><figure class="rv"><div class="rv__stars" role="img" aria-label="Five out of five stars"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.7 6.4 19.8l1.3-6.3L2.9 9.2l6.4-.7z"/></svg></div><blockquote class="rv__quote">“Wasn't sure at first”</blockquote><div class="rv__body"><p>Honestly, I was a little unsure at first because I found the kitchen through Facebook and the price seemed pretty cheap compared to everything else we had been looking at.</p><p>Went and had a look at it though and was actually surprised by the quality. Once we saw it in person, it was a pretty easy decision. It looked even better than we expected.</p><p>Really happy with it and Luke was easy to deal with the whole way through.</p></div><figcaption class="rv__by"><span class="rv__name">Betty Miller</span><span class="rv__loc">Caboolture</span></figcaption></figure></div>
   <div style="display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;padding:clamp(2rem,5vh,3rem) clamp(1.25rem,5vw,5rem) 0">
     <a href="#bl-contact" style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1rem;border:1px solid #16130F;background:#16130F;color:#F4F2EE;transition:all .25s var(--ease)">Come and see it yourself</a>
     <span style="font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61">Reviews published with the buyers' permission</span>
