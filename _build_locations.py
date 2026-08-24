@@ -22,6 +22,8 @@ as a visible [TBC] block rather than an invented figure.
 """
 import io, os, json, re
 
+import _facts as F
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://biltstudio.com.au'
 
@@ -357,16 +359,20 @@ def foot(depth, towns):
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="mailto:hello@biltstudio.com.au" data-track="loc-email">hello@biltstudio.com.au</a></li>
+          <li>%(phone)s</li>
+          <li><a href="mailto:%(email)s" data-track="loc-email">%(email)s</a></li>
         </ul>
-        <p class="tbc" style="margin-top:1rem">[TBC: PHONE NUMBER]<br>[TBC: ABN]</p>
+        %(abn)s
       </div>
     </div>
     <p class="foot__legal">&copy; 2026 Bilt &amp; Co Pty Ltd &middot; ACN 700 798 509 &middot;
       Bilt Studio is a trading name of Bilt &amp; Co Pty Ltd.
       Display in Queensland, by appointment. We supply cabinetry.</p>
   </div>
-</footer>''' % {'up': up, 'links': links}
+</footer>''' % {'up': up, 'links': links,
+       'phone': F.phone_link(track='loc-phone'),
+       'email': F.EMAIL,
+       'abn': ('' if F.ABN else '<p class="tbc" style="margin-top:1rem">[TBC: ABN]</p>')}
 
 
 def price_cards(depth):
@@ -393,7 +399,34 @@ def faq_html(faqs):
 
 
 def schema(page_url, title, desc, crumbs, faqs, area=None):
+    # The Organization node is repeated on every page rather than only
+    # cross-referenced by @id from the landing page. A crawler that lands
+    # here first should not have to fetch another URL to learn who the
+    # business is or how to ring it. No postalAddress and no
+    # LocalBusiness type: this is a service-area business with no
+    # premises, and LocalBusiness needs an address to be eligible.
+    org = {
+        "@type": "Organization",
+        "@id": SITE + "/#organization",
+        "name": F.BRAND,
+        "legalName": F.LEGAL_NAME,
+        "url": SITE + "/",
+        "email": F.EMAIL,
+        "areaServed": [{"@type": "State", "name": "Queensland"}] +
+                      [{"@type": "City", "name": t["name"]} for t in TOWNS],
+    }
+    if F.PHONE_TEL:
+        org["telephone"] = F.PHONE_TEL
+        org["contactPoint"] = {
+            "@type": "ContactPoint",
+            "telephone": F.PHONE_TEL,
+            "email": F.EMAIL,
+            "contactType": "sales",
+            "areaServed": "AU",
+            "availableLanguage": "English",
+        }
     graph = [
+        org,
         {"@type": "WebPage", "@id": page_url + "#webpage", "url": page_url,
          "name": title, "description": desc, "inLanguage": "en-AU",
          "isPartOf": {"@id": SITE + "/#website"},

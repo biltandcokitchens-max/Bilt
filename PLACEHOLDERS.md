@@ -1,6 +1,6 @@
 # Fill these in
 
-**43 placeholder instances · 15 distinct items · 9 pages.**
+**Answered so far: phone ✅, premises ✅, ACN ✅ (already live). Remaining: 12 items.**
 
 Write your answer on the `➜` line under each item. Leave anything you don't know — partial is fine and I'll wire in whatever is filled. Most items repeat across several pages; you answer **once** and I'll propagate.
 
@@ -10,21 +10,22 @@ Nothing here was guessed. Every one of these is a fact only you have.
 
 ## 🔴 BLOCKERS — these stop local SEO working at all
 
-### 1. Phone number
-Appears **9 times, on every page**. Without it there is no Google Business Profile, and without a GBP these pages can rank in normal results but **cannot appear in the map pack** — which is where most "kitchens near me" clicks go. This is the single highest-value item on the page.
+### 1. Phone number ✅ DONE
+**`0401 821 848`** — live on all 10 pages as a `tel:+61401821848` link, and in the `Organization` schema with a `ContactPoint`. Stored once in `_facts.py`.
 
-➜ **PHONE:**
+*On registering a local number:* not worth it. Australia has four area codes, so Rockhampton, Gladstone, Yeppoon, Emerald, Biloela **and** Brisbane are all `07` — there is no per-town number to register. GBP accepts mobiles with no ranking penalty, and NAP consistency (one number, identical everywhere) matters far more than the prefix. If you later want the regional look, get **one** `07 49` number that diverts to the mobile, change the three lines in `_facts.py`, rebuild, and update GBP the same day. Never run two numbers at once.
 
-### 2. ABN
-Appears **9 times**. Footer legal line, and trade credibility. You have ACN 700 798 509 on the site already; the ABN is missing.
+### 2. ABN — still outstanding (9 instances)
+ACN **700 798 509** is confirmed and already rendering in every footer's legal line — that was never missing.
+
+**ACN and ABN are different numbers.** For a company the ABN is your ACN with a two-digit prefix, 11 digits total. I will not guess the prefix — a derived one was checked earlier in this project and ABR returned no record. Look it up free at **abr.business.gov.au** and paste the 11 digits.
 
 ➜ **ABN:**
 
-### 3. Street address
-Not currently a bracket anywhere, because no page claims one — but a GBP needs a real, verifiable address even for a service-area business that hides it publicly. If there's no premises, say so and I'll set it up as service-area.
+### 3. Street address ✅ ANSWERED — no premises
+Recorded as a **service-area business** in `_facts.py`. No page claims an address and no page emits a `LocalBusiness` node, which is correct: that type needs a `postalAddress` to be eligible for rich results, and asserting one that does not exist is worse than asserting nothing.
 
-➜ **ADDRESS:**
-➜ **Show it publicly, or hide it (service-area business)?**
+**Still needed from you when you create the GBP:** Google requires a real address behind the scenes even for a service-area business — it is used for verification and then hidden. Your home or registered office is fine. Choose **"I deliver goods and services to my customers"** and set the service area to the Central Queensland towns.
 
 ### 4. Trading hours
 Also needed for GBP. Not on the site anywhere yet.
