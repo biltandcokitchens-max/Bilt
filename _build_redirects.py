@@ -31,7 +31,12 @@ SERVE_DIRS = {'assets', 'css', 'js', 'img', 'img-stock', 'kitchens', 'legal',
               'roomplanner'}
 
 # Directories that must never be readable, whether or not they exist yet.
-BLOCK_DIRS = ['netlify', 'db', 'docs', 'node_modules', '__pycache__', '.netlify',
+# NOT '.netlify' -- that path is reserved by the platform and is where
+# deployed functions are served from (/.netlify/functions/trade-login).
+# Blocking it would have killed trade signup, login and session checks.
+# Netlify rejected the rule outright ('"path" field must not start with
+# "/.netlify"'), which is the only reason it was caught.
+BLOCK_DIRS = ['netlify', 'db', 'docs', 'node_modules', '__pycache__',
               'scripts', 'drizzle']
 
 
