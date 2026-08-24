@@ -631,6 +631,15 @@ def crumbs_html(items):
 
 
 # ------------------------------------------------------------ town pages
+CLUSTER_REGION = {
+    'Rockhampton and the Capricorn Coast': 'capricorn-coast',
+    'The Bowen Basin and mining corridor': 'bowen-basin',
+    'The Central Highlands and Central West': 'central-highlands',
+    'Gladstone region and the Dawson Valley': 'gladstone-region',
+    'Mackay and the Whitsundays': 'mackay-whitsunday',
+}
+
+
 def nearby_html(t, up):
     """Link a town to the other towns in its war-map cluster.
 
@@ -663,9 +672,10 @@ def nearby_html(t, up):
 %s
     </ul>
     <p style="margin-top:1.5rem;font-size:.9375rem;color:#6F6A61">
-      See every town across <a href="%skitchens/queensland/">Queensland</a>.</p>
+      More on delivering across <a href="%skitchens/%s/">%s</a>.</p>
   </div>
-</section>''' % (esc(cluster), items, up)
+</section>''' % (esc(cluster), items, up, CLUSTER_REGION.get(cluster, 'queensland'),
+                 esc(cluster))
 
 
 def build_town(t):
@@ -962,7 +972,20 @@ def build_state_hub():
   </a></li>''' % (up, s, esc(by_slug[s]['name']), esc(by_slug[s]['blurb']))
             for s in slugs if s in by_slug)
         extra = ''
-        if heading == 'The Bowen Basin and mining corridor':
+        # Each cluster points at its regional hub, which is what turns a
+        # flat list of towns into a geographic hierarchy.
+        region_for = {
+            'Rockhampton and the Capricorn Coast': ('capricorn-coast', 'the Capricorn Coast'),
+            'The Bowen Basin and mining corridor': ('bowen-basin', 'the Bowen Basin'),
+            'The Central Highlands and Central West': ('central-highlands', 'the Central Highlands and Central West'),
+            'Gladstone region and the Dawson Valley': ('gladstone-region', 'the Gladstone region and Dawson Valley'),
+            'Mackay and the Whitsundays': ('mackay-whitsunday', 'Mackay and the Whitsundays'),
+        }
+        if heading in region_for:
+            _slug, _label = region_for[heading]
+            extra = ('<p style="margin-top:1.25rem"><a href="%skitchens/%s/">'
+                     'More on delivering across %s</a></p>' % (up, _slug, _label))
+        if False:
             extra = ('<p style="margin-top:1.25rem"><a href="%skitchens/%s/">'
                      'More on delivering across Central Queensland</a></p>' % (up, HUB_SLUG))
         blocks.append('''<section class="sec">

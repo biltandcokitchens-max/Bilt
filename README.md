@@ -156,3 +156,23 @@ Also outstanding:
   money changes hands.
 - The nester is a shelf-pack at 57–72% yield; a production optimiser reaches 75–85%,
   so quoted sheet counts are currently pessimistic.
+
+## Build order
+
+The static pages are generated. Run these in order, then deploy:
+
+```bash
+python _build_locations.py    # towns + state hub + Central Queensland hub
+python _build_regions.py      # 5 regional hubs
+python _build_usecases.py     # build-type pages (Class 1a, granny flat, tiny home, modular)
+python _build_legal.py        # privacy / terms / warranty (noindex drafts)
+python _build_sitemap.py      # scans disk; must run AFTER the four above
+python _build_redirects.py    # blocks source files from being served
+```
+
+_build_sitemap.py has to run last because it scans the filesystem. Earlier
+each generator wrote its own partial sitemap and whichever ran last silently
+dropped the others pages.
+
+Do NOT run _build.py. It regenerates index.html from the old design-tool
+export and still contains pre-launch placeholders; it would wipe the SEO head.
