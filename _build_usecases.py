@@ -140,7 +140,7 @@ def build_hub():
     depth = 2
     up = '../' * depth
     url = '%s/kitchens/%s/' % (SITE, HUB)
-    title = 'Kitchens for New Builds & Renovations | Class 1a, Granny Flats, Tiny Homes'
+    title = 'Architectural Kitchens for New Builds | Class 1a, Granny Flats'
     desc = ('Cut-to-size kitchens for new builds and renovations — Class 1a dwellings, '
             'granny flats, tiny homes and modular builds. From $%s.' % B.ANCHOR)
     crumbs = [('Home', SITE + '/'), ('Building or renovating', url)]
@@ -177,7 +177,7 @@ def build_hub():
 <section class="hero-block">
   <div class="wrap">
     <p class="eyebrow">Building or renovating</p>
-    <h1>Kitchens for new builds<br>and renovations.</h1>
+    <h1>Architectural kitchens<br>for new builds.</h1>
     <p class="lede">Class 1a dwellings, granny flats, tiny homes and modular builds — priced
       on the page, with a cut list your builder can work from.</p>
     <p style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap">

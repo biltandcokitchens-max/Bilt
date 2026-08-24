@@ -39,10 +39,10 @@ USECASES = [
         blurb='On wheels or on a slab — two different approval paths, and two different kitchens.',
         hero='tiny-home.jpg',
         heroalt='A compact tiny-home kitchen with full-height cabinetry and a stone benchtop.',
-        title='Tiny Home Kitchens | Cut-to-Size Cabinetry | BILT Studio',
+        title='Tiny Home Kitchens | Architectural Cabinetry | BILT Studio',
         desc='Cut-to-size kitchens for tiny homes, on wheels or on a fixed foundation. '
              'Complete 3000 mm kitchens from $7,500.',
-        h1='Kitchens for tiny homes.',
+        h1='Architectural kitchens<br>for tiny homes.',
         lede='Every millimetre has to earn its place, and on wheels every kilogram does too.',
         body=[
             ('First, the distinction almost everyone gets wrong',
@@ -114,7 +114,7 @@ USECASES = [
         title='Granny Flat Kitchens | Secondary Dwelling Cabinetry | BILT Studio',
         desc='Cut-to-size kitchens for granny flats and secondary dwellings. '
              'Complete 2700 mm kitchens from $5,500.',
-        h1='Kitchens for granny flats<br>and secondary dwellings.',
+        h1='Architectural kitchens<br>for granny flats.',
         lede='A complete kitchen, not a kitchenette — because a secondary dwelling has to work like a home.',
         body=[
             ('A secondary dwelling is a house, in code terms',
@@ -170,7 +170,7 @@ USECASES = [
         title='Class 1a Kitchens | New Builds & Renovations | BILT Studio',
         desc='Kitchens for Class 1a dwellings — new builds, extensions and renovations. '
              'Cut-to-size cabinetry with setout drawings. From $4,490.',
-        h1='Kitchens for<br>Class 1a builds.',
+        h1='Architectural kitchens<br>for Class 1a builds.',
         lede='If you are reading your council’s Class 1a requirements, you will need one of these too.',
         body=[
             ('What Class 1a actually covers',
@@ -241,10 +241,10 @@ USECASES = [
         blurb='Built in a factory, where a 6 mm discrepancy is a problem you cannot scribe out on site.',
         hero='compact.jpg',
         heroalt='A precisely fitted kitchen run in a modular home, flat-panel doors and stone benchtop.',
-        title='Modular & Prefab Home Kitchens | Cut-to-Size | BILT Studio',
+        title='Modular & Prefab Kitchens | Architectural Cabinetry | BILT Studio',
         desc='Cut-to-size kitchens for modular and prefabricated homes. Exact dimensions, '
              'flat-packed to the factory or the site. From $%s.',
-        h1='Kitchens for modular<br>and prefab builds.',
+        h1='Architectural kitchens<br>for modular builds.',
         lede='Factory tolerances are unforgiving. Cabinetry cut to the drawing is the point.',
         body=[
             ('A modular home is still a Class 1a dwelling',

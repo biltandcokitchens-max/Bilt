@@ -138,9 +138,9 @@ TOWNS = [
         blurb='Investment properties, worker housing and kitchens that have to be durable before they are beautiful.',
         hero='compact.jpg',
         heroalt='A compact galley kitchen with flat-panel doors and a stone benchtop.',
-        title='Flat Pack Kitchens Gladstone | Cut-to-Size Cabinetry | BILT Studio',
-        desc='Cut-to-size flat pack kitchens delivered to Gladstone. Priced on the page, no quote stage. Complete kitchens from $%s.' % ANCHOR,
-        h1='Flat pack kitchens,<br>delivered to Gladstone.',
+        title='Architectural Kitchens Gladstone | Flat Pack Packages | BILT Studio',
+        desc='Architectural kitchens for Gladstone, intelligently priced. Priced on the page, no quote stage. Complete kitchens from $%s.' % ANCHOR,
+        h1='Architectural kitchens<br>for Gladstone.',
         lede='A kitchen you can price to the dollar before you commit — which matters more when it is going into a rental than a forever home.',
         body=[
             ('Gladstone renovates on a different maths to everywhere else',
@@ -192,9 +192,9 @@ TOWNS = [
         blurb='Salt air, holiday lets and downsizers — where the hardware matters more than the door colour.',
         hero='why-we-do-this.jpg',
         heroalt='A coastal kitchen with a stone island, pale cabinetry and pendant lighting.',
-        title='Flat Pack Kitchens Yeppoon & the Capricorn Coast | BILT Studio',
-        desc='Cut-to-size flat pack kitchens delivered to Yeppoon and the Capricorn Coast. Priced on the page. Complete kitchens from $%s.' % ANCHOR,
-        h1='Flat pack kitchens,<br>delivered to Yeppoon.',
+        title='Architectural Kitchens Yeppoon & the Capricorn Coast | BILT Studio',
+        desc='Architectural kitchens for Yeppoon and the Capricorn Coast, intelligently priced. Priced on the page. Complete kitchens from $%s.' % ANCHOR,
+        h1='Architectural kitchens<br>for Yeppoon.',
         lede='Coastal kitchens fail at the hinges long before they fail at the doors. This is a specification built for that.',
         body=[
             ('Salt air is the design constraint nobody quotes for',
@@ -249,9 +249,9 @@ TOWNS = [
         blurb='Inland, and a long way from a showroom — which is exactly where buying flat is worth the most.',
         hero='tiny-home.jpg',
         heroalt='A compact kitchen run with tall cabinetry and an integrated oven.',
-        title='Flat Pack Kitchens Emerald & the Central Highlands | BILT Studio',
-        desc='Cut-to-size flat pack kitchens delivered to Emerald and the Central Highlands. No showroom trip, no quote stage. From $%s.' % ANCHOR,
-        h1='Flat pack kitchens,<br>delivered to Emerald.',
+        title='Architectural Kitchens Emerald & the Central Highlands | BILT Studio',
+        desc='Architectural kitchens for Emerald and the Central Highlands, intelligently priced. No showroom trip, no quote stage. From $%s.' % ANCHOR,
+        h1='Architectural kitchens<br>for Emerald.',
         lede='Two hundred and seventy kilometres from the coast, the hardest part of a new kitchen is usually getting anyone to come and price it.',
         body=[
             ('Distance is the real cost of a Central Highlands kitchen',
@@ -302,9 +302,9 @@ TOWNS = [
         blurb='A small town with a short supplier list, where waiting is usually the biggest cost.',
         hero='compact.jpg',
         heroalt='A simple, hard-wearing kitchen run with flat-panel doors.',
-        title='Flat Pack Kitchens Biloela & the Banana Shire | BILT Studio',
-        desc='Cut-to-size flat pack kitchens delivered to Biloela and the Banana Shire. Priced on the page. Complete kitchens from $%s.' % ANCHOR,
-        h1='Flat pack kitchens,<br>delivered to Biloela.',
+        title='Architectural Kitchens Biloela & the Banana Shire | BILT Studio',
+        desc='Architectural kitchens for Biloela and the Banana Shire, intelligently priced. Priced on the page. Complete kitchens from $%s.' % ANCHOR,
+        h1='Architectural kitchens<br>for Biloela.',
         lede='In a town this size the question is rarely which cabinet maker to use. It is whether anyone can start this year.',
         body=[
             ('Small town, short list',
@@ -729,8 +729,8 @@ def build_hub():
     depth = 2
     up = '../' * depth
     url = '%s/kitchens/%s/' % (SITE, HUB_SLUG)
-    title = 'Flat Pack Kitchens Central Queensland | Cut-to-Size Cabinetry | BILT Studio'
-    desc = ('Cut-to-size flat pack kitchens delivered across Central Queensland — Rockhampton, '
+    title = 'Architectural Kitchens Central Queensland | BILT Studio'
+    desc = ('Architectural kitchens across Central Queensland — Rockhampton, '
             'Gladstone, Yeppoon, Emerald and Biloela. Complete kitchens from $%s.' % ANCHOR)
     crumbs = [('Home', SITE + '/'),
               ('Queensland', '%s/kitchens/%s/' % (SITE, STATE_SLUG)),
@@ -767,7 +767,7 @@ def build_hub():
 <section class="hero-block">
   <div class="wrap">
     <p class="eyebrow">Central Queensland</p>
-    <h1>Flat pack kitchens,<br>across Central Queensland.</h1>
+    <h1>Architectural kitchens,<br>across Central Queensland.</h1>
     <p class="lede">Rockhampton is already on our delivery run. Draw your room, see the price
       as you go, and get the cut list before you pay.</p>
     <p style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap">
@@ -881,8 +881,8 @@ def build_state_hub():
     up = '../' * depth
     slug = 'queensland'
     url = '%s/kitchens/%s/' % (SITE, slug)
-    title = 'Flat Pack Kitchens Queensland | Cut-to-Size Cabinetry | BILT Studio'
-    desc = ('Cut-to-size flat pack kitchens delivered across Queensland, from Cairns to the '
+    title = 'Architectural Kitchens Queensland | Flat Pack Packages | BILT Studio'
+    desc = ('Architectural kitchens across Queensland, from Cairns to the '
             'Gold Coast. Priced on the page. Complete kitchens from $%s.' % ANCHOR)
     crumbs = [('Home', SITE + '/'), ('Queensland', url)]
 
@@ -939,7 +939,7 @@ def build_state_hub():
 <section class="hero-block">
   <div class="wrap">
     <p class="eyebrow">Queensland</p>
-    <h1>Flat pack kitchens,<br>across Queensland.</h1>
+    <h1>Architectural kitchens,<br>across Queensland.</h1>
     <p class="lede">From Cairns to the Gold Coast, shipped direct from our base. Draw your
       room, see the price as you go, and get the cut list before you pay.</p>
     <p style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap">
