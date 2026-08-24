@@ -54,11 +54,37 @@ PRICE_ANCHOR = '4,490'
 def phone_link(cls='', track='phone'):
     """A tel: link, or the TBC marker if the number is ever unset."""
     if not PHONE_DISPLAY:
-        return '<span class="tbc">[TBC: PHONE NUMBER]</span>'
+        return ''          # absence, never a placeholder -- see abn_line()
     c = ' class="%s"' % cls if cls else ''
     return '<a href="tel:%s"%s data-track="%s">%s</a>' % (
         PHONE_TEL, c, track, PHONE_DISPLAY)
 
 
 def abn_line():
-    return ('ABN %s' % ABN) if ABN else '<span class="tbc">[TBC: ABN]</span>'
+    """The ABN, or nothing.
+
+    An unconfirmed value renders as absence, not as a visible [TBC].
+    A placeholder in a footer is a note-to-self published to customers:
+    it reads as an unfinished site, and "ABN: to be confirmed" damages
+    trade credibility more than simply not listing one does. The gap is
+    tracked in PLACEHOLDERS.md, which is where it belongs.
+    """
+    return ('ABN %s' % ABN) if ABN else ''
+
+
+# --- placeholder policy ------------------------------------------------
+# False: unconfirmed facts render as absence on customer-facing pages.
+# A [TBC] in front of a buyer is a note-to-self published by accident --
+# it reads as an unfinished site and costs more trust than the missing
+# fact does. The gaps stay tracked in PLACEHOLDERS.md, which is the right
+# place for them.
+#
+# The noindex legal drafts are the deliberate exception: those pages
+# announce themselves as unfinished, so naming what is missing is honest
+# rather than sloppy.
+SHOW_PLACEHOLDERS = False
+
+
+def tbc(text):
+    """Render a [TBC: ...] marker only when placeholders are switched on."""
+    return text if SHOW_PLACEHOLDERS else ''

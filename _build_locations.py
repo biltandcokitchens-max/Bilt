@@ -313,6 +313,21 @@ def esc(t):
     return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
+TBC_RE = re.compile(r'\s*\[TBC:[^\]]*\]')
+
+
+def strip_tbc(t):
+    """Remove [TBC: ...] markers from customer-facing copy.
+
+    Applied to FAQ answers AND to the schema generated from them, so the
+    visible text and the structured data cannot drift -- a [TBC] leaking
+    into a FAQPage node would be published straight to Google.
+    """
+    if F.SHOW_PLACEHOLDERS:
+        return t
+    return re.sub(r'\s{2,}', ' ', TBC_RE.sub('', t)).strip()
+
+
 def mast(depth):
     up = '../' * depth
     return '''<header class="mast">
@@ -372,7 +387,7 @@ def foot(depth, towns):
 </footer>''' % {'up': up, 'links': links,
        'phone': F.phone_link(track='loc-phone'),
        'email': F.EMAIL,
-       'abn': ('' if F.ABN else '<p class="tbc" style="margin-top:1rem">[TBC: ABN]</p>')}
+       'abn': ('<p style="margin-top:1rem">%s</p>' % F.abn_line()) if F.ABN else ''}
 
 
 def price_cards(depth):
@@ -392,6 +407,9 @@ def price_cards(depth):
 def faq_html(faqs):
     out = ['<div class="faq">']
     for q, a in faqs:
+        a = strip_tbc(a)
+        if not a:
+            continue            # the answer was nothing but a placeholder
         out.append('  <details>\n    <summary>%s</summary>\n    <div class="faq__a"><p>%s</p></div>\n  </details>'
                    % (esc(q), esc(a)))
     out.append('</div>')
@@ -455,8 +473,8 @@ def schema(page_url, title, desc, crumbs, faqs, area=None):
             "@type": "FAQPage", "@id": page_url + "#faq",
             "mainEntity": [
                 {"@type": "Question", "name": q,
-                 "acceptedAnswer": {"@type": "Answer", "text": a}}
-                for q, a in faqs]})
+                 "acceptedAnswer": {"@type": "Answer", "text": strip_tbc(a)}}
+                for q, a in faqs if strip_tbc(a)]})
     return json.dumps({"@context": "https://schema.org", "@graph": graph},
                       indent=2, ensure_ascii=False)
 
@@ -585,8 +603,7 @@ def build_town(t):
     <div class="grid3">
 %(cards)s
     </div>
-    <p class="tbc">[TBC: DELIVERY COST AND LEAD TIME TO %(TOWN)s]</p>
-  </div>
+%(tbcblock)s  </div>
 </section>
 
 <section class="sec sec--tint">
@@ -612,7 +629,9 @@ def build_town(t):
         crumbs=crumbs_html(crumbs), region=esc(t['region']), h1=t['h1'],
         lede=esc(t['lede']), up=up, hero=t['hero'], heroalt=esc(t['heroalt']),
         sections='\n\n'.join(sections), quote=quote, anchor=ANCHOR,
-        cards=price_cards(depth), TOWN=t['name'].upper(), name=esc(t['name']),
+        cards=price_cards(depth), name=esc(t['name']),
+        tbcblock=F.tbc('    <p class="tbc">[TBC: DELIVERY COST AND LEAD TIME TO %s]</p>\n'
+                       % t['name'].upper()),
         faq=faq_html(t['faqs']), hub=HUB_SLUG)
 
     html = PAGE % dict(

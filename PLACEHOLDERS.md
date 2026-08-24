@@ -6,6 +6,12 @@ Write your answer on the `➜` line under each item. Leave anything you don't kn
 
 Nothing here was guessed. Every one of these is a fact only you have.
 
+> **Placeholders no longer render on customer-facing pages.** `_facts.py` has
+> `SHOW_PLACEHOLDERS = False`, so an unconfirmed fact renders as *absence* rather
+> than as a visible `[TBC]`. The only exception is the three `noindex` legal
+> drafts, which openly say they are unfinished — there, naming the gap is honest
+> rather than sloppy. This file is now the single record of what is missing.
+
 ---
 
 ## 🔴 BLOCKERS — these stop local SEO working at all
@@ -15,7 +21,7 @@ Nothing here was guessed. Every one of these is a fact only you have.
 
 *On registering a local number:* not worth it. Australia has four area codes, so Rockhampton, Gladstone, Yeppoon, Emerald, Biloela **and** Brisbane are all `07` — there is no per-town number to register. GBP accepts mobiles with no ranking penalty, and NAP consistency (one number, identical everywhere) matters far more than the prefix. If you later want the regional look, get **one** `07 49` number that diverts to the mobile, change the three lines in `_facts.py`, rebuild, and update GBP the same day. Never run two numbers at once.
 
-### 2. ABN — still outstanding (9 instances)
+### 2. ABN — still outstanding (no longer shown on the site)
 ACN **700 798 509** is confirmed and already rendering in every footer's legal line — that was never missing.
 
 **ACN and ABN are different numbers.** For a company the ABN is your ACN with a two-digit prefix, 11 digits total. I will not guess the prefix — a derived one was checked earlier in this project and ABR returned no record. Look it up free at **abr.business.gov.au** and paste the 11 digits.
