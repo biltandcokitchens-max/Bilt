@@ -16,6 +16,8 @@
 /_build_redirects.py /404.html 404!
 /_build_usecases.py /404.html 404!
 /_cities_qld.py /404.html 404!
+/_cities_qld_coast.py /404.html 404!
+/_cities_qld_mining.py /404.html 404!
 /_cities_qld_north.py /404.html 404!
 /_facts.py /404.html 404!
 /_reviews.html /404.html 404!

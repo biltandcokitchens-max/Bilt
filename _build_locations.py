@@ -351,11 +351,39 @@ TOWNS = [
 # module appears everywhere without another edit.
 import _cities_qld as _cq
 import _cities_qld_north as _cqn
+import _cities_qld_mining as _cqm
+import _cities_qld_coast as _cqc
 
-ALL_PLACES = TOWNS + _cq.CITIES + _cqn.CITIES_NORTH
+ALL_PLACES = (TOWNS + _cq.CITIES + _cqn.CITIES_NORTH
+              + _cqm.CITIES_MINING + _cqc.CITIES_COAST)
 
 _seen = [p['slug'] for p in ALL_PLACES]
 assert len(_seen) == len(set(_seen)), 'duplicate slug: %s' % _seen
+
+
+    # Grouped to the war-map clusters rather than by size, so the hub
+# reads as a service map of Central Queensland with the south-east
+# attached, not as a list of cities ordered by population.
+CLUSTERS = [
+    ('Rockhampton and the Capricorn Coast',
+     ['rockhampton', 'gracemere', 'yeppoon', 'emu-park']),
+    ('The Bowen Basin and mining corridor',
+     ['moranbah', 'blackwater', 'dysart', 'clermont']),
+    # Emerald is the gateway to the Central West, so pairing it with
+    # Longreach is geographically honest as well as being the only way
+    # Longreach gets a sibling to link to at all.
+    ('The Central Highlands and Central West',
+     ['emerald', 'longreach']),
+    ('Gladstone region and the Dawson Valley',
+     ['gladstone', 'tannum-sands', 'biloela']),
+    ('Mackay and the Whitsundays',
+     ['mackay', 'sarina', 'airlie-beach']),
+    ('Wide Bay and the north',
+     ['bundaberg', 'hervey-bay', 'townsville', 'cairns']),
+    ('South East Queensland',
+     ['brisbane', 'gold-coast', 'sunshine-coast', 'ipswich', 'logan',
+      'caboolture', 'toowoomba']),
+]
 
 
 # -------------------------------------------------------------- template
@@ -603,6 +631,43 @@ def crumbs_html(items):
 
 
 # ------------------------------------------------------------ town pages
+def nearby_html(t, up):
+    """Link a town to the other towns in its war-map cluster.
+
+    Regional authority comes from places pointing at each other, not only
+    from every page pointing up at a hub. Without this the newer towns
+    carried a single inbound link each while the originals had 26.
+    """
+    slug = t['slug']
+    cluster = next((name for name, slugs in CLUSTERS if slug in slugs), None)
+    if not cluster:
+        return ''
+    by = {c['slug']: c for c in ALL_PLACES}
+    sibs = [by[x] for x in dict(CLUSTERS)[cluster] if x != slug and x in by]
+    if not sibs:
+        # A cluster of one renders no links at all, which is how a page
+        # ends up with a single inbound link and nobody notices.
+        print('  WARNING: %s alone in its cluster - no nearby links' % t['slug'])
+        return ''
+    row = ('  <li><a href="%skitchens/%s/">\n'
+           '    <h3>%s</h3>\n'
+           '    <p>%s</p>\n'
+           '  </a></li>')
+    items = '\n'.join(
+        row % (up, o['slug'], esc(o['name']), esc(o['blurb'])) for o in sibs)
+    return '''<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">%s</p>
+    <h2 class="narrow">Also delivering nearby.</h2>
+    <ul class="towns">
+%s
+    </ul>
+    <p style="margin-top:1.5rem;font-size:.9375rem;color:#6F6A61">
+      See every town across <a href="%skitchens/queensland/">Queensland</a>.</p>
+  </div>
+</section>''' % (esc(cluster), items, up)
+
+
 def build_town(t):
     depth = 2
     up = '../' * depth
@@ -697,8 +762,7 @@ def build_town(t):
     <p style="margin-top:2rem">
       <a class="btn btn--solid" href="%(up)sroomplanner/#/plan" data-track="loc-foot-cta">Open the planner</a>
     </p>
-    <p style="margin-top:2rem;font-size:.9375rem;color:#6F6A61">
-      Also serving <a href="%(up)skitchens/%(hub)s/">the rest of Central Queensland</a>.</p>
+%(nearby)s
   </div>
 </section>''' % dict(
         crumbs=crumbs_html(crumbs), region=esc(t['region']), h1=t['h1'],
@@ -707,7 +771,7 @@ def build_town(t):
         cards=price_cards(depth), name=esc(t['name']),
         tbcblock=F.tbc('    <p class="tbc">[TBC: DELIVERY COST AND LEAD TIME TO %s]</p>\n'
                        % t['name'].upper()),
-        faq=faq_html(t['faqs']), hub=HUB_SLUG)
+        faq=faq_html(t['faqs']), hub=HUB_SLUG, nearby=nearby_html(t, up))
 
     desc = t['desc']
     if '%s' in desc:
@@ -886,13 +950,7 @@ def build_state_hub():
             'Gold Coast. Priced on the page. Complete kitchens from $%s.' % ANCHOR)
     crumbs = [('Home', SITE + '/'), ('Queensland', url)]
 
-    groups = [
-        ('South East Queensland', ['brisbane', 'gold-coast', 'sunshine-coast',
-                                   'ipswich', 'logan', 'caboolture', 'toowoomba']),
-        ('Central Queensland', ['rockhampton', 'gladstone', 'yeppoon', 'emerald', 'biloela']),
-        ('Wide Bay and the North', ['bundaberg', 'hervey-bay', 'mackay',
-                                    'townsville', 'cairns']),
-    ]
+    groups = CLUSTERS
     by_slug = {c['slug']: c for c in ALL_PLACES}
 
     blocks = []
@@ -904,7 +962,7 @@ def build_state_hub():
   </a></li>''' % (up, s, esc(by_slug[s]['name']), esc(by_slug[s]['blurb']))
             for s in slugs if s in by_slug)
         extra = ''
-        if heading == 'Central Queensland':
+        if heading == 'The Bowen Basin and mining corridor':
             extra = ('<p style="margin-top:1.25rem"><a href="%skitchens/%s/">'
                      'More on delivering across Central Queensland</a></p>' % (up, HUB_SLUG))
         blocks.append('''<section class="sec">
