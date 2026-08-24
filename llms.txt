@@ -39,6 +39,18 @@ Supplied flat-packed with a cut list, setout drawings and all hardware. No cabin
 - [Kitchens in Queensland](https://biltstudio.com.au/kitchens/queensland/): state hub linking every city.
 - [Central Queensland](https://biltstudio.com.au/kitchens/central-queensland/): regional hub.
 
+### Building or renovating
+
+Pages for people mid-build who have not bought a kitchen yet:
+
+- [New builds & renovations](https://biltstudio.com.au/kitchens/new-builds/) — hub
+- [Class 1a builds](https://biltstudio.com.au/kitchens/class-1a/) — what the NCC class covers, and where the kitchen sits in the build program
+- [Granny flats](https://biltstudio.com.au/kitchens/granny-flat/) — secondary dwellings, generally Class 1a
+- [Tiny homes](https://biltstudio.com.au/kitchens/tiny-home/) — on wheels (generally a registrable vehicle, not a Class 1a building) vs on a fixed foundation (generally Class 1a)
+- [Modular and prefab](https://biltstudio.com.au/kitchens/modular/) — still Class 1a; factory tolerances
+
+BILT Studio supplies cabinetry and is not a building certifier. Classification and approval are decided by a certifier and the local council.
+
 ### City pages
 
 Each covers what that place actually asks of a kitchen — housing stock, climate and market — rather than repeating the same copy:

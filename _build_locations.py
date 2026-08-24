@@ -383,6 +383,14 @@ def foot(depth, towns):
           <li><a href="%(up)s#bl-range">The signature range</a></li>
           <li><a href="%(up)s#bl-trade">Trade account</a></li>
         </ul>
+        <h4 style="margin-top:1.75rem">Building or renovating</h4>
+        <ul>
+          <li><a href="%(up)skitchens/new-builds/">New builds &amp; renovations</a></li>
+          <li><a href="%(up)skitchens/class-1a/">Class 1a builds</a></li>
+          <li><a href="%(up)skitchens/granny-flat/">Granny flats</a></li>
+          <li><a href="%(up)skitchens/tiny-home/">Tiny homes</a></li>
+          <li><a href="%(up)skitchens/modular/">Modular builds</a></li>
+        </ul>
       </div>
       <div>
         <h4>Queensland</h4>
