@@ -2,6 +2,107 @@
 [build]
   publish = "."
 
+# ---------------------------------------------------------------------
+# Keep the source out of the public site.
+#
+# publish = "." serves this whole directory, which means the handoff doc,
+# the SEO and placeholder notes, every generator script and the database
+# schema were all reachable over HTTP. BILT_STUDIO_HANDOFF.md and
+# package.json were confirmed live before these rules were added.
+#
+# robots.txt does not help here -- it asks crawlers not to LIST a file,
+# it does not stop anyone fetching it. These rules return a real 404.
+#
+# force = true is required: without it a rule only applies when no file
+# exists at that path, which is exactly backwards for this job.
+# ---------------------------------------------------------------------
+
+[[redirects]]
+  from = "/*.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.py"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/*.ts"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/vercel.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Working files that are not pages.
+[[redirects]]
+  from = "/hero.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/_reviews.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Directories with nothing public in them. Functions still run normally --
+# these rules block reading the SOURCE at /netlify/..., not the deployed
+# function endpoints at /.netlify/functions/...
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/db/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/node_modules/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/__pycache__/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------
+# Routing
+# ---------------------------------------------------------------------
+
 # Trailing-slash tidy-up so /roomplanner resolves
 [[redirects]]
   from = "/roomplanner"
@@ -11,4 +112,25 @@
 [[redirects]]
   from = "/planner"
   to = "/roomplanner/"
+  status = 301
+
+# Short paths people guess, pointed at the pages that answer them.
+[[redirects]]
+  from = "/kitchens"
+  to = "/kitchens/queensland/"
+  status = 301
+
+[[redirects]]
+  from = "/queensland"
+  to = "/kitchens/queensland/"
+  status = 301
+
+[[redirects]]
+  from = "/granny-flat"
+  to = "/kitchens/granny-flat/"
+  status = 301
+
+[[redirects]]
+  from = "/tiny-home"
+  to = "/kitchens/tiny-home/"
   status = 301
