@@ -338,18 +338,41 @@ input[type=range]{accent-color:#8A5E3A}
         <div class="hero__scrim"></div>
       </div>
 
-      <div class="hero__inner">
-        <p class="hero__brand" data-hero-el="brand">BILT STUDIO</p>
+      <!-- The intro. BILT builds itself a letter at a time over the
+           film, asks for the scroll, and retires two seconds into the
+           clip once that scroll has been taken. Centred on the stage,
+           and out of the flow so the headline below keeps its own
+           left-aligned column rather than being pushed down by it. -->
+      <div class="hero__intro" data-hero-el="intro">
+        <p class="hero__wordmark" aria-label="BILT">
+            <span class="hero__ch" aria-hidden="true"><span class="hero__ch-in">B</span></span>
+            <span class="hero__ch" aria-hidden="true"><span class="hero__ch-in">I</span></span>
+            <span class="hero__ch" aria-hidden="true"><span class="hero__ch-in">L</span></span>
+            <span class="hero__ch" aria-hidden="true"><span class="hero__ch-in">T</span></span>
+        </p>
+        <p class="hero__prompt">
+          <span class="hero__prompt-text">Scroll to build your kitchen</span>
+          <span class="hero__prompt-arrow" aria-hidden="true">
+            <svg viewBox="0 0 16 22" width="16" height="22" fill="none" aria-hidden="true">
+              <path d="M8 1v19M1.5 13.5 8 20.5l6.5-7" stroke="currentColor"
+                    stroke-width="1.4" stroke-linecap="square"></path>
+            </svg>
+          </span>
+        </p>
+      </div>
 
-        <h1 class="hero__headline">
-          <span class="hero__line" data-hero-el="line1">Beautiful kitchens.</span>
-          <span class="hero__line" data-hero-el="line2">Smarter by design.</span>
+      <!-- The offer. Held back until the film reaches 4s, then arrives
+           in reading order: headline, line, buttons. -->
+      <div class="hero__inner">
+        <h1 class="hero__headline" data-hero-el="headline">
+          <span class="hero__line">Beautiful kitchens.</span>
+          <span class="hero__line">Smarter by design.</span>
         </h1>
 
         <p class="hero__sub" data-hero-el="sub">
           <span class="hero__sub-lead">Architectural kitchens, intelligently sourced.</span>
           <span class="hero__sub-rest">Premium materials, considered design and transparent
-            pricing — without the traditional showroom markup.</span>
+            pricing &mdash; without the traditional showroom markup.</span>
         </p>
 
         <div class="hero__cta" data-hero-el="cta">
@@ -359,14 +382,10 @@ input[type=range]{accent-color:#8A5E3A}
           <a class="hero__btn hero__btn--ghost" href="#bl-range" data-track="hero-explore">
             Explore kitchens
           </a>
+          <p class="hero__meta">Direct sourced &middot; Designed in Australia &middot; Transparent pricing</p>
         </div>
-
-        <p class="hero__meta">Direct sourced · Designed in Australia · Transparent pricing</p>
       </div>
 
-      <div class="hero__hint" data-hero-el="hint" aria-hidden="true">
-        <span class="hero__hint-rule"></span>Keep scrolling
-      </div>
     </div>
   </div>
 </section>

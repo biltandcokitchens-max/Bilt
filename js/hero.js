@@ -25,6 +25,26 @@
   const isStatic = () => reduced.matches;
 
 
+  /* The hero is cut to the film's own clock: every cue below is a
+     position in the clip, in seconds, and scroll is the transport that
+     reaches it. Authoring it this way means the beats stay put if the
+     track height changes — only the amount of scrolling needed to get
+     there moves.
+
+     The clip is 10.33s, so the composition is fully assembled a little
+     past the halfway mark and holds for the rest of the scroll. */
+  const CUE = {
+    introOut: [1.2, 2.0],   // BILT and its instruction retire
+    headline: [4.0, 4.8],   // "Beautiful kitchens. / Smarter by design."
+    sub:      [4.7, 5.4],   // the supporting line, between the two
+    cta:      [5.5, 6.3],   // the buttons resolve in place
+  };
+
+  /* Used until the video reports its own duration — and permanently if
+     it never loads at all. Without it a failed video would freeze the
+     clock at zero and the headline and buttons would never arrive. */
+  const NOMINAL_DURATION = 10.33;
+
   let hero = null, parts = null, media = null, video = null;
 
   /* --- helpers ---------------------------------------------------- */
@@ -34,32 +54,35 @@
   function paint(p) {
     if (!hero) return;
 
-    /* Scroll is the film's transport. The wordmark, headline and
-       buttons still arrive on load — so the frame is never empty — but
-       the subheading is held back and brought in by scroll.
-
-       Readiness is tested here rather than latched from a one-shot
+    /* Readiness is tested here rather than latched from a one-shot
        'loadeddata' listener — a cached video can be ready before the
        listener is attached, which would leave the film loaded but
        permanently invisible. */
-    if (video && video.readyState >= 2 && Number.isFinite(video.duration)) {
+    let duration = NOMINAL_DURATION;
+    if (video && video.readyState >= 2 && video.duration > 0
+        && Number.isFinite(video.duration)) {
       if (!video.classList.contains('is-ready')) video.classList.add('is-ready');
-      /* Scroll maps onto the whole clip — every frame gets shown. The
-         opening seconds are the palest part of the film (on the portrait
-         crop, worst at t=1.8: mean luma 140, sd 26), which is why the wash
-         over it is kept light rather than the footage being skipped. */
-      const target = p * video.duration;
+      duration = video.duration;
+      /* Scroll maps onto the whole clip — every frame gets shown. */
+      const target = p * duration;
       if (Math.abs(video.currentTime - target) > 0.03) video.currentTime = target;
     }
 
-    /* The subheading arrives as the scroll continues, a little after
-       the film has started moving. */
-    const sub = span(p, 0.06, 0.30);
-    parts.sub.style.opacity = sub;
-    parts.sub.style.transform = `translate3d(0, ${(1 - sub) * 24}px, 0)`;
+    const t = p * duration;   // where we are in the film, in seconds
 
-    // the prompt to scroll retires once you have taken it
-    parts.hint.style.opacity = 1 - span(p, 0.15, 0.4);
+    // BILT and its instruction have done their job by 2s and leave
+    parts.intro.style.opacity = 1 - span(t, CUE.introOut[0], CUE.introOut[1]);
+
+    // the offer arrives in reading order, opacity only — nothing travels
+    parts.headline.style.opacity = span(t, CUE.headline[0], CUE.headline[1]);
+    parts.sub.style.opacity = span(t, CUE.sub[0], CUE.sub[1]);
+
+    /* The buttons resolve where they already sit rather than sliding
+       in: they settle out of a slight contraction, so the eye is drawn
+       back to them without anything crossing the frame. */
+    const cta = span(t, CUE.cta[0], CUE.cta[1]);
+    parts.cta.style.opacity = cta;
+    parts.cta.style.transform = 'scale(' + (0.965 + cta * 0.035) + ')';
   }
 
   /* --- progress through the sticky track -------------------------- */
@@ -112,13 +135,12 @@
 
   let near = null;
 
-  /* Static composition: hand the subheading back to CSS, which shows it
-     unconditionally without the is-scrub class. */
+  /* Static composition: hand every timed element back to CSS, which
+     shows them all unconditionally without the is-scrub class. */
   function reset() {
     if (!hero) return;
     hero.classList.remove('is-scrub');
-    parts.hint.style.cssText = '';
-    parts.sub.style.cssText = '';
+    for (const el of Object.values(parts)) el.style.cssText = '';
   }
 
   function sync() {
@@ -138,8 +160,8 @@
     hero = el;
     const pick = (name) => hero.querySelector(`[data-hero-el="${name}"]`);
     parts = {
-      brand: pick('brand'), line1: pick('line1'), line2: pick('line2'),
-      sub: pick('sub'), cta: pick('cta'), hint: pick('hint'),
+      intro: pick('intro'), headline: pick('headline'),
+      sub: pick('sub'), cta: pick('cta'),
     };
     media = hero.querySelector('[data-hero-media]');
     video = hero.querySelector('[data-hero-video]');
