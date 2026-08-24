@@ -39,6 +39,7 @@ RANGES = [
 ]
 
 HUB_SLUG = 'central-queensland'
+STATE_SLUG = 'queensland'
 
 
 # ----------------------------------------------------------------- towns
@@ -308,12 +309,39 @@ TOWNS = [
 ]
 
 
+# The Central Queensland towns plus the twelve wider-Queensland cities.
+# build_town() and the footer both walk this, so a city added to either
+# module appears everywhere without another edit.
+import _cities_qld as _cq
+import _cities_qld_north as _cqn
+
+ALL_PLACES = TOWNS + _cq.CITIES + _cqn.CITIES_NORTH
+
+_seen = [p['slug'] for p in ALL_PLACES]
+assert len(_seen) == len(set(_seen)), 'duplicate slug: %s' % _seen
+
+
 # -------------------------------------------------------------- template
 def esc(t):
     return t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
 TBC_RE = re.compile(r'\s*\[TBC:[^\]]*\]')
+
+
+# Freight was unknown when these pages were first written, so the copy
+# carried [TBC] markers. It is confirmed now -- quoted per order after a
+# team member checks the 3D plan -- so those markers resolve to the real
+# process instead of being deleted. Anything still genuinely unknown
+# (the damage/returns policy) keeps falling through to strip_tbc.
+FREIGHT_MARKERS = re.compile(
+    r'\[TBC: (?:DELIVERY COST AND LEAD TIME TO [^\]]*|'
+    r'LEAD TIME FROM ORDER TO DELIVERY|'
+    r'FULL DELIVERY AREA, COST AND LEAD TIMES)\]')
+
+
+def resolve_freight(t):
+    return FREIGHT_MARKERS.sub(F.FREIGHT_NOTE, t)
 
 
 def strip_tbc(t):
@@ -323,6 +351,7 @@ def strip_tbc(t):
     visible text and the structured data cannot drift -- a [TBC] leaking
     into a FAQPage node would be published straight to Google.
     """
+    t = resolve_freight(t)
     if F.SHOW_PLACEHOLDERS:
         return t
     return re.sub(r'\s{2,}', ' ', TBC_RE.sub('', t)).strip()
@@ -356,9 +385,10 @@ def foot(depth, towns):
         </ul>
       </div>
       <div>
-        <h4>Central Queensland</h4>
+        <h4>Queensland</h4>
         <ul>
-          <li><a href="%(up)skitchens/central-queensland/">All of Central Queensland</a></li>
+          <li><a href="%(up)skitchens/queensland/">All of Queensland</a></li>
+          <li><a href="%(up)skitchens/central-queensland/">Central Queensland</a></li>
 %(links)s
         </ul>
       </div>
@@ -539,9 +569,16 @@ def build_town(t):
     depth = 2
     up = '../' * depth
     url = '%s/kitchens/%s/' % (SITE, t['slug'])
+    # Root -> state -> (region) -> city. The Central Queensland towns keep
+    # their regional hub in the trail because it is a real intermediate
+    # page; the rest hang straight off the state. A city that claims to
+    # sit under a region it is not in is a broken trail in the eyes of a
+    # crawler and a confusing one for a reader.
     crumbs = [('Home', SITE + '/'),
-              ('Central Queensland', '%s/kitchens/%s/' % (SITE, HUB_SLUG)),
-              (t['name'], url)]
+              ('Queensland', '%s/kitchens/%s/' % (SITE, STATE_SLUG))]
+    if t in TOWNS:
+        crumbs.append(('Central Queensland', '%s/kitchens/%s/' % (SITE, HUB_SLUG)))
+    crumbs.append((t['name'], url))
 
     sections = []
     for i, (heading, paras) in enumerate(t['body']):
@@ -634,10 +671,13 @@ def build_town(t):
                        % t['name'].upper()),
         faq=faq_html(t['faqs']), hub=HUB_SLUG)
 
+    desc = t['desc']
+    if '%s' in desc:
+        desc = desc % ANCHOR
     html = PAGE % dict(
-        title=esc(t['title']), desc=esc(t['desc']), url=url, site=SITE,
+        title=esc(t['title']), desc=esc(desc), url=url, site=SITE,
         hero=t['hero'], up=up,
-        schema=schema(url, t['title'], t['desc'], crumbs, t['faqs'], area=t['name']),
+        schema=schema(url, t['title'], desc, crumbs, t['faqs'], area=t['name']),
         mast=mast(depth), main=main, foot=foot(depth, TOWNS))
 
     d = os.path.join(ROOT, 'kitchens', t['slug'])
@@ -654,7 +694,9 @@ def build_hub():
     title = 'Flat Pack Kitchens Central Queensland | Cut-to-Size Cabinetry | BILT Studio'
     desc = ('Cut-to-size flat pack kitchens delivered across Central Queensland — Rockhampton, '
             'Gladstone, Yeppoon, Emerald and Biloela. Complete kitchens from $%s.' % ANCHOR)
-    crumbs = [('Home', SITE + '/'), ('Central Queensland', url)]
+    crumbs = [('Home', SITE + '/'),
+              ('Queensland', '%s/kitchens/%s/' % (SITE, STATE_SLUG)),
+              ('Central Queensland', url)]
 
     towns_html = '\n'.join(
         '''  <li><a href="%skitchens/%s/">
@@ -789,13 +831,168 @@ def build_sitemap(urls):
     return len(urls)
 
 
+def build_state_hub():
+    """The Queensland hub.
+
+    Sits between the site root and the individual cities so the set has a
+    spine: root -> state -> city, with Central Queensland hanging off it
+    as a regional cluster. Without it, eighteen city pages all link
+    sideways to each other and nothing consolidates.
+    """
+    depth = 2
+    up = '../' * depth
+    slug = 'queensland'
+    url = '%s/kitchens/%s/' % (SITE, slug)
+    title = 'Flat Pack Kitchens Queensland | Cut-to-Size Cabinetry | BILT Studio'
+    desc = ('Cut-to-size flat pack kitchens delivered across Queensland, from Cairns to the '
+            'Gold Coast. Priced on the page. Complete kitchens from $%s.' % ANCHOR)
+    crumbs = [('Home', SITE + '/'), ('Queensland', url)]
+
+    groups = [
+        ('South East Queensland', ['brisbane', 'gold-coast', 'sunshine-coast',
+                                   'ipswich', 'logan', 'caboolture', 'toowoomba']),
+        ('Central Queensland', ['rockhampton', 'gladstone', 'yeppoon', 'emerald', 'biloela']),
+        ('Wide Bay and the North', ['bundaberg', 'hervey-bay', 'mackay',
+                                    'townsville', 'cairns']),
+    ]
+    by_slug = {c['slug']: c for c in ALL_PLACES}
+
+    blocks = []
+    for heading, slugs in groups:
+        items = '\n'.join(
+            '''  <li><a href="%skitchens/%s/">
+    <h3>%s</h3>
+    <p>%s</p>
+  </a></li>''' % (up, s, esc(by_slug[s]['name']), esc(by_slug[s]['blurb']))
+            for s in slugs if s in by_slug)
+        extra = ''
+        if heading == 'Central Queensland':
+            extra = ('<p style="margin-top:1.25rem"><a href="%skitchens/%s/">'
+                     'More on delivering across Central Queensland</a></p>' % (up, HUB_SLUG))
+        blocks.append('''<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">%s</p>
+    <ul class="towns">
+%s
+    </ul>%s
+  </div>
+</section>''' % (esc(heading), items, extra))
+
+    faqs = [
+        ("Do you deliver anywhere in Queensland?",
+         "Yes. Everything ships direct from our base, flat-packed, so there is no showroom "
+         "network to be near and no regional surcharge for being outside the south-east. " +
+         F.FREIGHT_NOTE),
+        ("How is delivery priced?",
+         F.FREIGHT_NOTE + " That way the quote reflects the kitchen you actually drew rather "
+         "than a guess at its size."),
+        ("How is cut-to-size different from chain store flat pack?",
+         "Chain store flat pack comes in fixed module widths, so a wall that is not a neat "
+         "multiple gets made up with filler panels. Every carcass here is cut to the dimensions "
+         "you enter, so the cabinetry fits the room rather than the other way around."),
+        ("What is included in the price?",
+         "Carcasses, doors, Blum hardware — CLIP top BLUMOTION hinges and TANDEMBOX antaro "
+         "runners — and a quartz or granite benchtop. Marble is a paid upgrade. There is no "
+         "laminate or timber benchtop option."),
+    ]
+
+    main = '''%(crumbs)s
+
+<section class="hero-block">
+  <div class="wrap">
+    <p class="eyebrow">Queensland</p>
+    <h1>Flat pack kitchens,<br>across Queensland.</h1>
+    <p class="lede">From Cairns to the Gold Coast, shipped direct from our base. Draw your
+      room, see the price as you go, and get the cut list before you pay.</p>
+    <p style="margin-top:2rem;display:flex;gap:.75rem;flex-wrap:wrap">
+      <a class="btn btn--solid" href="%(up)sroomplanner/#/plan" data-track="qld-hero-planner">Design your kitchen</a>
+      <a class="btn btn--ghost" href="#towns">Find your city</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2 class="narrow">One base, one price list, the whole state.</h2>
+    <div class="narrow" style="margin-top:1.5rem">
+      <p>Kitchens are normally sold through a showroom network, which is why what you pay
+        depends partly on where you live. We ship direct from our base instead, so the
+        cabinetry costs the same in Cairns as it does in Brisbane.</p>
+      <p>%(freight)s</p>
+      <p>Queensland is not one market, though. A tower apartment on the Gold Coast, a
+        character Queenslander in Paddington, a rental between postings in Townsville and a
+        homestead outside Emerald all want different things from a kitchen — so each city
+        page below deals with what that place actually asks for.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--tint" id="towns">
+  <div class="wrap">
+    <p class="eyebrow">Where we deliver</p>
+    <h2 class="narrow">Find your city.</h2>
+  </div>
+</section>
+
+%(blocks)s
+
+<section class="sec sec--tint" id="ranges">
+  <div class="wrap">
+    <p class="eyebrow">The ranges</p>
+    <h2 class="narrow">Complete kitchens, from $%(anchor)s.</h2>
+    <div class="grid3">
+%(cards)s
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="narrow">Delivering across Queensland.</h2>
+%(faq)s
+  </div>
+</section>
+
+<section class="sec sec--tint">
+  <div class="wrap narrow">
+    <h2>Draw it. See the price.</h2>
+    <p style="margin-top:1.25rem;color:var(--muted)">No showroom appointment, no sales visit,
+      and no waiting on a quote.</p>
+    <p style="margin-top:2rem">
+      <a class="btn btn--solid" href="%(up)sroomplanner/#/plan" data-track="qld-foot-cta">Open the planner</a>
+    </p>
+  </div>
+</section>''' % dict(crumbs=crumbs_html(crumbs), up=up, blocks='\n\n'.join(blocks),
+                     anchor=ANCHOR, cards=price_cards(depth), faq=faq_html(faqs),
+                     freight=F.FREIGHT_NOTE)
+
+    html = PAGE % dict(
+        title=esc(title), desc=esc(desc), url=url, site=SITE,
+        hero='why-we-do-this.jpg', up=up,
+        schema=schema(url, title, desc, crumbs, faqs, area='Queensland'),
+        mast=mast(depth), main=main, foot=foot(depth, TOWNS))
+
+    d = os.path.join(ROOT, 'kitchens', slug)
+    os.makedirs(d, exist_ok=True)
+    io.open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(html)
+    return url, len(re.sub(r'<[^>]+>', ' ', main).split())
+
+
 if __name__ == '__main__':
     urls = [(SITE + '/', '1.0'), (SITE + '/roomplanner/', '0.8')]
+
+    u, w = build_state_hub()
+    urls.append((u, '0.9'))
+    print('%-48s %4d words' % (u, w))
+
     hub_url, hub_words = build_hub()
     urls.append((hub_url, '0.9'))
-    print('%-46s %4d words' % (hub_url, hub_words))
-    for t in TOWNS:
+    print('%-48s %4d words' % (hub_url, hub_words))
+
+    for t in ALL_PLACES:
         u, w = build_town(t)
         urls.append((u, '0.8'))
-        print('%-46s %4d words' % (u, w))
+        print('%-48s %4d words' % (u, w))
+
     print('sitemap.xml: %d urls' % build_sitemap(urls))

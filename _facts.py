@@ -44,6 +44,22 @@ PHONE_TEL = '+61401821848'      # E.164, for tel: hrefs and schema
 # asserting nothing. The Google Business Profile should be set up as a
 # service-area business with the address hidden.
 HAS_PREMISES = False
+
+# --- delivery ----------------------------------------------------------
+# Confirmed 24 Aug 2026: shipped direct from base, Australia-wide.
+# Freight is not a published rate card -- it is quoted per order after a
+# team member manually reviews the 3D plan from the room planner. That
+# is worth stating plainly rather than hiding: it answers the buyer's
+# real question ("what will delivery cost me?") with the true answer
+# ("a person checks your actual design first"), and it doubles as the
+# only human touchpoint in an otherwise self-serve funnel.
+SHIPS_NATIONALLY = True
+FREIGHT_NOTE = (
+    'Delivery is quoted per order, not off a rate card. Once you have drawn '
+    'your kitchen in the planner, one of our team checks the 3D plan by hand '
+    'and confirms freight to your address.')
+FREIGHT_SHORT = 'Freight is quoted per address once your plan is checked.'
+
 POSTAL_ADDRESS = None
 SERVICE_AREA_NOTE = 'Service-area business. Display in Queensland, by appointment.'
 
