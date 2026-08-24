@@ -95,8 +95,13 @@
 }
 </script>
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2316130F'/><path d='M8 8h9a5 5 0 0 1 0 10H8zM8 18h10a5 5 0 0 1 0 10H8z' fill='none' stroke='%238A5E3A' stroke-width='2.6'/></svg>">
 <link rel="stylesheet" href="css/hero.css">
+<!-- Maps the runtime's CDN URLs onto the vendored copies in assets/.
+     Without this the page fetches React from unpkg.com at runtime, and
+     the whole body is rendered by that runtime -- so an unreachable CDN
+     is a blank page, not a slow one. Must stay ahead of the runtime. -->
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/32d32c34.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/2ccc6499.js"};</script>
 <script src="assets/d46265b5.js"></script>
 </head>
 <body>
@@ -527,7 +532,7 @@ input[type=range]{accent-color:#8A5E3A}
   </div>
   <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(22,19,15,.13);border-top:1px solid rgba(22,19,15,.13);border-bottom:1px solid rgba(22,19,15,.13)" data-three="1">
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/compact.jpg" alt="Compact kitchenette in soft white with a single bowl sink." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="736" height="570" decoding="async" loading="lazy">
+      <img src="img-stock/compact.jpg" alt="Compact kitchenette in soft white with a single bowl sink." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Compact</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">2400</span> mm run · single bowl</p>
@@ -536,7 +541,7 @@ input[type=range]{accent-color:#8A5E3A}
       </div>
     </article>
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/granny-flat.jpg" alt="Mid-size kitchenette with tall pantry." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="854" height="900" decoding="async" loading="lazy">
+      <img src="img-stock/granny-flat.jpg" alt="Mid-size kitchenette with tall pantry." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Granny flat</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">2700</span> mm run · tall pantry</p>
@@ -545,7 +550,7 @@ input[type=range]{accent-color:#8A5E3A}
       </div>
     </article>
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/tiny-home.jpg" alt="Kitchenette with island in dark walnut." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="896" height="1344" decoding="async" loading="lazy">
+      <img src="img-stock/tiny-home.jpg" alt="Kitchenette with island in dark walnut." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Tiny home</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">3000</span> mm run · island option</p>
@@ -562,7 +567,7 @@ input[type=range]{accent-color:#8A5E3A}
   </div>
   <div data-rev="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(22,19,15,.13);border-top:1px solid rgba(22,19,15,.13);border-bottom:1px solid rgba(22,19,15,.13)" data-three="1">
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/tech-pantry-lift.jpg" alt="Pull-down overhead pantry storage, lowered to counter height." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="735" height="737" decoding="async" loading="lazy">
+      <img src="img-stock/tech-pantry-lift.jpg" alt="Pull-down overhead pantry storage, lowered to counter height." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Pull-down overheads</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
@@ -570,7 +575,7 @@ input[type=range]{accent-color:#8A5E3A}
       </div>
     </article>
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/tech-corner-pullout.jpg" alt="Blind-corner cabinet with pull-out storage trays extended." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="1080" height="1080" decoding="async" loading="lazy">
+      <img src="img-stock/tech-corner-pullout.jpg" alt="Blind-corner cabinet with pull-out storage trays extended." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Blind-corner pull-outs</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
@@ -578,7 +583,7 @@ input[type=range]{accent-color:#8A5E3A}
       </div>
     </article>
     <article style="background:#F4F2EE;display:grid;align-content:start">
-      <img src="img-stock/tech-plate-rack.jpg" alt="Overhead cabinet with a drop-down plate and dish rack extended above the sink." style="width:100%;aspect-ratio:4/3;object-fit:cover" width="736" height="1307" decoding="async" loading="lazy">
+      <img src="img-stock/tech-plate-rack.jpg" alt="Overhead cabinet with a drop-down plate and dish rack extended above the sink." style="width:100%;aspect-ratio:4/3;object-fit:cover" decoding="async" loading="lazy">
       <div style="padding:1.35rem clamp(1.1rem,2.5vw,1.75rem) 1.9rem;display:grid;gap:.55rem">
         <h4 style="margin:0;font-family:'Archivo',sans-serif;font-weight:700;font-stretch:110%;font-size:1.375rem;letter-spacing:-.015em">Drop-down drying racks</h4>
         <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.1em;text-transform:uppercase;color:#6F6A61"><span style="color:#8A5E3A">Available</span> as a fit-out option</p>
