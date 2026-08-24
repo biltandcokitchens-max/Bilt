@@ -407,8 +407,13 @@ input[type=range]{accent-color:#8A5E3A}
 <section id="bl-why" style="padding:clamp(4.5rem,12vh,8rem) 0 0">
   <p style="margin:0;padding:0 clamp(1.25rem,5vw,5rem);font-family:'IBM Plex Mono',monospace;font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:#6F6A61;display:flex;gap:1rem;align-items:center"><span>Why we do this</span><span style="flex:1;height:1px;background:rgba(22,19,15,.18)"></span></p>
   <div data-rev="1" style="display:grid;gap:0;grid-template-columns:1fr;margin-top:clamp(2rem,6vh,3.25rem)" data-two="1">
-    <div style="background:#F4F2EE;border-right:1px solid rgba(22,19,15,.13)">
-      <img src="img-stock/why-we-do-this.jpg" alt="Marble kitchen island with brass pendant lighting." style="width:100%;height:clamp(20rem,60vh,34rem);object-fit:cover;object-position:top;display:block">
+    <div style="background:#F4F2EE;border-right:1px solid rgba(22,19,15,.13);display:grid;place-items:center;padding:clamp(1.5rem,4vh,3rem) clamp(1.25rem,3vw,2.5rem)">
+      <!-- The photo is portrait (736x1104). It used to be cover-cropped
+           into a landscape box, which cut the kitchen itself off and left
+           only ceiling and upper cabinets. Sized to fit instead, so the
+           whole room is visible; capped by height so a wide viewport
+           cannot stretch the section past a screenful. -->
+      <img src="img-stock/why-we-do-this.jpg" alt="Marble kitchen island with brass pendant lighting." style="display:block;width:auto;max-width:100%;height:auto;max-height:min(78vh,40rem)">
     </div>
     <div style="background:#F4F2EE;padding:clamp(2.5rem,7vh,4rem) clamp(1.25rem,5vw,5rem);display:grid;align-content:center;gap:1.5rem">
       <p style="margin:0;font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(1.75rem,1.4rem + 2vw,3rem);line-height:1.3;letter-spacing:-.01em;color:#16130F;max-width:18ch">A kitchen quote should be a number, not a negotiation.</p>
