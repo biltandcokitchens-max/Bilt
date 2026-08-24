@@ -1,0 +1,15 @@
+# BILT Studio — https://biltstudio.com.au
+User-agent: *
+Allow: /
+
+# The planner is a client-side app. Its deep links are ephemeral UI state,
+# not pages, so keep crawlers on the entry point rather than letting them
+# chew through configurations that will never be stable URLs.
+Disallow: /roomplanner/#/
+Disallow: /*?plan=
+
+# Nothing here for a crawler.
+Disallow: /netlify/
+Disallow: /db/
+
+Sitemap: https://biltstudio.com.au/sitemap.xml
