@@ -104,3 +104,102 @@ SHOW_PLACEHOLDERS = False
 def tbc(text):
     """Render a [TBC: ...] marker only when placeholders are switched on."""
     return text if SHOW_PLACEHOLDERS else ''
+
+
+# --- what we sell, structured -----------------------------------------
+SLOGAN = 'A beautiful kitchen should not cost what you think.'
+
+# Confirmed ranges, BILT_STUDIO_HANDOFF.md sec.1
+CATALOG = [
+    ('Compact kitchen', '2400 mm', '4590',
+     'A complete 2400 mm cut-to-size kitchen: carcasses, doors, Blum hardware '
+     'and a quartz or granite benchtop.'),
+    ('Granny flat kitchen', '2700 mm', '5500',
+     'A complete 2700 mm cut-to-size kitchen for a secondary dwelling or a '
+     'converted under-house space.'),
+    ('Tiny home kitchen', '3000 mm', '7500',
+     'A complete 3000 mm cut-to-size kitchen for a tiny home or cabin.'),
+]
+
+# Profiles the business actually controls. sameAs is how an assistant
+# reconciles "BILT Studio" across sources and decides it is one entity --
+# it is the single highest-value field still empty. Add real URLs only;
+# a wrong sameAs is worse than none.
+SAME_AS = []          # [TBC] e.g. Google Business Profile, Instagram, Facebook
+
+# A square logo on its own background. Knowledge panels and assistant
+# answers use it; there is no logo file in the repo yet.
+LOGO_URL = None       # [TBC] e.g. https://biltstudio.com.au/img/logo.png
+
+
+def organization_node(site, towns=None):
+    """The Organization node, emitted identically on every page.
+
+    One definition rather than per-template copies: assistants and
+    crawlers reconcile entities by @id, and an Organization that says
+    slightly different things on different URLs is a weaker entity than
+    one that says the same thing everywhere.
+    """
+    node = {
+        '@type': 'Organization',
+        '@id': site + '/#organization',
+        'name': BRAND,
+        'legalName': LEGAL_NAME,
+        'url': site + '/',
+        'email': EMAIL,
+        'slogan': SLOGAN,
+        'description': (
+            'Cut-to-size flat pack kitchen cabinetry, made to order and shipped '
+            'direct across Australia. Kitchens are drawn and priced in an online '
+            'planner, with the cut list supplied before payment. Complete kitchens '
+            'from $%s. Blum hardware and stone benchtops standard.' % PRICE_ANCHOR),
+        'knowsAbout': [
+            'flat pack kitchens', 'cut-to-size cabinetry', 'kitchen cabinet making',
+            'granny flat kitchens', 'tiny home kitchens', 'kitchen renovation',
+            'Blum hardware', 'quartz benchtops', 'kitchen cut lists',
+        ],
+        'identifier': [{
+            '@type': 'PropertyValue',
+            'propertyID': 'ACN',
+            'value': ACN.replace(' ', ''),
+        }],
+        'hasOfferCatalog': {
+            '@type': 'OfferCatalog',
+            'name': 'Kitchen ranges',
+            'itemListElement': [{
+                '@type': 'Offer',
+                'itemOffered': {
+                    '@type': 'Product',
+                    'name': name,
+                    'description': desc,
+                    'material': 'Cabinetry with Blum hardware and a quartz or granite benchtop',
+                    'size': run,
+                },
+                'price': price,
+                'priceCurrency': 'AUD',
+                'availability': 'https://schema.org/InStock',
+            } for name, run, price, desc in CATALOG],
+        },
+    }
+    if PHONE_TEL:
+        node['telephone'] = PHONE_TEL
+        node['contactPoint'] = {
+            '@type': 'ContactPoint', 'telephone': PHONE_TEL, 'email': EMAIL,
+            'contactType': 'sales', 'areaServed': 'AU', 'availableLanguage': 'English',
+        }
+    if ABN:
+        node['identifier'].append({
+            '@type': 'PropertyValue', 'propertyID': 'ABN', 'value': ABN.replace(' ', '')})
+    if LOGO_URL:
+        node['logo'] = LOGO_URL
+        node['image'] = LOGO_URL
+    if SAME_AS:
+        node['sameAs'] = SAME_AS
+    # No postalAddress and no LocalBusiness type: service-area business
+    # with no premises. See the note on HAS_PREMISES above.
+    area = [{'@type': 'Country', 'name': 'Australia'},
+            {'@type': 'State', 'name': 'Queensland'}]
+    if towns:
+        area += [{'@type': 'City', 'name': t} for t in towns]
+    node['areaServed'] = area
+    return node

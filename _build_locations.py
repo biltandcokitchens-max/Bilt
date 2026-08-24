@@ -453,26 +453,8 @@ def schema(page_url, title, desc, crumbs, faqs, area=None):
     # business is or how to ring it. No postalAddress and no
     # LocalBusiness type: this is a service-area business with no
     # premises, and LocalBusiness needs an address to be eligible.
-    org = {
-        "@type": "Organization",
-        "@id": SITE + "/#organization",
-        "name": F.BRAND,
-        "legalName": F.LEGAL_NAME,
-        "url": SITE + "/",
-        "email": F.EMAIL,
-        "areaServed": [{"@type": "State", "name": "Queensland"}] +
-                      [{"@type": "City", "name": t["name"]} for t in TOWNS],
-    }
-    if F.PHONE_TEL:
-        org["telephone"] = F.PHONE_TEL
-        org["contactPoint"] = {
-            "@type": "ContactPoint",
-            "telephone": F.PHONE_TEL,
-            "email": F.EMAIL,
-            "contactType": "sales",
-            "areaServed": "AU",
-            "availableLanguage": "English",
-        }
+    org = F.organization_node(SITE, [p['name'] for p in ALL_PLACES])
+
     graph = [
         org,
         {"@type": "WebPage", "@id": page_url + "#webpage", "url": page_url,

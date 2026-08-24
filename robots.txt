@@ -1,4 +1,5 @@
 # BILT Studio — https://biltstudio.com.au
+
 User-agent: *
 Allow: /
 
@@ -11,5 +12,77 @@ Disallow: /*?plan=
 # Nothing here for a crawler.
 Disallow: /netlify/
 Disallow: /db/
+
+# ---------------------------------------------------------------------
+# AI assistants and answer engines
+#
+# These are allowed deliberately. The goal is to be CITED when someone
+# asks an assistant "who does flat pack kitchens in Rockhampton" — and a
+# crawler that cannot read the page cannot cite it. Everything on this
+# site is public marketing copy; there is nothing here we would withhold
+# from a search engine but hand to a chatbot.
+#
+# Two corrections to the usual advice, because they change the decision:
+#
+#  1. Google-Extended does NOT control AI Overviews. AI Overviews is fed
+#     by ordinary Googlebot. Google-Extended only governs Gemini app
+#     grounding and Vertex AI training. Blocking it does not remove you
+#     from AI Overviews — it only removes you from Gemini.
+#
+#  2. Blocking a training crawler is not the same as blocking a retrieval
+#     one. GPTBot trains; OAI-SearchBot fetches pages to answer a live
+#     question with a link back. Blocking OAI-SearchBot costs referrals;
+#     blocking GPTBot does not.
+#
+# To opt out of model training while staying citable, disallow GPTBot,
+# ClaudeBot, CCBot and Google-Extended, and keep OAI-SearchBot,
+# ChatGPT-User, Claude-User/Claude-SearchBot and PerplexityBot allowed.
+# ---------------------------------------------------------------------
+
+# OpenAI — training, live retrieval, and user-initiated fetches
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Google — Gemini grounding and Vertex training (NOT AI Overviews; see above)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft Copilot
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl — the corpus a great many models are built from
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://biltstudio.com.au/sitemap.xml
