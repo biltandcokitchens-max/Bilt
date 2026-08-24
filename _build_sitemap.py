@@ -47,7 +47,10 @@ def discover():
     if os.path.exists(os.path.join(ROOT, 'roomplanner', 'index.html')):
         add('/roomplanner/')
 
-    for folder in ('kitchens', 'legal'):
+    # /compare/ has a page at its own root as well as children
+    if os.path.exists(os.path.join(ROOT, 'compare', 'index.html')):
+        add('/compare/', '0.9')
+    for folder in ('kitchens', 'compare', 'legal'):
         d = os.path.join(ROOT, folder)
         if not os.path.isdir(d):
             continue

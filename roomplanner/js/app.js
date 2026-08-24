@@ -365,11 +365,11 @@ function renderControls() {
     if (rows.length) h += `<div class="ctrl"><div class="ctrl-label">Internals</div>${rows.join('')}</div>`;
   }
 
-  /* boards */
-  h += `<div class="ctrl">
-    <div class="ctrl-label">Carcass board <small>${esc(MATERIALS[c.material].sub || "")}</small></div>
-    ${swatchGroup(MATERIALS, 'material', c.material)}
-  </div>`;
+  /* Carcass board selection is not offered. The carcass is a standard
+     spec rather than a customer decision -- exposing a colour swatch and
+     a board rate invited people to shop the substrate instead of the
+     kitchen, and the carcass is never visible once doors are on.
+     MATERIALS is still used by the pricing engine via the default. */
 
   if (!p.flat && p.front !== 'none') {
     h += `<div class="ctrl">
@@ -903,15 +903,7 @@ function plInfoCard(sel) {
             <span style="background:${fv.swatch}"></span>
           </button>`).join('')}
       </div>
-      <div class="pl-eyebrow" style="margin:14px 0 8px">Carcass — just this cabinet</div>
-      <div class="pl-swrow">
-        ${Object.entries(MATERIALS).map(([mk, mv]) => `
-          <button class="pl-swchip" data-act="selfin" data-key="material" data-val="${mk}"
-                  aria-pressed="${it.cfg.material === mk}" type="button" title="${esc(mv.name)}">
-            <span style="background:${mv.swatch}"></span>
-          </button>`).join('')}
-      </div>
-      <p class="pl-eyebrow" style="margin-top:8px">${esc(fin.name)} · ${esc(mat.name)}</p>`}
+      <p class="pl-eyebrow" style="margin-top:8px">${esc(fin.name)}</p>`}
 
       <div class="pl-specs">
         ${isAppl
@@ -963,15 +955,7 @@ function renderObjBar(pos) {
 function plStyleControls() {
   const room = state.room;
   return `
-    <div class="pl-sub" style="margin-top:0">Carcass board</div>
-    <div class="swatches">
-      ${Object.entries(MATERIALS).map(([k, v]) => `
-        <button class="sw" data-act="rstyle" data-key="material" data-val="${k}" aria-pressed="${room.style.material === k}" type="button">
-          <span class="dot" style="background:${v.swatch}"></span>
-          <span class="txt"><b>${esc(v.name)}</b><span>${esc(v.sub || "")}</span></span>
-        </button>`).join('')}
-    </div>
-    <div class="pl-sub">Doors &amp; fronts</div>
+    <div class="pl-sub" style="margin-top:0">Doors &amp; fronts</div>
     <div class="swatches">
       ${Object.entries(FINISHES).map(([k, v]) => `
         <button class="sw" data-act="rstyle" data-key="finish" data-val="${k}" aria-pressed="${room.style.finish === k}" type="button">

@@ -451,6 +451,8 @@ def foot(depth, towns):
         <h4 style="margin-top:1.75rem">Building or renovating</h4>
         <ul>
           <li><a href="%(up)skitchens/new-builds/">New builds &amp; renovations</a></li>
+          <li><a href="%(up)scompare/">Compare options</a></li>
+          <li><a href="%(up)scompare/ikea/">BILT vs IKEA</a></li>
           <li><a href="%(up)skitchens/class-1a/">Class 1a builds</a></li>
           <li><a href="%(up)skitchens/granny-flat/">Granny flats</a></li>
           <li><a href="%(up)skitchens/tiny-home/">Tiny homes</a></li>
