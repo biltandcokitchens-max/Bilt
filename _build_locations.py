@@ -46,54 +46,91 @@ STATE_SLUG = 'queensland'
 TOWNS = [
     dict(
         slug='rockhampton', name='Rockhampton', region='Central Queensland',
-        blurb='Queenslander kitchens, under-house conversions and the freight route the rest of the region runs through.',
-        hero='granny-flat.jpg',
-        heroalt='A compact kitchen run in a converted under-house space, pale cabinetry and stone benchtop.',
-        title='Flat Pack Kitchens Rockhampton | Cut-to-Size Cabinetry | BILT Studio',
-        desc='Cut-to-size flat pack kitchens delivered to Rockhampton. Draw your kitchen, see the price as you go. Complete kitchens from $%s.' % ANCHOR,
-        h1='Flat pack kitchens,<br>delivered to Rockhampton.',
-        lede='Rockhampton is already on our delivery run. Draw the room, watch the number move, and get the cut list before you pay a cent.',
+        blurb='The regional capital, and the freight route every other Central Queensland town runs through.',
+        hero='why-we-do-this.jpg',
+        heroalt='An architectural kitchen with a stone island, pale cabinetry and considered lighting.',
+        # SEARCH language in the title, BRAND language in the H1. The brief
+        # permits these to differ, and they must here: "flat pack" carries
+        # the demand, "architectural" carries the positioning.
+        title='Architectural Kitchens Rockhampton | Flat Pack Packages | BILT Studio',
+        desc='Architectural kitchens for Rockhampton, intelligently priced. Draw your kitchen, '
+             'see the price as you go, and get the cut list before you pay. From $%s.' % ANCHOR,
+        h1='Architectural kitchens<br>for Rockhampton.',
+        lede='Designed with a premium eye. Directly sourced. Priced on the page, before you commit to anything.',
         body=[
-            ('Rockhampton kitchens are usually a shape problem before they are a budget problem',
-             ["Much of Rockhampton's older housing is classic high-set Queenslander — timber, "
-              "elevated, and built in an era when the kitchen was a closed room at the back of "
-              "the house rather than the centre of it. That leaves a recognisable set of "
+            ('A considered kitchen, without the custom-kitchen wait',
+             ["Rockhampton is well served by cabinetmakers, several of them with decades behind "
+              "them and a showroom worth visiting. What that route asks of you is time and an "
+              "unknown: a measure appointment, a design meeting, then a quote some days later "
+              "that you could not have predicted at the start.",
+              "BILT is the other way round. The design is already resolved &mdash; a curated "
+              "material palette, Blum hardware as standard, quartz or granite benchtops and no "
+              "laminate &mdash; and what you control is the room. You draw it, the price moves "
+              "as you draw, and the cut list is yours before you pay anything.",
+              "The result is intended to look like a designed kitchen rather than a bought one. "
+              "The saving is not in the cabinetry; it is in removing the showroom, the sales "
+              "visit and the margin those carry."]),
+            ('Rockhampton kitchens are a shape problem before they are a budget problem',
+             ["Much of Rockhampton\'s older housing is classic high-set Queenslander &mdash; "
+              "timber, elevated, and built when the kitchen was a closed room at the back of the "
+              "house rather than the centre of it. That leaves a recognisable set of "
               "constraints: a narrow galley, a chamfered corner where the wall meets the "
-              "verandah line, a doorway in exactly the wrong place, and a window you cannot "
-              "move without touching the weatherboards.",
-              "Off-the-shelf flat pack assumes none of that. It comes in fixed module widths, so "
-              "you lay out 600s and 900s until you run out of wall and then hide the difference "
-              "behind a filler panel. In a room that is 2 380 mm across, that is a visible "
-              "compromise on a wall you look at every day.",
-              "Cut-to-size starts from the opposite end. You give the planner the real dimensions "
-              "and every carcass is cut to suit, so a 2 380 mm wall gets 2 380 mm of cabinetry. "
-              "There is no filler strip because there is nothing to fill."]),
-            ('The under-house conversion is the other half of the market here',
-             ["Enclosing underneath a high-set house is one of the most common renovations in "
-              "Rockhampton, and it almost always needs a second kitchen — a full one if it is "
-              "becoming a granny flat, a kitchenette if it is a rumpus or a teenager's retreat.",
-              "That is exactly what the 2 700 mm Granny flat range is sized for. It is a complete "
-              "kitchen at $5,500, not a stripped-back one, which matters when the space is going "
-              "to be rented or lived in by family rather than used twice a year."]),
+              "verandah line, a doorway in the wrong place, and a window you cannot move without "
+              "touching the weatherboards.",
+              "Fixed-module cabinetry assumes none of that. It arrives in 600s and 900s, and you "
+              "lay them out until you run out of wall and hide the difference behind a filler "
+              "panel. On a 2 380 mm wall that is a visible compromise you look at every day.",
+              "Cutting to size starts from the opposite end. Every carcass is made to the "
+              "dimensions you enter, so a 2 380 mm wall gets 2 380 mm of cabinetry. There is no "
+              "filler strip because there is nothing to fill."]),
+            ('Two Rockhampton projects that come up again and again',
+             ["<strong>The under-house conversion.</strong> Enclosing beneath a high-set house is "
+              "one of the most common renovations here, and it almost always needs a second "
+              "kitchen &mdash; a full one if it is becoming a granny flat, a kitchenette if it "
+              "is a rumpus. The 2 700 mm Granny flat range is sized for exactly that at $5,500, "
+              "complete rather than stripped back, which matters when the space will be rented "
+              "or lived in by family.",
+              "<strong>The investment refit.</strong> Rockhampton is a regional capital with a "
+              "substantial rental market, and a tenanted kitchen fails at the moving parts "
+              "first. Blum CLIP top BLUMOTION hinges and TANDEMBOX antaro runners are standard "
+              "rather than an upgrade, and the benchtop range is stone only. That is the "
+              "specification that is still working after several tenancies &mdash; and knowing "
+              "the total before starting is what decides whether an investor starts at all."]),
+            ('The regional advantage nobody mentions',
+             ["Rockhampton is the freight route for Central Queensland. Gladstone, Yeppoon, "
+              "Emerald, Biloela and the Capricorn Coast all sit on runs that pass through or "
+              "near it.",
+              "Everything ships direct from our base, flat-packed. Panels travel considerably "
+              "better than assembled carcasses full of air, which is why buying this way makes "
+              "more sense the further you are from a capital city, not less."]),
         ],
         quote=("Glad we took the chance", "Sarah Wallace", "Rockhampton"),
         faqs=[
+            ("What does an architectural kitchen cost in Rockhampton?",
+             "Complete kitchens start at $4,490. The three ranges are $4,590 for a 2 400 mm run, "
+             "$5,500 for 2 700 mm and $7,500 for 3 000 mm, each including carcasses, doors, Blum "
+             "hardware and a quartz or granite benchtop. The price in the planner is the price "
+             "— there is no quote stage."),
+            ("How does this compare to a local cabinetmaker?",
+             "They are different products for different briefs. A cabinetmaker designs around "
+             "you from scratch, which suits an unusual layout or a specific vision, and you pay "
+             "for that design time and workshop time. BILT is a curated design you configure to "
+             "your room, priced instantly and shipped flat. If you want a resolved architectural "
+             "look without the design-and-quote cycle, this is the faster route; if you want "
+             "something bespoke, a cabinetmaker is the right call."),
             ("Do you deliver to Rockhampton?",
-             "Yes. Rockhampton is a named destination on our Queensland delivery run, alongside "
-             "Brisbane and the Sunshine Coast. [TBC: DELIVERY COST AND LEAD TIME TO ROCKHAMPTON]"),
-            ("Can you make cabinetry for an old Queenslander with uneven walls?",
-             "That is the case cut-to-size handles best. Every carcass is cut to the dimensions "
-             "you enter rather than picked from fixed module widths, so out-of-square walls and "
-             "odd runs do not have to be absorbed by filler panels. Measure the room at several "
-             "heights and use the tightest figure."),
-            ("What does a granny flat kitchen cost in Rockhampton?",
-             "The 2 700 mm Granny flat range starts at $5,500 and is a complete kitchen — "
-             "carcasses, doors, Blum hardware and benchtop. The price you see in the planner is "
-             "the price; there is no quote stage."),
+             "Yes — Rockhampton is a named destination on our delivery run and the route "
+             "much of Central Queensland is served through. Everything ships direct from our "
+             "base."),
+            ("Will it work in an old Queenslander with out-of-square walls?",
+             "That is the case cutting to size handles best. Every carcass is made to the "
+             "dimensions you enter rather than picked from fixed module widths, so walls that "
+             "are out of square do not have to be absorbed by filler panels. Measure each wall "
+             "at several heights and use the smallest figure."),
             ("Do I need a cabinet maker to install it?",
-             "No. It arrives flat-packed with a cut list and hardware. Plenty of people assemble "
-             "and fit it themselves; a handyman or a chippie can do it faster. Plumbing and "
-             "electrical still need the relevant licensed trades."),
+             "No. It arrives flat-packed with a cut list, setout drawings and all hardware. "
+             "Plenty of people assemble and fit it themselves; a carpenter will be faster. "
+             "Plumbing and electrical still need the relevant licensed trades."),
         ],
     ),
     dict(
@@ -443,6 +480,17 @@ def price_cards(depth):
 
 
 def faq_html(faqs):
+    """Render the FAQ accordion.
+
+    NOTE: answers pass through esc(), so an HTML entity written in the
+    source ("&mdash;") would be escaped to "&amp;mdash;" and render as
+    literal text. Body paragraphs are NOT escaped, which makes the
+    asymmetry easy to trip over -- hence the assertion.
+    """
+    for _q, _a in faqs:
+        assert '&' not in _a or '&amp;' in _a, (
+            'FAQ answer contains an HTML entity; esc() will double-escape '
+            'it. Use the literal character instead: %r' % _a[:70])
     out = ['<div class="faq">']
     for q, a in faqs:
         a = strip_tbc(a)
