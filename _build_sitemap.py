@@ -52,7 +52,10 @@ def discover():
         add('/compare/', '0.9')
     if os.path.exists(os.path.join(ROOT, 'pricing', 'index.html')):
         add('/pricing/', '0.9')
-    for folder in ('kitchens', 'compare', 'legal'):
+    for root_page in ('guides', 'cabinets', 'layouts'):
+        if os.path.exists(os.path.join(ROOT, root_page, 'index.html')):
+            add('/%s/' % root_page, '0.8')
+    for folder in ('kitchens', 'compare', 'guides', 'cabinets', 'layouts', 'legal'):
         d = os.path.join(ROOT, folder)
         if not os.path.isdir(d):
             continue

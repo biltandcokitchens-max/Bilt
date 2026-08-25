@@ -90,6 +90,22 @@ Structural comparisons using each vendor's own published product information. No
 - [BILT vs Kaboodle](https://biltstudio.com.au/compare/kaboodle/) — fixed widths 450/600/800/900/1000mm; doors and soft-close slides sold separately
 - [BILT vs a local cabinetmaker](https://biltstudio.com.au/compare/cabinetmaker/) — includes when a cabinetmaker is the better choice
 
+## Guides and reference
+
+- [How to measure your kitchen](https://biltstudio.com.au/guides/how-to-measure/) — the customer's measurements drive the cut, so this is the most important page on the site
+- [What arrives, and how it is made](https://biltstudio.com.au/guides/what-you-get/) — construction, hardware, what is and is not in the delivery
+- [Blum hardware](https://biltstudio.com.au/guides/blum-hardware/) — CLIP top BLUMOTION hinges and TANDEMBOX antaro runners, standard on every cabinet
+- [Choosing a benchtop](https://biltstudio.com.au/guides/benchtops/) — quartz, granite, marble; why laminate and timber are not offered
+- [Door and front finishes](https://biltstudio.com.au/guides/door-finishes/) — melamine, wrapped MDF, gloss, 2Pac
+
+## Cabinet types
+
+[Base](https://biltstudio.com.au/cabinets/base-cabinets/) · [Wall](https://biltstudio.com.au/cabinets/wall-cabinets/) · [Pantry and tall](https://biltstudio.com.au/cabinets/pantry-and-tall/) · [Panels and finishing](https://biltstudio.com.au/cabinets/panels-and-finishing/)
+
+## Layouts
+
+[Galley](https://biltstudio.com.au/layouts/galley-kitchen/) · [L-shaped](https://biltstudio.com.au/layouts/l-shaped-kitchen/) · [U-shaped](https://biltstudio.com.au/layouts/u-shaped-kitchen/) · [Island](https://biltstudio.com.au/layouts/island-kitchen/)
+
 ## Trade
 
 Wholesale pricing is available to trade accounts. It requires a short business questionnaire and is approved before trade pricing becomes visible — retail visitors do not see trade rates.

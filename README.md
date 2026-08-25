@@ -168,6 +168,7 @@ python _build_usecases.py     # build-type pages (Class 1a, granny flat, tiny ho
 python _build_regions.py      # 5 regional hubs
 python _build_compare.py      # comparison hub + IKEA / Kaboodle / cabinetmaker
 python _build_pricing.py      # /pricing/
+python _build_content.py      # guides, cabinets, layouts
 python _build_legal.py        # privacy / terms / warranty (noindex drafts)
 python _build_sitemap.py      # scans disk; must run AFTER the four above
 python _build_redirects.py    # blocks source files from being served

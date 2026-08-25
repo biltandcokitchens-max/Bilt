@@ -12,6 +12,7 @@
 /SEO.md /404.html 404!
 /_build.py /404.html 404!
 /_build_compare.py /404.html 404!
+/_build_content.py /404.html 404!
 /_build_legal.py /404.html 404!
 /_build_locations.py /404.html 404!
 /_build_pricing.py /404.html 404!
@@ -24,6 +25,9 @@
 /_cities_qld_mining.py /404.html 404!
 /_cities_qld_north.py /404.html 404!
 /_compare.py /404.html 404!
+/_content.py /404.html 404!
+/_content2.py /404.html 404!
+/_content3.py /404.html 404!
 /_facts.py /404.html 404!
 /_regions.py /404.html 404!
 /_reviews.html /404.html 404!
