@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Tooling scratch
+.superpowers/
+*.log
+
+# Note: the generated .html files, sitemap.xml, robots.txt and out-redirects/
+# ARE committed on purpose. This is a zero-dependency static site — hosts that
+# do not run a build step can serve the folder as-is.
