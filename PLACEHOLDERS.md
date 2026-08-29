@@ -70,6 +70,18 @@ The competitor columns, HIA averages and Brisbane figures were deliberately left
 site now positions Bilt & Co inside the `typical cabinet shop` range rather than above it. Check the
 surrounding copy still argues the right case, and confirm the new numbers clear your margin.
 
+### Fit-out option prices
+
+Every price on `fit-out.html` is a **market estimate**, not your rate card: pull-downs $580–$780,
+blind-corner pull-outs $620–$950, drying racks $240–$380, carousels $420–$680, internal drawers
+$180–$280, waste systems $380–$560, tall pantry pull-outs $890–$1,450, push-to-open $1,200–$2,400
+per run. They sit in the `FITOUT` array in `_pages.js`.
+
+The **fit constraints** under each option (minimum cabinet widths, power requirements) are
+category-typical rather than checked against specific product data sheets. Confirm both against your
+actual supplier pricing and the Blum/specialist spec sheets before launch — a customer who buys a
+carousel that will not fit their corner is a warranty argument you do not want.
+
 **Action:** replace every one of these with the client's real rate card before launch.
 
 ## Functionality

@@ -1256,6 +1256,182 @@ module.exports = function (api) {
     }),
   ];
 
+  /* ============================================================== FIT-OUT */
+  /* Mechanism diagrams rather than product photography: they show how the
+     thing actually works, and they do not pass a manufacturer's press shot
+     off as one of our installs. */
+
+  const FITOUT = [
+    {
+      slug: 'pull-down-overheads',
+      name: 'Pull-down overheads',
+      price: '$580 – $780',
+      copy: 'Brings the top shelf down to where you can actually reach it. No stepstool, no forgotten back row.',
+      fits: 'Needs an overhead at least 600mm wide and 800mm tall.',
+      svg: `<rect x="26" y="14" width="108" height="52" rx="2"/><path d="M26 40h108"/>
+            <rect x="44" y="72" width="72" height="16" rx="2"/><path d="M52 72V60M108 72V60"/>
+            <path d="M138 30c14 18 10 40-10 52" stroke-dasharray="4 4"/><path d="M124 78l4 6 6-3"/>`,
+    },
+    {
+      slug: 'blind-corner-pull-outs',
+      name: 'Blind-corner pull-outs',
+      price: '$620 – $950',
+      copy: 'The dead corner every kitchen wastes, turned into two full-depth trays that swing out with the door.',
+      fits: 'Needs a corner cabinet of at least 900mm.',
+      svg: `<path d="M20 20h60v40h60v60H20Z"/><rect x="30" y="70" width="42" height="14" rx="2"/>
+            <rect x="30" y="92" width="42" height="14" rx="2"/>
+            <path d="M84 77h34M84 99h34" stroke-dasharray="4 4"/><path d="M112 71l8 6-8 6"/>`,
+    },
+    {
+      slug: 'drop-down-drying-racks',
+      name: 'Drop-down drying racks',
+      price: '$240 – $380',
+      copy: 'Wet dishes drip into the sink and dry behind a closed door. Nothing sits on the benchtop.',
+      fits: 'Needs an overhead directly above the sink, 600mm or wider.',
+      svg: `<rect x="30" y="14" width="100" height="44" rx="2"/>
+            <path d="M46 58v20M114 58v20M46 78h68"/><path d="M56 62v14M70 62v14M84 62v14M98 62v14"/>
+            <path d="M40 100h80l-6 20H46Z"/>`,
+    },
+    {
+      slug: 'corner-carousels',
+      name: 'Corner carousels',
+      price: '$420 – $680',
+      copy: 'Two rotating shelves that bring the whole corner to the door, rather than you climbing into it.',
+      fits: 'L-shaped corners only, 900mm minimum.',
+      svg: `<path d="M20 20h60v40h60v60H20Z"/><circle cx="74" cy="74" r="34"/><circle cx="74" cy="74" r="4"/>
+            <path d="M74 40a34 34 0 0132 22" stroke-dasharray="4 4"/><path d="M104 56l4 8 8-2"/>`,
+    },
+    {
+      slug: 'internal-drawers',
+      name: 'Internal drawers',
+      price: '$180 – $280 each',
+      copy: 'A drawer inside a drawer. Doubles what a deep pot drawer holds without adding a single cabinet.',
+      fits: 'Any drawer 450mm deep or more.',
+      svg: `<rect x="24" y="26" width="112" height="88" rx="2"/><path d="M24 62h112"/>
+            <rect x="40" y="74" width="80" height="28" rx="2"/><path d="M64 88h32"/><path d="M62 44h36"/>`,
+    },
+    {
+      slug: 'waste-systems',
+      name: 'Concealed waste systems',
+      price: '$380 – $560',
+      copy: 'Two or three sorted bins on full-extension runners, behind a door, off the floor.',
+      fits: 'Needs a 450mm or 600mm base cabinet.',
+      svg: `<rect x="26" y="20" width="108" height="94" rx="2"/>
+            <path d="M52 46h24v52H52ZM88 46h24v52H88Z"/><path d="M46 40h72"/>
+            <path d="M134 60h16" stroke-dasharray="4 4"/><path d="M144 54l8 6-8 6"/>`,
+    },
+    {
+      slug: 'tall-pantry-pull-outs',
+      name: 'Tall pantry pull-outs',
+      price: '$890 – $1,450',
+      copy: 'Five shelves that come to you at once, so nothing lives permanently at the back.',
+      fits: 'Needs a 450mm or 600mm tall unit, full height.',
+      svg: `<rect x="34" y="10" width="60" height="118" rx="2"/>
+            <path d="M42 30h44M42 52h44M42 74h44M42 96h44M42 118h44"/>
+            <path d="M102 40h32M102 88h32" stroke-dasharray="4 4"/><path d="M128 34l8 6-8 6M128 82l8 6-8 6"/>`,
+    },
+    {
+      slug: 'push-to-open',
+      name: 'Push-to-open motion',
+      price: '$1,200 – $2,400 per run',
+      copy: 'Handleless doors and drawers that open at a touch and close themselves. The quiet luxury option.',
+      fits: 'Needs power to the cabinet run. Specify before manufacture.',
+      svg: `<rect x="24" y="30" width="112" height="80" rx="2"/><path d="M80 30v80"/>
+            <path d="M62 70h-24" stroke-dasharray="4 4"/><path d="M46 64l-8 6 8 6"/>
+            <circle cx="96" cy="70" r="7"/><path d="M110 58l8-8M114 70h10M110 82l8 8"/>`,
+    },
+  ];
+
+  const fitoutFaq = [
+    { q: 'Are these included or extra?', a: 'Soft-close hinges and runners are standard on every Bilt & Co kitchen at no extra cost. Everything on this page is a paid option, priced individually and itemised on your quote so you can see exactly what each one adds.' },
+    { q: 'Can fit-out options be added later?', a: 'Some can, most should not be. Pull-downs, carousels and pantry pull-outs depend on the cabinet being built to suit — width, internal clearance and in some cases power. Retrofitting means replacing the cabinet. Decide these at design stage and they cost a fraction of what they cost afterwards.' },
+    { q: 'Which one is worth it if I can only pick one?', a: 'The blind-corner pull-out, almost every time. It is the only option here that creates storage you currently do not have, rather than making existing storage easier to reach. Every kitchen with an L-shaped corner is wasting roughly half a cabinet.' },
+    { q: 'Is this Blum hardware?', a: 'The runners, hinges and motion systems are Blum, which carries a lifetime mechanical warranty. Some specialist units — carousels and pull-down shelves in particular — come from other specialist manufacturers where they make a better product. We will tell you which is which on your quote.' },
+  ];
+
+  const fitout = {
+    file: 'fit-out.html',
+    title: 'Kitchen Fit-Out Options & Prices | Bilt & Co Rockhampton',
+    desc: 'Pull-down overheads, blind-corner pull-outs, carousels, waste systems and push-to-open motion — what each one does, what it costs, and where it fits.',
+    og: 'drawer-detail',
+    preload: 'drawer-detail',
+    priority: '0.8',
+    faq: fitoutFaq,
+    trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['fit-out.html', 'Fit-out options']],
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', 'Fit-out options']])}
+        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Every cabinet<br><span class="italic brass">can go further.</span></h1>
+        <p class="lede">Soft-close is the standard. Motion is the option. Pull-down overheads, blind-corner pull-outs and lift systems &mdash; drawn into your layout at design stage, not bolted on afterwards.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="contact.html">Get these priced for your kitchen</a>
+          <a class="btn btn--ghost btn--lg" href="investment.html">See the collections</a>
+        </div>
+      </div>
+      <div>${frame('drawer-detail', 'Deep pot drawer with internal organisers and full-extension runners', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split" style="align-items:end;margin-bottom:2.5rem">
+        <div>
+          <p class="eyebrow" ${rv()}>The options</p>
+          <h2 class="d2" ${rv()} data-rv-d="1">Eight ways to get<br>more out of the same room.</h2>
+        </div>
+        <p class="muted" ${rv()} data-rv-d="2">Each one is priced individually and itemised on your quote. The note under each says where it fits &mdash; and where it does not, because a pull-out that will not fit your corner is worth knowing about before you pay for it.</p>
+      </div>
+
+      <div class="fitout">
+        ${FITOUT.map((f, i) => `
+        <article class="fo" id="${f.slug}" ${rv()} data-rv-d="${(i % 4) + 1}">
+          <div class="fo__dia" aria-hidden="true">
+            <svg viewBox="0 0 160 140" fill="none" stroke="currentColor" stroke-width="2.2"
+                 stroke-linecap="round" stroke-linejoin="round">${f.svg}</svg>
+          </div>
+          <div class="fo__body">
+            <p class="fo__price">${f.price}</p>
+            <h3 class="d4">${f.name}</h3>
+            <p>${f.copy}</p>
+            <p class="fo__fits">${f.fits}</p>
+          </div>
+        </article>`).join('')}
+      </div>
+
+      <p class="small muted mt-3" ${rv()}>Prices are fitted, added to a Bilt &amp; Co kitchen, and include the hardware and the cabinet modifications each option needs. Retrofitting into an existing kitchen is quoted separately.</p>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow" ${rv()}>What you already get</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Standard is<br>not basic.</h2>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">Before you add anything, every Bilt &amp; Co kitchen already includes the hardware most companies charge extra for.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <ul class="list-check">
+          <li><strong>Blum soft-close hinges</strong> on every door, with a lifetime mechanical warranty</li>
+          <li><strong>Blum full-extension runners</strong> on every drawer &mdash; the whole drawer comes out, not two thirds of it</li>
+          <li><strong>18mm moisture-resistant carcasses</strong>, because this is Central Queensland</li>
+          <li><strong>Laser-bonded edging</strong> with no glue line to lift</li>
+          <li><strong>Adjustable legs and toe kicks</strong>, so an out-of-level floor is not your problem</li>
+        </ul>
+        <a class="link-u mt-3" href="kitchens.html">See what each collection includes &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(fitoutFaq, 'Fit-out questions')}
+  ${reviews}
+  ${ctaBand({ eyebrow: 'Specify it early', title: 'Cheaper to design in<br><span class="italic" style="color:var(--brass-lite)">than to retrofit.</span>', body: 'Most of these depend on the cabinet being built to suit. Decided at design stage they cost a fraction of what they cost once the kitchen is in. Bring your layout and we will tell you which are worth it for your room.', image: 'detail-black-cabinetry', alt: 'Matte black cabinetry with integrated storage' })}
+`,
+  };
+
   /* ============================================================== PRIVACY */
   /* Drafted against the Australian Privacy Principles. Written to describe
      what the site ACTUALLY does today — where a practice is not yet decided
@@ -1369,5 +1545,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, privacy, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, privacy, notFound];
 };
