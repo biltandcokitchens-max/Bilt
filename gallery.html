@@ -76,12 +76,15 @@
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Recent work.</h1>
         <p class="lede">Kitchens, pantries and joinery built across Rockhampton, the Capricorn Coast and Central Queensland. Every one drawn from a blank page.</p>
       </div>
-      <div><form class="form-card form js-lead" id="lead-gallery">
+      <div><form class="form-card form" id="lead-gallery" name="quick-enquiry" method="POST"
+      action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quick-enquiry">
+      <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-card__head">
         <h2 class="d4">Like something you see?</h2>
         <p class="small muted" style="margin:0">Tell us which one and we will send you the specification, the drawings and what it actually cost to build.</p>
       </div>
-      <div class="form__ok" role="status">Thank you — your email app should now be open with your details ready to send. If it did not open, call us on 0401 821 848.</div>
+      
       <div class="form__row">
         <div class="field"><label for="lead-gallery-n">Name</label><input id="lead-gallery-n" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
         <div class="field"><label for="lead-gallery-p">Phone</label><input id="lead-gallery-p" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>

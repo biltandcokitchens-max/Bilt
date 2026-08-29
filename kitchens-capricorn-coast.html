@@ -78,12 +78,15 @@
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">the Capricorn Coast.</span></h1>
         <p class="lede">From Emu Park to Keppel Sands &mdash; bespoke kitchens built in Rockhampton and installed on the coast by our own team.</p>
       </div>
-      <div><form class="form-card form js-lead" id="lead-area">
+      <div><form class="form-card form" id="lead-area" name="quick-enquiry" method="POST"
+      action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quick-enquiry">
+      <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-card__head">
         <h2 class="d4">Free design for your Capricorn Coast kitchen</h2>
         <p class="small muted" style="margin:0">We site measure in the Capricorn Coast weekly. Tell us where you are and we will call within one business day.</p>
       </div>
-      <div class="form__ok" role="status">Thank you — your email app should now be open with your details ready to send. If it did not open, call us on 0401 821 848.</div>
+      
       <div class="form__row">
         <div class="field"><label for="lead-area-n">Name</label><input id="lead-area-n" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
         <div class="field"><label for="lead-area-p">Phone</label><input id="lead-area-p" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>

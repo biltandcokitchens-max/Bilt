@@ -343,7 +343,7 @@ function layout(page) {
 <title>${esc(page.title)}</title>
 <meta name="description" content="${esc(page.desc)}">
 <link rel="canonical" href="${canonical}">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="${page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}">
 <meta name="theme-color" content="#FBF9F5">
 <meta name="geo.region" content="AU-QLD">
 <meta name="geo.placename" content="Rockhampton">

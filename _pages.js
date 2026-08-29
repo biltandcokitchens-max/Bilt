@@ -27,12 +27,15 @@ module.exports = function (api) {
       cta = 'Get my free design',
       ctaSub = 'No obligation &middot; No deposit &middot; No sales visit unless you want one',
     } = opts;
-    return `<form class="form-card form js-lead" id="${id}">
+    return `<form class="form-card form" id="${id}" name="quick-enquiry" method="POST"
+      action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quick-enquiry">
+      <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-card__head">
         <h2 class="d4">${heading}</h2>
         <p class="small muted" style="margin:0">${sub}</p>
       </div>
-      <div class="form__ok" role="status">Thank you — your email app should now be open with your details ready to send. If it did not open, call us on ${SITE.phone}.</div>
+      
       <div class="form__row">
         <div class="field"><label for="${id}-n">Name</label><input id="${id}-n" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
         <div class="field"><label for="${id}-p">Phone</label><input id="${id}-p" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
@@ -1069,13 +1072,15 @@ module.exports = function (api) {
         </ul>
       </div>
       <div>
-        <form class="form-card form js-lead" id="enquiry">
+        <form class="form-card form" id="enquiry" name="consultation" method="POST"
+          action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="consultation">
+          <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-card__head">
             <h2 class="d4">Book your free design consultation</h2>
             <p class="small muted" style="margin:0">Takes about 60 seconds. No deposit, no sales visit unless you want one.</p>
           </div>
-          <div class="form__ok" role="status">Thank you &mdash; your email app should now be open with your details ready to send. If it did not open, call us on ${SITE.phone}.</div>
-          <div class="form__row">
+                    <div class="form__row">
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
             <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
           </div>
@@ -1432,6 +1437,36 @@ module.exports = function (api) {
 `,
   };
 
+  /* =============================================================== THANKS */
+  /* Netlify redirects here after a successful form POST. Its existence is
+     the only proof a visitor gets that the enquiry actually sent. */
+
+  const thanks = {
+    file: 'thanks.html',
+    title: 'Enquiry received | Bilt & Co',
+    desc: 'Your enquiry has reached the Bilt & Co studio. We reply within one business day.',
+    og: 'collection-marble-01',
+    priority: '0.1',
+    noindex: true,
+    trail: [['index.html', 'Home'], ['thanks.html', 'Enquiry received']],
+    body: `
+  <section class="section" style="min-height:62vh;display:flex;align-items:center">
+    <div class="wrap">
+      <div style="max-width:44rem">
+        <p class="eyebrow" ${rv()}>Received</p>
+        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,3.75rem)" ${rv()} data-rv-d="1">That&rsquo;s with us.</h1>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">Your enquiry has landed in the studio. We reply within one business day &mdash; usually the same afternoon.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">If it is urgent, or you would rather just talk, call <a href="tel:${T}" style="color:var(--brass);text-decoration:underline">${SITE.phone}</a>.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
+          <a class="btn" href="gallery.html">See the work while you wait</a>
+          <a class="btn btn--ghost" href="investment.html">Read the price guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+`,
+  };
+
   /* ============================================================== PRIVACY */
   /* Drafted against the Australian Privacy Principles. Written to describe
      what the site ACTUALLY does today — where a practice is not yet decided
@@ -1482,9 +1517,9 @@ module.exports = function (api) {
       <p>To answer your enquiry, prepare a design and a quote, and — if you go ahead — to design, build and install your kitchen. That is the whole purpose. We do not use your details for anything you did not contact us about.</p>
 
       <h2 class="d3">How your enquiry reaches us</h2>
-      <p>At present the enquiry forms open your own email application with your answers filled in, and the message is sent from your email account to ours. Your details are not transmitted to any third-party form service.</p>
-      <!-- PLACEHOLDER: when a real form handler is connected (Netlify Forms, Formspree, a CRM),
-           this paragraph MUST be rewritten to name that provider and where it stores data. -->
+      <p>When you submit an enquiry form, your answers are sent to <strong>Netlify Forms</strong>, the service that hosts this website, and stored there so we can read and reply to them. Netlify is a United States company, so your enquiry is stored overseas. Their privacy terms are at <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a>.</p>
+      <p>We are notified by email when a form is submitted. Nothing you type is shared with anyone else.</p>
+
 
       <h2 class="d3">Who we share it with</h2>
       <p>We do not sell, rent or trade your personal information. Ever.</p>
@@ -1545,5 +1580,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, privacy, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, privacy, thanks, notFound];
 };

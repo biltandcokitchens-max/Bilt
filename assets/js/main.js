@@ -53,34 +53,15 @@
     items.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---- Enquiry form (no backend: mailto handoff + graceful message) ---- */
-  var forms = document.querySelectorAll('.js-lead');
-  Array.prototype.forEach.call(forms, function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var data = new FormData(form);
-      var lines = [];
-      var scope = data.getAll('scope');
-      lines.push('Name: ' + (data.get('name') || ''));
-      lines.push('Phone: ' + (data.get('phone') || ''));
-      lines.push('Email: ' + (data.get('email') || ''));
-      lines.push('Suburb: ' + (data.get('suburb') || ''));
-      lines.push('Project: ' + (scope.length ? scope.join(', ') : 'Not specified'));
-      lines.push('Investment: ' + (data.get('budget') || 'Not specified'));
-      lines.push('Timeline: ' + (data.get('timeline') || 'Not specified'));
-      lines.push('');
-      lines.push(data.get('message') || '');
-
-      var ok = form.querySelector('.form__ok');
-      if (ok) {
-        ok.classList.add('show');
-        ok.setAttribute('tabindex', '-1');
-        ok.focus();
-      }
-      window.location.href =
-        'mailto:hello@biltstudio.com.au?subject=' +
-        encodeURIComponent('Design consultation enquiry — ' + (data.get('name') || 'Website')) +
-        '&body=' + encodeURIComponent(lines.join('\n'));
+  /* ---- Enquiry forms ----------------------------------------------------
+     The forms POST natively to Netlify Forms and redirect to /thanks.html.
+     No JS is required for them to work; this only guards against a double
+     submit on a slow connection. -------------------------------------- */
+  var leadForms = document.querySelectorAll('form[data-netlify]');
+  Array.prototype.forEach.call(leadForms, function (form) {
+    form.addEventListener('submit', function () {
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.style.opacity = '.6'; }
     });
   });
 

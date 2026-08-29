@@ -88,8 +88,8 @@ carousel that will not fit their corner is a warranty argument you do not want.
 
 | Item | Current behaviour | Action |
 |---|---|---|
-| Enquiry forms | Open the visitor's email client via `mailto:` | Connect a real handler — Netlify Forms, Formspree, or a CRM endpoint. Without this, leads will be lost on any device with no configured mail client. |
-| Form spam protection | none | Add a honeypot field or Turnstile/reCAPTCHA once a real handler is wired. |
+| Enquiry forms | **Netlify Forms.** Two forms: `quick-enquiry` (short) and `consultation` (contact page). Both POST natively and redirect to `/thanks.html`. | Turn on email notifications in Netlify: Site configuration → Forms → Form notifications. Until you do, submissions collect in the dashboard and nobody is told. |
+| Form spam protection | Honeypot field (`bot-field`) plus Netlify's built-in filtering | Consider enabling Netlify's reCAPTCHA if spam gets through. |
 | Privacy policy | `privacy.html` — written, linked from the footer and both forms | **Two sections inside it go stale the moment you change the site.** The cookies/analytics section states there is no tracking of any kind; adding GA4 or an ad pixel makes that false. The "how your enquiry reaches us" section describes the mailto handoff; connecting a form handler makes that false. Update both in the same change. Have a lawyer read it before launch. |
 | Favicon | generated `B&C` monogram SVG (`assets/favicon.svg`) | Replace with the real Bilt & Co mark. |
 | Analytics | none installed | Add GA4 or Plausible plus call tracking. |
@@ -123,7 +123,7 @@ completed projects is misleading conduct.
 - [ ] Scarcity, offer-value and late-credit claims verified or removed
 - [ ] Warranty period confirmed against the written terms
 - [ ] Real project photography, gallery captions and hero film
-- [ ] Form handler + spam protection (privacy policy text must be updated in the same change)
+- [x] Form handler + spam protection (Netlify Forms; privacy policy updated to match)
 - [ ] WebP/AVIF image variants
 - [ ] Real favicon
 - [ ] Deploy `out-redirects/` — 65 x 301 from the retired site structure

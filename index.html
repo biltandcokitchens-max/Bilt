@@ -87,12 +87,15 @@
         </div>
       </div>
       <div class="hero__media" data-rv data-rv-d="2">
-        <form class="form-card form js-lead" id="lead-hero">
+        <form class="form-card form" id="lead-hero" name="quick-enquiry" method="POST"
+      action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quick-enquiry">
+      <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-card__head">
         <h2 class="d4">Get your free design &amp; fixed quote</h2>
         <p class="small muted" style="margin:0">Three questions. We call you back within one business day with a real number — not a "from" price.</p>
       </div>
-      <div class="form__ok" role="status">Thank you — your email app should now be open with your details ready to send. If it did not open, call us on 0401 821 848.</div>
+      
       <div class="form__row">
         <div class="field"><label for="lead-hero-n">Name</label><input id="lead-hero-n" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
         <div class="field"><label for="lead-hero-p">Phone</label><input id="lead-hero-p" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>

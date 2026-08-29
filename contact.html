@@ -84,13 +84,15 @@
         </ul>
       </div>
       <div>
-        <form class="form-card form js-lead" id="enquiry">
+        <form class="form-card form" id="enquiry" name="consultation" method="POST"
+          action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="consultation">
+          <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-card__head">
             <h2 class="d4">Book your free design consultation</h2>
             <p class="small muted" style="margin:0">Takes about 60 seconds. No deposit, no sales visit unless you want one.</p>
           </div>
-          <div class="form__ok" role="status">Thank you &mdash; your email app should now be open with your details ready to send. If it did not open, call us on 0401 821 848.</div>
-          <div class="form__row">
+                    <div class="form__row">
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
             <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
           </div>
