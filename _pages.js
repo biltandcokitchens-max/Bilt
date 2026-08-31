@@ -28,7 +28,7 @@ module.exports = function (api) {
       ctaSub = 'No obligation &middot; No deposit &middot; No sales visit unless you want one',
     } = opts;
     return `<form class="form-card form" id="${id}" name="quick-enquiry" method="POST"
-      action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="quick-enquiry">
       <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-card__head">
@@ -1224,7 +1224,7 @@ module.exports = function (api) {
       </div>
       <div>
         <form class="form-card form" id="enquiry" name="consultation" method="POST"
-          action="/thanks.html" data-netlify="true" data-netlify-honeypot="bot-field">
+          action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="consultation">
           <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-card__head">

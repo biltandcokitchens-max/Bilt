@@ -21,3 +21,6 @@ desktop.ini
 # Note: the generated .html files, sitemap.xml, robots.txt and out-redirects/
 # ARE committed on purpose. This is a zero-dependency static site — hosts that
 # do not run a build step can serve the folder as-is.
+
+# Local Netlify folder
+.netlify
