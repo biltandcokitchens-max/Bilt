@@ -90,7 +90,7 @@ function header(active) {
     `<a href="${href}"${href === active ? ' aria-current="page"' : ''}>${label}</a>`).join('\n          ');
   return `<div class="util">
     <div class="wrap util__in">
-      <span>Designed, built and installed in <strong>Rockhampton</strong></span>
+      <span>Designed and installed in <strong>Rockhampton</strong></span>
       <span>Consultations at your kitchen table, by appointment</span>
       <span>Free design &amp; fixed quote &mdash; <a href="tel:${SITE.phoneHref}">${SITE.phone}</a></span>
     </div>
@@ -130,9 +130,9 @@ function footer() {
             <span class="brand__mark">BILT &amp; CO</span>
             <span class="brand__sub">Rockhampton</span>
           </a>
-          <p class="small muted" style="max-width:34ch">${SITE.tagline} for Rockhampton and Central Queensland. Designed, built and installed by our own hands — never outsourced.</p>
+          <p class="small muted" style="max-width:34ch">${SITE.tagline} for Rockhampton and Central Queensland. Drawn, specified and installed by one local team — never subcontracted.</p>
           <div class="badge-row mt-2">
-            <span class="badge">Built in our own workshop</span>
+            <span class="badge">Designed &amp; installed by us</span>
             <span class="badge">10-year cabinetry warranty</span>
           </div>
         </div>
@@ -270,7 +270,7 @@ function ldLocalBusiness() {
     legalName: SITE.legalName,
     alternateName: 'Bilt & Co Bespoke Kitchens',
     description:
-      'Bilt & Co designs, builds and installs bespoke luxury kitchens, butler’s pantries and fine joinery for Rockhampton and Central Queensland from its own Rockhampton workshop.',
+      'Bilt & Co designs, specifies and installs bespoke kitchens, butler’s pantries and fine joinery for Rockhampton and Central Queensland.',
     url: `${SITE.origin}/`,
     telephone: '+61 401 821 848',
     email: SITE.email,
@@ -286,8 +286,8 @@ function ldLocalBusiness() {
     },
     areaServed: SITE.areas.map((a) => ({ '@type': 'Place', name: `${a}, Queensland` })),
     serviceArea: { '@type': 'GeoCircle', geoMidpoint: { '@type': 'GeoCoordinates', latitude: SITE.lat, longitude: SITE.lng }, geoRadius: 250000 },
-    knowsAbout: ['Kitchen design', 'Cabinetmaking', 'Stone benchtops', 'Butler’s pantries', 'Custom joinery', 'Walk-in wardrobes'],
-    slogan: 'Bespoke kitchens, built in Rockhampton.',
+    knowsAbout: ['Kitchen design', 'Kitchen installation', 'Stone benchtops', 'Butler’s pantries', 'Custom joinery', 'Walk-in wardrobes'],
+    slogan: 'Bespoke kitchens, designed and installed in Rockhampton.',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Bespoke kitchen and joinery services',

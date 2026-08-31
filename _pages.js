@@ -62,7 +62,7 @@ module.exports = function (api) {
   const trustStrip = `<div class="trust">
     <div class="wrap trust__in">
       <span class="trust__i">${svg.check} 10-year cabinetry warranty</span>
-      <span class="trust__i">${svg.tool} Built in our own Rockhampton workshop</span>
+      <span class="trust__i">${svg.tool} Specified and installed by us</span>
       <span class="trust__i">${svg.dollar} Fixed-price quotes, no variations</span>
       <span class="trust__i">${svg.shield} Fully insured</span>
       <span class="trust__i">${svg.pin} Central Queensland wide</span>
@@ -117,9 +117,9 @@ module.exports = function (api) {
   </section>`;
 
   const GUARANTEES = [
-    ['The price does not move', 'Once your design is signed off, the quote is fixed. In seventeen years we have never issued a surprise variation for our own scope of works. If we get a measurement wrong, we wear it.'],
+    ['The price does not move', 'Once your design is signed off, the quote is fixed. We have never issued a surprise variation for our own scope of works. If we get a measurement wrong, we wear it.'],
     ['Ten years, in writing', 'Cabinetry and workmanship, warranted for a decade, backed by Blum’s lifetime mechanical warranty on every hinge and runner we install.'],
-    ['We build it, we install it', 'No subcontracted installers, no flat packs trucked in from Brisbane. The people in your house are on our payroll and their name is on the job.'],
+    ['One team, drawing to handover', 'We specify your cabinetry to the millimetre, take delivery of it and install it ourselves. No subcontracted installers — the people in your house are on our payroll and their name is on the job.'],
     ['On the day we said', 'A written site programme before demolition, and a $200-a-day credit back to you for every working day we run past our own completion date.'],
     ['Your drawings are yours', 'If our quote does not work for you, you keep the 3D design and the measured drawings of your own room. No charge, no hard feelings.'],
   ];
@@ -225,7 +225,7 @@ module.exports = function (api) {
     ['1', 'Free design consultation', 'Ninety minutes at your kitchen table. We measure, photograph and listen — then tell you honestly what your budget buys in 2026.'],
     ['2', '3D design &amp; selections', 'A render of your actual room. We bring the doors, the stone offcuts and the handles to you, so you see them in your own light before anything is locked in.'],
     ['3', 'Your fixed quote', 'One document, every line itemised, signed and fixed. Revisions are free until you are happy. Valid 90 days.'],
-    ['4', 'Built in Rockhampton', 'Cut, edged and assembled by our own cabinetmakers on Rockhampton St. You are welcome to walk the floor and watch it happen.'],
+    ['4', 'Made to your millimetres', 'Your cabinetry is manufactured to our specification and your measurements, and arrives assembled — not flat-packed in a carton for somebody to build on your floor.'],
     ['5', 'Installed &amp; handed over', 'Seven to ten working days with one team and a written programme. Cleaned, adjusted, photographed and warranted for ten years.'],
   ];
 
@@ -268,7 +268,7 @@ module.exports = function (api) {
     <div class="wrap">
       <div class="split">
         <div>
-          <p class="eyebrow" ${rv()}>Where we build</p>
+          <p class="eyebrow" ${rv()}>Where we work</p>
           <h2 class="d3" ${rv()} data-rv-d="1">From the Fitzroy to the Capricorn Coast &mdash; no travel loading.</h2>
           <p class="mt-2 muted" ${rv()} data-rv-d="2">Our workshop and our installers are both local, so a Yeppoon kitchen costs exactly what a Rockhampton kitchen costs.</p>
         </div>
@@ -287,9 +287,9 @@ module.exports = function (api) {
 
   const homeFaq = [
     { q: 'How much does a new kitchen cost in Rockhampton?', a: 'Most Bilt & Co kitchens land between $15,000 and $51,000 supplied and installed. A compact handleless galley starts around $15,000; a typical Rockhampton family kitchen with a stone island and butler’s pantry sits between $26,000 and $35,000; fully bespoke work begins at $47,000. Our published investment guide breaks down every band line by line, and the estimator gives you a range in about thirty seconds.' },
-    { q: 'Is the free design really free?', a: 'Yes. The measure, the 3D render, the material board and the fixed quote cost you nothing and carry no obligation. If our number does not work for you, you keep the drawings of your own room. We can afford to do this because we build what we sell — we are not paying a franchise fee out of your deposit.' },
-    { q: 'How long does a kitchen take?', a: 'Eight to twelve weeks from signed quote to handover. Design and documentation takes two to three weeks, manufacture in our Rockhampton workshop four to six, and installation is typically seven to ten working days on site.' },
-    { q: 'Do you build the cabinetry yourselves?', a: 'Yes. Every carcass, door and drawer is cut, edged and assembled at our Rockhampton St workshop by our own cabinetmakers, and installed by our own employed team. That is why we can put ten years in writing.' },
+    { q: 'Is the free design really free?', a: 'Yes. The measure, the 3D render, the material board and the fixed quote cost you nothing and carry no obligation. If our number does not work for you, you keep the drawings of your own room. We can afford to do this because we carry no showroom and no franchise fee — that overhead goes into your kitchen instead.' },
+    { q: 'How long does a kitchen take?', a: 'Eight to twelve weeks from signed quote to handover. Design and documentation takes two to three weeks, manufacture to your specification four to six, and installation is typically seven to ten working days on site.' },
+    { q: 'Who makes the cabinetry?', a: 'It is manufactured to our specification and your measurements by the maker we have chosen and stay with, and delivered to us assembled rather than flat-packed. We draw it, we specify every carcass, hinge and runner, we check each unit before it goes in, and we install it with our own team. It is warranted by us for ten years — if something is wrong, it is ours to fix and there is nobody for us to point at.' },
     { q: 'Do you service Yeppoon and the Capricorn Coast?', a: 'Yes — Yeppoon, Emu Park, Gracemere, Mount Morgan and the wider Capricorn Coast are inside our standard service area at no travel loading. We also work through Gladstone, Emerald and Blackwater on larger projects.' },
     { q: 'Can I use my own builder and trades?', a: 'Absolutely. We work alongside your trades weekly and can hand them a full set of service drawings, or we can coordinate the whole renovation as a single point of contact. Both are priced transparently so you can choose on merit.' },
   ];
@@ -297,7 +297,7 @@ module.exports = function (api) {
   const home = {
     file: 'index.html',
     title: 'Kitchen Renovations Rockhampton | Free Design — Bilt & Co',
-    desc: 'Custom kitchen renovations in Rockhampton from $15,000. Free 3D design and fixed-price quote, built in our own workshop, 10-year warranty.',
+    desc: 'Custom kitchen renovations in Rockhampton from $15,000. Free 3D design and fixed-price quote, installed by one local team, 10-year warranty.',
     og: 'collection-marble-01',
     preload: 'collection-marble-01',
     faq: homeFaq,
@@ -308,11 +308,11 @@ module.exports = function (api) {
       <div>
         <span class="pill" ${rv()}>Only 4 free design spots left this month</span>
         <h1 class="d1" ${rv()} data-rv-d="1">The kitchen<br>Rockhampton<br><span class="italic brass">talks about.</span></h1>
-        <p class="lede" ${rv()} data-rv-d="2">Bespoke kitchens drawn, built and installed by one local team &mdash; with a free 3D design, a fixed price that does not move, and a ten-year warranty in writing.</p>
+        <p class="lede" ${rv()} data-rv-d="2">Bespoke kitchens drawn, specified and installed by one local team &mdash; with a free 3D design, a fixed price that does not move, and a ten-year warranty in writing.</p>
         <div class="badge-row mt-2" ${rv()} data-rv-d="3">
           <span class="badge">Free 3D design &amp; quote</span>
           <span class="badge">Fixed price, no variations</span>
-          <span class="badge">Built in Rockhampton</span>
+          <span class="badge">Installed by our own team</span>
         </div>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
           <a class="btn btn--lg" href="#lead-hero">Get my free design</a>
@@ -330,17 +330,17 @@ module.exports = function (api) {
   <section class="section--tight">
     <div class="wrap split">
       <div class="hero__media" ${rv()}>
-        ${frame('hero-main', 'Luxury bespoke kitchen and dining room with marble island built in Rockhampton by Bilt & Co', 'wide', { eager: true })}
+        ${frame('hero-main', 'Luxury bespoke kitchen and dining room with marble island, installed in Rockhampton by Bilt & Co', 'wide', { eager: true })}
         <div class="hero__badge">
           <b class="tabnums">75+</b>
-          <span>Central Queensland kitchens, designed and built in Rockhampton</span>
+          <span>Central Queensland kitchens, designed and installed from Rockhampton</span>
         </div>
       </div>
       <div>
         <p class="eyebrow" ${rv()}>Why Bilt &amp; Co</p>
         <h2 class="d2" ${rv()} data-rv-d="1">You will open these<br>drawers <span class="italic brass">40,000 times.</span></h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">A kitchen is the most-touched thing you will ever buy. It should feel expensive every morning &mdash; not just in the photos taken the week it was finished.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we build to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Blum hardware with a lifetime mechanical warranty. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it for ten years.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we specify to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Blum hardware with a lifetime mechanical warranty. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it for ten years.</p>
         <a class="link-u mt-3" href="studio.html" ${rv()} data-rv-d="4">Meet the workshop &rarr;</a>
       </div>
     </div>
@@ -416,8 +416,8 @@ module.exports = function (api) {
 
   const kitchens = {
     file: 'kitchens.html',
-    title: 'Custom Kitchens Rockhampton | Cabinet Makers — Bilt & Co',
-    desc: 'Custom kitchens in Rockhampton built in our own workshop. Three collections from $15,000, free 3D design, fixed quotes, 10-year warranty.',
+    title: 'Custom Kitchens Rockhampton | Design & Install — Bilt & Co',
+    desc: 'Custom kitchens designed and installed in Rockhampton. Three collections from $15,000, free 3D design, fixed quotes, 10-year warranty.',
     og: 'collection-marble-04',
     preload: 'collection-marble-04',
     faq: kitchensFaq,
@@ -428,7 +428,7 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Kitchens']])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">Rockhampton.</span></h1>
-        <p class="lede">Every kitchen drawn from a blank page for one room and one household &mdash; then built by our own cabinetmakers two suburbs from your door.</p>
+        <p class="lede">Every kitchen drawn from a blank page for one room and one household &mdash; specified to the millimetre, delivered assembled and installed by our own team.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
           <a class="btn btn--lg" href="contact.html">Get my free 3D design</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
@@ -437,7 +437,7 @@ module.exports = function (api) {
           <span class="badge">Fixed price</span><span class="badge">10-year warranty</span><span class="badge">Fully insured</span>
         </div>
       </div>
-      <div>${frame('collection-marble-04', 'Custom oak and marble kitchen built by Bilt & Co cabinet makers in Rockhampton', 'wide', { eager: true })}</div>
+      <div>${frame('collection-marble-04', 'Custom oak and marble kitchen designed and installed by Bilt & Co in Rockhampton', 'wide', { eager: true })}</div>
     </div>
   </section>
 
@@ -526,7 +526,7 @@ module.exports = function (api) {
   const pantry = {
     file: 'butlers-pantries.html',
     title: 'Butler\'s Pantry Rockhampton | Custom Build — Bilt & Co',
-    desc: 'Custom butler\'s pantries built in Rockhampton from $4,000. Second sinks, bulk storage, concealed doors. Free design and fixed quote.',
+    desc: 'Custom butler\'s pantries designed and installed in Rockhampton from $4,000. Second sinks, bulk storage, concealed doors. Free design and fixed quote.',
     og: 'matte-black-bank',
     preload: 'matte-black-bank',
     faq: pantryFaq,
@@ -610,7 +610,7 @@ module.exports = function (api) {
   const joinery = {
     file: 'joinery.html',
     title: 'Walk-In Wardrobes & Joinery Rockhampton — Bilt & Co',
-    desc: 'Bespoke joinery in Rockhampton: walk-in wardrobes from $3,600, laundries, vanities, media walls and studies. Built in our own workshop.',
+    desc: 'Bespoke joinery in Rockhampton: walk-in wardrobes from $3,600, laundries, vanities, media walls and studies. Designed and installed by one local team.',
     og: 'wardrobe-robe',
     preload: 'wardrobe-robe',
     faq: joineryFaq,
@@ -627,7 +627,7 @@ module.exports = function (api) {
           <a class="btn btn--ghost btn--lg" href="gallery.html">See the work</a>
         </div>
       </div>
-      <div>${frame('wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery built in Rockhampton', 'wide', { eager: true })}</div>
+      <div>${frame('wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery, installed in Rockhampton', 'wide', { eager: true })}</div>
     </div>
   </section>
 
@@ -893,8 +893,8 @@ module.exports = function (api) {
 
   const process = {
     file: 'process.html',
-    title: 'Our Process | How Your Kitchen Is Built — Bilt & Co',
-    desc: 'From free design consultation to handover: how Bilt & Co designs, builds and installs a kitchen in Rockhampton. Timelines, payments, what we ask.',
+    title: 'Our Process | How Your Kitchen Comes Together — Bilt & Co',
+    desc: 'From free design consultation to handover: how Bilt & Co designs, specifies and installs a kitchen in Rockhampton. Timelines, payments, what we ask.',
     og: 'studio-desk',
     preload: 'studio-desk',
     trail: [['index.html', 'Home'], ['process.html', 'Process']],
@@ -929,7 +929,7 @@ module.exports = function (api) {
         ['Week 0', 'Free consultation and site measure. We photograph, measure and listen. No charge, no obligation.'],
         ['Weeks 1–2', '3D design, renders and material selection at your place. A design fee applies and is credited in full against your project.'],
         ['Week 3', 'Fixed-price quote issued, fully itemised, valid 90 days. Revisions free until you are happy.'],
-        ['Weeks 4–9', 'Manufacture in our Rockhampton St workshop. Your trades are booked and a written site programme is issued.'],
+        ['Weeks 4–9', 'Your cabinetry is manufactured to specification. Your trades are booked and a written site programme is issued.'],
         ['Week 9', 'Demolition and site preparation. Temporary kitchen set up if you need one.'],
         ['Weeks 10–11', 'Cabinetry installation, stone template and install, splashback, plumbing and electrical fit-off.'],
         ['Week 12', 'Adjustment, cleaning, photography, handover pack and the start of your ten-year warranty.'],
@@ -968,8 +968,8 @@ module.exports = function (api) {
 
   const studio = {
     file: 'studio.html',
-    title: 'About Bilt & Co | Cabinet Makers, Rockhampton',
-    desc: 'Bilt & Co is a Rockhampton cabinetmaking studio building bespoke kitchens and joinery from its own workshop. Fully insured. ACN 700 798 509.',
+    title: 'About Bilt & Co | Kitchen Design & Install, Rockhampton',
+    desc: 'Bilt & Co is a Rockhampton kitchen design studio. We specify, supply and install bespoke kitchens and joinery. Fully insured. ACN 700 798 509.',
     og: 'material-samples',
     preload: 'material-samples',
     trail: [['index.html', 'Home'], ['studio.html', 'Studio']],
@@ -978,8 +978,8 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Studio']])}
-        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">A workshop,<br><span class="italic brass">not a shopfront.</span></h1>
-        <p class="lede">Not a retailer. Not a franchise. Bilt &amp; Co draws, builds and installs every kitchen it sells, from one address on Rockhampton St.</p>
+        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">A design studio,<br><span class="italic brass">not a shopfront.</span></h1>
+        <p class="lede">Not a retailer. Not a franchise. Bilt &amp; Co draws every kitchen it sells, specifies it to the millimetre, and installs it with its own team.</p>
         <div class="badge-row mt-3">
           <span class="badge">${SITE.legalNameHtml}</span>
           <span class="badge">ACN ${SITE.acn}</span>
@@ -1000,8 +1000,8 @@ module.exports = function (api) {
       </div>
       <div>
         <p class="lede" ${rv()} data-rv-d="1">Most kitchen companies in Central Queensland are a shopfront with a supply chain behind it. A salesperson takes your deposit, a designer in another city draws your room, a factory somewhere else cuts the boxes, and a subcontractor you have never met turns up to install them.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="2">Bilt &amp; Co is the other model. The person who measures your kitchen designs it. The workshop that cuts it is ours. The installers are on our payroll. When something is not right &mdash; and occasionally something is not right &mdash; there is nobody for us to blame, so we simply fix it.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="3">That is also why we can put ten years in writing on cabinetry and workmanship. It is not a marketing line; it is what happens when you control the whole chain and intend to be answering the phone in ten years.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="2">Bilt &amp; Co is the other model. The person who measures your kitchen designs it. The specification is ours, down to the millimetre. The installers are on our payroll. When something is not right &mdash; and occasionally something is not right &mdash; there is nobody for us to blame, so we simply fix it.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">That is also why we can put ten years in writing on cabinetry and workmanship. It is not a marketing line; it is what happens when one studio owns the drawing, the specification and the installation, and intends to be answering the phone in ten years.</p>
       </div>
     </div>
   </section>
@@ -1202,8 +1202,8 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Local enough<br>to be accountable.</h2>
       </div>
       <div>
-        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is drawn, manufactured and installed by Bilt &amp; Co &mdash; no travel loading, no subcontracted installers, and the same ten-year warranty we give a job in Rockhampton itself.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="2">We site measure across ${place} and the surrounding area weekly. Bring your plans to Rockhampton St, or we will come to your kitchen table with a tape and a camera.</p>
+        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is designed, supplied and installed by Bilt &amp; Co &mdash; no travel loading, no subcontracted installers, and the same ten-year warranty we give a job in Rockhampton itself.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="2">We site measure across ${place} and the surrounding area weekly. We will come to your kitchen table with a tape and a camera, at a time that suits you.</p>
         <div class="area-tags mt-3" ${rv()} data-rv-d="3">${suburbs.map((s) => `<span>${s}</span>`).join('')}</div>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
           <a class="btn" href="contact.html">Book a free ${tp} site measure</a>
@@ -1256,7 +1256,7 @@ module.exports = function (api) {
     areaPage('capricorn-coast', 'the Capricorn Coast', {
       drive: '45 minutes', image: 'timber-island',
       alt: 'Timber island kitchen in a Capricorn Coast home',
-      blurb: 'From Emu Park to Keppel Sands &mdash; bespoke kitchens built in Rockhampton and installed on the coast by our own team.',
+      blurb: 'From Emu Park to Keppel Sands &mdash; bespoke kitchens designed in Rockhampton and installed on the coast by our own team.',
       suburbs: ['Emu Park', 'Zilzie', 'Keppel Sands', 'Kinka Beach', 'Causeway Lake', 'Mulambin', 'Bangalee', 'Rosslyn', 'Yeppoon'],
     }),
   ];
