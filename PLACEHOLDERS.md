@@ -84,6 +84,20 @@ carousel that will not fit their corner is a warranty argument you do not want.
 
 **Action:** replace every one of these with the client's real rate card before launch.
 
+### Trade terms
+
+`trade.html` is live but its commercial terms are undefined. **Trade discount structure,
+minimum order quantity, payment terms and any credit application are not written anywhere.**
+The page currently says terms are quoted rather than published, which is defensible, but it
+cannot be promoted to builders until you can answer those four questions on the phone.
+
+### Gallery photography
+
+The gallery captions no longer name Rockhampton suburbs — they describe the materials in each
+photograph, which is true regardless of who built it. The page now carries an explicit note that
+these are design references rather than completed Bilt & Co projects. **Remove that note and the
+disclosure the moment real project photography replaces the stock.**
+
 ## Functionality
 
 | Item | Current behaviour | Action |

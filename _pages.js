@@ -674,37 +674,41 @@ module.exports = function (api) {
 
   /* ============================================================== GALLERY */
 
+  /* Captions describe what is in the photograph — materials, layout, detail.
+     They previously named Rockhampton suburbs, which claimed these were our
+     completed projects. They are reference imagery until the real work is
+     photographed, and the copy now says so. */
   const GAL = [
-    ['hero-main', 'Luxury dark timber kitchen with marble island and dining, Rockhampton', 'Atelier', 'The Range', 'g-8 ar-43'],
-    ['dark-luxe-bar', 'Dark bespoke kitchen with timber bar stools and coffee station', 'Atelier', 'Frenchville', 'g-4 ar-34'],
-    ['collection-marble-01', 'Oak kitchen with marble splashback and stone island bench', 'Maison', 'Norman Gardens', 'g-4 ar-34'],
-    ['collection-marble-02', 'Marble splashback and brass wall lights above an oak kitchen run', 'Maison', 'Norman Gardens', 'g-8 ar-43'],
-    ['island-marble-brass', 'Stone island bench with brushed brass tapware', 'Maison', 'Yeppoon', 'g-6 ar-43'],
-    ['signature-dark', 'Dark navy bespoke kitchen with leather bar seating', 'Atelier', 'Emu Park', 'g-6 ar-43'],
-    ['splashback-marble-01', 'Full height marble splashback with matte black tapware', 'Maison', 'The Range', 'g-4 ar-34'],
-    ['detail-stone-black', 'Black stone benchtop detail with concealed lighting', 'Atelier', 'Detail', 'g-4 ar-34'],
-    ['island-calacatta', 'Calacatta marble waterfall island in a bright kitchen', 'Maison', 'Gracemere', 'g-4 ar-34'],
-    ['openplan-long', 'Open plan kitchen with long island and integrated appliances', 'Maison', 'Yeppoon', 'g-8 ar-43'],
-    ['matte-black-bank', 'Matte black handleless cabinetry with appliance garage', 'Essence', 'Park Avenue', 'g-4 ar-34'],
-    ['galley-stone', 'Stone galley kitchen with pendant lighting', 'Essence', 'North Rockhampton', 'g-4 ar-34'],
-    ['glossy-dark', 'Dark gloss kitchen joinery with integrated ovens', 'Atelier', 'Gladstone', 'g-4 ar-34'],
-    ['dark-island', 'Dark island bench with pendant lighting and open living beyond', 'Atelier', 'Capricorn Coast', 'g-4 ar-34'],
-    ['collection-marble-03', 'Marble splashback with brass lighting above a timber kitchen', 'Maison', 'Norman Gardens', 'g-6 ar-43'],
-    ['splashback-marble-02', 'Marble splashback and timber joinery with integrated oven', 'Maison', 'The Range', 'g-6 ar-43'],
-    ['concrete-luxe', 'Kitchen with concrete ceiling, white island and bar stools', 'Essence', 'Rockhampton City', 'g-4 ar-34'],
-    ['black-marble-bar', 'Black marble bar with bar stools and concealed lighting', 'Atelier', 'Frenchville', 'g-4 ar-34'],
-    ['island-marble-close', 'Marble island bench detail with pendant lights', 'Maison', 'Detail', 'g-4 ar-34'],
-    ['timber-island', 'Timber island and joinery in an open plan Queensland home', 'Maison', 'Emu Park', 'g-6 ar-43'],
-    ['wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery', 'Joinery', 'Norman Gardens', 'g-6 ar-43'],
-    ['detail-timber-joinery', 'Timber media joinery and stone splashback detail', 'Joinery', 'Detail', 'g-6 ar-43'],
-    ['drawer-detail', 'Deep drawers with brass handles and internal organisers', 'Detail', 'Hardware', 'g-6 ar-43'],
-    ['dark-dining', 'Dark timber kitchen and dining space with feature lighting', 'Atelier', 'The Range', 'g-12 ar-219'],
+    ['hero-main', 'Dark timber kitchen and dining room with a stone island and linear pendant lighting', 'Dark timber, stone island', 'Full-height joinery to the ceiling', 'g-8 ar-43'],
+    ['dark-luxe-bar', 'Dark kitchen with timber bar stools and an integrated coffee station', 'Integrated coffee station', 'Appliance garage behind a lift door', 'g-4 ar-34'],
+    ['collection-marble-01', 'Oak kitchen with a full-height marble splashback and stone island bench', 'American oak and marble', 'Full-height stone splashback', 'g-4 ar-34'],
+    ['collection-marble-02', 'Marble splashback with brass wall lights above an oak kitchen run', 'Brass lighting on stone', 'Handleless rail, no visible hardware', 'g-8 ar-43'],
+    ['island-marble-brass', 'Stone island bench with brushed brass tapware and a natural stone benchtop', 'Brushed brass tapware', 'Mitred stone edge, 40mm', 'g-6 ar-43'],
+    ['signature-dark', 'Dark navy kitchen with leather bar seating opening to a living area', 'Navy cabinetry, leather seating', 'Open-plan island with seating for four', 'g-6 ar-43'],
+    ['splashback-marble-01', 'Full-height marble splashback with matte black tapware over an induction cooktop', 'Matte black tapware', 'Induction, flush to the stone', 'g-4 ar-34'],
+    ['detail-stone-black', 'Black stone benchtop with concealed under-cabinet lighting', 'Black stone, concealed lighting', 'LED to the underside of the overheads', 'g-4 ar-34'],
+    ['island-calacatta', 'Calacatta marble waterfall island in a bright open kitchen', 'Calacatta waterfall island', 'Veining matched across the return', 'g-4 ar-34'],
+    ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances', 'Long island, integrated appliances', 'Four metre run, single stone slab', 'g-8 ar-43'],
+    ['matte-black-bank', 'Matte black handleless cabinetry with an appliance garage', 'Matte black, handleless', 'Push-to-open, no handles at all', 'g-4 ar-34'],
+    ['galley-stone', 'Stone galley kitchen with pendant lighting and concealed handles', 'Galley layout in stone', 'Compact run, full-depth storage', 'g-4 ar-34'],
+    ['glossy-dark', 'Dark gloss kitchen joinery with integrated ovens', 'Gloss doors, integrated ovens', 'Tall bank, floor to ceiling', 'g-4 ar-34'],
+    ['dark-island', 'Dark island bench with pendant lighting and open living beyond', 'Dark island, pendant lighting', 'Seating on two sides', 'g-4 ar-34'],
+    ['collection-marble-03', 'Marble splashback with brass lighting above a timber kitchen', 'Timber and marble together', 'Warm neutrals, matte finish', 'g-6 ar-43'],
+    ['splashback-marble-02', 'Marble splashback and timber joinery with an integrated oven', 'Stone splashback, timber doors', 'Oven at bench height', 'g-6 ar-43'],
+    ['concrete-luxe', 'Kitchen with a concrete ceiling, white island and bar stools', 'White island, concrete above', 'Minimal, no upper cabinets', 'g-4 ar-34'],
+    ['black-marble-bar', 'Black marble bar with bar stools and concealed lighting', 'Black marble bar', 'Waterfall ends, both sides', 'g-4 ar-34'],
+    ['island-marble-close', 'Marble island benchtop detail with pendant lights above', 'Stone detail, close', 'Mitred edge and shadow line', 'g-4 ar-34'],
+    ['timber-island', 'Timber island and joinery in an open plan home', 'Timber island', 'Warm oak, hard-wax oil finish', 'g-6 ar-43'],
+    ['wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery and integrated lighting', 'Walk-in robe, glazed fronts', 'Lighting on a door sensor', 'g-6 ar-43'],
+    ['detail-timber-joinery', 'Timber media joinery and stone splashback detail', 'Media joinery in timber', 'Ventilated equipment bays', 'g-6 ar-43'],
+    ['drawer-detail', 'Deep pot drawers with brass handles and internal organisers', 'Deep drawers, organisers', 'Blum full-extension runners', 'g-6 ar-43'],
+    ['dark-dining', 'Dark timber kitchen and dining space with feature lighting', 'Kitchen into dining', 'One material palette throughout', 'g-12 ar-219'],
   ];
 
   const gallery = {
     file: 'gallery.html',
-    title: 'Kitchen Gallery Rockhampton — Bilt & Co',
-    desc: 'Bespoke kitchens, butler\'s pantries and joinery built by Bilt & Co across Rockhampton, Yeppoon, Gracemere and the Capricorn Coast.',
+    title: 'Kitchen Gallery & Finishes | Bilt & Co Rockhampton',
+    desc: 'Kitchen design references from Bilt & Co — timber and stone, handleless and gloss finishes, island layouts and joinery detail, and what each costs.',
     og: 'signature-dark',
     preload: 'hero-main',
     trail: [['index.html', 'Home'], ['gallery.html', 'Gallery']],
@@ -713,30 +717,78 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Gallery']])}
-        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Recent work.</h1>
-        <p class="lede">Kitchens, pantries and joinery built across Rockhampton, the Capricorn Coast and Central Queensland. Every one drawn from a blank page.</p>
+        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Finishes,<br><span class="italic brass">layouts and detail.</span></h1>
+        <p class="lede">Twenty-four references covering the combinations we are asked for most often &mdash; what each material actually looks like in a room, and what it does to the price.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="contact.html">Design mine</a>
+          <a class="btn btn--ghost btn--lg" href="investment.html">What these cost</a>
+        </div>
       </div>
-      <div>${leadForm({ id: 'lead-gallery', heading: 'Like something you see?', sub: 'Tell us which one and we will send you the specification, the drawings and what it actually cost to build.', cta: 'Send me the details' })}</div>
+      <div>${frame('collection-marble-01', 'Oak kitchen with full-height marble splashback and stone island', 'wide', { eager: true })}</div>
     </div>
   </section>
 
   ${trustStrip}
 
-  <section class="section">
+  <section class="section--tight" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="split" style="align-items:end;margin-bottom:2rem">
+        <div>
+          <p class="eyebrow" ${rv()}>How to read this</p>
+          <h2 class="d2" ${rv()} data-rv-d="1">Three decisions<br>set the price.</h2>
+        </div>
+        <p class="muted" ${rv()} data-rv-d="2">Almost every kitchen below is a combination of the same three choices: what the doors are made of, what the benchtop is cut from, and whether there are handles. Everything else is detail. Knowing that makes a gallery far easier to use than scrolling for something that feels right.</p>
+      </div>
+
+      <div class="grid cols-3" style="margin-bottom:2.5rem">
+        <div ${rv()} data-rv-d="1">
+          <h3 class="d4">Doors</h3>
+          <p class="small muted">Laminate and matte finishes sit at the bottom of the range and behave well in this climate. Timber veneer costs more and moves more, and is worth it where you will touch it daily. Two-pack paint sits between them and can be any colour you like.</p>
+        </div>
+        <div ${rv()} data-rv-d="2">
+          <h3 class="d4">Benchtops</h3>
+          <p class="small muted">Laminate is included. Engineered stone adds around $1,750 on a compact run. Porcelain and sintered stone add more again and handle heat and afternoon sun better than anything else. Natural marble is the most beautiful and the least forgiving.</p>
+        </div>
+        <div ${rv()} data-rv-d="3">
+          <h3 class="d4">Handles, or none</h3>
+          <p class="small muted">A handleless rail is included in every collection. Push-to-open motion is an upgrade and adds roughly $1,200 to $2,400 across a run. Solid brass and bronze hardware sit at the top and change the character of a kitchen more than any other single item.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
     <div class="wrap">
       <div class="gal">
-        ${GAL.map(([f, alt, coll, loc, cls], i) => `
+        ${GAL.map(([f, alt, cap, sub, cls], i) => `
         <a class="${cls}" href="contact.html" ${rv()} data-rv-d="${(i % 3) + 1}">
           ${img(f, alt)}
-          <figcaption>${coll} &middot; ${loc}</figcaption>
+          <figcaption><strong>${cap}</strong><br>${sub}</figcaption>
         </a>`).join('')}
       </div>
-      <!-- PLACEHOLDER: replace stock photography with the client's own project shots. See IMAGE-CREDITS.md -->
+      <div class="note mt-3" ${rv()} style="border:1px solid var(--line);background:var(--paper-2);border-radius:var(--radius);padding:1.15rem 1.35rem">
+        <p class="small muted" style="margin:0">These are design references showing materials and layouts, not photographs of completed Bilt &amp; Co projects. We photograph every kitchen we finish, and this page will be replaced with our own work as those projects come through.</p>
+      </div>
+      <!-- PLACEHOLDER: replace with the client's own project photography and remove the
+           disclosure note above once real work is shot. See PLACEHOLDERS.md -->
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow" ${rv()}>Where to start</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Bring us a picture<br>you like.</h2>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">You do not need to know what the finish is called. Screenshot anything &mdash; from here, from Instagram, from a friend&rsquo;s house &mdash; and we will tell you what it is, what it costs, and whether it will survive a Central Queensland summer.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">That last part matters more than people expect. Some finishes that photograph beautifully in a Melbourne apartment do not belong in a room that gets afternoon sun in February.</p>
+        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Send us your reference</a>
+      </div>
+      <div ${rv()} data-rv-d="1">${frame('material-samples', 'Timber veneer and finish samples on a workbench', 'wide')}</div>
     </div>
   </section>
 
   ${reviews}
-  ${ctaBand({ eyebrow: 'Yours next', title: 'We photograph every<br><span class="italic" style="color:var(--brass-lite)">kitchen we finish.</span>', body: 'Book a free design consultation and we will walk you through the full project files for anything here — the drawings, the specification and the real cost.' })}
+  ${ctaBand({ eyebrow: 'Yours next', title: 'We photograph every<br><span class="italic" style="color:var(--brass-lite)">kitchen we finish.</span>', body: 'Book a free design consultation and we will walk you through the full specification for anything here — the materials, the hardware and what it costs to build.' })}
 `,
   };
 
@@ -1467,6 +1519,199 @@ module.exports = function (api) {
 `,
   };
 
+  /* ============================================================= SEGMENTS */
+  /* The four buyers who reorder. Compact-run prices are derived from the
+     same rate card as the estimator in main.js, so the site never quotes two
+     different numbers for the same kitchen. */
+
+  const SEGMENTS = [
+    {
+      file: 'tiny-home-kitchens.html',
+      slug: 'tiny-home',
+      nav: 'Tiny home kitchens',
+      title: 'Tiny Home Kitchens | Compact Runs from $5,300 | Bilt & Co',
+      desc: 'Compact kitchens for tiny homes, from $5,300. Full-size hardware in a 1.8–2.4m run, delivered assembled and built to be lived in every day.',
+      h1: 'Tiny home kitchens,<br><span class="italic brass">without the compromise.</span>',
+      lede: 'A small kitchen is harder to design than a large one. Every millimetre is spoken for, and there is nowhere to hide a mistake.',
+      img: 'galley-stone',
+      alt: 'Compact galley kitchen with stone benchtop and full-height storage',
+      price: 'From $5,300',
+      range: '1.8m – 2.4m run',
+      body: [
+        ['Small does not mean cheap hardware', 'The temptation in a tiny home is to save on the parts you touch. It is the wrong place to save, because in a kitchen this size you touch everything, constantly. Every Bilt &amp; Co tiny home kitchen gets the same Blum soft-close hinges and full-extension runners as a $40,000 kitchen. The drawer still comes all the way out.'],
+        ['Designed around the actual footprint', 'We draw to your measurements, not to a module. That matters more here than anywhere else: a 40mm filler panel in a 2.4m kitchen is 40mm of bench you have lost forever. If your build is on a trailer, tell us the axle position and we will keep the weight where it belongs.'],
+        ['Built for a house that moves', 'Tiny homes travel, flex and settle. We specify moisture-resistant carcasses and laser-bonded edging as standard, fix into the frame rather than the lining where we can, and check every unit before it goes in.'],
+      ],
+      list: [
+        '1.8m to 2.4m runs, drawn to your exact dimensions',
+        'Blum soft-close hinges and full-extension runners throughout',
+        '18mm moisture-resistant carcasses, laser-bonded edging',
+        'Stone, porcelain or laminate benchtop',
+        'Delivered assembled — not flat-packed in a carton',
+        'Repeat pricing for builders doing multiple units',
+      ],
+      faq: [
+        { q: 'How much is a tiny home kitchen?', a: 'A 1.8m run starts at about $5,300 and a 2.4m run at about $6,500, supplied with carcasses, doors, Blum hardware and a benchtop. The exact figure depends on your run length, benchtop material and whether you want fit-out options like a pull-down overhead. Draw it in the estimator or send us your dimensions for a fixed quote.' },
+        { q: 'Can you work to a trailer build?', a: 'Yes, and we would rather know early. Tell us the trailer dimensions, the axle position and where your services come up, and we will design the cabinetry so the weight sits where your engineer wants it rather than where the kitchen happens to fall.' },
+        { q: 'Do you supply tiny home builders repeatedly?', a: 'Yes — this is a large part of what we do. If you build multiple units to a repeating layout, we hold your specification so each order is a confirmation rather than a fresh design, and pricing reflects the volume. Talk to us about a trade account.' },
+        { q: 'Is it delivered flat packed?', a: 'No. Your cabinetry arrives assembled. You are fitting a kitchen, not building one on the floor of a shell you still have to finish.' },
+      ],
+    },
+    {
+      file: 'granny-flat-kitchens.html',
+      slug: 'granny-flat',
+      nav: 'Granny flat kitchens',
+      title: 'Granny Flat Kitchens | From $6,500 Installed | Bilt & Co',
+      desc: 'Kitchens for granny flats and secondary dwellings from $6,500. Durable, tenant-ready cabinetry in a 2.4–3.0m run, delivered assembled.',
+      h1: 'Granny flat kitchens<br><span class="italic brass">that outlast the tenant.</span>',
+      lede: 'A secondary dwelling kitchen has a harder life than a main one and usually a smaller budget. Those two facts fight each other, and cheap cabinetry loses.',
+      img: 'matte-black-bank',
+      alt: 'Compact handleless kitchen with integrated appliances for a secondary dwelling',
+      price: 'From $6,500',
+      range: '2.4m – 3.0m run',
+      body: [
+        ['Specify for the second tenant, not the first', 'A granny flat kitchen gets used hard and is rarely the owner using it. The parts that fail first are always the same: glued edging that lifts, standard runners that sag, and chipboard carcasses that swell the first time a tap drips. We specify against all three as standard, because replacing a kitchen in four years costs more than specifying it properly once.'],
+        ['Small enough to be affordable, real enough to let', 'A 2.4 to 3.0 metre run covers almost every secondary dwelling. That is a genuine kitchen — full-depth base cabinets, a real benchtop, and storage a person can actually live out of, rather than a kitchenette that shows up in the listing photos as a compromise.'],
+        ['Coordinated with your build', 'If the flat is under construction we will work to your builder’s programme and hand your trades a full set of service drawings. If it is a conversion of an under-house or garage space, we will measure what is really there rather than what the plan says.'],
+      ],
+      list: [
+        '2.4m to 3.0m runs, drawn to your exact dimensions',
+        'Moisture-resistant carcasses — the first thing to fail in a rental',
+        'Blum hardware with a lifetime mechanical warranty',
+        'Stone, porcelain or laminate benchtop',
+        'Delivered assembled and installed by our own team',
+        'Ten-year warranty on cabinetry and workmanship',
+      ],
+      faq: [
+        { q: 'How much is a granny flat kitchen?', a: 'A 2.4m run starts at about $6,500 and a 3.0m run at about $7,700, including carcasses, doors, Blum hardware and a benchtop. Add a stone benchtop or fit-out options and it rises from there. Send us the dimensions and we will give you a fixed quote.' },
+        { q: 'Is it worth spending more on a rental kitchen?', a: 'On hardware and carcasses, yes. On doors and benchtops, not especially. The parts that fail in a rental are the moving ones and the ones that meet water — runners, hinges and carcass edges. Spend there, keep the finishes simple, and the kitchen will still be sound when the third tenant moves in.' },
+        { q: 'Can you work with my builder?', a: 'Yes. We work alongside your trades weekly and can issue a full set of service drawings so your plumber and electrician know exactly where everything lands. We can also coordinate the whole fit-out as a single point of contact if you would rather not manage it.' },
+        { q: 'Do you do under-house and garage conversions?', a: 'Regularly — it is one of the most common projects in Rockhampton. Older high-set homes convert well, but the floors are rarely level and the walls are rarely square. We measure what is actually there and scribe to it rather than assuming.' },
+      ],
+    },
+    {
+      file: 'new-build-kitchens.html',
+      slug: 'new-builds',
+      nav: 'New build kitchens',
+      title: 'New Build Kitchens Rockhampton | Bilt & Co',
+      desc: 'Upgrading from the builder’s standard kitchen in a new build. Fixed pricing, service drawings for your trades, and delivery to your construction programme.',
+      h1: 'The kitchen your builder<br><span class="italic brass">did not quote you.</span>',
+      lede: 'The standard kitchen in a new build contract is chosen to hit a price, not to suit how you cook. Upgrading it is the single highest-value change most people make to a new home.',
+      img: 'openplan-long',
+      alt: 'Open plan new build kitchen with long island bench',
+      price: 'From $15,000',
+      range: 'Full kitchen, any layout',
+      body: [
+        ['You are allowed to use your own supplier', 'Most build contracts include a provisional sum for the kitchen, and most allow you to take it elsewhere. Ask your builder what the kitchen allowance is and whether it can be credited. Very often the answer is yes, and the difference between the allowance and a proper kitchen is far smaller than people assume.'],
+        ['We work to your builder’s programme', 'A new build has a lock-up date and a trades sequence, and a kitchen that arrives at the wrong moment is a genuine problem. We book against your programme, issue service drawings so your plumber and electrician rough in to the right positions the first time, and deliver assembled so installation is days rather than weeks.'],
+        ['Decide before the slab if you can', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, or a wider opening all cost very little on a plan and a great deal once the slab is down. Bring us your floor plan early, even if you are months from needing us.'],
+      ],
+      list: [
+        'Free 3D design of your actual plan before you commit',
+        'Fixed price, itemised, valid 90 days — works against a provisional sum',
+        'Full service drawings for your plumber and electrician',
+        'Booked against your builder’s programme, not ours',
+        'Delivered assembled; typical install seven to ten working days',
+        'Ten-year warranty on cabinetry and workmanship',
+      ],
+      faq: [
+        { q: 'Can I use my own kitchen supplier in a new build?', a: 'Usually yes. Most contracts carry a provisional sum or prime cost allowance for the kitchen, and most builders will credit it if you supply your own. Ask early — before the kitchen is ordered — and ask for the allowance figure in writing so you can compare properly.' },
+        { q: 'When should I talk to you during a build?', a: 'Earlier than you think. Ideally before the slab, because power to an island, plumbing to a butler’s pantry and the position of a window over a sink all cost almost nothing on a plan and a great deal afterwards. Even at frame stage we can still influence the services.' },
+        { q: 'Will you coordinate with my builder?', a: 'Yes, and we prefer it. We work to your builder’s programme, attend site meetings where useful, and issue a full set of service and setout drawings so your trades rough in correctly the first time. Your builder gets one contact and one delivery date.' },
+        { q: 'How much more than the standard kitchen will it cost?', a: 'That depends entirely on the allowance in your contract, which is why we ask for it. Our kitchens start at $15,000 and most new build clients land between $26,000 and $42,000. Subtract the allowance your builder credits and the real number is often much smaller than the sticker.' },
+      ],
+    },
+    {
+      file: 'trade.html',
+      slug: 'trade',
+      nav: 'Trade & builders',
+      title: 'Trade Kitchen Supply for Builders | Bilt & Co',
+      desc: 'Kitchen and joinery supply for builders, tiny home makers and granny flat specialists. Fixed pricing, held specifications, delivered assembled.',
+      h1: 'For builders who need<br><span class="italic brass">the same kitchen, again.</span>',
+      lede: 'If you build repeatedly, the value is not in a clever design. It is in a specification that does not change, a price that does not move and a delivery that arrives when it said it would.',
+      img: 'detail-timber-joinery',
+      alt: 'Timber joinery detail showing cabinetry construction quality',
+      price: 'Trade pricing',
+      range: 'Supply, or supply and install',
+      body: [
+        ['We hold your specification', 'Once we have built a kitchen for one of your units, that specification stays on file — carcass, doors, hardware, benchtop, the lot. The next order is a confirmation, not a fresh design process. For anyone building repeating layouts, that removes the single most time-consuming part of ordering a kitchen.'],
+        ['Supply only, or supply and install', 'Take delivery assembled and fit it with your own crew, or have our team install it. Most builders start with the first and move to the second once they have seen how long it takes us. Either way you get service drawings so your trades rough in correctly.'],
+        ['Fixed price, and it stays fixed', 'Your quote is itemised and it holds. We have never issued a surprise variation for our own scope of works, which matters more to a builder carrying the risk on a fixed-price contract than it does to a homeowner.'],
+        ['Segments we supply regularly', 'Tiny home builders, granny flat and secondary dwelling specialists, project builders upgrading from a standard kitchen, and renovators who want the cabinetry handled while they do everything else.'],
+      ],
+      list: [
+        'Held specifications for repeating layouts',
+        'Supply only, or supply and install',
+        'Full service and setout drawings for your trades',
+        'Delivered assembled — no flat-pack build time on site',
+        'Fixed, itemised pricing that does not move',
+        'Ten-year warranty on cabinetry and workmanship',
+      ],
+      faq: [
+        { q: 'Do you offer trade pricing?', a: 'Yes. Trade terms depend on volume and how much of the process you take on, so they are quoted rather than published. Tell us what you build and roughly how many kitchens a year, and we will put terms in front of you.' },
+        { q: 'Can I take supply only?', a: 'Yes. Cabinetry is delivered assembled with hardware fitted and a setout drawing, ready for your crew to fix and scribe. If you would rather we installed it, our own team does that too.' },
+        { q: 'How far do you deliver?', a: 'Rockhampton, Gracemere, Yeppoon, Emu Park and the wider Capricorn Coast are inside our standard area. For trade volumes we will freight further — ask, and we will price the delivery honestly rather than folding a guess into the kitchen.' },
+        { q: 'What lead time should I plan for?', a: 'Allow eight to twelve weeks from signed order to delivery for a first specification, and less once we hold your details. Tell us your programme and we will book against it rather than against ours.' },
+      ],
+      placeholder: 'PLACEHOLDER: trade discount structure, minimum order quantity, payment terms and credit application are not defined. Confirm with the client and add them here before promoting this page.',
+    },
+  ];
+
+  const segmentPages = SEGMENTS.map((s) => ({
+    file: s.file,
+    title: s.title,
+    desc: s.desc,
+    og: s.img,
+    preload: s.img,
+    priority: '0.8',
+    faq: s.faq,
+    trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], [s.file, s.nav]],
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', s.nav]])}
+        <span class="pill">${s.price} &middot; ${s.range}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${s.h1}</h1>
+        <p class="lede">${s.lede}</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="contact.html">${s.slug === 'trade' ? 'Open a trade account' : 'Get a fixed quote'}</a>
+          <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
+        </div>
+      </div>
+      <div>${frame(s.img, s.alt, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        ${s.body.map((b, i) => `
+        <div ${rv()} data-rv-d="${(i % 3) + 1}" style="margin-bottom:2.25rem">
+          <h2 class="d3">${b[0]}</h2>
+          <p class="mt-1 muted">${b[1]}</p>
+        </div>`).join('')}
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">What you get</span>
+          <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">${s.price}<small>${s.range}</small></div>
+          <ul>${s.list.map((x) => `<li>${x}</li>`).join('')}</ul>
+          <a class="btn btn--block" href="contact.html">${s.slug === 'trade' ? 'Talk to us about trade' : 'Get this priced'}</a>
+        </div>
+      </div>
+    </div>
+    ${s.placeholder ? `<!-- ${s.placeholder} -->` : ''}
+  </section>
+
+  ${faqBlock(s.faq, s.nav + ' — questions')}
+  ${reviews}
+  ${ctaBand({ eyebrow: s.nav, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: 'A fixed, itemised quote with nothing hidden in it. If the number does not work for you, you owe us nothing and you keep the drawings.' })}
+`,
+  }));
+
   /* ============================================================== PRIVACY */
   /* Drafted against the Australian Privacy Principles. Written to describe
      what the site ACTUALLY does today — where a practice is not yet decided
@@ -1580,5 +1825,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, privacy, thanks, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, ...segmentPages, privacy, thanks, notFound];
 };
