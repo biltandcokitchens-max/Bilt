@@ -486,7 +486,106 @@ module.exports = function (api) {
 
   ${comparison}
 
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>The specification</p>
+      <div class="split" style="align-items:end;margin-bottom:2.5rem">
+        <h2 class="d2" ${rv()} data-rv-d="1">What is actually<br>in the price.</h2>
+        <p class="muted" ${rv()} data-rv-d="2">Most kitchen quotes describe a look. This is the build. Ask any other company you are talking to for the same six lines in writing &mdash; it is the fastest way to understand why two quotes for the &ldquo;same&rdquo; kitchen are thousands apart.</p>
+      </div>
+
+      <div class="scan" ${rv()} data-rv-d="1" style="overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:#FDFBF7">
+        <table class="cmp">
+          <thead><tr><th scope="col">Component</th><th scope="col">What we specify</th><th scope="col">Why it matters here</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Carcass</th><td>18mm moisture-resistant board</td><td>16mm standard board swells the first time water reaches a joint. In this climate that is when, not if.</td></tr>
+            <tr><th scope="row">Edging</th><td>Laser-bonded, no glue line</td><td>Hot-melt glued edging lifts in heat and humidity. Laser bonding leaves no seam for it to start from.</td></tr>
+            <tr><th scope="row">Hinges</th><td>Blum soft-close, lifetime warranty</td><td>The part you touch most and notice least until it sags. Blum carries a lifetime mechanical warranty.</td></tr>
+            <tr><th scope="row">Runners</th><td>Blum full-extension</td><td>The whole drawer comes out, not two thirds. You use the back of every drawer instead of losing it.</td></tr>
+            <tr><th scope="row">Benchtop</th><td>Stone, porcelain or laminate</td><td>Porcelain and sintered stone are the best performers in a room that gets afternoon sun.</td></tr>
+            <tr><th scope="row">Install</th><td>Our own team, adjustable legs</td><td>Rockhampton floors are rarely level. Adjustable legs and scribed fillers mean that is our problem, not yours.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted mt-2" ${rv()}>Every one of these is standard across all three collections. The collections differ in doors, benchtop and hand-work &mdash; never in the parts that determine how long the kitchen lasts.</p>
+    </div>
+  </section>
+
   <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>What moves the number</p>
+      <div class="split" style="align-items:end;margin-bottom:2.5rem">
+        <h2 class="d2" ${rv()} data-rv-d="1">Four things<br>set your price.</h2>
+        <p class="muted" ${rv()} data-rv-d="2">In order of impact. Everything else is rounding, which is why we can quote a realistic range on the phone before we have seen your room.</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="step" ${rv()} data-rv-d="1">
+          <span class="step__no">1</span>
+          <h3>Run length</h3>
+          <p class="muted">The single biggest factor. We price per linear metre of cabinetry, so a 4m kitchen and an 8m kitchen are genuinely different projects. Measure your runs and the <a href="investment.html" style="color:var(--brass)">estimator</a> will give you a real range.</p>
+        </div>
+        <div class="step" ${rv()} data-rv-d="2">
+          <span class="step__no">2</span>
+          <h3>Benchtop</h3>
+          <p class="muted">Laminate is included. Engineered stone adds roughly $1,750 on a compact run, porcelain more again, natural stone more again. It is the largest single upgrade most people make. <a href="guide-benchtops-compared.html" style="color:var(--brass)">Compared here</a>.</p>
+        </div>
+        <div class="step" ${rv()} data-rv-d="3">
+          <span class="step__no">3</span>
+          <h3>Doors</h3>
+          <p class="muted">Where taste lives, and where a budget flexes most safely. Laminate and matte at the bottom, two-pack in the middle, timber veneer above. A beautiful door on cheap hardware is a false economy; the reverse is merely patient.</p>
+        </div>
+        <div class="step" ${rv()} data-rv-d="4">
+          <span class="step__no">4</span>
+          <h3>Fit-out</h3>
+          <p class="muted">Pull-downs, blind-corner pull-outs, carousels and push-to-open motion, each priced individually. Cheaper designed in than retrofitted, because the cabinet has to be built to suit. <a href="fit-out.html" style="color:var(--brass)">All eight options</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Who we build for</p>
+      <div class="split" style="align-items:end;margin-bottom:2.5rem">
+        <h2 class="d2" ${rv()} data-rv-d="1">Not every kitchen<br>is a renovation.</h2>
+        <p class="muted" ${rv()} data-rv-d="2">Roughly half of what we build is not somebody replacing a tired kitchen. Each of these has its own constraints, its own pricing and its own page.</p>
+      </div>
+      <div class="grid cols-4">
+        <a class="card" href="new-build-kitchens.html" ${rv()} data-rv-d="1">
+          <div class="card__body"><p class="card__price">From $15,000</p><h3 class="d4">New builds</h3><p>Upgrading from the builder&rsquo;s standard, worked against your construction programme.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="granny-flat-kitchens.html" ${rv()} data-rv-d="2">
+          <div class="card__body"><p class="card__price">From $6,500</p><h3 class="d4">Granny flats</h3><p>Secondary dwellings and under-house conversions, specified for the second tenant.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="tiny-home-kitchens.html" ${rv()} data-rv-d="3">
+          <div class="card__body"><p class="card__price">From $5,300</p><h3 class="d4">Tiny homes</h3><p>Compact runs where every millimetre counts, with full-size hardware.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="trade.html" ${rv()} data-rv-d="4">
+          <div class="card__body"><p class="card__price">Trade pricing</p><h3 class="d4">Builders</h3><p>Held specifications for repeating layouts. Supply only, or supply and install.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow" ${rv()}>Rockhampton, specifically</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Three rooms we<br>see constantly.</h2>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">Housing stock here is distinctive, and the same three projects come across our table most weeks.</p>
+        <a class="link-u mt-3" href="contact.html" ${rv()} data-rv-d="3">Tell us about yours &rarr;</a>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <ul class="list-check">
+          <li><strong>The high-set under-house conversion.</strong> Enclosing beneath an older Queenslander to make a second living space or flat. Floors are rarely level and walls are rarely square, so we measure what is actually there and scribe to it rather than trusting the plan.</li>
+          <li><strong>The 1970s brick renovation.</strong> Small, closed-off kitchens with a load-bearing wall between the cooking and living space. Half the value is in what comes out, so we bring a builder through before quoting rather than after.</li>
+          <li><strong>The new build upgrade.</strong> A house under construction where the standard kitchen in the contract does not match the rest of the build. Worth raising with your builder before the slab, while services can still move cheaply.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
       <p class="eyebrow" ${rv()}>Also part of the kitchen</p>
       <h2 class="d2 mb-2" ${rv()} data-rv-d="1">The rooms that make it work.</h2>
@@ -1712,6 +1811,215 @@ module.exports = function (api) {
 `,
   }));
 
+  /* ================================================================ GUIDES */
+  /* The site's first top-of-funnel content. Written to answer the question
+     properly rather than to reach a word count, because a guide that does not
+     answer it is worse than no guide. */
+
+  const GUIDES = [
+    {
+      slug: 'kitchen-colours-2026',
+      nav: 'Kitchen colours and materials in 2026',
+      title: 'Kitchen Colours & Materials 2026 | Australia | Bilt & Co',
+      desc: 'What Australian kitchens actually look like in 2026 — warm neutrals over cool grey, natural timber, matte finishes and flat-panel doors — and what each costs.',
+      h1: 'Kitchen colours<br><span class="italic brass">and materials in 2026.</span>',
+      lede: 'Cool grey is over. Here is what has replaced it, why, and what each choice does to the price of your kitchen.',
+      img: 'collection-marble-03',
+      alt: 'Warm timber kitchen with stone splashback and brass lighting',
+      read: '6 min read',
+      sections: [
+        ['The palette moved warm, and it moved decisively', 'For most of the last decade the safe Australian kitchen was cool grey with a white benchtop. That has genuinely ended. The colours being specified now are warm whites, putty, mushroom, taupe, clay and muted sage — tones with some earth in them that let natural materials sit comfortably alongside.<br><br>The reason is not fashion for its own sake. Cool grey fights timber, and timber has come back hard. Put an oak veneer against a cool grey door and one of them looks wrong; put it against putty or mushroom and they read as a set.'],
+        ['Where the bold colour goes', 'The move to warm neutrals has not made kitchens timid. What has changed is where the colour sits. Rather than a whole kitchen in a strong colour, the pattern now is a neutral run with one committed element — forest green, burgundy, navy or deep brown on an island, a bank of tall cabinetry, or the door concealing a butler’s pantry.<br><br>That approach is also far easier to live with. An island can be repainted or replaced in a way a whole kitchen cannot, so the risk of a bold choice is contained.'],
+        ['Timber is the defining material', 'Natural timber is the clearest material trend of 2026, used to soften kitchens that would otherwise read as hard. In practice that means veneer rather than solid — a rift-cut or quarter-cut oak, finished in a hard-wax oil or a matte lacquer, celebrating the grain rather than hiding it.<br><br>Worth knowing before you commit: timber veneer costs more than laminate and it moves more. In a Central Queensland kitchen that gets afternoon sun, where you put it matters. We would rather use it where you touch it and specify something more stable where the sun lands.'],
+        ['Matte has beaten gloss', 'Soft-touch laminates and lightly grained timber-look surfaces now dominate over high gloss. Matte hides fingerprints, does not throw glare across a room, and photographs better in the natural light most Queensland kitchens have plenty of.<br><br>Flat-panel doors have returned alongside it — smooth faces, streamlined edges, no profile. It is a quieter look than the shaker that preceded it, and it suits a handleless rail or push-to-open particularly well.'],
+        ['What this costs you', 'Roughly: laminate and matte finishes sit at the bottom of the range and behave well here. Two-pack paint sits in the middle and can be any colour you like, which is how most people get a bold island without committing the whole kitchen. Timber veneer sits above that.<br><br>The benchtop moves the number more than the doors do. Laminate is included, engineered stone adds around $1,750 on a compact run, and porcelain or sintered stone adds more again while handling heat and sun better than anything else.'],
+      ],
+      faq: [
+        { q: 'Is grey completely out for kitchens?', a: 'Cool grey has fallen away sharply, yes — the palette has moved to warm whites, putty, mushroom, taupe, clay and muted sage. Warm greys still work, particularly alongside timber. If you already have a cool grey kitchen you do not need to panic; it reads as of its moment rather than as a mistake.' },
+        { q: 'Will timber veneer survive a Queensland summer?', a: 'Yes, if it is specified sensibly. Veneer is stable in normal use, but direct afternoon sun will fade and move any timber over years. We use it where you touch it and specify something more stable where the sun actually lands, which is usually one or two runs rather than the whole kitchen.' },
+        { q: 'What colour holds its value longest?', a: 'A warm neutral on the bulk of the cabinetry, with the personality in one contained element. It ages well, it does not date the room to a single year, and if you tire of the bold piece you can change one island rather than a whole kitchen.' },
+      ],
+    },
+    {
+      slug: 'butlers-pantry-worth-it',
+      nav: 'Do you actually need a butler’s pantry?',
+      title: 'Do You Need a Butler’s Pantry? | Honest Guide | Bilt & Co',
+      desc: 'When a butler’s pantry is worth the money, when it is not, how much space it really needs, and what it costs in Rockhampton.',
+      h1: 'Do you actually need<br><span class="italic brass">a butler’s pantry?</span>',
+      lede: 'The most requested feature in Australian kitchens right now, and the one most likely to be built too small to work.',
+      img: 'detail-black-cabinetry',
+      alt: 'Concealed butler’s pantry with integrated sink and storage',
+      read: '5 min read',
+      sections: [
+        ['Why everyone wants one', 'The stated reason people give is storage. The real reason, consistently, is that they want the mess out of sight. A butler’s pantry lets the main kitchen stay a clean stone surface while the actual work — the appliances, the drying dishes, the bulk shop — happens behind a door.<br><br>That is why it keeps topping want-lists. It is not really a storage feature. It is a feature that protects the thing you spent the most money on.'],
+        ['The size below which it stops working', 'This is where most of them go wrong. A functional walk-through needs about <strong>1.1 metres of clear floor</strong> between opposing benches, and roughly <strong>2.4 metres of run</strong>. Below that, two people cannot pass, the door to the dishwasher blocks the aisle, and you end up with a corridor you resent.<br><br>If you cannot find that space, you are usually better served by a tall appliance cupboard or a dedicated pantry wall in the main kitchen. We would rather tell you that than sell you a room that annoys you every day.'],
+        ['The second sink is the thing people keep', 'Ask anyone who has one what they would refuse to give up, and it is almost never the shelving. It is the second sink. It is what allows the main kitchen sink to stay empty and the bench to stay clear while cooking is actually happening.<br><br>If plumbing to that wall is straightforward, we will almost always recommend it. If the wall is on the far side of the house, we will show you what it costs before you decide rather than quietly leaving it out.'],
+        ['What it costs', 'A compact walk-through with open shelving and a laminate bench starts around $4,000 added to a kitchen. A full second kitchen — second sink, dishwasher, stone benchtop, floor-to-ceiling joinery and a concealed door — typically runs $10,500 to $19,500. A scullery that is genuinely a room of its own, with a second oven and a window, starts around $19,500.<br><br>Those figures assume it is built alongside a new kitchen. Retrofitting into a finished house costs more, because it is a building job before it is a joinery one.'],
+        ['When to say no', 'Skip it if you cannot make the clearances, if plumbing is genuinely expensive to run, or if the space would come out of a kitchen that is already tight. A cramped butler’s pantry attached to a compromised kitchen is worse than a generous kitchen with good tall storage.<br><br>It is also worth being honest about how you cook. A butler’s pantry earns its keep in a household that entertains and cooks daily. In a house of two who eat simply, that money often does more in better hardware and a better benchtop.'],
+      ],
+      faq: [
+        { q: 'How much space does a butler’s pantry need?', a: 'About 1.1 metres of clear floor between benches and roughly 2.4 metres of run. Below that it stops functioning as a working room — two people cannot pass and appliance doors block the aisle. If you cannot achieve it, a tall appliance cupboard in the main kitchen is the better answer.' },
+        { q: 'Does a butler’s pantry add value to a house?', a: 'In the current market it is one of the most requested features, so it helps a listing. But it adds value through the kitchen it protects rather than on its own — a butler’s pantry attached to a poor kitchen does very little. Get the kitchen right first.' },
+        { q: 'Do I need plumbing in it?', a: 'Not strictly, but the second sink is the feature owners say they would never give up. If the plumbing run is straightforward we recommend it nearly every time. If it is expensive we will price it separately so you can make the call with the number in front of you.' },
+      ],
+    },
+    {
+      slug: 'benchtops-compared',
+      nav: 'Kitchen benchtops compared',
+      title: 'Kitchen Benchtops Compared | Cost & Durability | Bilt & Co',
+      desc: 'Laminate, engineered stone, porcelain, sintered stone and natural marble compared on cost, heat, stains and how each behaves in a Queensland kitchen.',
+      h1: 'Benchtops,<br><span class="italic brass">compared honestly.</span>',
+      lede: 'The largest surface in the room, the one that takes the abuse, and the single choice that moves your price most.',
+      img: 'island-marble-close',
+      alt: 'Stone benchtop detail showing a mitred edge',
+      read: '7 min read',
+      sections: [
+        ['Laminate', 'Included in every collection, and better than its reputation. Modern laminates hold their colour, come in convincing stone and timber looks, and survive normal use for years.<br><br>Where it fails: heat and water at the edges. A hot pan will mark it permanently, and if water gets into a joint or an unsealed cut-out the substrate swells and there is no repair. In a rental or a secondary dwelling it is often exactly the right choice. In a kitchen you intend to keep for twenty years it is a compromise you will notice.'],
+        ['Engineered stone', 'The default upgrade, and adds around $1,750 on a compact run. Non-porous, consistent in appearance, and available in patterns that look like natural stone without natural stone’s variation.<br><br>Two things to know. It is not heatproof — a pan straight off the cooktop can mark it. And be aware that engineered stone containing crystalline silica has been the subject of significant regulatory change in Australia on worker-safety grounds; ask your supplier what they are actually selling you and how it is fabricated.'],
+        ['Porcelain and sintered stone', 'Our recommendation for most Central Queensland kitchens. Heat resistant to a degree the others are not, UV stable so it will not shift colour in a room that gets afternoon sun, non-porous, and extremely hard.<br><br>The trade-offs are cost and edges. It is dearer than engineered stone, and because the pattern is often surface-printed, a mitred edge needs to be done well or the join reads. Ask to see a mitred sample rather than a flat one.'],
+        ['Natural stone — marble and granite', 'The most beautiful and the least forgiving. Marble is porous, etches with anything acidic, and will develop a patina whether or not you wanted one. Granite is far harder and more practical but has fallen out of fashion in a way that has nothing to do with performance.<br><br>Choose marble with your eyes open. People who love it accept the marks as character. People who wanted it to stay pristine are unhappy within a year. We will show you an aged sample, not just a polished one, before you sign.'],
+        ['What we would actually specify', 'For a rental or a granny flat: laminate, and put the saving into hardware. For a family kitchen that will be used hard: porcelain or sintered stone. For a kitchen where appearance leads and the owner understands the trade-off: natural marble on the island, something tougher on the working runs.<br><br>That last combination is more common than people expect, and it is often the sensible answer — the beautiful stone where it is seen, the practical stone where the cooking happens.'],
+      ],
+      faq: [
+        { q: 'What is the most durable kitchen benchtop?', a: 'Porcelain and sintered stone. They are heat resistant, UV stable, non-porous and extremely hard, which makes them the best performers in a Queensland kitchen that gets afternoon sun. They cost more than engineered stone and the mitred edges need to be well made.' },
+        { q: 'How much does a stone benchtop add?', a: 'Engineered stone adds roughly $1,750 on a compact run, with porcelain and sintered stone above that and natural marble or granite above again. On a larger kitchen the gap widens, because you are paying per square metre of slab.' },
+        { q: 'Can you put a hot pan on engineered stone?', a: 'No. Engineered stone is not heatproof and a pan straight off the cooktop can mark it permanently. Porcelain and sintered stone handle heat far better. If you are a cook who moves pans directly to the bench, that difference should decide your choice.' },
+        { q: 'Does marble stain?', a: 'Marble is porous and etches with anything acidic — lemon, wine, vinegar — regardless of sealing. It develops a patina. Owners who love marble accept that as character; owners who expected it to stay pristine are usually unhappy. We show clients an aged sample before they commit.' },
+      ],
+    },
+    {
+      slug: 'kitchen-layouts',
+      nav: 'Kitchen layouts compared',
+      title: 'Kitchen Layouts Compared | Galley, L, U, Island | Bilt & Co',
+      desc: 'Galley, L-shaped, U-shaped and island kitchens compared on clearances, cost and which room each one actually suits.',
+      h1: 'Four layouts,<br><span class="italic brass">and the room each suits.</span>',
+      lede: 'Layout costs nothing to get right at drawing stage and a great deal to get wrong. It is the most valuable decision in the whole project.',
+      img: 'openplan-long',
+      alt: 'Open plan kitchen with a long island bench',
+      read: '6 min read',
+      sections: [
+        ['The clearances that decide everything', 'Before the shapes, the numbers. Australian kitchens work to a bench height of about <strong>900mm</strong> and a depth of <strong>600mm</strong>, with overheads <strong>600 to 750mm</strong> above the bench.<br><br>The one that matters most is aisle width. <strong>1,000mm is the practical minimum</strong> between opposing runs, and <strong>1,200mm</strong> is where a kitchen starts to feel generous and two people stop colliding. If a layout cannot give you 1,000mm, it is the wrong layout for that room regardless of how good it looks on a plan.'],
+        ['Galley', 'Two parallel runs. The most efficient layout that exists in terms of work per step, and the cheapest per metre of storage, which is why it dominates apartments, granny flats and tiny homes.<br><br>It needs that 1,000mm aisle and it does not tolerate through-traffic. If the galley is also the path to the back door, it will be a nuisance forever. Best in a room with one entrance.'],
+        ['L-shaped', 'Two runs meeting in a corner. The most common domestic layout in Australia, and for good reason — it opens to a dining space, keeps traffic out of the working zone, and adapts to almost any room.<br><br>Its weakness is the corner, which wastes roughly half a cabinet unless you address it. A blind-corner pull-out or a carousel turns that dead space into the most useful storage in the kitchen, and it is the fit-out option we recommend more than any other.'],
+        ['U-shaped', 'Three runs. The most storage and bench you can fit in a given footprint, and excellent for a serious cook because everything is within a step.<br><br>It needs width — you are managing two aisles, not one — and it can feel enclosed if the third run is solid to the ceiling. Two corners means two corner solutions, so budget for them.'],
+        ['Island', 'Any of the above with a freestanding bench. What most people picture when they picture a new kitchen, and the layout that most often will not fit.<br><br>An island needs <strong>1,000mm clear on every side you use</strong>, and 1,200mm where people sit. Add the island depth and you need roughly 3.6 metres of room width before an island is comfortable. Below that, a peninsula does the same social job without the pinch points. Islands also carry cost beyond the cabinetry — power, and often plumbing.'],
+        ['How to choose', 'Measure the room and apply the clearances first. That usually eliminates two of the four immediately, which is a far better starting point than a mood board.<br><br>Then ask how many people cook at once. One cook is well served by a galley or an L. Two need the wider aisles of a U or an island. Then ask where people stand when they are not cooking, because that is what an island really solves — it is a social answer more than a storage one.'],
+      ],
+      faq: [
+        { q: 'What is the minimum space for a kitchen island?', a: 'Allow 1,000mm clear on every side you use and 1,200mm where people will sit. With a 900mm island that means roughly 3.6 metres of room width before it is comfortable. Below that a peninsula gives you the same social benefit without the pinch points.' },
+        { q: 'Which kitchen layout is cheapest?', a: 'A galley, per metre of storage. Two straight runs, no corners to solve and no island to power or plumb. It is why galleys dominate granny flats, apartments and tiny homes — the layout is efficient before you have spent anything on finishes.' },
+        { q: 'How wide should a kitchen aisle be?', a: '1,000mm is the practical minimum between opposing runs. 1,200mm is where it stops feeling tight and two people can work without colliding. If a layout cannot give you 1,000mm, it is the wrong layout for that room.' },
+        { q: 'What do I do about the corner in an L-shaped kitchen?', a: 'A blind-corner pull-out or a carousel. An unaddressed corner wastes roughly half a cabinet — you can reach the front of it and nothing else. It is the fit-out option we recommend most, because it creates storage you do not currently have rather than making existing storage easier to reach.' },
+      ],
+    },
+  ];
+
+  const guidePages = GUIDES.map((g) => ({
+    file: `guide-${g.slug}.html`,
+    title: g.title,
+    desc: g.desc,
+    og: g.img,
+    preload: g.img,
+    priority: '0.7',
+    faq: g.faq,
+    trail: [['index.html', 'Home'], ['guides.html', 'Guides'], [`guide-${g.slug}.html`, g.nav]],
+    ld: [{
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: g.nav,
+      description: g.desc,
+      image: `${SITE.origin}/assets/img/${g.img}.jpg`,
+      author: { '@type': 'Organization', name: SITE.name, '@id': `${SITE.origin}/#business` },
+      publisher: { '@id': `${SITE.origin}/#business` },
+      mainEntityOfPage: `${SITE.origin}/guide-${g.slug}.html`,
+    }],
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['guides.html', 'Guides'], ['#', g.nav]])}
+        <span class="pill">${g.read}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${g.h1}</h1>
+        <p class="lede">${g.lede}</p>
+      </div>
+      <div>${frame(g.img, g.alt, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="legal">
+        ${g.sections.map((sec, i) => `
+        <div ${rv()} data-rv-d="${(i % 3) + 1}">
+          <h2 class="d3">${sec[0]}</h2>
+          <p class="mt-1 muted">${sec[1]}</p>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(g.faq, 'Common questions')}
+  ${ctaBand({ eyebrow: 'Put it to use', title: 'Reading is one thing.<br><span class="italic" style="color:var(--brass-lite)">Your room is another.</span>', body: 'Send us your dimensions and we will tell you what actually works in your space — and what it costs. Free, fixed, and yours to keep either way.' })}
+`,
+  }));
+
+  const guidesHub = {
+    file: 'guides.html',
+    title: 'Kitchen Guides | Colours, Benchtops, Layouts | Bilt & Co',
+    desc: 'Practical guides to planning a kitchen — 2026 colours and materials, benchtops compared, layouts and clearances, and whether a butler’s pantry is worth it.',
+    og: 'joinery-sketch',
+    preload: 'joinery-sketch',
+    priority: '0.8',
+    trail: [['index.html', 'Home'], ['guides.html', 'Guides']],
+    ld: [{
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Kitchen guides',
+      url: `${SITE.origin}/guides.html`,
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: GUIDES.map((g, i) => ({
+          '@type': 'ListItem', position: i + 1, name: g.nav, url: `${SITE.origin}/guide-${g.slug}.html`,
+        })),
+      },
+    }],
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['#', 'Guides']])}
+        <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Everything we get<br><span class="italic brass">asked at the table.</span></h1>
+        <p class="lede">Written from the questions clients actually put to us, answered the way we would answer them in your kitchen &mdash; including where the answer is &ldquo;do not do that&rdquo;.</p>
+      </div>
+      <div>${frame('joinery-sketch', 'Kitchen drawings and detail sketches', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid cols-2">
+        ${GUIDES.map((g, i) => `
+        <a class="card" href="guide-${g.slug}.html" ${rv()} data-rv-d="${(i % 2) + 1}">
+          ${frame(g.img, g.alt, 'wide')}
+          <div class="card__body">
+            <p class="card__price">${g.read}</p>
+            <h2 class="d4">${g.nav}</h2>
+            <p>${g.lede}</p>
+            <span class="link-u mt-1">Read the guide &rarr;</span>
+          </div>
+        </a>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  ${ctaBand({ eyebrow: 'Or just ask', title: 'Not finding<br><span class="italic" style="color:var(--brass-lite)">your question?</span>', body: 'Call the studio. We would rather talk it through than have you guess — and we will tell you honestly when the answer is that you should not spend the money.' })}
+`,
+  };
+
   /* ============================================================== PRIVACY */
   /* Drafted against the Australian Privacy Principles. Written to describe
      what the site ACTUALLY does today — where a practice is not yet decided
@@ -1825,5 +2133,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, ...segmentPages, privacy, thanks, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };

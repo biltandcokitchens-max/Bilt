@@ -43,6 +43,7 @@ const NAV = [
   ['joinery.html', 'Joinery'],
   ['gallery.html', 'Gallery'],
   ['investment.html', 'Investment'],
+  ['guides.html', 'Guides'],
   ['studio.html', 'Studio'],
 ];
 
@@ -150,6 +151,7 @@ function footer() {
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="investment.html">Investment guide</a></li>
             <li><a href="process.html">Our process</a></li>
+            <li><a href="guides.html">Kitchen guides</a></li>
           </ul>
         </div>
         <div>
