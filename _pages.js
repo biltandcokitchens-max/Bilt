@@ -150,25 +150,25 @@ module.exports = function (api) {
       <p class="eyebrow" ${rv()}>Compare honestly</p>
       <div class="split" style="align-items:end;margin-bottom:2rem">
         <h2 class="d2" ${rv()} data-rv-d="1">Why two quotes for the<br>same kitchen differ by $20,000.</h2>
-        <p class="muted" ${rv()} data-rv-d="2">It is almost never the design. It is these six lines. Ask every company you speak to in Rockhampton to answer them in writing &mdash; including us.</p>
+        <p class="muted" ${rv()} data-rv-d="2">It is rarely the design. It is these seven lines. Ask every company you speak to in Rockhampton to answer them in writing &mdash; including us.</p>
       </div>
       <div class="cmp-scroll" ${rv()} data-rv-d="1">
         <table class="cmp">
           <thead>
-            <tr><th scope="col">What you are actually buying</th><th scope="col">Bilt &amp; Co</th><th scope="col">Flat pack + installer</th><th scope="col">Typical cabinet shop</th></tr>
+            <tr><th scope="col">What you are actually buying</th><th scope="col">Bilt &amp; Co</th><th scope="col">Custom cabinetmaker</th><th scope="col">Kitchen retailer or franchise</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Carcass board</th><td>18mm moisture-resistant</td><td>16mm standard MDF</td><td>16&ndash;18mm, varies</td></tr>
-            <tr><th scope="row">Edging</th><td>Laser-bonded, no glue line</td><td>Hot-melt glued</td><td>Hot-melt glued</td></tr>
-            <tr><th scope="row">Hinges &amp; runners</th><td>Blum, lifetime warranty</td><td>Unbranded</td><td>Mixed brands</td></tr>
-            <tr><th scope="row">Who installs it</th><td>Our own employed team</td><td>Contract handyman</td><td>Usually subcontracted</td></tr>
-            <tr><th scope="row">Quote type</th><td class="yes">Fixed, itemised</td><td>Estimate, excludes install</td><td>Often "provisional"</td></tr>
-            <tr><th scope="row">Warranty</th><td>10 years, written</td><td class="no">12 months, parts only</td><td>2&ndash;7 years, varies</td></tr>
-            <tr><th scope="row">Typical 7m kitchen</th><td>$26,000 &ndash; $35,000</td><td>$14,000 &ndash; $22,000</td><td>$32,000 &ndash; $55,000</td></tr>
+            <tr><th scope="row">Who designs it</th><td>The person who measured your room</td><td>Usually the maker, in person</td><td class="no">A salesperson, then a designer elsewhere</td></tr>
+            <tr><th scope="row">Carcass board</th><td>18mm moisture-resistant</td><td>Typically 18mm, varies by maker</td><td>16&ndash;18mm, varies by range</td></tr>
+            <tr><th scope="row">Hardware</th><td>Blum, lifetime warranty</td><td>Usually Blum or Hettich</td><td>Depends on the range you pick</td></tr>
+            <tr><th scope="row">Lead time</th><td class="yes">8&ndash;12 weeks</td><td class="no">12&ndash;20 weeks, often longer</td><td>10&ndash;16 weeks</td></tr>
+            <tr><th scope="row">Quote</th><td class="yes">Fixed and itemised before you start</td><td>Often estimated, refined later</td><td>Fixed, but showroom cost is in it</td></tr>
+            <tr><th scope="row">Who installs it</th><td>Our own employed team</td><td>Usually the maker</td><td class="no">Commonly subcontracted</td></tr>
+            <tr><th scope="row">Typical 7m kitchen</th><td>$26,000 &ndash; $42,000</td><td>$35,000 &ndash; $60,000</td><td>$30,000 &ndash; $55,000</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="small muted mt-2" ${rv()}>Competitor columns describe common market practice in Central Queensland, not any specific business. Always get the specification in writing.</p>
+      <p class="small muted mt-2" ${rv()}>The two right-hand columns describe common market practice in Central Queensland, not any particular business, and good cabinetmakers beat these figures regularly. Always get the specification in writing before you compare prices.</p>
     </div>
   </section>`;
 
@@ -550,7 +550,7 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Not every kitchen<br>is a renovation.</h2>
         <p class="muted" ${rv()} data-rv-d="2">Roughly half of what we build is not somebody replacing a tired kitchen. Each of these has its own constraints, its own pricing and its own page.</p>
       </div>
-      <div class="grid cols-4">
+      <div class="grid cols-3">
         <a class="card" href="new-build-kitchens.html" ${rv()} data-rv-d="1">
           <div class="card__body"><p class="card__price">From $15,000</p><h3 class="d4">New builds</h3><p>Upgrading from the builder&rsquo;s standard, worked against your construction programme.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
@@ -560,7 +560,10 @@ module.exports = function (api) {
         <a class="card" href="tiny-home-kitchens.html" ${rv()} data-rv-d="3">
           <div class="card__body"><p class="card__price">From $5,300</p><h3 class="d4">Tiny homes</h3><p>Compact runs where every millimetre counts, with full-size hardware.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
-        <a class="card" href="trade.html" ${rv()} data-rv-d="4">
+        <a class="card" href="kitchenettes.html" ${rv()} data-rv-d="4">
+          <div class="card__body"><p class="card__price">From $2,400</p><h3 class="d4">Kitchenettes</h3><p>Studios, offices and short-stay rooms. A bench, a sink and storage that earns its place.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="trade.html" ${rv()} data-rv-d="5">
           <div class="card__body"><p class="card__price">Trade pricing</p><h3 class="d4">Builders</h3><p>Held specifications for repeating layouts. Supply only, or supply and install.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
       </div>
@@ -653,7 +656,7 @@ module.exports = function (api) {
       <div>
         <p class="eyebrow" ${rv()}>The case for one</p>
         <h2 class="d2" ${rv()} data-rv-d="1">Every mess<br>gets a home.</h2>
-        <p class="lede mt-2" ${rv()} data-rv-d="2">Ask any client with a butler's pantry what they would keep if they rebuilt tomorrow. It is never the splashback.</p>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">Ask any client with a butler's pantry what they would keep if they rebuilt tomorrow. It is never the splashback. If you are still deciding, our guide on <a href="guide-butlers-pantry-worth-it.html" style="color:var(--brass)">whether you actually need one</a> covers the clearances below which it stops working.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="3">Appliances live plugged in and out of sight. Sunday's dishes go behind a door. The bulk shop unloads onto a bench nobody has to look at. Your island stays a clean stone surface &mdash; which is, after all, what you paid for.</p>
         <ul class="list-check mt-3" ${rv()} data-rv-d="4">
           <li>Second sink and dishwasher, so the main kitchen never stacks up</li>
@@ -846,7 +849,7 @@ module.exports = function (api) {
         </div>
         <div ${rv()} data-rv-d="2">
           <h3 class="d4">Benchtops</h3>
-          <p class="small muted">Laminate is included. Engineered stone adds around $1,750 on a compact run. Porcelain and sintered stone add more again and handle heat and afternoon sun better than anything else. Natural marble is the most beautiful and the least forgiving.</p>
+          <p class="small muted">Laminate is included. Engineered stone adds around $1,750 on a compact run. Porcelain and sintered stone add more again and handle heat and afternoon sun better than anything else. Natural marble is the most beautiful and the least forgiving. <a href="guide-benchtops-compared.html" style="color:var(--brass)">All five compared here</a>.</p>
         </div>
         <div ${rv()} data-rv-d="3">
           <h3 class="d4">Handles, or none</h3>
@@ -878,7 +881,7 @@ module.exports = function (api) {
       <div>
         <p class="eyebrow" ${rv()}>Where to start</p>
         <h2 class="d2" ${rv()} data-rv-d="1">Bring us a picture<br>you like.</h2>
-        <p class="lede mt-2" ${rv()} data-rv-d="2">You do not need to know what the finish is called. Screenshot anything &mdash; from here, from Instagram, from a friend&rsquo;s house &mdash; and we will tell you what it is, what it costs, and whether it will survive a Central Queensland summer.</p>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">You do not need to know what the finish is called — though <a href="guide-kitchen-colours-2026.html" style="color:var(--brass)">what people are choosing in 2026</a> is worth five minutes if you are starting from scratch. Screenshot anything &mdash; from here, from Instagram, from a friend&rsquo;s house &mdash; and we will tell you what it is, what it costs, and whether it will survive a Central Queensland summer.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="3">That last part matters more than people expect. Some finishes that photograph beautifully in a Melbourne apartment do not belong in a room that gets afternoon sun in February.</p>
         <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Send us your reference</a>
       </div>
@@ -1638,7 +1641,7 @@ module.exports = function (api) {
       range: '1.8m – 2.4m run',
       body: [
         ['Small does not mean cheap hardware', 'The temptation in a tiny home is to save on the parts you touch. It is the wrong place to save, because in a kitchen this size you touch everything, constantly. Every Bilt &amp; Co tiny home kitchen gets the same Blum soft-close hinges and full-extension runners as a $40,000 kitchen. The drawer still comes all the way out.'],
-        ['Designed around the actual footprint', 'We draw to your measurements, not to a module. That matters more here than anywhere else: a 40mm filler panel in a 2.4m kitchen is 40mm of bench you have lost forever. If your build is on a trailer, tell us the axle position and we will keep the weight where it belongs.'],
+        ['Designed around the actual footprint', 'We draw to your measurements, not to a module, and <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layout you choose</a> matters more here than in any other kitchen. That matters more here than anywhere else: a 40mm filler panel in a 2.4m kitchen is 40mm of bench you have lost forever. If your build is on a trailer, tell us the axle position and we will keep the weight where it belongs.'],
         ['Built for a house that moves', 'Tiny homes travel, flex and settle. We specify moisture-resistant carcasses and laser-bonded edging as standard, fix into the frame rather than the lining where we can, and check every unit before it goes in.'],
       ],
       list: [
@@ -1670,7 +1673,7 @@ module.exports = function (api) {
       range: '2.4m – 3.0m run',
       body: [
         ['Specify for the second tenant, not the first', 'A granny flat kitchen gets used hard and is rarely the owner using it. The parts that fail first are always the same: glued edging that lifts, standard runners that sag, and chipboard carcasses that swell the first time a tap drips. We specify against all three as standard, because replacing a kitchen in four years costs more than specifying it properly once.'],
-        ['Small enough to be affordable, real enough to let', 'A 2.4 to 3.0 metre run covers almost every secondary dwelling. That is a genuine kitchen — full-depth base cabinets, a real benchtop, and storage a person can actually live out of, rather than a kitchenette that shows up in the listing photos as a compromise.'],
+        ['Small enough to be affordable, real enough to let', 'A 2.4 to 3.0 metre run covers almost every secondary dwelling, and a galley is almost always the right shape for it — see <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layouts compared</a> for the clearances that decide it. That is a genuine kitchen — full-depth base cabinets, a real benchtop, and storage a person can actually live out of, rather than a kitchenette that shows up in the listing photos as a compromise.'],
         ['Coordinated with your build', 'If the flat is under construction we will work to your builder’s programme and hand your trades a full set of service drawings. If it is a conversion of an under-house or garage space, we will measure what is really there rather than what the plan says.'],
       ],
       list: [
@@ -1703,7 +1706,7 @@ module.exports = function (api) {
       body: [
         ['You are allowed to use your own supplier', 'Most build contracts include a provisional sum for the kitchen, and most allow you to take it elsewhere. Ask your builder what the kitchen allowance is and whether it can be credited. Very often the answer is yes, and the difference between the allowance and a proper kitchen is far smaller than people assume.'],
         ['We work to your builder’s programme', 'A new build has a lock-up date and a trades sequence, and a kitchen that arrives at the wrong moment is a genuine problem. We book against your programme, issue service drawings so your plumber and electrician rough in to the right positions the first time, and deliver assembled so installation is days rather than weeks.'],
-        ['Decide before the slab if you can', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, or a wider opening all cost very little on a plan and a great deal once the slab is down. Bring us your floor plan early, even if you are months from needing us.'],
+        ['Decide before the slab if you can', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, or a wider opening all cost very little on a plan and a great deal once the slab is down. Bring us your floor plan early, even if you are months from needing us. In the meantime <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layout guide</a> will tell you what will actually fit the room you are building.'],
       ],
       list: [
         'Free 3D design of your actual plan before you commit',
@@ -1734,7 +1737,7 @@ module.exports = function (api) {
       range: 'Supply, or supply and install',
       body: [
         ['We hold your specification', 'Once we have built a kitchen for one of your units, that specification stays on file — carcass, doors, hardware, benchtop, the lot. The next order is a confirmation, not a fresh design process. For anyone building repeating layouts, that removes the single most time-consuming part of ordering a kitchen.'],
-        ['Supply only, or supply and install', 'Take delivery assembled and fit it with your own crew, or have our team install it. Most builders start with the first and move to the second once they have seen how long it takes us. Either way you get service drawings so your trades rough in correctly.'],
+        ['Supply only, or supply and install', 'Take delivery assembled and fit it with your own crew, or have our team install it. If you are speccing for a client, <a href="guide-benchtops-compared.html" style="color:var(--brass)">the benchtop guide</a> is the fastest way to explain the price difference to them. Most builders start with the first and move to the second once they have seen how long it takes us. Either way you get service drawings so your trades rough in correctly.'],
         ['Fixed price, and it stays fixed', 'Your quote is itemised and it holds. We have never issued a surprise variation for our own scope of works, which matters more to a builder carrying the risk on a fixed-price contract than it does to a homeowner.'],
         ['Segments we supply regularly', 'Tiny home builders, granny flat and secondary dwelling specialists, project builders upgrading from a standard kitchen, and renovators who want the cabinetry handled while they do everything else.'],
       ],
@@ -1755,6 +1758,40 @@ module.exports = function (api) {
       placeholder: 'PLACEHOLDER: trade discount structure, minimum order quantity, payment terms and credit application are not defined. Confirm with the client and add them here before promoting this page.',
     },
   ];
+
+  SEGMENTS.push({
+    file: 'kitchenettes.html',
+    slug: 'kitchenette',
+    nav: 'Kitchenettes',
+    title: 'Kitchenettes Rockhampton | From $2,400 | Bilt & Co',
+    desc: 'Compact kitchenettes from $2,400 for studios, under-house conversions, offices and short-stay rentals. 1.2–1.8m runs, delivered assembled and installed.',
+    h1: 'Kitchenettes that<br><span class="italic brass">still feel like a kitchen.</span>',
+    lede: 'A kitchenette is not a shrunken kitchen. It is a different brief — fewer appliances, less run, and every decision about what earns its place.',
+    img: 'detail-black-cabinetry',
+    alt: 'Compact kitchenette with integrated sink, benchtop and concealed storage',
+    price: 'From $2,400',
+    range: '1.2m – 1.8m run',
+    body: [
+      ['Where a kitchenette is the right answer', 'Studios and self-contained rooms. Under-house conversions where the ceiling will not take overheads. Offices and staff rooms. Short-stay and Airbnb rooms where guests reheat rather than cook. Pool houses and shed conversions. In all of them the job is a bench, a sink, cold storage and somewhere to put things — not a full kitchen squeezed into a smaller footprint. If anyone is going to cook a proper meal in the space, you want a compact kitchen instead, and our <a href="granny-flat-kitchens.html" style="color:var(--brass)">granny flat kitchens</a> page is the better place to start.'],
+      ['What to leave out, and what never to', 'The oven is usually the first thing to go, and it is usually the right call — a cooktop and a microwave cover almost everything a kitchenette is actually used for. Lose the overheads if the ceiling is low. What we would not cut is the sink size or the hardware. A bar-sized sink you cannot fit an oven tray into gets complained about for years, and a drawer that sticks is worse in a small room than a large one, because there are fewer of them carrying the same load.'],
+      ['Plumbing usually decides the layout', 'In a conversion, where the waste can run is the constraint that sets the design — not where you would like the sink to be. We look at that before drawing anything, because a kitchenette designed around a plumbing run that cannot be built is a wasted fortnight. If you are converting an under-house, a shed or a garage, send us a photo of where the existing services come up and we will tell you what is realistic before you spend anything.'],
+      ['Built to the same standard as a full kitchen', 'Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging, same ten-year warranty. A kitchenette is smaller, not lighter in construction — and in a rental or a short-stay room it often works harder per cabinet than a family kitchen does. It is also the cheapest room in the house to over-specify, because there is so little of it.'],
+    ],
+    list: [
+      '1.2m to 1.8m runs, drawn to your dimensions',
+      'Sink, benchtop and cold storage as standard',
+      'Cooktop and microwave options; oven where it fits',
+      'Blum soft-close hinges and full-extension runners',
+      'Laminate, stone or porcelain benchtop',
+      'Delivered assembled and installed by our own team',
+    ],
+    faq: [
+      { q: 'What is the difference between a kitchenette and a small kitchen?', a: 'A small kitchen does everything a full kitchen does in less space — oven, full-size sink, proper storage. A kitchenette deliberately does less: usually a cooktop and microwave rather than an oven, a smaller sink, and storage for one or two people. Choosing between them is really one question — will anyone cook a full meal in there?' },
+      { q: 'How much does a kitchenette cost in Rockhampton?', a: 'A 1.2m run starts at about $2,400 and a 1.8m run at about $3,500 with a laminate benchtop, including carcasses, doors and Blum hardware. A stone benchtop adds roughly $1,750. Send us the dimensions and a photo of where your plumbing comes up and we will give you a fixed, itemised quote.' },
+      { q: 'Can I put a kitchenette in a granny flat?', a: 'You can, but most granny flats are better served by a full compact kitchen — see our <a href="granny-flat-kitchens.html">granny flat kitchens</a> page. A kitchenette suits a studio or a single room where nobody is cooking a roast. If the flat is being let as a self-contained dwelling, check the requirements with your council first, because a kitchenette may not satisfy them.' },
+      { q: 'Do I need council approval for a kitchenette?', a: 'Not for the cabinetry itself. But adding a second cooking or washing facility can change how a property is classified, and the rules vary by council and by whether the space is self-contained. Ask Rockhampton Regional Council before you commit — it is a short conversation, and far cheaper than finding out afterwards.' },
+    ],
+  });
 
   const segmentPages = SEGMENTS.map((s) => ({
     file: s.file,
@@ -1878,7 +1915,7 @@ module.exports = function (api) {
         ['Engineered stone', 'The default upgrade, and adds around $1,750 on a compact run. Non-porous, consistent in appearance, and available in patterns that look like natural stone without natural stone’s variation.<br><br>Two things to know. It is not heatproof — a pan straight off the cooktop can mark it. And be aware that engineered stone containing crystalline silica has been the subject of significant regulatory change in Australia on worker-safety grounds; ask your supplier what they are actually selling you and how it is fabricated.'],
         ['Porcelain and sintered stone', 'Our recommendation for most Central Queensland kitchens. Heat resistant to a degree the others are not, UV stable so it will not shift colour in a room that gets afternoon sun, non-porous, and extremely hard.<br><br>The trade-offs are cost and edges. It is dearer than engineered stone, and because the pattern is often surface-printed, a mitred edge needs to be done well or the join reads. Ask to see a mitred sample rather than a flat one.'],
         ['Natural stone — marble and granite', 'The most beautiful and the least forgiving. Marble is porous, etches with anything acidic, and will develop a patina whether or not you wanted one. Granite is far harder and more practical but has fallen out of fashion in a way that has nothing to do with performance.<br><br>Choose marble with your eyes open. People who love it accept the marks as character. People who wanted it to stay pristine are unhappy within a year. We will show you an aged sample, not just a polished one, before you sign.'],
-        ['What we would actually specify', 'For a rental or a granny flat: laminate, and put the saving into hardware. For a family kitchen that will be used hard: porcelain or sintered stone. For a kitchen where appearance leads and the owner understands the trade-off: natural marble on the island, something tougher on the working runs.<br><br>That last combination is more common than people expect, and it is often the sensible answer — the beautiful stone where it is seen, the practical stone where the cooking happens.'],
+        ['What we would actually specify', 'For a rental or a granny flat: laminate, and put the saving into hardware. For a family kitchen that will be used hard: porcelain or sintered stone. For a kitchen where appearance leads and the owner understands the trade-off: natural marble on the island, something tougher on the working runs.<br><br>That last combination is more common than people expect, and it is often the sensible answer — the beautiful stone where it is seen, the practical stone where the cooking happens.<br><br>Which stone reads as current is a separate question from which one lasts, and <a href="guide-kitchen-colours-2026.html" style="color:var(--brass)">the 2026 colours and materials guide</a> covers it.'],
       ],
       faq: [
         { q: 'What is the most durable kitchen benchtop?', a: 'Porcelain and sintered stone. They are heat resistant, UV stable, non-porous and extremely hard, which makes them the best performers in a Queensland kitchen that gets afternoon sun. They cost more than engineered stone and the mitred edges need to be well made.' },
@@ -1901,7 +1938,7 @@ module.exports = function (api) {
         ['The clearances that decide everything', 'Before the shapes, the numbers. Australian kitchens work to a bench height of about <strong>900mm</strong> and a depth of <strong>600mm</strong>, with overheads <strong>600 to 750mm</strong> above the bench.<br><br>The one that matters most is aisle width. <strong>1,000mm is the practical minimum</strong> between opposing runs, and <strong>1,200mm</strong> is where a kitchen starts to feel generous and two people stop colliding. If a layout cannot give you 1,000mm, it is the wrong layout for that room regardless of how good it looks on a plan.'],
         ['Galley', 'Two parallel runs. The most efficient layout that exists in terms of work per step, and the cheapest per metre of storage, which is why it dominates apartments, granny flats and tiny homes.<br><br>It needs that 1,000mm aisle and it does not tolerate through-traffic. If the galley is also the path to the back door, it will be a nuisance forever. Best in a room with one entrance.'],
         ['L-shaped', 'Two runs meeting in a corner. The most common domestic layout in Australia, and for good reason — it opens to a dining space, keeps traffic out of the working zone, and adapts to almost any room.<br><br>Its weakness is the corner, which wastes roughly half a cabinet unless you address it. A blind-corner pull-out or a carousel turns that dead space into the most useful storage in the kitchen, and it is the fit-out option we recommend more than any other.'],
-        ['U-shaped', 'Three runs. The most storage and bench you can fit in a given footprint, and excellent for a serious cook because everything is within a step.<br><br>It needs width — you are managing two aisles, not one — and it can feel enclosed if the third run is solid to the ceiling. Two corners means two corner solutions, so budget for them.'],
+        ['U-shaped', 'Three runs. The most storage and bench you can fit in a given footprint, and excellent for a serious cook because everything is within a step.<br><br>It needs width — you are managing two aisles, not one — and it can feel enclosed if the third run is solid to the ceiling. Two corners means two corner solutions, so budget for them.<br><br>If the room will not take a third run, the storage you wanted is often better found behind a door: <a href="guide-butlers-pantry-worth-it.html" style="color:var(--brass)">whether a butler&rsquo;s pantry is worth it</a> walks through the clearances.'],
         ['Island', 'Any of the above with a freestanding bench. What most people picture when they picture a new kitchen, and the layout that most often will not fit.<br><br>An island needs <strong>1,000mm clear on every side you use</strong>, and 1,200mm where people sit. Add the island depth and you need roughly 3.6 metres of room width before an island is comfortable. Below that, a peninsula does the same social job without the pinch points. Islands also carry cost beyond the cabinetry — power, and often plumbing.'],
         ['How to choose', 'Measure the room and apply the clearances first. That usually eliminates two of the four immediately, which is a far better starting point than a mood board.<br><br>Then ask how many people cook at once. One cook is well served by a galley or an L. Two need the wider aisles of a U or an island. Then ask where people stand when they are not cooking, because that is what an island really solves — it is a social answer more than a storage one.'],
       ],

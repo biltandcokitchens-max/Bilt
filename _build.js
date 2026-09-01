@@ -78,7 +78,11 @@ try {
 function img(file, alt, opts = {}) {
   const d = DIMS[file] || {};
   const { w = d.w || 1920, h = d.h || 1280, cls = '', eager = false } = opts;
-  return `<img src="assets/img/${file}.jpg" alt="${esc(alt)}" width="${w}" height="${h}"${cls ? ` class="${cls}"` : ''} loading="${eager ? 'eager' : 'lazy'}" decoding="async"${eager ? ' fetchpriority="high"' : ''}>`;
+  const tag = `<img src="assets/img/${file}.jpg" alt="${esc(alt)}" width="${w}" height="${h}"${cls ? ` class="${cls}"` : ''} loading="${eager ? 'eager' : 'lazy'}" decoding="async"${eager ? ' fetchpriority="high"' : ''}>`;
+  // WebP where the browser supports it, JPEG otherwise. Halves image weight.
+  return fs.existsSync(path.join(__dirname, 'assets', 'img', file + '.webp'))
+    ? `<picture><source srcset="assets/img/${file}.webp" type="image/webp">${tag}</picture>`
+    : tag;
 }
 
 function frame(file, alt, ratio = 'wide', opts = {}) {
@@ -145,6 +149,7 @@ function footer() {
             <li><a href="new-build-kitchens.html">New build kitchens</a></li>
             <li><a href="granny-flat-kitchens.html">Granny flat kitchens</a></li>
             <li><a href="tiny-home-kitchens.html">Tiny home kitchens</a></li>
+            <li><a href="kitchenettes.html">Kitchenettes</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>
             <li><a href="butlers-pantries.html">Butler's pantries</a></li>
             <li><a href="joinery.html">Wardrobes &amp; joinery</a></li>
