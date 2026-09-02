@@ -32,7 +32,7 @@ const SITE = {
   // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'. Leave empty and
   // no analytics ships at all - the tag, the event tracking and the matching
   // privacy policy wording are all gated on this one value.
-  ga4: '',
+  ga4: 'G-G40133MH26',
   areas: [
     'Rockhampton', 'North Rockhampton', 'Frenchville', 'Norman Gardens', 'Park Avenue',
     'The Range', 'Gracemere', 'Yeppoon', 'Emu Park', 'Capricorn Coast', 'Mount Morgan',
