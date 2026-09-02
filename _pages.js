@@ -4,7 +4,7 @@
 'use strict';
 
 module.exports = function (api) {
-  const { SITE, rv, img, frame, ctaBand, faqBlock, crumbs } = api;
+  const { SITE, rv, img, frame, ctaBand, faqBlock, crumbs, spotsNow } = api;
   const T = SITE.phoneHref;
 
   /* ------------------------------------------------------------- helpers */
@@ -102,7 +102,7 @@ module.exports = function (api) {
               <li>Yours to keep, and to take to any other quote you get</li>
             </ul>
             <div class="counter">
-              <b class="tabnums">4</b> <span>consultation spots left for this month</span>
+              <b class="tabnums" data-spots data-spots-start="${SITE.spotsPerMonth}">${spotsNow()}</b> <span>consultation <span data-spots-plural>spots</span> left for this month</span>
             </div>
             <!-- PLACEHOLDER: update the spots-remaining number, or remove this counter, before launch. See PLACEHOLDERS.md -->
           </div>
@@ -306,7 +306,7 @@ module.exports = function (api) {
   <section class="hero">
     <div class="wrap hero__grid">
       <div>
-        <span class="pill" ${rv()}>Only 4 free design spots left this month</span>
+        <span class="pill" ${rv()}>Only <b class="tabnums" data-spots data-spots-start="${SITE.spotsPerMonth}">${spotsNow()}</b> free design <span data-spots-plural>spots</span> left this month</span>
         <h1 class="d1" ${rv()} data-rv-d="1">The kitchen<br>Rockhampton<br><span class="italic brass">talks about.</span></h1>
         <p class="lede" ${rv()} data-rv-d="2">Bespoke kitchens drawn, specified and installed by one local team &mdash; with a free 3D design, a fixed price that does not move, and a ten-year warranty in writing.</p>
         <div class="badge-row mt-2" ${rv()} data-rv-d="3">
@@ -1219,7 +1219,7 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Contact']])}
-        <span class="pill">4 free design spots left this month</span>
+        <span class="pill"><b class="tabnums" data-spots data-spots-start="${SITE.spotsPerMonth}">${spotsNow()}</b> free design <span data-spots-plural>spots</span> left this month</span>
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,3.75rem)">Free 3D design.<br><span class="italic brass">Fixed quote.</span><br>No obligation.</h1>
         <p class="lede">Send this through and we will call you within one business day to arrange a time &mdash; at your kitchen table, with your plans in front of us.</p>
         <ul class="list-check mt-3">

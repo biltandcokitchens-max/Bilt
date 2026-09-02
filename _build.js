@@ -33,6 +33,10 @@ const SITE = {
   // no analytics ships at all - the tag, the event tracking and the matching
   // privacy policy wording are all gated on this one value.
   ga4: 'G-G40133MH26',
+  // Free design consultations offered per month. The counter on the homepage
+  // and contact page counts down from this across the month and resets on the
+  // 1st. Change it here and both pages follow.
+  spotsPerMonth: 6,
   areas: [
     'Rockhampton', 'North Rockhampton', 'Frenchville', 'Norman Gardens', 'Park Avenue',
     'The Range', 'Gracemere', 'Yeppoon', 'Emu Park', 'Capricorn Coast', 'Mount Morgan',
@@ -384,6 +388,14 @@ function ldFaq(items) {
 }
 
 /* ----------------------------------------------------------------- layout */
+function spotsNow() {
+  // Mirrors the client-side maths in main.js so a no-JS visitor sees a
+  // plausible number rather than a frozen one.
+  const now = new Date();
+  const dim = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  return Math.max(1, Math.ceil(SITE.spotsPerMonth * (1 - (now.getDate() - 1) / dim)));
+}
+
 function preloadTag(page) {
   // Preload whatever the page actually renders eagerly, read back out of the
   // built markup. A hand-maintained field drifted from the hero on six pages,
@@ -470,7 +482,7 @@ ${stickyCta()}
 }
 
 /* ------------------------------------------------------------------ build */
-const api = { SITE, NAV, esc, rv, img, frame, BLOCKS, ctaBand, faqBlock, crumbs, layout };
+const api = { SITE, NAV, esc, rv, img, frame, BLOCKS, ctaBand, faqBlock, crumbs, layout, spotsNow };
 const pages = require('./_pages.js')(api);
 
 const outDir = __dirname;

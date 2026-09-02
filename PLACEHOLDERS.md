@@ -134,7 +134,14 @@ completed projects is misleading conduct.
 - [x] Privacy policy written and linked
 - [x] `SITE.origin` set to biltstudio.com.au
 - [ ] ABN, if the business has one
-- [ ] Scarcity, offer-value and late-credit claims verified or removed
+- [~] Scarcity claim: the "free design spots left this month" counter is now
+      automatic. It counts down from `SITE.spotsPerMonth` (6) across the month
+      and resets on the 1st, derived from the date so every visitor sees the
+      same number on a given day. Floors at 1, never 0.
+      Note it is still a marketing device, not a record of real availability.
+      To make it true, set `spotsPerMonth` to the number of free designs you
+      genuinely offer per month and hold to it.
+- [ ] Offer-value and late-credit claims verified or removed
 - [ ] Warranty period confirmed against the written terms
 - [ ] Real project photography, gallery captions and hero film
 - [x] Form handler + spam protection (Netlify Forms; privacy policy updated to match)

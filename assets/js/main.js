@@ -236,6 +236,23 @@
     });
   }
 
+  /* ---- Consultation spots counter ----
+     Counts down across the month and resets on the 1st. Derived from the date
+     so every visitor on a given day sees the same figure, and recomputed on
+     view rather than at build time so it is never stale between deploys. */
+  var spotsEls = document.querySelectorAll('[data-spots]');
+  if (spotsEls.length) {
+    var start = parseInt(spotsEls[0].getAttribute('data-spots-start'), 10) || 6;
+    var now = new Date();
+    var daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    // Floor of 1: showing "0 left" would tell a ready buyer not to enquire.
+    var left = Math.max(1, Math.ceil(start * (1 - (now.getDate() - 1) / daysInMonth)));
+    Array.prototype.forEach.call(spotsEls, function (el) { el.textContent = String(left); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-spots-plural]'), function (el) {
+      el.textContent = left === 1 ? 'spot' : 'spots';
+    });
+  }
+
   /* ---- Current year ---- */
   var yr = document.querySelectorAll('[data-year]');
   Array.prototype.forEach.call(yr, function (el) { el.textContent = new Date().getFullYear(); });
