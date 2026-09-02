@@ -177,6 +177,20 @@ completed projects is misleading conduct.
       claiming fixed hours, so set it in the Google Business Profile, which has
       a proper field for it.
 
+## Excluding your own visits from Analytics
+
+Visit `https://biltstudio.com.au/?internal=1` once on each of your own devices.
+That device is then tagged `traffic_type: internal` on every hit and GA4's
+Internal Traffic filter drops it. `?internal=0` undoes it. A small badge shows
+on flagged devices so you can tell the flag is still on; nobody else sees it.
+
+This is deliberately not an IP filter: residential IPs are dynamic, so an IP
+rule stops matching without warning, and it never covers mobile data.
+
+Still switch the GA4 filter on, or nothing is actually dropped:
+Admin -> Data settings -> Data filters -> Internal Traffic -> state **Active**
+(it ships as "Testing", which filters nothing). Filters are not retroactive.
+
 ## After each deploy
 
 - Run `node _indexnow.js` once the deploy is live. It submits every sitemap URL

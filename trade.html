@@ -40,7 +40,17 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());
 // No ad profiling: this business does not advertise, and the privacy policy
 // says so. Keep these false or that statement stops being true.
-gtag('config','G-G40133MH26',{allow_google_signals:false,allow_ad_personalization_signals:false});
+// Internal-traffic flag. Read before config: gtag sends a page_view as part
+// of the config call, so setting traffic_type afterwards would let the first
+// hit of every pageload through as real traffic.
+var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+try{
+  var biltQ=location.search;
+  if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
+  else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
+  if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
+}catch(e){/* private mode or storage blocked: count it, better than breaking */}
+gtag('config','G-G40133MH26',biltCfg);
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://biltstudio.com.au/trade.html","name":"Trade Kitchen Supply for Builders | Bilt & Co","description":"Kitchen and joinery supply for builders, tiny home makers and granny flat specialists. Fixed pricing, held specifications, delivered assembled.","isPartOf":{"@id":"https://biltstudio.com.au/#business"},"about":{"@id":"https://biltstudio.com.au/#business"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://biltstudio.com.au/trade.html#service","name":"Trade & builders","description":"Kitchen and joinery supply for builders, tiny home makers and granny flat specialists. Fixed pricing, held specifications, delivered assembled.","serviceType":"Trade & builders","url":"https://biltstudio.com.au/trade.html","provider":{"@id":"https://biltstudio.com.au/#business"},"areaServed":[{"@type":"Place","name":"Rockhampton, Queensland"},{"@type":"Place","name":"North Rockhampton, Queensland"},{"@type":"Place","name":"Frenchville, Queensland"},{"@type":"Place","name":"Norman Gardens, Queensland"},{"@type":"Place","name":"Park Avenue, Queensland"},{"@type":"Place","name":"The Range, Queensland"},{"@type":"Place","name":"Gracemere, Queensland"},{"@type":"Place","name":"Yeppoon, Queensland"},{"@type":"Place","name":"Emu Park, Queensland"},{"@type":"Place","name":"Capricorn Coast, Queensland"},{"@type":"Place","name":"Mount Morgan, Queensland"},{"@type":"Place","name":"Blackwater, Queensland"},{"@type":"Place","name":"Emerald, Queensland"},{"@type":"Place","name":"Gladstone, Queensland"},{"@type":"Place","name":"Central Queensland, Queensland"}]}</script>

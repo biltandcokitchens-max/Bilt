@@ -253,6 +253,19 @@
     });
   }
 
+  /* ---- Internal traffic badge ----
+     Only ever renders on a device that has set the flag, so it is invisible to
+     visitors. Without it the flag is unauditable - you cannot tell whether a
+     device is still excluded, or how to undo it. */
+  try {
+    if (localStorage.getItem('bilt_internal') === '1') {
+      var badge = document.createElement('div');
+      badge.className = 'intbadge';
+      badge.innerHTML = 'Analytics: internal &middot; not counted <a href="?internal=0">turn off</a>';
+      document.body.appendChild(badge);
+    }
+  } catch (e) {}
+
   /* ---- Current year ---- */
   var yr = document.querySelectorAll('[data-year]');
   Array.prototype.forEach.call(yr, function (el) { el.textContent = new Date().getFullYear(); });

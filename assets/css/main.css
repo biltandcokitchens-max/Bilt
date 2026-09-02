@@ -546,3 +546,13 @@ a:hover > .frame img,.card:hover .frame img{ transform:scale(1.04); }
 
 /* Netlify Forms honeypot — hidden from people, visible to bots. */
 .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+
+/* Internal-traffic badge. Renders only on devices flagged via ?internal=1. */
+.intbadge{
+  position:fixed; left:1rem; bottom:1rem; z-index:9999;
+  background:var(--ink); color:#FDFBF7; font-size:.75rem;
+  padding:.5rem .75rem; border-radius:var(--radius);
+  box-shadow:0 6px 22px rgba(0,0,0,.35); opacity:.92;
+}
+.intbadge a{ color:var(--brass-lite); text-decoration:underline; margin-left:.4rem; }
+@media (max-width:520px){ .intbadge{ left:.5rem; bottom:.5rem; font-size:.6875rem; } }

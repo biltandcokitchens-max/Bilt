@@ -40,7 +40,17 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());
 // No ad profiling: this business does not advertise, and the privacy policy
 // says so. Keep these false or that statement stops being true.
-gtag('config','G-G40133MH26',{allow_google_signals:false,allow_ad_personalization_signals:false});
+// Internal-traffic flag. Read before config: gtag sends a page_view as part
+// of the config call, so setting traffic_type afterwards would let the first
+// hit of every pageload through as real traffic.
+var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+try{
+  var biltQ=location.search;
+  if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
+  else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
+  if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
+}catch(e){/* private mode or storage blocked: count it, better than breaking */}
+gtag('config','G-G40133MH26',biltCfg);
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://biltstudio.com.au/new-build-kitchens.html","name":"New Build Kitchens Rockhampton | Bilt & Co","description":"Upgrading from the builder’s standard kitchen in a new build. Fixed pricing, service drawings for your trades, and delivery to your construction programme.","isPartOf":{"@id":"https://biltstudio.com.au/#business"},"about":{"@id":"https://biltstudio.com.au/#business"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://biltstudio.com.au/new-build-kitchens.html#service","name":"New build kitchens","description":"Upgrading from the builder’s standard kitchen in a new build. Fixed pricing, service drawings for your trades, and delivery to your construction programme.","serviceType":"New build kitchens","url":"https://biltstudio.com.au/new-build-kitchens.html","provider":{"@id":"https://biltstudio.com.au/#business"},"areaServed":[{"@type":"Place","name":"Rockhampton, Queensland"},{"@type":"Place","name":"North Rockhampton, Queensland"},{"@type":"Place","name":"Frenchville, Queensland"},{"@type":"Place","name":"Norman Gardens, Queensland"},{"@type":"Place","name":"Park Avenue, Queensland"},{"@type":"Place","name":"The Range, Queensland"},{"@type":"Place","name":"Gracemere, Queensland"},{"@type":"Place","name":"Yeppoon, Queensland"},{"@type":"Place","name":"Emu Park, Queensland"},{"@type":"Place","name":"Capricorn Coast, Queensland"},{"@type":"Place","name":"Mount Morgan, Queensland"},{"@type":"Place","name":"Blackwater, Queensland"},{"@type":"Place","name":"Emerald, Queensland"},{"@type":"Place","name":"Gladstone, Queensland"},{"@type":"Place","name":"Central Queensland, Queensland"}],"offers":{"@type":"Offer","priceCurrency":"AUD","price":"15000","availability":"https://schema.org/InStock","url":"https://biltstudio.com.au/new-build-kitchens.html"}}</script>

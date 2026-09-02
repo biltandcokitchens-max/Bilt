@@ -40,7 +40,17 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());
 // No ad profiling: this business does not advertise, and the privacy policy
 // says so. Keep these false or that statement stops being true.
-gtag('config','G-G40133MH26',{allow_google_signals:false,allow_ad_personalization_signals:false});
+// Internal-traffic flag. Read before config: gtag sends a page_view as part
+// of the config call, so setting traffic_type afterwards would let the first
+// hit of every pageload through as real traffic.
+var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+try{
+  var biltQ=location.search;
+  if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
+  else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
+  if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
+}catch(e){/* private mode or storage blocked: count it, better than breaking */}
+gtag('config','G-G40133MH26',biltCfg);
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://biltstudio.com.au/404.html","name":"Page not found — Bilt & Co","description":"That page does not exist. Browse our kitchens, joinery and 2026 price guide, or call the Rockhampton studio.","isPartOf":{"@id":"https://biltstudio.com.au/#business"},"about":{"@id":"https://biltstudio.com.au/#business"}}</script>
 </head>

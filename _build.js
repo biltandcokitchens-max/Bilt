@@ -463,7 +463,17 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 gtag('js',new Date());
 // No ad profiling: this business does not advertise, and the privacy policy
 // says so. Keep these false or that statement stops being true.
-gtag('config','${SITE.ga4}',{allow_google_signals:false,allow_ad_personalization_signals:false});
+// Internal-traffic flag. Read before config: gtag sends a page_view as part
+// of the config call, so setting traffic_type afterwards would let the first
+// hit of every pageload through as real traffic.
+var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+try{
+  var biltQ=location.search;
+  if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
+  else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
+  if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
+}catch(e){/* private mode or storage blocked: count it, better than breaking */}
+gtag('config','${SITE.ga4}',biltCfg);
 </script>` : ''}
 ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
 </head>
