@@ -43,7 +43,12 @@ gtag('js',new Date());
 // Internal-traffic flag. Read before config: gtag sends a page_view as part
 // of the config call, so setting traffic_type afterwards would let the first
 // hit of every pageload through as real traffic.
+// Never report localhost. Dev and preview traffic is not real traffic, and
+// once it is in the property it cannot be removed.
+var biltH=location.hostname;
+var biltLocal=(biltH==='localhost'||biltH==='127.0.0.1'||biltH==='[::1]'||biltH==='::1');
 var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+if(biltLocal){biltCfg.traffic_type='internal';}
 try{
   var biltQ=location.search;
   if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
@@ -296,7 +301,10 @@ gtag('config','G-G40133MH26',biltCfg);
         <a class="card" href="kitchenettes.html" data-rv data-rv-d="4">
           <div class="card__body"><p class="card__price">From $2,400</p><h3 class="d4">Kitchenettes</h3><p>Studios, offices and short-stay rooms. A bench, a sink and storage that earns its place.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
-        <a class="card" href="trade.html" data-rv data-rv-d="5">
+        <a class="card" href="short-stay-kitchens.html" data-rv data-rv-d="5">
+          <div class="card__body"><p class="card__price">From $6,500</p><h3 class="d4">Short-stay &amp; Airbnb</h3><p>Built to photograph well and survive guests who have no reason to be careful.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="trade.html" data-rv data-rv-d="6">
           <div class="card__body"><p class="card__price">Trade pricing</p><h3 class="d4">Builders</h3><p>Held specifications for repeating layouts. Supply only, or supply and install.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
       </div>
@@ -467,6 +475,8 @@ gtag('config','G-G40133MH26',biltCfg);
             <li><a href="granny-flat-kitchens.html">Granny flat kitchens</a></li>
             <li><a href="tiny-home-kitchens.html">Tiny home kitchens</a></li>
             <li><a href="kitchenettes.html">Kitchenettes</a></li>
+
+            <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>
             <li><a href="butlers-pantries.html">Butler's pantries</a></li>
             <li><a href="joinery.html">Wardrobes &amp; joinery</a></li>

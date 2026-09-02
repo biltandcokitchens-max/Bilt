@@ -564,7 +564,10 @@ module.exports = function (api) {
         <a class="card" href="kitchenettes.html" ${rv()} data-rv-d="4">
           <div class="card__body"><p class="card__price">From $2,400</p><h3 class="d4">Kitchenettes</h3><p>Studios, offices and short-stay rooms. A bench, a sink and storage that earns its place.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
-        <a class="card" href="trade.html" ${rv()} data-rv-d="5">
+        <a class="card" href="short-stay-kitchens.html" ${rv()} data-rv-d="5">
+          <div class="card__body"><p class="card__price">From $6,500</p><h3 class="d4">Short-stay &amp; Airbnb</h3><p>Built to photograph well and survive guests who have no reason to be careful.</p><span class="link-u mt-1">More &rarr;</span></div>
+        </a>
+        <a class="card" href="trade.html" ${rv()} data-rv-d="6">
           <div class="card__body"><p class="card__price">Trade pricing</p><h3 class="d4">Builders</h3><p>Held specifications for repeating layouts. Supply only, or supply and install.</p><span class="link-u mt-1">More &rarr;</span></div>
         </a>
       </div>
@@ -1796,6 +1799,41 @@ module.exports = function (api) {
       { q: 'How much does a kitchenette cost in Rockhampton?', a: 'A 1.2m run starts at about $2,400 and a 1.8m run at about $3,500 with a laminate benchtop, including carcasses, doors and Blum hardware. A stone benchtop adds roughly $1,750. Send us the dimensions and a photo of where your plumbing comes up and we will give you a fixed, itemised quote.' },
       { q: 'Can I put a kitchenette in a granny flat?', a: 'You can, but most granny flats are better served by a full compact kitchen — see our <a href="granny-flat-kitchens.html">granny flat kitchens</a> page. A kitchenette suits a studio or a single room where nobody is cooking a roast. If the flat is being let as a self-contained dwelling, check the requirements with your council first, because a kitchenette may not satisfy them.' },
       { q: 'Do I need council approval for a kitchenette?', a: 'Not for the cabinetry itself. But adding a second cooking or washing facility can change how a property is classified, and the rules vary by council and by whether the space is self-contained. Ask Rockhampton Regional Council before you commit — it is a short conversation, and far cheaper than finding out afterwards.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'short-stay-kitchens.html',
+    slug: 'short-stay',
+    nav: 'Short-stay kitchens',
+    title: 'Airbnb & Short-Stay Kitchens Rockhampton | Bilt & Co',
+    desc: 'Kitchens for Airbnb and short-stay properties in Rockhampton. Built to photograph well and survive guests, from $6,500. Delivered assembled and installed.',
+    h1: 'Kitchens that win the booking<br><span class="italic brass">and survive the guest.</span>',
+    lede: 'A short-stay kitchen has two jobs your own kitchen never has. It has to earn the booking in a photograph, and it has to hold up to people with no reason to be careful.',
+    img: 'concrete-luxe',
+    alt: 'Bright white short-stay apartment kitchen with stone island and stainless appliances',
+    price: 'From $6,500',
+    range: '2.4m – 4.0m run',
+    body: [
+      ['The photograph earns the booking', 'Guests scroll. The kitchen is one of the three photographs that decide whether they stop, and it is the one that signals whether the whole place has been looked after. That does not mean an expensive kitchen — it means an uncluttered one that photographs wide. Full-height cabinetry to hide the mess, a benchtop with no appliance garage door halfway along it, and a splashback that does not fight the camera. We design short-stay kitchens knowing the first person to see it will see it at 400 pixels wide.'],
+      ['Guests are not careless. They are unfamiliar.', 'The damage in a short-stay kitchen is rarely malice. It is someone who does not know your drawers are soft-close and shuts them like their own, who puts a hot pan down because they cannot find the trivet, who stacks the heavy pot in the shallow drawer because nothing is labelled. Design around that and most of the wear stops: full-extension runners rated for real weight, a benchtop that shrugs off heat, and a layout obvious enough that a stranger puts things back where they found them.'],
+      ['Spend here, not there', 'Put the money in the parts that fail: hardware, carcass board and the benchtop. Skip the parts that only reward an owner — integrated appliances behind cabinetry panels are a service call waiting to happen when a guest reports the fridge at 9pm, and bespoke finishes are wasted on someone staying two nights. Porcelain or sintered stone is worth it here even more than in a family kitchen, because it takes heat and does not stain, and it is the surface every guest photograph includes.'],
+      ['Designed for the ten minutes between guests', 'Ask your cleaner what slows them down and they will say the same things: open shelving that collects dust, too many separate cupboards to check, and no obvious home for the crockery. Fewer, deeper drawers beat more cupboards. One drawer per category, sized so nothing is stacked two deep. It sounds minor until you are turning the place over twice in a weekend.'],
+    ],
+    list: [
+      '2.4m to 4.0m runs, drawn to your dimensions',
+      'Porcelain or sintered stone benchtop — heat and stain resistant',
+      'Blum full-extension runners rated for guest handling',
+      '18mm moisture-resistant carcasses, laser-bonded edging',
+      'Layouts designed around turnover and cleaning',
+      'Delivered assembled and installed by our own team',
+      'Ten-year warranty on cabinetry and workmanship',
+    ],
+    faq: [
+      { q: 'Does a better kitchen actually increase my nightly rate?', a: 'Not directly, and anyone promising that is guessing. What it changes is your photographs and your reviews, and those change your occupancy. A kitchen that looks cared for lifts the whole listing, and "the kitchen had everything we needed" is one of the most common lines in a five-star review. Occupancy is where the money is, not the nightly rate.' },
+      { q: 'What fails first in a short-stay kitchen?', a: 'Drawer runners, then benchtop edges, then hinges — in that order, and much faster than in a family home because of the sheer number of different people using it. All three are specification decisions rather than design ones, which is why we do not economise on them here.' },
+      { q: 'Laminate or stone for a short-stay property?', a: 'Stone, and porcelain or sintered stone if the budget reaches. Laminate is perfectly good in a long-term rental where one household learns to look after it, but a short-stay benchtop meets a new person every few days and one of them will put a hot pan straight down on it. See <a href="guide-benchtops-compared.html">the benchtop guide</a> for what each material actually tolerates.' },
+      { q: 'Do I need approval to run a short-stay property?', a: 'Possibly, and it is worth checking before you spend anything on the kitchen. Short-stay accommodation rules vary by council and by whether the property is your home, a secondary dwelling or a standalone investment, and body corporate by-laws can override all of it. Ask Rockhampton Regional Council and, if it applies, read your by-laws. We can tell you what a kitchen costs; we cannot tell you whether you are allowed to let the place.' },
     ],
   });
 

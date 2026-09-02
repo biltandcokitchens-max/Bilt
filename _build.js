@@ -157,7 +157,8 @@ function footer() {
             <li><a href="new-build-kitchens.html">New build kitchens</a></li>
             <li><a href="granny-flat-kitchens.html">Granny flat kitchens</a></li>
             <li><a href="tiny-home-kitchens.html">Tiny home kitchens</a></li>
-            <li><a href="kitchenettes.html">Kitchenettes</a></li>
+            <li><a href="kitchenettes.html">Kitchenettes</a></li>
+            <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>
             <li><a href="butlers-pantries.html">Butler's pantries</a></li>
             <li><a href="joinery.html">Wardrobes &amp; joinery</a></li>
@@ -466,7 +467,12 @@ gtag('js',new Date());
 // Internal-traffic flag. Read before config: gtag sends a page_view as part
 // of the config call, so setting traffic_type afterwards would let the first
 // hit of every pageload through as real traffic.
+// Never report localhost. Dev and preview traffic is not real traffic, and
+// once it is in the property it cannot be removed.
+var biltH=location.hostname;
+var biltLocal=(biltH==='localhost'||biltH==='127.0.0.1'||biltH==='[::1]'||biltH==='::1');
 var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+if(biltLocal){biltCfg.traffic_type='internal';}
 try{
   var biltQ=location.search;
   if(biltQ.indexOf('internal=1')>-1){localStorage.setItem('bilt_internal','1')}
