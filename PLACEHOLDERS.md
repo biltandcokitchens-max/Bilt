@@ -138,7 +138,28 @@ completed projects is misleading conduct.
 - [ ] Warranty period confirmed against the written terms
 - [ ] Real project photography, gallery captions and hero film
 - [x] Form handler + spam protection (Netlify Forms; privacy policy updated to match)
-- [ ] WebP/AVIF image variants
+- [x] WebP/AVIF image variants (34 images, 9.20MB -> 4.43MB)
 - [ ] Real favicon
 - [ ] Deploy `out-redirects/` — 65 x 301 from the retired site structure
-- [ ] Google Business Profile, Search Console, analytics
+- [ ] Google Business Profile (verification in progress), analytics
+- [x] Google Search Console set up by the client
+
+## Structured data still open
+
+- [ ] **Organisation logo.** `logo` in the LocalBusiness schema currently points
+      at `hero-main.jpg`, which is a kitchen photo, not a logo. Google uses this
+      for the knowledge panel. Supply a square raster logo (min 112x112, PNG or
+      JPG) and repoint `ldLocalBusiness()` in `_build.js`.
+- [ ] **`sameAs`.** Omitted deliberately - there are no social profiles yet. Add
+      the Google Business Profile URL first once it verifies, then Facebook and
+      Instagram as they go live.
+- [ ] **Saturday hours.** Schema carries Mon-Fri 08:00-17:00 only. "Saturday by
+      appointment" cannot be expressed in `openingHoursSpecification` without
+      claiming fixed hours, so set it in the Google Business Profile, which has
+      a proper field for it.
+
+## After each deploy
+
+- Run `node _indexnow.js` once the deploy is live. It submits every sitemap URL
+  to Bing and Yandex (which feed Copilot and ChatGPT search). Google does not
+  use IndexNow - for Google, use "Request indexing" in Search Console.

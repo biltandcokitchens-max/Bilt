@@ -288,6 +288,15 @@ function ldLocalBusiness() {
     image: `${SITE.origin}/assets/img/hero-main.jpg`,
     logo: `${SITE.origin}/assets/img/hero-main.jpg`,
     priceRange: '$$$',
+    // Saturday is by appointment. Schema has no way to say that, and listing
+    // it with fixed hours would be a claim we cannot keep, so it lives in the
+    // Google Business Profile instead.
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    }],
     identifier: { '@type': 'PropertyValue', propertyID: 'ACN', value: SITE.acn.replace(/\s/g, '') },
     address: {
       '@type': 'PostalAddress',
@@ -311,6 +320,40 @@ function ldLocalBusiness() {
         itemOffered: { '@type': 'Service', name: n, url: `${SITE.origin}/${u}`, areaServed: 'Rockhampton, Queensland', provider: { '@id': `${SITE.origin}/#business` } },
       })),
     },
+  };
+}
+
+function ldService(page, canonical) {
+  const sv = page.service;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${canonical}#service`,
+    name: sv.name,
+    description: sv.desc || page.desc,
+    serviceType: sv.type || sv.name,
+    url: canonical,
+    provider: { '@id': `${SITE.origin}/#business` },
+    areaServed: (sv.areas || SITE.areas).map((a) => ({ '@type': 'Place', name: `${a}, Queensland` })),
+    ...(sv.price ? { offers: { '@type': 'Offer', priceCurrency: 'AUD', price: sv.price, availability: 'https://schema.org/InStock', url: canonical } } : {}),
+  };
+}
+
+function ldImageGallery(page, canonical) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    '@id': `${canonical}#gallery`,
+    url: canonical,
+    name: page.title,
+    associatedMedia: page.images.map(([file, alt, cap]) => ({
+      '@type': 'ImageObject',
+      contentUrl: `${SITE.origin}/assets/img/${file}.jpg`,
+      caption: cap || alt,
+      description: alt,
+      creditText: SITE.name,
+      creator: { '@id': `${SITE.origin}/#business` },
+    })),
   };
 }
 
@@ -342,6 +385,8 @@ function layout(page) {
   const ld = [];
   if (page.file === 'index.html') ld.push(ldLocalBusiness());
   else ld.push({ '@context': 'https://schema.org', '@type': 'WebPage', url: canonical, name: page.title, description: page.desc, isPartOf: { '@id': `${SITE.origin}/#business` }, about: { '@id': `${SITE.origin}/#business` } });
+  if (page.service) ld.push(ldService(page, canonical));
+  if (page.images) ld.push(ldImageGallery(page, canonical));
   if (page.trail) ld.push(ldBreadcrumbs(page.trail));
   if (page.faq) ld.push(ldFaq(page.faq));
   if (page.ld) ld.push(...page.ld);

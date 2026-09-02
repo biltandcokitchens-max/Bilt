@@ -251,7 +251,7 @@ module.exports = function (api) {
             <div>
               <p class="eyebrow">Scroll to walk through it</p>
               <h2 class="d2">Timber, travertine<br>and morning light.</h2>
-              <p class="lede mt-2" style="max-width:44ch">Every surface here was drawn for one room, cut in our Rockhampton workshop and installed by the people who made it.</p>
+              <p class="lede mt-2" style="max-width:44ch">Every surface here was drawn for one room, specified to the millimetre and installed by the people who drew it.</p>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:.75rem">
               <a class="btn btn--light btn--lg" href="contact.html">Get my free design</a>
@@ -416,6 +416,7 @@ module.exports = function (api) {
 
   const kitchens = {
     file: 'kitchens.html',
+    service: { name: "Bespoke kitchen design and installation", type: "Kitchen renovation" },
     title: 'Custom Kitchens Rockhampton | Design & Install — Bilt & Co',
     desc: 'Custom kitchens designed and installed in Rockhampton. Three collections from $15,000, free 3D design, fixed quotes, 10-year warranty.',
     og: 'collection-marble-04',
@@ -627,6 +628,7 @@ module.exports = function (api) {
 
   const pantry = {
     file: 'butlers-pantries.html',
+    service: { name: "Butler's pantry design and construction", type: "Butler's pantry installation" },
     title: 'Butler\'s Pantry Rockhampton | Custom Build — Bilt & Co',
     desc: 'Custom butler\'s pantries designed and installed in Rockhampton from $4,000. Second sinks, bulk storage, concealed doors. Free design and fixed quote.',
     og: 'matte-black-bank',
@@ -711,6 +713,7 @@ module.exports = function (api) {
 
   const joinery = {
     file: 'joinery.html',
+    service: { name: "Custom joinery, wardrobes and vanities", type: "Custom joinery" },
     title: 'Walk-In Wardrobes & Joinery Rockhampton — Bilt & Co',
     desc: 'Bespoke joinery in Rockhampton: walk-in wardrobes from $3,600, laundries, vanities, media walls and studies. Designed and installed by one local team.',
     og: 'wardrobe-robe',
@@ -809,6 +812,7 @@ module.exports = function (api) {
 
   const gallery = {
     file: 'gallery.html',
+    images: GAL,
     title: 'Kitchen Gallery & Finishes | Bilt & Co Rockhampton',
     desc: 'Kitchen design references from Bilt & Co — timber and stone, handleless and gloss finishes, island layouts and joinery detail, and what each costs.',
     og: 'signature-dark',
@@ -1320,15 +1324,16 @@ module.exports = function (api) {
     const { blurb, suburbs, image, alt, drive } = opts;
     const tp = place.replace(/^the /, '');
     const faq = [
-      { q: `Do you build kitchens in ${place}?`, a: `Yes. ${place} is inside Bilt & Co's standard service area with no travel loading — our workshop is ${drive} away in ${SITE.suburb}. We site measure in ${place} weekly.` },
+      { q: `Do you build kitchens in ${place}?`, a: `Yes. ${place} is inside Bilt & Co's standard service area with no travel loading — we are based ${drive} away in ${SITE.suburb}. We site measure in ${place} weekly.` },
       { q: `How much does a kitchen cost in ${place}?`, a: `The same as Rockhampton: $15,000 to $23,000 for our Essence collection, $26,000 to $42,000 for Maison, and $47,000 and up for fully bespoke Atelier work. We do not charge a premium for ${place} projects.` },
       { q: `Will your own team install it?`, a: `Yes. Our employed installation team works across the region every week — we do not subcontract ${place} jobs to a third party. Same crew, same ten-year warranty.` },
       { q: `Is the design consultation really free in ${place}?`, a: `Yes — the site measure, the 3D design and the fixed quote are free anywhere in our service area, ${place} included. If our number does not work for you, you keep the drawings.` },
     ];
     return {
       file: `kitchens-${slug}.html`,
+      service: { name: `Kitchen design and installation in ${place}`, type: 'Kitchen renovation', areas: [place] },
       title: `Kitchen Renovations ${tp} | Free Design — Bilt & Co`,
-      desc: `Custom kitchens in ${place} from $15,000, built in our Rockhampton workshop. Free 3D design, fixed quotes, no travel loading.`,
+      desc: `Custom kitchens in ${place} from $15,000, designed and installed by our Rockhampton team. Free 3D design, fixed quotes, no travel loading.`,
       og: image,
       preload: image,
       priority: '0.7',
@@ -1339,7 +1344,7 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', place]])}
-        <span class="pill">${drive} from our workshop &middot; No travel loading</span>
+        <span class="pill">${drive} from our Rockhampton base &middot; No travel loading</span>
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">${place}.</span></h1>
         <p class="lede">${blurb}</p>
       </div>
@@ -1404,7 +1409,7 @@ module.exports = function (api) {
     areaPage('gracemere', 'Gracemere', {
       drive: '15 minutes', image: 'island-calacatta',
       alt: 'Bright kitchen with marble waterfall island, Gracemere',
-      blurb: 'New builds and growing families, fifteen minutes from our workshop door. Gracemere is one of the busiest postcodes on our board.',
+      blurb: 'New builds and growing families, fifteen minutes from our door. Gracemere is one of the busiest postcodes on our board.',
       suburbs: ['Gracemere', 'Stanwell', 'Kabra', 'Bouldercombe', 'Fairy Bower', 'Alton Downs', 'Mount Morgan', 'Westwood'],
     }),
     areaPage('capricorn-coast', 'the Capricorn Coast', {
@@ -1510,6 +1515,7 @@ module.exports = function (api) {
 
   const fitout = {
     file: 'fit-out.html',
+    service: { name: "Kitchen fit-out and storage options", type: "Kitchen fit-out" },
     title: 'Kitchen Fit-Out Options & Prices | Bilt & Co Rockhampton',
     desc: 'Pull-down overheads, blind-corner pull-outs, carousels, waste systems and push-to-open motion — what each one does, what it costs, and where it fits.',
     og: 'drawer-detail',
@@ -1800,6 +1806,7 @@ module.exports = function (api) {
     og: s.img,
     preload: s.img,
     priority: '0.8',
+    service: { name: s.nav, type: s.nav, desc: s.desc, price: s.price.replace(/[^0-9]/g, '') },
     faq: s.faq,
     trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], [s.file, s.nav]],
     body: `

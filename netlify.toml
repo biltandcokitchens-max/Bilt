@@ -16,6 +16,23 @@
 
 # Source and documentation must not be served from the public site. Netlify
 # applies these before the static file lookup.
+#
+# The prefix rule catches every build source at once, including any added
+# later. No public URL on this site begins with an underscore. The IndexNow
+# key file deliberately sits outside it — that one MUST stay reachable at the
+# domain root or IndexNow rejects the whole submission.
+[[redirects]]
+  from = "/_*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/MARKETING-PLAN.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
 [[redirects]]
   from = "/_build.js"
   to = "/404.html"
