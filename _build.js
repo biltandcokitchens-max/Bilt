@@ -380,6 +380,20 @@ function ldFaq(items) {
 }
 
 /* ----------------------------------------------------------------- layout */
+function preloadTag(page) {
+  // Preload whatever the page actually renders eagerly, read back out of the
+  // built markup. A hand-maintained field drifted from the hero on six pages,
+  // and four of those preloaded an image that was never rendered eagerly.
+  // Pages with no eager image get no preload, which is the correct answer.
+  const m = /src="assets\/img\/([a-z0-9-]+)\.jpg"[^>]*loading="eager"/.exec(page.body || '');
+  if (!m) return '';
+  const file = m[1];
+  // Must match what <picture> will actually choose, or the preload is wasted.
+  return fs.existsSync(path.join(__dirname, 'assets', 'img', file + '.webp'))
+    ? `<link rel="preload" as="image" href="assets/img/${file}.webp" type="image/webp" fetchpriority="high">`
+    : `<link rel="preload" as="image" href="assets/img/${file}.jpg" fetchpriority="high">`;
+}
+
 function layout(page) {
   const canonical = `${SITE.origin}/${page.file}`.replace(/\/index\.html$/, '/');
   const ld = [];
@@ -425,7 +439,7 @@ function layout(page) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-${page.preload ? `<link rel="preload" as="image" href="assets/img/${page.preload}.jpg" fetchpriority="high">` : ''}
+${preloadTag(page)}
 ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
 </head>
 <body>
