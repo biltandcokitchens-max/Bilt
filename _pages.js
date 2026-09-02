@@ -2105,10 +2105,12 @@ module.exports = function (api) {
       <p>Our web host keeps standard server logs — IP address, browser type, pages requested and timestamps — as almost every website does. We do not use these to identify you.</p>
 
       <h2 class="d3">Cookies and analytics</h2>
-      <p>This site sets <strong>no tracking cookies</strong> and runs <strong>no analytics or advertising scripts</strong>. There is no Google Analytics, no advertising pixel and no third-party tracker on any page.</p>
+      ${SITE.ga4 ? `<p>This site carries <strong>no advertising pixel</strong> and we do not sell or share your details with advertisers. We do use <strong>Google Analytics</strong> to see which pages people find useful. It sets a cookie in your browser and tells Google your IP address, the pages you view and your approximate location. We have switched off Google Signals and ad personalisation, so your visit is not used to build an advertising profile of you.</p>
+      <p>If you would rather not be counted, any tracker-blocking browser or extension will stop it, as will Google's own <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">opt-out add-on</a>. The site works exactly the same either way.</p>` : `<p>This site sets <strong>no tracking cookies</strong> and runs <strong>no analytics or advertising scripts</strong>. There is no Google Analytics, no advertising pixel and no third-party tracker on any page.</p>`}
       <p>The only third party your browser contacts is Google Fonts, which serves the typefaces, and Google Maps on the contact page, which loads only if you view that page. Both receive your IP address as a normal part of serving a request.</p>
-      <!-- PLACEHOLDER: this section becomes untrue the moment analytics or an ad pixel is added.
-           Update it in the same change that adds them. See PLACEHOLDERS.md -->
+      <!-- The wording above follows SITE.ga4 automatically, so it cannot go
+           stale when analytics is switched on or off. An ad pixel would still
+           need this section rewritten by hand. -->
 
       <h2 class="d3">Why we collect it</h2>
       <p>To answer your enquiry, prepare a design and a quote, and — if you go ahead — to design, build and install your kitchen. That is the whole purpose. We do not use your details for anything you did not contact us about.</p>

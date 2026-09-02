@@ -141,7 +141,19 @@ completed projects is misleading conduct.
 - [x] WebP/AVIF image variants (34 images, 9.20MB -> 4.43MB)
 - [ ] Real favicon
 - [ ] Deploy `out-redirects/` — 65 x 301 from the retired site structure
-- [ ] Google Business Profile (verification in progress), analytics
+- [ ] Google Business Profile (verification in progress)
+- [ ] **Google Analytics 4 — one value away from live.** Paste the measurement
+      ID into `SITE.ga4` in `_build.js` (looks like `G-XXXXXXXXXX`), rebuild,
+      deploy. Everything else is already wired:
+      - the gtag snippet, with Google Signals and ad personalisation off
+      - `generate_lead` on form submit, `contact_phone` on tel: clicks,
+        `contact_email` on mailto:, `estimator_used` on the cost calculator
+      - the privacy policy wording, which follows `SITE.ga4` automatically —
+        with no ID it says there is no analytics, with an ID it discloses
+        Google Analytics. Do not hand-edit that paragraph.
+      Leave `ga4` empty and nothing ships, so this is safe to leave as is.
+      In GA4, mark `generate_lead` as a key event to see it as a conversion.
+      Do not also mark /thanks as a conversion or every lead counts twice.
 - [x] Google Search Console set up by the client
 
 ## Structured data still open

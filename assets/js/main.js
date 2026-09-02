@@ -198,6 +198,44 @@
     });
   });
 
+  /* ---- Conversion events ----
+     Pageviews alone cannot answer "which page earns enquiries", so send the
+     three actions that represent a real lead. No-ops entirely when GA4 is not
+     configured, because gtag simply will not exist. */
+  function track(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) {
+      track('contact_phone', { method: 'phone', page_path: location.pathname });
+    } else if (href.indexOf('mailto:') === 0) {
+      track('contact_email', { method: 'email', page_path: location.pathname });
+    }
+  }, { passive: true });
+
+  Array.prototype.forEach.call(document.querySelectorAll('form[data-netlify], form[name]'), function (f) {
+    f.addEventListener('submit', function () {
+      // generate_lead is a GA4 recommended event, so it shows up in the
+      // standard reports rather than needing a custom definition.
+      track('generate_lead', { form_name: f.getAttribute('name') || 'unnamed', page_path: location.pathname });
+    });
+  });
+
+  var estimator = document.querySelector('#estimator, [data-estimator]');
+  if (estimator) {
+    var sent = false;
+    estimator.addEventListener('change', function () {
+      if (sent) return;
+      sent = true;  // once per visit; we want engagement, not every keystroke
+      track('estimator_used', { page_path: location.pathname });
+    });
+  }
+
   /* ---- Current year ---- */
   var yr = document.querySelectorAll('[data-year]');
   Array.prototype.forEach.call(yr, function (el) { el.textContent = new Date().getFullYear(); });

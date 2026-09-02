@@ -29,6 +29,10 @@ const SITE = {
     ['Saturday', '9:00am – 1:00pm (by appointment)'],
     ['Sunday', 'Closed'],
   ],
+  // Google Analytics 4 measurement ID, e.g. 'G-XXXXXXXXXX'. Leave empty and
+  // no analytics ships at all - the tag, the event tracking and the matching
+  // privacy policy wording are all gated on this one value.
+  ga4: '',
   areas: [
     'Rockhampton', 'North Rockhampton', 'Frenchville', 'Norman Gardens', 'Park Avenue',
     'The Range', 'Gracemere', 'Yeppoon', 'Emu Park', 'Capricorn Coast', 'Mount Morgan',
@@ -440,6 +444,15 @@ function layout(page) {
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 ${preloadTag(page)}
+${SITE.ga4 ? `<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+// No ad profiling: this business does not advertise, and the privacy policy
+// says so. Keep these false or that statement stops being true.
+gtag('config','${SITE.ga4}',{allow_google_signals:false,allow_ad_personalization_signals:false});
+</script>` : ''}
 ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
 </head>
 <body>
