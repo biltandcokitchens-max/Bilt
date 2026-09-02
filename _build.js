@@ -158,7 +158,10 @@ function footer() {
             <li><a href="granny-flat-kitchens.html">Granny flat kitchens</a></li>
             <li><a href="tiny-home-kitchens.html">Tiny home kitchens</a></li>
             <li><a href="kitchenettes.html">Kitchenettes</a></li>
-            <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
+            <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
+            <li><a href="kitchen-islands.html">Kitchen islands</a></li>
+            <li><a href="laundries.html">Laundries</a></li>
+            <li><a href="kitchens-caloundra.html">Caloundra supply</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>
             <li><a href="butlers-pantries.html">Butler's pantries</a></li>
             <li><a href="joinery.html">Wardrobes &amp; joinery</a></li>

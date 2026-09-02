@@ -745,7 +745,7 @@ module.exports = function (api) {
     <div class="wrap grid cols-2">
       ${[
         ['Walk-in wardrobes', '$3,600 – $9,900', 'wardrobe-walkin', 'Custom walk-in wardrobe with lit timber shelving and drawers, Rockhampton', 'Hanging calculated against what you own rather than a standard. Soft-close drawers with felt-lined inserts, lighting on a door sensor, glazed or open fronts, and a bench if the room allows.'],
-        ['Laundries', '$2,800 – $7,700', 'laundry-room', 'Custom laundry joinery with overhead cabinets and folding bench, Rockhampton', 'The most under-designed room in most Rockhampton homes. Full-height broom storage, a proper folding bench, a drying rail out of sight, and a benchtop that survives a decade of detergent.'],
+        ['Laundries', '$2,800 – $7,700', 'laundry-room', 'Custom laundry joinery with overhead cabinets and folding bench, Rockhampton', 'The most under-designed room in most Rockhampton homes — <a href="laundries.html" style="color:var(--brass)">see what a proper one costs</a>. Full-height broom storage, a proper folding bench, a drying rail out of sight, and a benchtop that survives a decade of detergent.'],
         ['Vanities &amp; bathrooms', '$1,900 – $6,100', 'vanity-bathroom', 'Custom timber bathroom vanity with stone top and backlit mirror', 'Wall-hung or floor-mounted in finishes that will not swell. Stone or porcelain tops with undermount or above-counter basins, and drawers that clear the plumbing properly rather than pretending to.'],
         ['Media walls &amp; studies', '$4,300 – $13,100', 'media-wall', 'Built-in media wall and study joinery with integrated desk and shelving', 'Cable management that actually works, ventilated equipment bays, display shelving lit from within, and desks built to your height rather than a catalogue&rsquo;s.'],
       ].map(([h, p, im, alt, c], i) => `
@@ -1110,7 +1110,7 @@ module.exports = function (api) {
         <p class="eyebrow" ${rv()}>What we ask of you</p>
         <h2 class="d3" ${rv()} data-rv-d="1">Three things, honestly.</h2>
         <ul class="list-check mt-3" ${rv()} data-rv-d="2">
-          <li><strong>A real budget.</strong> Not a number designed to test us. Tell us the truth and we will design to it, or tell you it cannot be done.</li>
+          <li><strong>A real budget.</strong> Not a number designed to test us. Tell us the truth and we will design to it, or tell you it cannot be done. <a href="guide-kitchen-renovation-checklist.html" style="color:var(--brass)">Our renovation checklist</a> covers what to have ready before the first visit.</li>
           <li><strong>Decisions at the decision points.</strong> Once manufacture starts, changes cost real money. We flag every point of no return in advance.</li>
           <li><strong>Access.</strong> Ten working days of clear site access, and somewhere to park a van.</li>
         </ul>
@@ -1715,7 +1715,7 @@ module.exports = function (api) {
       body: [
         ['You are allowed to use your own supplier', 'Most build contracts include a provisional sum for the kitchen, and most allow you to take it elsewhere. Ask your builder what the kitchen allowance is and whether it can be credited. Very often the answer is yes, and the difference between the allowance and a proper kitchen is far smaller than people assume.'],
         ['We work to your builder’s programme', 'A new build has a lock-up date and a trades sequence, and a kitchen that arrives at the wrong moment is a genuine problem. We book against your programme, issue service drawings so your plumber and electrician rough in to the right positions the first time, and deliver assembled so installation is days rather than weeks.'],
-        ['Decide before the slab if you can', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, or a wider opening all cost very little on a plan and a great deal once the slab is down. Bring us your floor plan early, even if you are months from needing us. In the meantime <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layout guide</a> will tell you what will actually fit the room you are building.'],
+        ['Decide before the slab if you can', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, or a wider opening all cost very little on a plan and a great deal once the slab is down. Bring us your floor plan early, even if you are months from needing us. <a href="guide-kitchen-renovation-checklist.html" style="color:var(--brass)">The checklist</a> sets out what to settle before the slab, when it is still free to change. In the meantime <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layout guide</a> will tell you what will actually fit the room you are building.'],
       ],
       list: [
         'Free 3D design of your actual plan before you commit',
@@ -1837,6 +1837,75 @@ module.exports = function (api) {
     ],
   });
 
+  SEGMENTS.push({
+    file: 'kitchen-islands.html',
+    slug: 'island',
+    nav: 'Kitchen islands',
+    title: 'Kitchen Islands Rockhampton | From $2,850 | Bilt & Co',
+    desc: 'Custom kitchen islands in Rockhampton from $2,850. Clearances, seating overhangs, waterfall ends and what an island actually needs before it will fit.',
+    h1: 'The island most kitchens<br><span class="italic brass">cannot actually fit.</span>',
+    lede: 'An island is the most requested thing in a new kitchen and the most often abandoned once the room is measured. Here is what one really needs.',
+    img: 'timber-island',
+    alt: 'Timber kitchen island with stone waterfall end and pendant lighting',
+    price: 'From $2,850',
+    range: '1.8m – 3.0m island',
+    body: [
+      ['The number that decides it', 'An island needs <strong>1,000mm clear on every side</strong>, and 1,200mm on any side people walk past while someone is working. That is not a style preference, it is the width of an open dishwasher door plus a person. Add the island depth and you need roughly <strong>3.6 metres of room width</strong> before an island is even possible. Measure that first. If the room does not have it, a peninsula gives you most of the bench and none of the squeeze — see <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layouts guide</a> for how the four shapes compare.'],
+      ['Seating costs more bench than people expect', 'An overhang for stools needs 300mm to sit comfortably, which comes off the working side of the island, not out of thin air. Two stools want 1.2m of run, three want 1.8m. If you want seating and a sink and a prep zone in the same island, you are usually looking at 2.4m minimum before it stops feeling cramped.'],
+      ['Services are the hidden cost', 'A bench is cheap. Power, water and waste in the middle of a slab are not. If the island carries a sink or a cooktop, that decision has to be made before the slab is poured or the floor is opened — retrofitting it later is the single most expensive change people make. If your build has not started, tell us now and it costs almost nothing.'],
+      ['Waterfall ends, and when to skip them', 'A mitred waterfall end is the detail that makes an island look built rather than assembled, and on a figured stone it is worth the money. On a plain laminate it is not — the join shows and the effect is lost. We will tell you which of those you are looking at before you pay for it.'],
+    ],
+    list: [
+      '1.8m to 3.0m islands, drawn to your room',
+      'Clearances checked before anything is quoted',
+      'Stone, porcelain or laminate benchtop',
+      'Mitred waterfall ends where the stone earns it',
+      'Power, water and waste coordinated with your trades',
+      'Delivered assembled and installed by our own team',
+    ],
+    faq: [
+      { q: 'How much does a kitchen island cost?', a: 'From about $2,850 added to a kitchen for cabinetry and a laminate top. Stone lifts it, and a sink or cooktop in the island adds plumbing and electrical on top of the cabinetry. Draw it in the estimator on our <a href="investment.html">costs page</a> for a figure against your own run.' },
+      { q: 'How much space do I need for a kitchen island?', a: 'About 3.6 metres of room width as a working minimum: 1,000mm clearance each side plus the island itself. Below that an island makes the kitchen worse, not better, and a peninsula is the honest answer.' },
+      { q: 'Can I put a sink or cooktop in the island?', a: 'Yes, and it is worth deciding early. Both need services run to the middle of the floor, which is straightforward before a slab is poured and expensive afterwards. A cooktop also needs extraction, which usually means a ceiling unit or a downdraft.' },
+      { q: 'Is a peninsula worse than an island?', a: 'No — it is different. A peninsula attaches at one end, so it needs clearance on three sides instead of four and fits rooms an island cannot. You lose the ability to walk all the way around, which matters less than most people expect.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'laundries.html',
+    slug: 'laundry',
+    nav: 'Laundries',
+    parent: ['joinery.html', 'Joinery'],
+    title: 'Laundry Renovations Rockhampton | From $2,800 | Bilt & Co',
+    desc: 'Custom laundry joinery in Rockhampton from $2,800. Folding benches, full-height broom storage, drying rails and cabinetry that survives a wet room.',
+    h1: 'The most under-designed<br><span class="italic brass">room in the house.</span>',
+    lede: 'A laundry gets the leftover space, the leftover budget and none of the thought. It is also the room that annoys people daily.',
+    img: 'laundry-room',
+    alt: 'Custom laundry joinery with overhead cabinets, folding bench and drying rail',
+    price: 'From $2,800',
+    range: '1.8m – 3.5m run',
+    body: [
+      ['A bench you can actually fold on', 'The single upgrade people notice most is a continuous bench over the machines rather than beside them. Front loaders make this straightforward; a top loader does not, which is worth knowing before you buy the machine. Give it 900mm of clear run and folding stops happening on the dining table.'],
+      ['Built for a room that gets wet', 'A laundry is the wettest room in a house after the bathroom, and it is where cheap cabinetry fails first. Moisture-resistant carcasses and laser-bonded edging are standard on everything we supply, which matters more here than in the kitchen — a laundry cabinet lives with a leaking tap, a damp floor and a machine that vibrates.'],
+      ['Storage that takes the things nowhere else wants', 'Full-height broom storage for the vacuum, the mop and the ironing board. A drying rail that pulls out and disappears. A basket drawer rather than baskets on the floor. None of it is expensive; all of it is the difference between a laundry and a room with a washing machine in it.'],
+      ['Often part of a bigger move', 'Laundries frequently get done alongside a kitchen, and doing both together is materially cheaper — one design, one delivery, one installation. If you are already thinking about the kitchen, mention the laundry at the first visit rather than the last. The same is true of a <a href="joinery.html" style="color:var(--brass)">walk-in robe or a vanity</a>.'],
+    ],
+    list: [
+      '1.8m to 3.5m runs, drawn to your dimensions',
+      'Continuous folding bench over front loaders',
+      'Full-height broom and appliance storage',
+      'Moisture-resistant carcasses, laser-bonded edging',
+      'Pull-out drying rails, basket drawers, hidden bins',
+      'Delivered assembled and installed by our own team',
+    ],
+    faq: [
+      { q: 'How much does a laundry renovation cost in Rockhampton?', a: 'Cabinetry and a benchtop start around $2,800 for a compact run and reach roughly $7,700 for a full laundry with stone, full-height storage and fit-out. That is joinery only — plumbing, tiling and electrical are separate trades we can coordinate.' },
+      { q: 'Can you fit a bench over a top loader?', a: 'Not over the lid, no. A top loader needs clear space above it, so the bench has to sit beside the machine rather than across it. If a continuous bench matters to you and you are replacing the machine anyway, a front loader is the decision that unlocks it.' },
+      { q: 'Can the laundry be done with the kitchen?', a: 'Yes, and it should be if both are on the list. One design process, one delivery and one installation is meaningfully cheaper than two separate jobs, and the finishes will actually match.' },
+      { q: 'Do you do under-house laundry conversions?', a: 'Regularly — it is common in older high-set Rockhampton homes. The floors are rarely level and the walls are rarely square, so we measure what is there and scribe to it rather than assuming.' },
+    ],
+  });
+
   const segmentPages = SEGMENTS.map((s) => ({
     file: s.file,
     title: s.title,
@@ -1846,12 +1915,12 @@ module.exports = function (api) {
     priority: '0.8',
     service: { name: s.nav, type: s.nav, desc: s.desc, price: s.price.replace(/[^0-9]/g, '') },
     faq: s.faq,
-    trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], [s.file, s.nav]],
+    trail: [['index.html', 'Home'], s.parent || ['kitchens.html', 'Kitchens'], [s.file, s.nav]],
     body: `
   <section class="phero">
     <div class="wrap phero__grid">
       <div>
-        ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', s.nav]])}
+        ${crumbs([['index.html', 'Home'], s.parent || ['kitchens.html', 'Kitchens'], ['#', s.nav]])}
         <span class="pill">${s.price} &middot; ${s.range}</span>
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${s.h1}</h1>
         <p class="lede">${s.lede}</p>
@@ -1899,6 +1968,32 @@ module.exports = function (api) {
      answer it is worse than no guide. */
 
   const GUIDES = [
+    {
+      slug: 'kitchen-renovation-checklist',
+      nav: 'The kitchen renovation checklist',
+      title: 'Kitchen Renovation Checklist | Australia | Bilt & Co',
+      desc: 'What to decide, measure and lock in before a kitchen renovation starts, in the order it actually matters. The list we work through at the table.',
+      h1: 'The checklist we work<br><span class="italic brass">through at your table.</span>',
+      lede: 'Most kitchen renovations go wrong before anything is ordered. Almost always it is one of these, missed early and discovered late.',
+      img: 'material-samples',
+      alt: 'Timber veneer and stone finish samples laid out on a workbench',
+      read: '7 min read',
+      sections: [
+        ['Before you contact anybody', 'Three things, and they take an afternoon. <strong>Measure the room</strong> — wall to wall, floor to ceiling, and the position of every window, door and power point. <strong>Photograph it</strong> from all four corners. <strong>Decide your real number</strong>, not the number you would like to be true. Any company worth talking to will design to a budget honestly stated, and none of them can design to one they are guessing at. Our <a href="investment.html" style="color:var(--brass)">costs page</a> shows the bands before you have to say anything to anyone.'],
+        ['Work out what is actually wrong with the current kitchen', 'Write down the five things that irritate you most. Not what looks dated — what does not work. The bin is in the wrong place. Two people cannot pass. There is nowhere to put a hot tray. This list is worth more to a designer than any number of saved photographs, because it describes how you actually use the room. A kitchen that fixes those five things and looks ordinary will make you happier than a beautiful one that fixes none.'],
+        ['Decide the layout before the finishes', 'People choose a colour first and a layout last. It is backwards. The layout is constrained by the room and costs nothing to change on paper; the finishes are free to choose and expensive to change once ordered. Settle the shape, the clearances and where the sink, bin and dishwasher sit in relation to each other — <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layouts guide</a> covers the numbers — then choose how it looks.'],
+        ['Services, before the walls close', 'This is the one that costs money when missed. Power to an island, a second sink, a water point for the fridge, extraction for a cooktop, and whether the existing switchboard can carry a new oven. All of it is cheap while the wall is open and expensive afterwards. If you are building, this conversation belongs before the slab — see <a href="kitchen-islands.html" style="color:var(--brass)">kitchen islands</a> for why an island in particular has to be decided early.'],
+        ['Lock the appliances first', 'Cabinetry is built around appliances, not the reverse. The oven, cooktop, dishwasher, rangehood and fridge all have to be chosen, and their exact model dimensions known, before a single cabinet is drawn. A fridge cavity built for a fridge you then change is a rebuild, not an adjustment. Buy or at least confirm the models before design finishes.'],
+        ['Ask every quote the same seven questions', 'Carcass board thickness and moisture rating. Hardware brand and warranty. Edging — glued or laser-bonded. Who installs it, employee or subcontractor. Whether the quote is fixed or an estimate. Lead time from deposit. What happens if something is damaged in transit. Ask us the same. A company that answers all seven in writing is telling you something; one that gets vague on two of them is telling you more.'],
+        ['Plan for the weeks without a kitchen', 'Eight to twelve weeks from deposit, and roughly one to two weeks without a working kitchen during install. Set up a temporary bench with the kettle, toaster and microwave somewhere else in the house before demolition, not during it. Know where the fridge is going to live. It sounds trivial and it is the thing families remember most about the process.'],
+        ['Before you pay the final invoice', 'Walk the kitchen with the installer. Open and close every door and drawer. Check the alignment of the gaps — they should be even, which is the fastest way to judge whether cabinetry was fitted or forced. Run the tap and check under the sink for leaks. Confirm the warranty is in writing and that you have been told what is and is not covered.'],
+      ],
+      faq: [
+        { q: 'How long does a kitchen renovation take?', a: 'Eight to twelve weeks from deposit to handover for most kitchens, of which one to two weeks is the disruptive part where the old kitchen is out and the new one is going in. Our <a href="process.html">process page</a> sets out what happens in each week.' },
+        { q: 'What is the most common mistake?', a: 'Choosing finishes before settling the layout, and leaving services until the walls are closed. Both are cheap to get right early and expensive to fix late.' },
+        { q: 'Do I need to buy appliances before the design is finished?', a: 'You need to have chosen them and know the exact model dimensions. Cabinetry is built around appliances, so changing a fridge or an oven after drawings are signed off usually means rebuilding a cabinet rather than adjusting one.' },
+      ],
+    },
     {
       slug: 'kitchen-colours-2026',
       nav: 'Kitchen colours and materials in 2026',
@@ -1984,7 +2079,7 @@ module.exports = function (api) {
         ['Galley', 'Two parallel runs. The most efficient layout that exists in terms of work per step, and the cheapest per metre of storage, which is why it dominates apartments, granny flats and tiny homes.<br><br>It needs that 1,000mm aisle and it does not tolerate through-traffic. If the galley is also the path to the back door, it will be a nuisance forever. Best in a room with one entrance.'],
         ['L-shaped', 'Two runs meeting in a corner. The most common domestic layout in Australia, and for good reason — it opens to a dining space, keeps traffic out of the working zone, and adapts to almost any room.<br><br>Its weakness is the corner, which wastes roughly half a cabinet unless you address it. A blind-corner pull-out or a carousel turns that dead space into the most useful storage in the kitchen, and it is the fit-out option we recommend more than any other.'],
         ['U-shaped', 'Three runs. The most storage and bench you can fit in a given footprint, and excellent for a serious cook because everything is within a step.<br><br>It needs width — you are managing two aisles, not one — and it can feel enclosed if the third run is solid to the ceiling. Two corners means two corner solutions, so budget for them.<br><br>If the room will not take a third run, the storage you wanted is often better found behind a door: <a href="guide-butlers-pantry-worth-it.html" style="color:var(--brass)">whether a butler&rsquo;s pantry is worth it</a> walks through the clearances.'],
-        ['Island', 'Any of the above with a freestanding bench. What most people picture when they picture a new kitchen, and the layout that most often will not fit.<br><br>An island needs <strong>1,000mm clear on every side you use</strong>, and 1,200mm where people sit. Add the island depth and you need roughly 3.6 metres of room width before an island is comfortable. Below that, a peninsula does the same social job without the pinch points. Islands also carry cost beyond the cabinetry — power, and often plumbing.'],
+        ['Island', 'Any of the above with a freestanding bench. What most people picture when they picture a new kitchen, and the layout that most often will not fit. <a href="kitchen-islands.html" style="color:var(--brass)">What an island actually needs</a> covers the clearances in full.<br><br>An island needs <strong>1,000mm clear on every side you use</strong>, and 1,200mm where people sit. Add the island depth and you need roughly 3.6 metres of room width before an island is comfortable. Below that, a peninsula does the same social job without the pinch points. Islands also carry cost beyond the cabinetry — power, and often plumbing.'],
         ['How to choose', 'Measure the room and apply the clearances first. That usually eliminates two of the four immediately, which is a far better starting point than a mood board.<br><br>Then ask how many people cook at once. One cook is well served by a galley or an L. Two need the wider aisles of a U or an island. Then ask where people stand when they are not cooking, because that is what an island really solves — it is a social answer more than a storage one.'],
       ],
       faq: [
@@ -1995,6 +2090,93 @@ module.exports = function (api) {
       ],
     },
   ];
+
+  /* Caloundra: a SUPPLY page, not a location page. Bilt & Co is Rockhampton
+     based and does not install on the Sunshine Coast, so the suburb template
+     with its "no travel loading" and weekly site measures would be false
+     here. Supply delivered assembled is genuinely available today, which is
+     what this page sells. Its Service node names supply only and the global
+     areaServed GeoCircle is untouched. */
+  const caloundraFaq = [
+    { q: 'Do you install kitchens in Caloundra?', a: 'Not yet. We are based in Rockhampton and our installation team works Central Queensland. What we can do on the Sunshine Coast today is supply — we design the kitchen, and it arrives assembled for your builder, cabinetmaker or installer to fit. Full design-and-install on the Sunshine Coast is planned, and registering your interest is what tells us when to move.' },
+    { q: 'How does supply-only work from 500km away?', a: 'The same way it works for the builders we already supply. We design to your measurements, you confirm the drawings, and the cabinetry is delivered assembled — not flat packed in cartons. Your installer fits it. We provide the service drawings so your plumber and electrician know exactly where everything lands.' },
+    { q: 'Can I get a quote if I am on the Sunshine Coast?', a: 'Yes. Send us the room dimensions and photographs and we will quote the supply, fixed and itemised, including delivery. What we will not do is quote you for an installation we cannot stand behind.' },
+    { q: 'When will you install on the Sunshine Coast?', a: 'When there is enough work there to justify it, which is genuinely what the enquiries on this page decide. We would rather tell you that plainly than put a page up pretending we already have a team on the Coast.' },
+  ];
+
+  const caloundra = {
+    file: 'kitchens-caloundra.html',
+    service: {
+      name: 'Kitchen supply and delivery to Caloundra and the Sunshine Coast',
+      type: 'Kitchen supply and delivery',
+      desc: 'Cabinetry designed in Rockhampton and delivered assembled to Caloundra and the Sunshine Coast, fitted by your own builder or installer.',
+      areas: ['Caloundra', 'Sunshine Coast'],
+    },
+    title: 'Kitchens Caloundra & Sunshine Coast | Supply & Delivery | Bilt & Co',
+    desc: 'Bilt & Co supplies kitchens to Caloundra and the Sunshine Coast, delivered assembled and fitted by your builder. Design and full installation coming.',
+    og: 'openplan-long',
+    trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['kitchens-caloundra.html', 'Caloundra']],
+    faq: caloundraFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', 'Caloundra']])}
+        <span class="pill">Supply and delivery available now — installation coming</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">Caloundra, we supply.<br><span class="italic brass">We do not install yet.</span></h1>
+        <p class="lede">Most companies would put up a page here claiming to serve the Sunshine Coast. We are in Rockhampton, five hundred kilometres north, and we would rather tell you exactly what we can and cannot do.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="contact.html">Get a supply quote</a>
+          <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
+        </div>
+      </div>
+      <div>${frame('openplan-long', 'Open plan kitchen with a long island bench, supplied assembled', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <div ${rv()} style="margin-bottom:2.25rem">
+          <h2 class="d3">What we can do on the Sunshine Coast today</h2>
+          <p class="mt-1 muted">We design your kitchen to your measurements, and it is delivered to Caloundra assembled — carcasses built, hardware fitted, doors hung. Your builder, cabinetmaker or installer fits it. This is not a compromise arrangement invented for the Coast; it is exactly what we already do for the tiny home and granny flat builders we supply, and it is set out on our <a href="trade.html" style="color:var(--brass)">trade page</a>.</p>
+        </div>
+        <div ${rv()} data-rv-d="2" style="margin-bottom:2.25rem">
+          <h2 class="d3">What we will not pretend</h2>
+          <p class="mt-1 muted">We do not have an installation team on the Sunshine Coast. We cannot site measure your kitchen this week, and we will not quote you a fixed install price for work we would have to subcontract to someone we have never worked with. Every other page on this site promises our own employed installers. That promise does not currently reach Caloundra, so we are not making it.</p>
+        </div>
+        <div ${rv()} data-rv-d="3" style="margin-bottom:2.25rem">
+          <h2 class="d3">Why Caloundra specifically</h2>
+          <p class="mt-1 muted">Family. The Sunshine Coast is where Bilt &amp; Co expects to open a second base, and Caloundra is where that starts. Until there is enough work on the Coast to put an installer there permanently, supply is the honest offer — and the enquiries that come through this page are genuinely what decides the timing.</p>
+        </div>
+        <div ${rv()} data-rv-d="1">
+          <h2 class="d3">If you want the full service now</h2>
+          <p class="mt-1 muted">Then you want a Sunshine Coast company, and we would say so at the first phone call rather than the third. If you are in Central Queensland, everything on this site applies to you in full — <a href="kitchens.html" style="color:var(--brass)">Rockhampton</a>, <a href="kitchens-yeppoon.html" style="color:var(--brass)">Yeppoon</a>, <a href="kitchens-gracemere.html" style="color:var(--brass)">Gracemere</a> and the <a href="kitchens-capricorn-coast.html" style="color:var(--brass)">Capricorn Coast</a>.</p>
+        </div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">Sunshine Coast</span>
+          <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">Supply only<small>Delivered assembled</small></div>
+          <ul>
+            <li>Designed to your measurements</li>
+            <li>Delivered assembled, not flat packed</li>
+            <li>Full service drawings for your trades</li>
+            <li>Fixed, itemised supply quote including delivery</li>
+            <li>Blum hardware and moisture-resistant carcasses</li>
+            <li>Ten-year warranty on the cabinetry we supply</li>
+            <li class="no">Installation not included — not yet</li>
+          </ul>
+          <a class="btn btn--block" href="contact.html">Register interest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(caloundraFaq, 'Caloundra and the Sunshine Coast — questions')}
+  ${ctaBand({ eyebrow: 'Sunshine Coast', title: 'Tell us what you are building.<br><span class="italic" style="color:var(--brass-lite)">We will tell you what we can do.</span>', body: 'A fixed supply quote, delivered assembled to Caloundra, with nothing hidden in it. If you need installation as well, we will say so plainly rather than take the job and work it out later.' })}
+`,
+  };
 
   const guidePages = GUIDES.map((g) => ({
     file: `guide-${g.slug}.html`,
@@ -2217,5 +2399,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };
