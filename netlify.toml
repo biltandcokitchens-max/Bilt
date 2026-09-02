@@ -27,8 +27,24 @@
   status = 404
   force = true
 
+# EVERY new documentation file at the root needs a rule here. There is no
+# suffix wildcard in Netlify redirects, so .md and .csv files are served
+# publicly by default. MARKETING-PLAN.md sat readable on the live site for
+# exactly this reason until it was caught on 2026-09-02.
 [[redirects]]
   from = "/MARKETING-PLAN.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/KEYWORD-MAP.csv"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/KEYWORD-STRATEGY.md"
   to = "/404.html"
   status = 404
   force = true
