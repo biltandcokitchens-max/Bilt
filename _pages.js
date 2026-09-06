@@ -538,7 +538,7 @@ module.exports = function (api) {
         <div class="step" ${rv()} data-rv-d="4">
           <span class="step__no">4</span>
           <h3>Fit-out</h3>
-          <p class="muted">Pull-downs, blind-corner pull-outs, carousels and push-to-open motion, each priced individually. Cheaper designed in than retrofitted, because the cabinet has to be built to suit. <a href="fit-out.html" style="color:var(--brass)">All eight options</a>.</p>
+          <p class="muted">Pull-downs, blind-corner pull-outs, carousels and push-to-open motion, each priced individually. The same items do most of the work in an <a href="/guide-ndis-kitchen-modifications-queensland" style="color:var(--brass)">accessible kitchen</a>. Cheaper designed in than retrofitted, because the cabinet has to be built to suit. <a href="fit-out.html" style="color:var(--brass)">All eight options</a>.</p>
         </div>
       </div>
     </div>
@@ -584,7 +584,7 @@ module.exports = function (api) {
       </div>
       <div ${rv()} data-rv-d="1">
         <ul class="list-check">
-          <li><strong>The high-set under-house conversion.</strong> Enclosing beneath an older Queenslander to make a second living space or flat. Floors are rarely level and walls are rarely square, so we measure what is actually there and scribe to it rather than trusting the plan.</li>
+          <li><strong><a href="/under-house-kitchens-rockhampton" style="color:var(--brass)">The high-set under-house conversion.</a></strong> Enclosing beneath an older Queenslander to make a second living space or flat <a href="/guide-queenslander-kitchen-renovation" style="color:var(--brass)">(renovating the kitchen upstairs has its own quirks)</a>. If the space has taken water before, <a href="/guide-flood-damage-kitchen-replacement-rockhampton" style="color:var(--brass)">specify it so it can be dried out</a>. Floors are rarely level and walls are rarely square, so we measure what is actually there and scribe to it rather than trusting the plan.</li>
           <li><strong>The 1970s brick renovation.</strong> Small, closed-off kitchens with a load-bearing wall between the cooking and living space. Half the value is in what comes out, so we bring a builder through before quoting rather than after.</li>
           <li><strong>The new build upgrade.</strong> A house under construction where the standard kitchen in the contract does not match the rest of the build. Worth raising with your builder before the slab, while services can still move cheaply.</li>
         </ul>
@@ -1325,9 +1325,14 @@ module.exports = function (api) {
 
   function areaPage(slug, place, opts) {
     const { blurb, suburbs, image, alt, drive } = opts;
+    // Towns inside about an hour carry the no-travel-loading promise. Further
+    // out it is not confirmed, so `travel` overrides it rather than asserting.
+    const travel = opts.travel
+      || `${place} is inside Bilt & Co's standard service area with no travel loading — we are based ${drive} away in ${SITE.suburb}. We site measure in ${place} weekly.`;
+    const descTail = opts.descTail || 'Free 3D design, fixed quotes, no travel loading.';
     const tp = place.replace(/^the /, '');
     const faq = [
-      { q: `Do you build kitchens in ${place}?`, a: `Yes. ${place} is inside Bilt & Co's standard service area with no travel loading — we are based ${drive} away in ${SITE.suburb}. We site measure in ${place} weekly.` },
+      { q: `Do you build kitchens in ${place}?`, a: `Yes. ${travel}` },
       { q: `How much does a kitchen cost in ${place}?`, a: `The same as Rockhampton: $15,000 to $23,000 for our Essence collection, $26,000 to $42,000 for Maison, and $47,000 and up for fully bespoke Atelier work. We do not charge a premium for ${place} projects.` },
       { q: `Will your own team install it?`, a: `Yes. Our employed installation team works across the region every week — we do not subcontract ${place} jobs to a third party. Same crew, same ten-year warranty.` },
       { q: `Is the design consultation really free in ${place}?`, a: `Yes — the site measure, the 3D design and the fixed quote are free anywhere in our service area, ${place} included. If our number does not work for you, you keep the drawings.` },
@@ -1336,7 +1341,7 @@ module.exports = function (api) {
       file: `kitchens-${slug}.html`,
       service: { name: `Kitchen design and installation in ${place}`, type: 'Kitchen renovation', areas: [place] },
       title: `Kitchen Renovations ${tp} | Free Design — Bilt & Co`,
-      desc: `Custom kitchens in ${place} from $15,000, designed and installed by our Rockhampton team. Free 3D design, fixed quotes, no travel loading.`,
+      desc: `Custom kitchens in ${place} from $15,000, designed and installed by our Rockhampton team. ${descTail}`,
       og: image,
       preload: image,
       priority: '0.7',
@@ -1347,7 +1352,7 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', place]])}
-        <span class="pill">${drive} from our Rockhampton base &middot; No travel loading</span>
+        <span class="pill">${opts.pill || `${drive} from our Rockhampton base &middot; No travel loading`}</span>
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">${place}.</span></h1>
         <p class="lede">${blurb}</p>
       </div>
@@ -1364,9 +1369,10 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Local enough<br>to be accountable.</h2>
       </div>
       <div>
-        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is designed, supplied and installed by Bilt &amp; Co &mdash; no travel loading, no subcontracted installers, and the same ten-year warranty we give a job in Rockhampton itself.</p>
+        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is designed, supplied and installed by Bilt &amp; Co &mdash; ${opts.leadNote || 'no travel loading'}, no subcontracted installers, and the same ten-year warranty we give a job in Rockhampton itself.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="2">We site measure across ${place} and the surrounding area weekly. We will come to your kitchen table with a tape and a camera, at a time that suits you.</p>
         <div class="area-tags mt-3" ${rv()} data-rv-d="3">${suburbs.map((s) => `<span>${s}</span>`).join('')}</div>
+        ${opts.related ? `<p class="small muted mt-2">Also in ${tp}: ${opts.related.map((r) => `<a href="${r[0]}" style="color:var(--brass)">${r[1]}</a>`).join(" &middot; ")}</p>` : ''}
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
           <a class="btn" href="contact.html">Book a free ${tp} site measure</a>
           <a class="btn btn--ghost" href="investment.html">See the price bands</a>
@@ -1403,19 +1409,43 @@ module.exports = function (api) {
   }
 
   const areaPages = [
+    areaPage('gladstone', 'Gladstone', {
+      related: [['/granny-flat-kitchens-gladstone', 'granny flat kitchens in Gladstone']],
+      leadNote: 'one team from design to handover',
+      drive: 'about 90 minutes', image: 'concrete-luxe',
+      alt: 'Bright modern kitchen with stone island, Gladstone',
+      pill: 'Inside our installation area &middot; Gladstone &amp; surrounds',
+      descTail: 'Free 3D design and fixed quotes. Installed by our own team.',
+      travel: `Yes. Gladstone is inside our installation area and our own team installs there — we do not subcontract it. We are based about 90 minutes north in ${SITE.suburb}. Tell us your timing and we will confirm the next available site measure.`,
+      blurb: 'An industrial city with housing stock to match — workers&rsquo; cottages, seventies brick, and a steady run of investment properties turning over between tenants. Durability matters more here than anywhere else on our board.',
+      suburbs: ['Gladstone', 'West Gladstone', 'South Gladstone', 'Kin Kora', 'Clinton', 'Telina', 'New Auckland', 'Calliope', 'Tannum Sands', 'Boyne Island'],
+    }),
+    areaPage('biloela', 'Biloela', {
+      leadNote: 'one team from design to handover',
+      drive: 'about two hours', image: 'galley-stone',
+      alt: 'Compact galley kitchen with stone benchtop, Biloela',
+      pill: 'Inside our installation area &middot; Callide Valley',
+      descTail: 'Free 3D design and fixed quotes. Installed by our own team.',
+      travel: `Yes. Biloela and the Callide Valley are inside our installation area, installed by our own team. We are based about two hours away in ${SITE.suburb}, so we schedule site measures and installations together rather than dropping in — tell us your timing and we will confirm the next visit.`,
+      blurb: 'Rural and agricultural, with properties that are worked hard and renovated properly rather than often. Most of what we do here is a kitchen meant to last twenty years, not five.',
+      suburbs: ['Biloela', 'Thangool', 'Callide', 'Jambin', 'Banana', 'Moura', 'Dululu', 'Goovigen'],
+    }),
     areaPage('yeppoon', 'Yeppoon', {
+      related: [['/granny-flat-kitchens-yeppoon', 'granny flat kitchens'], ['/short-stay-kitchens-capricorn-coast', 'holiday let kitchens']],
       drive: '40 minutes', image: 'openplan-long',
       alt: 'Open plan coastal kitchen with long island bench, Yeppoon',
-      blurb: 'Coastal homes need joinery that can take salt air, humidity and a house full of weekend guests. We build for all three.',
+      blurb: 'Coastal homes need joinery that can take salt air, humidity and a house full of weekend guests. Building a secondary dwelling here? <a href="/guide-class-1a-granny-flat-yeppoon" style="color:var(--brass)">What Class 1a means on the Capricorn Coast</a>. We build for all three.',
       suburbs: ['Yeppoon', 'Cooee Bay', 'Lammermoor', 'Taranganba', 'Barmaryee', 'Farnborough', 'Zilzie', 'Emu Park', 'Mulambin', 'Kinka Beach'],
     }),
     areaPage('gracemere', 'Gracemere', {
+      related: [['/new-build-kitchens-gracemere', 'new build kitchens in Gracemere']],
       drive: '15 minutes', image: 'island-calacatta',
       alt: 'Bright kitchen with marble waterfall island, Gracemere',
       blurb: 'New builds and growing families, fifteen minutes from our door. Gracemere is one of the busiest postcodes on our board.',
       suburbs: ['Gracemere', 'Stanwell', 'Kabra', 'Bouldercombe', 'Fairy Bower', 'Alton Downs', 'Mount Morgan', 'Westwood'],
     }),
     areaPage('capricorn-coast', 'the Capricorn Coast', {
+      related: [['/short-stay-kitchens-capricorn-coast', 'holiday let kitchens'], ['/granny-flat-kitchens-yeppoon', 'granny flat kitchens in Yeppoon']],
       drive: '45 minutes', image: 'timber-island',
       alt: 'Timber island kitchen in a Capricorn Coast home',
       blurb: 'From Emu Park to Keppel Sands &mdash; bespoke kitchens designed in Rockhampton and installed on the coast by our own team.',
@@ -1438,6 +1468,18 @@ module.exports = function (api) {
       svg: `<rect x="26" y="14" width="108" height="52" rx="2"/><path d="M26 40h108"/>
             <rect x="44" y="72" width="72" height="16" rx="2"/><path d="M52 72V60M108 72V60"/>
             <path d="M138 30c14 18 10 40-10 52" stroke-dasharray="4 4"/><path d="M124 78l4 6 6-3"/>`,
+    },
+    {
+      slug: 'motorised-pull-down-overheads',
+      name: 'Motorised pull-down overheads',
+      price: 'Quoted',
+      copy: 'The same idea as the manual unit without the pull. A button lowers the shelf down and forward, which matters when reach or grip is the problem rather than height.',
+      fits: 'Needs a power supply to the cabinet and an overhead built to the unit’s internal dimensions.',
+      svg: `<rect x="26" y="14" width="108" height="52" rx="2"/><path d="M26 40h108"/>
+            <rect x="20" y="10" width="12" height="10" rx="1"/><path d="M26 20v6"/>
+            <rect x="44" y="72" width="72" height="16" rx="2"/><path d="M52 72V60M108 72V60"/>
+            <path d="M138 30c14 18 10 40-10 52" stroke-dasharray="4 4"/><path d="M124 78l4 6 6-3"/>
+            <circle cx="150" cy="46" r="6"/><path d="M150 43v6"/>`,
     },
     {
       slug: 'blind-corner-pull-outs',
@@ -1638,6 +1680,7 @@ module.exports = function (api) {
   const SEGMENTS = [
     {
       file: 'tiny-home-kitchens.html',
+    related: [['/guide-tiny-home-laws-qld', 'tiny home laws in Queensland'], ['/guide-flat-pack-vs-assembled-kitchen', 'flat pack vs assembled']],
       slug: 'tiny-home',
       nav: 'Tiny home kitchens',
       title: 'Tiny Home Kitchens | Compact Runs from $5,300 | Bilt & Co',
@@ -1670,6 +1713,7 @@ module.exports = function (api) {
     },
     {
       file: 'granny-flat-kitchens.html',
+    related: [['/granny-flat-kitchens-yeppoon', 'in Yeppoon'], ['/granny-flat-kitchens-gladstone', 'in Gladstone'], ['/guide-granny-flat-rules-rockhampton', 'the rules in Rockhampton'], ['/guide-granny-flat-rules-qld', 'the rules statewide'], ['/guide-multigenerational-living-queensland', 'moving family in']],
       slug: 'granny-flat',
       nav: 'Granny flat kitchens',
       title: 'Granny Flat Kitchens | From $6,500 Installed | Bilt & Co',
@@ -1681,7 +1725,7 @@ module.exports = function (api) {
       price: 'From $6,500',
       range: '2.4m – 3.0m run',
       body: [
-        ['Specify for the second tenant, not the first', 'A granny flat kitchen gets used hard and is rarely the owner using it. The parts that fail first are always the same: glued edging that lifts, standard runners that sag, and chipboard carcasses that swell the first time a tap drips. We specify against all three as standard, because replacing a kitchen in four years costs more than specifying it properly once.'],
+        ['Specify for the second tenant, not the first', 'A granny flat kitchen gets used hard and is rarely the owner using it. The parts that fail first are always the same: glued edging that lifts, standard runners that sag, and chipboard carcasses that swell the first time a tap drips. We specify against all three as standard, because replacing a kitchen in four years costs more than specifying it properly once. If you are planning to let it, <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">what the approval decides about renting it out</a> matters more than the build cost.'],
         ['Small enough to be affordable, real enough to let', 'A 2.4 to 3.0 metre run covers almost every secondary dwelling, and a galley is almost always the right shape for it — see <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layouts compared</a> for the clearances that decide it. That is a genuine kitchen — full-depth base cabinets, a real benchtop, and storage a person can actually live out of, rather than a kitchenette that shows up in the listing photos as a compromise.'],
         ['Coordinated with your build', 'If the flat is under construction we will work to your builder’s programme and hand your trades a full set of service drawings. If it is a conversion of an under-house or garage space, we will measure what is really there rather than what the plan says.'],
       ],
@@ -1695,13 +1739,14 @@ module.exports = function (api) {
       ],
       faq: [
         { q: 'How much is a granny flat kitchen?', a: 'A 2.4m run starts at about $6,500 and a 3.0m run at about $7,700, including carcasses, doors, Blum hardware and a benchtop. Add a stone benchtop or fit-out options and it rises from there. Send us the dimensions and we will give you a fixed quote.' },
-        { q: 'Is it worth spending more on a rental kitchen?', a: 'On hardware and carcasses, yes. On doors and benchtops, not especially. The parts that fail in a rental are the moving ones and the ones that meet water — runners, hinges and carcass edges. Spend there, keep the finishes simple, and the kitchen will still be sound when the third tenant moves in.' },
+        { q: 'Is it worth spending more on a rental kitchen?', a: 'On hardware and carcasses, yes. On doors and benchtops, not especially. The parts that fail in a rental are the moving ones and the ones that meet water — runners, hinges and carcass edges. Spend there, keep the finishes simple, and <a href="/guide-does-a-new-kitchen-add-value" style="color:var(--brass)">what a kitchen does to value</a> follows. The kitchen will still be sound when the third tenant moves in.' },
         { q: 'Can you work with my builder?', a: 'Yes. We work alongside your trades weekly and can issue a full set of service drawings so your plumber and electrician know exactly where everything lands. We can also coordinate the whole fit-out as a single point of contact if you would rather not manage it.' },
         { q: 'Do you do under-house and garage conversions?', a: 'Regularly — it is one of the most common projects in Rockhampton. Older high-set homes convert well, but the floors are rarely level and the walls are rarely square. We measure what is actually there and scribe to it rather than assuming.' },
       ],
     },
     {
       file: 'new-build-kitchens.html',
+    related: [['/new-build-kitchens-gracemere', 'in Gracemere']],
       slug: 'new-builds',
       nav: 'New build kitchens',
       title: 'New Build Kitchens Rockhampton | Bilt & Co',
@@ -1770,6 +1815,7 @@ module.exports = function (api) {
 
   SEGMENTS.push({
     file: 'kitchenettes.html',
+    related: [['/under-house-kitchens-rockhampton', 'under-house conversions in Rockhampton'], ['/guide-garage-conversion-approval-qld', 'garage and shed conversions']],
     slug: 'kitchenette',
     nav: 'Kitchenettes',
     title: 'Kitchenettes Rockhampton | From $2,400 | Bilt & Co',
@@ -1804,6 +1850,7 @@ module.exports = function (api) {
 
   SEGMENTS.push({
     file: 'short-stay-kitchens.html',
+    related: [['/short-stay-kitchens-capricorn-coast', 'on the Capricorn Coast'], ['/guide-short-stay-letting-rules-qld', 'letting rules in Queensland']],
     slug: 'short-stay',
     nav: 'Short-stay kitchens',
     title: 'Airbnb & Short-Stay Kitchens Rockhampton | Bilt & Co',
@@ -1906,6 +1953,194 @@ module.exports = function (api) {
     ],
   });
 
+  SEGMENTS.push({
+    file: 'owner-builder-kitchen-supply.html',
+    related: [['/guide-owner-builder-permit-qld', 'owner-builder permits'], ['/guide-do-i-need-approval-kitchen-renovation', 'when a kitchen needs approval'], ['/guide-supply-your-own-kitchen', 'is supplying your own cheaper?'], ['/guide-flat-pack-vs-assembled-kitchen', 'flat pack vs assembled']],
+    slug: 'owner-builder',
+    nav: 'Owner-builder supply',
+    title: 'Owner Builder Kitchen Supply QLD | Delivered Assembled | Bilt & Co',
+    desc: 'Kitchen supply for owner-builders in Queensland. Designed to your measurements, delivered assembled with service drawings for your trades. Fit it yourself.',
+    h1: 'You are managing the build.<br><span class="italic brass">We will handle the kitchen.</span>',
+    lede: 'Owner-builders get treated as a nuisance by most kitchen companies. You are the opposite of that here — you know your programme, you make your own decisions, and you do not need selling to.',
+    img: 'dark-island',
+    alt: 'Kitchen cabinetry delivered assembled ready for installation',
+    price: 'Supply pricing',
+    range: 'Delivered assembled',
+    body: [
+      ['Supply only, and it is not a lesser service', 'You get the same design process, the same 18mm moisture-resistant carcasses, the same Blum hardware and the same ten-year warranty on the cabinetry as anyone paying for installation. The difference is that it arrives assembled at your site and your crew fits it. This is not a stripped-back product for people who could not afford the real one — it is the same kitchen with one line removed from the invoice.'],
+      ['Assembled, not flat packed', 'The distinction matters most to you of anyone. Carcasses arrive built, hardware fitted, doors hung and adjusted. You are fitting a kitchen, not assembling one on the floor of a house you are still finishing, at the point in the build where you have the least time and patience left. If you have ever built a flat-pack kitchen at the end of an owner-build, you already know why this is worth paying for.'],
+      ['Drawings your trades can actually work from', 'You get a full set of service drawings showing where every waste, water point and power outlet needs to land, dimensioned. Hand them to your plumber and electrician before they rough in. This is where owner-builds most often lose money on a kitchen — services roughed in to a guess, then a cabinet that has to be modified on site or a wall that has to be reopened.'],
+      ['Tell us your programme, not your deadline', 'We hold your specification once it is confirmed, so the order becomes a confirmation rather than a fresh design when your build is finally ready. Owner-builds move. Yours will too. Tell us where the build actually is and we will work to it rather than pushing you to take delivery into a house with no floor down.'],
+      ['What sits with you', 'Under an owner-builder permit the obligations are yours: making sure every licensed trade on the job holds a current licence, keeping the documentation, and the restrictions that apply to selling the property afterwards. <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> sets out the current requirements. We are a supplier — we are not your builder, and we do not certify your build. See <a href="/guide-do-i-need-approval-kitchen-renovation" style="color:var(--brass)">whether a kitchen needs approval</a> for where a kitchen sits in all that.'],
+    ],
+    list: [
+      'Designed to your measurements, not to a module',
+      'Delivered assembled — carcasses built, doors hung and adjusted',
+      'Full service drawings for your plumber and electrician',
+      '18mm moisture-resistant carcasses, laser-bonded edging',
+      'Blum soft-close hardware throughout',
+      'Specification held for when your build is actually ready',
+      'Ten-year warranty on the cabinetry we supply',
+    ],
+    faq: [
+      { q: 'Can I buy a kitchen without installation?', a: 'Yes. Supply-only is a normal part of what we do, not an exception — it is what we already provide to tiny home and granny flat builders. You get the design, the cabinetry delivered assembled and the service drawings; your crew fits it.' },
+      { q: 'What does an owner-builder need to supply you?', a: 'Room dimensions, ceiling height, the position of windows, doors and existing services, and your appliance models with their exact dimensions. Photographs of the space help. If the build is not up yet, the plans are enough to start.' },
+      { q: 'Do you deliver to my site?', a: 'Yes, across Central Queensland, and to the Sunshine Coast as supply-only — see our <a href="/kitchens-caloundra">Caloundra page</a>. Tell us the site access and whether there is somewhere dry and secure to store it, because assembled cabinetry takes more room than cartons.' },
+      { q: 'Can I get help if something does not fit?', a: 'Ring us. Our drawings are dimensioned so this is rare, but buildings move and site conditions differ from plans. We would rather solve it on the phone than have you cut something you cannot uncut.' },
+      { q: 'Is supply-only cheaper?', a: 'You are not paying for our installation labour, so yes. The cabinetry, hardware and warranty are identical. Send your dimensions for a fixed, itemised supply quote.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'accessible-kitchens.html',
+    slug: 'accessible',
+    nav: 'Accessible kitchens',
+    title: 'Accessible Kitchens Rockhampton | Built to OT Spec | Bilt & Co',
+    desc: 'Accessible and adaptive kitchens in Rockhampton and Central Queensland, built to your occupational therapist’s specification. Quoted itemised for plan managers.',
+    h1: 'Accessible kitchens,<br><span class="italic brass">built to the specification.</span>',
+    lede: 'An accessible kitchen is a specification problem, not a design compromise. Send us what your OT has written and we will build exactly that.',
+    img: 'island-marble-brass',
+    alt: 'Bright open kitchen with clear approach to bench and sink',
+    price: 'Quoted to spec',
+    range: 'To your OT report',
+    related: [['/guide-ndis-kitchen-modifications-queensland', 'how NDIS funding works'], ['/aging-in-place-kitchens', 'aging in place'], ['/sda-kitchens-queensland', 'SDA housing'], ['/motorised-pull-down-shelving', 'motorised pull-down shelving']],
+    body: [
+      ['We build to the report, we do not write it', `The specification comes from an occupational therapist who has assessed the person in their own home. That is the document that supports funding and it is the document we quote against. We do not assess eligibility, write OT reports or manage claims — we are the cabinetmaker in that process, and the projects that go smoothly are the ones where the OT specifies first. If you have a report, send it. If you do not, that is the call to make before ours. <a href="https://www.ndis.gov.au/participants/home-and-living/home-modifications" rel="noopener" target="_blank" style="color:var(--brass)">NDIS</a> sets out how home modification funding works.`],
+      ['Knee clearance is the one that gets missed', 'Everyone thinks of bench height. The item that more often decides whether a kitchen actually works from a seated position is clear space underneath — at the sink and at a section of bench, deep enough to get close rather than reach across. It affects the plumbing layout, the sink depth and where the waste runs, which is why it has to be designed rather than adjusted afterwards. A shallower sink bowl usually buys the room.'],
+      ['Height is not one number', 'A seated user and a standing user need different working heights, and plenty of households contain both. That is what height-adjustable sections are for, and where they are not funded or not warranted, two fixed working heights in the same kitchen often solves it more cheaply. Your OT specifies the heights for the individual; we build to them. Anyone quoting a standard accessible bench height without asking who is using it is guessing.'],
+      ['Most of it costs nothing extra here', 'Full-extension drawers instead of base cupboards, D-pull handles instead of knobs, and soft-close hardware throughout are standard on everything we supply. Those three do a large share of the work in an accessible kitchen and they are already in the price. The cost sits in the specific items — height-adjustable mechanisms, pull-down shelving units, specialised hardware — which get quoted as line items so a plan manager can see exactly what each one is.'],
+      ['Quoted the way a plan manager reads it', 'Cabinetry, benchtop, hardware, accessible items and installation listed separately, fixed, with the specification referenced. That is the format that gets approved without three rounds of questions. We are in Rockhampton and install across Central Queensland; beyond that we supply, delivered assembled, for a local installer to fit.'],
+    ],
+    list: [
+      'Built to your occupational therapist’s specification',
+      'Knee clearance designed in, not adjusted later',
+      'Height-adjustable or dual-height working surfaces',
+      'Full-extension drawers and D-pull handles as standard',
+      'Lever taps and front-mounted controls',
+      'Itemised quote in the format plan managers expect',
+      'Installed by our own team across Central Queensland',
+    ],
+    faq: [
+      { q: 'Do you quote from an OT report?', a: 'Yes, and it is the fastest way to get a usable number. Send the report and you will get a fixed, itemised quote against the specification in it. We do not assess eligibility or write reports — that is the occupational therapist’s role.' },
+      { q: 'What if I do not have an OT report yet?', a: 'Then that is the first call, ahead of ours. For NDIS-funded modifications the report is generally what supports the funding and it drives the scope. Quoting before it exists is the most common reason these projects stall.' },
+      { q: 'How much does an accessible kitchen cost?', a: 'It depends entirely on the specification, which is why we quote rather than publish a figure. The cabinetry is broadly comparable to any kitchen; cost comes from specific items like height-adjustable mechanisms and pull-down shelving. Those are quoted as separate lines so nothing is buried.' },
+      { q: 'Do you install outside Central Queensland?', a: 'We install within about 150 kilometres of Rockhampton. Beyond that we supply, delivered assembled, with full service drawings for a local installer — which suits SDA and modification builders who already have their own trades.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'sda-kitchens-queensland.html',
+    slug: 'sda',
+    nav: 'SDA kitchens',
+    title: 'SDA Kitchens Queensland | Specialist Disability Accommodation | Bilt & Co',
+    desc: 'Kitchens for Specialist Disability Accommodation builds in Queensland. Built to the design standard your certifier assesses against, supplied or installed.',
+    h1: 'SDA kitchens,<br><span class="italic brass">built to the standard.</span>',
+    lede: 'SDA is not a generous version of an accessible kitchen. It is a certified build against a published standard, and the cabinetry has to survive that assessment.',
+    img: 'black-marble-bar',
+    alt: 'Accessible kitchen with clear circulation space and low bench section',
+    price: 'Supply or install',
+    range: 'To the SDA design standard',
+    related: [['/accessible-kitchens', 'accessible kitchens'], ['/motorised-pull-down-shelving', 'motorised pull-down shelving'], ['/guide-ndis-kitchen-modifications-queensland', 'how NDIS funding works'], ['/trade', 'trade supply']],
+    body: [
+      ['Tell us it is SDA at the first conversation', `The <a href="https://www.ndis.gov.au/providers/housing-and-living-supports-and-services/housing/specialist-disability-accommodation" rel="noopener" target="_blank" style="color:var(--brass)">SDA Design Standard</a> carries requirements that differ from a standard accessible kitchen, and the build is assessed against them by an SDA assessor. That changes the drawings, not just the price. Projects go wrong when a cabinetmaker is briefed as though it were an ordinary kitchen and the design category surfaces halfway through — tell us at the start and it costs nothing.`],
+      ['Which design category', 'Improved Liveability, Fully Accessible, Robust and High Physical Support each carry different expectations, and they are not interchangeable. Robust in particular changes the specification materially: the cabinetry has to take deliberate impact, not just daily use, and that is a construction decision rather than a finish one. Tell us the category and the assessor’s requirements and we will build to them.'],
+      ['What we build, and what we do not certify', 'We supply and install cabinetry, benchtops and hardware to the specification you provide. We are not SDA assessors and we do not certify the dwelling. If the assessor requires something specific of the joinery, put it in writing and it goes in the drawings — we would rather build it right than argue about it at inspection.'],
+      ['Supply anywhere, install in Central Queensland', 'SDA builders operate across the state, and most already have their own installers. We install within about 150 kilometres of Rockhampton; beyond that we supply delivered assembled with a full set of service drawings, which is exactly how we already work with tiny home and granny flat builders. Repeat specifications are held, so a second dwelling to the same design is a confirmation rather than a fresh drawing.'],
+      ['Built to be used hard', 'Whatever the category, SDA housing works harder than a family kitchen and is occupied continuously. Our standard specification — 18mm moisture-resistant carcasses, Blum hardware with a lifetime mechanical warranty, laser-bonded edging — is the right starting point for that, and it is what we would build anyway.'],
+    ],
+    list: [
+      'Built to your SDA design category and assessor requirements',
+      'Robust category specification available',
+      '18mm moisture-resistant carcasses, laser-bonded edging',
+      'Blum hardware, lifetime mechanical warranty',
+      'Full service drawings for your trades',
+      'Repeat specifications held for multi-dwelling builds',
+      'Supply anywhere in Queensland, install within 150km of Rockhampton',
+    ],
+    faq: [
+      { q: 'Do you build kitchens for SDA housing?', a: 'Yes, to the design category and assessor requirements you provide. Tell us it is SDA at the first conversation — the requirements differ from a standard accessible kitchen and they affect the drawings, not just the price.' },
+      { q: 'Which SDA design categories can you build to?', a: 'Improved Liveability, Fully Accessible, Robust and High Physical Support. Robust changes the specification most, because the cabinetry has to take deliberate impact rather than ordinary wear. Send the assessor’s requirements in writing.' },
+      { q: 'Do you certify the build?', a: 'No. We supply and install the joinery to specification. Certification is the SDA assessor’s role, and we work to what they require.' },
+      { q: 'Can you supply SDA builds outside Central Queensland?', a: 'Yes, as supply — delivered assembled with full service drawings for your own installer. We install within about 150 kilometres of Rockhampton. For repeat builds we hold the specification so each order is a confirmation.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'aging-in-place-kitchens.html',
+    slug: 'aging-in-place',
+    nav: 'Aging in place kitchens',
+    title: 'Aging in Place Kitchens Rockhampton | Design to Stay Put | Bilt & Co',
+    desc: 'Kitchens designed for staying in your own home longer. Drawers instead of low cupboards, better light, hardware that works with arthritic hands. From $15,000.',
+    h1: 'A kitchen designed<br><span class="italic brass">for staying put.</span>',
+    lede: 'Nobody wants a kitchen that looks like a hospital. Almost everything that makes one easier to use at eighty is invisible, and most of it is free if you decide it now.',
+    img: 'splashback-marble-01',
+    alt: 'Warm timber kitchen with drawers and integrated task lighting',
+    price: 'From $15,000',
+    range: 'Full kitchen',
+    related: [['/accessible-kitchens', 'accessible kitchens'], ['/guide-ndis-kitchen-modifications-queensland', 'NDIS modifications'], ['/motorised-pull-down-shelving', 'motorised pull-down shelving'], ['/fit-out', 'fit-out options']],
+    body: [
+      ['The renovation you do at sixty decides the one at eighty', 'Most people renovate a kitchen once more in their life, somewhere in their late fifties or sixties, and that kitchen is the one they will still be using twenty-five years later. Designing it for the person you are now is the expensive choice, because the alternative is a second renovation, or moving out of a house you did not want to leave.'],
+      ['Drawers, not low cupboards', 'This is the single biggest one. Getting to the back of a base cupboard means kneeling on a hard floor and getting back up, and that stops being trivial long before anyone would call themselves frail. Deep full-extension drawers bring everything out to you. It is not an accessibility feature, it is a better kitchen at any age, and it costs nothing extra here because full-extension runners are standard.'],
+      ['Hardware you can use with bad hands', 'Arthritis is close to universal eventually and it makes knobs and small handles genuinely difficult. D-pull handles that a whole hand or a forearm can hook are the answer, and they look like ordinary contemporary hardware. Lever taps rather than twist. Push-to-open where a handle would be awkward. None of it reads as adapted.'],
+      ['Light, and the things you stop seeing', 'Eyes change earlier than anything else, and the kitchen is where that shows first. Task lighting under every overhead so the bench is lit rather than shadowed by your own body. Contrast between the benchtop and the floor edge, and between the bench and the sink, so edges are visible. This costs very little at build time and cannot be retrofitted neatly.'],
+      ['What to leave out, and what to leave room for', `Overheads above shoulder height that need a step stool. A microwave over the cooktop, which is a reach across heat. Deep corner cupboards. Where budget allows, leave a section of bench with clear space underneath — it is unremarkable now and it is the difference later if a chair or a walker ever comes into the house. The <a href="https://livablehousingaustralia.org.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livable Housing Australia</a> guidelines are a useful reference if you want to go further, and if funded modifications are ever involved, <a href="/accessible-kitchens" style="color:var(--brass)">accessible kitchens</a> covers how that works.`],
+    ],
+    list: [
+      'Drawers rather than low cupboards throughout',
+      'D-pull handles and lever taps as standard',
+      'Task lighting under every overhead',
+      'Contrast at bench edges and the sink',
+      'Nothing critical stored above shoulder height',
+      'Room left for a seated working section',
+      'Ten-year warranty on cabinetry and workmanship',
+    ],
+    faq: [
+      { q: 'Does an aging in place kitchen look different?', a: 'No, and that is rather the point. Drawers, D-pull handles, lever taps and good task lighting are ordinary contemporary choices. Nothing about it reads as adapted, and nothing about it dates the way a clinical fit-out would.' },
+      { q: 'Is it more expensive?', a: 'Barely. Full-extension drawers, soft-close hardware and D-pull handles are standard on everything we supply, so most of what matters is already in the price. Extra cost only appears if you add specific items like pull-down shelving.' },
+      { q: 'When should I think about this?', a: 'At the renovation you are already planning. Designing it in costs almost nothing; retrofitting it later means a second kitchen. If you are renovating in your fifties or sixties, this is the conversation worth having now.' },
+      { q: 'What if I need funded modifications later?', a: 'Different pathway. Funded home modifications generally follow an occupational therapist’s assessment — see our accessible kitchens page and the NDIS guide. A kitchen designed sensibly now needs less modification later, whoever pays for it.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'motorised-pull-down-shelving.html',
+    slug: 'pull-down',
+    nav: 'Motorised pull-down shelving',
+    title: 'Motorised Pull-Down Kitchen Shelving | Built to Take It | Bilt & Co',
+    desc: 'Motorised pull-down overhead shelving in Rockhampton and Queensland. We build the cabinetry to take the unit, to your occupational therapist’s specification.',
+    h1: 'The top shelf,<br><span class="italic brass">at the press of a button.</span>',
+    lede: 'Overhead storage is the first thing to become unusable and the last thing anyone plans for. A motorised pull-down brings it to you instead.',
+    img: 'matte-black-bank',
+    alt: 'Handleless overhead cabinetry with concealed pull-down shelving',
+    price: 'Quoted to spec',
+    range: 'Per overhead cabinet',
+    related: [['/accessible-kitchens', 'accessible kitchens'], ['/aging-in-place-kitchens', 'aging in place'], ['/fit-out', 'other fit-out options']],
+    body: [
+      ['What it does that a manual one does not', `A manual pull-down overhead is a good piece of hardware — you grip a handle and draw the shelf down and forward on a sprung mechanism. It solves height. What it does not solve is force, because you still have to pull it, hold it and push it back. A motorised unit removes that entirely: a switch lowers the shelf and raises it again. If the difficulty is reach or grip rather than height alone, that is the whole difference, and it is why the two are not interchangeable.`],
+      ['Who it is actually for', `Someone working seated, for whom an overhead is unreachable regardless of what the shelf does. Someone with limited grip or arm strength, where a sprung mechanism is the barrier rather than the help. And someone who simply should not be on a step — which covers a great many people who would never describe themselves as having a disability. It appears regularly in occupational therapist specifications for exactly these reasons.`],
+      ['The cabinet has to be built for it', `This is the part that gets missed until it is expensive. A motorised unit has its own internal width, depth and height requirements, a weight limit, and structural fixing points that have to land in solid material rather than a cabinet back. Building a standard overhead and retrofitting a mechanism into it usually means rebuilding the cabinet. Tell us at design stage and the cabinet is drawn around the unit from the start, which costs nothing extra.`],
+      ['It needs power, and that decision is early', `A powered unit needs a supply into the cabinet, which means an outlet or a hard-wired point behind or above it, placed before the cabinetry goes in. Adding it afterwards means opening a wall you have just finished. If a motorised overhead is even a possibility, have the electrician rough in for it — an unused point costs very little and a retrofit costs a great deal.`],
+      ['When the manual one is the right answer', `Often. If the person using it has the grip and arm strength to draw a sprung shelf down, the manual unit does the same job for a fraction of the cost and has nothing to fail or lose power. We would rather fit a manual pull-down that suits you than sell a motorised one that does not. The <a href="/fit-out" style="color:var(--brass)">fit-out options</a> page lists the manual version with its price.`],
+      ['What we build, and what we do not make', `We build the cabinetry and install it. The mechanism itself is a manufactured component we specify and fit — we are not its maker, and we will not pretend the unit is ours. What we are responsible for is a cabinet built correctly to take it, wired for it, and installed so it works on the day it is handed over. Quoted as a separate line so you can see exactly what it costs, which matters if a plan manager is reading the quote. See <a href="/accessible-kitchens" style="color:var(--brass)">accessible kitchens</a> for how we quote against an OT specification.`],
+    ],
+    list: [
+      'Cabinetry drawn around the unit from the start',
+      'Structural fixing into solid material, not a cabinet back',
+      'Coordinated with your electrician for the power supply',
+      'Quoted as a separate line item, not buried',
+      'Manual pull-downs also available where they suit better',
+      'Installed by our own team across Central Queensland',
+      'Supplied assembled elsewhere in Queensland',
+    ],
+    faq: [
+      { q: 'What is a motorised pull-down shelf?', a: `An overhead shelf unit that lowers down and forward at the press of a switch, bringing the contents to a reachable height, then returns. The manual equivalent does the same movement but you pull it, which is the difference that matters if grip or arm strength is the issue.` },
+      { q: 'Will the NDIS pay for it?', a: `That is determined by the participant’s plan and the supporting assessment, not by us. Motorised pull-down shelving does appear in occupational therapist specifications for home modifications. Speak to the OT and the plan manager — we quote against whatever specification comes out of that, itemised so each element is visible.` },
+      { q: 'Does it need a power point?', a: 'Yes, a supply into or behind the cabinet, placed before the cabinetry is installed. Retrofitting it means opening a finished wall. If it is even a possibility, have your electrician rough in for it while they are on site.' },
+      { q: 'Can it be retrofitted into my existing overheads?', a: 'Sometimes, but it depends on the cabinet’s internal dimensions and whether there is solid material to fix into. Often a standard overhead has to be rebuilt to take one, which is why it is far cheaper decided at design stage than afterwards.' },
+      { q: 'Should I get manual or motorised?', a: 'Manual if you have the grip and arm strength to draw a sprung shelf down — it costs far less and there is nothing to power or fail. Motorised if reach or force is the barrier. If an OT is involved, they will specify which.' },
+    ],
+  });
+
   const segmentPages = SEGMENTS.map((s) => ({
     file: s.file,
     title: s.title,
@@ -1951,6 +2186,7 @@ module.exports = function (api) {
           <ul>${s.list.map((x) => `<li>${x}</li>`).join('')}</ul>
           <a class="btn btn--block" href="contact.html">${s.slug === 'trade' ? 'Talk to us about trade' : 'Get this priced'}</a>
         </div>
+        ${s.related ? `<p class="small muted mt-2">Also: ${s.related.map((r) => `<a href="${r[0]}" style="color:var(--brass)">${r[1]}</a>`).join(" &middot; ")}</p>` : ''}
       </div>
     </div>
     ${s.placeholder ? `<!-- ${s.placeholder} -->` : ''}
@@ -1968,6 +2204,689 @@ module.exports = function (api) {
      answer it is worse than no guide. */
 
   const GUIDES = [
+    {
+      slug: 'granny-flat-rules-qld',
+      group: 'approvals',
+      nav: 'Granny flat rules across Queensland',
+      title: 'Granny Flat Rules Queensland | Secondary Dwelling Requirements | Bilt & Co',
+      desc: 'How secondary dwelling rules work in Queensland, why they differ by council, and the questions that decide whether you can build one and let it.',
+      h1: 'Granny flat rules<br><span class="italic brass">across Queensland.</span>',
+      lede: 'There is no single Queensland granny flat rule. There is a framework, and then eighty councils applying it differently.',
+      img: 'collection-marble-04',
+      alt: 'Compact secondary dwelling kitchen with stone benchtop',
+      read: '8 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or planning advice. Every Queensland council applies its own planning scheme and the rules change without notice — confirm with your council, or a building certifier, before you commit to anything.',
+      answer: `Queensland has no statewide granny flat rule. A "secondary dwelling" is defined in the state planning framework, but whether one is permitted on your block — its size, whether it must stay attached, and whether it can be let to someone outside your household — is set by your local council’s planning scheme. Two adjoining councils routinely give different answers. Find yours before you design anything.`,
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Once you know what you can build',
+        title: 'The kitchen it will need.',
+        body: 'A compliant secondary-dwelling kitchen runs 2.4 to 3.0 metres, from $6,500. Installed by our team in Central Queensland, supplied assembled anywhere else in the state.',
+        label: 'See granny flat kitchens',
+        href: '/granny-flat-kitchens',
+      },
+      cta: {
+        eyebrow: 'Anywhere in Queensland',
+        title: 'Install in Central Queensland.<br><span class="italic" style="color:var(--brass-lite)">Supply everywhere else.</span>',
+        body: 'Within about 150km of Rockhampton our own team installs. Beyond that we design it, deliver it assembled and provide the service drawings for your builder. Fixed and itemised either way.',
+        image: 'galley-stone',
+        alt: 'Compact secondary dwelling kitchen',
+      },
+      sections: [
+        ['Secondary dwelling is the term to search', `Councils rarely write "granny flat". The planning term is generally secondary dwelling: a self-contained dwelling on the same lot as a house, subordinate to it. Searching your council’s planning scheme for that phrase is the difference between finding the rules and concluding there are none. Dual occupancy is a different classification with different rules, and the two are confused constantly — a dual occupancy is generally two dwellings of comparable standing, which is assessed differently.`],
+        ['Why the answers differ between councils', 'Queensland planning operates through a state framework that each local government implements in its own scheme. That leaves real discretion over maximum floor area, whether the dwelling may be detached, setbacks, parking, and crucially who may occupy it. Advice that begins "in Queensland you can..." is almost always describing one council. Ask yours, about your specific address, and get it in writing.'],
+        ['The questions that decide your project', 'Is a secondary dwelling permitted on this lot? Is there a maximum floor area, and is it a fixed figure or a proportion of the main dwelling? Must it remain attached, or share services? May it be occupied by someone outside the household of the main dwelling? What parking is required? Is the lot in a flood, bushfire or other hazard overlay? Any single answer can end the project, and none of them can be answered by a builder or a website.'],
+        ['Building it and letting it are separate permissions', `This is the one that costs people money. A secondary dwelling can be entirely lawful to build and still be restricted to family occupation, which removes the rental income the business case assumed. If the project only works with a tenant, settle this first — <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">the guide on renting one out</a> covers the arithmetic and what to ask.`],
+        ['Council decides planning, a certifier decides building', 'Two separate approvals. The council answers whether the use is permitted on that land. A private building certifier assesses whether what you propose meets the building code, including the classification. You will generally deal with both, and ringing a certifier early is worth doing because they will tell you in one call whether the idea is straightforward.'],
+        ['Conversions are assessed as reclassification', `Enclosing under a high-set house, or converting a shed or garage, is a change of building classification from non-habitable to a dwelling. It is assessed as building work against the standards of somewhere people live — ceiling height, ventilation, light, egress and services. See <a href="/guide-garage-conversion-approval-qld" style="color:var(--brass)">the conversion guide</a> and, for the Rockhampton version specifically, <a href="/guide-granny-flat-rules-rockhampton" style="color:var(--brass)">granny flat rules in Rockhampton</a>.`],
+        ['What the kitchen has to be', 'If the dwelling is approved as a dwelling, it generally needs the facilities of one: a sink, a cooking facility, a bench and storage. A kitchenette usually will not satisfy that, which is worth knowing before you budget for one. Confirm the requirement with your certifier against your approval rather than assuming it.'],
+      ],
+      faq: [
+        { q: 'What are the granny flat rules in Queensland?', a: 'There is no single statewide rule. The state framework defines a secondary dwelling, and each council sets whether one is permitted on a given lot, how large it may be, and who may occupy it. Check your own council’s planning scheme for "secondary dwelling".' },
+        { q: 'What is a secondary dwelling in Queensland?', a: 'Generally a self-contained dwelling on the same lot as a house and subordinate to it. It is the planning term councils use, and it is what to search for rather than "granny flat". Dual occupancy is a different classification with different rules.' },
+        { q: 'Can I rent out a granny flat in Queensland?', a: 'It depends on your approval. Some councils permit separate tenancy, others restrict occupation to the household of the main dwelling. Because this decides whether the project pays for itself, confirm it before you commit.' },
+        { q: 'Do granny flat rules differ between councils?', a: 'Substantially, and adjoining councils frequently differ. Any advice that starts "in Queensland you can" is describing one council. Ask yours about your specific address, in writing.' },
+        { q: 'Does a secondary dwelling need a full kitchen?', a: 'If approved as a dwelling, generally yes — a sink, cooking facility, bench and storage rather than a kitchenette. Your building certifier confirms the requirement against the approved classification.' },
+      ],
+    },
+    {
+      slug: 'supply-your-own-kitchen',
+      group: 'design',
+      nav: 'Supplying your own kitchen',
+      title: 'Is It Cheaper to Supply Your Own Kitchen? | Bilt & Co',
+      desc: 'What you actually save by supplying your own kitchen instead of leaving it in the builder contract, what it costs you in coordination, and when it is worth it.',
+      h1: 'Is it cheaper to<br><span class="italic brass">supply your own kitchen?</span>',
+      lede: 'Usually, and not for the reason people expect. The saving is rarely the cabinetry. It is the margin sitting on top of it.',
+      img: 'dark-island',
+      alt: 'Kitchen cabinetry delivered assembled ready for installation',
+      read: '7 min read',
+      answer: `Generally yes, if you are already managing trades. A builder’s kitchen allowance carries their margin and their supplier’s margin. Supplying direct removes one of those. What it costs you is coordination — you own the measurements, the timing and the fix if something is wrong. Worth it for an owner-builder; often not worth it if you have never run a trade before.`,
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Supply pricing',
+        title: 'Delivered assembled, not in cartons.',
+        body: 'Designed to your measurements, with full service drawings for your plumber and electrician. Your crew fits it.',
+        label: 'See supply pricing',
+        href: '/owner-builder-kitchen-supply',
+      },
+      cta: {
+        eyebrow: 'Supply only',
+        title: 'The same kitchen,<br><span class="italic" style="color:var(--brass-lite)">minus one line.</span>',
+        body: 'Same carcasses, same Blum hardware, same ten-year warranty. You are not paying for our installation labour, and that is the whole difference. Send us the dimensions for a fixed, itemised supply quote.',
+        image: 'concrete-luxe',
+        alt: 'Bright kitchen with stone island',
+      },
+      sections: [
+        ['Where the money actually is', `Most build contracts carry the kitchen as an allowance or a provisional sum, and that figure has been through two sets of hands: the supplier’s margin, then the builder’s margin on top. Supplying direct removes the second one. On a mid-range kitchen that is a meaningful number, and it is a larger share of the total than most people assume because cabinetry is a high-margin trade.`],
+        ['What you take on in exchange', 'Measurements become yours. Timing becomes yours — the cabinetry has to arrive when the site is ready for it, not before, and storing assembled cabinetry in a half-finished house is a genuine problem. Coordination with the plumber and electrician becomes yours. And if something does not fit, you are the one solving it rather than the builder. None of that is hard if you are already running trades. All of it is a real cost if you are not.'],
+        ['The variable nobody prices', 'Services roughed in to a guess. This is where owner-supplied kitchens actually lose money — a waste or a power point placed before the cabinetry was drawn, then a cabinet modified on site or a wall reopened. It is entirely avoidable with dimensioned service drawings handed to your trades before they rough in, which is why we provide them as standard rather than as an extra.'],
+        ['Talk to the builder before you assume', 'If you are mid-contract, taking the kitchen out as a provisional sum is a conversation, not a right. Many builders are comfortable with it; some are not, and some will charge a margin on the excluded item anyway. Raise it early. Doing it at lock-up stage is a fight; doing it at contract stage is an administrative change.'],
+        ['When it is not worth it', `If you are not managing the build, the saving usually evaporates into your own time and risk. If you have never coordinated trades, the first thing that goes wrong will cost more than the margin you saved. Be honest about which of those you are — we would rather tell you that now than take the order and watch it go badly.`],
+        ['What supply actually includes here', `Design to your measurements, cabinetry delivered assembled rather than flat packed, full service drawings, a fixed and itemised quote, and the same ten-year warranty on the cabinetry. What it does not include is installation outside Central Queensland. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder kitchen supply</a>, and <a href="/guide-flat-pack-vs-assembled-kitchen" style="color:var(--brass)">the flat pack comparison</a> for how assembled delivery differs from a flat pack.`],
+      ],
+      faq: [
+        { q: 'Is it cheaper to supply your own kitchen?', a: `Generally, because you remove the builder’s margin on the item. What you take on is coordination — measurements, timing and any fix. It is a good trade for an owner-builder and often a poor one for someone who has never managed trades.` },
+        { q: 'Can I take the kitchen out of my build contract?', a: 'Often, as a provisional sum, but it is a conversation with your builder rather than an entitlement. Raise it at contract stage rather than at lock-up, when it becomes a much harder discussion.' },
+        { q: 'What is the biggest risk of supplying your own?', a: 'Services roughed in before the cabinetry is drawn. That is what causes modified cabinets and reopened walls. Dimensioned service drawings handed to your trades before rough-in removes it, and we supply those as standard.' },
+        { q: 'Do you install if I supply my own kitchen?', a: 'Within about 150 kilometres of Rockhampton, yes. Beyond that we supply only, delivered assembled, for your own installer to fit.' },
+      ],
+    },
+    {
+      slug: 'flat-pack-vs-assembled-kitchen',
+      group: 'design',
+      nav: 'Flat pack versus assembled',
+      title: 'Flat Pack vs Assembled Kitchen | What Actually Differs | Bilt & Co',
+      desc: 'The real differences between a flat pack kitchen you assemble and cabinetry delivered assembled: build quality, time, hardware, and who carries the risk.',
+      h1: 'Flat pack<br><span class="italic brass">versus delivered assembled.</span>',
+      lede: 'These are different products for different buyers, and the honest difference is smaller than one side claims and larger than the other admits.',
+      img: 'drawer-detail',
+      alt: 'Assembled drawer box with full extension runners and soft close',
+      read: '7 min read',
+      answer: `The cabinetry can be similar. What differs is who assembles it, and therefore who carries the risk of it being assembled badly. Flat pack arrives as panels and fittings for you to build. Ours arrives with carcasses built, hardware fitted and doors hung and adjusted. The saving on flat pack is real; so is the labour, and so is the variance in the result.`,
+      inlineCta: {
+        after: 3,
+        eyebrow: 'Delivered assembled',
+        title: 'Fit a kitchen, do not build one.',
+        body: 'Carcasses built, hardware fitted, doors hung and adjusted before it reaches you. Your installer fits it, or ours does within Central Queensland.',
+        label: 'See how supply works',
+        href: '/owner-builder-kitchen-supply',
+      },
+      cta: {
+        eyebrow: 'Assembled delivery',
+        title: 'The boring part<br><span class="italic" style="color:var(--brass-lite)">is already done.</span>',
+        body: 'Nobody enjoys building carcasses on the floor of a house they are still finishing. Send us the dimensions and it arrives ready to fit, fixed and itemised.',
+        image: 'galley-stone',
+        alt: 'Compact kitchen with stone benchtop',
+      },
+      sections: [
+        ['What is genuinely the same', `Be sceptical of anyone claiming flat pack is categorically rubbish. A good flat pack in 18mm moisture-resistant board with Blum hardware is a perfectly sound kitchen, and plenty of them outlast badly specified custom work. The board, the hardware and the edging are the things that decide longevity, and they are specification questions rather than assembly questions. Ask any supplier those three regardless of which route you take.`],
+        ['What is genuinely different: who assembles it', `A flat pack transfers the assembly labour to you. That is the saving, and it is honest. The consequence is that the squareness of every carcass, the alignment of every drawer and the adjustment of every door now depends on the person doing it — usually at the end of a build, usually tired, usually on an unfinished floor. Cabinetry assembled out of square does not announce itself; it shows up as doors that do not line up, and it cannot be fixed afterwards without taking it apart.`],
+        ['Time is the cost people underestimate', 'A full kitchen is a substantial amount of assembly. People routinely budget a weekend and lose a fortnight of evenings, and it lands at the point in a renovation where patience is already gone. If your time has any value at all, price it in before comparing quotes. If you enjoy the work and have the space to do it properly, that changes the calculation entirely and there is nothing wrong with the answer being flat pack.'],
+        ['Where the risk sits', 'With a flat pack, a damaged or mis-drilled panel is your problem to resolve with a supplier, mid-build. With assembled delivery, it arrives built and any fault is visible on delivery rather than discovered at hour six of assembly. Neither is immune to problems; they differ in when you find out and who is holding the pieces.'],
+        ['What we actually do', `We are not a flat pack company and we are not pretending to be a workshop either. Cabinetry is imported, assembled before delivery, and installed by our own team within Central Queensland or by your installer beyond it. That is the whole model, stated plainly. It means you get built carcasses and adjusted doors without paying for local manufacture — and it is why our <a href="/investment" style="color:var(--brass)">price bands</a> sit where they do.`],
+        ['Which one you should choose', `If you are cost-driven, capable and have the time and space, flat pack is a legitimate answer and we will say so. If you want the assembly done before it arrives, or you are on a build programme where a fortnight of evenings is not available, assembled delivery is the reason we exist. Either way, ask about board, hardware and edging first — those decide whether the kitchen lasts. <a href="/guide-kitchen-renovation-checklist" style="color:var(--brass)">Our renovation checklist</a> has the seven questions worth asking any supplier.`],
+      ],
+      faq: [
+        { q: 'Is a flat pack kitchen worse than an assembled one?', a: 'Not necessarily. The board, hardware and edging decide longevity, and a well-specified flat pack beats a poorly specified custom kitchen. What differs is who assembles it, and therefore how consistent the result is.' },
+        { q: 'How long does it take to assemble a flat pack kitchen?', a: 'Longer than most people budget. A full kitchen is a serious amount of assembly, and it lands at the end of a build when time and patience are shortest. Price your own hours before comparing quotes.' },
+        { q: 'Do you sell flat pack kitchens?', a: 'No. Our cabinetry arrives assembled — carcasses built, hardware fitted, doors hung and adjusted. You are fitting a kitchen rather than building one first.' },
+        { q: 'What should I ask any kitchen supplier?', a: 'Board thickness and moisture rating, hardware brand and warranty, and whether the edging is glued or laser-bonded. Those three matter more than flat pack versus assembled, and a supplier who is vague on any of them is telling you something.' },
+      ],
+    },
+    {
+      slug: 'multigenerational-living-queensland',
+      group: 'approvals',
+      nav: 'Moving family in',
+      title: 'Multigenerational Living QLD | Moving Parents In | Bilt & Co',
+      desc: 'The options when a parent or adult child moves in: converting under the house, a secondary dwelling, or reworking the main home. What each involves and costs.',
+      h1: 'When family<br><span class="italic brass">moves back in.</span>',
+      lede: 'It is rarely a design decision to begin with. Someone gets older, or someone cannot afford to move out, and the house has to do something it was not built for.',
+      img: 'matte-black-bank',
+      alt: 'Compact second kitchen in a multigenerational home',
+      read: '7 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or financial advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'Three realistic options in most Rockhampton homes: convert underneath a high-set house, build or approve a secondary dwelling, or rework the main kitchen so two households can share it. The second kitchen is usually what makes shared living survivable long term — from $2,400 for a kitchenette and $6,500 for a full compact kitchen.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'The second kitchen',
+        title: 'What keeps everyone sane.',
+        body: 'Separate cooking and separate storage is what most families say made the difference. A kitchenette from $2,400, a full compact kitchen from $6,500.',
+        label: 'See the options',
+        href: '/granny-flat-kitchens',
+      },
+      cta: {
+        eyebrow: 'Multigenerational',
+        title: 'Two households,<br><span class="italic" style="color:var(--brass-lite)">one address.</span>',
+        body: 'Tell us who is moving in and what the house is, and we will tell you honestly which of the three options fits and what the kitchen side costs. Free, and yours to keep.',
+        image: 'galley-stone',
+        alt: 'Compact second kitchen for a secondary dwelling',
+      },
+      sections: [
+        ['Independence is the thing worth buying', 'Families who make this work long term almost all describe the same thing: separate cooking, separate storage, and a door. Sharing a kitchen with an adult child or an elderly parent is where the friction accumulates, because it is the room everyone needs at the same time of day. A second kitchen is not a luxury in this arrangement; it is the part that keeps the arrangement pleasant.'],
+        ['Option one: convert underneath', `The most common version in this city, because so much of the housing stock is high-set. Enclosing underneath produces a genuinely separate living space with its own entrance, often without touching the main house. It is a change of building classification and assessed as building work — see <a href="/under-house-kitchens-rockhampton" style="color:var(--brass)">under-house kitchens</a> for the cabinetry side and <a href="/guide-garage-conversion-approval-qld" style="color:var(--brass)">the conversion guide</a> for what the reclassification involves.`],
+        ['Option two: a secondary dwelling', `A separate small dwelling on the same block. More independent, more expensive, and subject to whether your block permits one — ask <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> first. It is also the option that retains value independently, since it can often be let later. <a href="/guide-granny-flat-rules-rockhampton" style="color:var(--brass)">The granny flat rules guide</a> covers what to ask.`],
+        ['Option three: rework the main house', 'Sometimes the answer is not a second dwelling at all but a better main kitchen plus a small second point — a kitchenette in a converted bedroom or rumpus. Cheaper, faster, no classification change if it stays part of the same dwelling. It suits arrangements expected to last a few years rather than decades.'],
+        ['Design for the person who will be oldest', `If a parent is moving in, the kitchen they use should be designed for the person they will be in fifteen years, not the one they are now. Drawers rather than low cupboards, D-pull handles, task lighting, nothing critical above shoulder height. It costs almost nothing extra at build time — see <a href="/aging-in-place-kitchens" style="color:var(--brass)">aging in place kitchens</a> — and it is the difference between staying and moving into care.`],
+        ['Talk about money before building', 'Who pays for the build, who owns the improvement, and what happens if circumstances change. It is an awkward conversation and it is much less awkward now than in three years. If the arrangement involves a parent contributing capital, it is worth advice from an accountant and possibly a solicitor before the first trade arrives.'],
+      ],
+      faq: [
+        { q: 'What is the cheapest way to house a parent at home?', a: 'Usually a kitchenette added to an existing room that can be made self-contained, from about $2,400 for the cabinetry. Converting under a high-set house or building a secondary dwelling costs more and gives more independence.' },
+        { q: 'Do I need approval to add a second kitchen?', a: 'Adding a second cooking facility can change how a property is classified, and requirements vary by council and by whether the space is self-contained. Ask your council before you commit — it is a short conversation.' },
+        { q: 'Is a granny flat better than converting under the house?', a: 'It depends on the block and the budget. Under-house conversions are usually cheaper and very common in Rockhampton; a secondary dwelling is more independent and can often be let later. Price both.' },
+        { q: 'How much is a second kitchen?', a: 'A kitchenette from about $2,400, a full compact kitchen from about $6,500 including carcasses, doors, Blum hardware and a benchtop.' },
+      ],
+    },
+    {
+      slug: 'queenslander-kitchen-renovation',
+      group: 'design',
+      nav: 'Renovating a Queenslander kitchen',
+      title: 'Queenslander Kitchen Renovation | What Changes | Bilt & Co',
+      desc: 'Renovating a kitchen in a Queenslander: VJ walls, high ceilings, timber floors that move, and nothing square. What it changes about the cabinetry.',
+      h1: 'Renovating a kitchen<br><span class="italic brass">in a Queenslander.</span>',
+      lede: 'These houses are worth keeping and they are unforgiving to cabinetry designed for a brick veneer box.',
+      img: 'detail-timber-joinery',
+      alt: 'Timber joinery detail in a Queenslander kitchen',
+      read: '7 min read',
+      note: 'Last checked: September 2026. General guidance on renovating older timber homes — every house differs, and a site measure is what settles it.',
+      answer: 'Four things change in a Queenslander: nothing is square or level, the walls are VJ boards rather than plasterboard so fixings differ, the ceilings are high enough that standard overheads leave an awkward gap, and the floors move seasonally. All four are solvable by measuring the house as built rather than assuming it.',
+      inlineCta: {
+        after: 3,
+        eyebrow: 'Older homes',
+        title: 'We measure before we quote.',
+        body: 'Not from your dimensions, and not from the plan — from the room. In a hundred-year-old house that is the only number that means anything.',
+        label: 'Book a site measure',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Queenslanders',
+        title: 'Old house.<br><span class="italic" style="color:var(--brass-lite)">Properly fitted kitchen.</span>',
+        body: 'Scribed to the walls and floors as they are, fixed into the framing rather than the lining, and detailed so it belongs in the house rather than fighting it.',
+        image: 'timber-island',
+        alt: 'Timber kitchen island in a renovated Queenslander',
+      },
+      sections: [
+        ['Nothing is square, and that is normal', 'These houses are timber, they have moved for a century, and they are still moving. Walls lean, floors fall away toward the verandah, and corners are rarely ninety degrees. Cabinetry built to nominal dimensions and pushed into place will show a tapering gap along the benchtop that nobody can unsee. The answer is scribing — cutting the end panels and fillers to the actual line of the wall and floor. It is standard practice and it requires a real site measure.'],
+        ['VJ walls change how it is fixed', 'Vertical-joint boards are not plasterboard on studs at predictable centres. Fixing a wall cabinet into VJ alone is not adequate for a loaded overhead, so cabinets are fixed into the framing behind, which means finding it. In older houses the framing is where it is, not where a tape measure suggests. This is a competent-installer problem rather than a design one, but it is why we do not send cabinetry to a Queenslander without measuring.'],
+        ['High ceilings need a decision', 'Standard overhead cabinets in a room with three-metre ceilings leave a substantial gap above, which reads as unfinished and collects dust nobody can reach. Three honest options: run the cabinetry to the ceiling and accept the top shelf needs a step; stop the overheads at a considered height and treat the gap as deliberate with a bulkhead or a painted band; or leave the upper wall clear and put the storage in tall units and drawers instead. All three work. Doing nothing does not.'],
+        ['Timber floors move with the seasons', 'A timber floor over stumps expands and contracts through the wet and dry, and a kitchen fixed rigidly across it will eventually show it at the joins. Cabinetry is set on adjustable legs with a separate kickboard rather than a fixed plinth, which lets the floor move without dragging the carcasses with it, and lets the kick be removed later if anything needs to get underneath.'],
+        ['Keeping the character without pastiche', 'Shaker doors and a farmhouse sink are one route and there is nothing wrong with it, but it is not the only one. Plenty of Queenslanders take a flat-panel contemporary kitchen well, provided the proportions respect the room — the ceiling height, the window heights, the width of the boards. What tends to look wrong is a kitchen that ignores the house entirely, in either direction. <a href="/guide-kitchen-colours-2026" style="color:var(--brass)">Our colours and materials guide</a> covers what people are actually choosing.'],
+        ['If you are enclosing underneath too', `Many Queenslander renovations happen alongside converting the space below into a flat or second living area. If that is your project, <a href="/under-house-kitchens-rockhampton" style="color:var(--brass)">under-house kitchens</a> covers the cabinetry down there, which has different constraints again.`],
+      ],
+      faq: [
+        { q: 'What is different about renovating a Queenslander kitchen?', a: 'Nothing is square or level, the walls are VJ boards rather than plasterboard so cabinets fix into the framing behind, the ceilings are high enough to need a decision about the gap above the overheads, and the timber floors move seasonally. All four are handled by measuring the house rather than assuming it.' },
+        { q: 'Can you fix cabinets to VJ walls?', a: 'Cabinets fix into the framing behind the VJ, not into the boards alone. Finding that framing accurately in a hundred-year-old house is part of the site measure, and it is why we measure rather than working from supplied dimensions on these homes.' },
+        { q: 'What do you do about high ceilings?', a: 'Run cabinetry to the ceiling, stop it at a considered height with a bulkhead, or leave the upper wall clear and put storage in tall units. Any of the three works; leaving an unresolved gap is the one that always looks wrong.' },
+        { q: 'Will a modern kitchen suit a Queenslander?', a: 'Often, yes, provided the proportions respect the room. The mismatch people notice is not old versus new — it is a kitchen that ignores the ceiling height and window lines of the house it is in.' },
+      ],
+    },
+    {
+      slug: 'garage-conversion-approval-qld',
+      group: 'approvals',
+      nav: 'Garage and shed conversions',
+      title: 'Garage Conversion Approval QLD | Shed to Living Space | Bilt & Co',
+      desc: 'Turning a garage or shed into habitable space in Queensland: why it is a change of building classification, who assesses it, and what it means for the kitchen.',
+      h1: 'Converting a garage<br><span class="italic brass">into somewhere you live.</span>',
+      lede: 'The build is usually the easy part. What catches people is that you are not renovating a garage — you are changing what the building legally is.',
+      img: 'glossy-dark',
+      alt: 'Converted space with dark gloss cabinetry and compact kitchen',
+      read: '7 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or planning advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'A garage or shed is generally a Class 10a building — non-habitable. Making it somewhere people live is a change of classification to Class 1a, and it is assessed as building work against the standards of a dwelling: ceiling height, ventilation, light, insulation, egress and services. Talk to a building certifier and your council before you buy anything.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Once the classification is settled',
+        title: 'The kitchen it will need.',
+        body: 'A kitchenette from $2,400 if nobody is cooking a roast in there. A full compact kitchen from $6,500 if it is becoming a self-contained dwelling.',
+        label: 'See the options',
+        href: '/kitchenettes',
+      },
+      cta: {
+        eyebrow: 'Conversions',
+        title: 'We measure what is there,<br><span class="italic" style="color:var(--brass-lite)">not what the plan says.</span>',
+        body: 'Converted spaces are rarely square and rarely level. We site measure and scribe the cabinetry to the room as built, which is the difference between a fitted kitchen and a forced one.',
+        image: 'detail-black-cabinetry',
+        alt: 'Compact kitchen cabinetry fitted to a converted space',
+      },
+      sections: [
+        ['Class 10a to Class 1a is the whole story', 'Garages, sheds and carports are generally Class 10a in the National Construction Code — non-habitable structures. A dwelling is Class 1a. Converting one into the other is a reclassification, and the building has to meet the standards of what it is becoming rather than what it was. That reaches into ceiling height, natural light, ventilation, insulation, fire separation, egress and services. None of it is exotic; all of it is assessed.'],
+        ['What tends to fail', 'Ceiling height is the most common blocker, because a garage was never built to a habitable standard and raising a roof is a different project entirely. After that: natural light and ventilation, which usually means adding or enlarging windows; the slab, which may lack a moisture barrier; and insulation, which most garages simply do not have. A certifier will tell you which of these apply to yours in one visit.'],
+        ['Council and certifier do different jobs', `The council handles planning — whether the use is permitted on that land at all, and any conditions. A private building certifier handles the building approval against the code. You will generally deal with both. Ring the certifier first, because they will tell you quickly whether the idea is viable, and ring <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> (or <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a> on the Capricorn Coast) about the planning side before you spend on drawings.`],
+        ['Services are where the budget goes', 'A garage has one light circuit and no plumbing. A dwelling needs power distribution, lighting, likely a hot water service, and drainage for a sink. Getting waste out of a slab-on-ground garage is often the single most expensive line in the project, and it is worth pricing before you commit to a layout. That constraint usually decides where the kitchen goes, not preference.'],
+        ['Kitchenette or full kitchen', `If it is becoming a self-contained dwelling, it generally needs the facilities of one and a <a href="/kitchenettes" style="color:var(--brass)">kitchenette</a> will not satisfy that. If it is a rumpus, studio or teenage retreat that stays part of the main house, a kitchenette is usually the right answer and starts at $2,400. Your certifier confirms which against the approved classification — ask before you design, not after.`],
+        ['If it is under a high-set house', `Enclosing underneath rather than converting a detached garage is the more common version in Rockhampton, and it has its own quirks: the floors are rarely level and the walls rarely square. We cover that specifically in <a href="/under-house-kitchens-rockhampton" style="color:var(--brass)">under-house kitchens in Rockhampton</a>.`],
+      ],
+      faq: [
+        { q: 'Do I need approval to convert a garage in Queensland?', a: 'Generally yes. Making a non-habitable building habitable is a change of building classification and is assessed as building work. Speak to a building certifier and your council before you start.' },
+        { q: 'What usually stops a garage conversion?', a: 'Ceiling height most often, then natural light and ventilation, slab moisture, and insulation. A certifier can tell you which apply to your building in a single visit, and that visit is worth paying for before anything else.' },
+        { q: 'Can I put a kitchen in a converted garage?', a: 'Yes, and what kind depends on the classification. A self-contained dwelling generally needs a full kitchen; a rumpus or studio attached to the main house is usually fine with a kitchenette from $2,400.' },
+        { q: 'How much does the kitchen cost?', a: 'A kitchenette starts around $2,400 and a compact full kitchen around $6,500. The building work around it, particularly getting drainage out of a slab, is usually the larger number.' },
+      ],
+    },
+    {
+      slug: 'tiny-home-laws-qld',
+      group: 'approvals',
+      nav: 'Tiny home laws in Queensland',
+      title: 'Tiny House Laws Queensland | Can You Live In One? | Bilt & Co',
+      desc: 'Whether a tiny home is a caravan or a building in Queensland, what that changes, and why the answer depends on your council rather than the internet.',
+      h1: 'Tiny home laws<br><span class="italic brass">in Queensland.</span>',
+      lede: 'Almost every confident answer online is wrong somewhere, because the rule that matters is your council’s, and they differ.',
+      img: 'splashback-marble-02',
+      alt: 'Compact kitchen run with stone splashback in a tiny home',
+      read: '7 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or planning advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'The first question is whether your tiny home is a registrable vehicle or a building. On wheels and registered, it is generally treated more like a caravan; fixed to the ground, it is generally treated as a building and assessed accordingly. What that then permits — especially living in it full time — is a local planning question, and councils differ. Ask yours before you buy or build.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Building or buying one',
+        title: 'The kitchen is the tightest part.',
+        body: 'A 1.8m run from $5,300, drawn to your actual dimensions rather than a module, delivered assembled. Tell us the axle position if it is on a trailer.',
+        label: 'See tiny home kitchens',
+        href: '/tiny-home-kitchens',
+      },
+      cta: {
+        eyebrow: 'Tiny homes',
+        title: 'Every millimetre<br><span class="italic" style="color:var(--brass-lite)">is spoken for.</span>',
+        body: 'A 40mm filler panel in a 2.4 metre kitchen is 40mm of bench gone forever. We draw to your measurements, not to a module, and we supply tiny home builders repeatedly.',
+        image: 'galley-stone',
+        alt: 'Compact galley kitchen for a tiny home',
+      },
+      sections: [
+        ['Vehicle or building: everything follows from this', 'A tiny home on a registered trailer is generally treated more like a caravan. One fixed to the ground, on piers or a slab, is generally a building and is assessed as one — which means classification, approval and the standards that come with a dwelling. Builders and sellers sometimes blur this, because "no approval needed" sells better than the real answer. Establish which you are dealing with before money changes hands.'],
+        ['Living in it full time is the harder question', `Even where a tiny home is treated as a caravan, how long someone may live in it on a given block is usually restricted by the local planning scheme, and the limits vary. Some councils allow it in defined circumstances, some during construction of a main dwelling, some not at all. This is the question to put to <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> or <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a> in writing, and it is worth having the answer before you commit rather than after you have moved in.`],
+        ['Secondary dwelling is often the real answer', `If the intention is somewhere permanent for family, a <a href="/granny-flat-kitchens" style="color:var(--brass)">granny flat</a> approved as a secondary dwelling is frequently the more straightforward path than a tiny home, because it goes through a process that already exists. It is worth pricing both. Our guide to <a href="/guide-granny-flat-rules-rockhampton" style="color:var(--brass)">granny flat rules</a> covers what that involves.`],
+        ['Services still have to come from somewhere', 'Power, water and waste are the practical constraints regardless of classification. Composting toilets and tanks change the picture but do not remove the question, and how waste is handled is frequently what the council actually cares about. Sort this early; it shapes the design.'],
+        ['If it is on a trailer, weight matters to the kitchen', `Cabinetry is heavy and the kitchen is usually the densest run in the build. Tell us the axle position and we will keep the mass where your engineer wants it. That is a drawing decision, not something to solve after delivery. More in <a href="/tiny-home-kitchens" style="color:var(--brass)">tiny home kitchens</a>.`],
+      ],
+      faq: [
+        { q: 'Can I live in a tiny house in Queensland?', a: 'It depends on your council and on whether the home is a registrable vehicle or a building. Some councils permit it in defined circumstances, some only during construction of a main dwelling, some not at all. Ask yours in writing before you commit.' },
+        { q: 'Does a tiny home on wheels need building approval?', a: 'Generally not in the way a fixed dwelling does, if it is a registrable vehicle. Fix it to the ground and it is usually assessed as a building. The distinction is the thing to establish first, and sellers are not always precise about it.' },
+        { q: 'Is a granny flat easier than a tiny home?', a: 'Often, if the goal is somewhere permanent. A secondary dwelling goes through an established approval process, whereas tiny home rules vary and can be restrictive. Price both before deciding.' },
+        { q: 'How much is a tiny home kitchen?', a: 'From about $5,300 for a 1.8 metre run and $6,500 for 2.4 metres, with full-size Blum hardware and moisture-resistant carcasses. Delivered assembled, not flat packed.' },
+      ],
+    },
+    {
+      slug: 'short-stay-letting-rules-qld',
+      group: 'approvals',
+      nav: 'Short-stay letting rules',
+      title: 'Airbnb & Short-Stay Rules Queensland | Council & Body Corporate | Bilt & Co',
+      desc: 'What decides whether you can let a property short-stay in Queensland: council planning, body corporate by-laws, and the questions to ask before you fit it out.',
+      h1: 'Short-stay letting rules<br><span class="italic brass">in Queensland.</span>',
+      lede: 'Two separate permissions can stop a short-stay plan, and neither of them is the one people check first.',
+      img: 'dark-dining',
+      alt: 'Kitchen and dining space in a short-stay property',
+      read: '6 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or planning advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'Two things decide it, independently. Council planning — whether short-stay accommodation is a permitted use at that address — and, if the property is in a scheme, the body corporate by-laws, which can prohibit it regardless of what the council says. Check both before you spend on the fit-out. Some councils also run registration or levy schemes.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Cleared to let',
+        title: 'Now build it to survive guests.',
+        body: 'Photographs well, holds up to people with no reason to be careful, and turns over fast between stays. From $6,500 for a 2.4 metre run.',
+        label: 'See short-stay kitchens',
+        href: '/short-stay-kitchens',
+      },
+      cta: {
+        eyebrow: 'Short-stay',
+        title: 'The kitchen wins the booking<br><span class="italic" style="color:var(--brass-lite)">and survives the guest.</span>',
+        body: 'Two jobs your own kitchen never has. Send us the dimensions and we will specify for both, fixed and itemised.',
+        image: 'concrete-luxe',
+        alt: 'Bright short-stay apartment kitchen',
+      },
+      sections: [
+        ['Council first', `Short-stay accommodation is a land use, and whether it is permitted at a given address is a planning question for the local council. It can depend on the zone, the dwelling type and whether the owner lives there. <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> covers Rockhampton and <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a> covers Yeppoon and the Capricorn Coast, and they are separate schemes with separate answers. Ask in writing, and ask about your specific address rather than in general.`],
+        ['Body corporate can override everything', 'If the property is in a community titles scheme — an apartment, townhouse or unit — the by-laws may restrict or prohibit short-stay letting regardless of the council position. This is the one that most often surprises people, because they check the council, get a workable answer, and never look at the by-laws. Read them before you buy, not after.'],
+        ['Registration, levies and insurance', 'Some Queensland councils operate registration schemes or apply differential rating to short-stay properties. Separately, standard landlord and home insurance frequently does not cover short-stay letting, and finding that out after an incident is expensive. Ask your insurer directly and get the answer in writing.'],
+        ['Then it becomes a fit-out question', `Once you are cleared to let, the brief changes. The kitchen has two jobs it would not have in your own home: it has to earn the booking in a photograph, and survive people with no reason to be careful. That is a specification conversation more than a finishes one — <a href="/short-stay-kitchens" style="color:var(--brass)">short-stay kitchens</a> covers what actually fails and in what order.`],
+        ['Coastal properties have their own version', `On the Capricorn Coast, holiday letting is common and the salt air adds a third force to the two above. See <a href="/short-stay-kitchens-capricorn-coast" style="color:var(--brass)">holiday let kitchens on the Capricorn Coast</a> for how that changes the specification.`],
+      ],
+      faq: [
+        { q: 'Do I need council approval to run an Airbnb in Queensland?', a: 'Possibly. Short-stay accommodation is a land use and whether it is permitted depends on the address, the zone and the council. Ask your council about your specific property in writing before you invest in the fit-out.' },
+        { q: 'Can a body corporate stop short-stay letting?', a: 'In many cases yes, through the by-laws, and independently of the council position. If the property is in a scheme, read the by-laws before you buy. This is the most commonly missed check.' },
+        { q: 'Does normal home insurance cover Airbnb?', a: 'Frequently not. Standard home and landlord policies often exclude short-stay letting. Ask your insurer directly and get the confirmation in writing rather than assuming.' },
+        { q: 'What kitchen suits a short-stay property?', a: 'One that photographs wide and uncluttered, and that survives unfamiliar users — full-extension runners, a heat-tolerant benchtop, and a layout obvious enough that a stranger puts things back. From about $6,500 for a 2.4 metre run.' },
+      ],
+    },
+    {
+      slug: 'owner-builder-permit-qld',
+      group: 'approvals',
+      nav: 'Owner-builder permits in Queensland',
+      title: 'Owner Builder Permit Queensland | What It Covers | Bilt & Co',
+      desc: 'How owner-builder permits work in Queensland: when you need one, the course, what you take on, and the restrictions that apply afterwards.',
+      h1: 'Owner-builder permits<br><span class="italic brass">and what they hand you.</span>',
+      lede: 'An owner-builder permit is not a licence to do everything yourself. It is a transfer of responsibility, and it is worth understanding what moves before you apply.',
+      img: 'joinery-sketch',
+      alt: 'Building plans and measurements laid out on a bench',
+      read: '7 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or financial advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'You generally need an owner-builder permit from the <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> to manage building work on your own home above a value threshold, and an approved course is usually required first. The permit does not let you do licensed work — plumbing and electrical still need licensed trades. It also carries restrictions on selling the property for a period afterwards. Check the current threshold and rules directly; both change.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Supplying owner-builders',
+        title: 'You manage the build. We handle the kitchen.',
+        body: 'Designed to your measurements, delivered assembled, with service drawings your plumber and electrician can rough in from. Fit it with your own crew.',
+        label: 'See owner-builder supply',
+        href: '/owner-builder-kitchen-supply',
+      },
+      cta: {
+        eyebrow: 'Owner-builders',
+        title: 'One less trade<br><span class="italic" style="color:var(--brass-lite)">to chase.</span>',
+        body: 'Send us the plans and we will quote the cabinetry fixed and itemised, delivered assembled when your build is actually ready rather than when it suits our calendar.',
+        image: 'dark-island',
+        alt: 'Kitchen cabinetry delivered assembled',
+      },
+      sections: [
+        ['What the permit actually is', 'It is permission to take on the role a licensed builder would otherwise hold on your own property. The <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> issues it, generally where the work exceeds a value threshold, and an approved owner-builder course is usually a prerequisite. What it is not is a licence to perform trade work. You are becoming the manager of the project and the person legally accountable for it, not the tradesperson.'],
+        ['What still needs a licensed trade', 'Plumbing and electrical work must be carried out and certified by licensed trades regardless of your permit. So must several other categories. This is the point owner-builders most often get wrong, and it is expensive rather than academic: unlicensed work can void insurance, fail at inspection, and surface years later in a building and pest report when you try to sell.'],
+        ['What you take on', 'Verifying every trade on your site holds a current licence, and keeping the records. Workplace health and safety on your own site. Insurance appropriate to the work. Coordinating certification. Warranty responsibility that a builder would otherwise carry. None of it is unmanageable, and all of it is work most people underestimate when comparing an owner-build against a contract build.'],
+        ['The restriction on selling', 'Queensland places restrictions on selling a property you owner-built for a set period after the work, and there are disclosure obligations if you do. If a sale within a few years is even possible, factor this in before you apply — it is the single most common regret we hear. The <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> publishes the current period; do not rely on what someone told you at a barbecue.'],
+        ['Where the kitchen fits', `Cabinetry is generally not what triggers a certification requirement — the building work around it is. We supply owner-builders regularly: the kitchen is designed to your measurements, delivered assembled, and fitted by your crew, with a full set of service drawings so your plumber and electrician can rough in correctly the first time. More on that in <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder kitchen supply</a>, and on approvals in <a href="/guide-do-i-need-approval-kitchen-renovation" style="color:var(--brass)">our approvals guide</a>.`],
+        ['Before you apply', `Read the current requirements on the <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> site rather than a forum. Confirm the value threshold and the course requirement as they stand now. Talk to a building certifier about your specific project. And check with <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> or your own council about the planning side, which is separate from the building approval and often forgotten.`],
+      ],
+      faq: [
+        { q: 'Do I need an owner-builder permit in Queensland?', a: 'Generally yes, where the value of the building work exceeds a threshold set by the QBCC. The threshold changes, so check the current figure on their site rather than relying on a number you have been told.' },
+        { q: 'Can an owner-builder do their own plumbing and electrical?', a: 'No. Those remain licensed trades regardless of an owner-builder permit, and the work must be certified by the licensed tradesperson. Unlicensed work in these categories causes problems at inspection, at sale and with insurers.' },
+        { q: 'Can I install my own kitchen as an owner-builder?', a: 'Fitting cabinetry is generally within what an owner-builder manages, provided the plumbing and electrical connections are done by licensed trades. We supply owner-builders assembled cabinetry and service drawings for exactly this.' },
+        { q: 'Can I sell a house I owner-built?', a: 'Yes, but Queensland applies restrictions and disclosure obligations for a period after the work. Check the current rules with the QBCC before you apply for the permit, particularly if you might sell within a few years.' },
+      ],
+    },
+    {
+      slug: 'granny-flat-rules-rockhampton',
+      group: 'approvals',
+      nav: 'Granny flat rules in Rockhampton',
+      title: 'Granny Flat Rules Rockhampton | Secondary Dwellings | Bilt & Co',
+      desc: 'What decides whether you can build a granny flat in Rockhampton, who assesses it, whether you can rent it out, and the questions to ask the council first.',
+      h1: 'Granny flat rules<br><span class="italic brass">in Rockhampton.</span>',
+      lede: 'Almost everything that decides whether your granny flat project works is settled before you draw it, in a conversation with the council.',
+      img: 'matte-black-bank',
+      alt: 'Compact secondary dwelling kitchen with integrated appliances',
+      read: '8 min read',
+      note: 'Last checked: September 2026. General information, not building, legal or financial advice. Requirements differ by council and change without notice — confirm with the authority linked above, or a building certifier, before you commit to anything.',
+      answer: 'A granny flat in Queensland is usually a "secondary dwelling", and whether you can build one on your block — how big, whether it must stay attached, and whether it can be tenanted separately — is decided by your council’s planning scheme. In Rockhampton that is <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a>. Yeppoon and the Capricorn Coast are <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a> instead. Ask before you design anything.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Once the council says yes',
+        title: 'The kitchen it will need.',
+        body: 'A compliant secondary-dwelling kitchen runs 2.4 to 3.0 metres, from $6,500 delivered assembled and installed by our own team.',
+        label: 'See granny flat kitchens',
+        href: '/granny-flat-kitchens',
+      },
+      cta: {
+        eyebrow: 'Secondary dwellings',
+        title: 'Approval first.<br><span class="italic" style="color:var(--brass-lite)">Then the fun part.</span>',
+        body: 'When you know what you are allowed to build, send us the plan. Free site measure, 3D design and a fixed quote for the kitchen, yours to keep whatever you decide.',
+        image: 'galley-stone',
+        alt: 'Compact galley kitchen in a secondary dwelling',
+      },
+      sections: [
+        ['Secondary dwelling is the term that matters', 'Councils rarely say "granny flat". The planning term is usually secondary dwelling, and it means a self-contained dwelling on the same lot as a house. How that plays out differs by council — see <a href="/guide-granny-flat-rules-qld" style="color:var(--brass)">granny flat rules across Queensland</a>. Searching the planning scheme for the right term is the difference between finding the rules and concluding there are none. Dual occupancy is a different thing again, with different rules, and the two get confused constantly.'],
+        ['The questions that decide the project', `Put these to <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> before you spend anything. Is a secondary dwelling permitted on this block? Is there a maximum floor area? Must it remain attached to the main dwelling or share services? Can it be tenanted to someone outside the household? What parking is required? What are the setbacks? Is the block in a flood or other hazard overlay? Any one of those answers can end the project or change it fundamentally, and none of them can be answered by a builder.`],
+        ['Renting it out is a separate question', `Being allowed to build one and being allowed to let it are different permissions. Some approvals restrict occupation to the household of the main dwelling, which makes the income case disappear. We cover this properly in <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">the guide on renting one out</a> — if the project only works with rental income, settle this before anything else.`],
+        ['Council versus certifier', 'The council decides the planning question: what you are allowed to do on that land. A private building certifier handles the building approval: whether what you propose meets the code. You will generally deal with both. Ring a certifier early — they will tell you in one call whether your idea is straightforward or not, and the call usually costs nothing.'],
+        ['Conversions are the common version here', `Rockhampton’s housing stock means a lot of secondary dwellings are conversions rather than new builds — enclosing under a high-set house, or converting a shed or garage. That is a change of building classification and is assessed as building work. See <a href="/under-house-kitchens-rockhampton" style="color:var(--brass)">under-house kitchens</a> for how we handle the cabinetry side, and <a href="/guide-class-1a-granny-flat-yeppoon" style="color:var(--brass)">the Class 1a guide</a> for what the classification means.`],
+        ['What the kitchen has to be', 'If the dwelling is approved as a dwelling, it generally needs the facilities of one, which means a real kitchen rather than a kitchenette: a sink, a cooking facility, a bench and storage. From $6,500 for a 2.4 metre run. Confirm the requirement with your certifier against your approval rather than assuming, because it is the kind of thing that surfaces late and costs money.'],
+      ],
+      faq: [
+        { q: 'Can I build a granny flat in Rockhampton?', a: 'It depends on your block and the planning scheme. Ask Rockhampton Regional Council whether a secondary dwelling is permitted at your address, and what conditions apply. That answer comes before design, not after.' },
+        { q: 'Can I rent out a granny flat in Rockhampton?', a: 'Sometimes. Some approvals restrict occupation to the household of the main dwelling. Since this decides whether the project pays for itself, confirm it with the council before you commit.' },
+        { q: 'Which council covers Yeppoon and the Capricorn Coast?', a: 'Livingstone Shire Council, not Rockhampton Regional Council. Different planning scheme, different answers. This catches people out regularly.' },
+        { q: 'Does a granny flat need a full kitchen?', a: 'If it is approved as a dwelling, generally yes — a sink, cooking facility, bench and storage rather than a kitchenette. Your building certifier confirms the requirement against the approved classification.' },
+        { q: 'How much does a granny flat kitchen cost?', a: 'From about $6,500 for a 2.4 metre run and $7,700 for 3.0 metres, including carcasses, doors, Blum hardware and a benchtop. That is the kitchen only, not the dwelling.' },
+      ],
+    },
+    {
+      slug: 'flood-damage-kitchen-replacement-rockhampton',
+      answer: 'Photograph everything before you move or throw out anything — that is what the claim rests on, and it is free. Assume base cabinets that sat in water are gone, whatever anyone offers to dry out. Then use the rebuild to specify so the next one can be dried rather than replaced.',
+      inlineCta: {
+        after: 0,
+        eyebrow: 'When you are ready to quote',
+        title: 'Itemised the way assessors work through it.',
+        body: 'Cabinetry, benchtop, hardware, appliances and installation listed separately, which is how a claim gets assessed. We cannot tell you what your policy covers — we can give you the document it needs.',
+        label: 'Get an itemised quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'After the water',
+        title: 'One kitchen out.<br><span class="italic" style="color:var(--brass-lite)">One chance to specify better.</span>',
+        body: 'Moisture-resistant carcasses, laser-bonded edging and removable kickboards cost very little extra while you are rebuilding anyway, and change what happens next time. We work to whenever your floors and walls are signed off, not to our calendar.',
+        image: 'detail-stone-black',
+        alt: 'Moisture resistant cabinetry and stone benchtop detail',
+      },
+      nav: 'Replacing a kitchen after flood damage',
+      title: 'Flood Damage Kitchen Replacement Rockhampton | Bilt & Co',
+      desc: 'Replacing a kitchen after flood or storm damage in Rockhampton: what to document, how insurance quotes usually work, and specifying so it survives next time.',
+      h1: 'Replacing a kitchen<br><span class="italic brass">after the water goes down.</span>',
+      lede: 'Rockhampton knows this drill. The cabinetry is rarely salvageable, the paperwork decides how much you get back, and the rebuild is your one chance to specify better.',
+      img: 'detail-stone-black',
+      alt: 'Stone benchtop and moisture resistant cabinetry detail',
+      read: '7 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['Document before you clear', 'The strongest thing you can do for a claim happens in the first hours, and it is free: photograph everything before anything is moved or thrown out. Every cabinet, the water line on the wall, the underside of the sink base, the floor, the appliances, serial numbers where you can reach them. Wide shots and close shots. Insurers assess what you can evidence, and a cleared kitchen is very hard to evidence after the fact. Keep the damaged doors somewhere until the assessor has been.'],
+        ['Why flooded cabinetry usually does not come back', 'Standard chipboard carcasses swell irreversibly once water gets into the core, and it happens through the unsealed bottom edge and the back panel rather than the visible faces. A kitchen can look fine for a fortnight and then the doors stop closing as the carcass distorts. Moisture-resistant board resists it considerably better but is not a submarine. Assume base cabinets that sat in water are gone, and be sceptical of anyone offering to dry them out and re-hang the doors.'],
+        ['How the quote side normally runs', 'Most insurers want an itemised scope and quote, and many will accept one from a supplier of your choosing rather than only their preferred repairer — but that varies by policy and by insurer, so ask yours directly rather than assuming either way. What helps in every case is a quote that itemises cabinetry, benchtop, hardware, appliances and installation separately, because that is how assessors work through it. We quote in that format as standard. What we cannot do is tell you what your policy covers; that conversation is between you and your insurer. The <a href="https://insurancecouncil.com.au/" rel="noopener" target="_blank" style="color:var(--brass)">Insurance Council of Australia</a> publishes general guidance on the claims process, and if a claim is disputed, <a href="https://www.afca.org.au/" rel="noopener" target="_blank" style="color:var(--brass)">AFCA</a> handles complaints.'],
+        ['The rebuild is your one cheap chance to specify better', 'You are replacing the kitchen anyway. The incremental cost of specifying it to cope better next time is small compared to doing it as a separate project later. Moisture-resistant carcasses throughout rather than only under the sink. Laser-bonded edging instead of glued, because glued edging lifts first when it gets wet. Legs and kickboards that can be removed and dried rather than a sealed plinth that traps water. Drawers rather than low cupboards, so contents sit higher. Stone or porcelain rather than laminate on the benchtop, since laminate swells at the join.'],
+        ['Raised homes and under-house kitchens', 'Rockhampton’s high-set housing stock exists for a reason, and a second kitchen or kitchenette under the house is common. If you are rebuilding one, the specification conversation is different again — that space will get wet at some point in its life, so nothing should be there that cannot be dried out or removed. Talk to us about it rather than replacing like for like out of habit. <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> holds the flood mapping for your address.'],
+        ['What we can do', 'Design, itemised quote in the format assessors expect, supply delivered assembled, and installation by our own team. We work to your timeline, which after a flood is usually driven by when the floor and walls are dry and signed off rather than by us. See <a href="/investment" style="color:var(--brass)">the price bands</a> for the price bands so you know roughly where you are before the assessor visits.'],
+      ],
+      faq: [
+        { q: 'Will insurance cover a new kitchen after a flood?', a: 'That depends entirely on your policy, your excess and how the damage is assessed, and flood cover in particular is not included in every policy. Ask your insurer directly. What we can provide is the itemised scope and quote that a claim generally needs.' },
+        { q: 'Can I choose my own kitchen supplier for an insurance job?', a: 'Often yes, though some policies steer you to a preferred repairer and some make that a condition. Ask your insurer before you commission anything. If you are free to choose, an itemised quote separating cabinetry, benchtop, hardware and installation is what assessors work from.' },
+        { q: 'Can flooded kitchen cabinets be dried out and saved?', a: 'Rarely, if the carcasses are standard chipboard and sat in water. The board swells from the unsealed edges inward and the distortion often shows up weeks later, after the repair has been signed off. Moisture-resistant board does better. Be cautious of anyone promising to salvage submerged base cabinets.' },
+        { q: 'What should I photograph before cleaning up?', a: 'Everything, before anything moves. The water line on the walls, every cabinet inside and out, under the sink, the floor, appliances and their serial numbers, both wide and close. Keep damaged doors until the assessor has attended. It costs nothing and it is the difference between an evidenced claim and an argued one.' },
+      ],
+    },
+    {
+      slug: 'does-a-new-kitchen-add-value',
+      answer: 'There is no reliable single percentage, and we will not invent one. What a kitchen consistently changes is how many buyers can picture living there and how long the house sits on the market. Spend to the ceiling of the house and the street, not to the level of the photographs you have saved.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Work out where your budget sits',
+        title: 'The price bands, before you ring an agent.',
+        body: 'Three collections with real numbers against them, and a calculator you can put your own run length into. No email required to see any of it.',
+        label: 'See the price bands',
+        href: '/investment',
+      },
+      cta: {
+        eyebrow: 'Selling or staying',
+        title: 'Two different briefs.<br><span class="italic" style="color:var(--brass-lite)">Tell us which one you are on.</span>',
+        body: 'Selling inside a year means broad appeal and nothing a buyer reads as unfinished. Staying five years means building what you actually want. Tell us which, and the quote will reflect it.',
+        image: 'island-calacatta',
+        alt: 'Marble island bench in a bright kitchen',
+      },
+      nav: 'Does a new kitchen add value?',
+      title: 'Does a New Kitchen Add Value to a House? | Australia | Bilt & Co',
+      desc: 'How a kitchen actually affects what a house sells for, why quoted return percentages are unreliable, and how to spend so the money is not wasted.',
+      h1: 'Does a new kitchen<br><span class="italic brass">actually add value?</span>',
+      lede: 'Usually, but not the way the percentages you have read suggest. What a kitchen reliably changes is whether the house sells at all, and how fast.',
+      img: 'island-calacatta',
+      alt: 'Calacatta marble waterfall island in a bright kitchen',
+      read: '6 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['Be sceptical of the percentages', 'You will find articles claiming a kitchen returns a specific percentage of its cost at sale. Treat all of them carefully. Those figures come from different markets, different years and different price brackets, and almost none of them isolate the kitchen from everything else that was done to the house. Nobody renovates only the kitchen and then sells the next week, which is what you would need to actually measure it. Anyone quoting you a precise return figure for Rockhampton in 2026 is guessing, and so would we be.'],
+        ['What a kitchen reliably does', 'Two things, and they are worth more than a percentage. It changes how many people inspect and how many of them can imagine living there — a dated kitchen is the room that makes a buyer mentally start subtracting a renovation budget. And it changes time on market. A house that sells in three weeks instead of three months has saved you carrying costs, price reductions and a lot of stress. That is real money even when it does not show up as a higher headline price.'],
+        ['The ceiling nobody mentions', 'A house has a value ceiling set by its street, its land and its size, and no kitchen breaks through it. Putting a $50,000 kitchen into a house at the top of a modest street generally does not return $50,000, because the buyer at that price point is not there. The reverse is also true: a cheap kitchen in a house that warrants better will actively cost you at sale. Spend to the level of the house and the street, not to the level of the photographs you have saved.'],
+        ['Selling versus staying', 'These are different jobs and they deserve different money. If you are selling within a year, the brief is broad appeal and no obvious faults — neutral finishes, everything working, nothing that reads as a job the buyer inherits. If you are staying five years or more, build the kitchen you want, because you are buying five years of using it, not a resale line item. The most expensive mistake is a compromise between the two, which serves neither.'],
+        ['Where the money goes furthest at sale', 'Layout beats finishes. A kitchen that works — where the bin, dishwasher and prep zone are in the right relationship — reads as considered even in modest materials, and no benchtop rescues a bad layout. After layout: light, storage that visibly closes the clutter away, and a benchtop that photographs well, since most buyers meet your kitchen as a photograph first. <a href="/guide-kitchen-layouts" style="color:var(--brass)">The layouts guide</a> covers the shapes; <a href="/guide-benchtops-compared" style="color:var(--brass)">the benchtop guide</a> covers the materials.'],
+        ['Rentals are a different calculation again', 'For an investment property the question is not resale value but tenancy: how fast it lets, at what rent, and how long the fittings survive tenants. That is a durability and hardware conversation more than a finishes one. See <a href="/short-stay-kitchens" style="color:var(--brass)">short-stay kitchens</a> for short-stay, or <a href="/granny-flat-kitchens" style="color:var(--brass)">granny flat kitchens</a> for secondary dwellings.'],
+      ],
+      faq: [
+        { q: 'How much value does a new kitchen add to a house?', a: 'There is no reliable single figure, and we will not invent one. It depends on the market, the suburb, the value ceiling of the house and what the kitchen replaced. What is more consistently observed is the effect on buyer interest and time on market. For a figure specific to your property, ask two local agents — they see the comparable sales.' },
+        { q: 'Is it worth renovating the kitchen before selling?', a: 'Often, if the existing kitchen is dated enough that buyers will price in replacing it. The brief is different from renovating for yourself: neutral, functional, nothing a buyer reads as unfinished. Spend to the level of the street rather than to the level of your own taste.' },
+        { q: 'How much should I spend if I am selling?', a: 'Less than you would if you were staying, and never past the value ceiling of the house and street. A local agent will tell you what the ceiling is in your area, which is the number that should set the budget.' },
+        { q: 'Does a kitchen help a rental property?', a: 'It affects letting speed and how well the property survives tenants more than it affects the rent achievable. That makes it a hardware and durability decision rather than a finishes one — spend on runners, hinges and carcass board, keep the finishes simple.' },
+      ],
+    },
+    {
+      slug: 'granny-flat-rent-rockhampton',
+      answer: 'The approval decides whether you can let it, not the build — some secondary dwellings are approved only for the household of the main house. Ask the council that before anything else. Then get real rent figures from current listings in your own suburb rather than from anyone selling you a build.',
+      inlineCta: {
+        after: 1,
+        eyebrow: 'Council said yes',
+        title: 'Now make the feasibility real.',
+        body: 'A 2.4 metre secondary-dwelling kitchen starts at $6,500 and a 3.0 metre run at $7,700, delivered assembled and installed. A real number beats an allowance in a spreadsheet.',
+        label: 'Price the kitchen',
+        href: '/granny-flat-kitchens',
+      },
+      cta: {
+        eyebrow: 'Secondary dwellings',
+        title: 'Specify it for the second tenant,<br><span class="italic" style="color:var(--brass-lite)">not the first.</span>',
+        body: 'The parts that fail in a let property are always the same: glued edging, standard runners, chipboard that swells at the first dripping tap. We specify against all three as standard, because replacing a kitchen in four years costs more than doing it properly once.',
+        image: 'collection-marble-02',
+        alt: 'Compact secondary dwelling kitchen',
+      },
+      nav: 'Renting out a granny flat in Rockhampton',
+      title: 'Renting Out a Granny Flat in Rockhampton | Rules & Returns | Bilt & Co',
+      desc: 'Whether you can rent a secondary dwelling in Rockhampton, what the approval conditions decide, and how to work out the return before you build.',
+      h1: 'Renting out a granny flat<br><span class="italic brass">in Rockhampton.</span>',
+      lede: 'The build cost is the easy number. Whether you are allowed to let it, and to whom, is the one that decides if the project works.',
+      img: 'collection-marble-02',
+      alt: 'Compact secondary dwelling kitchen with stone splashback',
+      read: '7 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['Approval decides this, not the building', 'A secondary dwelling can be built to a perfectly good standard and still not be lettable to the general public, because the approval it was granted under may restrict occupation — commonly to members of the household of the main dwelling. This is the single most expensive thing to discover late. Before you spend anything, ask <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> what a secondary dwelling on your specific block can be approved for and whether it may be tenanted separately. Yeppoon and the Capricorn Coast are <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a> instead, with their own planning scheme.'],
+        ['Questions to put to the council, in this order', 'Is a secondary dwelling permitted on this block at all? Is there a maximum floor area? Must it remain attached to, or share services with, the main dwelling? Can it be tenanted to someone outside the household? Is separate metering required or permitted? What parking is required? Is the block in a flood or other hazard overlay? Every one of those changes the design or the business case, and none of them can be answered by a builder.'],
+        ['Working out the return honestly', 'The arithmetic is simple; the inputs are where people fool themselves. Total build cost including services, approvals, certification and connection — not just the quoted build. Realistic rent, taken from current comparable listings in your actual suburb rather than a figure someone quoted you. Then subtract: vacancy, insurance, rates impact, maintenance, agent fees if you use one, and the tax position, which is a question for your accountant and not for us. We are not going to publish a rent figure or a payback period here, because both vary by suburb and year and a wrong one sends people into bad projects.'],
+        ['Where to get the real numbers', 'For rent, look at what is actually listed and what has actually let in your suburb — <a href="https://www.realestate.com.au/" rel="noopener" target="_blank" style="color:var(--brass)">realestate.com.au</a> and the equivalent listing sites show both, and a local property manager will give you a realistic figure in one phone call. For rates and charges implications, ask the council. For the tax treatment of income and depreciation, ask your accountant before you build rather than after, because it can affect how the project is best structured.'],
+        ['Specify for a tenant, not for a guest', 'A tenanted secondary dwelling is used every day by someone with no reason to be careful with it. The parts that fail are always the same — glued edging that lifts, standard runners that sag, chipboard carcasses that swell at the first dripping tap. Spend there and keep the finishes simple. It is the cheapest insurance in the project. <a href="/granny-flat-kitchens" style="color:var(--brass)">Granny flat kitchens</a> covers how we specify these, from $6,500 for a 2.4 metre run.'],
+        ['Short-stay is a different question again', 'Letting a secondary dwelling on Airbnb rather than to a long-term tenant brings a separate set of council and, if applicable, body corporate considerations, and the kitchen brief changes too. See <a href="/short-stay-kitchens" style="color:var(--brass)">short-stay kitchens</a>.'],
+      ],
+      faq: [
+        { q: 'Can I rent out a granny flat in Rockhampton?', a: 'It depends on the approval attached to your specific property. Some secondary dwellings are approved only for occupation by the household of the main dwelling. Ask Rockhampton Regional Council about your block before you budget on rental income — it is the question that decides whether the project works.' },
+        { q: 'How much rent can I get for a granny flat in Rockhampton?', a: 'We will not quote a figure, because it varies by suburb, size and year, and a wrong number leads people into bad decisions. Look at current comparable listings in your own suburb and ring a local property manager. Both take minutes and give you a real number rather than a guess.' },
+        { q: 'How much does a granny flat kitchen cost?', a: 'A 2.4 metre run starts at about $6,500 and a 3.0 metre run at about $7,700, including carcasses, doors, Blum hardware and a benchtop. That is the kitchen only, not the dwelling.' },
+        { q: 'Does a granny flat add value to the property?', a: 'It can, particularly where it is approved for separate tenancy and therefore represents income. Where occupation is restricted to the household, the effect is usually smaller. A local agent is better placed than we are to tell you what it does in your street.' },
+        { q: 'Do I need separate metering?', a: 'Sometimes required, sometimes optional, sometimes not permitted — it depends on the approval and the utility. Ask the council and your electricity distributor early, because retrofitting metering is far more expensive than allowing for it at design stage.' },
+      ],
+    },
+    {
+      slug: 'do-i-need-approval-kitchen-renovation',
+      answer: 'Replacing cabinetry and a benchtop in the same footprint, with services staying where they are, is generally the least involved case. It changes the moment you move a wall, a drain or a circuit. Four questions decide which side of the line you are on, and a building certifier will answer them in one phone call that usually costs nothing.',
+      inlineCta: {
+        after: 1,
+        eyebrow: 'Not sure which side you are on',
+        title: 'Send us the plan. We will tell you before you spend.',
+        body: 'Photographs or a floor plan is enough. If your job needs a certifier we will say so up front, rather than let you find out three weeks into a build.',
+        label: 'Get a straight answer',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Before you commit',
+        title: 'Find out what your job needs<br><span class="italic" style="color:var(--brass-lite)">before you pay for any of it.</span>',
+        body: 'Send us your dimensions and photographs. You get a fixed, itemised quote and an honest read on whether certification is involved. Free, and yours to keep whatever you decide.',
+        image: 'joinery-sketch',
+        alt: 'Kitchen drawings and measurements on a workbench',
+      },
+      nav: 'Do you need approval to renovate a kitchen?',
+      title: 'Do I Need Council Approval to Renovate a Kitchen? | QLD | Bilt & Co',
+      desc: 'When a kitchen renovation in Queensland needs building approval and when it does not, who signs off the plumbing and electrical, and what to ask your council.',
+      h1: 'Do you need approval<br><span class="italic brass">to renovate a kitchen?</span>',
+      lede: 'Usually less than people fear, and never nothing. The cabinetry is rarely the issue. What you do to services, walls and ventilation is.',
+      img: 'joinery-sketch',
+      alt: 'Kitchen joinery drawings and measurements on a workbench',
+      read: '6 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['The short version', 'Replacing cabinetry and a benchtop in the same footprint, with services staying where they are, is generally the least involved case. It starts needing more the moment you move a wall, alter a window, change where the plumbing or wiring runs, or convert the space into something it was not before. The cabinets are almost never what triggers an approval — the building work around them is.'],
+        ['The four questions that decide it', 'Are you removing or altering any wall? Are you moving the sink, dishwasher or any drain? Are you adding circuits, a new oven point or an island power supply? Are you changing the room’s use or its ventilation? A yes to any of those moves you out of "like for like" and into a conversation with a building certifier. A no to all four usually means the work is straightforward — but confirm it rather than assume it.'],
+        ['Council or private certifier', 'In Queensland most residential building approvals are handled by a private building certifier rather than the council counter. The certifier assesses the work, and the council still holds the planning side — what you are allowed to do on that block at all. For anything beyond a straight replacement, ring a certifier first: they will tell you in one call whether you need them, and that call is usually free. <a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a> can tell you which planning rules apply to your address.'],
+        ['Plumbing and electrical are separate, and not optional', 'Whatever the building approval position, the licensed work is regulated in its own right. A licensed plumber and a licensed electrician must carry out and certify their parts, and you should receive documentation for both. This matters later — when you sell, and if you ever claim on insurance. Unlicensed plumbing or wiring in a kitchen is the single most common thing that turns up in a building and pest inspection and costs a sale.'],
+        ['Where owner-builders sit', 'If you are managing the job yourself under an owner-builder permit, the responsibilities move to you, including making sure every licensed trade on the job is actually licensed and that you hold the paperwork. <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">The QBCC</a> sets out what an owner-builder can and cannot do, and there are limits on selling the property afterwards. We supply owner-builders regularly — see <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder kitchen supply</a>.'],
+        ['What we do and do not do', 'We design, supply and install the cabinetry, and we provide service drawings so your plumber and electrician know exactly where everything lands. We are not building certifiers and we do not lodge approvals for you. If your job needs certification we will say so early rather than let you find out mid-build, and we work to your certifier’s programme.'],
+      ],
+      faq: [
+        { q: 'Do I need council approval to replace a kitchen in Queensland?', a: 'For a like-for-like replacement in the same footprint, with services staying put, generally the cabinetry itself is not what triggers an approval. It changes as soon as walls, services, ventilation or the use of the room change. Confirm your specific case with a building certifier or your council before you start.' },
+        { q: 'Who signs off the plumbing and electrical?', a: 'A licensed plumber and a licensed electrician, each certifying their own work, and you should be given the paperwork. Keep it. It is asked for at sale and can matter to an insurance claim.' },
+        { q: 'Does moving the sink change things?', a: 'It can. Moving a sink means altering drainage, which is regulated plumbing work and may change the approval position depending on what is involved. It is one of the four questions worth answering before you finalise a layout.' },
+        { q: 'What if I am an owner-builder?', a: 'The obligations sit with you rather than a head contractor, including verifying that every licensed trade is licensed and keeping the documentation. Check the QBCC guidance on owner-builder permits, and note there are restrictions on selling within a set period afterwards.' },
+      ],
+    },
+    {
+      slug: 'ndis-kitchen-modifications-queensland',
+      answer: 'Funding generally follows an occupational therapist’s report, not a builder’s quote. Get the OT assessment first — it is what supports the funding and what drives the scope. We quote against whatever specification comes out of it, itemised in the format a plan manager needs.',
+      inlineCta: {
+        after: 1,
+        eyebrow: 'Already have an OT report',
+        title: 'Send it through. We will quote against it.',
+        body: 'Fixed and itemised, in the format a plan manager expects. We do not assess eligibility or write reports — we build to the specification yours produces.',
+        label: 'See accessible kitchens',
+        href: '/accessible-kitchens',
+      },
+      cta: {
+        eyebrow: 'Accessible kitchens',
+        title: 'Send the report.<br><span class="italic" style="color:var(--brass-lite)">We will quote what it specifies.</span>',
+        body: 'Full-extension drawers, D-pull handles and reachable storage are standard on everything we build, so much of what makes a kitchen accessible costs nothing extra here.',
+        image: 'drawer-detail',
+        alt: 'Full extension drawer with accessible storage',
+      },
+      nav: 'NDIS and accessible kitchen modifications',
+      title: 'NDIS Kitchen Modifications Queensland | Accessible Kitchens | Bilt & Co',
+      desc: 'How accessible kitchen modifications work under the NDIS in Queensland, what an occupational therapist assesses, and the cabinetry details that matter.',
+      h1: 'Accessible kitchens,<br><span class="italic brass">and how they get funded.</span>',
+      lede: 'An accessible kitchen is a specification problem, not a design compromise. The hard part is usually the funding pathway, not the cabinetry.',
+      img: 'drawer-detail',
+      alt: 'Full extension drawer with soft close runners and internal storage',
+      read: '7 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['How the funding pathway actually works', 'Home modifications under the NDIS generally begin with an occupational therapist, not a builder. The OT assesses the person in their own home, documents what they cannot currently do and why, and recommends modifications. That report is what supports funding. We are not the ones who determine eligibility or what a plan will cover — <a href="https://www.ndis.gov.au/participants/home-and-living/home-modifications" rel="noopener" target="_blank" style="color:var(--brass)">The NDIS</a> and the participant’s planner do. What we can do is quote and build to an OT’s specification, which is usually the part they need from a cabinetmaker.'],
+        ['Start with the OT report, not the kitchen', 'The most common way these jobs stall is a quote produced before the OT has specified anything. The report drives the scope; the scope drives the quote. If you have an OT report already, send it with your enquiry and we will quote directly against it. If you do not, that is the first call to make.'],
+        ['What actually makes a kitchen usable', 'Bench height is the obvious one, and it is not one number — a seated user and a standing user need different heights, which is why height-adjustable sections exist. Beyond that: knee clearance under the sink and a section of bench, so a wheelchair user can get close enough to work. Full-extension drawers instead of cupboards, because reaching into the back of a base cupboard from a seated position is close to impossible. D-pull handles rather than knobs, for limited grip. A shallower sink to preserve knee room. Lever taps. Front-mounted controls so nobody reaches over a hot surface.'],
+        ['Aging in place is the same brief, quieter', 'Most of what makes a kitchen work for a wheelchair user also makes it work for someone in their seventies who is not going anywhere. Drawers instead of low cupboards, better task lighting, handles that work with arthritic hands, pull-down shelving to bring an overhead within reach, <a href="/motorised-pull-down-shelving" style="color:var(--brass)">motorised or manual</a>. None of it looks clinical, and it is far cheaper designed in at the start than retrofitted after a fall. If you are renovating in your sixties, this is the conversation worth having now.'],
+        ['Reference standards worth knowing', 'The <a href="https://livablehousingaustralia.org.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livable Housing Australia</a> guidelines set out the widely used benchmarks for accessible and adaptable housing, including kitchen provisions, and are what many OTs specify against. Specialist Disability Accommodation has its own design standard with its own requirements. If your project is SDA, tell us at the first conversation — the specification is different and it affects the drawings, not just the price.'],
+        ['What we can quote', 'Cabinetry, benchtops, hardware and installation, built to the specification you or your OT provide. We do not assess eligibility, write OT reports, or manage NDIS claims. Send us the report or the specification and you will get a fixed, itemised quote you can put in front of a plan manager. More on how we build them on our <a href="/accessible-kitchens">accessible kitchens</a> page, or <a href="/sda-kitchens-queensland">SDA kitchens</a> if the project is Specialist Disability Accommodation.'],
+      ],
+      faq: [
+        { q: 'Will the NDIS pay for a new kitchen?', a: 'That is determined by the participant\'s plan and supporting assessments, not by us. Home modification funding generally follows an occupational therapist\'s report showing what the modification enables. Speak to the OT and the plan manager first; we quote against whatever specification comes out of that.' },
+        { q: 'Do I need an occupational therapist report?', a: 'For NDIS-funded modifications it is generally the starting point, and quoting without one is the most common reason these projects stall. If you already have one, send it with your enquiry.' },
+        { q: 'What bench height should an accessible kitchen be?', a: 'There is no single correct height, which is why the question matters. A seated user and a standing user need different heights, and households with both often use a height-adjustable section or two working heights. The Livable Housing Australia guidelines are the usual reference, and your OT will specify for the individual.' },
+        { q: 'Is an accessible kitchen more expensive?', a: 'The cabinetry itself is broadly comparable. Cost comes from specific items — height-adjustable mechanisms, pull-down shelving units and specialised hardware. Full-extension drawers and D-pull handles are standard on everything we supply, so a good part of what makes a kitchen accessible costs nothing extra here.' },
+      ],
+    },
+    {
+      slug: 'class-1a-granny-flat-yeppoon',
+      answer: 'Class 1a means a dwelling. If your secondary dwelling is classified as one, it generally needs the facilities of a home — a sink, a cooking facility and a bench, not a kitchenette. And Yeppoon is Livingstone Shire, not Rockhampton Regional Council, which is what decides whether a secondary dwelling is permitted on your block at all.',
+      inlineCta: {
+        after: 1,
+        eyebrow: 'Know your classification',
+        title: 'We will tell you what kitchen it needs.',
+        body: 'A compliant secondary-dwelling kitchen runs 2.4 to 3.0 metres, from $6,500 delivered assembled and installed. Send the plan and we will spec it against your approval.',
+        label: 'Price my granny flat kitchen',
+        href: '/granny-flat-kitchens',
+      },
+      cta: {
+        eyebrow: 'Capricorn Coast',
+        title: 'Building on the Coast?<br><span class="italic" style="color:var(--brass-lite)">We are forty minutes away.</span>',
+        body: 'Yeppoon, Emu Park, Cooee Bay, Lammermoor and Taranganba are all inside our standard service area with no travel loading. Send us the plan and we will work to your certifier’s programme.',
+        image: 'collection-marble-04',
+        alt: 'Compact secondary dwelling kitchen with stone benchtop',
+      },
+      nav: 'Class 1a granny flats in Yeppoon',
+      title: 'Class 1a Granny Flat Rules Yeppoon | Livingstone Shire | Bilt & Co',
+      desc: 'What Class 1a means for a granny flat or secondary dwelling in Yeppoon and the Capricorn Coast, who assesses it, and what to ask Livingstone Shire Council.',
+      h1: 'Class 1a granny flats<br><span class="italic brass">on the Capricorn Coast.</span>',
+      lede: 'The building classification decides what your secondary dwelling must contain. Get it clear before you draw anything, because it changes the kitchen.',
+      img: 'collection-marble-04',
+      alt: 'Compact secondary dwelling kitchen with stone benchtop and full height storage',
+      read: '7 min read',
+      note: 'Last checked: September 2026. This is general information, not building, legal, financial or insurance advice. Rules, funding and figures differ by council, insurer and individual circumstance and change without notice — confirm with the authority linked above before you commit to anything.',
+      sections: [
+        ['What Class 1a actually means', 'Building classifications come from the National Construction Code, and they describe what a building is for. Class 1a is, broadly, a house or a dwelling — somewhere people live permanently. Class 10a is a non-habitable structure such as a shed, garage or carport. The distinction matters because a Class 1a building has to meet the requirements of somewhere people live: fire separation, ventilation, natural light, insulation, sanitary facilities and cooking provisions. A shed does not.'],
+        ['Why the classification changes the kitchen', 'This is the part most people miss until late. If your secondary dwelling is classified as a dwelling, it generally needs the facilities of one — which means a real kitchen rather than a bar fridge and a microwave on a shelf. That is a specification question with a cost attached, and it is far better known at design stage than after a certifier raises it. It is also why a <a href="/kitchenettes" style="color:var(--brass)">kitchenette</a> can be the wrong answer for a secondary dwelling even though it looks like a saving.'],
+        ['Converting a shed is a reclassification', 'Enclosing under a high-set home, or converting a Class 10a shed into somewhere someone lives, is a change of classification and it is assessed as such. The structure has to meet the standards of what it is becoming, which can reach into framing, ceiling height, waterproofing, egress and services. It is entirely doable and it is done constantly around Rockhampton and the Coast — but it is a building approval process, not a decorating project.'],
+        ['Yeppoon, and who you actually talk to', 'Yeppoon, Emu Park, Cooee Bay, Lammermoor, Taranganba and the surrounding Capricorn Coast are <a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a>, not Rockhampton Regional Council. That trips people up constantly, and it matters because planning rules differ between the two. The council holds the planning side — whether a secondary dwelling is permitted on your block, and on what conditions. A private building certifier handles the building approval. Ring both early; neither conversation costs anything.'],
+        ['Questions worth asking before you spend money', 'Is a secondary dwelling permitted on this block, and is there a size limit? Does it have to stay connected to the main dwelling, or can it be detached? Can it be tenanted to someone outside the household? What are the parking and setback requirements? Is the block in a flood, bushfire or coastal hazard overlay? Every one of those answers can change the design, and all of them come from the council rather than from a builder.'],
+        ['The kitchen part', 'A compliant secondary-dwelling kitchen generally means a sink, a cooking facility, a bench and storage — a real kitchen at a small scale. We build those to a 2.4 to 3.0 metre run from $6,500, delivered assembled and installed by our own team, and we work to your certifier’s programme. See <a href="/granny-flat-kitchens" style="color:var(--brass)">granny flat kitchens</a> for how they are specified.'],
+      ],
+      faq: [
+        { q: 'What is a Class 1a building?', a: 'In the National Construction Code, Class 1a is broadly a dwelling — a house or similar, somewhere people live permanently. It carries the requirements you would expect of a home: ventilation, light, insulation, sanitary and cooking facilities. Class 10a covers non-habitable structures like sheds and garages.' },
+        { q: 'Does a granny flat in Yeppoon need a full kitchen?', a: 'If it is classified and approved as a dwelling, it generally needs the facilities of one, which includes a cooking facility and a sink rather than a kitchenette. The precise requirement comes from your building certifier against the approved classification, so confirm it before finalising the design.' },
+        { q: 'Which council covers Yeppoon?', a: 'Livingstone Shire Council, not Rockhampton Regional Council. It covers Yeppoon, Emu Park, Cooee Bay, Lammermoor, Taranganba and the broader Capricorn Coast. Their planning scheme is what governs whether a secondary dwelling is permitted on your block.' },
+        { q: 'Can I convert my shed into a granny flat?', a: 'Often yes, but it is a change of building classification from Class 10a to Class 1a and is assessed as building work. The structure has to meet the standards of a dwelling, which can involve framing, ceiling height, waterproofing, egress and services. Talk to a building certifier before you buy materials.' },
+        { q: 'Can I rent out a granny flat in Yeppoon?', a: 'That is a planning question for Livingstone Shire Council and the answer depends on the approval and the conditions attached to it. Some secondary dwellings are approved for household use only. Ask the council before you budget on rental income.' },
+      ],
+    },
     {
       slug: 'kitchen-renovation-checklist',
       nav: 'The kitchen renovation checklist',
@@ -2178,6 +3097,344 @@ module.exports = function (api) {
 `,
   };
 
+  /* Supply-tier towns. Beyond the installation boundary, so these pages sell
+     supply delivered assembled and state plainly that installation is not
+     offered. Modelled on the Caloundra page. */
+  function supplyPage(slug, place, opts) {
+    const { blurb, image, alt, distance, towns } = opts;
+    const faq = [
+      { q: `Do you install kitchens in ${place}?`, a: `No. Our installation team works Central Queensland, within about 150 kilometres of Rockhampton, and ${place} is beyond that. What we do offer is supply — we design the kitchen and it arrives assembled for your builder, cabinetmaker or installer to fit. We would rather say that plainly than take the job and subcontract it to someone we have never worked with.` },
+      { q: `How does supply-only work from ${distance} away?`, a: `The same way it works for the builders we already supply. We design to your measurements, you confirm the drawings, and the cabinetry is delivered assembled — carcasses built, hardware fitted, doors hung. Your installer fits it. You get a full set of service drawings so your plumber and electrician know exactly where everything lands.` },
+      { q: `Can I get a fixed quote in ${place}?`, a: `Yes. Send the room dimensions, photographs and your appliance models and we will quote the supply, fixed and itemised, including delivery to ${place}. What we will not do is quote you for an installation we cannot stand behind.` },
+      { q: `Is it flat packed?`, a: `No. It arrives assembled. You or your installer are fitting a kitchen, not building one on the floor first. Allow for the space that takes — assembled cabinetry needs more room to store than cartons do.` },
+      { q: `Will you ever install in ${place}?`, a: `Only if there is enough work there to put a team on properly. The enquiries through this page are genuinely what decides that. Until then, supply is the honest offer.` },
+    ];
+    return {
+      file: `kitchens-${slug}.html`,
+      service: {
+        name: `Kitchen supply and delivery to ${place}`,
+        type: 'Kitchen supply and delivery',
+        desc: `Cabinetry designed in Rockhampton and delivered assembled to ${place}, fitted by your own builder or installer.`,
+        areas: towns || [place],
+      },
+      title: `Kitchens ${place} | Supply & Delivery | Bilt & Co`,
+      desc: `Bilt & Co supplies kitchens to ${place}, delivered assembled and fitted by your builder. Designed in Rockhampton, fixed itemised quotes including delivery.`,
+      og: image,
+      priority: '0.6',
+      faq,
+      trail: [['index.html', 'Home'], ['kitchens.html', 'Kitchens'], [`kitchens-${slug}.html`, place]],
+      body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['kitchens.html', 'Kitchens'], ['#', place]])}
+        <span class="pill">Supply and delivery — installation not offered here</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${place}, we supply.<br><span class="italic brass">Your installer fits it.</span></h1>
+        <p class="lede">${blurb}</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>We are in Rockhampton, ${distance} away. Our installers do not work ${place}, and we will not pretend otherwise. What we can do is design your kitchen and deliver it assembled for your own builder to fit — which is already what we do for the tiny home and granny flat builders we supply.</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get a supply quote</a>
+          <a class="btn btn--ghost btn--lg" href="/investment">See the price bands</a>
+        </div>
+      </div>
+      <div>${frame(image, alt, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <div ${rv()} style="margin-bottom:2.25rem">
+          <h2 class="d3">What arrives in ${place}</h2>
+          <p class="mt-1 muted">Carcasses built, hardware fitted, doors hung and adjusted, benchtop templated to your drawings. Not cartons. Your installer is fitting a kitchen rather than assembling one on the floor of a house that is still being finished — which is the point in a build where nobody has time or patience left.</p>
+        </div>
+        <div ${rv()} data-rv-d="2" style="margin-bottom:2.25rem">
+          <h2 class="d3">Drawings your trades can work from</h2>
+          <p class="mt-1 muted">A full set of service drawings showing where every waste, water point and power outlet needs to land, dimensioned. Hand them to your plumber and electrician before they rough in. Services roughed in to a guess is where supply jobs lose money, and it is entirely avoidable.</p>
+        </div>
+        <div ${rv()} data-rv-d="3" style="margin-bottom:2.25rem">
+          <h2 class="d3">Who this suits</h2>
+          <p class="mt-1 muted">Builders and owner-builders who have their own crew. Investors renovating from a distance. Anyone already managing trades who needs the cabinetry handled properly rather than a company to manage the whole job. If you want design and installation under one roof, you want a ${place} company, and we would say so on the first call.</p>
+        </div>
+        <div ${rv()}>
+          <h2 class="d3">The same kitchen, minus one line</h2>
+          <p class="mt-1 muted">Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging, same ten-year warranty on the cabinetry. Supply is not a lesser product for people who could not afford the real one — it is the same kitchen without our installation labour on the invoice. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder supply</a> for how it works end to end.</p>
+        </div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">${place}</span>
+          <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">Supply only<small>Delivered assembled</small></div>
+          <ul>
+            <li>Designed to your measurements</li>
+            <li>Delivered assembled, not flat packed</li>
+            <li>Full service drawings for your trades</li>
+            <li>Fixed, itemised quote including delivery</li>
+            <li>Blum hardware, moisture-resistant carcasses</li>
+            <li>Ten-year warranty on the cabinetry</li>
+            <li class="no">Installation not offered in ${place}</li>
+          </ul>
+          <a class="btn btn--block" href="/contact">Get a supply quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(faq, `${place} — questions`)}
+  ${ctaBand({ eyebrow: place, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: `A fixed, itemised supply quote delivered to ${place}, with nothing hidden in it. If you need installation as well, we will tell you plainly rather than take the job and work it out afterwards.` })}
+`,
+    };
+  }
+
+  const supplyPages = [
+    supplyPage('brisbane', 'Brisbane', {
+      distance: 'about 600 kilometres', image: 'glossy-dark',
+      alt: 'Contemporary dark kitchen with island, supplied assembled to Brisbane',
+      towns: ['Brisbane', 'Logan', 'Ipswich', 'Moreton Bay', 'Redland'],
+      blurb: 'Brisbane has no shortage of kitchen companies, and we are not pretending to be one of them. What we offer here is supply — designed in Rockhampton, delivered assembled, fitted by your own builder.',
+    }),
+    supplyPage('mackay', 'Mackay', {
+      distance: 'about 330 kilometres', image: 'dark-luxe-bar',
+      alt: 'Dark contemporary kitchen with island and integrated appliances, Mackay',
+      towns: ['Mackay', 'Sarina', 'Walkerston', 'Mirani'],
+      blurb: 'Mining, sugar and a steady renovation market. We supply Mackay builders and owner-builders; we do not install there, and this page is about what we can actually do rather than what we would like to claim.',
+    }),
+    supplyPage('bundaberg', 'Bundaberg', {
+      distance: 'about 290 kilometres', image: 'collection-marble-02',
+      alt: 'Bright kitchen with stone benchtop and timber accents, Bundaberg',
+      towns: ['Bundaberg', 'Bargara', 'Childers', 'Gin Gin'],
+      blurb: 'Coastal, with a lot of older housing stock and a strong investment market. Supply delivered assembled suits both, provided you have your own installer.',
+    }),
+    supplyPage('emerald', 'Emerald', {
+      distance: 'about 270 kilometres', image: 'matte-black-bank',
+      alt: 'Matte black handleless kitchen, Emerald',
+      towns: ['Emerald', 'Capella', 'Springsure', 'Sapphire', 'Rubyvale'],
+      blurb: 'Central Highlands, where getting trades on site is the hard part and freight is normal. Assembled delivery removes one variable from a build that already has plenty.',
+    }),
+    supplyPage('blackwater', 'Blackwater', {
+      distance: 'about 190 kilometres', image: 'galley-stone',
+      alt: 'Compact galley kitchen with stone benchtop, Blackwater',
+      towns: ['Blackwater', 'Bluff', 'Duaringa'],
+      blurb: 'Mining town housing that turns over between tenants and gets used hard. Specify for the second tenant rather than the first, and have your own crew fit it.',
+    }),
+    supplyPage('moranbah', 'Moranbah', {
+      distance: 'about 380 kilometres', image: 'concrete-luxe',
+      alt: 'Bright durable kitchen with stone island, Moranbah',
+      towns: ['Moranbah', 'Dysart', 'Middlemount', 'Clermont'],
+      blurb: 'Company and investment housing, hard use, and a long way from anywhere that sells cabinetry properly. Freight is a fact of life here; assembled delivery makes it less of one.',
+    }),
+    supplyPage('hervey-bay', 'Hervey Bay', {
+      distance: 'about 400 kilometres', image: 'openplan-long',
+      alt: 'Open plan coastal kitchen with long island, Hervey Bay',
+      towns: ['Hervey Bay', 'Pialba', 'Urangan', 'Torquay', 'Maryborough'],
+      blurb: 'Retirement and coastal renovation country, with a lot of downsizing and a lot of secondary dwellings. Supply suits an owner-builder or a local installer you already trust.',
+    }),
+  ];
+
+  /* Segment x town. Targets "<segment> <town>", which neither the segment page
+     nor the town page targets. Links up to both so the relationship is a
+     hierarchy rather than a competition. */
+  function comboPage(slug, opts) {
+    const { place, h1, title, desc, lede, answer, price, range, image, alt,
+            parentSeg, parentSegLabel, parentTown, parentTownLabel, sections, faq, council } = opts;
+    return {
+      file: `${slug}.html`,
+      service: { name: title.split(' | ')[0], type: opts.serviceType, areas: [place] },
+      title,
+      desc,
+      og: image,
+      priority: '0.6',
+      faq,
+      trail: [['index.html', 'Home'], [parentSeg, parentSegLabel], [`${slug}.html`, place]],
+      body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], [parentSeg, parentSegLabel], ['#', place]])}
+        <span class="pill">${price} &middot; ${range}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.4rem)">${h1}</h1>
+        <p class="lede">${lede}</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>${answer}</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get a fixed quote</a>
+          <a class="btn btn--ghost btn--lg" href="${parentSeg}">How we build them</a>
+        </div>
+      </div>
+      <div>${frame(image, alt, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div class="legal">
+        ${sections.map((sec, i) => `
+        <div ${rv()} data-rv-d="${(i % 3) + 1}" style="margin-bottom:2.25rem">
+          <h2 class="d3">${sec[0]}</h2>
+          <p class="mt-1 muted">${sec[1]}</p>
+        </div>`).join('')}
+        <aside class="offer" ${rv()}>
+          <div>
+            <p class="eyebrow">${place}</p>
+            <h3 class="d3">Send us the dimensions.</h3>
+            <p class="mt-1 muted">Fixed and itemised, with nothing hidden in it. If the number does not work you owe us nothing and you keep the drawings.</p>
+          </div>
+          <a class="btn btn--lg" href="/contact">Get a fixed quote</a>
+        </aside>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">${place}</span>
+          <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">${price}<small>${range}</small></div>
+          <ul>${opts.list.map((x) => `<li>${x}</li>`).join('')}</ul>
+          <a class="btn btn--block" href="/contact">Get this priced</a>
+        </div>
+        <p class="small muted mt-2">More on <a href="${parentSeg}" style="color:var(--brass)">${parentSegLabel.toLowerCase()}</a> and on <a href="${parentTown}" style="color:var(--brass)">${parentTownLabel}</a>.${council ? ` Planning questions go to ${council}.` : ''}</p>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(faq, `${place} — questions`)}
+  ${ctaBand({ eyebrow: place, title: 'Tell us about the room.<br><span class="italic" style="color:var(--brass-lite)">We will tell you what fits.</span>', body: `A free site measure, a 3D design and a fixed quote for your ${place} project. Yours to keep whatever you decide.` })}
+`,
+    };
+  }
+
+  const LIVINGSTONE = '<a href="https://www.livingstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Livingstone Shire Council</a>';
+  const ROCKY_C = '<a href="https://www.rockhamptonregion.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Rockhampton Regional Council</a>';
+  const GLADSTONE_C = '<a href="https://www.gladstone.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">Gladstone Regional Council</a>';
+
+  const comboPages = [
+    comboPage('granny-flat-kitchens-yeppoon', {
+      place: 'Yeppoon', serviceType: 'Granny flat kitchen installation',
+      title: 'Granny Flat Kitchens Yeppoon | From $6,500 | Bilt & Co',
+      desc: 'Kitchens for granny flats and secondary dwellings in Yeppoon and the Capricorn Coast, from $6,500. Built for Livingstone Shire approvals and coastal conditions.',
+      h1: 'Granny flat kitchens<br><span class="italic brass">for the Capricorn Coast.</span>',
+      lede: 'Secondary dwellings are common along this coast, and the two things that decide the kitchen are the council and the salt air.',
+      answer: `A compliant secondary-dwelling kitchen in Yeppoon generally needs a sink, a cooking facility and a bench — a real kitchen, not a kitchenette. From $6,500 for a 2.4 metre run, installed by our own team. Yeppoon is Livingstone Shire, not Rockhampton, and that is who decides whether a secondary dwelling is permitted on your block.`,
+      price: 'From $6,500', range: '2.4m – 3.0m run', image: 'galley-stone',
+      alt: 'Compact galley kitchen with stone benchtop in a Yeppoon secondary dwelling',
+      parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
+      parentTown: '/kitchens-yeppoon', parentTownLabel: 'kitchens in Yeppoon',
+      council: LIVINGSTONE,
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Moisture-resistant carcasses for coastal humidity', 'Blum hardware with a lifetime mechanical warranty', 'Stone, porcelain or laminate benchtop', 'Installed by our own team, forty minutes away', 'Ten-year warranty on cabinetry and workmanship'],
+      sections: [
+        ['Livingstone Shire, not Rockhampton', `This is the one that trips people up. Yeppoon, Cooee Bay, Lammermoor, Taranganba, Barmaryee, Zilzie and Emu Park are all ${LIVINGSTONE}, with their own planning scheme. Whether a secondary dwelling is permitted on your block, how big it can be, and whether it can be tenanted separately are all their decisions, not ours and not Rockhampton’s. Ask them before you spend anything — we cover what the classification means for the kitchen in <a href="/guide-class-1a-granny-flat-yeppoon" style="color:var(--brass)">our Class 1a guide</a>.`],
+        ['Salt air is a specification problem', 'Coastal humidity and salt do two things to cabinetry: they get into unsealed board edges, and they corrode cheap hardware. Neither shows up in year one. We specify moisture-resistant carcasses and laser-bonded edging as standard, which matters more here than fifty kilometres inland, and we would not use unbranded runners on a coastal job at any price.'],
+        ['Built for whoever lives there next', 'Secondary dwellings on this coast get used three ways — family, long-term tenant, or holiday letting — and they often change between them. Specify for the hardest of those and you never have to think about it again. If holiday letting is the plan, the brief changes again: see <a href="/short-stay-kitchens-capricorn-coast" style="color:var(--brass)">short-stay kitchens on the Capricorn Coast</a>.'],
+      ],
+      faq: [
+        { q: 'Which council covers granny flats in Yeppoon?', a: 'Livingstone Shire Council, not Rockhampton Regional Council. Their planning scheme decides whether a secondary dwelling is permitted on your block and on what conditions. Confirm with them before committing to a design.' },
+        { q: 'Does a granny flat in Yeppoon need a full kitchen?', a: 'If it is approved as a dwelling, it generally needs the facilities of one — a sink, a cooking facility and a bench. Your building certifier confirms the requirement against the approved classification.' },
+        { q: 'How much is a granny flat kitchen in Yeppoon?', a: 'From about $6,500 for a 2.4 metre run and $7,700 for 3.0 metres, including carcasses, doors, Blum hardware and a benchtop. Yeppoon is inside our standard service area with no travel loading.' },
+        { q: 'Do you install in Yeppoon yourself?', a: 'Yes. Our own employed team, forty minutes from Rockhampton. We do not subcontract Capricorn Coast work.' },
+      ],
+    }),
+
+    comboPage('short-stay-kitchens-capricorn-coast', {
+      place: 'the Capricorn Coast', serviceType: 'Short-stay kitchen installation',
+      title: 'Airbnb & Short-Stay Kitchens Capricorn Coast | Bilt & Co',
+      desc: 'Kitchens for holiday lets and short-stay properties on the Capricorn Coast. Built to photograph well, survive guests and handle coastal humidity.',
+      h1: 'Holiday let kitchens<br><span class="italic brass">for the Capricorn Coast.</span>',
+      lede: 'A beach-house kitchen is photographed more than it is cooked in, and used by people who have never seen it before. Both facts change the specification.',
+      answer: `Coastal short-stay kitchens fail in two predictable ways: salt and humidity get into the carcass edges, and guests treat the hardware as if it were their own. Specify moisture-resistant board and full-extension Blum runners and most of it stops. From $6,500 for a 2.4 metre run, installed by our own team.`,
+      price: 'From $6,500', range: '2.4m – 4.0m run', image: 'openplan-long',
+      alt: 'Bright open plan coastal kitchen in a Capricorn Coast holiday let',
+      parentSeg: '/short-stay-kitchens', parentSegLabel: 'Short-stay kitchens',
+      parentTown: '/kitchens-capricorn-coast', parentTownLabel: 'kitchens on the Capricorn Coast',
+      council: LIVINGSTONE,
+      list: ['2.4m to 4.0m runs, drawn to your dimensions', 'Porcelain or sintered stone benchtop', 'Moisture-resistant carcasses for coastal air', 'Blum full-extension runners rated for guest handling', 'Layouts designed around turnover and cleaning', 'Installed by our own team, forty minutes away'],
+      sections: [
+        ['The listing photograph does the selling', 'Guests scroll. On this coast they are comparing your place against a dozen others with the same view, so the kitchen photograph is doing real work. That means uncluttered rather than expensive: full-height storage to hide the mess, an unbroken run of bench, and a splashback that does not fight the camera. We design knowing the first person to see it will see it at 400 pixels wide.'],
+        ['Salt, humidity and people who do not live there', 'Three forces, all working on the same cabinetry. Coastal air gets into unsealed edges; guests shut soft-close drawers like ordinary ones; and turnover means it is cleaned harder and more often than a family kitchen. Moisture-resistant carcasses, laser-bonded edging and proper runners handle all three. This is not the room to save on hardware.'],
+        ['Check the letting rules before the kitchen', `Short-stay letting on the Capricorn Coast is a planning matter for ${LIVINGSTONE}, and body corporate by-laws can override the answer where they apply. Confirm you are permitted to let the property before you spend on it — we can tell you what a kitchen costs, not whether you are allowed to run the business.`],
+      ],
+      faq: [
+        { q: 'Do I need council approval to run an Airbnb on the Capricorn Coast?', a: 'Possibly, and it depends on the property and its approval. Short-stay accommodation is a planning matter for Livingstone Shire Council, and body corporate by-laws may also apply. Confirm before you invest in the fit-out.' },
+        { q: 'What benchtop suits a coastal holiday let?', a: 'Porcelain or sintered stone. Heat resistant, non-porous and UV stable, which matters in a bright coastal room where a guest will eventually put a hot pan straight down.' },
+        { q: 'How much is a short-stay kitchen on the Capricorn Coast?', a: 'From about $6,500 for a 2.4 metre run. Yeppoon, Emu Park and the surrounding coast are inside our standard service area with no travel loading.' },
+      ],
+    }),
+
+    comboPage('under-house-kitchens-rockhampton', {
+      place: 'Rockhampton', serviceType: 'Under-house kitchen installation',
+      title: 'Under House Kitchens Rockhampton | High-Set Conversions | Bilt & Co',
+      desc: 'Kitchens and kitchenettes for under-house conversions in Rockhampton high-set homes. Built for floors that are not level and walls that are not square.',
+      h1: 'Under-house kitchens<br><span class="italic brass">in a high-set Queenslander.</span>',
+      lede: 'Enclosing underneath is the most common second-space project in this city. It is also the one where the plan and the reality differ most.',
+      answer: `Under-house conversions are measured, not assumed — the floors are rarely level and the walls are rarely square, so cabinetry is scribed to what is actually there. A kitchenette starts at $2,400 and a full secondary-dwelling kitchen at $6,500. Whether the space can become habitable is a certifier and Rockhampton Regional Council question, and worth answering first.`,
+      price: 'From $2,400', range: 'Kitchenette to full kitchen', image: 'detail-black-cabinetry',
+      alt: 'Compact under-house kitchen with dark cabinetry, Rockhampton',
+      parentSeg: '/kitchenettes', parentSegLabel: 'Kitchenettes',
+      parentTown: '/kitchens', parentTownLabel: 'kitchens in Rockhampton',
+      council: ROCKY_C,
+      list: ['Scribed to floors and walls as they actually are', 'Kitchenette from $2,400, full kitchen from $6,500', 'Moisture-resistant carcasses throughout', 'Removable kickboards where flooding is a risk', 'Service drawings for your plumber and electrician', 'Installed by our own team'],
+      sections: [
+        ['Nothing under a Queenslander is square', 'These houses have moved for a century, and they are still moving. Floors slope, wall studs wander, and the concrete slab poured underneath is rarely flat to the tolerance cabinetry assumes. We measure what is there and scribe to it rather than trusting the plan, which is why we site measure rather than working from your dimensions on this particular job type.'],
+        ['Habitable is a classification, not a decision', `Enclosing underneath to make a living space is a change of building classification, and it is assessed as building work — ceiling height, ventilation, natural light, egress and services all come into it. Ask a building certifier and ${ROCKY_C} before you buy anything. Our <a href="/guide-do-i-need-approval-kitchen-renovation" style="color:var(--brass)">approvals guide</a> covers what triggers what.`],
+        ['Assume it will get wet at some point', 'This is Rockhampton and that space is at ground level. Specify so it can be dried out rather than replaced: moisture-resistant carcasses throughout, removable kickboards instead of a sealed plinth, drawers rather than low cupboards so contents sit higher. It costs very little extra now and changes what happens after the next event. More in our <a href="/guide-flood-damage-kitchen-replacement-rockhampton" style="color:var(--brass)">flood rebuild guide</a>.'],
+        ['Kitchenette or full kitchen', 'If nobody will cook a proper meal down there, a kitchenette from $2,400 is the honest answer. If it is becoming a self-contained dwelling, it generally needs a real kitchen and the classification will say so. We will tell you which you are looking at before you commit to either.'],
+      ],
+      faq: [
+        { q: 'Can I put a kitchen under my Queenslander?', a: 'Usually, but making the space habitable is a change of building classification and is assessed as building work. Talk to a building certifier and Rockhampton Regional Council before you spend. The cabinetry is the straightforward part.' },
+        { q: 'How much is an under-house kitchen in Rockhampton?', a: 'A kitchenette starts around $2,400 and a full secondary-dwelling kitchen around $6,500. The variable is usually the building work around it rather than the cabinetry.' },
+        { q: 'Do you site measure under-house conversions?', a: 'Always, on this job type. Floors are rarely level and walls are rarely square in a high-set home, so we measure what is actually there and scribe the cabinetry to it.' },
+        { q: 'What if the space has flooded before?', a: 'Tell us. We specify differently — moisture-resistant carcasses throughout, removable kickboards, drawers rather than low cupboards. It costs little extra and it is the difference between drying a kitchen out and replacing it.' },
+      ],
+    }),
+
+    comboPage('granny-flat-kitchens-gladstone', {
+      place: 'Gladstone', serviceType: 'Granny flat kitchen installation',
+      title: 'Granny Flat Kitchens Gladstone | From $6,500 | Bilt & Co',
+      desc: 'Kitchens for granny flats and secondary dwellings in Gladstone, from $6,500. Specified for rental turnover and installed by our own team.',
+      h1: 'Granny flat kitchens<br><span class="italic brass">in Gladstone.</span>',
+      lede: 'A lot of Gladstone secondary dwellings are built to be let, not lived in by family. That changes what the kitchen has to survive.',
+      answer: `From $6,500 for a 2.4 metre run, installed by our own team — Gladstone is inside our installation area. Whether you can let a secondary dwelling separately is a Gladstone Regional Council planning question and worth settling before you design anything.`,
+      price: 'From $6,500', range: '2.4m – 3.0m run', image: 'matte-black-bank',
+      alt: 'Compact handleless kitchen in a Gladstone secondary dwelling',
+      parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
+      parentTown: '/kitchens-gladstone', parentTownLabel: 'kitchens in Gladstone',
+      council: GLADSTONE_C,
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Specified for tenant turnover, not first impressions', 'Moisture-resistant carcasses, laser-bonded edging', 'Blum hardware with a lifetime mechanical warranty', 'Installed by our own team', 'Ten-year warranty on cabinetry and workmanship'],
+      sections: [
+        ['An industrial city rents differently', 'Gladstone housing turns over with the projects, and a secondary dwelling here is often an income decision rather than a family one. That means the kitchen gets a new occupant more often than most, and the parts that fail are always the same three: glued edging, standard runners, and chipboard carcasses that swell at the first dripping tap. Spend there and keep the finishes simple.'],
+        ['Settle the approval before the design', `Whether a secondary dwelling can be tenanted separately on your block is a ${GLADSTONE_C} planning matter, and some approvals restrict occupation to the household of the main dwelling. That single answer decides whether the project makes sense. Our guide on <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">renting out a secondary dwelling</a> covers the questions to ask, and the same logic applies here.`],
+        ['We install, we do not subcontract', 'Gladstone is inside our installation area and our own employed team does the work. We are about ninety minutes north, so we schedule site measures and installations together rather than dropping in — tell us your timing and we will confirm the next available visit.'],
+      ],
+      faq: [
+        { q: 'Do you install granny flat kitchens in Gladstone?', a: 'Yes, with our own employed team. Gladstone is inside our installation area. We are about ninety minutes away, so we schedule site measures and installs together rather than attending ad hoc.' },
+        { q: 'Can I rent out a granny flat in Gladstone?', a: 'That depends on the approval attached to your property, and some are restricted to the household of the main dwelling. Ask Gladstone Regional Council before you budget on rental income.' },
+        { q: 'How much is a granny flat kitchen in Gladstone?', a: 'From about $6,500 for a 2.4 metre run and $7,700 for 3.0 metres, including carcasses, doors, Blum hardware and a benchtop.' },
+      ],
+    }),
+
+    comboPage('new-build-kitchens-gracemere', {
+      place: 'Gracemere', serviceType: 'New build kitchen installation',
+      title: 'New Build Kitchens Gracemere | Upgrade the Standard | Bilt & Co',
+      desc: 'Upgrading from the builder&rsquo;s standard kitchen in a Gracemere new build. Fixed pricing, service drawings for your trades, delivered to your construction programme.',
+      h1: 'The kitchen your builder<br><span class="italic brass">did not quote you.</span>',
+      lede: 'Gracemere is one of the busiest new-build postcodes on our board, and the standard kitchen in most contracts is chosen to hit a price.',
+      answer: `You can usually take the kitchen out of the builder’s contract as a provisional sum and have it done properly instead — but raise it early, ideally before the slab, while services can still move cheaply. From $15,000. Gracemere is fifteen minutes from us.`,
+      price: 'From $15,000', range: 'Full kitchen, new build', image: 'collection-marble-01',
+      alt: 'Open plan new build kitchen with island bench, Gracemere',
+      parentSeg: '/new-build-kitchens', parentSegLabel: 'New build kitchens',
+      parentTown: '/kitchens-gracemere', parentTownLabel: 'kitchens in Gracemere',
+      council: ROCKY_C,
+      list: ['Fixed, itemised pricing before you commit', 'Service drawings for your builder’s trades', 'Delivered to your construction programme', 'Blum hardware and moisture-resistant carcasses', 'Fifteen minutes from our door', 'Ten-year warranty on cabinetry and workmanship'],
+      sections: [
+        ['Raise it before the slab', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, a water point for the fridge — all trivial while the plumber and electrician are still roughing in, all expensive afterwards. If your Gracemere build has not started, this is the conversation to have now rather than at handover.'],
+        ['How the provisional sum usually works', 'Most build contracts carry the kitchen as an allowance. Speak to your builder about taking it out as a provisional sum and having it supplied separately — many are entirely comfortable with it, some are not, and it is a conversation worth having early rather than late. We provide the service drawings your builder’s trades need either way.'],
+        ['Growing suburb, growing families', 'Gracemere builds tend to be family houses on generous blocks, which means the kitchen is doing real work rather than looking good in a display home. Storage that actually holds a week of shopping, a bin in the right place, and a bench you can put a hot tray on. That is a layout conversation before it is a finishes one.'],
+      ],
+      faq: [
+        { q: 'Can I use my own kitchen supplier in a new build?', a: 'Usually, by taking the kitchen out of the contract as a provisional sum. Some builders are comfortable with it and some are not, so raise it early. We supply the service drawings your builder\'s trades need regardless.' },
+        { q: 'When should I talk to you about a new build kitchen?', a: 'Before the slab if you can. Services in the middle of a floor are cheap to place and expensive to move, and the island is where that bites hardest.' },
+        { q: 'How much to upgrade from the builder\'s standard kitchen?', a: 'From about $15,000 for our Essence collection. What you are comparing against is the allowance already in your contract, so the real number is often the difference rather than the whole amount.' },
+      ],
+    }),
+  ];
+
   const guidePages = GUIDES.map((g) => ({
     file: `guide-${g.slug}.html`,
     title: g.title,
@@ -2205,6 +3462,7 @@ module.exports = function (api) {
         <span class="pill">${g.read}</span>
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${g.h1}</h1>
         <p class="lede">${g.lede}</p>
+        ${g.answer ? `<div class="answer" ${rv()} data-rv-d="2"><p class="eyebrow">The short answer</p><p>${g.answer}</p></div>` : ''}
       </div>
       <div>${frame(g.img, g.alt, 'wide', { eager: true })}</div>
     </div>
@@ -2219,13 +3477,23 @@ module.exports = function (api) {
         <div ${rv()} data-rv-d="${(i % 3) + 1}">
           <h2 class="d3">${sec[0]}</h2>
           <p class="mt-1 muted">${sec[1]}</p>
-        </div>`).join('')}
+        </div>${g.inlineCta && g.inlineCta.after === i ? `
+        <aside class="offer" ${rv()}>
+          <div>
+            <p class="eyebrow">${g.inlineCta.eyebrow}</p>
+            <h3 class="d3">${g.inlineCta.title}</h3>
+            <p class="mt-1 muted">${g.inlineCta.body}</p>
+          </div>
+          <a class="btn btn--lg" href="${g.inlineCta.href || '/contact'}">${g.inlineCta.label}</a>
+        </aside>` : ''}`).join('')}
       </div>
     </div>
   </section>
 
+  ${g.note ? `<section class="section--tight"><div class="wrap"><div class="legal"><p class="small muted" style="border-left:1px solid var(--line);padding-left:1rem">${g.note}</p></div></div></section>` : ''}
+
   ${faqBlock(g.faq, 'Common questions')}
-  ${ctaBand({ eyebrow: 'Put it to use', title: 'Reading is one thing.<br><span class="italic" style="color:var(--brass-lite)">Your room is another.</span>', body: 'Send us your dimensions and we will tell you what actually works in your space — and what it costs. Free, fixed, and yours to keep either way.' })}
+  ${ctaBand(g.cta || { eyebrow: 'Put it to use', title: 'Reading is one thing.<br><span class="italic" style="color:var(--brass-lite)">Your room is another.</span>', body: 'Send us your dimensions and we will tell you what actually works in your space — and what it costs. Free, fixed, and yours to keep either way.' })}
 `,
   }));
 
@@ -2399,5 +3667,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };

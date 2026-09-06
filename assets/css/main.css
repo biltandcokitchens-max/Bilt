@@ -521,6 +521,12 @@ a:hover > .frame img,.card:hover .frame img{ transform:scale(1.04); }
 .legal ul.list-check{ margin:1.25rem 0 1.5rem; }
 .legal a{ color:var(--brass); text-decoration:underline; text-underline-offset:2px; }
 .legal a:hover{ color:var(--ink); }
+/* Buttons inside prose must not inherit the link colour: .legal a beats .btn
+   on specificity, which left brass text on an ink button. */
+.legal .btn{ text-decoration:none; }
+.legal .btn:not(.btn--ghost):not(.btn--outline):not(.btn--light){ color:#FDFBF7; }
+.legal .btn--ghost, .legal .btn--light{ color:var(--ink); }
+.legal .btn--outline{ color:#FDFBF7; }
 
 /* ---------- Fit-out options ---------- */
 .fitout{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:clamp(1rem,2vw,1.75rem); }
@@ -556,3 +562,23 @@ a:hover > .frame img,.card:hover .frame img{ transform:scale(1.04); }
 }
 .intbadge a{ color:var(--brass-lite); text-decoration:underline; margin-left:.4rem; }
 @media (max-width:520px){ .intbadge{ left:.5rem; bottom:.5rem; font-size:.6875rem; } }
+
+/* Direct answer under the lede on guides. Reads in ten seconds and is what
+   Google lifts for a featured snippet. */
+.answer{
+  margin-top:1.75rem; padding:1.15rem 1.35rem;
+  background:var(--brass-wash); border-left:2px solid var(--brass);
+  border-radius:0 var(--radius) var(--radius) 0; max-width:var(--measure);
+}
+.answer .eyebrow{ margin-bottom:.5rem; }
+.answer p:last-child{ margin:0; font-size:1.0625rem; line-height:1.6; color:var(--ink); }
+
+/* Offer card placed mid-article, at the point the reader has their answer. */
+.offer{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:1.5rem; margin:2.75rem 0; padding:1.75rem;
+  background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
+}
+.offer > div{ flex:1 1 22rem; }
+.offer p:last-child{ margin-bottom:0; }
+@media (max-width:640px){ .offer{ padding:1.35rem; } .offer .btn{ width:100%; } }

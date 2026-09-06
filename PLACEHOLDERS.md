@@ -163,6 +163,15 @@ completed projects is misleading conduct.
       Do not also mark /thanks as a conversion or every lead counts twice.
 - [x] Google Search Console set up by the client
 
+## Motorised pull-down shelving
+
+- [ ] **Supplier and price not set.** `motorised-pull-down-shelving.html` and the
+      `motorised-pull-down-overheads` fit-out entry both show "Quoted" rather than a
+      figure, because no unit has been sourced. Once you have a supplier:
+      set the price on the FITOUT entry in `_pages.js`, and decide whether the page
+      keeps "Quoted to spec" (sensible if it stays OT-specified) or shows a from-price.
+      No brand is named anywhere and no funding is promised - keep it that way.
+
 ## Structured data still open
 
 - [ ] **Organisation logo.** `logo` in the LocalBusiness schema currently points

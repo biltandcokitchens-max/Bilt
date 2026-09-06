@@ -40,7 +40,8 @@ const SITE = {
   areas: [
     'Rockhampton', 'North Rockhampton', 'Frenchville', 'Norman Gardens', 'Park Avenue',
     'The Range', 'Gracemere', 'Yeppoon', 'Emu Park', 'Capricorn Coast', 'Mount Morgan',
-    'Blackwater', 'Emerald', 'Gladstone', 'Central Queensland',
+    'Blackwater', 'Emerald', 'Gladstone', 'Tannum Sands', 'Boyne Island', 'Calliope',
+    'Biloela', 'Moura', 'Central Queensland',
   ],
 };
 SITE.addressLine = `${SITE.suburb} ${SITE.state} ${SITE.postcode}`;
@@ -128,12 +129,28 @@ function header(active) {
 }
 
 function footer() {
+  // Two tiers, labelled. Install towns are where our own team works; supply
+  // towns get cabinetry delivered assembled, with nothing claimed about
+  // installation there.
   const areaLinks = [
     ['kitchens.html', 'Rockhampton'],
     ['kitchens-yeppoon.html', 'Yeppoon'],
     ['kitchens-gracemere.html', 'Gracemere'],
     ['kitchens-capricorn-coast.html', 'Capricorn Coast'],
-  ].map(([h, l]) => `<li><a href="${h}">Kitchens ${l}</a></li>`).join('');
+    ['kitchens-gladstone.html', 'Gladstone'],
+    ['kitchens-biloela.html', 'Biloela'],
+  ].map(([h, l]) => `<li><a href="${h}">Kitchens ${l}</a></li>`).join('')
+    + '<li style="margin-top:.9rem;color:#8B8375;font-size:.8125rem">Supply only</li>'
+    + [
+      ['kitchens-brisbane.html', 'Brisbane'],
+      ['kitchens-mackay.html', 'Mackay'],
+      ['kitchens-bundaberg.html', 'Bundaberg'],
+      ['kitchens-emerald.html', 'Emerald'],
+      ['kitchens-blackwater.html', 'Blackwater'],
+      ['kitchens-moranbah.html', 'Moranbah'],
+      ['kitchens-hervey-bay.html', 'Hervey Bay'],
+      ['kitchens-caloundra.html', 'Caloundra'],
+    ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('');
 
   return `<footer class="foot">
     <div class="wrap">
@@ -161,7 +178,14 @@ function footer() {
             <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
             <li><a href="kitchen-islands.html">Kitchen islands</a></li>
             <li><a href="laundries.html">Laundries</a></li>
-            <li><a href="kitchens-caloundra.html">Caloundra supply</a></li>
+            <li><a href="kitchens-caloundra.html">Caloundra supply</a></li>
+            <li><a href="owner-builder-kitchen-supply.html">Owner-builder supply</a></li>
+            <li><a href="accessible-kitchens.html">Accessible kitchens</a></li>
+            <li><a href="sda-kitchens-queensland.html">SDA kitchens</a></li>
+            <li><a href="aging-in-place-kitchens.html">Aging in place</a></li>
+            <li><a href="motorised-pull-down-shelving.html">Pull-down shelving</a></li>
+            <li><a href="kitchens-gladstone.html">Kitchens Gladstone</a></li>
+            <li><a href="kitchens-biloela.html">Kitchens Biloela</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>
             <li><a href="butlers-pantries.html">Butler's pantries</a></li>
             <li><a href="joinery.html">Wardrobes &amp; joinery</a></li>

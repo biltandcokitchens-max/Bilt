@@ -50,6 +50,30 @@
   force = true
 
 [[redirects]]
+  from = "/KEYWORD-MAP-SEQ.csv"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/KEYWORD-STRATEGY-SEQ.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/SEO-ARTICLE-PLAN.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/SEO-JOURNEY-BRAINSTORM.md"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
   from = "/_build.js"
   to = "/404.html"
   status = 404
