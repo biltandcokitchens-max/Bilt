@@ -77,3 +77,8 @@ seq-wide,kitchen colours 2026 australia,informational,supply,2,guide-kitchen-col
 seq-wide,kitchen installer near me,transactional,none,0,,avoid,Near-me intent cannot be served at 600km. Actively wrong to target.,,,
 seq-wide,kitchen showroom brisbane,transactional,none,0,,avoid,No showroom anywhere. Would be a false claim.,,,
 seq-wide,emergency kitchen replacement brisbane,transactional,none,0,,avoid,Unserviceable.,,,
+mackay,granny flat rules mackay,informational,supply,1,guide-granny-flat-rules-mackay-regional.html,owned,Council-specific. Links Mackay Regional directly.,,,
+isaac,granny flat rules moranbah,informational,supply,1,guide-granny-flat-rules-isaac-regional.html,owned,Council-specific. Links Isaac Regional directly. Mining cohort market.,,,
+whitsunday,granny flat rules airlie beach,informational,supply,1,guide-granny-flat-rules-whitsunday-regional.html,owned,Council-specific. Use decides the pathway - holiday let vs family.,,,
+whitsunday,kitchen supply whitsundays,commercial,supply,1,kitchens-whitsundays.html,owned,Supply page. Installation not offered.,,,
+seq-wide,sda design categories,informational,supply,1,guide-sda-design-categories-explained.html,owned,Explains the four categories; feeds the SDA product page.,,,

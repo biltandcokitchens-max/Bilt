@@ -148,7 +148,8 @@ function footer() {
       ['kitchens-emerald.html', 'Emerald'],
       ['kitchens-blackwater.html', 'Blackwater'],
       ['kitchens-moranbah.html', 'Moranbah'],
-      ['kitchens-hervey-bay.html', 'Hervey Bay'],
+      ['kitchens-hervey-bay.html', 'Hervey Bay'],
+      ['kitchens-whitsundays.html', 'Whitsundays'],
       ['kitchens-caloundra.html', 'Caloundra'],
     ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('');
 

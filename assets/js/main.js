@@ -91,6 +91,10 @@
       var b = BENCH[bench] || 0;
       lo += b; hi += b * 1.35;
       extras.forEach(function (k) { lo += EXTRA[k] || 0; hi += (EXTRA[k] || 0) * 1.4; });
+      // Nothing we sell is cheaper than a kitchenette, so no estimate should be.
+      var FLOOR = 4500;
+      if (lo < FLOOR) lo = FLOOR;
+      if (hi < FLOOR) hi = FLOOR;
 
       if (!metres) { out.textContent = 'Enter your run length'; note.textContent = ''; return; }
       out.textContent = fmt(lo) + ' – ' + fmt(hi);
