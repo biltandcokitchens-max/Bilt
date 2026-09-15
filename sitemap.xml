@@ -1,429 +1,1841 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://biltstudio.com.au/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/butlers-pantries</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/joinery</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/wardrobe-robe.jpg</image:loc>
+      <image:title>Built-in robe, fitted in a day</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/wardrobe-walkin.jpg</image:loc>
+      <image:title>Walk-in robe drawers on Blum runners</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/media-wall.jpg</image:loc>
+      <image:title>Media wall, assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/gallery</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/wardrobe-robe.jpg</image:loc>
+      <image:title>Built-in robe, fitted in a day</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/investment</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/process</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/studio-desk.jpg</image:loc>
+      <image:title>Drawn to your measurements</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/studio</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/contact</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-gladstone</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-biloela</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-yeppoon</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-gracemere</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-capricorn-coast</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-caloundra</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-brisbane</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-whitsundays</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-mackay</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-bundaberg</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-emerald</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-blackwater</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-moranbah</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-hervey-bay</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/granny-flat-kitchens-yeppoon</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/short-stay-kitchens-capricorn-coast</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/under-house-kitchens-rockhampton</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/granny-flat-kitchens-gladstone</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/new-build-kitchens-gracemere</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/fit-out</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/wardrobe-robe.jpg</image:loc>
+      <image:title>Built-in robe, fitted in a day</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/tiny-home-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/granny-flat-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/new-build-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/trade</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/flat-pack-kitchens</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/assembled-kitchens</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/flat-pack-kitchenettes</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/diy-flat-pack-kitchens</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/flat-pack-cabinets</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/wardrobe-walkin.jpg</image:loc>
+      <image:title>Walk-in robe drawers on Blum runners</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchenettes</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/short-stay-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchen-islands</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/laundries</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/laundry-room.jpg</image:loc>
+      <image:title>Laundry, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/owner-builder-kitchen-supply</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/accessible-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/sda-kitchens-queensland</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/aging-in-place-kitchens</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/motorised-pull-down-shelving</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guides</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-how-to-order-a-flat-pack-kitchen</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/studio-desk.jpg</image:loc>
+      <image:title>Drawn to your measurements</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-how-long-do-flat-pack-kitchens-last</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-are-flat-pack-kitchens-good-quality</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-how-to-assemble-a-flat-pack-kitchen</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-kitchen-pc-item-new-build-contract</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-how-to-install-a-supplied-kitchen</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rules-isaac-regional</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rules-mackay-regional</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rules-whitsunday-regional</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-how-to-measure-for-a-kitchen</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-sda-design-categories-explained</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rules-qld</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-supply-your-own-kitchen</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-flat-pack-vs-assembled-kitchen</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-multigenerational-living-queensland</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-queenslander-kitchen-renovation</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-garage-conversion-approval-qld</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-tiny-home-laws-qld</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-short-stay-letting-rules-qld</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-owner-builder-permit-qld</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rules-rockhampton</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-flood-damage-kitchen-replacement-rockhampton</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-stone-black.jpg</image:loc>
+      <image:title>Stone on a compact run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-does-a-new-kitchen-add-value</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-granny-flat-rent-rockhampton</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-do-i-need-approval-kitchen-renovation</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-ndis-kitchen-modifications-queensland</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/drawer-detail.jpg</image:loc>
+      <image:title>Blum runners fitted before it leaves</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-brass.jpg</image:loc>
+      <image:title>Mitred stone edge over assembled carcasses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-class-1a-granny-flat-yeppoon</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-04.jpg</image:loc>
+      <image:title>Island with seating overhang</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-02.jpg</image:loc>
+      <image:title>Rangehood set into assembled overheads</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-kitchen-renovation-checklist</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/joinery-sketch.jpg</image:loc>
+      <image:title>Service drawings for your trades</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-kitchen-colours-2026</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-butlers-pantry-worth-it</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-black-cabinetry.jpg</image:loc>
+      <image:title>Kitchenette, delivered assembled</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/splashback-marble-01.jpg</image:loc>
+      <image:title>Full-height stone splashback</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-benchtops-compared</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-marble-close.jpg</image:loc>
+      <image:title>Drawer fronts aligned on the bench, not on site</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-kitchen-layouts</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/matte-black-bank.jpg</image:loc>
+      <image:title>Tall units arrive as built boxes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://biltstudio.com.au/privacy</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/material-samples.jpg</image:loc>
+      <image:title>Samples brought to you</image:title>
+    </image:image>
   </url>
 </urlset>

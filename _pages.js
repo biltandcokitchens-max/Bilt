@@ -22,10 +22,10 @@ module.exports = function (api) {
   function leadForm(opts = {}) {
     const {
       id = 'lead-hero',
-      heading = 'Get your free design &amp; fixed quote',
-      sub = 'Three questions. We call you back within one business day with a real number — not a "from" price.',
-      cta = 'Get my free design',
-      ctaSub = 'No obligation &middot; No deposit &middot; No sales visit unless you want one',
+      heading = 'Send us your rough measurements.<br>We&rsquo;ll send back a price.',
+      sub = 'Five fields. We reply within one business day with a real number, not a "from" price.',
+      cta = 'Get my free quote',
+      ctaSub = 'No deposit &middot; No showroom visit &middot; No salesperson at your door',
     } = opts;
     return `<form class="form-card form" id="${id}" name="quick-enquiry" method="POST"
       action="/thanks" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -41,19 +41,10 @@ module.exports = function (api) {
         <div class="field"><label for="${id}-p">Phone</label><input id="${id}-p" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
       </div>
       <div class="form__row">
+        <div class="field"><label for="${id}-e">Email</label><input id="${id}-e" name="email" type="email" required autocomplete="email" placeholder="jane@example.com.au"></div>
         <div class="field"><label for="${id}-s">Suburb</label><input id="${id}-s" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
-        <div class="field">
-          <label for="${id}-b">Rough budget</label>
-          <select id="${id}-b" name="budget">
-            <option value="">Not sure yet</option>
-            <option>Under $20,000</option>
-            <option>$20,000 – $30,000</option>
-            <option selected>$30,000 – $45,000</option>
-            <option>$45,000 – $65,000</option>
-            <option>$65,000 +</option>
-          </select>
-        </div>
       </div>
+      <div class="field"><label for="${id}-m">Rough measurements <span class="muted">(optional)</span></label><input id="${id}-m" name="message" type="text" placeholder="5.4m wall, 2.4m ceiling, window on the left"></div>
       <button class="btn btn--lg btn--block" type="submit">${cta}<span class="btn__sub">${ctaSub}</span></button>
       <p class="form__note">${svg.shield} Your details stay with our Rockhampton studio. We never sell or share them &mdash; see our <a href="privacy.html">privacy policy</a></p>
     </form>`;
@@ -61,7 +52,7 @@ module.exports = function (api) {
 
   const trustStrip = `<div class="trust">
     <div class="wrap trust__in">
-      <span class="trust__i">${svg.check} 10-year cabinetry warranty</span>
+      <span class="trust__i">${svg.check} Delivered assembled, doors adjusted</span>
       <span class="trust__i">${svg.tool} Specified and installed by us</span>
       <span class="trust__i">${svg.dollar} Fixed-price quotes, no variations</span>
       <span class="trust__i">${svg.shield} Fully insured</span>
@@ -73,7 +64,7 @@ module.exports = function (api) {
     <div class="wrap" style="padding-inline:0">
       <dl class="proof" ${rv()}>
         <div><dt class="tabnums">75+</dt><dd>Kitchens delivered</dd></div>
-        <div><dt class="tabnums">10 yr</dt><dd>Cabinetry warranty</dd></div>
+        <div><dt class="tabnums">18mm</dt><dd>Moisture-resistant board</dd></div>
         <div><dt class="tabnums">Lifetime</dt><dd>Blum hardware warranty</dd></div>
         <div><dt class="tabnums">7&ndash;10</dt><dd>Days on site, typical</dd></div>
       </dl>
@@ -107,7 +98,7 @@ module.exports = function (api) {
             <!-- PLACEHOLDER: update the spots-remaining number, or remove this counter, before launch. See PLACEHOLDERS.md -->
           </div>
           <div>
-            <a class="btn btn--brass btn--lg btn--block" href="contact.html">Claim a design spot<span class="btn__sub">Takes 60 seconds &middot; No deposit</span></a>
+            <a class="btn btn--brass btn--lg btn--block" href="contact.html">Get my free quote<span class="btn__sub">No deposit &middot; No showroom visit &middot; No salesperson at your door</span></a>
             <a class="btn btn--light btn--lg btn--block" href="tel:${T}" style="margin-top:.75rem">Call ${SITE.phone}</a>
             <p class="small" style="color:#A39B8D;margin-top:1rem;text-align:center">Or see real prices first &mdash; <a href="investment.html" style="color:var(--brass-lite);text-decoration:underline">the 2026 price guide</a></p>
           </div>
@@ -118,7 +109,7 @@ module.exports = function (api) {
 
   const GUARANTEES = [
     ['The price does not move', 'Once your design is signed off, the quote is fixed. We have never issued a surprise variation for our own scope of works. If we get a measurement wrong, we wear it.'],
-    ['Ten years, in writing', 'Cabinetry and workmanship, warranted for a decade, backed by Blum’s lifetime mechanical warranty on every hinge and runner we install.'],
+    ['Assembled before it arrives', 'Carcasses built square, Blum hardware fitted, doors hung and adjusted to even gaps. On site it is fitted, not built — and Blum’s lifetime mechanical warranty sits on every hinge and runner.'],
     ['One team, drawing to handover', 'We specify your cabinetry to the millimetre, take delivery of it and install it ourselves. No subcontracted installers — the people in your house are on our payroll and their name is on the job.'],
     ['On the day we said', 'A written site programme before demolition, and a $200-a-day credit back to you for every working day we run past our own completion date.'],
     ['Your drawings are yours', 'If our quote does not work for you, you keep the 3D design and the measured drawings of your own room. No charge, no hard feelings.'],
@@ -131,7 +122,7 @@ module.exports = function (api) {
           <p class="eyebrow" ${rv()}>Risk, removed</p>
           <h2 class="d2" ${rv()} data-rv-d="1">Five promises we<br>put in the contract.</h2>
           <p class="lede mt-2" ${rv()} data-rv-d="2">A kitchen is one of the largest cheques most households ever write to a small business. These are the five things that go wrong most often &mdash; so these are the five things we guarantee.</p>
-          <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="3">Start with a free design</a>
+          <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="3">Get my free quote</a>
         </div>
         <div class="grid" style="gap:1.75rem">
           ${GUARANTEES.map(([h, p], i) => `
@@ -194,14 +185,14 @@ module.exports = function (api) {
         </figure>`).join('')}
       </div>
       <!-- PLACEHOLDER: replace with verified Google reviews and real names before launch. See PLACEHOLDERS.md -->
-      <div class="center mt-3" ${rv()}><a class="link-u" href="contact.html">Book your free design &amp; quote &rarr;</a></div>
+      <div class="center mt-3" ${rv()}><a class="link-u" href="contact.html">Get my free quote &rarr;</a></div>
     </div>
   </section>`;
 
   const COLLECTIONS = [
     { no: '01', name: 'Essence', img: 'matte-black-bank', price: 'From $15,000',
       alt: 'Matte black handleless kitchen cabinetry with integrated appliances',
-      copy: 'Handleless, quiet, exact. Soft-matte doors on Blum soft-close runners with a stone benchtop. Our entry to bespoke — and still nothing like a flat pack.' },
+      copy: 'Handleless, quiet, exact. Soft-matte doors on Blum soft-close runners with a stone benchtop. Our entry to bespoke, drawn to your room rather than picked from a catalogue.' },
     { no: '02', name: 'Maison', img: 'collection-marble-01', price: 'From $26,000', feature: true,
       alt: 'Oak kitchen with full-height marble splashback and stone island, Rockhampton',
       copy: 'What most Rockhampton families build. Timber veneer against a full-height stone splashback, a waterfall island, integrated lighting and a butler’s pantry behind a hidden door.' },
@@ -226,7 +217,7 @@ module.exports = function (api) {
       <p class="eyebrow" ${rv()}>What the kitchen costs</p>
       <div class="split" style="align-items:end;margin-bottom:2rem">
         <h2 class="d2" ${rv()} data-rv-d="1">From a kitchenette<br>to fully bespoke.</h2>
-        <p class="muted" ${rv()} data-rv-d="2">Supplied and installed in Central Queensland; supplied assembled everywhere else in Queensland. Every figure is a real range, not a from-price with the catches left out.</p>
+        <p class="muted" ${rv()} data-rv-d="2">Supplied and installed in Central Queensland; shipped flat pack or assembled anywhere in Australia. Every figure is a real range, not a from-price with the catches left out.</p>
       </div>
       <div class="grid cols-4">
         ${[KITCHENETTE, ...COLLECTIONS].map((c, i) => `
@@ -258,8 +249,8 @@ module.exports = function (api) {
     ['1', 'Free design consultation', 'Ninety minutes at your kitchen table. We measure, photograph and listen — then tell you honestly what your budget buys in 2026.'],
     ['2', '3D design &amp; selections', 'A render of your actual room. We bring the doors, the stone offcuts and the handles to you, so you see them in your own light before anything is locked in.'],
     ['3', 'Your fixed quote', 'One document, every line itemised, signed and fixed. Revisions are free until you are happy. Valid 90 days.'],
-    ['4', 'Made to your millimetres', 'Your cabinetry is manufactured to our specification and your measurements, and arrives assembled — not flat-packed in a carton for somebody to build on your floor.'],
-    ['5', 'Installed &amp; handed over', 'Seven to ten working days with one team and a written programme. Cleaned, adjusted, photographed and warranted for ten years.'],
+    ['4', 'Made to your millimetres', 'Your cabinetry is manufactured to our specification and your measurements. It arrives assembled with doors hung and adjusted, or flat packed and labelled if you would rather build it — your call, both on the quote.'],
+    ['5', 'Installed &amp; handed over', 'Seven to ten working days with one team and a written programme. Cleaned, adjusted, photographed and handed over with the drawings and paperwork.'],
   ];
 
   const processSteps = PROCESS.map(([no, h, p], i) => `
@@ -287,7 +278,7 @@ module.exports = function (api) {
               <p class="lede mt-2" style="max-width:44ch">Every surface here was drawn for one room, specified to the millimetre and installed by the people who drew it.</p>
             </div>
             <div style="display:flex;flex-wrap:wrap;gap:.75rem">
-              <a class="btn btn--light btn--lg" href="contact.html">Get my free design</a>
+              <a class="btn btn--light btn--lg" href="contact.html">Get my free quote</a>
               <a class="btn btn--brass btn--lg" href="gallery.html">See more work</a>
             </div>
           </div>
@@ -322,7 +313,7 @@ module.exports = function (api) {
     { q: 'How much does a new kitchen cost in Rockhampton?', a: 'Most Bilt & Co kitchens land between $15,000 and $51,000 supplied and installed. A compact handleless galley starts around $15,000; a typical Rockhampton family kitchen with a stone island and butler’s pantry sits between $26,000 and $35,000; fully bespoke work begins at $47,000. Our published investment guide breaks down every band line by line, and the estimator gives you a range in about thirty seconds.' },
     { q: 'Is the free design really free?', a: 'Yes. The measure, the 3D render, the material board and the fixed quote cost you nothing and carry no obligation. If our number does not work for you, you keep the drawings of your own room. We can afford to do this because we carry no showroom and no franchise fee — that overhead goes into your kitchen instead.' },
     { q: 'How long does a kitchen take?', a: 'Eight to twelve weeks from signed quote to handover. Design and documentation takes two to three weeks, manufacture to your specification four to six, and installation is typically seven to ten working days on site.' },
-    { q: 'Who makes the cabinetry?', a: 'It is manufactured to our specification and your measurements by the maker we have chosen and stay with, and delivered to us assembled rather than flat-packed. We draw it, we specify every carcass, hinge and runner, we check each unit before it goes in, and we install it with our own team. It is warranted by us for ten years — if something is wrong, it is ours to fix and there is nobody for us to point at.' },
+    { q: 'Who makes the cabinetry?', a: 'It is manufactured to our specification and your measurements by the maker we have chosen and stay with, and delivered assembled or flat packed, whichever you order. We draw it, we specify every carcass, hinge and runner, we check each unit before it goes in, and we install it with our own team. If something is wrong, it is ours to fix and there is nobody for us to point at.' },
     { q: 'Do you service Yeppoon and the Capricorn Coast?', a: 'Yes — Yeppoon, Emu Park, Gracemere, Mount Morgan and the wider Capricorn Coast are inside our standard service area at no travel loading. We also work through Gladstone, Emerald and Blackwater on larger projects.' },
     { q: 'Can I use my own builder and trades?', a: 'Absolutely. We work alongside your trades weekly and can hand them a full set of service drawings, or we can coordinate the whole renovation as a single point of contact. Both are priced transparently so you can choose on merit.' },
   ];
@@ -330,7 +321,7 @@ module.exports = function (api) {
   const home = {
     file: 'index.html',
     title: 'Kitchen Renovations Rockhampton | Free Design — Bilt & Co',
-    desc: 'Custom kitchen renovations in Rockhampton from $15,000. Free 3D design and fixed-price quote, installed by one local team, 10-year warranty.',
+    desc: 'Custom kitchen renovations in Rockhampton from $15,000. Free 3D design and fixed-price quote, delivered assembled and installed by one local team.',
     og: 'collection-marble-01',
     preload: 'collection-marble-01',
     faq: homeFaq,
@@ -341,14 +332,14 @@ module.exports = function (api) {
       <div>
         <span class="pill" ${rv()}>Only <b class="tabnums" data-spots data-spots-start="${SITE.spotsPerMonth}">${spotsNow()}</b> free design <span data-spots-plural>spots</span> left this month</span>
         <h1 class="d1" ${rv()} data-rv-d="1">The kitchen<br>Rockhampton<br><span class="italic brass">talks about.</span></h1>
-        <p class="lede" ${rv()} data-rv-d="2">Bespoke kitchens drawn, specified and installed by one local team &mdash; with a free 3D design, a fixed price that does not move, and a ten-year warranty in writing.</p>
+        <p class="lede" ${rv()} data-rv-d="2">Bespoke kitchens drawn to your room and delivered assembled &mdash; doors hung, hardware fitted, nothing to build on the floor &mdash; with a free 3D design and a fixed price that does not move.</p>
         <div class="badge-row mt-2" ${rv()} data-rv-d="3">
           <span class="badge">Free 3D design &amp; quote</span>
           <span class="badge">Fixed price, no variations</span>
           <span class="badge">Installed by our own team</span>
         </div>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
-          <a class="btn btn--lg" href="#lead-hero">Get my free design</a>
+          <a class="btn btn--lg" href="#lead-hero">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See real prices first</a>
         </div>
       </div>
@@ -373,7 +364,7 @@ module.exports = function (api) {
         <p class="eyebrow" ${rv()}>Why Bilt &amp; Co</p>
         <h2 class="d2" ${rv()} data-rv-d="1">You will open these<br>drawers <span class="italic brass">40,000 times.</span></h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">A kitchen is the most-touched thing you will ever buy. It should feel expensive every morning &mdash; not just in the photos taken the week it was finished.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we specify to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Blum hardware with a lifetime mechanical warranty. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it for ten years.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we specify to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Blum hardware with a lifetime mechanical warranty. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it.</p>
         <a class="link-u mt-3" href="studio.html" ${rv()} data-rv-d="4">Meet the workshop &rarr;</a>
       </div>
     </div>
@@ -407,7 +398,7 @@ module.exports = function (api) {
         <p class="muted" ${rv()} data-rv-d="2">The biggest complaint about renovations is not cost &mdash; it is not knowing what happens next, or who to call. Here is exactly what happens next.</p>
       </div>
       <div class="grid cols-3">${processSteps}</div>
-      <div class="mt-3" ${rv()}><a class="btn" href="contact.html">Start at step one &mdash; it's free</a></div>
+      <div class="mt-3" ${rv()}><a class="btn" href="contact.html">Get my free quote</a></div>
     </div>
   </section>
 
@@ -440,7 +431,7 @@ module.exports = function (api) {
   /* ============================================================= KITCHENS */
 
   const kitchensFaq = [
-    { q: 'What is the difference between a custom kitchen and a flat pack?', a: 'A flat pack is built from a fixed catalogue of cabinet sizes, so your room gets filled with filler panels and compromise. A Bilt & Co kitchen is drawn to the millimetre for your walls, your appliances and your height. We also use 18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard, where flat packs typically use 16mm board, glued edging and unbranded runners.' },
+    { q: 'What is the difference between a custom kitchen and a flat pack?', a: 'A catalogue flat pack is built from fixed cabinet widths, so your room gets filled with filler panels and compromise, usually in 16mm board with glued edging and unbranded runners. Every Bilt & Co kitchen is drawn to the millimetre for your walls, your appliances and your height in 18mm moisture-resistant board with laser-bonded edging and Blum hardware — and you can have it <a href="/flat-pack-kitchens">flat packed</a> or <a href="/assembled-kitchens">delivered assembled</a>. Custom and flat pack are not opposites here.' },
     { q: 'Do you replace just doors and benchtops?', a: 'Yes. If your carcasses are sound and the layout works, replacing doors, drawer fronts, hardware and the benchtop can transform a kitchen for a fraction of a rebuild. We will tell you honestly at the first visit which option makes sense — even when the smaller job is worth less to us.' },
     { q: 'Which benchtop is best in Central Queensland?', a: 'Engineered porcelain and sintered stone are the most forgiving here — heat resistant, UV stable and non-porous, which matters when a benchtop sits in afternoon sun. Natural marble is the most beautiful and the least forgiving. We will show you both with real offcuts, in your own kitchen light.' },
     { q: 'How long will I be without a kitchen?', a: 'Typically seven to ten working days on site, with a two to three day gap while stone is templated and cut. We can set up a temporary kitchen and we always keep water and a fridge running.' },
@@ -451,7 +442,7 @@ module.exports = function (api) {
     file: 'kitchens.html',
     service: { name: "Bespoke kitchen design and installation", type: "Kitchen renovation" },
     title: 'Custom Kitchens Rockhampton | Design & Install — Bilt & Co',
-    desc: 'Custom kitchens designed and installed in Rockhampton. Three collections from $15,000, free 3D design, fixed quotes, 10-year warranty.',
+    desc: 'Custom kitchens designed and installed in Rockhampton. Three collections from $15,000, free 3D design, fixed quotes, delivered assembled.',
     og: 'collection-marble-04',
     preload: 'collection-marble-04',
     faq: kitchensFaq,
@@ -462,13 +453,13 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Kitchens']])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">Rockhampton.</span></h1>
-        <p class="lede">Every kitchen drawn from a blank page for one room and one household &mdash; specified to the millimetre, delivered assembled and installed by our own team.</p>
+        <p class="lede">Every kitchen drawn from a blank page for one room and one household &mdash; specified to the millimetre, delivered with the assembly already done, and installed by our own team.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Get my free 3D design</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
         </div>
         <div class="badge-row mt-2">
-          <span class="badge">Fixed price</span><span class="badge">10-year warranty</span><span class="badge">Fully insured</span>
+          <span class="badge">Fixed price</span><span class="badge">Delivered assembled</span><span class="badge">Fully insured</span>
         </div>
       </div>
       <div>${frame('collection-marble-04', 'Custom oak and marble kitchen designed and installed by Bilt & Co in Rockhampton', 'wide', { eager: true })}</div>
@@ -510,7 +501,7 @@ module.exports = function (api) {
     ]).map((li) => `<li>${li}</li>`).join('\n            ')}
           </ul>
           <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
-            <a class="btn" href="contact.html">Design my ${c.name} kitchen</a>
+            <a class="btn" href="contact.html">Get my free quote</a>
             <a class="btn btn--ghost" href="investment.html">What's included</a>
           </div>
         </div>
@@ -613,7 +604,7 @@ module.exports = function (api) {
         <p class="eyebrow" ${rv()}>Rockhampton, specifically</p>
         <h2 class="d2" ${rv()} data-rv-d="1">Three rooms we<br>see constantly.</h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">Housing stock here is distinctive, and the same three projects come across our table most weeks.</p>
-        <a class="link-u mt-3" href="contact.html" ${rv()} data-rv-d="3">Tell us about yours &rarr;</a>
+        <a class="link-u mt-3" href="contact.html" ${rv()} data-rv-d="3">Get my free quote &rarr;</a>
       </div>
       <div ${rv()} data-rv-d="1">
         <ul class="list-check">
@@ -677,9 +668,9 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', "Butler's Pantries"]])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Butler's pantries<br><span class="italic brass">that earn the door.</span></h1>
-        <p class="lede">The room that lets your kitchen stay beautiful while the actual cooking happens somewhere else. From $4,000 alongside a new kitchen.</p>
+        <p class="lede">The room that lets your kitchen stay beautiful while the actual cooking happens somewhere else. From $4,000 alongside a new kitchen, delivered as built units that go in the same day.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Get my free design</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="tel:${T}">Call ${SITE.phone}</a>
         </div>
       </div>
@@ -724,7 +715,7 @@ module.exports = function (api) {
           <h3>${h}</h3>
           <div class="tier__price" style="font-size:clamp(1.35rem,2vw,1.75rem)">${p}<small>Supplied &amp; installed</small></div>
           <p class="small muted" style="margin-top:1.25rem">${c}</p>
-          <a class="btn${i === 1 ? '' : ' btn--ghost'} btn--block" href="contact.html" style="margin-top:1.75rem">Get a fixed quote</a>
+          <a class="btn${i === 1 ? '' : ' btn--ghost'} btn--block" href="contact.html" style="margin-top:1.75rem">Get my free quote</a>
         </div>`).join('')}
       </div>
       <p class="small muted mt-2" ${rv()}>Indicative for Rockhampton in 2026, assuming the pantry is built alongside a Bilt &amp; Co kitchen. Standalone projects are quoted individually.</p>
@@ -762,9 +753,9 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Joinery']])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Joinery for<br><span class="italic brass">the whole house.</span></h1>
-        <p class="lede">Wardrobes, laundries, vanities, studies and media walls &mdash; detailed by the same hands that build our kitchens, in the same finishes, to the same standard.</p>
+        <p class="lede">Wardrobes, laundries, vanities, studies and media walls &mdash; the same carcasses, hardware and finishes as our kitchens, delivered assembled so a robe is fitted in a morning rather than built over a weekend.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Get my free design</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="gallery.html">See the work</a>
         </div>
       </div>
@@ -788,7 +779,7 @@ module.exports = function (api) {
           <p class="card__price">${p}</p>
           <h2 class="d3">${h}</h2>
           <p class="muted mt-1">${c}</p>
-          <a class="link-u mt-2" href="contact.html">Get a fixed quote &rarr;</a>
+          <a class="link-u mt-2" href="contact.html">Get my free quote</a>
         </div>
       </div>`).join('')}
     </div>
@@ -802,7 +793,7 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Build it all<br>at once and save.</h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">Kitchens designed in isolation from the rest of the house always look like it &mdash; veneer running the wrong way against the media wall, laundry doors a shade off, a vanity with different handles because it was bought two years later.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="3">Documented together, the house reads as one piece of work &mdash; and clients typically save ten to fifteen percent on joinery they were always going to build eventually.</p>
-        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Plan the whole house</a>
+        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Get my free quote</a>
       </div>
     </div>
   </section>
@@ -862,7 +853,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Finishes,<br><span class="italic brass">layouts and detail.</span></h1>
         <p class="lede">Twenty-four references covering the combinations we are asked for most often &mdash; what each material actually looks like in a room, and what it does to the price.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Design mine</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">What these cost</a>
         </div>
       </div>
@@ -923,7 +914,7 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Bring us a picture<br>you like.</h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">You do not need to know what the finish is called — though <a href="guide-kitchen-colours-2026.html" style="color:var(--brass)">what people are choosing in 2026</a> is worth five minutes if you are starting from scratch. Screenshot anything &mdash; from here, from Instagram, from a friend&rsquo;s house &mdash; and we will tell you what it is, what it costs, and whether it will survive a Central Queensland summer.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="3">That last part matters more than people expect. Some finishes that photograph beautifully in a Melbourne apartment do not belong in a room that gets afternoon sun in February.</p>
-        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Send us your reference</a>
+        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="4">Get my free quote</a>
       </div>
       <div ${rv()} data-rv-d="1">${frame('material-samples', 'Timber veneer and finish samples on a workbench', 'wide')}</div>
     </div>
@@ -996,7 +987,7 @@ module.exports = function (api) {
           <h3>${n}</h3>
           <div class="tier__price">${p}<small>Supplied &amp; installed</small></div>
           <ul>${items.map((x) => `<li>${x}</li>`).join('')}</ul>
-          <a class="btn${feat ? '' : ' btn--ghost'} btn--block" href="contact.html">Get a fixed quote</a>
+          <a class="btn${feat ? '' : ' btn--ghost'} btn--block" href="contact.html">Get my free quote</a>
         </div>`).join('')}
       </div>
       <p class="small muted mt-2" ${rv()}>Ranges assume 6&ndash;9 linear metres in the Rockhampton region and exclude appliances, plumbing, electrical, flooring and structural work. Every quote itemises these separately.</p>
@@ -1010,7 +1001,7 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Work out your<br>own number.</h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">Measure the total length of your cabinetry runs, including the island. This gives you the same range we would give you on the phone.</p>
         <p class="mt-2 muted small" ${rv()} data-rv-d="3">An estimate, not a quote. A real fixed quote follows a free site measure and takes about a week.</p>
-        <div class="mt-3" ${rv()} data-rv-d="4"><a class="btn" href="contact.html">Turn this into a fixed quote</a></div>
+        <div class="mt-3" ${rv()} data-rv-d="4"><a class="btn" href="contact.html">Get my free quote</a></div>
       </div>
       <form id="estimator" class="form form-card" ${rv()} data-rv-d="1" onsubmit="return false">
         <div class="form__row">
@@ -1050,7 +1041,7 @@ module.exports = function (api) {
           <p class="val tabnums" data-est-out style="margin:0">&mdash;</p>
           <p class="note" data-est-note style="margin:0"></p>
         </div>
-        <a class="btn btn--block" href="contact.html">Get this priced properly &mdash; free</a>
+        <a class="btn btn--block" href="contact.html">Get my free quote</a>
       </form>
     </div>
   </section>
@@ -1098,8 +1089,8 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Process']])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Eight to twelve weeks,<br><span class="italic brass">written down.</span></h1>
-        <p class="lede">The worst part of a renovation is not the cost. It is not knowing what happens next, or who to call. Here is the whole thing, in order.</p>
-        <div class="mt-3"><a class="btn btn--lg" href="contact.html">Start at week zero &mdash; free</a></div>
+        <p class="lede">The worst part of a renovation is not the cost. It is not knowing what happens next, or who to call. Here is the whole thing, in order &mdash; including why the kitchen arrives built and what that does to the timeline.</p>
+        <div class="mt-3"><a class="btn btn--lg" href="contact.html">Get my free quote</a></div>
       </div>
       <div>${frame('studio-desk', 'Design studio desk with drawings and material samples', 'wide', { eager: true })}</div>
     </div>
@@ -1126,7 +1117,7 @@ module.exports = function (api) {
         ['Weeks 4–9', 'Your cabinetry is manufactured to specification. Your trades are booked and a written site programme is issued.'],
         ['Week 9', 'Demolition and site preparation. Temporary kitchen set up if you need one.'],
         ['Weeks 10–11', 'Cabinetry installation, stone template and install, splashback, plumbing and electrical fit-off.'],
-        ['Week 12', 'Adjustment, cleaning, photography, handover pack and the start of your ten-year warranty.'],
+        ['Week 12', 'Adjustment, cleaning, photography and the handover pack: drawings, hardware details and every certificate.'],
       ].map(([w, d], i) => `
         <details${i === 0 ? ' open' : ''}>
           <summary>${w}</summary>
@@ -1147,7 +1138,7 @@ module.exports = function (api) {
           <li><strong>Decisions at the decision points.</strong> Once manufacture starts, changes cost real money. We flag every point of no return in advance.</li>
           <li><strong>Access.</strong> Ten working days of clear site access, and somewhere to park a van.</li>
         </ul>
-        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="3">Book my free consultation</a>
+        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="3">Get my free quote</a>
       </div>
     </div>
   </section>
@@ -1173,7 +1164,7 @@ module.exports = function (api) {
       <div>
         ${crumbs([['index.html', 'Home'], ['#', 'Studio']])}
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">A design studio,<br><span class="italic brass">not a shopfront.</span></h1>
-        <p class="lede">Not a retailer. Not a franchise. Bilt &amp; Co draws every kitchen it sells, specifies it to the millimetre, and installs it with its own team.</p>
+        <p class="lede">Not a retailer. Not a franchise. Bilt &amp; Co draws every kitchen it sells, specifies it to the millimetre, has it delivered assembled, and installs it with its own team.</p>
         <div class="badge-row mt-3">
           <span class="badge">${SITE.legalNameHtml}</span>
           <span class="badge">ACN ${SITE.acn}</span>
@@ -1195,7 +1186,7 @@ module.exports = function (api) {
       <div>
         <p class="lede" ${rv()} data-rv-d="1">Most kitchen companies in Central Queensland are a shopfront with a supply chain behind it. A salesperson takes your deposit, a designer in another city draws your room, a factory somewhere else cuts the boxes, and a subcontractor you have never met turns up to install them.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="2">Bilt &amp; Co is the other model. The person who measures your kitchen designs it. The specification is ours, down to the millimetre. The installers are on our payroll. When something is not right &mdash; and occasionally something is not right &mdash; there is nobody for us to blame, so we simply fix it.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="3">That is also why we can put ten years in writing on cabinetry and workmanship. It is not a marketing line; it is what happens when one studio owns the drawing, the specification and the installation, and intends to be answering the phone in ten years.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">That is also why the phone is answered by the people who drew and fitted the kitchen. It is not a marketing line; it is what happens when one studio owns the drawing, the specification and the installation, and intends to be answering that phone for years.</p>
       </div>
     </div>
   </section>
@@ -1230,7 +1221,7 @@ module.exports = function (api) {
         <div class="mt-2" ${rv()} data-rv-d="4">
           ${SITE.hours.map(([d, t]) => `<p class="small muted" style="margin-bottom:.3rem">${d} &mdash; <strong style="font-weight:600">${t}</strong></p>`).join('')}
         </div>
-        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="5">Book a consultation</a>
+        <a class="btn mt-3" href="contact.html" ${rv()} data-rv-d="5">Get my free quote</a>
       </div>
     </div>
   </section>
@@ -1271,54 +1262,24 @@ module.exports = function (api) {
           <input type="hidden" name="form-name" value="consultation">
           <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-card__head">
-            <h2 class="d4">Book your free design consultation</h2>
-            <p class="small muted" style="margin:0">Takes about 60 seconds. No deposit, no sales visit unless you want one.</p>
+            <h2 class="d4">Send us your rough measurements.<br>We&rsquo;ll send back a price.</h2>
+            <p class="small muted" style="margin:0">Rough is fine &mdash; wall lengths, ceiling height, where the window is. You get a confirmation straight away and a call within one business day.</p>
           </div>
-                    <div class="form__row">
+          <div class="form__row">
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
             <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
           </div>
           <div class="form__row">
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@example.com.au"></div>
-            <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
+            <div class="field"><label for="suburb">Suburb or town</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
           </div>
           <div class="field">
-            <label>What are you building?</label>
-            <div class="chips">
-              ${['Kitchen', "Butler's pantry", 'Wardrobes', 'Laundry', 'Vanities', 'Whole house'].map((s, i) => `<label class="chip"><input type="checkbox" name="scope" value="${s}"${i === 0 ? ' checked' : ''}><span>${s}</span></label>`).join('\n              ')}
-            </div>
+            <label for="message">Rough measurements, or what you&rsquo;re after</label>
+            <textarea id="message" name="message" rows="4" placeholder="Kitchen is 5.4m along one wall, 2.4m ceiling, window on the left. Want an island if it fits. Granny flat, so a kitchenette might do."></textarea>
           </div>
-          <div class="form__row">
-            <div class="field">
-              <label for="budget">Investment range</label>
-              <select id="budget" name="budget">
-                <option value="">Prefer not to say</option>
-                <option>Under $20,000</option>
-                <option>$20,000 – $30,000</option>
-                <option selected>$30,000 – $45,000</option>
-                <option>$45,000 – $65,000</option>
-                <option>$65,000 +</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="timeline">Timeline</label>
-              <select id="timeline" name="timeline">
-                <option>As soon as possible</option>
-                <option selected>Within 3 months</option>
-                <option>3 – 6 months</option>
-                <option>6 – 12 months</option>
-                <option>Just researching</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="message">Tell us about the room</label>
-            <textarea id="message" name="message" rows="4" placeholder="1970s Queenslander in Frenchville, kitchen is 5.4m along one wall with a bad island. We cook every night and hate the bench height."></textarea>
-          </div>
-          <button class="btn btn--lg btn--block" type="submit">Get my free design &amp; quote<span class="btn__sub">We reply within one business day</span></button>
+          <button class="btn btn--lg btn--block" type="submit">Get my free quote<span class="btn__sub">No deposit &middot; No showroom visit &middot; No salesperson at your door</span></button>
+          <p class="form__note">Or call <a href="tel:${SITE.phoneHref}">${SITE.phone}</a> &mdash; you get the person who designs it, not a call centre.</p>
           <p class="form__note">${svg.shield} Your details stay with our studio &mdash; never sold, never shared &mdash; see our <a href="privacy.html">privacy policy</a></p>
-          <!-- PLACEHOLDER: this form opens the visitor's email client. Connect a real form handler
-               (Netlify Forms, Formspree or a CRM endpoint) before launch. See PLACEHOLDERS.md -->
         </form>
       </div>
     </div>
@@ -1367,10 +1328,11 @@ module.exports = function (api) {
     const faq = [
       { q: `Do you build kitchens in ${place}?`, a: `Yes. ${travel}` },
       { q: `How much does a kitchen cost in ${place}?`, a: `The same as Rockhampton: $15,000 to $23,000 for our Essence collection, $26,000 to $42,000 for Maison, and $47,000 and up for fully bespoke Atelier work. We do not charge a premium for ${place} projects.` },
-      { q: `Will your own team install it?`, a: `Yes. Our employed installation team works across the region every week — we do not subcontract ${place} jobs to a third party. Same crew, same ten-year warranty.` },
+      { q: `Will your own team install it?`, a: `Yes. Our employed installation team works across the region every week — we do not subcontract ${place} jobs to a third party. Same crew, same drawings, same standard.` },
       { q: `Is the design consultation really free in ${place}?`, a: `Yes — the site measure, the 3D design and the fixed quote are free anywhere in our service area, ${place} included. If our number does not work for you, you keep the drawings.` },
     ];
     return {
+      assembled: 'install',
       file: `kitchens-${slug}.html`,
       service: { name: `Kitchen design and installation in ${place}`, type: 'Kitchen renovation', areas: [place] },
       title: `Kitchen Renovations ${tp} | Free Design — Bilt & Co`,
@@ -1389,7 +1351,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Custom kitchens,<br><span class="italic brass">${place}.</span></h1>
         <p class="lede">${blurb}</p>
       </div>
-      <div>${leadForm({ id: 'lead-area', heading: `Free design for your ${tp} kitchen`, sub: 'We site measure in ' + place + ' weekly. Tell us where you are and we will call within one business day.', cta: `Book my ${tp} site measure` })}</div>
+      <div>${leadForm({ id: 'lead-area', heading: `Free design for your ${tp} kitchen`, sub: 'We site measure in ' + place + ' weekly. Tell us where you are and we will call within one business day.', cta: 'Get my free quote' })}</div>
     </div>
   </section>
 
@@ -1402,12 +1364,12 @@ module.exports = function (api) {
         <h2 class="d2" ${rv()} data-rv-d="1">Local enough<br>to be accountable.</h2>
       </div>
       <div>
-        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is designed, supplied and installed by Bilt &amp; Co &mdash; ${opts.leadNote || 'no travel loading'}, no subcontracted installers, and the same ten-year warranty we give a job in Rockhampton itself.</p>
+        <p class="lede" ${rv()} data-rv-d="1">Every ${tp} kitchen is designed, supplied and installed by Bilt &amp; Co &mdash; ${opts.leadNote || 'no travel loading'}, no subcontracted installers, and the cabinetry arrives assembled exactly as it does for a job in Rockhampton itself.</p>
         <p class="mt-2 muted" ${rv()} data-rv-d="2">We site measure across ${place} and the surrounding area weekly. We will come to your kitchen table with a tape and a camera, at a time that suits you.</p>
         <div class="area-tags mt-3" ${rv()} data-rv-d="3">${suburbs.map((s) => `<span>${s}</span>`).join('')}</div>
         ${opts.related ? `<p class="small muted mt-2">Also in ${tp}: ${opts.related.map((r) => `<a href="${r[0]}" style="color:var(--brass)">${r[1]}</a>`).join(" &middot; ")}</p>` : ''}
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
-          <a class="btn" href="contact.html">Book a free ${tp} site measure</a>
+          <a class="btn" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost" href="investment.html">See the price bands</a>
         </div>
       </div>
@@ -1471,7 +1433,7 @@ module.exports = function (api) {
       suburbs: ['Yeppoon', 'Cooee Bay', 'Lammermoor', 'Taranganba', 'Barmaryee', 'Farnborough', 'Zilzie', 'Emu Park', 'Mulambin', 'Kinka Beach'],
     }),
     areaPage('gracemere', 'Gracemere', {
-      related: [['/new-build-kitchens-gracemere', 'new build kitchens in Gracemere']],
+      related: [['/guide-kitchen-pc-item-new-build-contract', 'the kitchen PC item explained'], ['/new-build-kitchens-gracemere', 'new build kitchens in Gracemere']],
       drive: '15 minutes', image: 'island-calacatta',
       alt: 'Bright kitchen with marble waterfall island, Gracemere',
       blurb: 'New builds and growing families, fifteen minutes from our door. Gracemere is one of the busiest postcodes on our board.',
@@ -1609,7 +1571,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,4rem)">Every cabinet<br><span class="italic brass">can go further.</span></h1>
         <p class="lede">Soft-close is the standard. Motion is the option. Pull-down overheads, blind-corner pull-outs and lift systems &mdash; drawn into your layout at design stage, not bolted on afterwards.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Get these priced for your kitchen</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the collections</a>
         </div>
       </div>
@@ -1719,7 +1681,7 @@ module.exports = function (api) {
       title: 'Tiny Home Kitchens | Compact Runs from $5,300 | Bilt & Co',
       desc: 'Compact kitchens for tiny homes, from $5,300. Full-size hardware in a 1.8–2.4m run, delivered assembled and built to be lived in every day.',
       h1: 'Tiny home kitchens,<br><span class="italic brass">without the compromise.</span>',
-      lede: 'A small kitchen is harder to design than a large one. Every millimetre is spoken for, and there is nowhere to hide a mistake.',
+      lede: 'A small kitchen is harder to design than a large one. Every millimetre is spoken for, and there is nowhere to hide a mistake. It arrives as a handful of built units and is in the same day.',
       img: 'galley-stone',
       alt: 'Compact galley kitchen with stone benchtop and full-height storage',
       price: 'From $5,300',
@@ -1734,14 +1696,14 @@ module.exports = function (api) {
         'Blum soft-close hinges and full-extension runners throughout',
         '18mm moisture-resistant carcasses, laser-bonded edging',
         'Stone, porcelain or laminate benchtop',
-        'Delivered assembled — not flat-packed in a carton',
+        'Delivered assembled, or flat packed if you would rather build it',
         'Repeat pricing for builders doing multiple units',
       ],
       faq: [
         { q: 'How much is a tiny home kitchen?', a: 'A 1.8m run starts at about $5,300 and a 2.4m run at about $6,500, supplied with carcasses, doors, Blum hardware and a benchtop. The exact figure depends on your run length, benchtop material and whether you want fit-out options like a pull-down overhead. Draw it in the estimator or send us your dimensions for a fixed quote.' },
         { q: 'Can you work to a trailer build?', a: 'Yes, and we would rather know early. Tell us the trailer dimensions, the axle position and where your services come up, and we will design the cabinetry so the weight sits where your engineer wants it rather than where the kitchen happens to fall.' },
         { q: 'Do you supply tiny home builders repeatedly?', a: 'Yes — this is a large part of what we do. If you build multiple units to a repeating layout, we hold your specification so each order is a confirmation rather than a fresh design, and pricing reflects the volume. Talk to us about a trade account.' },
-        { q: 'Is it delivered flat packed?', a: 'No. Your cabinetry arrives assembled. You are fitting a kitchen, not building one on the floor of a shell you still have to finish.' },
+        { q: 'Is it delivered flat packed?', a: 'Your choice. Assembled means you are fitting a kitchen, not building one on the floor of a shell you still have to finish. Flat pack ships for less and gets into tight rooms. The quote shows both.' },
       ],
     },
     {
@@ -1752,7 +1714,7 @@ module.exports = function (api) {
       title: 'Granny Flat Kitchens | From $6,500 Installed | Bilt & Co',
       desc: 'Kitchens for granny flats and secondary dwellings from $6,500. Durable, tenant-ready cabinetry in a 2.4–3.0m run, delivered assembled.',
       h1: 'Granny flat kitchens<br><span class="italic brass">that outlast the tenant.</span>',
-      lede: 'A secondary dwelling kitchen has a harder life than a main one and usually a smaller budget. Those two facts fight each other, and cheap cabinetry loses.',
+      lede: 'A secondary dwelling kitchen has a harder life than a main one and usually a smaller budget. Those two facts fight each other, and cheap cabinetry loses. Ours arrives assembled, so the builder is fitting it, not building it.',
       img: 'matte-black-bank',
       alt: 'Compact handleless kitchen with integrated appliances for a secondary dwelling',
       price: 'From $6,500',
@@ -1768,7 +1730,7 @@ module.exports = function (api) {
         'Blum hardware with a lifetime mechanical warranty',
         'Stone, porcelain or laminate benchtop',
         'Delivered assembled and installed by our own team',
-        'Ten-year warranty on cabinetry and workmanship',
+        'Delivered assembled, doors adjusted before it arrives',
       ],
       faq: [
         { q: 'How much is a granny flat kitchen?', a: 'A 2.4m run starts at about $6,500 and a 3.0m run at about $7,700, including carcasses, doors, Blum hardware and a benchtop. Add a stone benchtop or fit-out options and it rises from there. Send us the dimensions and we will give you a fixed quote.' },
@@ -1779,13 +1741,13 @@ module.exports = function (api) {
     },
     {
       file: 'new-build-kitchens.html',
-    related: [['/new-build-kitchens-gracemere', 'in Gracemere']],
+    related: [['/guide-kitchen-pc-item-new-build-contract', 'the kitchen PC item explained'], ['/new-build-kitchens-gracemere', 'in Gracemere']],
       slug: 'new-builds',
       nav: 'New build kitchens',
       title: 'New Build Kitchens Rockhampton | Bilt & Co',
       desc: 'Upgrading from the builder’s standard kitchen in a new build. Fixed pricing, service drawings for your trades, and delivery to your construction programme.',
       h1: 'The kitchen your builder<br><span class="italic brass">did not quote you.</span>',
-      lede: 'The standard kitchen in a new build contract is chosen to hit a price, not to suit how you cook. Upgrading it is the single highest-value change most people make to a new home.',
+      lede: 'The standard kitchen in a new build contract is chosen to hit a price, not to suit how you cook. Upgrading it is the single highest-value change most people make to a new home &mdash; and because ours arrives assembled, it drops into the builder’s programme at fit-off without adding days.',
       img: 'openplan-long',
       alt: 'Open plan new build kitchen with long island bench',
       price: 'From $15,000',
@@ -1801,7 +1763,7 @@ module.exports = function (api) {
         'Full service drawings for your plumber and electrician',
         'Booked against your builder’s programme, not ours',
         'Delivered assembled; typical install seven to ten working days',
-        'Ten-year warranty on cabinetry and workmanship',
+        'Delivered assembled, doors adjusted before it arrives',
       ],
       faq: [
         { q: 'Can I use my own kitchen supplier in a new build?', a: 'Usually yes. Most contracts carry a provisional sum or prime cost allowance for the kitchen, and most builders will credit it if you supply your own. Ask early — before the kitchen is ordered — and ask for the allowance figure in writing so you can compare properly.' },
@@ -1814,10 +1776,10 @@ module.exports = function (api) {
       file: 'trade.html',
       slug: 'trade',
       nav: 'Trade & builders',
-      title: 'Trade Kitchen Supply for Builders | Bilt & Co',
-      desc: 'Kitchen and joinery supply for builders, tiny home makers and granny flat specialists. Fixed pricing, held specifications, delivered assembled.',
+      title: 'Trade Flat Pack & Assembled Kitchens for Builders',
+      desc: 'Trade flat pack and assembled kitchen supply for builders, tiny home makers and granny flat specialists. Held specs, fixed pricing, shipped Australia-wide.',
       h1: 'For builders who need<br><span class="italic brass">the same kitchen, again.</span>',
-      lede: 'If you build repeatedly, the value is not in a clever design. It is in a specification that does not change, a price that does not move and a delivery that arrives when it said it would.',
+      lede: 'If you build repeatedly, the value is not in a clever design. It is in a specification that does not change, a price that does not move, and cabinetry that arrives assembled so your carpenter fits it in a day instead of building it for three.',
       img: 'detail-timber-joinery',
       alt: 'Timber joinery detail showing cabinetry construction quality',
       price: 'Trade pricing',
@@ -1826,25 +1788,207 @@ module.exports = function (api) {
         ['We hold your specification', 'Once we have built a kitchen for one of your units, that specification stays on file — carcass, doors, hardware, benchtop, the lot. The next order is a confirmation, not a fresh design process. For anyone building repeating layouts, that removes the single most time-consuming part of ordering a kitchen.'],
         ['Supply only, or supply and install', 'Take delivery assembled and fit it with your own crew, or have our team install it. If you are speccing for a client, <a href="guide-benchtops-compared.html" style="color:var(--brass)">the benchtop guide</a> is the fastest way to explain the price difference to them. Most builders start with the first and move to the second once they have seen how long it takes us. Either way you get service drawings so your trades rough in correctly.'],
         ['Fixed price, and it stays fixed', 'Your quote is itemised and it holds. We have never issued a surprise variation for our own scope of works, which matters more to a builder carrying the risk on a fixed-price contract than it does to a homeowner.'],
+        ['Trade flat pack, or assembled: your crew decides', `The same kitchen ships either way. Flat pack when your carpenter would rather build on site, the unit is hard to get a built cabinet into, or the job is interstate and freight matters — cartons labelled per cabinet, Blum hardware bagged with each, panels pre-drilled. Assembled when you want the crew fitting rather than building: carcasses square, doors adjusted, ready to fix. Mixed orders are normal — tall units flat for access, base runs built. Repeat layouts are held on file so the tenth unit is quoted from the first. See <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack kitchens</a> and <a href="/assembled-kitchens" style="color:var(--brass)">assembled kitchens</a> for what arrives in each case.`],
         ['Segments we supply regularly', 'Tiny home builders, granny flat and secondary dwelling specialists, project builders upgrading from a standard kitchen, and renovators who want the cabinetry handled while they do everything else.'],
       ],
       list: [
         'Held specifications for repeating layouts',
         'Supply only, or supply and install',
         'Full service and setout drawings for your trades',
-        'Delivered assembled — no flat-pack build time on site',
+        'Delivered assembled, or flat packed for access and freight',
         'Fixed, itemised pricing that does not move',
-        'Ten-year warranty on cabinetry and workmanship',
+        'Delivered assembled, doors adjusted before it arrives',
       ],
       faq: [
         { q: 'Do you offer trade pricing?', a: 'Yes. Trade terms depend on volume and how much of the process you take on, so they are quoted rather than published. Tell us what you build and roughly how many kitchens a year, and we will put terms in front of you.' },
         { q: 'Can I take supply only?', a: 'Yes. Cabinetry is delivered assembled with hardware fitted and a setout drawing, ready for your crew to fix and scribe. If you would rather we installed it, our own team does that too.' },
-        { q: 'How far do you deliver?', a: 'Rockhampton, Gracemere, Yeppoon, Emu Park and the wider Capricorn Coast are inside our standard area. For trade volumes we will freight further — ask, and we will price the delivery honestly rather than folding a guess into the kitchen.' },
+        { q: 'How far do you deliver?', a: 'Anywhere in Australia, flat pack or assembled, with freight quoted to the site. Rockhampton, Gracemere, Yeppoon, Emu Park and the wider Capricorn Coast are inside our install area. For trade volumes we will freight further — ask, and we will price the delivery honestly rather than folding a guess into the kitchen.' },
         { q: 'What lead time should I plan for?', a: 'Allow eight to twelve weeks from signed order to delivery for a first specification, and less once we hold your details. Tell us your programme and we will book against it rather than against ours.' },
       ],
       placeholder: 'PLACEHOLDER: trade discount structure, minimum order quantity, payment terms and credit application are not defined. Confirm with the client and add them here before promoting this page.',
     },
   ];
+
+  SEGMENTS.push({
+    file: 'flat-pack-kitchens.html',
+    related: [['/diy-flat-pack-kitchens', 'DIY flat pack kitchens'], ['/flat-pack-cabinets', 'flat pack cabinets for the rest of the house'], ['/assembled-kitchens', 'delivered assembled instead'], ['/guide-how-to-assemble-a-flat-pack-kitchen', 'how to assemble a flat pack kitchen'], ['/guide-how-long-do-flat-pack-kitchens-last', 'how long they last']],
+    slug: 'flat-pack',
+    nav: 'Flat pack kitchens',
+    title: 'Flat Pack Kitchens Australia | Cut to Your Room | Bilt & Co',
+    desc: 'Custom flat pack kitchens cut to your measurements, shipped anywhere in Australia. 18mm board, Blum hardware, pre-drilled and labelled. Fixed itemised quotes.',
+    h1: 'Flat pack kitchens,<br><span class="italic brass">cut to your room.</span>',
+    lede: 'Not a catalogue of fixed cabinet sizes with filler panels to hide the gaps. The same cabinetry we deliver assembled, shipped flat to any address in Australia for you or your installer to build.',
+    img: 'drawer-detail',
+    alt: 'Flat pack kitchen drawer box with Blum full-extension runners',
+    price: 'Quoted to your drawing',
+    range: 'shipped Australia-wide',
+    body: [
+      ['What flat pack means here', 'Every carcass is cut to your wall lengths, your ceiling height and your appliances, then packed flat with the hardware, the doors and a labelled drawing. Panels are pre-drilled for hinges and runners so nothing is measured on site. It is the same 18mm moisture-resistant board, laser-bonded edging and Blum soft-close hardware as our assembled kitchens — the only thing that changes is who puts the carcasses together. Flat pack, flatpack, kit kitchen: same thing, and ours is cut to the room rather than pulled from a shelf.'],
+      ['Ordering online, without an account', `There is no design portal to sign up to and no price hidden behind a login. Send the room dimensions and photos through the <a href="/contact" style="color:var(--brass)">quote form</a>, or email them, and a person draws it and prices it — flat pack and assembled on the same quote, freight to your postcode on each. You see the drawing before you pay anything. The <a href="/guide-how-to-order-a-flat-pack-kitchen" style="color:var(--brass)">ordering guide</a> walks through the whole sequence.`],
+      ['Who it suits', 'Owner-builders and renovators who have the time and a flat floor to build on. Builders fitting out granny flats, tiny homes and units where a flat carton is easier to get into the room than a built cabinet. Anyone interstate, because flat cartons ship for less and travel better than assembled carcasses. And people for whom the assembly is the part they actually want to do.'],
+      ['What arrives', 'Cartons labelled to the drawing, one per cabinet where possible. Doors and drawer fronts wrapped separately. Blum hinges, runners and adjustable legs bagged and labelled per cabinet. Kickboards, end panels and fillers cut to length. A dimensioned drawing with every cabinet numbered, plus the service drawing your plumber and electrician rough in from. Benchtops are a separate conversation — stone is templated on site after the cabinets are in.'],
+      ['If you would rather not build it', `Order the same kitchen <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> instead: carcasses built, doors hung and adjusted, ready to fix to the wall. Within Central Queensland our own team installs it. The quote shows both so you can see what the assembly is actually worth to you.`],
+    ],
+    list: [
+      'Drawn to your measurements, not a fixed catalogue',
+      '18mm moisture-resistant board, laser-bonded edging',
+      'Blum soft-close hinges and full-extension runners',
+      'Pre-drilled, labelled, packed per cabinet',
+      'Service drawings for your plumber and electrician',
+      'Shipped to any address in Australia',
+    ],
+    faq: [
+      { q: 'Are your flat pack kitchens custom sized?', a: 'Yes. Every cabinet is cut to your drawing rather than picked from a list of standard widths, so the run fits the wall without filler panels doing the work.' },
+      { q: 'How much does a flat pack kitchen cost?', a: 'It is quoted to your drawing, fixed and itemised, with freight shown as its own line. Send the room dimensions and we come back with a number that does not move.' },
+      { q: 'Do you ship flat pack kitchens Australia-wide?', a: 'Yes. Flat cartons ship to any address in Australia. Freight is quoted to your postcode and shown on the quote rather than folded into the price.' },
+      { q: 'How hard is it to assemble?', a: `Cabinet by cabinet it is straightforward — the panels are pre-drilled and labelled. What people underestimate is the total: a full kitchen is a lot of cabinets. Our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> covers the order, the tools and the mistakes that cost time.`},
+      { q: 'Can I get some cabinets flat pack and some assembled?', a: 'Yes. Tall pantry and overhead units often go flat for access reasons while base runs come assembled. Say which on the quote request.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'assembled-kitchens.html',
+    related: [['/flat-pack-kitchens', 'flat pack instead'], ['/guide-flat-pack-vs-assembled-kitchen', 'flat pack versus assembled'], ['/guide-how-to-install-a-supplied-kitchen', 'getting a supplied kitchen installed'], ['/owner-builder-kitchen-supply', 'owner-builder supply']],
+    slug: 'assembled',
+    nav: 'Assembled kitchens',
+    title: 'Pre-Assembled Kitchens Delivered Australia-wide | Bilt & Co',
+    desc: 'Kitchen cabinetry delivered assembled: carcasses built, doors hung, Blum hardware fitted. Shipped anywhere in Australia; installed in Central Queensland.',
+    h1: 'Delivered assembled.<br><span class="italic brass">Fit it, don’t build it.</span>',
+    lede: 'Carcasses built, hardware fitted, doors hung and adjusted before it leaves. On site you are fixing cabinets to a wall, not assembling them on the floor of a house you are still finishing.',
+    img: 'dark-island',
+    alt: 'Assembled dark cabinetry kitchen with island, delivered ready to fit',
+    price: 'Quoted to your drawing',
+    range: 'delivered Australia-wide',
+    body: [
+      ['What assembled means here', 'Each carcass arrives as a finished box: glued and screwed square, Blum hinges and runners fitted, drawers in, doors hung and adjusted to even gaps. Legs are on. The installer levels the run, fixes it to the wall, fits the kickboards and end panels, and the benchtop goes on top. The slow, fiddly part of a kitchen is already done, and it was done on a bench rather than a floor.'],
+      ['Who it suits', 'Anyone on a build programme where a fortnight of evenings is not available. Builders who want their carpenter fitting, not assembling. Owner-builders at the end of a project with no patience left. Renovators who want the kitchen in and usable in days. Within Central Queensland, everyone who wants us to install it as well.'],
+      ['What to plan for', 'Assembled cabinets take more room than cartons, on the truck and in the house. Have somewhere dry and level to stand them if delivery lands before the room is ready. Tall units and wide overheads may need two people to carry through a door. Everything else is the same as any kitchen: rough-in first, cabinets, benchtop template, fit-off.'],
+      ['If you would rather build it', `The same kitchen ships <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack</a> for less freight and easier access. Same board, same hardware, same warranty. The quote shows both.`],
+    ],
+    list: [
+      'Carcasses built square, doors hung and adjusted',
+      'Blum soft-close hardware fitted before delivery',
+      '18mm moisture-resistant board, laser-bonded edging',
+      'Delivered to any address in Australia',
+      'Installed by our own team in Central Queensland',
+      'Lifetime mechanical warranty on Blum hardware',
+    ],
+    faq: [
+      { q: 'What is a pre-assembled kitchen?', a: 'Cabinetry delivered as finished boxes rather than flat panels: carcasses built, hardware fitted, doors hung and adjusted. The installer fixes them in place and fits the benchtop.' },
+      { q: 'Is assembled dearer than flat pack?', a: 'The cabinetry is the same price. Assembly and the extra freight volume are what you pay for, and both are shown as their own lines on the quote so you can decide whether they are worth it to you.' },
+      { q: 'Do you deliver assembled kitchens interstate?', a: 'Yes, anywhere in Australia. Assembled cabinets take more truck space than cartons so freight is higher; the quote shows it to your postcode.' },
+      { q: 'Who installs it outside Central Queensland?', a: `Your builder, carpenter or kitchen installer, working from our drawings. Our <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">install guide</a> covers the three trades, the order they work in and the paperwork to hold at the end.`},
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'flat-pack-kitchenettes.html',
+    parent: ['kitchenettes.html', 'Kitchenettes'],
+    related: [['/kitchenettes', 'kitchenettes delivered assembled'], ['/flat-pack-kitchens', 'flat pack kitchens'], ['/granny-flat-kitchens', 'granny flat kitchens'], ['/tiny-home-kitchens', 'tiny home kitchens']],
+    slug: 'flat-pack-kitchenette',
+    nav: 'Flat pack kitchenettes',
+    title: 'Flat Pack Kitchenettes From $4,500 | Studio & Office Kits',
+    desc: 'Flat pack kitchenettes from $4,500, cut to your measurements and shipped Australia-wide. Sink, bench, cold storage; cooktop where it fits. Blum hardware.',
+    h1: 'A kitchenette in a carton,<br><span class="italic brass">cut to the room.</span>',
+    lede: 'For the studio, the under-house room, the site office and the short-stay unit. The same kitchenette we deliver assembled, packed flat so it fits through a door and ships for less.',
+    img: 'detail-stone-black',
+    alt: 'Compact kitchenette with black stone benchtop and concealed storage',
+    price: 'From $4,500',
+    range: '1.2m – 1.8m run, shipped flat',
+    body: [
+      ['What is in the kit', 'Base cabinets cut to your run length with a sink base, a drawer bank and cold-storage provision. A benchtop in laminate, or a stone benchtop templated on site after the cabinets are in. Overheads where the ceiling allows. Blum soft-close hinges and full-extension runners, adjustable legs, kickboards and end panels. Every panel pre-drilled and labelled to a numbered drawing, with the service drawing your plumber works from.'],
+      ['Where a flat pack kitchenette makes sense', 'Rooms you cannot get a built cabinet into: under-house conversions with a low door, upstairs studios, converted sheds and site offices. Multi-unit jobs where a builder is fitting six of the same thing. Interstate, where a carton of panels travels for a fraction of an assembled cabinet. And any job where the person on site is capable and would rather spend an afternoon than pay for assembly.'],
+      ['What to decide before you order', 'Whether there is an oven, because that sets the run length more than anything else. Where the waste can run, because in a conversion the plumbing decides the layout, not the other way round. Ceiling height, for overheads. And whether the room is self-contained, because a second cooking facility can change how a council classifies the property — ask before you build.'],
+      ['Assembled instead', `The same kitchenette ships <a href="/kitchenettes" style="color:var(--brass)">delivered assembled</a>, and within Central Queensland we install it. The quote shows both.`],
+    ],
+    list: [
+      '1.2m to 1.8m runs, cut to your dimensions',
+      'Sink base, drawer bank, cold-storage provision',
+      'Cooktop and microwave options; oven where it fits',
+      'Blum soft-close hinges and full-extension runners',
+      'Pre-drilled, labelled, packed per cabinet',
+      'Shipped to any address in Australia',
+    ],
+    faq: [
+      { q: 'How much is a flat pack kitchenette?', a: 'From $4,500 with a laminate benchtop, including carcasses, doors and Blum hardware. Run length, a stone benchtop and any cooktop or appliance provision move it from there; freight is quoted to your postcode.' },
+      { q: 'Can I assemble it myself?', a: `Yes. A kitchenette is a handful of cabinets, and the panels are pre-drilled and labelled. Our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> covers the order and the tools. The plumbing and any electrical must still be done by licensed trades.`},
+      { q: 'Does it come with a sink and tap?', a: 'The sink base is cut for a standard inset sink. Sink, tap and appliances are quoted as line items if you want us to supply them, or you source your own and tell us the cut-out sizes.' },
+      { q: 'Is a kitchenette enough for a granny flat?', a: `Usually not. A granny flat is a dwelling, and a full compact kitchen serves it better — see <a href="/granny-flat-kitchens" style="color:var(--brass)">granny flat kitchens</a>. A kitchenette suits a studio, a single room or a space where guests reheat rather than cook.`},
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'diy-flat-pack-kitchens.html',
+    parent: ['flat-pack-kitchens.html', 'Flat pack kitchens'],
+    related: [['/guide-how-to-assemble-a-flat-pack-kitchen', 'the assembly guide'], ['/flat-pack-kitchens', 'flat pack kitchens'], ['/guide-how-to-order-a-flat-pack-kitchen', 'how ordering works'], ['/assembled-kitchens', 'or have it delivered assembled']],
+    slug: 'diy-flat-pack',
+    nav: 'DIY flat pack kitchens',
+    title: 'DIY Flat Pack Kitchens | Cut to Size, You Build | Bilt & Co',
+    desc: 'DIY flat pack kitchens cut to your measurements, shipped Australia-wide. Pre-drilled, labelled, Blum hardware bagged per cabinet. You build, trades connect.',
+    h1: 'DIY flat pack kitchens,<br><span class="italic brass">for people who want to build it.</span>',
+    lede: 'Some people would rather spend a weekend with a drill than pay for assembly, and they are right to. This is the same kitchen we deliver assembled, packed for you to build — with the drawings that make it go together first time.',
+    img: 'joinery-sketch',
+    alt: 'Numbered kitchen cabinet drawings used to assemble a DIY flat pack kitchen',
+    price: 'Quoted to your drawing',
+    range: 'shipped Australia-wide',
+    body: [
+      ['What you are actually building', 'Carcasses, one per carton, pre-drilled for the Blum hinges and runners bagged with them. Doors and drawer fronts arrive finished; you hang and adjust them. Kickboards, end panels and fillers are cut to length. Every carcass is numbered to a drawing that shows where it goes and which hardware it takes. There is no cutting, no measuring hinge positions, and nothing that needs a workshop — a drill-driver, a square, a level and a flat floor.'],
+      ['What stays with the trades', 'Plumbing and electrical connection is licensed work in every Australian state, and it is what produces the compliance paperwork you need at sale or for insurance. You build the cabinets and cut the service holes to our drawing; the plumber and electrician connect at fit-off. Stone benchtops are templated by a fabricator after the cabinets are in. Everything else — assembly, levelling, fixing to the wall, hanging doors — is yours if you want it.'],
+      ['Honest about the time', `A kitchenette is an afternoon. A full kitchen with an island and a pantry is several days for a careful first-timer, and it lands at the end of a renovation when patience is shortest. The <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> sets out the order and the mistakes that cost a weekend. If the time is not there, the same kitchen ships <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> and the quote shows both, so it is a line item rather than a leap.`],
+      ['Support that is a person', 'There is no portal and no ticket queue. If a panel is damaged or a cabinet number does not match the drawing, you ring the studio and speak to the person who drew it. Photos of the problem get a same-day answer; a replacement panel is cut to the drawing on file rather than re-measured.'],
+    ],
+    list: [
+      'Cut to your measurements, not catalogue widths',
+      'Pre-drilled for hinges and runners, labelled per cabinet',
+      'Blum soft-close hardware bagged with each carcass',
+      'Numbered drawing plus service drawing for your trades',
+      '18mm moisture-resistant board, laser-bonded edging',
+      'Shipped to any address in Australia',
+    ],
+    faq: [
+      { q: 'Can I really build a kitchen myself?', a: 'The cabinetry, yes, if you can use a drill-driver and a level and have a flat floor to work on. Panels are pre-drilled and labelled so nothing is measured on site. Plumbing and electrical connection stay with licensed trades.' },
+      { q: 'What tools do I need?', a: 'Drill-driver with a clutch, a square, a rubber mallet, a long level, clamps, a hex key and a Phillips driver for the Blum hardware. Nothing exotic.' },
+      { q: 'What if something is missing or damaged?', a: 'Check the delivery against the drawing on the day. Ring the studio with a photo and a cabinet number and a replacement is cut to the drawing on file.' },
+      { q: 'Is DIY flat pack cheaper than assembled?', a: 'The cabinetry is the same price. You save the assembly labour and some freight volume; both are separate lines on the quote so you can see exactly what you are trading your weekend for.' },
+      { q: 'Do you ship DIY kitchens interstate?', a: 'Yes, anywhere in Australia. Flat cartons travel well and cost less to ship than assembled cabinets; freight is quoted to your postcode.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'flat-pack-cabinets.html',
+    parent: ['joinery.html', 'Joinery'],
+    related: [['/joinery', 'joinery delivered assembled'], ['/laundries', 'laundries'], ['/flat-pack-kitchens', 'flat pack kitchens'], ['/flat-pack-kitchenettes', 'flat pack kitchenettes']],
+    slug: 'flat-pack-cabinets',
+    nav: 'Flat pack cabinets',
+    title: 'Custom Flat Pack Cabinets | Laundry, Robes, Vanities',
+    desc: 'Custom flat pack cabinets for laundries, wardrobes, vanities and media walls, cut to your measurements and shipped Australia-wide. Same board and Blum hardware.',
+    h1: 'Flat pack cabinets for<br><span class="italic brass">the rest of the house.</span>',
+    lede: 'Laundries, robes, vanities, a study wall, the unit under the television. The same carcasses, edging and hardware as our kitchens, cut to the room and packed flat for you or your installer to build.',
+    img: 'wardrobe-walkin',
+    alt: 'Walk-in wardrobe drawer bank in custom flat pack cabinetry',
+    price: 'Quoted to your drawing',
+    range: 'shipped Australia-wide',
+    body: [
+      ['What we cut', 'Laundry tall units and benches. Built-in and walk-in wardrobes with drawer banks, shelving and hanging. Vanities to take the basin you have chosen. Study desks with drawer pedestals. Media walls with concealed storage. Linen presses, mudroom lockers, garage storage. Anything that is a carcass with doors or drawers on it, drawn to your dimensions and your ceiling height.'],
+      ['Why the same specification matters here', 'Laundries and bathrooms are wetter than kitchens and robes carry more weight per shelf than people expect. The 18mm moisture-resistant board, laser-bonded edging and Blum runners that make a kitchen last do the same for a laundry cabinet with a machine vibrating beside it, or a robe drawer that is opened every morning for twenty years. Cheaper flat pack cuts corners here first because nobody photographs a laundry.'],
+      ['What arrives', 'Cartons labelled per cabinet, panels pre-drilled, hardware bagged with each carcass, a numbered drawing. For vanities and laundries, a service drawing marking waste and water positions for your plumber. Benchtops in laminate, or stone templated on site after the cabinets are in. Basins, taps and appliances are quoted as line items if you want them supplied, or you give us the cut-out sizes.'],
+      ['Assembled instead', `Every one of these also ships <a href="/joinery" style="color:var(--brass)">delivered assembled</a> — a built-in robe is fitted in a morning that way — and within Central Queensland our own team installs it. The quote shows both.`],
+    ],
+    list: [
+      'Laundries, wardrobes, vanities, studies, media walls',
+      'Cut to your dimensions and ceiling height',
+      '18mm moisture-resistant board, laser-bonded edging',
+      'Blum soft-close hinges and full-extension runners',
+      'Service drawings for vanity and laundry plumbing',
+      'Shipped to any address in Australia',
+    ],
+    faq: [
+      { q: 'Do you do flat pack wardrobes?', a: 'Yes, built-in and walk-in, with drawer banks, shelving and hanging rails drawn to your wall and ceiling height. Panels arrive pre-drilled and labelled with Blum hardware bagged per carcass.' },
+      { q: 'Can you make a vanity to fit my basin?', a: 'Yes. Send the basin model or its cut-out drawing and the vanity is cut to take it, with a service drawing for the plumber.' },
+      { q: 'Is flat pack cabinetry strong enough for a laundry?', a: 'Ours is. Same 18mm moisture-resistant board and laser-bonded edging as a kitchen, which is what the room needs. The cheap end of flat pack uses 16mm board with glued edging and that is where laundries fail.' },
+      { q: 'Can I mix flat pack and assembled in one order?', a: 'Yes. Tall robe units often go flat for access while a vanity comes assembled. Say which on the quote request.' },
+    ],
+  });
 
   SEGMENTS.push({
     file: 'kitchenettes.html',
@@ -1854,7 +1998,7 @@ module.exports = function (api) {
     title: 'Kitchenettes Rockhampton | From $4,500 | Bilt & Co',
     desc: 'Compact kitchenettes from $4,500 for studios, under-house conversions, offices and short-stay rentals. 1.2–1.8m runs, delivered assembled and installed.',
     h1: 'Kitchenettes that<br><span class="italic brass">still feel like a kitchen.</span>',
-    lede: 'A kitchenette is not a shrunken kitchen. It is a different brief — fewer appliances, less run, and every decision about what earns its place.',
+    lede: 'A kitchenette is not a shrunken kitchen. It is a different brief — fewer appliances, less run, and every decision about what earns its place. It arrives as two or three built units and is in within hours.',
     img: 'detail-black-cabinetry',
     alt: 'Compact kitchenette with integrated sink, benchtop and concealed storage',
     price: 'From $4,500',
@@ -1863,7 +2007,7 @@ module.exports = function (api) {
       ['Where a kitchenette is the right answer', 'Studios and self-contained rooms. Under-house conversions where the ceiling will not take overheads. Offices and staff rooms. Short-stay and Airbnb rooms where guests reheat rather than cook. Pool houses and shed conversions. In all of them the job is a bench, a sink, cold storage and somewhere to put things — not a full kitchen squeezed into a smaller footprint. If anyone is going to cook a proper meal in the space, you want a compact kitchen instead, and our <a href="granny-flat-kitchens.html" style="color:var(--brass)">granny flat kitchens</a> page is the better place to start.'],
       ['What to leave out, and what never to', 'The oven is usually the first thing to go, and it is usually the right call — a cooktop and a microwave cover almost everything a kitchenette is actually used for. Lose the overheads if the ceiling is low. What we would not cut is the sink size or the hardware. A bar-sized sink you cannot fit an oven tray into gets complained about for years, and a drawer that sticks is worse in a small room than a large one, because there are fewer of them carrying the same load.'],
       ['Plumbing usually decides the layout', 'In a conversion, where the waste can run is the constraint that sets the design — not where you would like the sink to be. We look at that before drawing anything, because a kitchenette designed around a plumbing run that cannot be built is a wasted fortnight. If you are converting an under-house, a shed or a garage, send us a photo of where the existing services come up and we will tell you what is realistic before you spend anything.'],
-      ['Built to the same standard as a full kitchen', 'Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging, same ten-year warranty. A kitchenette is smaller, not lighter in construction — and in a rental or a short-stay room it often works harder per cabinet than a family kitchen does. It is also the cheapest room in the house to over-specify, because there is so little of it.'],
+      ['Built to the same standard as a full kitchen', 'Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging. A kitchenette is smaller, not lighter in construction — and in a rental or a short-stay room it often works harder per cabinet than a family kitchen does. It is also the cheapest room in the house to over-specify, because there is so little of it.'],
     ],
     list: [
       '1.2m to 1.8m runs, drawn to your dimensions',
@@ -1889,7 +2033,7 @@ module.exports = function (api) {
     title: 'Airbnb & Short-Stay Kitchens Rockhampton | Bilt & Co',
     desc: 'Kitchens for Airbnb and short-stay properties in Rockhampton. Built to photograph well and survive guests, from $6,500. Delivered assembled and installed.',
     h1: 'Kitchens that win the booking<br><span class="italic brass">and survive the guest.</span>',
-    lede: 'A short-stay kitchen has two jobs your own kitchen never has. It has to earn the booking in a photograph, and it has to hold up to people with no reason to be careful.',
+    lede: 'A short-stay kitchen has two jobs your own kitchen never has. It has to earn the booking in a photograph, and it has to hold up to people with no reason to be careful. Delivered assembled, it is in between one booking and the next.',
     img: 'concrete-luxe',
     alt: 'Bright white short-stay apartment kitchen with stone island and stainless appliances',
     price: 'From $6,500',
@@ -1907,7 +2051,7 @@ module.exports = function (api) {
       '18mm moisture-resistant carcasses, laser-bonded edging',
       'Layouts designed around turnover and cleaning',
       'Delivered assembled and installed by our own team',
-      'Ten-year warranty on cabinetry and workmanship',
+      'Delivered assembled, doors adjusted before it arrives',
     ],
     faq: [
       { q: 'Does a better kitchen actually increase my nightly rate?', a: 'Not directly, and anyone promising that is guessing. What it changes is your photographs and your reviews, and those change your occupancy. A kitchen that looks cared for lifts the whole listing, and "the kitchen had everything we needed" is one of the most common lines in a five-star review. Occupancy is where the money is, not the nightly rate.' },
@@ -1924,7 +2068,7 @@ module.exports = function (api) {
     title: 'Kitchen Islands Rockhampton | From $2,850 | Bilt & Co',
     desc: 'Custom kitchen islands in Rockhampton from $2,850. Clearances, seating overhangs, waterfall ends and what an island actually needs before it will fit.',
     h1: 'The island most kitchens<br><span class="italic brass">cannot actually fit.</span>',
-    lede: 'An island is the most requested thing in a new kitchen and the most often abandoned once the room is measured. Here is what one really needs.',
+    lede: 'An island is the most requested thing in a new kitchen and the most often abandoned once the room is measured. Here is what one really needs &mdash; and why an island that arrives as built units stays square once the stone goes on.',
     img: 'timber-island',
     alt: 'Timber kitchen island with stone waterfall end and pendant lighting',
     price: 'From $2,850',
@@ -1959,7 +2103,7 @@ module.exports = function (api) {
     title: 'Laundry Renovations Rockhampton | From $2,800 | Bilt & Co',
     desc: 'Custom laundry joinery in Rockhampton from $2,800. Folding benches, full-height broom storage, drying rails and cabinetry that survives a wet room.',
     h1: 'The most under-designed<br><span class="italic brass">room in the house.</span>',
-    lede: 'A laundry gets the leftover space, the leftover budget and none of the thought. It is also the room that annoys people daily.',
+    lede: 'A laundry gets the leftover space, the leftover budget and none of the thought. It is also the room that annoys people daily. Ours is drawn properly and arrives assembled, so it is in the same day.',
     img: 'laundry-room',
     alt: 'Custom laundry joinery with overhead cabinets, folding bench and drying rail',
     price: 'From $2,800',
@@ -1988,20 +2132,20 @@ module.exports = function (api) {
 
   SEGMENTS.push({
     file: 'owner-builder-kitchen-supply.html',
-    related: [['/guide-how-to-install-a-supplied-kitchen', 'getting it installed'], ['/guide-how-to-measure-for-a-kitchen', 'how to measure for a kitchen'], ['/guide-owner-builder-permit-qld', 'owner-builder permits'], ['/guide-supply-your-own-kitchen', 'is supplying your own cheaper?']],
+    related: [['/guide-kitchen-pc-item-new-build-contract', 'the kitchen PC item in a new build'], ['/guide-how-to-install-a-supplied-kitchen', 'getting it installed'], ['/guide-how-to-measure-for-a-kitchen', 'how to measure for a kitchen'], ['/guide-supply-your-own-kitchen', 'is supplying your own cheaper?']],
     slug: 'owner-builder',
     nav: 'Owner-builder supply',
     title: 'Owner Builder Kitchen Supply QLD | Delivered Assembled | Bilt & Co',
     desc: 'Kitchen supply for owner-builders in Queensland. Designed to your measurements, delivered assembled with service drawings for your trades. Fit it yourself.',
     h1: 'You are managing the build.<br><span class="italic brass">We will handle the kitchen.</span>',
-    lede: 'Owner-builders get treated as a nuisance by most kitchen companies. You are the opposite of that here — you know your programme, you make your own decisions, and you do not need selling to.',
+    lede: 'Owner-builders get treated as a nuisance by most kitchen companies. You are the opposite of that here — you know your programme, you make your own decisions, and you do not need selling to. The kitchen arrives assembled, because at the end of an owner-build the last thing you have is evenings.',
     img: 'dark-island',
     alt: 'Kitchen cabinetry delivered assembled ready for installation',
     price: 'Supply pricing',
     range: 'Delivered assembled',
     body: [
-      ['Supply only, and it is not a lesser service', 'You get the same design process, the same 18mm moisture-resistant carcasses, the same Blum hardware and the same ten-year warranty on the cabinetry as anyone paying for installation. The difference is that it arrives assembled at your site and your crew fits it. This is not a stripped-back product for people who could not afford the real one — it is the same kitchen with one line removed from the invoice.'],
-      ['Assembled, not flat packed', 'The distinction matters most to you of anyone. Carcasses arrive built, hardware fitted, doors hung and adjusted. You are fitting a kitchen, not assembling one on the floor of a house you are still finishing, at the point in the build where you have the least time and patience left. If you have ever built a flat-pack kitchen at the end of an owner-build, you already know why this is worth paying for.'],
+      ['Supply only, and it is not a lesser service', 'You get the same design process, the same 18mm moisture-resistant carcasses, the same Blum hardware and the same drawings on the cabinetry as anyone paying for installation. The difference is that it arrives assembled at your site and your crew fits it. This is not a stripped-back product for people who could not afford the real one — it is the same kitchen with one line removed from the invoice.'],
+      ['Assembled or flat packed: decide with your eyes open', 'The distinction matters most to you of anyone. Assembled means carcasses arrive built, hardware fitted, doors hung and adjusted — you are fitting a kitchen, not assembling one on the floor of a house you are still finishing, at the point in the build where you have the least time and patience left. Flat pack means the same cabinetry ships for less and fits through any door, and the assembly is yours. We quote both on the same drawing; if you have ever built a flat pack at the end of an owner-build, you already know which line you are looking at.'],
       ['Drawings your trades can actually work from', 'You get a full set of service drawings showing where every waste, water point and power outlet needs to land, dimensioned. Hand them to your plumber and electrician before they rough in. This is where owner-builds most often lose money on a kitchen — services roughed in to a guess, then a cabinet that has to be modified on site or a wall that has to be reopened.'],
       ['Tell us your programme, not your deadline', 'We hold your specification once it is confirmed, so the order becomes a confirmation rather than a fresh design when your build is finally ready. Owner-builds move. Yours will too. Tell us where the build actually is and we will work to it rather than pushing you to take delivery into a house with no floor down.'],
       ['What sits with you', 'Under an owner-builder permit the obligations are yours: making sure every licensed trade on the job holds a current licence, keeping the documentation, and the restrictions that apply to selling the property afterwards. <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> sets out the current requirements. We are a supplier — we are not your builder, and we do not certify your build. See <a href="/guide-do-i-need-approval-kitchen-renovation" style="color:var(--brass)">whether a kitchen needs approval</a> for where a kitchen sits in all that.'],
@@ -2013,7 +2157,7 @@ module.exports = function (api) {
       '18mm moisture-resistant carcasses, laser-bonded edging',
       'Blum soft-close hardware throughout',
       'Specification held for when your build is actually ready',
-      'Ten-year warranty on the cabinetry we supply',
+      'Delivered assembled, doors adjusted before it arrives',
     ],
     faq: [
       { q: 'Can I buy a kitchen without installation?', a: 'Yes. Supply-only is a normal part of what we do, not an exception — it is what we already provide to tiny home and granny flat builders. You get the design, the cabinetry delivered assembled and the service drawings; your crew fits it.' },
@@ -2031,7 +2175,7 @@ module.exports = function (api) {
     title: 'Accessible Kitchens Rockhampton | Built to OT Spec | Bilt & Co',
     desc: 'Accessible and adaptive kitchens in Rockhampton and Central Queensland, built to your occupational therapist’s specification. Quoted itemised for plan managers.',
     h1: 'Accessible kitchens,<br><span class="italic brass">built to the specification.</span>',
-    lede: 'An accessible kitchen is a specification problem, not a design compromise. Send us what your OT has written and we will build exactly that.',
+    lede: 'An accessible kitchen is a specification problem, not a design compromise. Send us what your OT has written and we will supply exactly that, assembled and adjusted before it arrives so the install is a day, not a disruption.',
     img: 'island-marble-brass',
     alt: 'Bright open kitchen with clear approach to bench and sink',
     price: 'Quoted to spec',
@@ -2068,7 +2212,7 @@ module.exports = function (api) {
     title: 'SDA Kitchens Queensland | Specialist Disability Accommodation | Bilt & Co',
     desc: 'Kitchens for Specialist Disability Accommodation builds in Queensland. Built to the design standard your certifier assesses against, supplied or installed.',
     h1: 'SDA kitchens,<br><span class="italic brass">built to the standard.</span>',
-    lede: 'SDA is not a generous version of an accessible kitchen. It is a certified build against a published standard, and the cabinetry has to survive that assessment.',
+    lede: 'SDA is not a generous version of an accessible kitchen. It is a certified build against a published standard, and the cabinetry has to survive that assessment. Assembled and checked before delivery means what is assessed on site is what left us.',
     img: 'black-marble-bar',
     alt: 'Accessible kitchen with clear circulation space and low bench section',
     price: 'Supply or install',
@@ -2088,7 +2232,7 @@ module.exports = function (api) {
       'Blum hardware, lifetime mechanical warranty',
       'Full service drawings for your trades',
       'Repeat specifications held for multi-dwelling builds',
-      'Supply anywhere in Queensland, install within 150km of Rockhampton',
+      'Ship anywhere in Australia, install within 150km of Rockhampton',
     ],
     faq: [
       { q: 'Do you build kitchens for SDA housing?', a: 'Yes, to the design category and assessor requirements you provide. Tell us it is SDA at the first conversation — the requirements differ from a standard accessible kitchen and they affect the drawings, not just the price.' },
@@ -2105,7 +2249,7 @@ module.exports = function (api) {
     title: 'Aging in Place Kitchens Rockhampton | Design to Stay Put | Bilt & Co',
     desc: 'Kitchens designed for staying in your own home longer. Drawers instead of low cupboards, better light, hardware that works with arthritic hands. From $15,000.',
     h1: 'A kitchen designed<br><span class="italic brass">for staying put.</span>',
-    lede: 'Nobody wants a kitchen that looks like a hospital. Almost everything that makes one easier to use at eighty is invisible, and most of it is free if you decide it now.',
+    lede: 'Nobody wants a kitchen that looks like a hospital. Almost everything that makes one easier to use at eighty is invisible, and most of it is free if you decide it now. Delivered assembled, the kitchen is out of action for days, not weeks.',
     img: 'splashback-marble-01',
     alt: 'Warm timber kitchen with drawers and integrated task lighting',
     price: 'From $15,000',
@@ -2125,7 +2269,7 @@ module.exports = function (api) {
       'Contrast at bench edges and the sink',
       'Nothing critical stored above shoulder height',
       'Room left for a seated working section',
-      'Ten-year warranty on cabinetry and workmanship',
+      'Delivered assembled, doors adjusted before it arrives',
     ],
     faq: [
       { q: 'Does an aging in place kitchen look different?', a: 'No, and that is rather the point. Drawers, D-pull handles, lever taps and good task lighting are ordinary contemporary choices. Nothing about it reads as adapted, and nothing about it dates the way a clinical fit-out would.' },
@@ -2193,7 +2337,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${s.h1}</h1>
         <p class="lede">${s.lede}</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">${s.slug === 'trade' ? 'Open a trade account' : 'Get a fixed quote'}</a>
+          <a class="btn btn--lg" href="contact.html">${s.slug === 'trade' ? 'Open a trade account' : 'Get my free quote'}</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
         </div>
       </div>
@@ -2217,7 +2361,7 @@ module.exports = function (api) {
           <span class="tier__tag">What you get</span>
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">${s.price}<small>${s.range}</small></div>
           <ul>${s.list.map((x) => `<li>${x}</li>`).join('')}</ul>
-          <a class="btn btn--block" href="contact.html">${s.slug === 'trade' ? 'Talk to us about trade' : 'Get this priced'}</a>
+          <a class="btn btn--block" href="contact.html">${s.slug === 'trade' ? 'Talk to us about trade' : 'Get my free quote'}</a>
         </div>
         ${s.related ? `<p class="small muted mt-2">Also: ${s.related.map((r) => `<a href="${r[0]}" style="color:var(--brass)">${r[1]}</a>`).join(" &middot; ")}</p>` : ''}
       </div>
@@ -2237,6 +2381,229 @@ module.exports = function (api) {
      answer it is worse than no guide. */
 
   const GUIDES = [
+    {
+      slug: 'how-to-order-a-flat-pack-kitchen',
+      group: 'design',
+      nav: 'How to order a flat pack kitchen',
+      title: 'How to Order a Flat Pack Kitchen | Measure, Quote, Ship',
+      desc: 'How ordering a custom flat pack kitchen works without design software: what to send, what comes back, what the quote shows, and what happens up to delivery.',
+      h1: 'How to order a flat pack kitchen<br><span class="italic brass">without the software.</span>',
+      lede: 'Some suppliers make you design your own kitchen in a portal and hope the software caught your mistakes. This is the other way: a person draws it from your measurements, and you see the drawing before you pay.',
+      img: 'studio-desk',
+      alt: 'Kitchen drawings and samples on a design studio desk',
+      read: '7 min read',
+      note: 'Freight, lead time and any deposit are shown on your quote for your job; none are stated here because they depend on the kitchen and the postcode.',
+      answer: 'Send the room’s measurements and photos. A designer draws the kitchen to your room and sends the drawing with a fixed, itemised quote showing it flat pack and delivered assembled, freight to your postcode on each. You check the drawing, change what you want, sign it off, pay, and it is cut and shipped to the address on the order. No account, no software, no showroom visit.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Start here',
+        title: 'Send the measurements. A person draws it.',
+        body: 'Wall lengths at three heights, ceiling height, windows, doors and services, a photo of each corner. Rough is fine for the first drawing.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Flat pack or assembled',
+        title: 'One drawing,<br><span class="italic" style="color:var(--brass-lite)">two prices.</span>',
+        body: 'The quote comes back both ways so the assembly is a line item you choose, not a leap.',
+        image: 'drawer-detail',
+        alt: 'Drawer box with Blum runners, part of a flat pack kitchen order',
+      },
+      sections: [
+        ['Step one: measure and photograph', `Wall to wall at floor, bench and ceiling height, using the smallest figure. Ceiling height in each corner. Every window and door with its distance from the nearest corner. Where the waste, water and power are now. A photo of each corner of the room. Our <a href="/guide-how-to-measure-for-a-kitchen" style="color:var(--brass)">measuring guide</a> has the full list. If you have plans, send those too — but measure anyway, because plans and rooms disagree.`],
+        ['Step two: send it, and say what you want', 'Through the quote form or by email. Tell us what the room is for — family kitchen, granny flat, short-stay, laundry — and anything fixed: an appliance you already own, a basin you have chosen, a benchtop material. Say whether you want it flat pack, assembled, or are undecided. Undecided is fine; the quote shows both.'],
+        ['Step three: the drawing and the quote', 'A designer draws the kitchen to your room and sends a dimensioned plan and elevations with a fixed, itemised quote: every cabinet, the hardware, the benchtop, the doors, freight to your postcode, and the assembly as its own line if you take it. Nothing is a from-price and nothing is hidden behind a login. You look at it at your kitchen table and mark it up.'],
+        ['Step four: changes, then sign-off', 'Move the sink, lose the overheads, add a drawer bank — changes are redrawn and the quote updated until it is right. Then you sign the drawing off. That signed drawing is what gets cut, so this is the point to check every dimension against the room once more. After sign-off the number does not move.'],
+        ['Step five: payment and cutting', 'The quote states what is due and when for your job. Once it is paid, the kitchen is cut to the signed drawing, the panels drilled for the hardware, the doors finished, and everything checked against the drawing before it is packed. Assembled orders are built and adjusted at this stage; flat pack orders are packed per cabinet with the hardware bagged.'],
+        ['Step six: delivery', 'Freight is booked to the address on the order and you are told when it is leaving. Someone needs to be there to receive it and check it against the drawing on the day — cartons counted, fronts inspected. Assembled cabinets need a dry, level place to stand if the room is not ready. Then your build starts, or your installer’s does.'],
+        ['What you never have to do', 'Create an account. Learn design software. Guess at a cabinet width and hope. Visit a showroom. Pay a deposit to see a price. Talk to a salesperson. Every one of those is a step that exists to serve the supplier rather than you, and none of them make the kitchen fit the room better than a person drawing it from your measurements.'],
+      ],
+      faq: [
+        { q: 'Do I need to design the kitchen myself?', a: 'No. You send measurements and photos and a designer draws it. You review the drawing and change what you want before anything is cut.' },
+        { q: 'Can I order a flat pack kitchen online?', a: 'Yes, in the sense that matters: everything happens by form, email and phone without a showroom visit. There is no portal to sign up to; a person draws and prices it instead.' },
+        { q: 'When do I pay?', a: 'The quote for your job states what is due and when. Nothing is due to receive the drawing and the quote.' },
+        { q: 'How long does delivery take?', a: 'It depends on the kitchen and the postcode, and it is stated on your quote rather than guessed here.' },
+        { q: 'Can I change my mind after sign-off?', a: 'Before cutting starts, usually yes; after it, the signed drawing is what has been cut. Check every dimension against the room before you sign.' },
+      ],
+    },
+    {
+      slug: 'how-long-do-flat-pack-kitchens-last',
+      group: 'design',
+      nav: 'How long flat pack kitchens last',
+      title: 'How Long Do Flat Pack Kitchens Last in Australia?',
+      desc: 'What decides how long a flat pack kitchen lasts in an Australian home: board, edging, hardware, assembly, moisture. What fails first and how to buy around it.',
+      h1: 'How long does a<br><span class="italic brass">flat pack kitchen last?</span>',
+      lede: 'As long as the board, the edging and the hardware allow, and the assembly does not shorten. The label on the carton has almost nothing to do with it.',
+      img: 'detail-timber-joinery',
+      alt: 'Laser-bonded edge on a kitchen cabinet panel',
+      read: '6 min read',
+      answer: 'A flat pack kitchen lasts as long as its weakest material. 18mm moisture-resistant board with laser-bonded edging and Blum hardware is the same specification as a good custom kitchen and lasts as long as one. 16mm standard board with glued edging and unbranded runners, in a humid Australian kitchen, fails at the edges and the drawers first and is often replaced within a decade. Whether it was flat packed or assembled changes nothing about that; how it was assembled does.',
+      inlineCta: {
+        after: 3,
+        eyebrow: 'Ask any supplier three things',
+        title: 'Board. Edging. Hardware.',
+        body: '18mm moisture-resistant board, laser-bonded edging, Blum soft-close runners and hinges. That is our standard on every kitchen, flat pack or assembled, and it is why the question has a good answer here.',
+        label: 'Get my free quote',
+        href: '/flat-pack-kitchens',
+      },
+      cta: {
+        eyebrow: 'Built to last, either way',
+        title: 'Same board, same hardware,<br><span class="italic" style="color:var(--brass-lite)">flat pack or assembled.</span>',
+        body: 'Send the room dimensions and the quote shows both. The specification is identical; only who builds the carcasses changes.',
+        image: 'drawer-detail',
+        alt: 'Blum full-extension drawer runner in a kitchen cabinet',
+      },
+      sections: [
+        ['The board decides most of it', 'Cabinet carcasses are particleboard or MDF with a melamine face. The two things that matter are thickness and moisture rating. 18mm board holds screws and shelf weight; 16mm flexes and strips. Moisture-resistant board (usually a green core) shrugs off the humidity that a standard board swells in, and in most of Australia a kitchen is a humid room for part of the year whether or not anything is spilled. Standard board around a sink or a dishwasher is where flat pack gets its reputation.'],
+        ['Edging is where water gets in', 'The edge strip on every panel is the seal. Glued edging has a visible glue line that water tracks along, lifts at the corners, and once it lifts the board underneath swells and the door never sits right again. Laser-bonded edging is fused to the board with no glue line; there is no seam for water to find. It is a small manufacturing difference and it is the single most reliable predictor of how a kitchen looks at year ten.'],
+        ['Hardware is what you touch', 'Hinges and drawer runners are the moving parts, and moving parts wear. Unbranded runners sag, stick and drop drawers; unbranded hinges lose adjustment so doors stop lining up. Blum hinges and runners carry a lifetime mechanical warranty because they are built to be opened a hundred thousand times. On a flat pack, hardware is often where the price was cut, because it is the part you cannot see in a photograph.'],
+        ['Assembly can shorten all of it', 'A carcass built out of square puts constant load on every joint and every hinge. Cam locks over-driven with a drill split the board around them. A back panel fitted last holds whatever shape the box was in. None of it shows on day one; all of it shows by year three as doors that will not line up and drawers that rub. This is the one way flat pack differs from assembled: with assembled, the squareness is done on a bench by someone who does it daily.'],
+        ['Where it lives matters', 'Coastal humidity, a rental with tenants, a short-stay unit turned over weekly, a laundry with a machine vibrating beside the cabinet — all of these shorten the life of cheap board and hardware faster than a family kitchen does. The specification that survives them is the same one: 18mm moisture-resistant, laser-bonded, Blum. Buying to a lower specification for a hard-use room is buying twice.'],
+        ['How to buy a flat pack that lasts', `Ask three questions and get the answers in writing: board thickness and moisture rating, edging method, hardware brand. If any answer is vague, that is the answer. Then either build it square — our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> covers how — or have it <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> so the squareness is done before it arrives. Our <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack kitchens</a> are 18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard, because there is no honest way to answer this question otherwise.`],
+      ],
+      faq: [
+        { q: 'How many years does a flat pack kitchen last?', a: 'There is no fixed number. Good board, edging and hardware, built square, last as long as a custom kitchen. Cheap board with glued edging and unbranded runners in a humid room often needs replacing within a decade, and the edges and drawers go first.' },
+        { q: 'Are flat pack kitchens less durable than custom?', a: 'Not because they are flat packed. The materials and the assembly decide durability. A flat pack in 18mm moisture-resistant board with Blum hardware is the same specification as a good custom kitchen.' },
+        { q: 'What fails first on a cheap flat pack?', a: 'Edging lifting near the sink and dishwasher, then drawer runners sagging, then doors losing adjustment. All three are material choices, not assembly.' },
+        { q: 'Does moisture-resistant board matter in Australia?', a: 'Yes. Most Australian kitchens are humid for part of the year and standard board swells at the edges. Moisture-resistant board is the difference between a kitchen that looks the same at year ten and one that does not.' },
+      ],
+    },
+    {
+      slug: 'are-flat-pack-kitchens-good-quality',
+      group: 'design',
+      nav: 'Are flat pack kitchens good quality?',
+      title: 'Are Flat Pack Kitchens Good Quality? An Honest Answer',
+      desc: 'Whether flat pack kitchens are good quality depends on four things you can check before buying. What separates a good flat pack from a bad one and from custom.',
+      h1: 'Are flat pack kitchens<br><span class="italic brass">good quality?</span>',
+      lede: 'Some are, and the ones that are cost about what a good custom kitchen costs to make, because they are made of the same things. The rest are cheap for a reason you can find in about a minute.',
+      img: 'drawer-detail',
+      alt: 'Assembled drawer with Blum full-extension runners, evidence of flat pack quality',
+      read: '6 min read',
+      answer: 'Flat pack is a delivery format, not a quality grade. The quality of any kitchen — flat pack, assembled or custom — comes down to four checkable things: board thickness and moisture rating, edging method, hardware brand, and whether the cabinets are cut to your room or picked from a catalogue. A flat pack that passes all four is a good kitchen. A custom kitchen that fails two of them is not.',
+      inlineCta: {
+        after: 3,
+        eyebrow: 'Cut to the room, not the catalogue',
+        title: 'Flat pack that passes all four.',
+        body: '18mm moisture-resistant board, laser-bonded edging, Blum hardware, and every cabinet drawn to your measurements. Shipped anywhere in Australia, flat pack or assembled.',
+        label: 'Get my free quote',
+        href: '/flat-pack-kitchens',
+      },
+      cta: {
+        eyebrow: 'Judge for yourself',
+        title: 'The specification is on<br><span class="italic" style="color:var(--brass-lite)">every quote we send.</span>',
+        body: 'Board, edging, hardware, benchtop, all named. Send the room dimensions and compare it line for line with anything else you are quoted.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples on a bench',
+      },
+      sections: [
+        ['Where the reputation comes from', 'Flat pack got its name from the bottom of the market: fixed-width cabinets in 16mm standard board, glued edging, unbranded runners, filler panels to hide the gap where the run did not fit the wall. That kitchen is poor quality, and it would be poor quality if it arrived assembled. The format did not make it cheap; the specification did. The mistake is treating the carton as the thing to judge.'],
+        ['Check one: the board', '18mm or 16mm, and moisture-resistant or standard. Ask, and ask for it in writing. 18mm moisture-resistant is the specification of a good custom kitchen; 16mm standard is the specification of a kitchen that swells at the sink. Most of the price difference between cheap flat pack and good flat pack is in this line.'],
+        ['Check two: the edging', 'Laser-bonded edging has no glue line and does not lift. Glued edging has a visible dark line and lifts at the corners near water. Run a fingernail along a sample edge: if you can feel a seam, water can find it. This is the check people skip because it sounds technical, and it is the most reliable one.'],
+        ['Check three: the hardware', 'Name the brand. Blum, Hettich and Grass are the brands a cabinetmaker would use; anything unnamed is unnamed for a reason. Runners should be full-extension and soft-close; hinges should be soft-close with three-way adjustment. This is the part that decides whether the kitchen feels good in year five.'],
+        ['Check four: catalogue or cut to size', 'A catalogue flat pack comes in fixed widths and fills the difference with filler panels, which means wasted space, awkward corners and a run that looks like it was bought rather than designed. Cut-to-size flat pack is drawn to your wall lengths and ceiling height, so it fits the way a custom kitchen fits. The second costs more than the first and less than custom, and it is the one worth buying.'],
+        ['Then there is assembly', `A good flat pack built badly is a bad kitchen. Carcasses out of square, cam locks over-driven, back panels fitted last — all of it shows by year three. Either build it carefully (our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a>) or take the same kitchen <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, with the squareness done on a bench. That is the one genuine difference between the two, and it is a labour question, not a quality one.`],
+        ['So: are they good quality?', `The ones that pass the four checks are as good as any custom kitchen, because they are made of the same materials by the same kind of machinery, and they cost less only because you are doing the assembly or paying for it separately. Our <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack kitchens</a> pass all four as standard, and the specification is printed on every quote so you can hold it against anything else you are offered. Our guide on <a href="/guide-how-long-do-flat-pack-kitchens-last" style="color:var(--brass)">how long flat pack kitchens last</a> covers what happens to each check over time.`],
+      ],
+      faq: [
+        { q: 'Are flat pack kitchens as good as custom?', a: 'They can be. If the board, edging and hardware match and the cabinets are cut to the room, a flat pack is the same kitchen delivered in cartons. The difference is who assembles it.' },
+        { q: 'What makes a flat pack kitchen poor quality?', a: '16mm standard board, glued edging, unbranded hardware and catalogue widths with filler panels. Any one of those is a warning; all four is the bottom of the market.' },
+        { q: 'Is a more expensive flat pack worth it?', a: 'If the extra money is in the board, edging and hardware, yes, because those decide how the kitchen looks at year ten. If it is in the brand name or the showroom, no.' },
+        { q: 'Are your flat pack kitchens good quality?', a: '18mm moisture-resistant board, laser-bonded edging, Blum soft-close hardware, every cabinet cut to your drawing. It is the same specification as our assembled kitchens and it is printed on the quote.' },
+      ],
+    },
+    {
+      slug: 'how-to-assemble-a-flat-pack-kitchen',
+      group: 'design',
+      nav: 'Assembling a flat pack kitchen',
+      title: 'How to Assemble a Flat Pack Kitchen | Order, Tools, Mistakes',
+      desc: 'How to assemble a flat pack kitchen: the order to build in, the tools you need, keeping carcasses square, and the mistakes that cost a weekend.',
+      h1: 'How to assemble<br><span class="italic brass">a flat pack kitchen.</span>',
+      lede: 'Cabinet by cabinet it is simple. The total is not. This is the order, the tools and the handful of things that decide whether the doors line up at the end.',
+      img: 'drawer-detail',
+      alt: 'Assembled drawer box with Blum runners on a workbench',
+      read: '8 min read',
+      note: 'General guidance for pre-drilled, labelled flat pack cabinetry. Plumbing and electrical connection must be done by licensed trades regardless of who assembles the cabinets.',
+      answer: 'Unpack one cabinet at a time, on a flat clean surface, and build it square before you build the next. Base cabinets first, then tall units, then overheads. Fit runners and hinge plates while the carcass is on the bench, not after it is on the wall. Level the whole base run before fixing anything, because the benchtop is templated off it. Budget more time than you think, and stop when you are tired — carcasses built out of square cannot be fixed later.',
+      inlineCta: {
+        after: 3,
+        eyebrow: 'Cut to your room',
+        title: 'Flat pack, drawn to your measurements.',
+        body: 'Pre-drilled, labelled per cabinet, Blum hardware bagged with each one. Shipped anywhere in Australia with a numbered drawing to build from.',
+        label: 'Get my free quote',
+        href: '/flat-pack-kitchens',
+      },
+      cta: {
+        eyebrow: 'Or skip the assembly',
+        title: 'The same kitchen,<br><span class="italic" style="color:var(--brass-lite)">delivered built.</span>',
+        body: 'If a fortnight of evenings is not on offer, order it assembled. Carcasses square, doors adjusted, ready to fix to the wall. The quote shows both.',
+        image: 'dark-island',
+        alt: 'Assembled kitchen cabinetry ready to install',
+      },
+      sections: [
+        ['Before you open a carton', 'Check the delivery against the drawing: every cabinet number present, doors and fronts undamaged, hardware bags matched to cabinets. Do it on the day, because damage found at hour six of assembly is harder to resolve. Clear a flat, clean, dry area at least the size of the largest cabinet, with a blanket or the carton itself down so you are not scratching finished faces on concrete. Get the drawing on the wall where you can see it.'],
+        ['Tools that matter', 'A drill-driver with a clutch, so you can stop over-driving cam screws and splitting board. A square — a proper one, not a phone app. A rubber mallet. A 5mm hex key for Blum, a Phillips 2 driver, a long spirit level and a laser level if you have one. Clamps are worth more than a second pair of hands for holding a carcass square while you fix it. A sharp knife for cartons, and a bag for the hardware you have not got to yet.'],
+        ['One cabinet at a time, and square', 'Build each carcass completely before you start the next, and check it for square by measuring the diagonals — equal diagonals means square. Tap joints home with the mallet rather than pulling them with the screws. Fit the back panel while the carcass is square and it will hold that shape; fit it after and it will hold whatever shape it was in. Then fit hinge plates and drawer runners while the box is on the bench, where you can see and reach both sides.'],
+        ['The order to build in', 'Base cabinets first, starting from the corner if there is one and working out, because corners set the geometry of the run. Then tall units — pantry, oven tower — which share the base line. Overheads last, once the base run is fixed and you can measure up from a level bench line rather than a floor that is never level. Drawers and doors go on at the very end, after everything is fixed, because they are the parts that get knocked.'],
+        ['Level the run before you fix anything', 'Set every base cabinet on its legs, then level the whole run to the highest point of the floor with the legs, not with packers under the carcass. Clamp cabinets face to face so the fronts are flush, and only then screw them to each other and to the wall. The benchtop is templated off this run; if it is out, the benchtop is out, and a stone top cannot be adjusted afterwards.'],
+        ['What the plumber and electrician need from you', 'Cut-outs for waste, water and power are made in the back panels and floors of the relevant cabinets before those cabinets go in — mark them from the service drawing, drill from the finished face out to avoid breakout, and keep them tight. The plumber and electrician connect through them at fit-off. Do not run any service yourself: connection is licensed work, and it is what the compliance paperwork at the end is for.'],
+        ['The mistakes that cost a weekend', 'Building on an uneven floor and getting a parallelogram. Driving cam locks with a drill on full torque. Fitting the back panel last. Hanging doors before the run is fixed. Assuming the wall is straight, and not scribing the end panel to it. Starting the overheads before the base run is levelled. Every one of those is common and every one of them is avoidable by going slower at the start.'],
+        ['When to stop and order it assembled', `If you are looking at a full kitchen with an island and a pantry, or want the <a href="/diy-flat-pack-kitchens" style="color:var(--brass)">DIY route</a> laid out end to end first, have no flat area to build in, or are at the end of an owner-build with no evenings left, price your time honestly. The same cabinetry ships <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> and the quote shows both, so the decision is a line item rather than a leap.`],
+      ],
+      faq: [
+        { q: 'How long does it take to assemble a flat pack kitchen?', a: 'A kitchenette is an afternoon. A full kitchen is several days for a capable person working carefully, and more if it is the first one. Budget more than you think and do not rush the base run.' },
+        { q: 'What tools do I need for a flat pack kitchen?', a: 'Drill-driver with a clutch, square, rubber mallet, hex key and Phillips driver for the hardware, long level, clamps. A laser level helps with overheads. Nothing exotic.' },
+        { q: 'How do I keep flat pack cabinets square?', a: 'Build on a flat surface, measure the diagonals, and fit the back panel while the carcass is square. Fix cabinets to each other with the fronts clamped flush before screwing to the wall.' },
+        { q: 'Can I connect the sink and cooktop myself?', a: 'No. You can build the cabinets and cut the service holes, but plumbing and electrical connection is licensed work in every Australian state, and it produces the compliance paperwork you will need at sale or for insurance.' },
+        { q: 'Is assembling a flat pack kitchen worth the saving?', a: 'If you have the time, the space and some patience, usually yes. If any of those three is missing, order it assembled and put your time somewhere else. The cabinetry is the same either way.' },
+      ],
+    },
+    {
+      slug: 'kitchen-pc-item-new-build-contract',
+      group: 'money',
+      showCollections: true,
+      nav: 'Kitchen PC item in a new build',
+      title: 'Kitchen PC Item Upgrade | New Build Allowance Explained',
+      desc: 'What the kitchen PC item or allowance in a new-build contract means, the four ways to handle it, and how to upgrade without paying the builder\u2019s margin on top.',
+      h1: 'The kitchen allowance in your<br><span class="italic brass">new-build contract.</span>',
+      lede: 'Most project-home contracts price the kitchen as an allowance, not a kitchen. What you do with that line before you sign decides whether you get the builder’s standard, pay a marked-up upgrade, or source it yourself for the difference.',
+      img: 'island-calacatta',
+      alt: 'Calacatta stone island kitchen in a new build home',
+      read: '9 min read',
+      note: 'Last checked: September 2026. General guidance, not legal or contract advice. Prime cost and provisional sum rules for Queensland domestic building contracts are set out by the <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> and change; how your own builder handles deletions, credits and owner-supplied items is in your contract and in their hands. Read both before you sign.',
+      answer: 'A kitchen PC item (prime cost) or allowance is a fixed dollar figure the builder has set aside for the kitchen in your contract. If the kitchen you actually choose costs more, you pay the difference — usually plus the builder’s margin on that difference. You have four options: accept the standard kitchen, upgrade through the builder, take a credit and supply your own, or fit a kitchenette-grade standard and replace it after handover. The third is where the money is, and it has to be agreed before you sign.',
+      inlineCta: {
+        after: 3,
+        eyebrow: 'What we do for new builds',
+        title: 'Priced against the allowance, not the builder’s upgrade list.',
+        body: 'Send us the builder’s kitchen drawing and the allowance figure. We quote the same footprint in our cabinetry, fixed and itemised, so you can put the two numbers side by side before you sign anything.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'New builds',
+        title: 'Two numbers,<br><span class="italic" style="color:var(--brass-lite)">side by side.</span>',
+        body: 'The builder’s upgrade price and ours, for the same kitchen. Delivered assembled to your site on the builder’s programme, with service drawings for their plumber and electrician.',
+        image: 'island-calacatta',
+        alt: 'New build kitchen with stone island, delivered assembled',
+      },
+      sections: [
+        ['What a PC item actually is', `A <strong>prime cost (PC) item</strong> is an allowance in a building contract for something that has not been selected yet — the builder puts a dollar figure against it so the contract can be signed. A <strong>provisional sum</strong> is the same idea for work rather than goods. Kitchens turn up as either, or as a “standard inclusion” with a specification attached. In Queensland the contract has to state each allowance, and the <a href="https://www.qbcc.qld.gov.au/" rel="noopener" target="_blank" style="color:var(--brass)">QBCC</a> publishes what a builder must tell you about them. The number is a placeholder for a real kitchen, and it is almost always set to hit a contract price rather than to suit how you cook.`],
+        ['How the maths works when you go over', 'If the kitchen you choose costs more than the allowance, the difference is added to the contract as a variation, and the contract will state the builder’s margin on that difference. That margin is the part people miss. An upgrade through the builder is priced by the builder’s kitchen supplier, then marked up, so you are paying two businesses to sell you one kitchen. If you come in under the allowance you are credited the difference, though in practice a standard kitchen is priced so that nobody does.'],
+        ['Option one: accept the standard kitchen', 'It is the cheapest path on paper and the right one if you intend to sell or rent the house soon. Look hard at the specification, not the display-home kitchen: board thickness, whether the drawers are full-extension, what brand the hinges and runners are, whether the benchtop is laminate or stone and at what thickness. Most standard inclusions are chosen to a price, and the parts that fail first in a kitchen — runners, hinges, edging — are exactly where a standard kitchen saves the money.'],
+        ['Option two: upgrade through the builder', 'Simplest, and the builder carries the warranty and the coordination. The cost is the margin on every dollar over the allowance, and the fact that you are choosing from the supplier’s range on the builder’s terms. Ask for the upgrade to be itemised — cabinetry, benchtop, hardware, appliances — so you can see what each line costs against the allowance rather than one total.'],
+        ['Option three: delete the kitchen and supply your own', `This is the option worth negotiating, and it has to happen <strong>before you sign</strong>. You ask the builder to remove the kitchen from their scope and credit the allowance. Three things to pin down in writing: the credit amount (it is often less than the allowance, because the builder’s cost for the standard kitchen is not the allowance figure); who does the plumbing and electrical fit-off and when; and what the builder charges to accommodate an owner-supplied kitchen. Builders vary from “no problem” to “no” to a coordination fee, and the answer tells you something about the builder. The kitchen becomes yours to warrant, and your supplier’s drawings become the document their trades rough in from — our <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">guide to getting a supplied kitchen installed</a> covers how that sequence runs.`],
+        ['Option four: fit the cheapest standard and replace after handover', `Some people take the builder’s standard kitchen, get their certificate, and replace it. It avoids the negotiation entirely, but you pay for a kitchen you will throw away and you pay again for demolition, and a house generally needs a working kitchen sink and cooking facilities before a certifier will sign it off as habitable, so you cannot simply leave the space empty — ask your certifier. It makes sense only when the builder refuses option three and the credit on offer is small.`],
+        ['What to ask before you sign', 'What exactly is the kitchen allowance, and is it a PC item, a provisional sum or a standard inclusion? What is your margin on PC overruns? If I delete the kitchen, what is the credit? Do you accept owner-supplied kitchens, and is there a fee? Who does fit-off, and at what stage? Will your plumber and electrician rough in to my supplier’s drawings? Every one of those has a plain answer, and a builder who will not give one is telling you how the rest of the build will go.'],
+        ['Timing on the programme', 'A supplied kitchen has to be on site after the floor is down, walls are sheeted and painted, and rough-in is complete, and before fit-off. That window is short and it moves. Give your supplier the builder’s programme, not a guess, and tell the site supervisor who is supplying the kitchen so nobody orders the standard one by default. Benchtops are templated off the installed cabinetry, so stone adds a week or more to that window — our <a href="/guide-how-to-measure-for-a-kitchen" style="color:var(--brass)">measuring guide</a> covers what to record from the plans before the frame is even up.'],
+      ],
+      faq: [
+        { q: 'What is a kitchen PC item?', a: 'A prime cost item is a dollar allowance in a building contract for something not yet selected — here, the kitchen. If your kitchen costs more than the allowance you pay the difference plus the builder’s stated margin; if it costs less, you are credited.' },
+        { q: 'Can I supply my own kitchen in a new build?', a: 'Usually, if it is agreed before contract. The builder deletes the kitchen from scope, credits an amount, and you supply the kitchen for their trades to fit off. Some builders charge a coordination fee and some refuse; ask early.' },
+        { q: 'Is the credit the same as the allowance?', a: 'Often not. The builder’s actual cost for the standard kitchen is usually less than the allowance figure, and the credit is based on their cost. Get the credit figure in writing before you sign.' },
+        { q: 'Who warrants an owner-supplied kitchen?', a: 'Your supplier, not the builder. The builder’s statutory warranty covers their work; the cabinetry warranty comes from whoever supplied it. Blum hardware carries its own lifetime mechanical warranty.' },
+        { q: 'Can I leave the kitchen out and do it after handover?', a: 'A dwelling generally needs a sink and cooking facilities to be certified as fit to occupy, so an empty kitchen space is usually not an option. Ask your certifier. Replacing a cheap standard kitchen after handover is possible but means paying for a kitchen twice.' },
+      ],
+    },
     {
       slug: 'how-to-install-a-supplied-kitchen',
       group: 'design',
@@ -2432,7 +2799,7 @@ module.exports = function (api) {
         eyebrow: 'Got your numbers',
         title: 'Send them and we will draw it.',
         body: 'Dimensions and photographs are enough for a concept and a realistic range. If it works, we measure it properly before anything is ordered.',
-        label: 'Send your measurements',
+        label: 'Get my free quote',
         href: '/contact',
       },
       cta: {
@@ -2572,7 +2939,7 @@ module.exports = function (api) {
       cta: {
         eyebrow: 'Supply only',
         title: 'The same kitchen,<br><span class="italic" style="color:var(--brass-lite)">minus one line.</span>',
-        body: 'Same carcasses, same Blum hardware, same ten-year warranty. You are not paying for our installation labour, and that is the whole difference. Send us the dimensions for a fixed, itemised supply quote.',
+        body: 'Same carcasses, same Blum hardware, same drawings. You are not paying for our installation labour, and that is the whole difference. Send us the dimensions for a fixed, itemised supply quote.',
         image: 'concrete-luxe',
         alt: 'Bright kitchen with stone island',
       },
@@ -2582,7 +2949,7 @@ module.exports = function (api) {
         ['The variable nobody prices', 'Services roughed in to a guess. This is where owner-supplied kitchens actually lose money — a waste or a power point placed before the cabinetry was drawn, then a cabinet modified on site or a wall reopened. It is entirely avoidable with dimensioned service drawings handed to your trades before they rough in, which is why we provide them as standard rather than as an extra.'],
         ['Talk to the builder before you assume', 'If you are mid-contract, taking the kitchen out as a provisional sum is a conversation, not a right. Many builders are comfortable with it; some are not, and some will charge a margin on the excluded item anyway. Raise it early. Doing it at lock-up stage is a fight; doing it at contract stage is an administrative change.'],
         ['When it is not worth it', `If you are not managing the build, the saving usually evaporates into your own time and risk. If you have never coordinated trades, the first thing that goes wrong will cost more than the margin you saved. Be honest about which of those you are — we would rather tell you that now than take the order and watch it go badly.`],
-        ['What supply actually includes here', `Design to your measurements, cabinetry delivered assembled rather than flat packed, full service drawings, a fixed and itemised quote, and the same ten-year warranty on the cabinetry. What it does not include is installation outside Central Queensland. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder kitchen supply</a>, and <a href="/guide-flat-pack-vs-assembled-kitchen" style="color:var(--brass)">the flat pack comparison</a> for how assembled delivery differs from a flat pack.`],
+        ['What supply actually includes here', `Design to your measurements, cabinetry delivered assembled rather than flat packed, full service drawings, and a fixed and itemised quote. What it does not include is installation outside Central Queensland. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder kitchen supply</a>, and <a href="/guide-flat-pack-vs-assembled-kitchen" style="color:var(--brass)">the flat pack comparison</a> for how assembled delivery differs from a flat pack.`],
       ],
       faq: [
         { q: 'Is it cheaper to supply your own kitchen?', a: `Generally, because you remove the builder’s margin on the item. What you take on is coordination — measurements, timing and any fix. It is a good trade for an owner-builder and often a poor one for someone who has never managed trades.` },
@@ -2595,26 +2962,26 @@ module.exports = function (api) {
       slug: 'flat-pack-vs-assembled-kitchen',
       group: 'design',
       nav: 'Flat pack versus assembled',
-      title: 'Flat Pack vs Assembled Kitchen | What Actually Differs | Bilt & Co',
+      title: 'Flat Pack vs Assembled Kitchen | Which to Order | Bilt & Co',
       desc: 'The real differences between a flat pack kitchen you assemble and cabinetry delivered assembled: build quality, time, hardware, and who carries the risk.',
       h1: 'Flat pack<br><span class="italic brass">versus delivered assembled.</span>',
-      lede: 'These are different products for different buyers, and the honest difference is smaller than one side claims and larger than the other admits.',
+      lede: 'We ship both. Same cabinetry, same hardware, same warranty; the difference is who builds the carcasses and how much truck they take. This is how to choose.',
       img: 'drawer-detail',
       alt: 'Assembled drawer box with full extension runners and soft close',
       read: '7 min read',
-      answer: `The cabinetry can be similar. What differs is who assembles it, and therefore who carries the risk of it being assembled badly. Flat pack arrives as panels and fittings for you to build. Ours arrives with carcasses built, hardware fitted and doors hung and adjusted. The saving on flat pack is real; so is the labour, and so is the variance in the result.`,
+      answer: `The cabinetry is the same. What differs is who assembles it and what it costs to ship. Flat pack arrives as pre-drilled, labelled panels for you or your installer to build, and travels for less. Assembled arrives with carcasses built, hardware fitted and doors hung and adjusted, and takes more truck. We quote both on the same drawing so the difference is a line item, not a guess.`,
       inlineCta: {
         after: 3,
-        eyebrow: 'Delivered assembled',
-        title: 'Fit a kitchen, do not build one.',
-        body: 'Carcasses built, hardware fitted, doors hung and adjusted before it reaches you. Your installer fits it, or ours does within Central Queensland.',
-        label: 'See how supply works',
-        href: '/owner-builder-kitchen-supply',
+        eyebrow: 'Both, on one quote',
+        title: 'Flat pack or assembled. Same drawing, two prices.',
+        body: 'Send the room dimensions once. The quote shows the kitchen flat packed and delivered assembled, with freight to your postcode on each, so you choose with the numbers in front of you.',
+        label: 'Get my free quote',
+        href: '/contact',
       },
       cta: {
-        eyebrow: 'Assembled delivery',
-        title: 'The boring part<br><span class="italic" style="color:var(--brass-lite)">is already done.</span>',
-        body: 'Nobody enjoys building carcasses on the floor of a house they are still finishing. Send us the dimensions and it arrives ready to fit, fixed and itemised.',
+        eyebrow: 'Your call',
+        title: 'Flat pack or assembled.<br><span class="italic" style="color:var(--brass-lite)">Two prices, one drawing.</span>',
+        body: 'Send us the dimensions and the quote comes back both ways, fixed and itemised, freight to your postcode on each. Then decide.',
         image: 'galley-stone',
         alt: 'Compact kitchen with stone benchtop',
       },
@@ -2623,13 +2990,13 @@ module.exports = function (api) {
         ['What is genuinely different: who assembles it', `A flat pack transfers the assembly labour to you. That is the saving, and it is honest. The consequence is that the squareness of every carcass, the alignment of every drawer and the adjustment of every door now depends on the person doing it — usually at the end of a build, usually tired, usually on an unfinished floor. Cabinetry assembled out of square does not announce itself; it shows up as doors that do not line up, and it cannot be fixed afterwards without taking it apart.`],
         ['Time is the cost people underestimate', 'A full kitchen is a substantial amount of assembly. People routinely budget a weekend and lose a fortnight of evenings, and it lands at the point in a renovation where patience is already gone. If your time has any value at all, price it in before comparing quotes. If you enjoy the work and have the space to do it properly, that changes the calculation entirely and there is nothing wrong with the answer being flat pack.'],
         ['Where the risk sits', 'With a flat pack, a damaged or mis-drilled panel is your problem to resolve with a supplier, mid-build. With assembled delivery, it arrives built and any fault is visible on delivery rather than discovered at hour six of assembly. Neither is immune to problems; they differ in when you find out and who is holding the pieces.'],
-        ['What we actually do', `We are not a flat pack company and we are not pretending to be a workshop either. Cabinetry is imported, assembled before delivery, and installed by our own team within Central Queensland or by your installer beyond it. That is the whole model, stated plainly. It means you get built carcasses and adjusted doors without paying for local manufacture — and it is why our <a href="/investment" style="color:var(--brass)">price bands</a> sit where they do.`],
-        ['Which one you should choose', `If you are cost-driven, capable and have the time and space, flat pack is a legitimate answer and we will say so. If you want the assembly done before it arrives, or you are on a build programme where a fortnight of evenings is not available, assembled delivery is the reason we exist. Either way, ask about board, hardware and edging first — those decide whether the kitchen lasts. <a href="/guide-kitchen-renovation-checklist" style="color:var(--brass)">Our renovation checklist</a> has the seven questions worth asking any supplier.`],
+        ['What we actually do', `We ship both, anywhere in Australia, from the same drawing. Cabinetry is imported to our specification — we are not a workshop and do not pretend to be — and either packed flat with the hardware bagged per cabinet, or assembled before delivery with doors hung and adjusted. Within Central Queensland our own team installs the assembled version. Our <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack</a> and <a href="/assembled-kitchens" style="color:var(--brass)">assembled</a> pages cover what arrives in each case, and the <a href="/investment" style="color:var(--brass)">price bands</a> apply to both.`],
+        ['Which one you should choose', `Flat pack if you have the time, a flat floor to build on, and the room is hard to get a built cabinet into — or you are interstate and freight matters. Assembled if you are on a build programme, want your carpenter fitting rather than building, or are at the end of an owner-build with no evenings left. Mixed if some units need to go flat for access. Either way, ask about board, hardware and edging first — those decide whether the kitchen lasts, and they are the same on both of ours. <a href="/guide-kitchen-renovation-checklist" style="color:var(--brass)">Our renovation checklist</a> has the seven questions worth asking any supplier, and the <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> shows what the flat pack route actually involves.`],
       ],
       faq: [
         { q: 'Is a flat pack kitchen worse than an assembled one?', a: 'Not necessarily. The board, hardware and edging decide longevity, and a well-specified flat pack beats a poorly specified custom kitchen. What differs is who assembles it, and therefore how consistent the result is.' },
         { q: 'How long does it take to assemble a flat pack kitchen?', a: 'Longer than most people budget. A full kitchen is a serious amount of assembly, and it lands at the end of a build when time and patience are shortest. Price your own hours before comparing quotes.' },
-        { q: 'Do you sell flat pack kitchens?', a: 'No. Our cabinetry arrives assembled — carcasses built, hardware fitted, doors hung and adjusted. You are fitting a kitchen rather than building one first.' },
+        { q: 'Do you sell flat pack kitchens?', a: 'Yes, and assembled. Same cabinetry cut to your drawing either way; the quote shows both with freight to your postcode. Flat pack ships as pre-drilled, labelled panels; assembled arrives with carcasses built and doors adjusted.' },
         { q: 'What should I ask any kitchen supplier?', a: 'Board thickness and moisture rating, hardware brand and warranty, and whether the edging is glued or laser-bonded. Those three matter more than flat pack versus assembled, and a supplier who is vague on any of them is telling you something.' },
       ],
     },
@@ -2694,7 +3061,7 @@ module.exports = function (api) {
         eyebrow: 'Older homes',
         title: 'We measure before we quote.',
         body: 'Not from your dimensions, and not from the plan — from the room. In a hundred-year-old house that is the only number that means anything.',
-        label: 'Book a site measure',
+        label: 'Get my free quote',
         href: '/contact',
       },
       cta: {
@@ -2801,7 +3168,7 @@ module.exports = function (api) {
         { q: 'Can I live in a tiny house in Queensland?', a: 'It depends on your council and on whether the home is a registrable vehicle or a building. Some councils permit it in defined circumstances, some only during construction of a main dwelling, some not at all. Ask yours in writing before you commit.' },
         { q: 'Does a tiny home on wheels need building approval?', a: 'Generally not in the way a fixed dwelling does, if it is a registrable vehicle. Fix it to the ground and it is usually assessed as a building. The distinction is the thing to establish first, and sellers are not always precise about it.' },
         { q: 'Is a granny flat easier than a tiny home?', a: 'Often, if the goal is somewhere permanent. A secondary dwelling goes through an established approval process, whereas tiny home rules vary and can be restrictive. Price both before deciding.' },
-        { q: 'How much is a tiny home kitchen?', a: 'From about $5,300 for a 1.8 metre run and $6,500 for 2.4 metres, with full-size Blum hardware and moisture-resistant carcasses. Delivered assembled, not flat packed.' },
+        { q: 'How much is a tiny home kitchen?', a: 'From about $5,300 for a 1.8 metre run and $6,500 for 2.4 metres, with full-size Blum hardware and moisture-resistant carcasses. Delivered assembled or flat packed, your call.' },
       ],
     },
     {
@@ -2942,7 +3309,7 @@ module.exports = function (api) {
         eyebrow: 'When you are ready to quote',
         title: 'Itemised the way assessors work through it.',
         body: 'Cabinetry, benchtop, hardware, appliances and installation listed separately, which is how a claim gets assessed. We cannot tell you what your policy covers — we can give you the document it needs.',
-        label: 'Get an itemised quote',
+        label: 'Get my free quote',
         href: '/contact',
       },
       cta: {
@@ -3069,7 +3436,7 @@ module.exports = function (api) {
         eyebrow: 'Not sure which side you are on',
         title: 'Send us the plan. We will tell you before you spend.',
         body: 'Photographs or a floor plan is enough. If your job needs a certifier we will say so up front, rather than let you find out three weeks into a build.',
-        label: 'Get a straight answer',
+        label: 'Get my free quote',
         href: '/contact',
       },
       cta: {
@@ -3357,7 +3724,7 @@ module.exports = function (api) {
         eyebrow: 'Before you commit to a shape',
         title: 'We measure the room, free.',
         body: 'Clearances are decided by what is actually there, not by a plan. A site measure, a 3D design and a fixed quote, yours to keep either way.',
-        label: 'Book a site measure',
+        label: 'Get my free quote',
         href: '/contact',
       },
       cta: {
@@ -3400,7 +3767,7 @@ module.exports = function (api) {
      areaServed GeoCircle is untouched. */
   const caloundraFaq = [
     { q: 'Do you install kitchens in Caloundra?', a: 'Not yet. We are based in Rockhampton and our installation team works Central Queensland. What we can do on the Sunshine Coast today is supply — we design the kitchen, and it arrives assembled for your builder, cabinetmaker or installer to fit. Full design-and-install on the Sunshine Coast is planned, and registering your interest is what tells us when to move.' },
-    { q: 'How does supply-only work from 500km away?', a: 'The same way it works for the builders we already supply. We design to your measurements, you confirm the drawings, and the cabinetry is delivered assembled — not flat packed in cartons. Your installer fits it. We provide the service drawings so your plumber and electrician know exactly where everything lands.' },
+    { q: 'How does supply-only work from 500km away?', a: 'The same way it works for the builders we already supply. We design to your measurements, you confirm the drawings, and the cabinetry is delivered assembled or flat packed, whichever you order. Your installer fits it. We provide the service drawings so your plumber and electrician know exactly where everything lands.' },
     { q: 'Can I get a quote if I am on the Sunshine Coast?', a: 'Yes. Send us the room dimensions and photographs and we will quote the supply, fixed and itemised, including delivery. What we will not do is quote you for an installation we cannot stand behind.' },
     { q: 'When will you install on the Sunshine Coast?', a: 'When there is enough work there to justify it, which is genuinely what the enquiries on this page decide. We would rather tell you that plainly than put a page up pretending we already have a team on the Coast.' },
   ];
@@ -3427,7 +3794,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">Caloundra, we supply.<br><span class="italic brass">We do not install yet.</span></h1>
         <p class="lede">Most companies would put up a page here claiming to serve the Sunshine Coast. We are in Rockhampton, five hundred kilometres north, and we would rather tell you exactly what we can and cannot do.</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">Get a supply quote</a>
+          <a class="btn btn--lg" href="contact.html">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
         </div>
       </div>
@@ -3461,11 +3828,11 @@ module.exports = function (api) {
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">Supply only<small>Delivered assembled</small></div>
           <ul>
             <li>Designed to your measurements</li>
-            <li>Delivered assembled, not flat packed</li>
+            <li>Delivered assembled, or flat packed — your call</li>
             <li>Full service drawings for your trades</li>
             <li>Fixed, itemised supply quote including delivery</li>
             <li>Blum hardware and moisture-resistant carcasses</li>
-            <li>Ten-year warranty on the cabinetry we supply</li>
+            <li>Delivered assembled, doors adjusted before it arrives</li>
             <li class="no">Installation not included — not yet</li>
           </ul>
           <a class="btn btn--block" href="contact.html">Register interest</a>
@@ -3489,13 +3856,14 @@ module.exports = function (api) {
       { q: `Do you install kitchens in ${place}?`, a: `No. Our installation team works Central Queensland, within about 150 kilometres of Rockhampton, and ${place} is beyond that. What we do offer is supply — we design the kitchen and it arrives assembled for your builder, cabinetmaker or installer to fit. We would rather say that plainly than take the job and subcontract it to someone we have never worked with.` },
       { q: `How does supply-only work from ${distance} away?`, a: `The same way it works for the builders we already supply. We design to your measurements, you confirm the drawings, and the cabinetry is delivered assembled — carcasses built, hardware fitted, doors hung. Your installer fits it. You get a full set of service drawings so your plumber and electrician know exactly where everything lands.` },
       { q: `Can I get a fixed quote in ${place}?`, a: `Yes. Send the room dimensions, photographs and your appliance models and we will quote the supply, fixed and itemised, including delivery to ${place}. What we will not do is quote you for an installation we cannot stand behind.` },
-      { q: `Is it flat packed?`, a: `No. It arrives assembled. You or your installer are fitting a kitchen, not building one on the floor first. Allow for the space that takes — assembled cabinetry needs more room to store than cartons do.` },
+      { q: `Is it flat packed?`, a: `Your choice. Assembled means you or your installer are fitting a kitchen, not building one on the floor first, and it needs more room to store than cartons do. Flat pack ships for less and gets into tight rooms. The quote shows both.` },
       { q: `Will you ever install in ${place}?`, a: `Only if there is enough work there to put a team on properly. The enquiries through this page are genuinely what decides that. Until then, supply is the honest offer.` },
     ];
     // 'the Whitsundays' -> title 'Kitchens Whitsundays', H1 'The Whitsundays, we supply.'
     const bare = place.replace(/^the /, '');
     const Place = place.charAt(0).toUpperCase() + place.slice(1);
     return {
+      assembled: 'supply',
       file: `kitchens-${slug}.html`,
       service: {
         name: `Kitchen supply and delivery to ${place}`,
@@ -3519,7 +3887,7 @@ module.exports = function (api) {
         <p class="lede">${blurb}</p>
         <div class="answer"><p class="eyebrow">The short answer</p><p>We are in Rockhampton, ${distance} away. Our installers do not work ${place}, and we will not pretend otherwise. What we can do is design your kitchen and deliver it assembled for your own builder to fit — which is already what we do for the tiny home and granny flat builders we supply.</p></div>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="/contact">Get a supply quote</a>
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="/investment">See the price bands</a>
         </div>
       </div>
@@ -3544,7 +3912,7 @@ module.exports = function (api) {
         </div>
         <div ${rv()}>
           <h2 class="d3">The same kitchen, minus one line</h2>
-          <p class="mt-1 muted">Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging, same ten-year warranty on the cabinetry. Supply is not a lesser product for people who could not afford the real one — it is the same kitchen without our installation labour on the invoice. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder supply</a> for how it works end to end.</p>
+          <p class="mt-1 muted">Same 18mm moisture-resistant carcasses, same Blum soft-close hardware, same laser-bonded edging. Supply is not a lesser product for people who could not afford the real one — it is the same kitchen without our installation labour on the invoice. See <a href="/owner-builder-kitchen-supply" style="color:var(--brass)">owner-builder supply</a> for how it works end to end.</p>
         </div>
       </div>
       <div ${rv()} data-rv-d="1">
@@ -3553,14 +3921,14 @@ module.exports = function (api) {
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">Supply only<small>Delivered assembled</small></div>
           <ul>
             <li>Designed to your measurements</li>
-            <li>Delivered assembled, not flat packed</li>
+            <li>Delivered assembled, or flat packed — your call</li>
             <li>Full service drawings for your trades</li>
             <li>Fixed, itemised quote including delivery</li>
             <li>Blum hardware, moisture-resistant carcasses</li>
-            <li>Ten-year warranty on the cabinetry</li>
+            <li>Blum hardware, lifetime mechanical warranty</li>
             <li class="no">Installation not offered in ${place}</li>
           </ul>
-          <a class="btn btn--block" href="/contact">Get a supply quote</a>
+          <a class="btn btn--block" href="/contact">Get my free quote</a>
         </div>
         ${opts.council ? `<p class="small muted mt-2">Building a second dwelling here? <a href="${opts.council[0]}" style="color:var(--brass)">${opts.council[1]}</a>.</p>` : ''}
         <p class="small muted mt-2">Not sure how the install side works? <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">How to get a supplied kitchen installed</a> — the three trades, the order, and the paperwork.</p>
@@ -3653,7 +4021,7 @@ module.exports = function (api) {
         <p class="lede">${lede}</p>
         <div class="answer"><p class="eyebrow">The short answer</p><p>${answer}</p></div>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="/contact">Get a fixed quote</a>
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
           <a class="btn btn--ghost btn--lg" href="${parentSeg}">How we build them</a>
         </div>
       </div>
@@ -3677,7 +4045,7 @@ module.exports = function (api) {
             <h3 class="d3">Send us the dimensions.</h3>
             <p class="mt-1 muted">Fixed and itemised, with nothing hidden in it. If the number does not work you owe us nothing and you keep the drawings.</p>
           </div>
-          <a class="btn btn--lg" href="/contact">Get a fixed quote</a>
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
         </aside>
       </div>
       <div ${rv()} data-rv-d="1">
@@ -3685,7 +4053,7 @@ module.exports = function (api) {
           <span class="tier__tag">${place}</span>
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">${price}<small>${range}</small></div>
           <ul>${opts.list.map((x) => `<li>${x}</li>`).join('')}</ul>
-          <a class="btn btn--block" href="/contact">Get this priced</a>
+          <a class="btn btn--block" href="/contact">Get my free quote</a>
         </div>
         <p class="small muted mt-2">More on <a href="${parentSeg}" style="color:var(--brass)">${parentSegLabel.toLowerCase()}</a> and on <a href="${parentTown}" style="color:var(--brass)">${parentTownLabel}</a>.${council ? ` Planning questions go to ${council}.` : ''}</p>
       </div>
@@ -3715,7 +4083,7 @@ module.exports = function (api) {
       parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
       parentTown: '/kitchens-yeppoon', parentTownLabel: 'kitchens in Yeppoon',
       council: LIVINGSTONE,
-      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Moisture-resistant carcasses for coastal humidity', 'Blum hardware with a lifetime mechanical warranty', 'Stone, porcelain or laminate benchtop', 'Installed by our own team, forty minutes away', 'Ten-year warranty on cabinetry and workmanship'],
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Moisture-resistant carcasses for coastal humidity', 'Blum hardware with a lifetime mechanical warranty', 'Stone, porcelain or laminate benchtop', 'Installed by our own team, forty minutes away', 'Delivered assembled, doors adjusted before it arrives'],
       sections: [
         ['Livingstone Shire, not Rockhampton', `This is the one that trips people up. Yeppoon, Cooee Bay, Lammermoor, Taranganba, Barmaryee, Zilzie and Emu Park are all ${LIVINGSTONE}, with their own planning scheme. Whether a secondary dwelling is permitted on your block, how big it can be, and whether it can be tenanted separately are all their decisions, not ours and not Rockhampton’s. Ask them before you spend anything — we cover what the classification means for the kitchen in <a href="/guide-class-1a-granny-flat-yeppoon" style="color:var(--brass)">our Class 1a guide</a>.`],
         ['Salt air is a specification problem', 'Coastal humidity and salt do two things to cabinetry: they get into unsealed board edges, and they corrode cheap hardware. Neither shows up in year one. We specify moisture-resistant carcasses and laser-bonded edging as standard, which matters more here than fifty kilometres inland, and we would not use unbranded runners on a coastal job at any price.'],
@@ -3793,7 +4161,7 @@ module.exports = function (api) {
       parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
       parentTown: '/kitchens-gladstone', parentTownLabel: 'kitchens in Gladstone',
       council: GLADSTONE_C,
-      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Specified for tenant turnover, not first impressions', 'Moisture-resistant carcasses, laser-bonded edging', 'Blum hardware with a lifetime mechanical warranty', 'Installed by our own team', 'Ten-year warranty on cabinetry and workmanship'],
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Specified for tenant turnover, not first impressions', 'Moisture-resistant carcasses, laser-bonded edging', 'Blum hardware with a lifetime mechanical warranty', 'Installed by our own team', 'Delivered assembled, doors adjusted before it arrives'],
       sections: [
         ['An industrial city rents differently', 'Gladstone housing turns over with the projects, and a secondary dwelling here is often an income decision rather than a family one. That means the kitchen gets a new occupant more often than most, and the parts that fail are always the same three: glued edging, standard runners, and chipboard carcasses that swell at the first dripping tap. Spend there and keep the finishes simple.'],
         ['Settle the approval before the design', `Whether a secondary dwelling can be tenanted separately on your block is a ${GLADSTONE_C} planning matter, and some approvals restrict occupation to the household of the main dwelling. That single answer decides whether the project makes sense. Our guide on <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">renting out a secondary dwelling</a> covers the questions to ask, and the same logic applies here.`],
@@ -3818,7 +4186,7 @@ module.exports = function (api) {
       parentSeg: '/new-build-kitchens', parentSegLabel: 'New build kitchens',
       parentTown: '/kitchens-gracemere', parentTownLabel: 'kitchens in Gracemere',
       council: ROCKY_C,
-      list: ['Fixed, itemised pricing before you commit', 'Service drawings for your builder’s trades', 'Delivered to your construction programme', 'Blum hardware and moisture-resistant carcasses', 'Fifteen minutes from our door', 'Ten-year warranty on cabinetry and workmanship'],
+      list: ['Fixed, itemised pricing before you commit', 'Service drawings for your builder’s trades', 'Delivered to your construction programme', 'Blum hardware and moisture-resistant carcasses', 'Fifteen minutes from our door', 'Delivered assembled, doors adjusted before it arrives'],
       sections: [
         ['Raise it before the slab', 'The cheapest time to change a kitchen is before anything is poured. Power to an island, a second sink in a pantry, a water point for the fridge — all trivial while the plumber and electrician are still roughing in, all expensive afterwards. If your Gracemere build has not started, this is the conversation to have now rather than at handover.'],
         ['How the provisional sum usually works', 'Most build contracts carry the kitchen as an allowance. Speak to your builder about taking it out as a provisional sum and having it supplied separately — many are entirely comfortable with it, some are not, and it is a conversation worth having early rather than late. We provide the service drawings your builder’s trades need either way.'],

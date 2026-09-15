@@ -178,7 +178,8 @@ completed projects is misleading conduct.
       at `hero-main.jpg`, which is a kitchen photo, not a logo. Google uses this
       for the knowledge panel. Supply a square raster logo (min 112x112, PNG or
       JPG) and repoint `ldLocalBusiness()` in `_build.js`.
-- [ ] **`sameAs`.** Omitted deliberately - there are no social profiles yet. Add
+- [ ] **`sameAs` / Facebook.** `SITE.facebook` in `_build.js` is empty. Set it to the page URL and the footer link and `sameAs` both switch on. Setup kit: `../bilt-social-kit/`. Previously:
+  Omitted deliberately - there were no social profiles. Add
       the Google Business Profile URL first once it verifies, then Facebook and
       Instagram as they go live.
 - [ ] **Saturday hours.** Schema carries Mon-Fri 08:00-17:00 only. "Saturday by

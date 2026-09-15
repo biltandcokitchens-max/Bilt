@@ -57,7 +57,7 @@ try{
 }catch(e){/* private mode or storage blocked: count it, better than breaking */}
 gtag('config','G-G40133MH26',biltCfg);
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://biltstudio.com.au/contact","name":"Contact Bilt & Co | Free Kitchen Design, Rockhampton","description":"Book a free kitchen design consultation in Rockhampton. Call 0401 821 848 or send your project details for a fixed-price quote within a week.","isPartOf":{"@id":"https://biltstudio.com.au/#business"},"about":{"@id":"https://biltstudio.com.au/#business"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"https://biltstudio.com.au/contact","name":"Contact Bilt & Co | Free Kitchen Design, Rockhampton","description":"Book a free kitchen design consultation in Rockhampton. Call 0401 821 848 or send your project details for a fixed-price quote within a week.","isPartOf":{"@id":"https://biltstudio.com.au/#business"},"about":{"@id":"https://biltstudio.com.au/#business"},"primaryImageOfPage":{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/island-marble-brass.jpg","description":"Stone island bench with brushed brass tapware"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://biltstudio.com.au/contact"}]}</script>
 </head>
 <body>
@@ -87,7 +87,7 @@ gtag('config','G-G40133MH26',biltCfg);
       </nav>
       <div class="head__cta">
         <a class="head__tel" href="tel:+61401821848"><span>Talk to a designer</span><strong>0401 821 848</strong></a>
-        <a class="btn" href="/contact">Get my free design</a>
+        <a class="btn" href="/contact">Get my free quote</a>
         <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span></button>
       </div>
     </div>
@@ -98,7 +98,7 @@ gtag('config','G-G40133MH26',biltCfg);
     <div class="wrap phero__grid">
       <div>
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span aria-current="page" style="margin:0;color:var(--stone)">Contact</span></nav>
-        <span class="pill"><b class="tabnums" data-spots data-spots-start="6">5</b> free design <span data-spots-plural>spots</span> left this month</span>
+        <span class="pill"><b class="tabnums" data-spots data-spots-start="6">3</b> free design <span data-spots-plural>spots</span> left this month</span>
         <h1 class="d1" style="font-size:clamp(2.25rem,5vw,3.75rem)">Free 3D design.<br><span class="italic brass">Fixed quote.</span><br>No obligation.</h1>
         <p class="lede">Send this through and we will call you within one business day to arrange a time &mdash; at your kitchen table, with your plans in front of us.</p>
         <ul class="list-check mt-3">
@@ -114,59 +114,24 @@ gtag('config','G-G40133MH26',biltCfg);
           <input type="hidden" name="form-name" value="consultation">
           <p class="hp"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="form-card__head">
-            <h2 class="d4">Book your free design consultation</h2>
-            <p class="small muted" style="margin:0">Takes about 60 seconds. No deposit, no sales visit unless you want one.</p>
+            <h2 class="d4">Send us your rough measurements.<br>We&rsquo;ll send back a price.</h2>
+            <p class="small muted" style="margin:0">Rough is fine &mdash; wall lengths, ceiling height, where the window is. You get a confirmation straight away and a call within one business day.</p>
           </div>
-                    <div class="form__row">
+          <div class="form__row">
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" placeholder="Jane Marchetti"></div>
             <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="0400 000 000"></div>
           </div>
           <div class="form__row">
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@example.com.au"></div>
-            <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
+            <div class="field"><label for="suburb">Suburb or town</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
           </div>
           <div class="field">
-            <label>What are you building?</label>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="scope" value="Kitchen" checked><span>Kitchen</span></label>
-              <label class="chip"><input type="checkbox" name="scope" value="Butler's pantry"><span>Butler's pantry</span></label>
-              <label class="chip"><input type="checkbox" name="scope" value="Wardrobes"><span>Wardrobes</span></label>
-              <label class="chip"><input type="checkbox" name="scope" value="Laundry"><span>Laundry</span></label>
-              <label class="chip"><input type="checkbox" name="scope" value="Vanities"><span>Vanities</span></label>
-              <label class="chip"><input type="checkbox" name="scope" value="Whole house"><span>Whole house</span></label>
-            </div>
+            <label for="message">Rough measurements, or what you&rsquo;re after</label>
+            <textarea id="message" name="message" rows="4" placeholder="Kitchen is 5.4m along one wall, 2.4m ceiling, window on the left. Want an island if it fits. Granny flat, so a kitchenette might do."></textarea>
           </div>
-          <div class="form__row">
-            <div class="field">
-              <label for="budget">Investment range</label>
-              <select id="budget" name="budget">
-                <option value="">Prefer not to say</option>
-                <option>Under $20,000</option>
-                <option>$20,000 – $30,000</option>
-                <option selected>$30,000 – $45,000</option>
-                <option>$45,000 – $65,000</option>
-                <option>$65,000 +</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="timeline">Timeline</label>
-              <select id="timeline" name="timeline">
-                <option>As soon as possible</option>
-                <option selected>Within 3 months</option>
-                <option>3 – 6 months</option>
-                <option>6 – 12 months</option>
-                <option>Just researching</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="message">Tell us about the room</label>
-            <textarea id="message" name="message" rows="4" placeholder="1970s Queenslander in Frenchville, kitchen is 5.4m along one wall with a bad island. We cook every night and hate the bench height."></textarea>
-          </div>
-          <button class="btn btn--lg btn--block" type="submit">Get my free design &amp; quote<span class="btn__sub">We reply within one business day</span></button>
+          <button class="btn btn--lg btn--block" type="submit">Get my free quote<span class="btn__sub">No deposit &middot; No showroom visit &middot; No salesperson at your door</span></button>
+          <p class="form__note">Or call <a href="tel:+61401821848">0401 821 848</a> &mdash; you get the person who designs it, not a call centre.</p>
           <p class="form__note"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 2l6.5 2.5v5c0 4-2.8 7.4-6.5 8.5C6.3 16.9 3.5 13.5 3.5 9.5v-5L10 2z"/></svg> Your details stay with our studio &mdash; never sold, never shared &mdash; see our <a href="/privacy">privacy policy</a></p>
-          <!-- PLACEHOLDER: this form opens the visitor's email client. Connect a real form handler
-               (Netlify Forms, Formspree or a CRM endpoint) before launch. See PLACEHOLDERS.md -->
         </form>
       </div>
     </div>
@@ -174,7 +139,7 @@ gtag('config','G-G40133MH26',biltCfg);
 
   <div class="trust">
     <div class="wrap trust__in">
-      <span class="trust__i"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> 10-year cabinetry warranty</span>
+      <span class="trust__i"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg> Delivered assembled, doors adjusted</span>
       <span class="trust__i"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M13 2.5a4.5 4.5 0 00-4 6.6L2.8 15.3a1.6 1.6 0 002.3 2.3l6.2-6.2A4.5 4.5 0 1013 2.5z"/></svg> Specified and installed by us</span>
       <span class="trust__i"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 2v16M13.5 5.5H8.2a2.3 2.3 0 000 4.6h3.6a2.3 2.3 0 010 4.6H6"/></svg> Fixed-price quotes, no variations</span>
       <span class="trust__i"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M10 2l6.5 2.5v5c0 4-2.8 7.4-6.5 8.5C6.3 16.9 3.5 13.5 3.5 9.5v-5L10 2z"/></svg> Fully insured</span>
@@ -228,7 +193,7 @@ gtag('config','G-G40133MH26',biltCfg);
         </figure>
       </div>
       <!-- PLACEHOLDER: replace with verified Google reviews and real names before launch. See PLACEHOLDERS.md -->
-      <div class="center mt-3" data-rv><a class="link-u" href="/contact">Book your free design &amp; quote &rarr;</a></div>
+      <div class="center mt-3" data-rv><a class="link-u" href="/contact">Get my free quote &rarr;</a></div>
     </div>
   </section>
 
@@ -244,7 +209,7 @@ gtag('config','G-G40133MH26',biltCfg);
           <p class="small muted" style="max-width:34ch">Bespoke Kitchens & Fine Joinery for Rockhampton and Central Queensland. Drawn, specified and installed by one local team — never subcontracted.</p>
           <div class="badge-row mt-2">
             <span class="badge">Designed &amp; installed by us</span>
-            <span class="badge">10-year cabinetry warranty</span>
+            <span class="badge">Delivered assembled</span>
           </div>
         </div>
         <div>
@@ -256,27 +221,18 @@ gtag('config','G-G40133MH26',biltCfg);
             <li><a href="/granny-flat-kitchens">Granny flat kitchens</a></li>
             <li><a href="/tiny-home-kitchens">Tiny home kitchens</a></li>
             <li><a href="/kitchenettes">Kitchenettes</a></li>
-
+            <li><a href="/flat-pack-kitchens">Flat pack kitchens</a></li>
+            <li><a href="/assembled-kitchens">Assembled kitchens</a></li>
             <li><a href="/short-stay-kitchens">Short-stay &amp; Airbnb</a></li>
-
             <li><a href="/kitchen-islands">Kitchen islands</a></li>
-
             <li><a href="/laundries">Laundries</a></li>
-
             <li><a href="/kitchens-caloundra">Caloundra supply</a></li>
-
             <li><a href="/owner-builder-kitchen-supply">Owner-builder supply</a></li>
-
             <li><a href="/accessible-kitchens">Accessible kitchens</a></li>
-
             <li><a href="/sda-kitchens-queensland">SDA kitchens</a></li>
-
             <li><a href="/aging-in-place-kitchens">Aging in place</a></li>
-
             <li><a href="/motorised-pull-down-shelving">Pull-down shelving</a></li>
-
             <li><a href="/kitchens-gladstone">Kitchens Gladstone</a></li>
-
             <li><a href="/kitchens-biloela">Kitchens Biloela</a></li>
             <li><a href="/trade">Trade &amp; builders</a></li>
             <li><a href="/butlers-pantries">Butler's pantries</a></li>
@@ -304,6 +260,7 @@ gtag('config','G-G40133MH26',biltCfg);
             Central Queensland<br><br>
             <a href="tel:+61401821848">0401 821 848</a><br>
             <a href="mailto:hello@biltstudio.com.au">hello@biltstudio.com.au</a>
+            <br><a href="https://www.facebook.com/biltandcokitchens" rel="noopener" target="_blank">Facebook</a> &middot; <a href="https://www.instagram.com/biltandcokitchens" rel="noopener" target="_blank">Instagram</a>
           </address>
           <h2 style="margin-top:2rem">Hours</h2>
           <ul class="small">
@@ -319,7 +276,7 @@ gtag('config','G-G40133MH26',biltCfg);
   </footer>
 <div class="sticky-cta">
     <a href="tel:+61401821848">Call 0401 821 848</a>
-    <a href="/contact">Get my free design &amp; quote</a>
+    <a href="/contact">Get my free quote</a>
   </div>
 <script src="assets/js/main.js" defer></script>
 </body>
