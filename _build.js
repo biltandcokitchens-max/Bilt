@@ -156,6 +156,16 @@ function footer() {
       ['kitchens-hervey-bay.html', 'Hervey Bay'],
       ['kitchens-whitsundays.html', 'Whitsundays'],
       ['kitchens-caloundra.html', 'Caloundra'],
+    ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('')
+    + '<li style="margin-top:.9rem;color:#8B8375;font-size:.8125rem">Flat pack, ships nationally</li>'
+    + [
+      ['flat-pack-kitchens-sydney.html', 'Sydney'],
+      ['flat-pack-kitchens-melbourne.html', 'Melbourne'],
+      ['flat-pack-kitchens-perth.html', 'Perth'],
+      ['flat-pack-kitchens-adelaide.html', 'Adelaide'],
+      ['flat-pack-kitchens-canberra.html', 'Canberra'],
+      ['flat-pack-kitchens-hobart.html', 'Hobart'],
+      ['flat-pack-kitchens-darwin.html', 'Darwin'],
     ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('');
 
   return `<footer class="foot">
@@ -182,6 +192,7 @@ function footer() {
             <li><a href="tiny-home-kitchens.html">Tiny home kitchens</a></li>
             <li><a href="kitchenettes.html">Kitchenettes</a></li>
             <li><a href="flat-pack-kitchens.html">Flat pack kitchens</a></li>
+            <li><a href="flat-pack-kitchen-upgrades.html">Flat pack upgrades</a></li>
             <li><a href="assembled-kitchens.html">Assembled kitchens</a></li>
             <li><a href="short-stay-kitchens.html">Short-stay &amp; Airbnb</a></li>
             <li><a href="kitchen-islands.html">Kitchen islands</a></li>
@@ -331,18 +342,16 @@ function ldLocalBusiness() {
     telephone: '+61 401 821 848',
     email: SITE.email,
     image: `${SITE.origin}/assets/img/hero-main.jpg`,
-    logo: `${SITE.origin}/assets/img/hero-main.jpg`,
+    logo: { '@type': 'ImageObject', url: `${SITE.origin}/assets/img/logo.png`, width: 1000, height: 1000 },
     priceRange: '$$$',
     ...([SITE.facebook, SITE.instagram].some(Boolean) ? { sameAs: [SITE.facebook, SITE.instagram].filter(Boolean) } : {}),
     // Saturday is by appointment. Schema has no way to say that, and listing
     // it with fixed hours would be a claim we cannot keep, so it lives in the
     // Google Business Profile instead.
-    openingHoursSpecification: [{
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '17:00',
-    }],
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '13:00' },
+    ],
     identifier: { '@type': 'PropertyValue', propertyID: 'ACN', value: SITE.acn.replace(/\s/g, '') },
     address: {
       '@type': 'PostalAddress',
@@ -380,7 +389,12 @@ function ldService(page, canonical) {
     serviceType: sv.type || sv.name,
     url: canonical,
     provider: { '@id': `${SITE.origin}/#business` },
-    areaServed: (sv.areas || SITE.areas).map((a) => ({ '@type': 'Place', name: `${a}, Queensland` })),
+    // Most services are Queensland-only, so a plain string is assumed to be a
+    // QLD town. National flat-pack pages pass [name, state] tuples instead so
+    // their schema does not claim Sydney is in Queensland.
+    areaServed: (sv.areas || SITE.areas).map((a) => (Array.isArray(a)
+      ? { '@type': 'Place', name: `${a[0]}, ${a[1]}` }
+      : { '@type': 'Place', name: `${a}, Queensland` })),
     ...(sv.price ? { offers: { '@type': 'Offer', priceCurrency: 'AUD', price: sv.price, availability: 'https://schema.org/InStock', url: canonical } } : {}),
     ...(page.images ? { image: [page.og, ...page.images.map((i) => i[0])].filter(Boolean).map((f) => `${SITE.origin}/assets/img/${f}.jpg`) } : {}),
   };

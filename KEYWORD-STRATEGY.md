@@ -53,10 +53,15 @@ cannibalisation: no two pages carry the same term as `owned`.
 - `built in wardrobes rockhampton` → strengthen in `joinery.html`; the phrase is missing from the title.
 - `kitchen cabinets rockhampton` → cabinet-level intent currently landing on `kitchens.html`.
 
-**Deliberate exclusions.** Flat-pack terms, competitor brands (Kaboodle, IKEA) and DIY intent are
-avoided on purpose — they attract a buyer the studio cannot serve profitably. `cabinet makers
+**Deliberate exclusions.** Competitor brands (Kaboodle, IKEA) are avoided on purpose. `cabinet makers
 rockhampton` is avoided for a different reason: it implies manufacture, which would be a false claim.
 Caloundra and Sunshine Coast terms are deferred, not abandoned.
+
+**Superseded, 2026-09-21:** flat-pack and DIY intent were originally excluded here as a buyer the
+studio could not serve profitably. That decision has been reversed — flat pack is now a genuine,
+actively-sold national product line, with its own owned cluster (`H Flat pack` in the CSV) covering
+the product-type pages, the upgrade path, seven capital-city pages and a shipping guide. This
+paragraph is kept for history; do not re-avoid these terms based on it.
 
 ## Filling in the real numbers
 
