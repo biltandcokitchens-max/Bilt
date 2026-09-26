@@ -2337,8 +2337,8 @@ module.exports = function (api) {
     related: [['/flat-pack-kitchens', 'flat pack kitchens'], ['/investment', 'the full price bands'], ['/guide-benchtops-compared', 'benchtops compared'], ['/assembled-kitchens', 'delivered assembled instead']],
     slug: 'flat-pack-upgrades',
     nav: 'Flat pack kitchen upgrades',
-    title: 'Flat Pack Kitchen Upgrades | Stone, Brass & Lighting | Bilt & Co',
-    desc: 'Upgrade a flat pack kitchen without changing the bones: stone benchtops, brass hardware, integrated lighting and Blum Legrabox drawers, explained and priced separately.',
+    title: 'Flat Pack Kitchen Upgrades | Stone, Brass & Lighting',
+    desc: 'Upgrade a flat pack kitchen without changing the bones: stone benchtops, brass hardware, integrated lighting and Blum Legrabox drawers.',
     h1: 'Same kitchen.<br><span class="italic brass">Different budget, different finish.</span>',
     lede: 'Every flat pack kitchen we cut starts from the same board and the same Blum hardware, whether it costs $15,000 or $47,000. The difference is entirely in what you choose to add.',
     img: 'island-marble-brass',
@@ -2375,7 +2375,7 @@ module.exports = function (api) {
     related: [['/flat-pack-kitchens-sydney', 'Sydney'], ['/flat-pack-kitchens-newcastle', 'Newcastle'], ['/flat-pack-kitchens-wollongong', 'Wollongong'], ['/guide-granny-flat-rules-nsw', 'granny flat rules in NSW'], ['/flat-pack-kitchen-upgrades', 'flat pack kitchen upgrades']],
     slug: 'flat-pack-nsw',
     nav: 'Flat pack kitchens NSW',
-    title: 'Flat Pack Kitchens NSW | Sydney, Newcastle & Beyond | Bilt & Co',
+    title: 'Flat Pack Kitchens NSW | Sydney, Newcastle & Beyond',
     desc: 'Custom flat pack kitchens cut in Rockhampton and freighted anywhere in NSW — Sydney, Newcastle, Wollongong and every postcode between. Fixed itemised quotes.',
     h1: 'NSW, delivered flat.<br><span class="italic brass">One specification, every postcode.</span>',
     lede: 'Not just Sydney. The same kitchen ships to Newcastle, Wollongong and everywhere on a freight route between them, at the same specification and the same honesty about what we do and do not do.',
@@ -2411,7 +2411,7 @@ module.exports = function (api) {
     related: [['/flat-pack-kitchens-melbourne', 'Melbourne'], ['/flat-pack-kitchens-geelong', 'Geelong'], ['/guide-granny-flat-rules-victoria', 'small second dwelling rules in Victoria'], ['/flat-pack-kitchen-upgrades', 'flat pack kitchen upgrades']],
     slug: 'flat-pack-victoria',
     nav: 'Flat pack kitchens Victoria',
-    title: 'Flat Pack Kitchens Victoria | Melbourne, Geelong & Beyond | Bilt & Co',
+    title: 'Flat Pack Kitchens Victoria | Melbourne, Geelong & Beyond',
     desc: 'Custom flat pack kitchens cut in Rockhampton and freighted anywhere in Victoria — Melbourne, Geelong and every postcode between. Fixed itemised quotes.',
     h1: 'Victoria, delivered flat.<br><span class="italic brass">One specification, every postcode.</span>',
     lede: 'Melbourne and Geelong each have their own page. Anywhere else in Victoria ships on exactly the same terms — same board, same hardware, same fixed-quote process.',
@@ -2447,7 +2447,7 @@ module.exports = function (api) {
     related: [['/short-stay-kitchens', 'short-stay kitchens installed in Central Queensland'], ['/flat-pack-kitchen-upgrades', 'flat pack kitchen upgrades'], ['/guide-flat-pack-kitchen-shipping-and-freight', 'shipping and freight']],
     slug: 'airbnb-national',
     nav: 'Flat pack kitchens for Airbnb hosts',
-    title: 'Flat Pack Kitchens for Airbnb & Short-Stay | Australia-Wide | Bilt & Co',
+    title: 'Flat Pack Kitchens for Airbnb & Short-Stay | Australia-Wide',
     desc: 'Flat pack kitchens for Airbnb and short-stay properties anywhere in Australia. Built to survive guest turnover and photograph well, freighted nationally.',
     h1: 'A kitchen built for<br><span class="italic brass">guests, not just you.</span>',
     lede: 'A short-stay kitchen is photographed constantly and used by people who have never seen it before. Both facts change what should be specified.',
@@ -2552,7 +2552,7 @@ module.exports = function (api) {
     related: [['/tiny-home-kitchens', 'tiny home kitchens'], ['/granny-flat-kitchens', 'granny flat kitchens'], ['/guide-flat-pack-kitchen-shipping-and-freight', 'shipping and freight']],
     slug: 'relocatable-homes',
     nav: 'Flat pack kitchens for relocatable homes',
-    title: 'Flat Pack Kitchens for Relocatable & Demountable Homes | Bilt & Co',
+    title: 'Flat Pack Kitchens for Relocatable & Demountable Homes',
     desc: 'Kitchens for transportable, relocatable and demountable homes, specified to handle transit vibration and freighted flat pack anywhere in Australia.',
     h1: 'Built to move once,<br><span class="italic brass">and never loosen after.</span>',
     lede: 'A relocatable home travels on a truck before it is ever lived in. The kitchen has to survive that trip as well as daily use afterwards.',
@@ -2587,7 +2587,7 @@ module.exports = function (api) {
     related: [['/trade', 'trade and builder accounts'], ['/guide-flat-pack-kitchen-shipping-and-freight', 'shipping and freight'], ['/owner-builder-kitchen-supply', 'owner-builder supply']],
     slug: 'remote-fifo',
     nav: 'Kitchen supply for remote & FIFO sites',
-    title: 'Kitchen Supply for Remote & FIFO Sites Australia-Wide | Bilt & Co',
+    title: 'Kitchen Supply for Remote & FIFO Sites Australia-Wide',
     desc: 'Flat pack kitchens for remote builds, mining camps and FIFO accommodation, freighted anywhere in Australia with freight already factored into the process.',
     h1: 'Freight is already<br><span class="italic brass">the normal cost of building remote.</span>',
     lede: 'Every remote build already pays a freight premium on everything. Flat pack is the version of a kitchen that does not multiply it unnecessarily.',
@@ -2868,7 +2868,7 @@ module.exports = function (api) {
     slug: 'outdoor-kitchen',
     nav: 'Outdoor kitchen cabinetry',
     title: 'Flat Pack Outdoor Kitchen Cabinetry | Bilt & Co',
-    desc: 'Weather-rated outdoor kitchen cabinetry, cut to your alfresco space and freighted flat pack anywhere in Australia — a genuinely different specification to an indoor kitchen.',
+    desc: 'Weather-rated outdoor kitchen cabinetry, cut to your alfresco space and freighted flat pack anywhere in Australia. A different spec to an indoor kitchen.',
     h1: 'Outdoor cabinetry,<br><span class="italic brass">specified for the weather, not just the look.</span>',
     lede: 'An outdoor kitchen is not an indoor kitchen with a roof over it. UV, humidity and temperature swings are a different specification problem entirely.',
     img: 'concrete-luxe',
@@ -2937,7 +2937,7 @@ module.exports = function (api) {
     related: [['/joinery', 'wardrobes and joinery installed in Central Queensland'], ['/flat-pack-cabinets', 'flat pack cabinets for the rest of the house'], ['/flat-pack-kitchens', 'flat pack kitchens']],
     slug: 'flat-pack-wardrobes',
     nav: 'Flat pack wardrobes',
-    title: 'Flat Pack Wardrobes & Built-In Robes Australia-Wide | Bilt & Co',
+    title: 'Flat Pack Wardrobes & Built-In Robes Australia-Wide',
     desc: 'Built-in wardrobes and walk-in robes cut to your room and shipped flat pack anywhere in Australia. Same board and Blum hardware as our installed joinery.',
     h1: 'Built-in robes,<br><span class="italic brass">shipped flat to any address.</span>',
     lede: 'The same wardrobe joinery we install in Central Queensland, cut to your room and freighted flat pack for you or your own installer to fit.',
@@ -3112,7 +3112,7 @@ module.exports = function (api) {
     related: [['/guide-kitchen-layouts', 'kitchen layouts compared'], ['/guide-what-is-a-corner-carousel', 'corner carousels'], ['/guide-butlers-pantry-worth-it', "whether a butler's pantry is worth it"]],
     slug: 'u-shaped-flat-pack',
     nav: 'U-shaped flat pack kitchen',
-    title: 'U-Shaped Flat Pack Kitchen | Maximum Storage, Cut to Fit | Bilt & Co',
+    title: 'U-Shaped Flat Pack Kitchen | Maximum Storage, Cut to Fit',
     desc: 'A U-shaped flat pack kitchen — three runs, maximum bench and storage in the footprint, with two corners solved properly. Shipped Australia-wide.',
     h1: 'U-shaped,<br><span class="italic brass">the most storage you can fit.</span>',
     lede: 'Three runs, two corners, and more bench within reach than any other layout — provided the room is wide enough to take it.',
@@ -3147,7 +3147,7 @@ module.exports = function (api) {
     related: [['/guide-kitchen-layouts', 'kitchen layouts compared'], ['/flat-pack-kitchenettes', 'flat pack kitchenettes'], ['/tiny-home-kitchens', 'tiny home kitchens']],
     slug: 'one-wall-flat-pack',
     nav: 'One-wall flat pack kitchen',
-    title: 'One-Wall Flat Pack Kitchen | Studios & Compact Spaces | Bilt & Co',
+    title: 'One-Wall Flat Pack Kitchen | Studios & Compact Spaces',
     desc: 'A single-run flat pack kitchen for studios, tiny homes and compact living — cut to your exact wall length, no wasted floor space. Shipped Australia-wide.',
     h1: 'One wall,<br><span class="italic brass">every centimetre used.</span>',
     lede: 'The simplest layout that exists, and the one where wasted centimetres are the most obvious.',
@@ -4633,8 +4633,8 @@ module.exports = function (api) {
       slug: 'flat-pack-kitchen-shipping-and-freight',
       group: 'flatpack',
       nav: 'Flat pack kitchen shipping & freight',
-      title: 'Flat Pack Kitchen Shipping & Freight Australia-Wide | Bilt & Co',
-      desc: 'How freight actually works for a flat pack kitchen shipped anywhere in Australia: what decides the cost, what decides the time, and what to check on delivery day.',
+      title: 'Flat Pack Kitchen Shipping & Freight Australia-Wide',
+      desc: 'How freight actually works for a flat pack kitchen shipped anywhere in Australia: what decides the cost, what decides the time.',
       h1: 'How freight actually<br><span class="italic brass">works, door to door.</span>',
       lede: 'The question every interstate buyer asks and most suppliers dodge. Here is the honest version: what decides the cost, what decides the time, and what you are responsible for on the day.',
       img: 'joinery-sketch',
@@ -4698,7 +4698,7 @@ module.exports = function (api) {
       group: 'glossary',
       nav: 'What is a kickboard?',
       title: 'What Is a Kitchen Kickboard? | Kitchen Glossary | Bilt & Co',
-      desc: 'The kickboard is the recessed panel at floor level under every cabinet — why it exists, why it should be removable, and what a flood or leak does to one that is not.',
+      desc: 'The kickboard is the recessed panel at floor level under every cabinet — why it exists, why it should be removable.',
       h1: 'What is a<br><span class="italic brass">kickboard?</span>',
       lede: 'The small panel at floor level that decides how a flood or a leak plays out.',
       img: 'island-marble-close',
@@ -4719,8 +4719,8 @@ module.exports = function (api) {
       slug: 'what-is-a-scribe-piece',
       group: 'glossary',
       nav: 'What is a scribe piece?',
-      title: 'What Is a Scribe Piece in Cabinetry? | Kitchen Glossary | Bilt & Co',
-      desc: 'A scribe piece is the strip cut to match an uneven wall or floor so a cabinet sits flush against it — why almost no wall is actually straight, and why it matters.',
+      title: 'What Is a Scribe Piece in Cabinetry? | Kitchen Glossary',
+      desc: 'A scribe piece is the strip cut to match an uneven wall or floor so a cabinet sits flush against it — why almost no wall is actually straight.',
       h1: 'What is a<br><span class="italic brass">scribe piece?</span>',
       lede: 'The strip that makes a straight cabinet fit a wall that is not.',
       img: 'detail-black-cabinetry',
@@ -4742,7 +4742,7 @@ module.exports = function (api) {
       group: 'glossary',
       nav: 'What is edge banding?',
       title: 'What Is Edge Banding? Laser-Bonded vs Glued | Bilt & Co',
-      desc: 'Edge banding seals the exposed cut edge of a cabinet panel. The difference between laser-bonded and glued banding is the single biggest predictor of how long a kitchen lasts.',
+      desc: 'Edge banding seals the cut edge of a cabinet panel. Laser-bonded versus glued is the single biggest predictor of how long a kitchen lasts.',
       h1: 'What is<br><span class="italic brass">edge banding?</span>',
       lede: 'A thin strip that decides whether steam and spills ever reach the raw board underneath.',
       img: 'detail-timber-joinery',
@@ -4807,7 +4807,7 @@ module.exports = function (api) {
       slug: 'what-is-a-handleless-kitchen',
       group: 'glossary',
       nav: 'What is a handleless kitchen?',
-      title: 'What Is a Handleless Kitchen? Rail vs Push-to-Open | Bilt & Co',
+      title: 'What Is a Handleless Kitchen? Rail vs Push-to-Open',
       desc: 'A handleless kitchen opens without visible handles — via a recessed rail or push-to-open hardware. What each method actually is and which suits which household.',
       h1: 'What is a<br><span class="italic brass">handleless kitchen?</span>',
       lede: 'No handles does not mean no way to open it. It means the mechanism is hidden rather than absent.',
@@ -4829,7 +4829,7 @@ module.exports = function (api) {
       slug: 'what-is-a-waterfall-benchtop-edge',
       group: 'glossary',
       nav: 'What is a waterfall benchtop edge?',
-      title: 'What Is a Waterfall Benchtop Edge? | Kitchen Glossary | Bilt & Co',
+      title: 'What Is a Waterfall Benchtop Edge? | Kitchen Glossary',
       desc: 'A waterfall edge wraps the benchtop material down the side of an island to the floor, in one continuous piece. What it takes to do well, and where it works.',
       h1: 'What is a<br><span class="italic brass">waterfall edge?</span>',
       lede: 'The benchtop material does not stop at the edge — it turns the corner and runs to the floor.',
@@ -4851,8 +4851,8 @@ module.exports = function (api) {
       slug: 'what-is-a-mitred-join',
       group: 'glossary',
       nav: 'What is a mitred join?',
-      title: 'What Is a Mitred Join in Benchtops? | Kitchen Glossary | Bilt & Co',
-      desc: 'A mitred join is the angled cut where two benchtop pieces meet to look like one continuous surface. Why it is one of the hardest things to get right in a kitchen.',
+      title: 'What Is a Mitred Join in Benchtops? | Kitchen Glossary',
+      desc: 'A mitred join is the angled cut where two benchtop pieces meet to look like one surface. Why it is one of the hardest things to get right in a kitchen.',
       h1: 'What is a<br><span class="italic brass">mitred join?</span>',
       lede: 'Two pieces of stone, cut at an angle, trying to convince you they are one.',
       img: 'splashback-marble-02',
@@ -4895,7 +4895,7 @@ module.exports = function (api) {
       slug: 'what-is-a-service-drawing',
       group: 'glossary',
       nav: 'What is a service drawing?',
-      title: 'What Is a Kitchen Service Drawing? | Kitchen Glossary | Bilt & Co',
+      title: 'What Is a Kitchen Service Drawing? | Kitchen Glossary',
       desc: 'A service drawing shows a plumber and electrician exactly where every waste, water point and outlet needs to land before cabinetry arrives. What it includes.',
       h1: 'What is a<br><span class="italic brass">service drawing?</span>',
       lede: 'The document that stops your plumber and your kitchen disagreeing about where things go.',
@@ -4917,7 +4917,7 @@ module.exports = function (api) {
       slug: 'what-does-supply-only-mean',
       group: 'glossary',
       nav: 'What does "supply only" mean?',
-      title: 'What Does "Supply Only" Mean for a Kitchen? | Bilt & Co',
+      title: 'What Does "Supply Only" Mean for a Kitchen?',
       desc: 'Supply only means you get the cabinetry, drawings and hardware — your own builder or installer fits it. What is included, and what is genuinely not.',
       h1: 'What does<br><span class="italic brass">"supply only" mean?</span>',
       lede: 'Everything except the labour to fit it — and exactly what that does and does not include.',
@@ -4983,8 +4983,8 @@ module.exports = function (api) {
       slug: 'what-is-a-blind-corner-cabinet',
       group: 'glossary',
       nav: 'What is a blind corner cabinet?',
-      title: 'What Is a Blind Corner Cabinet? | Kitchen Glossary | Bilt & Co',
-      desc: 'A blind corner cabinet is the base unit tucked behind an adjoining run where only one side opens. What makes it "blind", and how to fit it out properly.',
+      title: 'What Is a Blind Corner Cabinet? | Kitchen Glossary',
+      desc: 'A blind corner cabinet is the base unit tucked behind an adjoining run where only one side opens. What makes it "blind".',
       h1: 'What is a<br><span class="italic brass">blind corner cabinet?</span>',
       lede: 'The cabinet you can see the front of and still cannot see inside.',
       img: 'timber-island',
@@ -5005,7 +5005,7 @@ module.exports = function (api) {
       slug: 'push-to-open-hardware-explained',
       group: 'glossary',
       nav: 'Push-to-open hardware explained',
-      title: 'Push-to-Open Hardware Explained | Kitchen Glossary | Bilt & Co',
+      title: 'Push-to-Open Hardware Explained | Kitchen Glossary',
       desc: 'Push-to-open hardware releases a handleless door or drawer with a light press instead of a handle or grip rail. How it works, and its real trade-offs.',
       h1: 'Push-to-open,<br><span class="italic brass">explained properly.</span>',
       lede: 'No handle, no rail — just a press, and a mechanism doing the rest.',
@@ -5028,7 +5028,7 @@ module.exports = function (api) {
       group: 'glossary',
       nav: 'What is moisture-resistant board?',
       title: 'What Is Moisture-Resistant Board (MR/HMR)? | Bilt & Co',
-      desc: 'Moisture-resistant board is particleboard or MDF treated to resist swelling from humidity and moisture. Why it matters more in Australia than most specification sheets admit.',
+      desc: 'Moisture-resistant board is particleboard or MDF treated to resist swelling from humidity and moisture.',
       h1: 'What is<br><span class="italic brass">moisture-resistant board?</span>',
       lede: 'The one line on a specification sheet that predicts a kitchen\'s lifespan more than any other.',
       img: 'material-samples',
@@ -5049,7 +5049,7 @@ module.exports = function (api) {
       slug: 'what-is-an-overhead-cabinet',
       group: 'glossary',
       nav: 'What is an overhead cabinet?',
-      title: 'What Is an Overhead Cabinet? Height & Depth Explained | Bilt & Co',
+      title: 'What Is an Overhead Cabinet? Height & Depth Explained',
       desc: 'Overhead cabinets are the wall-mounted units above the benchtop. Standard heights, depths, and what changes when they need to house a rangehood.',
       h1: 'What is an<br><span class="italic brass">overhead cabinet?</span>',
       lede: 'The wall units above the bench — and the measurements that decide whether they work or get in the way.',
@@ -5071,7 +5071,7 @@ module.exports = function (api) {
       slug: 'hamptons-style-kitchen',
       group: 'style',
       nav: 'Hamptons style kitchen guide',
-      title: 'Hamptons Style Kitchen Guide | Materials & Details | Bilt & Co',
+      title: 'Hamptons Style Kitchen Guide | Materials & Details',
       desc: 'What actually makes a kitchen read as Hamptons style: door profile, palette and hardware — and how to get it without it looking like a display-home cliché.',
       h1: 'The Hamptons kitchen,<br><span class="italic brass">without the cliché.</span>',
       lede: 'Everyone can name the look. Almost nobody can name the four decisions that actually create it.',
@@ -5149,7 +5149,7 @@ module.exports = function (api) {
       group: 'style',
       nav: 'Japandi kitchen design guide',
       title: 'Japandi Kitchen Design Guide | Quiet, Handleless | Bilt & Co',
-      desc: 'Japandi kitchens combine Japanese restraint with Scandinavian warmth. What that actually means in cabinetry: handleless fronts, natural materials, almost no ornament.',
+      desc: 'Japandi kitchens combine Japanese restraint with Scandinavian warmth. What that actually means in cabinetry: handleless fronts, natural materials.',
       h1: 'Japandi:<br><span class="italic brass">restraint as the whole style.</span>',
       lede: 'The style with the fewest decorative elements and the least room to hide a mistake.',
       img: 'collection-marble-03',
@@ -5224,7 +5224,7 @@ module.exports = function (api) {
       slug: 'industrial-style-kitchen',
       group: 'style',
       nav: 'Industrial style kitchen guide',
-      title: 'Industrial Style Kitchen Guide | Concrete, Black, Steel | Bilt & Co',
+      title: 'Industrial Style Kitchen Guide | Concrete, Black, Steel',
       desc: 'Industrial kitchens use matte black, concrete-look surfaces and exposed detail. How to do it without it feeling cold, and where warmth needs to come from.',
       h1: 'Industrial style,<br><span class="italic brass">without the cold room.</span>',
       lede: 'The style most likely to feel unlivable if you commit to it without a plan for warmth.',
@@ -5431,7 +5431,7 @@ module.exports = function (api) {
       showCollections: true,
       group: 'council',
       nav: 'Granny flat rules in SA',
-      title: 'Ancillary Accommodation Rules SA | Granny Flat Guide | Bilt & Co',
+      title: 'Ancillary Accommodation Rules SA | Granny Flat Guide',
       desc: 'How ancillary accommodation is regulated under South Australia\'s Planning and Design Code, recent reforms, and what to confirm before you design one.',
       h1: 'Ancillary accommodation rules<br><span class="italic brass">in South Australia.</span>',
       lede: 'SA calls it ancillary accommodation, and recent reform has made it considerably more flexible than it used to be.',
@@ -5474,7 +5474,7 @@ module.exports = function (api) {
       showCollections: true,
       group: 'council',
       nav: 'Secondary residence rules in Tasmania',
-      title: 'Secondary Residence Rules Tasmania | Granny Flat Guide | Bilt & Co',
+      title: 'Secondary Residence Rules Tasmania | Granny Flat Guide',
       desc: 'How a secondary residence is regulated under the Tasmanian Planning Scheme, the shared-services requirement, and a size increase currently under review.',
       h1: 'Secondary residence rules<br><span class="italic brass">in Tasmania.</span>',
       lede: 'Tasmania has one of the more distinctive rules in the country: a secondary residence generally shares services with the main house, not just the lot.',
@@ -5517,7 +5517,7 @@ module.exports = function (api) {
       showCollections: true,
       group: 'council',
       nav: 'Secondary residence rules in the ACT',
-      title: 'Secondary Residence Rules ACT | Granny Flat Guide | Bilt & Co',
+      title: 'Secondary Residence Rules ACT | Granny Flat Guide',
       desc: 'How a secondary residence is defined and regulated in the ACT, how it differs from dual occupancy, and what the size limit means for your design.',
       h1: 'Secondary residence rules<br><span class="italic brass">in the ACT.</span>',
       lede: 'Canberra draws a firm planning line between a secondary residence and a dual occupancy — and the two are assessed very differently.',
@@ -5698,7 +5698,7 @@ module.exports = function (api) {
       slug: 'handleless-kitchen-hardware-guide',
       group: 'materials',
       nav: 'Handleless kitchen hardware guide',
-      title: 'Handleless Kitchen Hardware Guide | Rail, Profile & Push-to-Open | Bilt & Co',
+      title: 'Handleless Kitchen Hardware | Rail, Profile, Push-to-Open',
       desc: 'Three ways to build a handleless kitchen — recessed rail, milled profile, and push-to-open — compared on cost, feel and who each one suits.',
       h1: 'Three ways to build<br><span class="italic brass">a handleless kitchen.</span>',
       lede: 'No handles does not mean one solution. Three genuinely different mechanisms, at three different price points.',
@@ -5795,7 +5795,7 @@ module.exports = function (api) {
       group: 'materials',
       nav: 'Timber veneer vs laminate doors',
       title: 'Timber Veneer vs Laminate Kitchen Doors | Bilt & Co',
-      desc: 'A timber veneer door is a real timber skin over a board substrate — different from a printed laminate that imitates timber. What the difference actually looks and feels like.',
+      desc: 'A timber veneer door is a real timber skin over a board substrate — different from a printed laminate that imitates timber.',
       h1: 'Real timber skin,<br><span class="italic brass">or a very good photograph of one.</span>',
       lede: 'Both can look like timber from across the room. Only one of them is.',
       img: 'timber-island',
@@ -5890,7 +5890,7 @@ module.exports = function (api) {
       slug: 'induction-vs-gas-cooktop',
       group: 'materials',
       nav: 'Induction vs gas cooktop',
-      title: 'Induction vs Gas Cooktop for a Kitchen Renovation | Bilt & Co',
+      title: 'Induction vs Gas Cooktop for a Kitchen Renovation',
       desc: 'Cooktop choice changes cabinetry ventilation, benchtop cut-outs and even the rangehood spec. What to decide before the kitchen is designed, not after.',
       h1: 'Induction or gas?<br><span class="italic brass">Decide before the design, not after.</span>',
       lede: 'This is not just an appliance choice. It changes the cabinetry, the power supply and the rangehood spec around it.',
@@ -5914,7 +5914,7 @@ module.exports = function (api) {
       slug: 'rangehood-types-explained',
       group: 'materials',
       nav: 'Rangehood types explained',
-      title: 'Rangehood Types Explained: Ducted vs Recirculating | Bilt & Co',
+      title: 'Rangehood Types Explained: Ducted vs Recirculating',
       desc: 'A ducted rangehood vents outside; a recirculating one filters and returns air to the room. Which your kitchen can actually have, and why it matters.',
       h1: 'Ducted or recirculating?<br><span class="italic brass">Your building often decides for you.</span>',
       lede: 'The rangehood question that gets asked after the cabinetry is designed, when it should be one of the first.',
@@ -5977,7 +5977,7 @@ module.exports = function (api) {
       slug: 'average-kitchen-renovation-cost-australia',
       group: 'cost',
       nav: 'Average kitchen renovation cost in Australia',
-      title: 'Average Kitchen Renovation Cost in Australia (2026) | Bilt & Co',
+      title: 'Average Kitchen Renovation Cost in Australia (2026)',
       desc: 'What kitchen renovations typically cost across Australia, how our published bands compare, and why a national average tells you less than it seems to.',
       h1: 'What does a kitchen<br><span class="italic brass">actually cost in Australia?</span>',
       lede: 'National averages exist. They also flatten enormous differences in size, specification and location into one unhelpful number.',
@@ -6064,7 +6064,7 @@ module.exports = function (api) {
       slug: 'how-much-does-a-granny-flat-kitchen-cost-australia',
       group: 'cost',
       nav: 'Granny flat kitchen cost across Australia',
-      title: 'How Much Does a Granny Flat Kitchen Cost in Australia? | Bilt & Co',
+      title: 'How Much Does a Granny Flat Kitchen Cost in Australia?',
       desc: 'Granny flat kitchen pricing, freighted anywhere in Australia — what a compact kitchen or kitchenette actually costs, and what changes the number.',
       h1: 'A granny flat kitchen,<br><span class="italic brass">priced honestly, wherever you are.</span>',
       lede: 'The size of the run and what it needs to include matter far more than which state it is going into.',
@@ -6209,7 +6209,7 @@ module.exports = function (api) {
       slug: 'bushfire-rebuild-kitchen-supply-australia',
       group: 'sustainability',
       nav: 'Bushfire rebuild kitchen supply',
-      title: 'Kitchen Supply for Bushfire Rebuilds Australia-Wide | Bilt & Co',
+      title: 'Kitchen Supply for Bushfire Rebuilds Australia-Wide',
       desc: 'Rebuilding a kitchen after bushfire loss — insurance timing, fixed pricing for a claim, and freight anywhere in Australia while your build programme is set.',
       h1: 'Rebuilding after fire,<br><span class="italic brass">on your insurer\'s timeline.</span>',
       lede: 'An insurance rebuild runs on somebody else\'s process and paperwork. A fixed, itemised kitchen quote is one thing you can control in it.',
@@ -6526,8 +6526,116 @@ module.exports = function (api) {
   </div>`;
   }
 
+  /* Twelve substantive sections. Three are chosen per town by hash, so two
+     towns in one region do not read the same. Every one is a real part of
+     buying a kitchen this way - none of it is padding, and none of it states
+     a figure we have not published elsewhere on the site. */
+  const NAT_SECTIONS = [
+    ['What the quote actually itemises', (p) => `Every cabinet as its own line with its width and what is in it, the benchtop by material and linear metre, the hardware by brand, the doors by finish, and freight to your ${p} postcode on a line of its own. No allowances, no provisional sums, no "from" price with the catches left out. If you take an item off, you see exactly what comes off the total, which is the point of itemising it in the first place.`],
+    ['Measuring from ${p} without us there', (p) => `Because we do not visit ${p}, your measurements are the drawing. Wall to wall at three heights and use the smallest number. Ceiling height in every corner, because floors are never level. Every window and door with its distance from the nearest corner. Where the waste, the water and the power are now. Then a photograph of each corner of the room. Our measuring guide lists the lot, and a designer checks your numbers against the photographs before anything is cut.`],
+    ['Benchtops, and why they are separate', (p) => `Laminate ships with the kitchen. Stone does not, and it should not: a stone benchtop is templated off the cabinets after they are installed and level, by a fabricator near you in ${p}, because a slab cut to a drawing rather than to the room is a slab that does not fit. We quote the cabinetry and the laminate; for stone we tell you the cut-out sizes and the fabricator works from the installed run.`],
+    ['Appliances: yours or ours', (p) => `Most ${p} orders come with the appliances already chosen, and that is the easier way round. Send us the model numbers, or the cut-out dimensions from the spec sheet, and the cabinets are cut to take them. If you would rather we supplied them, they are quoted as their own lines. What does not work is guessing: a 900mm cooktop in a cabinet cut for 600mm is a new cabinet, not an adjustment.`],
+    ['What happens if something arrives damaged', (p) => `Check the delivery against the numbered drawing on the day it lands in ${p}, before the truck leaves if you can. Count the cartons, look at the door and drawer fronts. If a panel is damaged or a carton is missing, photograph it and ring the studio the same day. A replacement is cut from the drawing we hold on file, so it matches the rest of the kitchen rather than being re-measured from scratch.`],
+    ['Ordering in stages', (p) => `Not every ${p} job needs the whole kitchen at once. Builders regularly take the base run first and the overheads and pantry later, and renovators sometimes take the kitchen now and the laundry in six months. The drawing stays on file, so a later order matches the first exactly - same board, same colour batch where we can, same hardware. Say so on the quote request and it is priced in stages.`],
+    ['A kitchenette instead of a kitchen', (p) => `If the room in ${p} is a studio, a granny flat, an under-house conversion or a short-stay unit, a kitchenette may be the right answer and it starts at $4,500. Sink, bench, cold storage, and a cooktop where the run allows. Same carcasses and the same Blum hardware as a full kitchen, in a fraction of the length - and it fits through a doorway that a full run would not.`],
+    ['Flat pack or assembled, decided on numbers', (p) => `The cabinetry price is identical. What differs is the assembly line on the quote and the freight line, because assembled cabinets take several times the truck space of the same kitchen in cartons. To ${p} that difference is usually decisive, and most orders this far out go flat. But the quote shows both, so it is a number you compare rather than a decision you are talked into.`],
+    ['Why there is no design software', (p) => `Plenty of suppliers hand you a portal and let the software approve your own mistakes. We do not. A designer in Rockhampton draws your ${p} kitchen from your measurements and photographs, and catches the things software does not: the window reveal that stops an overhead, the door swing that fouls the fridge, the floor that falls 30mm across the run. You see the drawing before you pay anything.`],
+    ['What ships with the order', (p) => `A numbered plan and elevations, a service drawing marking every waste, water point and outlet for your ${p} plumber and electrician, the hardware bagged per cabinet, kickboards and end panels cut to length, and fillers where the room needs them. Nothing on that list is an extra. The service drawing in particular is what stops a cabinet being cut on site to clear a pipe nobody planned for.`],
+    ['Second-dwelling and rental kitchens', (p) => `A good share of what we ship to ${p} goes into secondary dwellings, granny flats and rentals. Those kitchens fail in a predictable order - edging near the sink, then drawer runners, then hinge adjustment - and all three are specification, not bad luck. The board, edging and hardware we ship as standard are chosen so the rental kitchen and the owner kitchen are the same kitchen.`],
+    ['Comparing our quote with a local one', (p) => `Take our itemised quote to any ${p} cabinetmaker and compare it line for line, which is exactly what it is formatted for. Ask them three things: board thickness and moisture rating, edging method, hardware brand. If the answers match ours and the number is better, take theirs - a local supplier with the same specification and no freight line is a genuinely good outcome. If the answers are vague, you have learned something either way.`],
+  ];
+
+  const NAT_H1 = [
+    (p) => `Flat pack kitchens<br><span class="italic brass">delivered to ${p}.</span>`,
+    (p) => `${p} kitchens,<br><span class="italic brass">cut to your room.</span>`,
+    (p) => `Custom kitchens<br><span class="italic brass">freighted to ${p}.</span>`,
+    (p) => `A kitchen drawn for ${p},<br><span class="italic brass">not for a catalogue.</span>`,
+    (p) => `Flat pack or assembled,<br><span class="italic brass">delivered to ${p}.</span>`,
+  ];
+  const NAT_ANSWER = [
+    (p, r) => `We design and cut every kitchen in Rockhampton, Queensland, and freight it to ${p} ${r.route} — flat packed, or delivered assembled with the doors already hung and adjusted. We do not install in ${p}; your own builder or installer fits it from our drawings. Send the room dimensions and the quote comes back both ways, fixed and itemised, with freight to your postcode on its own line.`,
+    (p, r) => `Yes, we ship to ${p}. The kitchen is drawn to your measurements, cut in Rockhampton and freighted ${r.route}. You choose flat packed or delivered assembled on the same quote, and your own trades fit it — we install in Central Queensland only. Nothing is due to see the drawing or the price, and nothing is cut until you sign the drawing off.`,
+    (p, r) => `Every cabinet is cut to your wall lengths rather than picked from catalogue widths, then freighted to ${p} ${r.route}. 18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Installation in ${p} is by your builder or kitchen installer, working from the dimensioned service drawings that ship with the order.`,
+  ];
+
+  /* Three ways of making each argument, picked by the town's position in its
+     region. Same facts, different page. */
+  const CLIM_VAR = {
+    tropical: [
+      `Humidity is the design constraint here, not heat. Through the wet season a standard-core carcass takes on moisture at the cut edges and swells, and once a panel has swollen the door never sits square again. Everything we ship is 18mm moisture-resistant board with laser-bonded edging — no glue line for water to track along.`,
+      `Ask any local cabinetmaker what fails first in this climate and you will get the same answer: the edge nearest the sink, then the panel behind it. Moisture-resistant board and a fused edge are the whole defence, and they are standard on every cabinet we cut rather than a line you have to ask for.`,
+      `A kitchen here spends months in air that never really dries out. That is why we will not quote 16mm standard board at any price — it is the cheaper option that costs the most, because a swollen carcass cannot be adjusted back into square.`,
+    ],
+    subtropical: [
+      `Summers here are humid enough that the cheap end of flat pack fails at the sink and dishwasher first, usually inside five years. Moisture-resistant board and laser-bonded edging are standard on every cabinet we cut.`,
+      `The humid months do the damage quietly: water tracks along a glued edge, lifts it, and the board underneath drinks it. A laser-bonded edge has no seam for that to start in, which is why every panel we send is finished that way.`,
+      `Between the humidity and the summer storms, the parts of a kitchen that suffer here are the ones nobody photographs — the sink cabinet floor, the edge behind the dishwasher. Moisture-resistant board is specified for exactly those.`,
+    ],
+    temperate: [
+      `The seasonal swing here moves timber and board more than a steady climate does, and the joint that gives first is almost always the edge. Laser-bonded edging is fused to the panel rather than glued to it, so there is no seam to lift.`,
+      `Cold mornings and hot afternoons in the same day are hard on a cabinet. Materials expand and contract, glued edging works loose at the corners, and doors drift out of alignment. A fused edge and three-way adjustable Blum hinges are the answer to both halves of that.`,
+      `Four real seasons means four cycles of movement a year. Over a decade that is what separates a kitchen that still closes properly from one that does not, and it is decided by the edging and the hinge, not by the door colour.`,
+    ],
+    arid: [
+      `Dry heat, dust and hard water are the local test. Dry heat shrinks poorly-made joints and dust finds its way into cheap runners until they grate. Blum runners and hinges are sealed and carry a lifetime mechanical warranty, which is why we fit nothing else.`,
+      `Everything out here is harder on hardware than it is on doors. Fine dust gets into an unsealed runner and turns a soft-close drawer into a grinding one inside a year. Blum is specified for the dust as much as for the warranty.`,
+      `Hard water marks stone and laminate alike, and dry heat opens up any joint that was not tight to begin with. Neither is solved by a prettier door; both are answered by the board, the edge and the hardware underneath.`,
+    ],
+    cool: [
+      `Cold, damp winters in older uninsulated housing produce condensation, and condensation sits on the underside of a benchtop and in the back of a sink cabinet where nobody looks. Moisture-resistant board handles that; standard board swells quietly for a year and then lets go.`,
+      `The cold itself is not the problem. The problem is the damp that comes with it, settling in the parts of a kitchen that never get looked at until a door stops closing. Moisture-resistant board and a fused edge are specified for those places.`,
+      `Kitchens here are warm and steamy for a few hours and cold for the rest. That cycling is what lifts glued edging off a panel, and it is the single best argument for the specification we ship as standard.`,
+    ],
+  };
+  const KIND_VAR = {
+    coastal: [
+      `Salt air is relentless on hardware. It gets into unbranded runners and hinges and they stiffen, then sag, and the doors stop lining up. Every cabinet runs Blum soft-close hinges and full-extension runners as standard.`,
+      `Near the water it is never the doors that go first, it is everything that moves. Salt finds the cheapest component in the kitchen and works on it. Specifying the hardware properly at the start is most of what a coastal kitchen needs.`,
+      `A house within reach of sea air is a harder brief than it looks: the finish has to survive the light and the hardware has to survive the salt. We answer the second with Blum on every hinge and runner, and the first with a finish you choose off real samples.`,
+    ],
+    mining: [
+      `A lot of housing here is worked hard and turned over fast — tenants, shift workers, company accommodation. That is a specification argument, not a design one: 18mm carcasses that hold a screw, drawers that survive being slammed, and doors that can be readjusted rather than replaced.`,
+      `Kitchens in worker and rental housing get no sympathy, and they are usually repaired by whoever is nearest rather than by whoever built them. Three-way adjustable hinges and a standard Blum runner mean a local handyman can fix it without ordering anything unusual.`,
+      `Turnover is the enemy. Every tenancy is a fresh set of hands on the same drawers, and cheap runners announce it within a year. What we ship is specified to be boring and repairable, which in a rental is the highest compliment.`,
+    ],
+    farming: [
+      `The nearest cabinetmaker is not close, and that changes what matters. A complete, labelled delivery with every panel pre-drilled and every hardware bag matched to its cabinet means the job does not stall waiting on one missing part from three hours away.`,
+      `Out here a missing bracket is not an inconvenience, it is a fortnight. Everything is packed against a numbered drawing and checked before it leaves, because the cost of getting it wrong is measured in distance rather than dollars.`,
+      `Farm houses take a kind of use that suburban kitchens do not — boots, buckets, big cooking, and a back door that is really the front door. The specification we ship assumes that rather than hoping otherwise.`,
+    ],
+    commuter: [
+      `Access is usually the deciding factor here — townhouses, units, narrow hallways, stairs. A flat carton goes where an assembled cabinet cannot, and it is often the only way to get a full kitchen into the room without taking a window out.`,
+      `Tight entries, shared driveways and a lift if you are lucky. Measuring the path from the truck to the room matters as much as measuring the room, and it is the question that usually decides flat pack over assembled on these jobs.`,
+      `Resale sits behind most kitchens in these suburbs, and a buyer reads a kitchen in about four seconds. What carries that is alignment: even gaps, doors that sit flush, drawers that close themselves. All three are hardware and assembly, not budget.`,
+    ],
+    lifestyle: [
+      `Short-stay and weekender properties get judged on a photograph and then punished by turnover. That combination wants a kitchen that looks like a magazine and behaves like a rental.`,
+      `A holiday house has two audiences: the one scrolling listings and the one actually cooking in it at Easter. The first is won on the benchtop and the splashback, the second on drawers that still run properly in year five.`,
+      `These kitchens are photographed once and used hard forever after. We would rather put the money into the carcass and the hardware and let the finish do the talking, because the photograph does not get retaken.`,
+    ],
+    regional: [
+      `As the service town for the district, the housing here runs from century-old cottages to new estate builds, and almost none of it suits a catalogue cabinet width. Every run we cut is drawn to the wall it is going on.`,
+      `Older housing stock means walls that are not straight and ceilings that are not level, and a catalogue kitchen deals with both by filling the gap with a panel. Cutting to the measured room is the difference between a kitchen that fits and one that has been made to fit.`,
+      `A town like this has every decade of Australian housing in it, and each decade has its own kitchen problem. Drawing to the room rather than to a standard width is what lets one supplier handle all of them.`,
+    ],
+    alpine: [
+      `Kitchens here sit cold and closed out of season, then get used hard for a few intense weeks. Temperature cycling like that is what lifts glued edging and loosens cheap hinges.`,
+      `A house that is empty and unheated for months and then full for a fortnight puts a kitchen through more movement than a permanent home does. The specification has to assume the empty months, not the busy ones.`,
+      `Ski-season turnover is short-stay use at its hardest, on top of a climate that swings further than anywhere else in the state. Board, edge and hardware all have to be chosen for that, and they are.`,
+    ],
+  };
+  const NAT_LEAD = [
+    (p, r, k) => `Drawn to your room in Rockhampton and freighted to ${p}, flat packed or delivered assembled. Same board, same Blum hardware, same drawings as every kitchen we build.`,
+    (p, r, k) => `A kitchen cut to your measurements rather than picked from catalogue widths, packed flat for the run to ${p} or delivered with the doors already hung and adjusted.`,
+    (p, r, k) => `We do not have a showroom in ${p} and we do not need one. Send the measurements, a designer draws it, and you see the drawing and the price before anything is cut.`,
+    (p, r, k) => `Every cabinet cut to your wall lengths and ceiling height, pre-drilled, labelled and freighted to ${p} with the hardware bagged against the cabinet it belongs to.`,
+    (p, r, k) => `${p} is one freight run from our door in Rockhampton. What arrives is a kitchen drawn for your room, in 18mm moisture-resistant board with Blum hardware throughout.`,
+  ];
+
   function flatPackCityPage(slug, place, opts) {
     const { state, distance, freightMode = 'by road', image, alt, towns, blurb } = opts;
+    const ch = Math.abs([...slug].reduce((a, c) => (a * 37 + c.charCodeAt(0)) | 0, 11));
+    const cityPicks = [NAT_SECTIONS[ch % 12], NAT_SECTIONS[(ch + 3) % 12], NAT_SECTIONS[(ch + 7) % 12]];
     const faq = [
       { q: `Do you install kitchens in ${place}?`, a: `No. Our installation team works Central Queensland, within about 150 kilometres of Rockhampton — ${place} is ${distance} away. What we ship is the cabinetry itself: cut to your room, packed flat with the hardware and a labelled drawing, and freighted to your door for you or your own installer to build.` },
       { q: `How much does a flat pack kitchen cost, shipped to ${place}?`, a: `The same bands as everywhere else: $15,000&ndash;$23,000 for Essence, $26,000&ndash;$42,000 for Maison, $47,000 and up for Atelier. We do not charge a distance premium on the cabinetry &mdash; freight is quoted separately, to your postcode.` },
@@ -6543,8 +6651,8 @@ module.exports = function (api) {
         desc: `Custom flat pack kitchen cabinetry designed in Rockhampton, cut to your room and freighted to ${place}.`,
         areas: towns,
       },
-      title: `Flat Pack Kitchens ${place} | Shipped Australia-Wide | Bilt & Co`,
-      desc: `Custom flat pack kitchens cut to your room and freighted to ${place}. 18mm moisture-resistant board, Blum hardware, stone and brass upgrades available. Fixed itemised quotes.`,
+      title: `Flat Pack Kitchens ${place} | Shipped Australia-Wide`,
+      desc: `Custom flat pack kitchens cut to your room and freighted to ${place}. 18mm board, Blum hardware, stone and brass upgrades. Fixed itemised quotes.`,
       og: image,
       priority: '0.6',
       faq,
@@ -6584,6 +6692,11 @@ module.exports = function (api) {
           <h2 class="d3">Why flat pack over this distance</h2>
           <p class="mt-1 muted">A carton of panels travels for a fraction of what an assembled carcass costs to freight, and it survives the trip better &mdash; nothing to rack or rattle loose over ${distance}. It is the same reason builders and owner-builders this far from any manufacturer already order cabinetry this way. Assembled is still on the quote if you would rather; you can see what the assembly is actually worth to you before you choose.</p>
         </div>
+        ${cityPicks.map((sec, i) => `
+        <div ${rv()} data-rv-d="${i + 1}" style="margin-bottom:2.25rem">
+          <h2 class="d3">${sec[0].replace('${p}', place)}</h2>
+          <p class="mt-1 muted">${sec[1](place)}</p>
+        </div>`).join('')}
         <div ${rv()}>
           <h2 class="d3">Freight, quoted honestly</h2>
           <p class="mt-1 muted">Freight to ${place} is quoted to your postcode on the same document as the cabinetry &mdash; its own line, not folded into the price. We would rather you see the real number than a from-price that never survives checkout. Our <a href="/guide-flat-pack-kitchen-shipping-and-freight" style="color:var(--brass)">shipping &amp; freight guide</a> covers what decides that number and what to check on delivery day.</p>
@@ -7129,6 +7242,335 @@ module.exports = function (api) {
 `,
   };
 
+  /* ============================================ national coverage layer */
+  /* State -> region -> town. Each town page carries its own H1, lead, the
+     climate argument for its zone, the housing-stock paragraph for its type,
+     its state's licensing body, and links up to its region and state and
+     across to its neighbours. Nothing is asserted that we cannot check. */
+  const NAT = require('./_towns.js');
+
+  const natImg = (seed, pool) => pool[Math.abs([...seed].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7)) % pool.length];
+  const HERO_LIGHT = ['collection-marble-01', 'collection-marble-03', 'openplan-long', 'galley-stone', 'island-marble-brass', 'collection-marble-04'];
+  const HERO_DARK = ['dark-island', 'signature-dark', 'glossy-dark', 'matte-black-bank', 'dark-luxe-bar', 'concrete-luxe'];
+  const heroFor = (seed, kind) => natImg(seed, ['mining', 'commuter', 'regional'].includes(kind) ? HERO_DARK : HERO_LIGHT);
+
+  const orderCta = (place) => `
+  <section class="section--tight">
+    <div class="wrap">
+      <div class="offer" ${rv()}>
+        <div class="offer__grid">
+          <div>
+            <span class="pill" style="background:rgba(201,160,90,.16);color:var(--brass-lite)">Ordering from ${place}</span>
+            <h2 class="d2">No showroom. No account.<br><span class="italic" style="color:var(--brass-lite)">A person draws it.</span></h2>
+            <p class="lede" style="margin-top:1.25rem">Send the wall lengths, the ceiling height and a photo of each corner. A designer draws your kitchen to the room and sends the drawing back with a fixed, itemised quote &mdash; flat packed and delivered assembled, freight to your postcode on each.</p>
+            <ul class="list-check mt-2">
+              <li>Nothing to pay to see the drawing or the quote</li>
+              <li>Changes redrawn until the plan is right</li>
+              <li>Cut only after you sign the drawing off</li>
+              <li>Freight quoted as its own line, never folded in</li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn btn--brass btn--lg btn--block" href="/contact">Get my free quote<span class="btn__sub">No deposit &middot; No showroom visit &middot; No salesperson at your door</span></a>
+            <a class="btn btn--light btn--lg btn--block" href="/guide-how-to-order-a-flat-pack-kitchen" style="margin-top:.75rem">Read the ordering guide</a>
+            <p class="small" style="color:#A39B8D;margin-top:1rem;text-align:center">Or call <a href="tel:${SITE.phoneHref}" style="color:var(--brass-lite)">${SITE.phone}</a> &mdash; you get the person who designs it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+
+  function natSpecStrip(climate, v) {
+    const copy = CLIM_VAR[climate][(v || 0) % 3];
+    return `
+  <section class="section bg-2">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>The specification</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Built for this<br>climate, not a catalogue.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">${copy}</p>
+        <p class="small muted mt-2" ${rv()} data-rv-d="3">The same three questions decide any kitchen anywhere: board thickness and moisture rating, edging method, hardware brand. Ours are 18mm moisture-resistant, laser-bonded and Blum, and they are printed on every quote. <a href="/guide-are-flat-pack-kitchens-good-quality" style="color:var(--brass)">How to judge a flat pack</a>.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">Standard on everything</span>
+          <ul>
+            <li>18mm moisture-resistant board</li>
+            <li>Laser-bonded edging, no glue line</li>
+            <li>Blum soft-close hinges and runners</li>
+            <li>Cut to your drawing, not catalogue widths</li>
+            <li>Pre-drilled and labelled per cabinet</li>
+            <li>Fixed itemised quote, freight its own line</li>
+          </ul>
+          <a class="btn btn--block" href="/flat-pack-kitchens">See flat pack kitchens</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+  }
+
+
+  /* ------------------------------------------------------------- towns */
+  function townPage(town, region, idx) {
+    const [slug, place, kind] = town;
+    const stateInfo = NAT.STATES[region.state];
+    const sibs = region.towns.filter((t) => t[0] !== slug);
+    const hero = heroFor(slug, kind);
+    // Three of the twelve sections, chosen by the town's own slug so the
+    // choice is stable between builds but different from its neighbours.
+    const h = Math.abs([...slug].reduce((a, c) => (a * 33 + c.charCodeAt(0)) | 0, 5)) + idx * 7;
+    const picks = [NAT_SECTIONS[h % 12], NAT_SECTIONS[(h + 4 + (idx % 3)) % 12], NAT_SECTIONS[(h + 8 + (idx % 5)) % 12]];
+    const h1 = NAT_H1[(h + idx) % NAT_H1.length](place);
+    const answer = NAT_ANSWER[(h + idx) % NAT_ANSWER.length](place, region);
+    const faq = [
+      { q: `Do you deliver flat pack kitchens to ${place}?`, a: `Yes. ${place} is served ${region.route}, and freight is quoted to your postcode as its own line on the quote rather than folded into the cabinetry price.` },
+      { q: `Do you install kitchens in ${place}?`, a: `No. Our own installation team works Central Queensland only. In ${place} your builder, carpenter or kitchen installer fits it, working from the dimensioned service drawings that ship with every order. Our install guide covers the three trades and the order they work in.` },
+      { q: `Should I order flat pack or assembled to ${place}?`, a: `Both are quoted on the same drawing. Flat cartons ship for less and get through tight doorways; assembled arrives with carcasses built and doors adjusted so your installer is fitting rather than building. Over this distance most ${region.name} orders go flat.` },
+      { q: `Who can do the plumbing and electrical in ${place}?`, a: `A licensed plumber and a licensed electrician, and you should check both licences yourself before they start. In ${stateInfo.name}, ${stateInfo.body} is the register to check against.` },
+      { q: `What board and hardware do you use?`, a: `18mm moisture-resistant board, laser-bonded edging and Blum soft-close hinges and runners on every cabinet, in every state. The specification is printed on your quote so you can hold it against anything else you are offered.` },
+      [
+        { q: `How long will a ${place} order take?`, a: `It depends on the kitchen and the freight route, so it is stated on your quote for your job rather than guessed here. What you can plan around is the sequence: drawing, your sign-off, cutting, then freight.` },
+        { q: `Can I see a sample before ordering in ${place}?`, a: `Yes. Door, board and edging samples are posted out, and for most people that settles the colour question better than a screen does. Ask when you send the dimensions through.` },
+        { q: `Is there a deposit to get a ${place} quote?`, a: `No. The drawing and the itemised quote cost nothing and carry no obligation. Payment terms for the order itself are stated on that quote.` },
+      ][(h + idx) % 3],
+    ];
+    return {
+      file: `flat-pack-kitchens-${slug}.html`,
+      assembled: 'supply',
+      service: {
+        name: `Flat pack kitchen supply and delivery to ${place}`,
+        type: 'Flat pack kitchen supply and delivery',
+        desc: `Custom flat pack and assembled kitchen cabinetry cut to your room in Rockhampton and freighted to ${place}, ${region.state}.`,
+        areas: [place, region.name],
+      },
+      title: `Flat Pack Kitchens ${place} ${region.state} | Delivered`,
+      desc: `Flat pack and assembled kitchens delivered to ${place}, ${region.state}. Cut to your measurements in 18mm board with Blum hardware. Fixed itemised quotes.`,
+      og: hero,
+      priority: '0.5',
+      faq,
+      trail: [['index.html', 'Home'], ['flat-pack-kitchens.html', 'Flat pack kitchens'], [`flat-pack-kitchens-${stateInfo.slug}.html`, stateInfo.name], [`flat-pack-kitchens-${region.slug}.html`, region.name], [`flat-pack-kitchens-${slug}.html`, place]],
+      body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], [`flat-pack-kitchens-${stateInfo.slug}.html`, stateInfo.name], [`flat-pack-kitchens-${region.slug}.html`, region.name], ['#', place]])}
+        <span class="pill">Cut to your drawing &middot; freighted to ${place}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${h1}</h1>
+        <p class="lede">${NAT_LEAD[(h + idx) % NAT_LEAD.length](place, region, kind)}</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>${answer}</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/guide-how-to-order-a-flat-pack-kitchen">How ordering works</a>
+        </div>
+      </div>
+      <div>${frame(hero, `Custom flat pack kitchen cabinetry delivered to ${place}, ${region.state}`, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <div ${rv()} style="margin-bottom:2.25rem">
+          <h2 class="d3">${['What ${p} housing does to a kitchen', 'The brief ${p} actually sets', 'What a kitchen is up against in ${p}'][(h + idx) % 3].replace('${p}', place)}</h2>
+          <p class="mt-1 muted">${KIND_VAR[kind][(h + idx) % 3]} ${region.context}</p>
+        </div>
+        <div ${rv()} data-rv-d="2" style="margin-bottom:2.25rem">
+          <h2 class="d3">${['How it reaches ${p}', 'Getting it to ${p}', 'The run to ${p}'][(h + idx + 1) % 3].replace('${p}', place)}</h2>
+          <p class="mt-1 muted">Your kitchen is cut in Rockhampton and freighted ${region.route}. Flat cartons are labelled to a numbered drawing, one per cabinet where possible, with doors and fronts wrapped separately and the Blum hardware bagged against the cabinet it belongs to. Assembled orders arrive as finished boxes, doors hung and adjusted, which takes more truck space and shows as a higher freight line. Both are on the same quote so the choice is a number rather than a guess.</p>
+        </div>
+        <div ${rv()} data-rv-d="3" style="margin-bottom:2.25rem">
+          <h2 class="d3">Who fits it in ${place}</h2>
+          <p class="mt-1 muted">Your builder, carpenter or kitchen installer, plus a licensed plumber and a licensed electrician for their parts. Ask each for a licence number and check it yourself &mdash; in ${stateInfo.name} that is <a href="${stateInfo.url}" rel="noopener" target="_blank" style="color:var(--brass)">${stateInfo.body}</a>. Every order ships with dimensioned service drawings showing each waste, water point and outlet, so the trades rough in to the plan rather than to a guess. Our <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">install guide</a> sets out the three trades and the fixed order they work in.</p>
+        </div>
+        ${picks.map((sec, i) => `
+        <div ${rv()} data-rv-d="${i + 2}" style="margin-bottom:2.25rem">
+          <h2 class="d3">${sec[0].replace('${p}', place)}</h2>
+          <p class="mt-1 muted">${sec[1](place)}</p>
+        </div>`).join('')}
+        <div ${rv()} data-rv-d="4">
+          <h2 class="d3">Around ${region.name}</h2>
+          <p class="mt-1 muted">We ship to ${sibs.slice(0, 8).map((t) => `<a href="/flat-pack-kitchens-${t[0]}" style="color:var(--brass)">${t[1]}</a>`).join(', ')}${sibs.length > 8 ? ' and the rest of the region' : ''} on the same route. The <a href="/flat-pack-kitchens-${region.slug}" style="color:var(--brass)">${region.name} page</a> covers the region, and <a href="/flat-pack-kitchens-${stateInfo.slug}" style="color:var(--brass)">${stateInfo.name}</a> covers the state.</p>
+        </div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">${place}, ${region.state}</span>
+          <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">From $15,000<small>Flat packed, freighted to ${place}</small></div>
+          <ul>
+            <li>Drawn to your measurements, not catalogue widths</li>
+            <li>18mm moisture-resistant board, laser-bonded edging</li>
+            <li>Blum soft-close hinges and full-extension runners</li>
+            <li>Pre-drilled and labelled per cabinet</li>
+            <li>Service drawings for your plumber and electrician</li>
+            <li>Fixed itemised quote, freight its own line</li>
+            <li class="no">Installation not offered in ${place}</li>
+          </ul>
+          <a class="btn btn--block" href="/contact">Get my free quote</a>
+        </div>
+        <p class="small muted mt-2">Kitchenettes for a granny flat, studio or short-stay unit start at $4,500 &mdash; see <a href="/flat-pack-kitchenettes" style="color:var(--brass)">flat pack kitchenettes</a>.</p>
+        <p class="small muted mt-2">Building a second dwelling? <a href="/guide-${stateInfo.slug === 'act' ? 'secondary-residence-rules-act' : 'granny-flat-rules-' + (stateInfo.slug === 'queensland' ? 'qld' : stateInfo.slug === 'northern-territory' ? 'nt' : stateInfo.slug === 'south-australia' ? 'sa' : stateInfo.slug === 'western-australia' ? 'wa' : stateInfo.slug)}" style="color:var(--brass)">Granny flat rules in ${stateInfo.name}</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  ${natSpecStrip(region.climate, idx)}
+  ${orderCta(place)}
+  ${faqBlock(faq, `${place} &mdash; questions`)}
+  ${ctaBand({ eyebrow: `${place}, ${region.state}`, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: `A fixed, itemised quote for your ${place} kitchen, flat packed and delivered assembled, with freight to your postcode on each. Nothing to pay to see it.`, image: natImg(slug + 'cta', HERO_DARK), alt: `Kitchen cabinetry freighted to ${place}` })}
+`,
+    };
+  }
+
+  /* ------------------------------------------------------------ regions */
+  function regionPage(region) {
+    const stateInfo = NAT.STATES[region.state];
+    const faq = [
+      { q: `Do you deliver flat pack kitchens across ${region.name}?`, a: `Yes, to every town in the region ${region.route}. Freight is quoted to your postcode on the same document as the cabinetry, as its own line.` },
+      { q: `Do you install in ${region.name}?`, a: `No. Installation is Central Queensland only. Everywhere else your own builder or installer fits it from the dimensioned drawings that ship with the order.` },
+      { q: `Is the specification different this far from Rockhampton?`, a: `No. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every cabinet, in every state. What changes with distance is the freight line, which is why most orders out here go flat packed.` },
+    ];
+    return {
+      file: `flat-pack-kitchens-${region.slug}.html`,
+      assembled: 'supply',
+      service: {
+        name: `Flat pack kitchen supply to ${region.name}`,
+        type: 'Flat pack kitchen supply and delivery',
+        desc: `Custom flat pack and assembled kitchens freighted to ${region.name}, ${region.state}.`,
+        areas: region.towns.map((t) => t[1]).concat([region.name]),
+      },
+      title: `Flat Pack Kitchens ${region.name.replace(/^the /, '').replace(/ and the North West| and Kangaroo Island| and Big Rivers/, '')} | Delivered`,
+      desc: `Flat pack and assembled kitchens delivered across ${region.name}, ${region.state}. Cut to your measurements in 18mm board with Blum hardware.`,
+      og: natImg(region.slug, HERO_LIGHT),
+      priority: '0.6',
+      faq,
+      trail: [['index.html', 'Home'], ['flat-pack-kitchens.html', 'Flat pack kitchens'], [`flat-pack-kitchens-${stateInfo.slug}.html`, stateInfo.name], [`flat-pack-kitchens-${region.slug}.html`, region.name]],
+      body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], [`flat-pack-kitchens-${stateInfo.slug}.html`, stateInfo.name], ['#', region.name]])}
+        <span class="pill">${region.towns.length} towns &middot; freighted ${region.route}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">Flat pack kitchens<br><span class="italic brass">across ${region.name}.</span></h1>
+        <p class="lede">${region.context}</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>Every kitchen is drawn and cut to your room in Rockhampton and freighted ${region.route} to anywhere in ${region.name}. Flat packed, or delivered assembled with the doors hung and adjusted &mdash; the quote shows both, with freight to your postcode on each. Installation is by your own builder or installer, working from our drawings.</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/guide-how-to-order-a-flat-pack-kitchen">How ordering works</a>
+        </div>
+      </div>
+      <div>${frame(natImg(region.slug, HERO_LIGHT), `Custom kitchen cabinetry delivered across ${region.name}`, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Towns we ship to</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">${region.name.charAt(0).toUpperCase() + region.name.slice(1)},<br>town by town.</h2>
+      <div class="grid cols-4 mt-3">
+        ${region.towns.map((t, i) => `<a class="card" href="/flat-pack-kitchens-${t[0]}" ${rv()} data-rv-d="${(i % 4) + 1}"><div class="card__body"><h3 class="d4">${t[1]}</h3><p class="small muted" style="margin:0">Flat pack &amp; assembled kitchens, freighted to ${t[1]}.</p><span class="link-u mt-1">See ${t[1]} &rarr;</span></div></a>`).join('')}
+      </div>
+      <p class="small muted mt-3" ${rv()}>Not listed? We ship to every postcode in ${stateInfo.name} &mdash; <a href="/flat-pack-kitchens-${stateInfo.slug}" style="color:var(--brass)">see the ${stateInfo.name} page</a> or send your dimensions and we will quote the freight to you.</p>
+    </div>
+  </section>
+
+  ${natSpecStrip(region.climate, 2)}
+  ${orderCta(region.name)}
+  ${faqBlock(faq, `${region.name} &mdash; questions`)}
+  ${ctaBand({ eyebrow: region.name, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: `A fixed, itemised quote freighted anywhere in ${region.name}, flat packed or delivered assembled.`, image: natImg(region.slug + 'c', HERO_DARK), alt: `Kitchen cabinetry freighted to ${region.name}` })}
+`,
+    };
+  }
+
+  /* ------------------------------------------------------------- states */
+  function statePage(code) {
+    const st = NAT.STATES[code];
+    const regions = NAT.REGIONS.filter((r) => r.state === code);
+    const townCount = regions.reduce((n, r) => n + r.towns.length, 0);
+    const faq = [
+      { q: `Do you deliver flat pack kitchens to ${st.name}?`, a: `Yes, to every postcode. Kitchens are cut to your drawing in Rockhampton and freighted across, flat packed or delivered assembled, with freight quoted to your postcode as its own line.` },
+      { q: `Do you install kitchens in ${st.name}?`, a: `No. Our own team installs in Central Queensland only. In ${st.name} your builder, carpenter or kitchen installer fits it from the dimensioned service drawings that ship with the order.` },
+      { q: `Who do I check a tradesperson's licence with in ${st.name}?`, a: `${st.body}. Ask for the licence number and look it up yourself before anyone starts, and ask for evidence of insurance at the same time.` },
+      { q: `Can I order without visiting a showroom?`, a: `That is the only way we work. Send the room dimensions and photos, a designer draws it, and you get the drawing and a fixed itemised quote back. Nothing is due to see either, and nothing is cut until you sign the drawing off.` },
+    ];
+    return {
+      file: `flat-pack-kitchens-${st.slug}.html`,
+      assembled: 'supply',
+      service: {
+        name: `Flat pack kitchen supply and delivery to ${st.name}`,
+        type: 'Flat pack kitchen supply and delivery',
+        desc: `Custom flat pack and assembled kitchens cut to your room and freighted anywhere in ${st.name}.`,
+        areas: regions.map((r) => r.name),
+      },
+      title: `Flat Pack Kitchens ${st.name.replace(/^the /, '')} | Delivered`,
+      desc: `Flat pack and assembled kitchens delivered anywhere in ${st.name}. Cut to your measurements in 18mm board with Blum hardware, fixed itemised quotes.`,
+      og: natImg(st.slug, HERO_LIGHT),
+      priority: '0.7',
+      faq,
+      trail: [['index.html', 'Home'], ['flat-pack-kitchens.html', 'Flat pack kitchens'], [`flat-pack-kitchens-${st.slug}.html`, st.name]],
+      body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['flat-pack-kitchens.html', 'Flat pack kitchens'], ['#', st.name]])}
+        <span class="pill">${regions.length} regions &middot; ${townCount} towns &middot; every postcode</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">Flat pack kitchens<br><span class="italic brass">delivered across ${st.name}.</span></h1>
+        <p class="lede">Cut to your room in Rockhampton and freighted to your door &mdash; flat packed, or delivered assembled with the doors already hung and adjusted. Same board, same Blum hardware, same drawings, wherever in ${st.name} it lands.</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>We supply, we do not install outside Central Queensland. You get a kitchen drawn to your measurements, a fixed itemised quote with freight on its own line, and dimensioned service drawings your plumber and electrician rough in from. Licences in ${st.name} are checked with ${st.body}.</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/guide-how-to-order-a-flat-pack-kitchen">How ordering works</a>
+        </div>
+      </div>
+      <div>${frame(natImg(st.slug, HERO_LIGHT), `Custom kitchen cabinetry delivered across ${st.name}`, 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Where we ship in ${st.name}</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Every region,<br>every postcode.</h2>
+      <div class="grid cols-3 mt-3">
+        ${regions.map((r, i) => `<a class="card" href="/flat-pack-kitchens-${r.slug}" ${rv()} data-rv-d="${(i % 3) + 1}"><div class="card__body"><h3 class="d4">${r.name.charAt(0).toUpperCase() + r.name.slice(1)}</h3><p class="small muted" style="margin:0">${r.towns.slice(0, 4).map((t) => t[1]).join(', ')}${r.towns.length > 4 ? ' and more' : ''}.</p><span class="link-u mt-1">See the region &rarr;</span></div></a>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Trades and approvals</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">What is different<br>about ${st.name}.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">The cabinetry is identical in every state. What changes is who licenses the trades who connect it and who assesses a second dwelling if you are building one. In ${st.name}, plumbing and electrical licences are checked with <a href="${st.url}" rel="noopener" target="_blank" style="color:var(--brass)">${st.body}</a>. Ask for the number, look it up yourself, and ask for evidence of insurance at the same time &mdash; it takes a minute and an unlicensed connection can fail an inspection, void an insurance claim and surface in a building report when you sell.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">If the kitchen is going into a granny flat, studio or secondary dwelling, the planning rules are set by your council under the state framework and they change. <a href="/guide-${st.slug === 'act' ? 'secondary-residence-rules-act' : 'granny-flat-rules-' + (st.slug === 'queensland' ? 'qld' : st.slug === 'northern-territory' ? 'nt' : st.slug === 'south-australia' ? 'sa' : st.slug === 'western-australia' ? 'wa' : st.slug)}" style="color:var(--brass)">Granny flat rules in ${st.name}</a> covers what to check before you design anything.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">${st.name}</span>
+          <ul>
+            <li>Every postcode, flat packed or assembled</li>
+            <li>18mm moisture-resistant board, laser-bonded edging</li>
+            <li>Blum soft-close hinges and full-extension runners</li>
+            <li>Service drawings for your plumber and electrician</li>
+            <li>Fixed itemised quote, freight its own line</li>
+            <li class="no">Installation not offered in ${st.name}</li>
+          </ul>
+          <a class="btn btn--block" href="/contact">Get my free quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${orderCta(st.name)}
+  ${faqBlock(faq, `${st.name} &mdash; questions`)}
+  ${ctaBand({ eyebrow: st.name, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: `A fixed, itemised quote freighted anywhere in ${st.name}, flat packed or delivered assembled, with nothing to pay to see it.`, image: natImg(st.slug + 'c', HERO_DARK), alt: `Kitchen cabinetry freighted across ${st.name}` })}
+`,
+    };
+  }
+
+  const statePages = Object.keys(NAT.STATES).filter((c) => !NAT.STATES[c].skip).map(statePage);
+  const regionPages = NAT.REGIONS.map(regionPage);
+  const townPages = NAT.REGIONS.flatMap((r) => r.towns.map((t, i) => townPage(t, r, i)));
+
   /* ================================================================== 404 */
 
   const notFound = {
@@ -7151,5 +7593,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };
