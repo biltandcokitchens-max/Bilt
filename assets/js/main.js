@@ -204,11 +204,25 @@
 
   /* ---- Conversion events ----
      Pageviews alone cannot answer "which page earns enquiries", so send the
-     three actions that represent a real lead. No-ops entirely when GA4 is not
-     configured, because gtag simply will not exist. */
+     actions that represent real intent. No-ops entirely when GA4 is not
+     configured, because gtag simply will not exist.
+
+     Every event carries page_type, so an audience can be "people who got
+     halfway down a WA town page and clicked call" rather than a URL guess. */
+  var BILT_CTX = (function () {
+    var m = document.querySelector('meta[name="bilt-page"]');
+    var v = m ? m.getAttribute('content').split('|') : [];
+    return { page_type: v[0] || 'other', content_state: v[1] || 'none', content_region: v[2] || 'none' };
+  })();
+
   function track(name, params) {
     if (typeof window.gtag !== 'function') return;
-    window.gtag('event', name, params || {});
+    var p = params || {};
+    p.page_type = BILT_CTX.page_type;
+    p.content_state = BILT_CTX.content_state;
+    p.content_region = BILT_CTX.content_region;
+    p.page_path = p.page_path || location.pathname;
+    window.gtag('event', name, p);
   }
 
   document.addEventListener('click', function (e) {
@@ -239,6 +253,76 @@
       track('estimator_used', { page_path: location.pathname });
     });
   }
+
+  /* ---- Scroll depth ----
+     Three marks, once each per page. Read depth is the best available proxy
+     for genuine interest on a page nobody fills a form on, and it is what
+     makes a usable remarketing audience out of the geography pages. */
+  (function () {
+    var marks = [25, 50, 75, 90], hit = {};
+    function check() {
+      var h = document.documentElement;
+      var pct = (h.scrollTop + window.innerHeight) / h.scrollHeight * 100;
+      for (var i = 0; i < marks.length; i++) {
+        if (pct >= marks[i] && !hit[marks[i]]) {
+          hit[marks[i]] = true;
+          track('scroll_depth', { percent_scrolled: marks[i] });
+        }
+      }
+      if (hit[90]) window.removeEventListener('scroll', check);
+    }
+    window.addEventListener('scroll', check, { passive: true });
+    check();
+  })();
+
+  /* ---- Engaged reader ----
+     Thirty seconds on the page with at least one interaction. Filters the
+     bounce traffic out of any audience built on this. */
+  (function () {
+    var interacted = false, fired = false;
+    ['click', 'keydown', 'scroll', 'touchstart'].forEach(function (ev) {
+      window.addEventListener(ev, function () { interacted = true; }, { passive: true, once: true });
+    });
+    setTimeout(function () {
+      if (interacted && !fired && !document.hidden) { fired = true; track('engaged_read'); }
+    }, 30000);
+  })();
+
+  /* ---- Form start ----
+     The first keystroke in an enquiry form. The gap between form_start and
+     generate_lead is the abandonment rate, and it is the number that tells us
+     whether the form is too long. */
+  Array.prototype.forEach.call(document.querySelectorAll('form[data-netlify], form[name]'), function (f) {
+    var started = false;
+    f.addEventListener('input', function () {
+      if (started) return;
+      started = true;
+      track('form_start', { form_name: f.getAttribute('name') || 'unnamed' });
+    }, { passive: true });
+  });
+
+  /* ---- Quote intent ----
+     A click on any primary call to action, wherever it sits on the page. The
+     position tells us which block actually earns the click. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="contact"], a[href="/contact"]');
+    if (!a) return;
+    var sec = a.closest('section');
+    track('quote_intent', {
+      cta_text: (a.textContent || '').trim().slice(0, 40),
+      cta_section: (sec && (sec.id || sec.className.split(' ')[0])) || 'unknown'
+    });
+  }, { passive: true });
+
+  /* ---- Outbound clicks ----
+     Mostly the council and licensing links in the guides. Worth knowing which
+     regulator pages people actually needed. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="http"]');
+    if (!a) return;
+    if (a.hostname === location.hostname) return;
+    track('click', { link_domain: a.hostname, link_url: a.href, outbound: true });
+  }, { passive: true });
 
   /* ---- Consultation spots counter ----
      Counts down across the month and resets on the 1st. Derived from the date

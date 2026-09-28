@@ -6,6 +6,7 @@
 <title>Privacy Policy | Bilt &amp; Co</title>
 <meta name="description" content="How Bilt &amp; Co collects, uses and protects the personal information you send through this site. Australian Privacy Principles, plainly explained.">
 <link rel="canonical" href="https://biltstudio.com.au/privacy">
+<meta name="bilt-page" content="info|none|none">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FBF9F5">
 <meta name="geo.region" content="AU-QLD">
@@ -37,9 +38,31 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+
+// Consent Mode v2. Ad storage is denied by default everywhere Google's EU
+// user consent policy applies, and granted elsewhere. The banner in main.js
+// only appears to visitors in the denied regions; Australian visitors are
+// never shown one, which is both lawful here and better for the site.
+var BILT_CONSENT_REGIONS=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'];
+gtag('consent','default',{
+  ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted',
+  region:BILT_CONSENT_REGIONS,wait_for_update:500
+});
+gtag('consent','default',{
+  ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted'
+});
+try{
+  // A visitor in a consent region who has already answered keeps their answer.
+  var biltC=localStorage.getItem('bilt_consent');
+  if(biltC==='granted'||biltC==='denied'){
+    gtag('consent','update',{ad_storage:biltC,ad_user_data:biltC,ad_personalization:biltC});
+  }
+}catch(e){}
+
 gtag('js',new Date());
-// No ad profiling: this business does not advertise, and the privacy policy
-// says so. Keep these false or that statement stops being true.
+
 // Internal-traffic flag. Read before config: gtag sends a page_view as part
 // of the config call, so setting traffic_type afterwards would let the first
 // hit of every pageload through as real traffic.
@@ -47,7 +70,15 @@ gtag('js',new Date());
 // once it is in the property it cannot be removed.
 var biltH=location.hostname;
 var biltLocal=(biltH==='localhost'||biltH==='127.0.0.1'||biltH==='[::1]'||biltH==='::1');
-var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+// Signals and ad personalisation are ON: they are what lets GA4 build
+// audiences that Google Ads can remarket to. The privacy policy says so.
+var biltCfg={
+  allow_google_signals:true,
+  allow_ad_personalization_signals:true,
+  page_type:'info',
+  content_state:'none',
+  content_region:'none'
+};
 if(biltLocal){biltCfg.traffic_type='internal';}
 try{
   var biltQ=location.search;
@@ -122,12 +153,18 @@ gtag('config','G-G40133MH26',biltCfg);
       <p>Our web host keeps standard server logs — IP address, browser type, pages requested and timestamps — as almost every website does. We do not use these to identify you.</p>
 
       <h2 class="d3">Cookies and analytics</h2>
-      <p>This site carries <strong>no advertising pixel</strong> and we do not sell or share your details with advertisers. We do use <strong>Google Analytics</strong> to see which pages people find useful. It sets a cookie in your browser and tells Google your IP address, the pages you view and your approximate location. We have switched off Google Signals and ad personalisation, so your visit is not used to build an advertising profile of you.</p>
-      <p>If you would rather not be counted, any tracker-blocking browser or extension will stop it, as will Google's own <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">opt-out add-on</a>. The site works exactly the same either way.</p>
+      <p>We use <strong>Google Analytics</strong> to see which pages people find useful. It sets a cookie in your browser and tells Google your IP address, the pages you view, how far down each page you read, and your approximate location.</p>
+      <p><strong>We use this for advertising as well as for analytics.</strong> Google Signals and ad personalisation are switched on, which means your visit can be added to an audience we later show ads to on Google Search, YouTube, Gmail and sites in Google’s display network — the reason you might see us again after visiting. We never upload your name, phone number or email to Google for this, and we do not sell or share your details with any other advertiser.</p>
+      <p>If you are in the UK, the EEA or Switzerland, advertising cookies are <strong>switched off for you by default</strong> and stay off unless you tell us otherwise. You are still counted in analytics.</p>
+      <p>Google keeps this event data for <strong>14 months</strong>, after which it is deleted automatically. Enquiry details you send us through a form are kept separately, by us, for as long as we are quoting or working for you.</p>
+      
+      <p>To opt out: any tracker-blocking browser or extension will stop all of it, as will Google’s own <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">opt-out add-on</a>. To stop the advertising use specifically while leaving the rest alone, turn off personalised ads in your <a href="https://myadcenter.google.com/" rel="nofollow noopener" target="_blank">Google My Ad Center</a> settings. The site works exactly the same either way.</p>
       <p>Besides Analytics, the third parties your browser contacts are Google Fonts, which serves the typefaces, and Google Maps on the contact page, which loads only if you view that page. Both receive your IP address as a normal part of serving a request.</p>
       <!-- The wording above follows SITE.ga4 automatically, so it cannot go
-           stale when analytics is switched on or off. An ad pixel would still
-           need this section rewritten by hand. -->
+           stale when analytics is switched on or off. It now also describes
+           the advertising use: Google Signals and ad personalisation are on
+           in _build.js. If those are ever switched back off, this section has
+           to be rewritten by hand or it becomes false. -->
 
       <h2 class="d3">Why we collect it</h2>
       <p>To answer your enquiry, prepare a design and a quote, and — if you go ahead — to design, build and install your kitchen. That is the whole purpose. We do not use your details for anything you did not contact us about.</p>

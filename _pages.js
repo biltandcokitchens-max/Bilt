@@ -7190,12 +7190,18 @@ module.exports = function (api) {
       <p>Our web host keeps standard server logs — IP address, browser type, pages requested and timestamps — as almost every website does. We do not use these to identify you.</p>
 
       <h2 class="d3">Cookies and analytics</h2>
-      ${SITE.ga4 ? `<p>This site carries <strong>no advertising pixel</strong> and we do not sell or share your details with advertisers. We do use <strong>Google Analytics</strong> to see which pages people find useful. It sets a cookie in your browser and tells Google your IP address, the pages you view and your approximate location. We have switched off Google Signals and ad personalisation, so your visit is not used to build an advertising profile of you.</p>
-      <p>If you would rather not be counted, any tracker-blocking browser or extension will stop it, as will Google's own <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">opt-out add-on</a>. The site works exactly the same either way.</p>` : `<p>This site sets <strong>no tracking cookies</strong> and runs <strong>no analytics or advertising scripts</strong>. There is no Google Analytics, no advertising pixel and no third-party tracker on any page.</p>`}
+      ${SITE.ga4 ? `<p>We use <strong>Google Analytics</strong> to see which pages people find useful. It sets a cookie in your browser and tells Google your IP address, the pages you view, how far down each page you read, and your approximate location.</p>
+      <p><strong>We use this for advertising as well as for analytics.</strong> Google Signals and ad personalisation are switched on, which means your visit can be added to an audience we later show ads to on Google Search, YouTube, Gmail and sites in Google’s display network — the reason you might see us again after visiting. We never upload your name, phone number or email to Google for this, and we do not sell or share your details with any other advertiser.</p>
+      <p>If you are in the UK, the EEA or Switzerland, advertising cookies are <strong>switched off for you by default</strong> and stay off unless you tell us otherwise. You are still counted in analytics.</p>
+      <p>Google keeps this event data for <strong>14 months</strong>, after which it is deleted automatically. Enquiry details you send us through a form are kept separately, by us, for as long as we are quoting or working for you.</p>
+      
+      <p>To opt out: any tracker-blocking browser or extension will stop all of it, as will Google’s own <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">opt-out add-on</a>. To stop the advertising use specifically while leaving the rest alone, turn off personalised ads in your <a href="https://myadcenter.google.com/" rel="nofollow noopener" target="_blank">Google My Ad Center</a> settings. The site works exactly the same either way.</p>` : `<p>This site sets <strong>no tracking cookies</strong> and runs <strong>no analytics or advertising scripts</strong>. There is no Google Analytics, no advertising pixel and no third-party tracker on any page.</p>`}
       <p>${SITE.ga4 ? 'Besides Analytics, the third parties your browser contacts are' : 'The only third party your browser contacts is'} Google Fonts, which serves the typefaces, and Google Maps on the contact page, which loads only if you view that page. Both receive your IP address as a normal part of serving a request.</p>
       <!-- The wording above follows SITE.ga4 automatically, so it cannot go
-           stale when analytics is switched on or off. An ad pixel would still
-           need this section rewritten by hand. -->
+           stale when analytics is switched on or off. It now also describes
+           the advertising use: Google Signals and ad personalisation are on
+           in _build.js. If those are ever switched back off, this section has
+           to be rewritten by hand or it becomes false. -->
 
       <h2 class="d3">Why we collect it</h2>
       <p>To answer your enquiry, prepare a design and a quote, and — if you go ahead — to design, build and install your kitchen. That is the whole purpose. We do not use your details for anything you did not contact us about.</p>

@@ -6,6 +6,7 @@
 <title>Flat Pack Kitchens Ellenbrook WA | Delivered</title>
 <meta name="description" content="Flat pack and assembled kitchens delivered to Ellenbrook, WA. Cut to your measurements in 18mm board with Blum hardware. Fixed itemised quotes.">
 <link rel="canonical" href="https://biltstudio.com.au/flat-pack-kitchens-ellenbrook">
+<meta name="bilt-page" content="geo_town|Western Australia|Greater Perth">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#FBF9F5">
 <meta name="geo.region" content="AU-QLD">
@@ -37,9 +38,31 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+
+// Consent Mode v2. Ad storage is denied by default everywhere Google's EU
+// user consent policy applies, and granted elsewhere. The banner in main.js
+// only appears to visitors in the denied regions; Australian visitors are
+// never shown one, which is both lawful here and better for the site.
+var BILT_CONSENT_REGIONS=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'];
+gtag('consent','default',{
+  ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted',
+  region:BILT_CONSENT_REGIONS,wait_for_update:500
+});
+gtag('consent','default',{
+  ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted'
+});
+try{
+  // A visitor in a consent region who has already answered keeps their answer.
+  var biltC=localStorage.getItem('bilt_consent');
+  if(biltC==='granted'||biltC==='denied'){
+    gtag('consent','update',{ad_storage:biltC,ad_user_data:biltC,ad_personalization:biltC});
+  }
+}catch(e){}
+
 gtag('js',new Date());
-// No ad profiling: this business does not advertise, and the privacy policy
-// says so. Keep these false or that statement stops being true.
+
 // Internal-traffic flag. Read before config: gtag sends a page_view as part
 // of the config call, so setting traffic_type afterwards would let the first
 // hit of every pageload through as real traffic.
@@ -47,7 +70,15 @@ gtag('js',new Date());
 // once it is in the property it cannot be removed.
 var biltH=location.hostname;
 var biltLocal=(biltH==='localhost'||biltH==='127.0.0.1'||biltH==='[::1]'||biltH==='::1');
-var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+// Signals and ad personalisation are ON: they are what lets GA4 build
+// audiences that Google Ads can remarket to. The privacy policy says so.
+var biltCfg={
+  allow_google_signals:true,
+  allow_ad_personalization_signals:true,
+  page_type:'geo_town',
+  content_state:'Western Australia',
+  content_region:'Greater Perth'
+};
 if(biltLocal){biltCfg.traffic_type='internal';}
 try{
   var biltQ=location.search;

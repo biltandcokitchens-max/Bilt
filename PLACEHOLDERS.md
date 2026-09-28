@@ -149,6 +149,13 @@ completed projects is misleading conduct.
 - [ ] Real favicon
 - [ ] Deploy `out-redirects/` — 65 x 301 from the retired site structure
 - [ ] Google Business Profile (verification in progress)
+- [ ] **Google Ads conversion ID** for remarketing. Create/open the Google Ads
+      account, copy the tag ID (`AW-XXXXXXXXX`) and paste it into `SITE.googleAds`
+      in `_build.js`. Until then the Ads tag does not ship; GA4 still collects
+      the audience signals.
+- [ ] **GA4 admin settings** (UI only, cannot be set from code):
+      Data retention 14 months + reset on new activity; Google Signals ON;
+      link the Google Ads account under Admin > Product links.
 - [ ] **Google Analytics 4 — one value away from live.** Paste the measurement
       ID into `SITE.ga4` in `_build.js` (looks like `G-XXXXXXXXXX`), rebuild,
       deploy. Everything else is already wired:

@@ -34,6 +34,9 @@ const SITE = {
   // no analytics ships at all - the tag, the event tracking and the matching
   // privacy policy wording are all gated on this one value.
   ga4: 'G-G40133MH26',
+  // Google Ads conversion ID, e.g. 'AW-123456789'. Leave empty and no Ads
+  // tag ships. Required before remarketing audiences can be shared to Ads.
+  googleAds: '',
   // Free design consultations offered per month. The counter on the homepage
   // and contact page counts down from this across the month and resets on the
   // 1st. Change it here and both pages follow.
@@ -475,8 +478,32 @@ function tidyLinks(html) {
     .replace(/href="(?!https?:|\/\/|mailto:|tel:)([\w.\/-]+)\.html(#[^"]*)?"/g, 'href="/$1$2"');
 }
 
+/* Page classification, sent with every hit so GA4 audiences can be built on
+   what a page IS rather than on URL regexes in the reporting UI. */
+function classify(page) {
+  const f = page.file.replace(/\.html$/, '');
+  const t = page.trail || [];
+  let type = 'other';
+  if (f === 'index') type = 'home';
+  else if (/^guide-/.test(f)) type = 'guide';
+  else if (/^flat-pack-kitchens-/.test(f)) {
+    type = t.length >= 5 ? 'geo_town' : t.length === 4 ? 'geo_region' : 'geo_state';
+  } else if (/^kitchens-/.test(f)) type = 'geo_town';
+  else if (/^(contact|thanks)$/.test(f)) type = 'convert';
+  else if (/^(privacy|studio|process|gallery)$/.test(f)) type = 'info';
+  else type = 'product';
+  // State and region come off the breadcrumb the page already carries.
+  const st = (page.service && page.service.areas) || [];
+  return {
+    pageType: type,
+    geoState: (t[2] && type.startsWith('geo') ? t[2][1] : (page.geoState || '')),
+    geoRegion: (t[3] && type === 'geo_town' ? t[3][1] : ''),
+  };
+}
+
 function layout(page) {
   const canonical = `${SITE.origin}${cleanPath(page.file)}`;
+  Object.assign(page, classify(page));
   // Every page carries three described images and the assembled section,
   // unless it opts out (legal, thanks, 404, contact, the gallery itself).
   const noGallery = page.noGallery || ['contact.html', 'thanks.html', 'privacy.html', '404.html'].includes(page.file);
@@ -512,6 +539,7 @@ function layout(page) {
 <title>${esc(page.title)}</title>
 <meta name="description" content="${esc(page.desc)}">
 <link rel="canonical" href="${canonical}">
+<meta name="bilt-page" content="${page.pageType || 'other'}|${page.geoState || 'none'}|${page.geoRegion || 'none'}">
 <meta name="robots" content="${page.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}">
 <meta name="theme-color" content="#FBF9F5">
 <meta name="geo.region" content="AU-QLD">
@@ -543,9 +571,31 @@ ${SITE.ga4 ? `<link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.ga4}"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+
+// Consent Mode v2. Ad storage is denied by default everywhere Google's EU
+// user consent policy applies, and granted elsewhere. The banner in main.js
+// only appears to visitors in the denied regions; Australian visitors are
+// never shown one, which is both lawful here and better for the site.
+var BILT_CONSENT_REGIONS=['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'];
+gtag('consent','default',{
+  ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted',
+  region:BILT_CONSENT_REGIONS,wait_for_update:500
+});
+gtag('consent','default',{
+  ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',
+  analytics_storage:'granted',functionality_storage:'granted',security_storage:'granted'
+});
+try{
+  // A visitor in a consent region who has already answered keeps their answer.
+  var biltC=localStorage.getItem('bilt_consent');
+  if(biltC==='granted'||biltC==='denied'){
+    gtag('consent','update',{ad_storage:biltC,ad_user_data:biltC,ad_personalization:biltC});
+  }
+}catch(e){}
+
 gtag('js',new Date());
-// No ad profiling: this business does not advertise, and the privacy policy
-// says so. Keep these false or that statement stops being true.
+
 // Internal-traffic flag. Read before config: gtag sends a page_view as part
 // of the config call, so setting traffic_type afterwards would let the first
 // hit of every pageload through as real traffic.
@@ -553,7 +603,15 @@ gtag('js',new Date());
 // once it is in the property it cannot be removed.
 var biltH=location.hostname;
 var biltLocal=(biltH==='localhost'||biltH==='127.0.0.1'||biltH==='[::1]'||biltH==='::1');
-var biltCfg={allow_google_signals:false,allow_ad_personalization_signals:false};
+// Signals and ad personalisation are ON: they are what lets GA4 build
+// audiences that Google Ads can remarket to. The privacy policy says so.
+var biltCfg={
+  allow_google_signals:true,
+  allow_ad_personalization_signals:true,
+  page_type:'${page.pageType || 'other'}',
+  content_state:'${page.geoState || 'none'}',
+  content_region:'${page.geoRegion || 'none'}'
+};
 if(biltLocal){biltCfg.traffic_type='internal';}
 try{
   var biltQ=location.search;
@@ -561,7 +619,10 @@ try{
   else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
   if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
 }catch(e){/* private mode or storage blocked: count it, better than breaking */}
-gtag('config','${SITE.ga4}',biltCfg);
+gtag('config','${SITE.ga4}',biltCfg);${SITE.googleAds ? `
+// Google Ads remarketing tag. Fires on the same gtag instance, so consent
+// state and the audience signals above apply to it too.
+gtag('config','${SITE.googleAds}',{allow_enhanced_conversions:true});` : ''}
 </script>` : ''}
 ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
 </head>
