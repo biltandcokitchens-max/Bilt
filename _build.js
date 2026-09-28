@@ -37,6 +37,11 @@ const SITE = {
   // Google Ads conversion ID, e.g. 'AW-123456789'. Leave empty and no Ads
   // tag ships. Required before remarketing audiences can be shared to Ads.
   googleAds: '',
+  // Average value of one enquiry in AUD, used as the value on generate_lead
+  // so GA4 and Google Ads have something to optimise toward. Work it out as
+  // (average job value) x (share of enquiries that become jobs). Leave 0 and
+  // no value is sent - better than training Ads on a guess.
+  leadValue: 0,
   // Free design consultations offered per month. The counter on the homepage
   // and contact page counts down from this across the month and resets on the
   // 1st. Change it here and both pages follow.
@@ -619,7 +624,8 @@ try{
   else if(biltQ.indexOf('internal=0')>-1){localStorage.removeItem('bilt_internal')}
   if(localStorage.getItem('bilt_internal')==='1'){biltCfg.traffic_type='internal'}
 }catch(e){/* private mode or storage blocked: count it, better than breaking */}
-gtag('config','${SITE.ga4}',biltCfg);${SITE.googleAds ? `
+gtag('config','${SITE.ga4}',biltCfg);
+${SITE.leadValue ? `window.BILT_LEAD_VALUE=${SITE.leadValue};` : ''}${SITE.googleAds ? `
 // Google Ads remarketing tag. Fires on the same gtag instance, so consent
 // state and the audience signals above apply to it too.
 gtag('config','${SITE.googleAds}',{allow_enhanced_conversions:true});` : ''}

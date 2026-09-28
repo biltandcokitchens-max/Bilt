@@ -240,7 +240,11 @@
     f.addEventListener('submit', function () {
       // generate_lead is a GA4 recommended event, so it shows up in the
       // standard reports rather than needing a custom definition.
-      track('generate_lead', { form_name: f.getAttribute('name') || 'unnamed', page_path: location.pathname });
+      var lead = { form_name: f.getAttribute('name') || 'unnamed', page_path: location.pathname };
+      // Estimated value of an enquiry, set as SITE.leadValue in _build.js.
+      // Unset until a real figure exists: a made-up number trains Ads on fiction.
+      if (window.BILT_LEAD_VALUE) { lead.value = window.BILT_LEAD_VALUE; lead.currency = 'AUD'; }
+      track('generate_lead', lead);
     });
   });
 
@@ -288,17 +292,26 @@
     }, 30000);
   })();
 
-  /* ---- Form start ----
-     The first keystroke in an enquiry form. The gap between form_start and
-     generate_lead is the abandonment rate, and it is the number that tells us
-     whether the form is too long. */
+  /* ---- Enquiry start, and where people give up ----
+     GA4 Enhanced Measurement sends its own form_start, so ours is named
+     enquiry_start to keep the two apart. The gap between enquiry_start and
+     generate_lead is the abandonment rate; last_field says which field they
+     stopped at, which is what would actually justify changing the form. */
   Array.prototype.forEach.call(document.querySelectorAll('form[data-netlify], form[name]'), function (f) {
-    var started = false;
-    f.addEventListener('input', function () {
+    var started = false, submitted = false, lastField = '';
+    f.addEventListener('input', function (e) {
+      if (e.target && e.target.name) lastField = e.target.name;
       if (started) return;
       started = true;
-      track('form_start', { form_name: f.getAttribute('name') || 'unnamed' });
+      track('enquiry_start', { form_name: f.getAttribute('name') || 'unnamed' });
     }, { passive: true });
+    f.addEventListener('submit', function () { submitted = true; });
+    // Abandonment is sent on hide, the only teardown event mobile honours.
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState !== 'hidden' || !started || submitted) return;
+      submitted = true;
+      track('enquiry_abandon', { form_name: f.getAttribute('name') || 'unnamed', last_field: lastField });
+    });
   });
 
   /* ---- Quote intent ----
