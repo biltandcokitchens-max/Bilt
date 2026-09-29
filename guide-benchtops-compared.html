@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="Laminate, engineered stone, porcelain, sintered stone and natural marble compared on cost, heat, stains and how each behaves in a Queensland kitchen.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/island-marble-close.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/island-marble-close.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/island-marble-close.webp" imagesrcset="assets/img/island-marble-close-480.webp 480w, assets/img/island-marble-close-960.webp 960w, assets/img/island-marble-close-1440.webp 1440w, assets/img/island-marble-close.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-benchtops-compared#gallery","url":"https://biltstudio.com.au/guide-benchtops-compared","name":"Kitchen Benchtops Compared | Cost & Durability | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/timber-island.jpg","caption":"Timber island, stone top","description":"Timber-fronted island with stone top","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/dark-island.jpg","caption":"Long island, one delivery","description":"Dark cabinetry kitchen with a long island, delivered assembled ready to fit","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/concrete-luxe.jpg","caption":"Concrete-look doors, matte black hardware","description":"Concrete-look kitchen with matte black fixtures","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Kitchen benchtops compared","item":"https://biltstudio.com.au/guide-benchtops-compared"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the most durable kitchen benchtop?","acceptedAnswer":{"@type":"Answer","text":"Porcelain and sintered stone. They are heat resistant, UV stable, non-porous and extremely hard, which makes them the best performers in a Queensland kitchen that gets afternoon sun. They cost more than engineered stone and the mitred edges need to be well made."}},{"@type":"Question","name":"How much does a stone benchtop add?","acceptedAnswer":{"@type":"Answer","text":"Engineered stone adds roughly $1,750 on a compact run, with porcelain and sintered stone above that and natural marble or granite above again. On a larger kitchen the gap widens, because you are paying per square metre of slab."}},{"@type":"Question","name":"Can you put a hot pan on engineered stone?","acceptedAnswer":{"@type":"Answer","text":"No. Engineered stone is not heatproof and a pan straight off the cooktop can mark it permanently. Porcelain and sintered stone handle heat far better. If you are a cook who moves pans directly to the bench, that difference should decide your choice."}},{"@type":"Question","name":"Does marble stain?","acceptedAnswer":{"@type":"Answer","text":"Marble is porous and etches with anything acidic — lemon, wine, vinegar — regardless of sealing. It develops a patina. Owners who love marble accept that as character; owners who expected it to stay pristine are usually unhappy. We show clients an aged sample before they commit."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Kitchen benchtops compared","description":"Laminate, engineered stone, porcelain, sintered stone and natural marble compared on cost, heat, stains and how each behaves in a Queensland kitchen.","image":["https://biltstudio.com.au/assets/img/island-marble-close.jpg","https://biltstudio.com.au/assets/img/timber-island.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg","https://biltstudio.com.au/assets/img/concrete-luxe.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-benchtops-compared","dateModified":"2026-09-17","datePublished":"2026-08-31"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Kitchen benchtops compared","description":"Laminate, engineered stone, porcelain, sintered stone and natural marble compared on cost, heat, stains and how each behaves in a Queensland kitchen.","image":["https://biltstudio.com.au/assets/img/island-marble-close.jpg","https://biltstudio.com.au/assets/img/timber-island.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg","https://biltstudio.com.au/assets/img/concrete-luxe.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-benchtops-compared","dateModified":"2026-09-28","datePublished":"2026-08-31"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">The largest surface in the room, the one that takes the abuse, and the single choice that moves your price most.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>Porcelain and sintered stone are the most durable — heat resistant, UV stable and non-porous, which is what matters in a Central Queensland kitchen. Engineered stone is the common upgrade and adds roughly $1,750 on a compact run. Laminate is included and better than its reputation. Natural marble is the most beautiful and the least forgiving.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close.webp" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Stone benchtop detail showing a mitred edge" width="1920" height="1920" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close-480.webp 480w, assets/img/island-marble-close-960.webp 960w, assets/img/island-marble-close-1440.webp 1440w, assets/img/island-marble-close.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Stone benchtop detail showing a mitred edge" width="1920" height="1920" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -240,15 +243,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/timber-island.webp" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber-fronted island with stone top" width="1920" height="2880" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/timber-island-480.webp 480w, assets/img/timber-island-960.webp 960w, assets/img/timber-island-1440.webp 1440w, assets/img/timber-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber-fronted island with stone top" width="1920" height="2880" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Timber island, stone top</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island.webp" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island-480.webp 480w, assets/img/dark-island-960.webp 960w, assets/img/dark-island-1440.webp 1440w, assets/img/dark-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Long island, one delivery</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe.webp" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Concrete-look kitchen with matte black fixtures" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe-480.webp 480w, assets/img/concrete-luxe-960.webp 960w, assets/img/concrete-luxe-1440.webp 1440w, assets/img/concrete-luxe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Concrete-look kitchen with matte black fixtures" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Concrete-look doors, matte black hardware</p></figcaption>
         </figure>
       </div>
@@ -256,7 +259,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/detail-stone-black.webp" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Stone benchtop detail showing a mitred edge" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Stone benchtop detail showing a mitred edge" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Benchtops</p>

@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="Kitchen design references from Bilt &amp; Co — timber and stone, handleless and gloss finishes, island layouts and joinery detail, and what each costs.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/signature-dark.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/collection-marble-01.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/collection-marble-01.webp" imagesrcset="assets/img/collection-marble-01-480.webp 480w, assets/img/collection-marble-01-960.webp 960w, assets/img/collection-marble-01-1440.webp 1440w, assets/img/collection-marble-01.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
           <a class="btn btn--ghost btn--lg" href="/investment">What these cost</a>
         </div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-01.webp" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with full-height marble splashback and stone island" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-01-480.webp 480w, assets/img/collection-marble-01-960.webp 960w, assets/img/collection-marble-01-1440.webp 1440w, assets/img/collection-marble-01.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with full-height marble splashback and stone island" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -184,99 +187,99 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="gal">
         
         <a class="g-8 ar-43" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/hero-main.webp" type="image/webp"><img src="assets/img/hero-main.jpg" alt="Dark timber kitchen and dining room with a stone island and linear pendant lighting" width="1920" height="1441" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/hero-main-480.webp 480w, assets/img/hero-main-960.webp 960w, assets/img/hero-main-1440.webp 1440w, assets/img/hero-main.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/hero-main.jpg" alt="Dark timber kitchen and dining room with a stone island and linear pendant lighting" width="1920" height="1441" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Dark timber, stone island</strong><br>Full-height joinery to the ceiling</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/dark-luxe-bar.webp" type="image/webp"><img src="assets/img/dark-luxe-bar.jpg" alt="Dark kitchen with timber bar stools and an integrated coffee station" width="1920" height="2676" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/dark-luxe-bar-480.webp 480w, assets/img/dark-luxe-bar-960.webp 960w, assets/img/dark-luxe-bar-1440.webp 1440w, assets/img/dark-luxe-bar.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-luxe-bar.jpg" alt="Dark kitchen with timber bar stools and an integrated coffee station" width="1920" height="2676" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Integrated coffee station</strong><br>Appliance garage behind a lift door</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/collection-marble-01.webp" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with a full-height marble splashback and stone island bench" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/collection-marble-01-480.webp 480w, assets/img/collection-marble-01-960.webp 960w, assets/img/collection-marble-01-1440.webp 1440w, assets/img/collection-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with a full-height marble splashback and stone island bench" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>American oak and marble</strong><br>Full-height stone splashback</figcaption>
         </a>
         <a class="g-8 ar-43" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/collection-marble-02.webp" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/collection-marble-02-480.webp 480w, assets/img/collection-marble-02-960.webp 960w, assets/img/collection-marble-02-1440.webp 1440w, assets/img/collection-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Brass lighting on stone</strong><br>Handleless rail, no visible hardware</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/island-marble-brass.webp" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and a natural stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/island-marble-brass-480.webp 480w, assets/img/island-marble-brass-960.webp 960w, assets/img/island-marble-brass-1440.webp 1440w, assets/img/island-marble-brass.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and a natural stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Brushed brass tapware</strong><br>Mitred stone edge, 40mm</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/signature-dark.webp" type="image/webp"><img src="assets/img/signature-dark.jpg" alt="Dark navy kitchen with leather bar seating opening to a living area" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/signature-dark-480.webp 480w, assets/img/signature-dark-960.webp 960w, assets/img/signature-dark-1440.webp 1440w, assets/img/signature-dark.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/signature-dark.jpg" alt="Dark navy kitchen with leather bar seating opening to a living area" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Navy cabinetry, leather seating</strong><br>Open-plan island with seating for four</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/splashback-marble-01.webp" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Full-height marble splashback with matte black tapware over an induction cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/splashback-marble-01-480.webp 480w, assets/img/splashback-marble-01-960.webp 960w, assets/img/splashback-marble-01-1440.webp 1440w, assets/img/splashback-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Full-height marble splashback with matte black tapware over an induction cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Matte black tapware</strong><br>Induction, flush to the stone</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/detail-stone-black.webp" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop with concealed under-cabinet lighting" width="1920" height="2400" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop with concealed under-cabinet lighting" width="1920" height="2400" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Black stone, concealed lighting</strong><br>LED to the underside of the overheads</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright open kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright open kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Calacatta waterfall island</strong><br>Veining matched across the return</figcaption>
         </a>
         <a class="g-8 ar-43" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan kitchen with a long island bench and integrated appliances" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan kitchen with a long island bench and integrated appliances" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Long island, integrated appliances</strong><br>Four metre run, single stone slab</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/matte-black-bank.webp" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Matte black handleless cabinetry with an appliance garage" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/matte-black-bank-480.webp 480w, assets/img/matte-black-bank-960.webp 960w, assets/img/matte-black-bank-1440.webp 1440w, assets/img/matte-black-bank.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Matte black handleless cabinetry with an appliance garage" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Matte black, handleless</strong><br>Push-to-open, no handles at all</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/galley-stone.webp" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Stone galley kitchen with pendant lighting and concealed handles" width="1920" height="1389" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/galley-stone-480.webp 480w, assets/img/galley-stone-960.webp 960w, assets/img/galley-stone-1440.webp 1440w, assets/img/galley-stone.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Stone galley kitchen with pendant lighting and concealed handles" width="1920" height="1389" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Galley layout in stone</strong><br>Compact run, full-depth storage</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/glossy-dark.webp" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="Dark gloss kitchen joinery with integrated ovens" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/glossy-dark-480.webp 480w, assets/img/glossy-dark-960.webp 960w, assets/img/glossy-dark-1440.webp 1440w, assets/img/glossy-dark.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="Dark gloss kitchen joinery with integrated ovens" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Gloss doors, integrated ovens</strong><br>Tall bank, floor to ceiling</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/dark-island.webp" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark island bench with pendant lighting and open living beyond" width="1920" height="2400" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/dark-island-480.webp 480w, assets/img/dark-island-960.webp 960w, assets/img/dark-island-1440.webp 1440w, assets/img/dark-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark island bench with pendant lighting and open living beyond" width="1920" height="2400" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Dark island, pendant lighting</strong><br>Seating on two sides</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/collection-marble-03.webp" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Marble splashback with brass lighting above a timber kitchen" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/collection-marble-03-480.webp 480w, assets/img/collection-marble-03-960.webp 960w, assets/img/collection-marble-03-1440.webp 1440w, assets/img/collection-marble-03.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Marble splashback with brass lighting above a timber kitchen" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Timber and marble together</strong><br>Warm neutrals, matte finish</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/splashback-marble-02.webp" type="image/webp"><img src="assets/img/splashback-marble-02.jpg" alt="Marble splashback and timber joinery with an integrated oven" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/splashback-marble-02-480.webp 480w, assets/img/splashback-marble-02-960.webp 960w, assets/img/splashback-marble-02-1440.webp 1440w, assets/img/splashback-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-02.jpg" alt="Marble splashback and timber joinery with an integrated oven" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Stone splashback, timber doors</strong><br>Oven at bench height</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/concrete-luxe.webp" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen with a concrete ceiling, white island and bar stools" width="1920" height="1282" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/concrete-luxe-480.webp 480w, assets/img/concrete-luxe-960.webp 960w, assets/img/concrete-luxe-1440.webp 1440w, assets/img/concrete-luxe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen with a concrete ceiling, white island and bar stools" width="1920" height="1282" loading="lazy" decoding="async"></picture>
           <figcaption><strong>White island, concrete above</strong><br>Minimal, no upper cabinets</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/black-marble-bar.webp" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black marble bar with bar stools and concealed lighting" width="1920" height="2779" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/black-marble-bar-480.webp 480w, assets/img/black-marble-bar-960.webp 960w, assets/img/black-marble-bar-1440.webp 1440w, assets/img/black-marble-bar.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black marble bar with bar stools and concealed lighting" width="1920" height="2779" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Black marble bar</strong><br>Waterfall ends, both sides</figcaption>
         </a>
         <a class="g-4 ar-34" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/island-marble-close.webp" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Marble island benchtop detail with pendant lights above" width="1920" height="1920" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/island-marble-close-480.webp 480w, assets/img/island-marble-close-960.webp 960w, assets/img/island-marble-close-1440.webp 1440w, assets/img/island-marble-close.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Marble island benchtop detail with pendant lights above" width="1920" height="1920" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Stone detail, close</strong><br>Mitred edge and shadow line</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/timber-island.webp" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island and joinery in an open plan home" width="1920" height="2880" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/timber-island-480.webp 480w, assets/img/timber-island-960.webp 960w, assets/img/timber-island-1440.webp 1440w, assets/img/timber-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island and joinery in an open plan home" width="1920" height="2880" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Timber island</strong><br>Warm oak, hard-wax oil finish</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/wardrobe-robe.webp" type="image/webp"><img src="assets/img/wardrobe-robe.jpg" alt="Custom walk-in wardrobe with glazed joinery and integrated lighting" width="1920" height="1357" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/wardrobe-robe-480.webp 480w, assets/img/wardrobe-robe-960.webp 960w, assets/img/wardrobe-robe-1440.webp 1440w, assets/img/wardrobe-robe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/wardrobe-robe.jpg" alt="Custom walk-in wardrobe with glazed joinery and integrated lighting" width="1920" height="1357" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Walk-in robe, glazed fronts</strong><br>Lighting on a door sensor</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="1">
-          <picture><source srcset="assets/img/detail-timber-joinery.webp" type="image/webp"><img src="assets/img/detail-timber-joinery.jpg" alt="Timber media joinery and stone splashback detail" width="1920" height="1444" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/detail-timber-joinery-480.webp 480w, assets/img/detail-timber-joinery-960.webp 960w, assets/img/detail-timber-joinery-1440.webp 1440w, assets/img/detail-timber-joinery.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-timber-joinery.jpg" alt="Timber media joinery and stone splashback detail" width="1920" height="1444" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Media joinery in timber</strong><br>Ventilated equipment bays</figcaption>
         </a>
         <a class="g-6 ar-43" href="/contact" data-rv data-rv-d="2">
-          <picture><source srcset="assets/img/drawer-detail.webp" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Deep pot drawers with brass handles and internal organisers" width="1920" height="1280" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/drawer-detail-480.webp 480w, assets/img/drawer-detail-960.webp 960w, assets/img/drawer-detail-1440.webp 1440w, assets/img/drawer-detail.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Deep pot drawers with brass handles and internal organisers" width="1920" height="1280" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Deep drawers, organisers</strong><br>Blum full-extension runners</figcaption>
         </a>
         <a class="g-12 ar-219" href="/contact" data-rv data-rv-d="3">
-          <picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture>
+          <picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture>
           <figcaption><strong>Kitchen into dining</strong><br>One material palette throughout</figcaption>
         </a>
       </div>
@@ -297,7 +300,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="mt-2 muted" data-rv data-rv-d="3">That last part matters more than people expect. Some finishes that photograph beautifully in a Melbourne apartment do not belong in a room that gets afternoon sun in February.</p>
         <a class="btn mt-3" href="/contact" data-rv data-rv-d="4">Get my free quote</a>
       </div>
-      <div data-rv data-rv-d="1"><div class="frame frame--wide"><picture><source srcset="assets/img/material-samples.webp" type="image/webp"><img src="assets/img/material-samples.jpg" alt="Timber veneer and finish samples on a workbench" width="1920" height="1280" loading="lazy" decoding="async"></picture></div></div>
+      <div data-rv data-rv-d="1"><div class="frame frame--wide"><picture><source srcset="assets/img/material-samples-480.webp 480w, assets/img/material-samples-960.webp 960w, assets/img/material-samples-1440.webp 1440w, assets/img/material-samples.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/material-samples.jpg" alt="Timber veneer and finish samples on a workbench" width="1920" height="1280" loading="lazy" decoding="async"></picture></div></div>
     </div>
   </section>
 
@@ -339,99 +342,99 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/hero-main.webp" type="image/webp"><img src="assets/img/hero-main.jpg" alt="Dark timber kitchen and dining room with a stone island and linear pendant lighting" width="1920" height="1441" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/hero-main-480.webp 480w, assets/img/hero-main-960.webp 960w, assets/img/hero-main-1440.webp 1440w, assets/img/hero-main.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/hero-main.jpg" alt="Dark timber kitchen and dining room with a stone island and linear pendant lighting" width="1920" height="1441" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Dark timber, stone island</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-luxe-bar.webp" type="image/webp"><img src="assets/img/dark-luxe-bar.jpg" alt="Dark kitchen with timber bar stools and an integrated coffee station" width="1920" height="2676" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-luxe-bar-480.webp 480w, assets/img/dark-luxe-bar-960.webp 960w, assets/img/dark-luxe-bar-1440.webp 1440w, assets/img/dark-luxe-bar.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-luxe-bar.jpg" alt="Dark kitchen with timber bar stools and an integrated coffee station" width="1920" height="2676" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Integrated coffee station</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-01.webp" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with a full-height marble splashback and stone island bench" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-01-480.webp 480w, assets/img/collection-marble-01-960.webp 960w, assets/img/collection-marble-01-1440.webp 1440w, assets/img/collection-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-01.jpg" alt="Oak kitchen with a full-height marble splashback and stone island bench" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">American oak and marble</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="4">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02.webp" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02-480.webp 480w, assets/img/collection-marble-02-960.webp 960w, assets/img/collection-marble-02-1440.webp 1440w, assets/img/collection-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Brass lighting on stone</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="5">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass.webp" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and a natural stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass-480.webp 480w, assets/img/island-marble-brass-960.webp 960w, assets/img/island-marble-brass-1440.webp 1440w, assets/img/island-marble-brass.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and a natural stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Brushed brass tapware</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="6">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/signature-dark.webp" type="image/webp"><img src="assets/img/signature-dark.jpg" alt="Dark navy kitchen with leather bar seating opening to a living area" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/signature-dark-480.webp 480w, assets/img/signature-dark-960.webp 960w, assets/img/signature-dark-1440.webp 1440w, assets/img/signature-dark.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/signature-dark.jpg" alt="Dark navy kitchen with leather bar seating opening to a living area" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Navy cabinetry, leather seating</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="7">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01.webp" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Full-height marble splashback with matte black tapware over an induction cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01-480.webp 480w, assets/img/splashback-marble-01-960.webp 960w, assets/img/splashback-marble-01-1440.webp 1440w, assets/img/splashback-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Full-height marble splashback with matte black tapware over an induction cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Matte black tapware</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="8">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black.webp" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop with concealed under-cabinet lighting" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop with concealed under-cabinet lighting" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Black stone, concealed lighting</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="9">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright open kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright open kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Calacatta waterfall island</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="10">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan kitchen with a long island bench and integrated appliances" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan kitchen with a long island bench and integrated appliances" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Long island, integrated appliances</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="11">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/matte-black-bank.webp" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Matte black handleless cabinetry with an appliance garage" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/matte-black-bank-480.webp 480w, assets/img/matte-black-bank-960.webp 960w, assets/img/matte-black-bank-1440.webp 1440w, assets/img/matte-black-bank.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Matte black handleless cabinetry with an appliance garage" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Matte black, handleless</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="12">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone.webp" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Stone galley kitchen with pendant lighting and concealed handles" width="1920" height="1389" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone-480.webp 480w, assets/img/galley-stone-960.webp 960w, assets/img/galley-stone-1440.webp 1440w, assets/img/galley-stone.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Stone galley kitchen with pendant lighting and concealed handles" width="1920" height="1389" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Galley layout in stone</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="13">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/glossy-dark.webp" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="Dark gloss kitchen joinery with integrated ovens" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/glossy-dark-480.webp 480w, assets/img/glossy-dark-960.webp 960w, assets/img/glossy-dark-1440.webp 1440w, assets/img/glossy-dark.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="Dark gloss kitchen joinery with integrated ovens" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Gloss doors, integrated ovens</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="14">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island.webp" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark island bench with pendant lighting and open living beyond" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island-480.webp 480w, assets/img/dark-island-960.webp 960w, assets/img/dark-island-1440.webp 1440w, assets/img/dark-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark island bench with pendant lighting and open living beyond" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Dark island, pendant lighting</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="15">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-03.webp" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Marble splashback with brass lighting above a timber kitchen" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-03-480.webp 480w, assets/img/collection-marble-03-960.webp 960w, assets/img/collection-marble-03-1440.webp 1440w, assets/img/collection-marble-03.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Marble splashback with brass lighting above a timber kitchen" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Timber and marble together</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="16">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-02.webp" type="image/webp"><img src="assets/img/splashback-marble-02.jpg" alt="Marble splashback and timber joinery with an integrated oven" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-02-480.webp 480w, assets/img/splashback-marble-02-960.webp 960w, assets/img/splashback-marble-02-1440.webp 1440w, assets/img/splashback-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-02.jpg" alt="Marble splashback and timber joinery with an integrated oven" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Stone splashback, timber doors</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="17">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe.webp" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen with a concrete ceiling, white island and bar stools" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe-480.webp 480w, assets/img/concrete-luxe-960.webp 960w, assets/img/concrete-luxe-1440.webp 1440w, assets/img/concrete-luxe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen with a concrete ceiling, white island and bar stools" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">White island, concrete above</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="18">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/black-marble-bar.webp" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black marble bar with bar stools and concealed lighting" width="1920" height="2779" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/black-marble-bar-480.webp 480w, assets/img/black-marble-bar-960.webp 960w, assets/img/black-marble-bar-1440.webp 1440w, assets/img/black-marble-bar.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black marble bar with bar stools and concealed lighting" width="1920" height="2779" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Black marble bar</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="19">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close.webp" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Marble island benchtop detail with pendant lights above" width="1920" height="1920" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close-480.webp 480w, assets/img/island-marble-close-960.webp 960w, assets/img/island-marble-close-1440.webp 1440w, assets/img/island-marble-close.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Marble island benchtop detail with pendant lights above" width="1920" height="1920" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Stone detail, close</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="20">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/timber-island.webp" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island and joinery in an open plan home" width="1920" height="2880" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/timber-island-480.webp 480w, assets/img/timber-island-960.webp 960w, assets/img/timber-island-1440.webp 1440w, assets/img/timber-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island and joinery in an open plan home" width="1920" height="2880" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Timber island</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="21">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/wardrobe-robe.webp" type="image/webp"><img src="assets/img/wardrobe-robe.jpg" alt="Custom walk-in wardrobe with glazed joinery and integrated lighting" width="1920" height="1357" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/wardrobe-robe-480.webp 480w, assets/img/wardrobe-robe-960.webp 960w, assets/img/wardrobe-robe-1440.webp 1440w, assets/img/wardrobe-robe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/wardrobe-robe.jpg" alt="Custom walk-in wardrobe with glazed joinery and integrated lighting" width="1920" height="1357" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Walk-in robe, glazed fronts</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="22">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-timber-joinery.webp" type="image/webp"><img src="assets/img/detail-timber-joinery.jpg" alt="Timber media joinery and stone splashback detail" width="1920" height="1444" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-timber-joinery-480.webp 480w, assets/img/detail-timber-joinery-960.webp 960w, assets/img/detail-timber-joinery-1440.webp 1440w, assets/img/detail-timber-joinery.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-timber-joinery.jpg" alt="Timber media joinery and stone splashback detail" width="1920" height="1444" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Media joinery in timber</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="23">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/drawer-detail.webp" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Deep pot drawers with brass handles and internal organisers" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/drawer-detail-480.webp 480w, assets/img/drawer-detail-960.webp 960w, assets/img/drawer-detail-1440.webp 1440w, assets/img/drawer-detail.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Deep pot drawers with brass handles and internal organisers" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Deep drawers, organisers</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="24">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Kitchen into dining</p></figcaption>
         </figure>
       </div>
@@ -439,7 +442,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Yours next</p>

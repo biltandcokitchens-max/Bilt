@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="How a kitchen actually affects what a house sells for, why quoted return percentages are unreliable, and how to spend so the money is not wasted.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/island-calacatta.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/island-calacatta.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/island-calacatta.webp" imagesrcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-does-a-new-kitchen-add-value#gallery","url":"https://biltstudio.com.au/guide-does-a-new-kitchen-add-value","name":"Does a New Kitchen Add Value to a House? | Honest Answer","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/glossy-dark.jpg","caption":"Gloss doors, adjusted to even gaps before delivery","description":"High-gloss dark kitchen cabinetry","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/collection-marble-02.jpg","caption":"Handleless rail on an assembled run","description":"Marble splashback with brass wall lights above an oak kitchen run","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/island-marble-brass.jpg","caption":"Mitred stone edge over assembled carcasses","description":"Stone island bench with brushed brass tapware","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Does a new kitchen add value?","item":"https://biltstudio.com.au/guide-does-a-new-kitchen-add-value"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much value does a new kitchen add to a house?","acceptedAnswer":{"@type":"Answer","text":"There is no reliable single figure, and we will not invent one. It depends on the market, the suburb, the value ceiling of the house and what the kitchen replaced. What is more consistently observed is the effect on buyer interest and time on market. For a figure specific to your property, ask two local agents — they see the comparable sales."}},{"@type":"Question","name":"Is it worth renovating the kitchen before selling?","acceptedAnswer":{"@type":"Answer","text":"Often, if the existing kitchen is dated enough that buyers will price in replacing it. The brief is different from renovating for yourself: neutral, functional, nothing a buyer reads as unfinished. Spend to the level of the street rather than to the level of your own taste."}},{"@type":"Question","name":"How much should I spend if I am selling?","acceptedAnswer":{"@type":"Answer","text":"Less than you would if you were staying, and never past the value ceiling of the house and street. A local agent will tell you what the ceiling is in your area, which is the number that should set the budget."}},{"@type":"Question","name":"Does a kitchen help a rental property?","acceptedAnswer":{"@type":"Answer","text":"It affects letting speed and how well the property survives tenants more than it affects the rent achievable. That makes it a hardware and durability decision rather than a finishes one — spend on runners, hinges and carcass board, keep the finishes simple."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a new kitchen add value?","description":"How a kitchen actually affects what a house sells for, why quoted return percentages are unreliable, and how to spend so the money is not wasted.","image":["https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/glossy-dark.jpg","https://biltstudio.com.au/assets/img/collection-marble-02.jpg","https://biltstudio.com.au/assets/img/island-marble-brass.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-does-a-new-kitchen-add-value","dateModified":"2026-09-17","datePublished":"2026-09-06"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a new kitchen add value?","description":"How a kitchen actually affects what a house sells for, why quoted return percentages are unreliable, and how to spend so the money is not wasted.","image":["https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/glossy-dark.jpg","https://biltstudio.com.au/assets/img/collection-marble-02.jpg","https://biltstudio.com.au/assets/img/island-marble-brass.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-does-a-new-kitchen-add-value","dateModified":"2026-09-28","datePublished":"2026-09-06"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">Usually, but not the way the percentages you have read suggest. What a kitchen reliably changes is whether the house sells at all, and how fast.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>There is no reliable single percentage, and we will not invent one. What a kitchen consistently changes is how many buyers can picture living there and how long the house sits on the market. Spend to the ceiling of the house and the street, not to the level of the photographs you have saved.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright kitchen" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta marble waterfall island in a bright kitchen" width="1920" height="1080" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -244,15 +247,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/glossy-dark.webp" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="High-gloss dark kitchen cabinetry" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/glossy-dark-480.webp 480w, assets/img/glossy-dark-960.webp 960w, assets/img/glossy-dark-1440.webp 1440w, assets/img/glossy-dark.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/glossy-dark.jpg" alt="High-gloss dark kitchen cabinetry" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Gloss doors, adjusted to even gaps before delivery</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02.webp" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02-480.webp 480w, assets/img/collection-marble-02-960.webp 960w, assets/img/collection-marble-02-1440.webp 1440w, assets/img/collection-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Handleless rail on an assembled run</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass.webp" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass-480.webp 480w, assets/img/island-marble-brass-960.webp 960w, assets/img/island-marble-brass-1440.webp 1440w, assets/img/island-marble-brass.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Mitred stone edge over assembled carcasses</p></figcaption>
         </figure>
       </div>
@@ -260,7 +263,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Marble island bench in a bright kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Marble island bench in a bright kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Selling or staying</p>

@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="A timber benchtop looks warm and ages with character — and needs more maintenance than stone. What it actually takes to live with one long term.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/timber-island.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/timber-island.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/timber-island.webp" imagesrcset="assets/img/timber-island-480.webp 480w, assets/img/timber-island-960.webp 960w, assets/img/timber-island-1440.webp 1440w, assets/img/timber-island.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-timber-benchtop-pros-and-cons#gallery","url":"https://biltstudio.com.au/guide-timber-benchtop-pros-and-cons","name":"Timber Benchtop Pros and Cons | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/collection-marble-04.jpg","caption":"Island with seating overhang","description":"Oak and marble kitchen with island seating and pendant lighting","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/collection-marble-03.jpg","caption":"Oak run, doors hung and adjusted before delivery","description":"Light oak kitchen run with stone benchtop and open shelving","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/dark-island.jpg","caption":"Long island, one delivery","description":"Dark cabinetry kitchen with a long island, delivered assembled ready to fit","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Timber benchtop pros and cons","item":"https://biltstudio.com.au/guide-timber-benchtop-pros-and-cons"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a timber benchtop need much maintenance?","acceptedAnswer":{"@type":"Answer","text":"More than stone — periodic oiling or resealing, typically every few months to a year, is needed to keep it protected from water and staining."}},{"@type":"Question","name":"Can a timber benchtop go near a sink?","acceptedAnswer":{"@type":"Answer","text":"It can, with diligent maintenance, but it is more vulnerable to water damage there than anywhere else in the kitchen. Many kitchens keep timber to an island or a zone away from the sink."}},{"@type":"Question","name":"Does timber scratch and mark easily?","acceptedAnswer":{"@type":"Answer","text":"More readily than engineered stone or porcelain, though scratches and marks are often part of the material's appeal, ageing into a patina rather than looking like damage."}},{"@type":"Question","name":"Can timber and stone be combined in one kitchen?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is a common approach — stone on the perimeter bench where water and heat exposure is highest, timber on an island or a feature section where it is better protected."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Timber benchtop pros and cons","description":"A timber benchtop looks warm and ages with character — and needs more maintenance than stone. What it actually takes to live with one long term.","image":["https://biltstudio.com.au/assets/img/timber-island.jpg","https://biltstudio.com.au/assets/img/collection-marble-04.jpg","https://biltstudio.com.au/assets/img/collection-marble-03.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-timber-benchtop-pros-and-cons","dateModified":"2026-09-21","datePublished":"2026-09-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Timber benchtop pros and cons","description":"A timber benchtop looks warm and ages with character — and needs more maintenance than stone. What it actually takes to live with one long term.","image":["https://biltstudio.com.au/assets/img/timber-island.jpg","https://biltstudio.com.au/assets/img/collection-marble-04.jpg","https://biltstudio.com.au/assets/img/collection-marble-03.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-timber-benchtop-pros-and-cons","dateModified":"2026-09-28","datePublished":"2026-09-21"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">Nothing looks warmer against timber cabinetry. Nothing needs more upkeep than stone, either.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>A timber benchtop brings warmth and a natural material quality that stone cannot replicate, and ages with visible character rather than staying static — for some households that is exactly the appeal. Against that, it needs periodic oiling or sealing, is more vulnerable to water marks and heat than stone, and is best kept away from a sink zone unless meticulously maintained.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/timber-island.webp" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island benchtop against oak cabinetry" width="1920" height="2880" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/timber-island-480.webp 480w, assets/img/timber-island-960.webp 960w, assets/img/timber-island-1440.webp 1440w, assets/img/timber-island.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/timber-island.jpg" alt="Timber island benchtop against oak cabinetry" width="1920" height="2880" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -224,15 +227,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-04.webp" type="image/webp"><img src="assets/img/collection-marble-04.jpg" alt="Oak and marble kitchen with island seating and pendant lighting" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-04-480.webp 480w, assets/img/collection-marble-04-960.webp 960w, assets/img/collection-marble-04-1440.webp 1440w, assets/img/collection-marble-04.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-04.jpg" alt="Oak and marble kitchen with island seating and pendant lighting" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Island with seating overhang</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-03.webp" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Light oak kitchen run with stone benchtop and open shelving" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-03-480.webp 480w, assets/img/collection-marble-03-960.webp 960w, assets/img/collection-marble-03-1440.webp 1440w, assets/img/collection-marble-03.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-03.jpg" alt="Light oak kitchen run with stone benchtop and open shelving" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Oak run, doors hung and adjusted before delivery</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island.webp" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island-480.webp 480w, assets/img/dark-island-960.webp 960w, assets/img/dark-island-1440.webp 1440w, assets/img/dark-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Long island, one delivery</p></figcaption>
         </figure>
       </div>
@@ -240,7 +243,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Put it to use</p>

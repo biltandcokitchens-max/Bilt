@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="An honest look at the environmental trade-offs of flat pack cabinetry — freight efficiency versus board sourcing, and what actually matters most.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/drawer-detail.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/drawer-detail.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/drawer-detail.webp" imagesrcset="assets/img/drawer-detail-480.webp 480w, assets/img/drawer-detail-960.webp 960w, assets/img/drawer-detail-1440.webp 1440w, assets/img/drawer-detail.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-is-flat-pack-furniture-bad-for-the-environment#gallery","url":"https://biltstudio.com.au/guide-is-flat-pack-furniture-bad-for-the-environment","name":"Is Flat Pack Furniture Bad for the Environment? | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","caption":"Full-height stone splashback","description":"Marble splashback behind a cooktop","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/collection-marble-02.jpg","caption":"Handleless rail on an assembled run","description":"Marble splashback with brass wall lights above an oak kitchen run","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/dark-dining.jpg","caption":"Kitchen into dining, one palette","description":"Dark timber kitchen and dining space with feature lighting","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Is flat pack furniture bad for the environment?","item":"https://biltstudio.com.au/guide-is-flat-pack-furniture-bad-for-the-environment"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is flat pack cabinetry worse for the environment than assembled?","acceptedAnswer":{"@type":"Answer","text":"Not inherently — the material is identical either way. Flat pack has a freight efficiency advantage; it generates somewhat more packaging waste per kitchen, which is the genuine trade-off."}},{"@type":"Question","name":"Does flat pack furniture last as long as assembled furniture?","acceptedAnswer":{"@type":"Answer","text":"Yes, provided the specification — board grade, edging and hardware — is the same, which it is with our collections. Longevity depends on the materials and assembly quality, not on whether it arrived flat or assembled."}},{"@type":"Question","name":"What is the biggest environmental factor in kitchen cabinetry?","acceptedAnswer":{"@type":"Answer","text":"How long it lasts before replacement, and the emission rating of the board used, generally matter more than the flat pack versus assembled decision."}},{"@type":"Question","name":"Is flat pack packaging recyclable?","acceptedAnswer":{"@type":"Answer","text":"It varies by supplier and material — ask directly if this is a priority, since cardboard and protective wrapping recyclability differs."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is flat pack furniture bad for the environment?","description":"An honest look at the environmental trade-offs of flat pack cabinetry — freight efficiency versus board sourcing, and what actually matters most.","image":["https://biltstudio.com.au/assets/img/drawer-detail.jpg","https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","https://biltstudio.com.au/assets/img/collection-marble-02.jpg","https://biltstudio.com.au/assets/img/dark-dining.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-is-flat-pack-furniture-bad-for-the-environment","dateModified":"2026-09-21","datePublished":"2026-09-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is flat pack furniture bad for the environment?","description":"An honest look at the environmental trade-offs of flat pack cabinetry — freight efficiency versus board sourcing, and what actually matters most.","image":["https://biltstudio.com.au/assets/img/drawer-detail.jpg","https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","https://biltstudio.com.au/assets/img/collection-marble-02.jpg","https://biltstudio.com.au/assets/img/dark-dining.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-is-flat-pack-furniture-bad-for-the-environment","dateModified":"2026-09-28","datePublished":"2026-09-21"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">Not inherently, and the honest answer has more nuance than either side of the debate usually gives it.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>Flat pack cabinetry itself is not inherently worse for the environment than assembled cabinetry — the material is the same board, hardware and finish either way. Where flat pack has a genuine environmental advantage is freight efficiency: a carton takes a fraction of the truck space an assembled carcass needs for the same kitchen, meaning fewer emissions per kitchen moved over distance. The bigger sustainability factors — board sourcing, formaldehyde emission rating, and how long the kitchen actually lasts — are the same questions regardless of whether it ships flat or assembled.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/drawer-detail.webp" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Flat pack cabinetry packed for freight" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/drawer-detail-480.webp 480w, assets/img/drawer-detail-960.webp 960w, assets/img/drawer-detail-1440.webp 1440w, assets/img/drawer-detail.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/drawer-detail.jpg" alt="Flat pack cabinetry packed for freight" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -224,15 +227,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01.webp" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Marble splashback behind a cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01-480.webp 480w, assets/img/splashback-marble-01-960.webp 960w, assets/img/splashback-marble-01-1440.webp 1440w, assets/img/splashback-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Marble splashback behind a cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Full-height stone splashback</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02.webp" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-02-480.webp 480w, assets/img/collection-marble-02-960.webp 960w, assets/img/collection-marble-02-1440.webp 1440w, assets/img/collection-marble-02.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-02.jpg" alt="Marble splashback with brass wall lights above an oak kitchen run" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Handleless rail on an assembled run</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Kitchen into dining, one palette</p></figcaption>
         </figure>
       </div>
@@ -240,7 +243,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Put it to use</p>

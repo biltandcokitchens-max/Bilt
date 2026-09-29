@@ -97,14 +97,28 @@ try {
 } catch (e) { console.warn('  ! could not read image dimensions:', e.message); }
 
 /** Picture-less img with lazy loading + explicit intrinsic size */
+/* Responsive widths. 480/960/1440 are generated alongside the 1920 original;
+   a phone was downloading the desktop image on every page before this.
+   `sizes` defaults to the common case on this site - a full-width image on a
+   phone, roughly half the row on a tablet, a third of a three-up grid above
+   that - and hero images override it, since they are half the viewport. */
+const IMG_WIDTHS = [480, 960, 1440];
+const SIZES_DEFAULT = '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw';
+const SIZES_HERO = '(max-width: 900px) 100vw, 50vw';
+
 function img(file, alt, opts = {}) {
   const d = DIMS[file] || {};
-  const { w = d.w || 1920, h = d.h || 1280, cls = '', eager = false } = opts;
+  const { w = d.w || 1920, h = d.h || 1280, cls = '', eager = false, sizes } = opts;
   const tag = `<img src="assets/img/${file}.jpg" alt="${esc(alt)}" width="${w}" height="${h}"${cls ? ` class="${cls}"` : ''} loading="${eager ? 'eager' : 'lazy'}" decoding="async"${eager ? ' fetchpriority="high"' : ''}>`;
-  // WebP where the browser supports it, JPEG otherwise. Halves image weight.
-  return fs.existsSync(path.join(__dirname, 'assets', 'img', file + '.webp'))
-    ? `<picture><source srcset="assets/img/${file}.webp" type="image/webp">${tag}</picture>`
-    : tag;
+  const dir = path.join(__dirname, 'assets', 'img');
+  if (!fs.existsSync(path.join(dir, file + '.webp'))) return tag;
+  const set = IMG_WIDTHS
+    .filter((x) => x < w && fs.existsSync(path.join(dir, `${file}-${x}.webp`)))
+    .map((x) => `assets/img/${file}-${x}.webp ${x}w`)
+    .concat([`assets/img/${file}.webp ${w}w`])
+    .join(', ');
+  const sz = sizes || (eager ? SIZES_HERO : SIZES_DEFAULT);
+  return `<picture><source srcset="${set}" sizes="${sz}" type="image/webp">${tag}</picture>`;
 }
 
 function frame(file, alt, ratio = 'wide', opts = {}) {
@@ -472,9 +486,19 @@ function preloadTag(page) {
   if (!m) return '';
   const file = m[1];
   // Must match what <picture> will actually choose, or the preload is wasted.
-  return fs.existsSync(path.join(__dirname, 'assets', 'img', file + '.webp'))
-    ? `<link rel="preload" as="image" href="assets/img/${file}.webp" type="image/webp" fetchpriority="high">`
-    : `<link rel="preload" as="image" href="assets/img/${file}.jpg" fetchpriority="high">`;
+  const dir = path.join(__dirname, 'assets', 'img');
+  if (!fs.existsSync(path.join(dir, file + '.webp'))) {
+    return `<link rel="preload" as="image" href="assets/img/${file}.jpg" fetchpriority="high">`;
+  }
+  // Preload must carry the same srcset and sizes as the <picture>, or the
+  // browser preloads the 1920 file and then downloads a second, smaller one.
+  const w = (DIMS[file] || {}).w || 1920;
+  const set = IMG_WIDTHS
+    .filter((x) => x < w && fs.existsSync(path.join(dir, `${file}-${x}.webp`)))
+    .map((x) => `assets/img/${file}-${x}.webp ${x}w`)
+    .concat([`assets/img/${file}.webp ${w}w`])
+    .join(', ');
+  return `<link rel="preload" as="image" href="assets/img/${file}.webp" imagesrcset="${set}" imagesizes="${SIZES_HERO}" type="image/webp" fetchpriority="high">`;
 }
 
 function tidyLinks(html) {
@@ -566,9 +590,12 @@ function layout(page) {
 <meta name="twitter:description" content="${esc(page.desc)}">
 <meta name="twitter:image" content="${SITE.origin}/assets/img/${page.og || 'hero-main'}.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 ${preloadTag(page)}

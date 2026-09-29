@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="A genuinely coastal kitchen is a specification decision as much as a design one — what to specify near salt air and humidity, and the look that goes with it.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/openplan-long.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/openplan-long.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/openplan-long.webp" imagesrcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-coastal-kitchen-design#gallery","url":"https://biltstudio.com.au/guide-coastal-kitchen-design","name":"Coastal Kitchen Design Guide | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","caption":"Full-height stone splashback","description":"Marble splashback behind a cooktop","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/island-calacatta.jpg","caption":"New build, kitchen fitted at fit-off","description":"Calacatta stone island in a new build kitchen","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/black-marble-bar.jpg","caption":"Black joinery, marble bar","description":"Black cabinetry bar with marble top","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Coastal kitchen design guide","item":"https://biltstudio.com.au/guide-coastal-kitchen-design"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What makes a kitchen \"coastal style\"?","acceptedAnswer":{"@type":"Answer","text":"A light, textural palette — whitewashed or pale timber, light stone, woven and linen-toned finishes — paired with a specification suited to salt air and humidity rather than a standard inland kitchen."}},{"@type":"Question","name":"Does a coastal kitchen need special hardware?","acceptedAnswer":{"@type":"Answer","text":"It benefits from quality, well-sealed hardware and moisture-resistant carcasses regardless of where it is installed, since humidity and salt air accelerate the same failure modes an inland kitchen eventually faces anyway, just faster."}},{"@type":"Question","name":"Is a coastal kitchen more expensive to build?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily more expensive in palette, but it is a false economy to specify a standard-grade board or hardware near the coast — the earlier failure cost more in the long run than specifying correctly the first time."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Coastal kitchen design guide","description":"A genuinely coastal kitchen is a specification decision as much as a design one — what to specify near salt air and humidity, and the look that goes with it.","image":["https://biltstudio.com.au/assets/img/openplan-long.jpg","https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/black-marble-bar.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-coastal-kitchen-design","dateModified":"2026-09-21","datePublished":"2026-09-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Coastal kitchen design guide","description":"A genuinely coastal kitchen is a specification decision as much as a design one — what to specify near salt air and humidity, and the look that goes with it.","image":["https://biltstudio.com.au/assets/img/openplan-long.jpg","https://biltstudio.com.au/assets/img/splashback-marble-01.jpg","https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/black-marble-bar.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-coastal-kitchen-design","dateModified":"2026-09-28","datePublished":"2026-09-21"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">The look is easy. The part that actually has to survive salt air and humidity is the part most guides skip.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>A coastal kitchen pairs a light, breezy palette — whitewashed or light timber, pale stone, woven or linen-look textures — with a specification that actually suits a humid, salt-air environment: moisture-resistant carcasses, laser-bonded edging and corrosion-resistant hardware. The look and the specification are not separate decisions here; a beautiful coastal kitchen built to a standard palette fails faster than almost anywhere else.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Bright open plan coastal kitchen with a long stone benchtop" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Bright open plan coastal kitchen with a long stone benchtop" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -228,15 +231,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01.webp" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Marble splashback behind a cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/splashback-marble-01-480.webp 480w, assets/img/splashback-marble-01-960.webp 960w, assets/img/splashback-marble-01-1440.webp 1440w, assets/img/splashback-marble-01.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/splashback-marble-01.jpg" alt="Marble splashback behind a cooktop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Full-height stone splashback</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta stone island in a new build kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta stone island in a new build kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">New build, kitchen fitted at fit-off</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/black-marble-bar.webp" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black cabinetry bar with marble top" width="1920" height="2779" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/black-marble-bar-480.webp 480w, assets/img/black-marble-bar-960.webp 960w, assets/img/black-marble-bar-1440.webp 1440w, assets/img/black-marble-bar.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/black-marble-bar.jpg" alt="Black cabinetry bar with marble top" width="1920" height="2779" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Black joinery, marble bar</p></figcaption>
         </figure>
       </div>
@@ -244,7 +247,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan coastal kitchen with a long island" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Open plan coastal kitchen with a long island" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Coastal</p>

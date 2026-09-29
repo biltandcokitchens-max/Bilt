@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="Flat pack and assembled kitchens delivered to Terrigal, NSW. Cut to your measurements in 18mm board with Blum hardware. Fixed itemised quotes.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/galley-stone.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/galley-stone.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/galley-stone.webp" imagesrcset="assets/img/galley-stone-480.webp 480w, assets/img/galley-stone-960.webp 960w, assets/img/galley-stone-1440.webp 1440w, assets/img/galley-stone.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -142,7 +145,7 @@ gtag('config','G-G40133MH26',biltCfg);
           <a class="btn btn--ghost btn--lg" href="/guide-how-to-order-a-flat-pack-kitchen">How ordering works</a>
         </div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone.webp" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Custom flat pack kitchen cabinetry delivered to Terrigal, NSW" width="1920" height="1389" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone-480.webp 480w, assets/img/galley-stone-960.webp 960w, assets/img/galley-stone-1440.webp 1440w, assets/img/galley-stone.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Custom flat pack kitchen cabinetry delivered to Terrigal, NSW" width="1920" height="1389" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -301,15 +304,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close.webp" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Close detail of a marble island benchtop edge and drawer front" width="1920" height="1920" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-close-480.webp 480w, assets/img/island-marble-close-960.webp 960w, assets/img/island-marble-close-1440.webp 1440w, assets/img/island-marble-close.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-marble-close.jpg" alt="Close detail of a marble island benchtop edge and drawer front" width="1920" height="1920" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Drawer fronts aligned on the bench, not on site</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black.webp" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop detail with concealed storage" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop detail with concealed storage" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Stone on a compact run</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber kitchen and dining space with feature lighting" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Kitchen into dining, one palette</p></figcaption>
         </figure>
       </div>
@@ -317,7 +320,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/concrete-luxe.webp" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen cabinetry freighted to Terrigal" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/concrete-luxe-480.webp 480w, assets/img/concrete-luxe-960.webp 960w, assets/img/concrete-luxe-1440.webp 1440w, assets/img/concrete-luxe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Kitchen cabinetry freighted to Terrigal" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Terrigal, NSW</p>

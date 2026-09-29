@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="Custom flat pack kitchens cut to your room and freighted to Townsville. 18mm board, Blum hardware, stone and brass upgrades. Fixed itemised quotes.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/detail-stone-black.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/detail-stone-black.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/detail-stone-black.webp" imagesrcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -142,7 +145,7 @@ gtag('config','G-G40133MH26',biltCfg);
           <a class="btn btn--ghost btn--lg" href="/flat-pack-kitchen-upgrades">See the upgrade options</a>
         </div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black.webp" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop detail with concealed storage, shipped flat pack to Townsville" width="1920" height="2400" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/detail-stone-black-480.webp 480w, assets/img/detail-stone-black-960.webp 960w, assets/img/detail-stone-black-1440.webp 1440w, assets/img/detail-stone-black.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/detail-stone-black.jpg" alt="Black stone benchtop detail with concealed storage, shipped flat pack to Townsville" width="1920" height="2400" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -256,15 +259,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-black-cabinetry.webp" type="image/webp"><img src="assets/img/detail-black-cabinetry.jpg" alt="Compact black kitchenette with integrated sink" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/detail-black-cabinetry-480.webp 480w, assets/img/detail-black-cabinetry-960.webp 960w, assets/img/detail-black-cabinetry-1440.webp 1440w, assets/img/detail-black-cabinetry.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/detail-black-cabinetry.jpg" alt="Compact black kitchenette with integrated sink" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Kitchenette, delivered assembled</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/joinery-sketch.webp" type="image/webp"><img src="assets/img/joinery-sketch.jpg" alt="Kitchen design drawings with dimensions" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/joinery-sketch-480.webp 480w, assets/img/joinery-sketch-960.webp 960w, assets/img/joinery-sketch-1440.webp 1440w, assets/img/joinery-sketch.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/joinery-sketch.jpg" alt="Kitchen design drawings with dimensions" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Service drawings for your trades</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Long open-plan kitchen run with stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Long open-plan kitchen run with stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">A long run arrives as numbered assembled units</p></figcaption>
         </figure>
       </div>
@@ -272,7 +275,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Townsville</p>

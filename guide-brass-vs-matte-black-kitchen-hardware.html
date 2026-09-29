@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="The two most popular kitchen hardware finishes read completely differently against the same cabinetry. Which suits which palette, and why.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/island-marble-brass.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/island-marble-brass.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/island-marble-brass.webp" imagesrcset="assets/img/island-marble-brass-480.webp 480w, assets/img/island-marble-brass-960.webp 960w, assets/img/island-marble-brass-1440.webp 1440w, assets/img/island-marble-brass.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-brass-vs-matte-black-kitchen-hardware#gallery","url":"https://biltstudio.com.au/guide-brass-vs-matte-black-kitchen-hardware","name":"Brass vs Matte Black Kitchen Hardware | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/island-calacatta.jpg","caption":"New build, kitchen fitted at fit-off","description":"Calacatta stone island in a new build kitchen","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/dark-island.jpg","caption":"Long island, one delivery","description":"Dark cabinetry kitchen with a long island, delivered assembled ready to fit","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/galley-stone.jpg","caption":"Galley layout for a narrow room","description":"Compact galley kitchen with stone benchtop","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"Brass vs matte black hardware","item":"https://biltstudio.com.au/guide-brass-vs-matte-black-kitchen-hardware"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is brass or matte black more popular for kitchens right now?","acceptedAnswer":{"@type":"Answer","text":"Both remain popular, and each suits a different palette rather than one being generally more in demand — brass for warmer, traditional schemes, matte black for contemporary or industrial ones."}},{"@type":"Question","name":"Does matte black hardware show fingerprints more than brass?","acceptedAnswer":{"@type":"Answer","text":"A quality matte black finish resists marking reasonably well, though any dark, matte surface tends to show fingerprints more visibly than a lighter or textured finish like brushed brass."}},{"@type":"Question","name":"Can I mix brass and matte black in one kitchen?","acceptedAnswer":{"@type":"Answer","text":"It is possible but harder to do well — most successful kitchens commit to one accent metal throughout rather than mixing two, which can read as inconsistent rather than intentional."}},{"@type":"Question","name":"Does brass tarnish over time?","acceptedAnswer":{"@type":"Answer","text":"A quality brushed or lacquered brass finish resists tarnishing well under normal kitchen use; an unlacquered or lower-quality finish can develop a patina more readily, which some households like and others do not."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Brass vs matte black hardware","description":"The two most popular kitchen hardware finishes read completely differently against the same cabinetry. Which suits which palette, and why.","image":["https://biltstudio.com.au/assets/img/island-marble-brass.jpg","https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg","https://biltstudio.com.au/assets/img/galley-stone.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-brass-vs-matte-black-kitchen-hardware","dateModified":"2026-09-21","datePublished":"2026-09-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Brass vs matte black hardware","description":"The two most popular kitchen hardware finishes read completely differently against the same cabinetry. Which suits which palette, and why.","image":["https://biltstudio.com.au/assets/img/island-marble-brass.jpg","https://biltstudio.com.au/assets/img/island-calacatta.jpg","https://biltstudio.com.au/assets/img/dark-island.jpg","https://biltstudio.com.au/assets/img/galley-stone.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-brass-vs-matte-black-kitchen-hardware","dateModified":"2026-09-28","datePublished":"2026-09-21"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">The same door, the same benchtop, two entirely different kitchens — depending on which metal you choose.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>Brass — usually brushed or aged rather than polished — reads as warm, traditional and closer to a Hamptons or heritage palette. Matte black reads as contemporary, graphic and closer to an industrial or modern farmhouse palette. Neither is objectively better; the choice should follow the rest of the room's palette rather than lead it.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass.webp" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and hardware" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/island-marble-brass-480.webp 480w, assets/img/island-marble-brass-960.webp 960w, assets/img/island-marble-brass-1440.webp 1440w, assets/img/island-marble-brass.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/island-marble-brass.jpg" alt="Stone island bench with brushed brass tapware and hardware" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -224,15 +227,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta.webp" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta stone island in a new build kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/island-calacatta-480.webp 480w, assets/img/island-calacatta-960.webp 960w, assets/img/island-calacatta-1440.webp 1440w, assets/img/island-calacatta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/island-calacatta.jpg" alt="Calacatta stone island in a new build kitchen" width="1920" height="1080" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">New build, kitchen fitted at fit-off</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island.webp" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/dark-island-480.webp 480w, assets/img/dark-island-960.webp 960w, assets/img/dark-island-1440.webp 1440w, assets/img/dark-island.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-island.jpg" alt="Dark cabinetry kitchen with a long island, delivered assembled ready to fit" width="1920" height="2400" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Long island, one delivery</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone.webp" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Compact galley kitchen with stone benchtop" width="1920" height="1389" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/galley-stone-480.webp 480w, assets/img/galley-stone-960.webp 960w, assets/img/galley-stone-1440.webp 1440w, assets/img/galley-stone.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/galley-stone.jpg" alt="Compact galley kitchen with stone benchtop" width="1920" height="1389" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Galley layout for a narrow room</p></figcaption>
         </figure>
       </div>
@@ -240,7 +243,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Put it to use</p>

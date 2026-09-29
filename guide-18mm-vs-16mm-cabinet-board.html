@@ -28,12 +28,15 @@
 <meta name="twitter:description" content="A 2mm difference in board thickness sounds trivial. In a loaded base cabinet under a stone benchtop, it genuinely is not. Here is why.">
 <meta name="twitter:image" content="https://biltstudio.com.au/assets/img/matte-black-bank.jpg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap">
+<!-- Fonts are self-hosted. The Google Fonts stylesheet was a render-blocking
+     request to a third party on every one of 500+ pages; these are two files
+     on our own origin, preloaded so text paints without a swap. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-normal-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-normal-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preload" as="image" href="assets/img/matte-black-bank.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/matte-black-bank.webp" imagesrcset="assets/img/matte-black-bank-480.webp 480w, assets/img/matte-black-bank-960.webp 960w, assets/img/matte-black-bank-1440.webp 1440w, assets/img/matte-black-bank.webp 1920w" imagesizes="(max-width: 900px) 100vw, 50vw" type="image/webp" fetchpriority="high">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G40133MH26"></script>
 <script>
@@ -93,7 +96,7 @@ gtag('config','G-G40133MH26',biltCfg);
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ImageGallery","@id":"https://biltstudio.com.au/guide-18mm-vs-16mm-cabinet-board#gallery","url":"https://biltstudio.com.au/guide-18mm-vs-16mm-cabinet-board","name":"18mm vs 16mm Cabinet Board: Does It Matter? | Bilt & Co","associatedMedia":[{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/concrete-luxe.jpg","caption":"Concrete-look doors, matte black hardware","description":"Concrete-look kitchen with matte black fixtures","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/collection-marble-04.jpg","caption":"Island with seating overhang","description":"Oak and marble kitchen with island seating and pendant lighting","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}},{"@type":"ImageObject","contentUrl":"https://biltstudio.com.au/assets/img/openplan-long.jpg","caption":"A long run arrives as numbered assembled units","description":"Long open-plan kitchen run with stone benchtop","creditText":"Bilt & Co","creator":{"@id":"https://biltstudio.com.au/#business"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://biltstudio.com.au/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://biltstudio.com.au/guides"},{"@type":"ListItem","position":3,"name":"18mm vs 16mm cabinet board","item":"https://biltstudio.com.au/guide-18mm-vs-16mm-cabinet-board"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is 18mm cabinet board actually better than 16mm?","acceptedAnswer":{"@type":"Answer","text":"For load-bearing base cabinets and wide spans, yes — it is stiffer, resists sagging better and holds hardware fixings more securely over years of use."}},{"@type":"Question","name":"Does board thickness affect price much?","acceptedAnswer":{"@type":"Answer","text":"18mm board costs somewhat more than 16mm, but the difference is small relative to the total cost of a kitchen, and it is one of the cheapest specification decisions with real long-term consequence."}},{"@type":"Question","name":"How can I check what board thickness a supplier uses?","acceptedAnswer":{"@type":"Answer","text":"Ask directly and get it stated on the quote — board thickness is not visible once cabinetry is installed and finished."}},{"@type":"Question","name":"Is thicker always better for cabinet board?","acceptedAnswer":{"@type":"Answer","text":"Within reason — 18mm is the common standard for genuine durability; going thicker again offers diminishing practical benefit for typical residential kitchen use."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"18mm vs 16mm cabinet board","description":"A 2mm difference in board thickness sounds trivial. In a loaded base cabinet under a stone benchtop, it genuinely is not. Here is why.","image":["https://biltstudio.com.au/assets/img/matte-black-bank.jpg","https://biltstudio.com.au/assets/img/concrete-luxe.jpg","https://biltstudio.com.au/assets/img/collection-marble-04.jpg","https://biltstudio.com.au/assets/img/openplan-long.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-18mm-vs-16mm-cabinet-board","dateModified":"2026-09-21","datePublished":"2026-09-21"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"18mm vs 16mm cabinet board","description":"A 2mm difference in board thickness sounds trivial. In a loaded base cabinet under a stone benchtop, it genuinely is not. Here is why.","image":["https://biltstudio.com.au/assets/img/matte-black-bank.jpg","https://biltstudio.com.au/assets/img/concrete-luxe.jpg","https://biltstudio.com.au/assets/img/collection-marble-04.jpg","https://biltstudio.com.au/assets/img/openplan-long.jpg"],"author":{"@type":"Organization","name":"Bilt & Co","@id":"https://biltstudio.com.au/#business"},"publisher":{"@id":"https://biltstudio.com.au/#business"},"mainEntityOfPage":"https://biltstudio.com.au/guide-18mm-vs-16mm-cabinet-board","dateModified":"2026-09-28","datePublished":"2026-09-21"}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +141,7 @@ gtag('config','G-G40133MH26',biltCfg);
         <p class="lede">The specification line most buyers skip past, and one of the few that actually predicts how a kitchen ages.</p>
         <div class="answer" data-rv data-rv-d="2"><p class="eyebrow">The short answer</p><p>An 18mm cabinet carcass is stiffer over a wide span than 16mm, resists sagging under a loaded shelf or a stone benchtop better, and holds screws and hardware fixings more securely over years of use. 16mm was historically more common in budget cabinetry to reduce material cost; 18mm has become the more common specification where longevity matters, which is why we use it as standard across every collection.</p></div>
       </div>
-      <div><div class="frame frame--wide"><picture><source srcset="assets/img/matte-black-bank.webp" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Cabinet carcass construction detail showing board thickness" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
+      <div><div class="frame frame--wide"><picture><source srcset="assets/img/matte-black-bank-480.webp 480w, assets/img/matte-black-bank-960.webp 960w, assets/img/matte-black-bank-1440.webp 1440w, assets/img/matte-black-bank.webp 1920w" sizes="(max-width: 900px) 100vw, 50vw" type="image/webp"><img src="assets/img/matte-black-bank.jpg" alt="Cabinet carcass construction detail showing board thickness" width="1920" height="1280" loading="eager" decoding="async" fetchpriority="high"></picture></div></div>
     </div>
   </section>
 
@@ -224,15 +227,15 @@ gtag('config','G-G40133MH26',biltCfg);
       <div class="grid cols-3">
         
         <figure class="card" style="margin:0" data-rv data-rv-d="1">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe.webp" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Concrete-look kitchen with matte black fixtures" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/concrete-luxe-480.webp 480w, assets/img/concrete-luxe-960.webp 960w, assets/img/concrete-luxe-1440.webp 1440w, assets/img/concrete-luxe.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/concrete-luxe.jpg" alt="Concrete-look kitchen with matte black fixtures" width="1920" height="1282" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Concrete-look doors, matte black hardware</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="2">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-04.webp" type="image/webp"><img src="assets/img/collection-marble-04.jpg" alt="Oak and marble kitchen with island seating and pendant lighting" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/collection-marble-04-480.webp 480w, assets/img/collection-marble-04-960.webp 960w, assets/img/collection-marble-04-1440.webp 1440w, assets/img/collection-marble-04.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/collection-marble-04.jpg" alt="Oak and marble kitchen with island seating and pendant lighting" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">Island with seating overhang</p></figcaption>
         </figure>
         <figure class="card" style="margin:0" data-rv data-rv-d="3">
-          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long.webp" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Long open-plan kitchen run with stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
+          <div class="frame frame--wide"><picture><source srcset="assets/img/openplan-long-480.webp 480w, assets/img/openplan-long-960.webp 960w, assets/img/openplan-long-1440.webp 1440w, assets/img/openplan-long.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/openplan-long.jpg" alt="Long open-plan kitchen run with stone benchtop" width="1920" height="1280" loading="lazy" decoding="async"></picture></div>
           <figcaption class="card__body"><p class="small muted" style="margin:0">A long run arrives as numbered assembled units</p></figcaption>
         </figure>
       </div>
@@ -240,7 +243,7 @@ gtag('config','G-G40133MH26',biltCfg);
     </div>
   </section>
   <section class="section cta">
-    <div class="cta__media"><picture><source srcset="assets/img/dark-dining.webp" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
+    <div class="cta__media"><picture><source srcset="assets/img/dark-dining-480.webp 480w, assets/img/dark-dining-960.webp 960w, assets/img/dark-dining-1440.webp 1440w, assets/img/dark-dining.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" type="image/webp"><img src="assets/img/dark-dining.jpg" alt="Dark timber and marble kitchen with dining table, Rockhampton" width="1920" height="1295" loading="lazy" decoding="async"></picture></div>
     <div class="wrap cta__in">
       <div style="max-width:38rem">
         <p class="eyebrow" data-rv>Put it to use</p>
