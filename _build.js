@@ -42,6 +42,10 @@ const SITE = {
   // (average job value) x (share of enquiries that become jobs). Leave 0 and
   // no value is sent - better than training Ads on a guess.
   leadValue: 0,
+  // Microsoft Clarity project ID (10 characters, from clarity.microsoft.com).
+  // Session recordings and heatmaps. Leave empty and no Clarity script ships,
+  // and the privacy policy drops the paragraph that describes it.
+  clarity: '',
   // Free design consultations offered per month. The counter on the homepage
   // and contact page counts down from this across the month and resets on the
   // 1st. Change it here and both pages follow.
@@ -656,6 +660,17 @@ ${SITE.leadValue ? `window.BILT_LEAD_VALUE=${SITE.leadValue};` : ''}${SITE.googl
 // Google Ads remarketing tag. Fires on the same gtag instance, so consent
 // state and the audience signals above apply to it too.
 gtag('config','${SITE.googleAds}',{allow_enhanced_conversions:true});` : ''}
+</script>` : ''}
+${SITE.clarity ? `<script>
+// Microsoft Clarity. Records how pages are actually used - scroll, clicks,
+// rage-clicks - which pageview counts cannot show. Not loaded on localhost:
+// dev sessions would pollute the recordings.
+(function(c,l,a,r,i,t,y){
+  if(l.hostname==='localhost'||l.hostname==='127.0.0.1'||l.hostname==='[::1]')return;
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','${SITE.clarity}');
 </script>` : ''}
 ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
 </head>
