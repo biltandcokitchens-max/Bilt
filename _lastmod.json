@@ -225,7 +225,7 @@
     "published": "2026-09-06"
   },
   "guides.html": {
-    "hash": "fbbcad72c1612f1f",
+    "hash": "5ba843febf7fa2c7",
     "date": "2026-09-30",
     "published": "2026-08-31"
   },
@@ -495,93 +495,93 @@
     "published": "2026-09-21"
   },
   "guide-what-is-a-cabinet-carcass.html": {
-    "hash": "9d20d9b9d2895372",
-    "date": "2026-09-28",
+    "hash": "76dea8753c7fa06a",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-kickboard.html": {
-    "hash": "d4119b0169c8568f",
-    "date": "2026-09-28",
+    "hash": "3cc2f14d75493480",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-scribe-piece.html": {
-    "hash": "f2687fbcdd834499",
-    "date": "2026-09-28",
+    "hash": "5201f034901f3673",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-edge-banding.html": {
-    "hash": "1d580648b73515b1",
-    "date": "2026-09-28",
+    "hash": "77001dd77f8355af",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-full-extension-runner.html": {
-    "hash": "af2c788fc72912c4",
-    "date": "2026-09-28",
+    "hash": "d33fc92ebd189e8e",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-soft-close-hinges-explained.html": {
-    "hash": "4ced0683fdfa3052",
+    "hash": "5f24c49c2f570e28",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-handleless-kitchen.html": {
-    "hash": "eea86dca6ae5e489",
-    "date": "2026-09-28",
+    "hash": "8822a0cd8beef38c",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-waterfall-benchtop-edge.html": {
-    "hash": "23b478e782e6863a",
-    "date": "2026-09-28",
+    "hash": "7a27953e96e61244",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-mitred-join.html": {
-    "hash": "1f38545c3d8af2e7",
-    "date": "2026-09-28",
+    "hash": "e2b195a1d280c3fb",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-kitchen-splashback.html": {
-    "hash": "016bc7717b0fedf5",
+    "hash": "f83b09c0593ae82f",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-service-drawing.html": {
-    "hash": "315b4bb8df0359c6",
+    "hash": "925363da2e543868",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-does-supply-only-mean.html": {
-    "hash": "caf696d1bb6de5e7",
+    "hash": "f4d522172e0e82bf",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-tall-pantry-unit.html": {
-    "hash": "680f63e807a322fb",
+    "hash": "1444a98f0e028385",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-corner-carousel.html": {
-    "hash": "2c12eac8b00c2f8e",
-    "date": "2026-09-28",
+    "hash": "6c9462812bf09967",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-a-blind-corner-cabinet.html": {
-    "hash": "2fb598b1f1ce2dc9",
+    "hash": "cf04ee0fac2bb451",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-push-to-open-hardware-explained.html": {
-    "hash": "240ce9fe4c648ae1",
-    "date": "2026-09-28",
+    "hash": "515243a30c4af3d3",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-moisture-resistant-board.html": {
-    "hash": "08889ef9802ad191",
+    "hash": "d28225ac54e85855",
     "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-what-is-an-overhead-cabinet.html": {
-    "hash": "cfd8b4cb9b95b7d7",
-    "date": "2026-09-28",
+    "hash": "9ea8591c4be6c857",
+    "date": "2026-09-30",
     "published": "2026-09-21"
   },
   "guide-hamptons-style-kitchen.html": {
@@ -2665,37 +2665,82 @@
     "published": "2026-09-30"
   },
   "guide-standard-kitchen-cabinet-sizes-australia.html": {
-    "hash": "af4786bebc49b8f7",
+    "hash": "b9f57ac7e077a9d8",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-standard-kitchen-bench-height.html": {
-    "hash": "1ebcd4232ed176ae",
+    "hash": "540824c635f8e25d",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-hinge-overlay-explained.html": {
-    "hash": "1ecf2297dfb6084c",
+    "hash": "56a210aac3f3dd08",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-benchtop-thickness-compared.html": {
-    "hash": "60bb673c629b7ece",
+    "hash": "7e374e0d269fd9f8",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-what-is-a-filler-panel.html": {
-    "hash": "38c1e82f340b830c",
+    "hash": "e69b98cf91ca324e",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-pot-drawers-vs-cupboards.html": {
-    "hash": "9726c2a270dd078b",
+    "hash": "7541cf7f4293d20b",
     "date": "2026-09-30",
     "published": "2026-09-30"
   },
   "guide-appliance-cut-out-sizes.html": {
-    "hash": "22078ae9271e4296",
+    "hash": "32bd80e371450bb5",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-what-is-a-shadowline.html": {
+    "hash": "c90d862401f3b32d",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-what-is-a-return-panel.html": {
+    "hash": "cbc992ce2768013b",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-what-is-a-kitchen-bulkhead.html": {
+    "hash": "19c5c1b379a7a661",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-undermount-vs-topmount-sink.html": {
+    "hash": "544146510342562a",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-under-cabinet-lighting-explained.html": {
+    "hash": "3c05555e7b934616",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-soft-close-vs-push-to-open.html": {
+    "hash": "4e686ea37731e5d8",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-drawer-runner-load-ratings-explained.html": {
+    "hash": "505fbfdb65cb208f",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-kitchen-work-triangle-explained.html": {
+    "hash": "18cc29ed1f651857",
+    "date": "2026-09-30",
+    "published": "2026-09-30"
+  },
+  "guide-kitchen-power-point-placement.html": {
+    "hash": "cba6439d79485e17",
     "date": "2026-09-30",
     "published": "2026-09-30"
   }
