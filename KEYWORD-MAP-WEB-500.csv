@@ -1,0 +1,431 @@
+cluster,keyword,intent,journey_stage,source,difficulty,note
+P Competitor-proven,10 year warranty,informational,learn,proven,med,built by a competitor
+P Competitor-proven,affordable kitchens melbourne,transactional,decide,proven,med,built by a competitor
+P Competitor-proven,budget kitchen renovation,commercial,consider,proven,med,built by a competitor
+P Competitor-proven,built in ovens,informational,learn,proven,med,built by a competitor
+P Competitor-proven,craigieburn kitchen renovation,informational,learn,proven,med,built by a competitor
+P Competitor-proven,creating warmth kitchen,informational,learn,proven,med,built by a competitor
+P Competitor-proven,design guide form,informational,learn,proven,med,built by a competitor
+P Competitor-proven,different kitchen layout,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy assembled kitchens,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchen advice,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchen cabinets,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchen demo,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchen faqs,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchen transformation,informational,learn,proven,med,built by a competitor
+P Competitor-proven,diy kitchens melbourne,transactional,decide,proven,med,built by a competitor
+P Competitor-proven,download design guide,informational,learn,proven,med,built by a competitor
+P Competitor-proven,download installation guide,informational,learn,proven,med,built by a competitor
+P Competitor-proven,download style brochure,informational,learn,proven,med,built by a competitor
+P Competitor-proven,european trends kitchens,informational,learn,proven,med,built by a competitor
+P Competitor-proven,flat pack kitchens,informational,learn,proven,med,built by a competitor
+P Competitor-proven,flatpack kitchen melbourne,transactional,decide,proven,med,built by a competitor
+P Competitor-proven,greensborough kitchen renovation,informational,learn,proven,med,built by a competitor
+P Competitor-proven,happy customer fairfield,informational,learn,proven,med,built by a competitor
+P Competitor-proven,how it works,informational,learn,proven,med,built by a competitor
+P Competitor-proven,how to measure,informational,learn,proven,med,built by a competitor
+P Competitor-proven,ivanhoe kitchen renovation,informational,learn,proven,med,built by a competitor
+P Competitor-proven,keysborough kitchen renovation,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen design maribyrnong,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen design rowville,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen flatpacks melbourne,transactional,decide,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation daylesford,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation gisborne,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation montrose,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation reservoir,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation timeline,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovation wantirna,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovations maribyrnong,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovations rise,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen renovations rowville,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen shack different,informational,learn,proven,med,built by a competitor
+P Competitor-proven,kitchen styles 2,informational,learn,proven,med,built by a competitor
+P Competitor-proven,lowest prices guaranteed,informational,learn,proven,med,built by a competitor
+S Search-derived,how much does a flat pack kitchen cost,commercial,consider,search,low,seen in live SERPs
+S Search-derived,flat pack kitchen cost per linear metre,commercial,consider,search,low,seen in live SERPs
+S Search-derived,average cost of a kitchen renovation australia,commercial,consider,search,high,seen in live SERPs
+S Search-derived,cheap flat pack kitchen packages,transactional,decide,search,med,seen in live SERPs
+S Search-derived,flat pack kitchen packages australia,transactional,decide,search,med,seen in live SERPs
+S Search-derived,custom flat pack kitchen cabinets,transactional,decide,search,med,seen in live SERPs
+S Search-derived,kitchen cabinets price list australia,commercial,consider,search,med,seen in live SERPs
+S Search-derived,are flat pack kitchens good quality,informational,learn,search,low,seen in live SERPs
+S Search-derived,ikea vs bunnings flat pack kitchen,informational,learn,search,med,seen in live SERPs
+S Search-derived,flat pack kitchen delivered australia wide,transactional,decide,search,low,seen in live SERPs
+S Search-derived,how much does it cost to install a flat pack kitchen,commercial,consider,search,low,seen in live SERPs
+S Search-derived,granny flat kitchen cost australia,commercial,consider,search,med,seen in live SERPs
+S Search-derived,kitchenette cost australia,commercial,consider,search,low,seen in live SERPs
+S Search-derived,how much does a granny flat cost,commercial,consider,search,high,seen in live SERPs
+A Cost x city,flat pack kitchen cost australia,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost australia,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost brisbane,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost brisbane,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost sydney,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost sydney,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost melbourne,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost melbourne,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost perth,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost perth,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost adelaide,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost adelaide,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost hobart,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost hobart,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost darwin,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost darwin,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost canberra,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost canberra,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost gold coast,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost gold coast,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost sunshine coast,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost sunshine coast,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost cairns,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost cairns,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost townsville,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost townsville,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost toowoomba,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost toowoomba,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost newcastle,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost newcastle,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost wollongong,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost wollongong,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost geelong,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost geelong,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost rockhampton,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost rockhampton,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost mackay,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost mackay,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost bundaberg,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost bundaberg,commercial,consider,expansion,med,
+A Cost x city,flat pack kitchen cost hervey bay,commercial,consider,expansion,low,competitors run cost x city at scale
+A Cost x city,kitchen renovation cost hervey bay,commercial,consider,expansion,med,
+B Product x city,flat pack kitchens australia,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets australia,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens brisbane,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets brisbane,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens sydney,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets sydney,transactional,decide,expansion,high,
+B Product x city,kitchen cabinets melbourne,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens perth,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets perth,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens adelaide,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets adelaide,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens hobart,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets hobart,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens darwin,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets darwin,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens canberra,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets canberra,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens gold coast,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets gold coast,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens sunshine coast,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets sunshine coast,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens cairns,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets cairns,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens townsville,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets townsville,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens toowoomba,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets toowoomba,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens newcastle,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets newcastle,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens wollongong,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets wollongong,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens geelong,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets geelong,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens rockhampton,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets rockhampton,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens mackay,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets mackay,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens bundaberg,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets bundaberg,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens hervey bay,transactional,decide,expansion,med,
+B Product x city,kitchen cabinets hervey bay,transactional,decide,expansion,high,
+B Product x city,flat pack kitchens ballarat,transactional,decide,expansion,med,
+C Use case,granny flat kitchen,transactional,decide,expansion,med,
+C Use case,granny flat kitchen cost,commercial,consider,expansion,low,
+C Use case,granny flat kitchenette,transactional,decide,expansion,low,
+C Use case,tiny home kitchen,transactional,decide,expansion,med,
+C Use case,tiny home kitchen cost,commercial,consider,expansion,low,
+C Use case,tiny home kitchenette,transactional,decide,expansion,low,
+C Use case,studio apartment kitchen,transactional,decide,expansion,med,
+C Use case,studio apartment kitchen cost,commercial,consider,expansion,low,
+C Use case,studio apartment kitchenette,transactional,decide,expansion,low,
+C Use case,rental property kitchen,transactional,decide,expansion,med,
+C Use case,rental property kitchen cost,commercial,consider,expansion,low,
+C Use case,rental property kitchenette,transactional,decide,expansion,low,
+C Use case,airbnb kitchen,transactional,decide,expansion,med,
+C Use case,airbnb kitchen cost,commercial,consider,expansion,low,
+C Use case,airbnb kitchenette,transactional,decide,expansion,low,
+C Use case,short stay kitchen,transactional,decide,expansion,med,
+C Use case,short stay kitchen cost,commercial,consider,expansion,low,
+C Use case,short stay kitchenette,transactional,decide,expansion,low,
+C Use case,shed conversion kitchen,transactional,decide,expansion,med,
+C Use case,shed conversion kitchen cost,commercial,consider,expansion,low,
+C Use case,shed conversion kitchenette,transactional,decide,expansion,low,
+C Use case,garage conversion kitchen,transactional,decide,expansion,med,
+C Use case,garage conversion kitchen cost,commercial,consider,expansion,low,
+C Use case,garage conversion kitchenette,transactional,decide,expansion,low,
+C Use case,container home kitchen,transactional,decide,expansion,med,
+C Use case,container home kitchen cost,commercial,consider,expansion,low,
+C Use case,container home kitchenette,transactional,decide,expansion,low,
+C Use case,relocatable home kitchen,transactional,decide,expansion,med,
+C Use case,relocatable home kitchen cost,commercial,consider,expansion,low,
+C Use case,relocatable home kitchenette,transactional,decide,expansion,low,
+C Use case,new build kitchen,transactional,decide,expansion,med,
+C Use case,new build kitchen cost,commercial,consider,expansion,low,
+C Use case,new build kitchenette,transactional,decide,expansion,low,
+C Use case,display home kitchen,transactional,decide,expansion,med,
+C Use case,display home kitchen cost,commercial,consider,expansion,low,
+C Use case,display home kitchenette,transactional,decide,expansion,low,
+C Use case,laundry kitchen,transactional,decide,expansion,med,
+C Use case,laundry kitchen cost,commercial,consider,expansion,low,
+C Use case,laundry kitchenette,transactional,decide,expansion,low,
+C Use case,butlers pantry kitchen,transactional,decide,expansion,med,
+C Use case,butlers pantry kitchen cost,commercial,consider,expansion,low,
+C Use case,butlers pantry kitchenette,transactional,decide,expansion,low,
+D Comparison,flat pack vs custom kitchen,informational,learn,expansion,low,
+D Comparison,flat pack or custom kitchen which is better,informational,learn,expansion,low,
+D Comparison,flat pack vs assembled,informational,learn,expansion,low,
+D Comparison,flat pack or assembled which is better,informational,learn,expansion,low,
+D Comparison,ikea vs bunnings,informational,learn,expansion,low,
+D Comparison,ikea or bunnings which is better,informational,learn,expansion,low,
+D Comparison,laminate vs stone benchtop,informational,learn,expansion,low,
+D Comparison,laminate or stone benchtop which is better,informational,learn,expansion,low,
+D Comparison,mdf vs particleboard,informational,learn,expansion,low,
+D Comparison,mdf or particleboard which is better,informational,learn,expansion,low,
+D Comparison,2 pack vs laminate doors,informational,learn,expansion,low,
+D Comparison,2 pack or laminate doors which is better,informational,learn,expansion,low,
+D Comparison,induction vs gas cooktop,informational,learn,expansion,low,
+D Comparison,induction or gas cooktop which is better,informational,learn,expansion,low,
+D Comparison,undermount vs topmount sink,informational,learn,expansion,low,
+D Comparison,undermount or topmount sink which is better,informational,learn,expansion,low,
+D Comparison,soft close vs push to open,informational,learn,expansion,low,
+D Comparison,soft close or push to open which is better,informational,learn,expansion,low,
+D Comparison,timber vs laminate benchtop,informational,learn,expansion,low,
+D Comparison,timber or laminate benchtop which is better,informational,learn,expansion,low,
+D Comparison,engineered stone vs porcelain,informational,learn,expansion,low,
+D Comparison,engineered stone or porcelain which is better,informational,learn,expansion,low,
+D Comparison,matte vs gloss doors,informational,learn,expansion,low,
+D Comparison,matte or gloss doors which is better,informational,learn,expansion,low,
+E Specification,18mm vs 16mm cabinet board,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is 18mm vs 16mm cabinet board,informational,learn,expansion,low,
+E Specification,moisture resistant kitchen board,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is moisture resistant kitchen board,informational,learn,expansion,low,
+E Specification,blum hardware,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is blum hardware,informational,learn,expansion,low,
+E Specification,blum legrabox,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is blum legrabox,informational,learn,expansion,low,
+E Specification,full extension drawer runners,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is full extension drawer runners,informational,learn,expansion,low,
+E Specification,soft close hinges,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is soft close hinges,informational,learn,expansion,low,
+E Specification,hinge overlay,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is hinge overlay,informational,learn,expansion,low,
+E Specification,edge banding laser vs glued,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is edge banding laser vs glued,informational,learn,expansion,low,
+E Specification,laser edged cabinets,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is laser edged cabinets,informational,learn,expansion,low,
+E Specification,cabinet carcass material,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is cabinet carcass material,informational,learn,expansion,low,
+E Specification,standard kitchen cabinet sizes,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is standard kitchen cabinet sizes,informational,learn,expansion,low,
+E Specification,standard kitchen bench height,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is standard kitchen bench height,informational,learn,expansion,low,
+E Specification,kitchen cabinet depth,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is kitchen cabinet depth,informational,learn,expansion,low,
+E Specification,benchtop thickness 20mm vs 40mm,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is benchtop thickness 20mm vs 40mm,informational,learn,expansion,low,
+E Specification,mitred benchtop join,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is mitred benchtop join,informational,learn,expansion,low,
+E Specification,waterfall benchtop edge,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is waterfall benchtop edge,informational,learn,expansion,low,
+E Specification,kitchen kickboard height,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is kitchen kickboard height,informational,learn,expansion,low,
+E Specification,scribe panel,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is scribe panel,informational,learn,expansion,low,
+E Specification,filler panel kitchen,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is filler panel kitchen,informational,learn,expansion,low,
+E Specification,return panel kitchen,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is return panel kitchen,informational,learn,expansion,low,
+E Specification,kitchen bulkhead,informational,learn,expansion,low,"long tail, cheap to win, feeds AI answers"
+E Specification,what is kitchen bulkhead,informational,learn,expansion,low,
+F Regulation,granny flat rules,informational,learn,expansion,low,
+F Regulation,granny flat rules australia,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules brisbane,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules sydney,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules melbourne,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules perth,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules adelaide,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules hobart,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules darwin,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules canberra,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules gold coast,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules sunshine coast,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules cairns,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules townsville,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules toowoomba,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules newcastle,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,granny flat rules wollongong,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules,informational,learn,expansion,low,
+F Regulation,secondary dwelling rules australia,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules brisbane,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules sydney,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules melbourne,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules perth,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules adelaide,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules hobart,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules darwin,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules canberra,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules gold coast,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules sunshine coast,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules cairns,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules townsville,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules toowoomba,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules newcastle,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,secondary dwelling rules wollongong,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation,informational,learn,expansion,low,
+F Regulation,council approval kitchen renovation australia,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation brisbane,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation sydney,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation melbourne,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation perth,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation adelaide,informational,learn,expansion,low,two of these already rank for biltstudio
+F Regulation,council approval kitchen renovation hobart,informational,learn,expansion,low,two of these already rank for biltstudio
+G How-to,how to assemble a flat pack kitchen,informational,learn,expansion,low,
+G How-to,how to install a flat pack kitchen,informational,learn,expansion,low,
+G How-to,how to measure for a kitchen,informational,learn,expansion,low,
+G How-to,how to order a kitchen online,informational,learn,expansion,low,
+G How-to,how to design a kitchen layout,informational,learn,expansion,low,
+G How-to,how to plan a kitchen renovation,informational,learn,expansion,low,
+G How-to,how to fit kitchen cabinets,informational,learn,expansion,low,
+G How-to,how to level kitchen cabinets,informational,learn,expansion,low,
+G How-to,how to scribe a kitchen panel,informational,learn,expansion,low,
+G How-to,how to cut a benchtop,informational,learn,expansion,low,
+G How-to,diy kitchen installation tips,informational,learn,expansion,low,
+G How-to,flat pack kitchen assembly tips,informational,learn,expansion,low,
+G How-to,kitchen renovation checklist,informational,learn,expansion,low,
+G How-to,kitchen renovation mistakes to avoid,informational,learn,expansion,low,
+G How-to,what order to renovate a kitchen,informational,learn,expansion,low,
+G How-to,how long does a kitchen renovation take,informational,learn,expansion,low,
+H Style,hamptons kitchen design,informational,learn,expansion,med,
+H Style,hamptons kitchen ideas,informational,learn,expansion,high,
+H Style,modern farmhouse kitchen design,informational,learn,expansion,med,
+H Style,modern farmhouse kitchen ideas,informational,learn,expansion,high,
+H Style,scandinavian kitchen design,informational,learn,expansion,med,
+H Style,scandinavian kitchen ideas,informational,learn,expansion,high,
+H Style,japandi kitchen design,informational,learn,expansion,med,
+H Style,japandi kitchen ideas,informational,learn,expansion,high,
+H Style,industrial kitchen design,informational,learn,expansion,med,
+H Style,industrial kitchen ideas,informational,learn,expansion,high,
+H Style,coastal kitchen design,informational,learn,expansion,med,
+H Style,coastal kitchen ideas,informational,learn,expansion,high,
+H Style,shaker kitchen design,informational,learn,expansion,med,
+H Style,shaker kitchen ideas,informational,learn,expansion,high,
+H Style,minimalist kitchen design,informational,learn,expansion,med,
+H Style,minimalist kitchen ideas,informational,learn,expansion,high,
+H Style,two tone kitchen design,informational,learn,expansion,med,
+H Style,two tone kitchen ideas,informational,learn,expansion,high,
+H Style,dark kitchen design,informational,learn,expansion,med,
+H Style,dark kitchen ideas,informational,learn,expansion,high,
+H Style,white kitchen design,informational,learn,expansion,med,
+H Style,white kitchen ideas,informational,learn,expansion,high,
+H Style,timber kitchen design,informational,learn,expansion,med,
+H Style,timber kitchen ideas,informational,learn,expansion,high,
+H Style,black kitchen design,informational,learn,expansion,med,
+H Style,black kitchen ideas,informational,learn,expansion,high,
+H Style,green kitchen design,informational,learn,expansion,med,
+H Style,green kitchen ideas,informational,learn,expansion,high,
+I Layout,galley kitchen layout,informational,learn,expansion,med,
+I Layout,galley kitchen design ideas,informational,learn,expansion,high,
+I Layout,l shaped kitchen layout,informational,learn,expansion,med,
+I Layout,l shaped kitchen design ideas,informational,learn,expansion,high,
+I Layout,u shaped kitchen layout,informational,learn,expansion,med,
+I Layout,u shaped kitchen design ideas,informational,learn,expansion,high,
+I Layout,island kitchen layout,informational,learn,expansion,med,
+I Layout,island kitchen design ideas,informational,learn,expansion,high,
+I Layout,one wall kitchen layout,informational,learn,expansion,med,
+I Layout,one wall kitchen design ideas,informational,learn,expansion,high,
+I Layout,small kitchen layout,informational,learn,expansion,med,
+I Layout,small kitchen design ideas,informational,learn,expansion,high,
+I Layout,narrow kitchen layout,informational,learn,expansion,med,
+I Layout,narrow kitchen design ideas,informational,learn,expansion,high,
+I Layout,open plan kitchen layout,informational,learn,expansion,med,
+I Layout,open plan kitchen design ideas,informational,learn,expansion,high,
+I Layout,kitchen with pantry layout,informational,learn,expansion,med,
+I Layout,kitchen with pantry design ideas,informational,learn,expansion,high,
+I Layout,kitchen with island bench layout,informational,learn,expansion,med,
+I Layout,kitchen with island bench design ideas,informational,learn,expansion,high,
+J Cabinet taxonomy,base cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,base cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,wall cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,wall cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,deep wall cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,deep wall cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,slimline wall cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,slimline wall cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,pantry cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,pantry cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,tall pantry cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,tall pantry cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,blind corner base cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,blind corner base cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,blind corner pantry cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,blind corner pantry cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,3 drawer base cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,3 drawer base cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,2 drawer base cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,2 drawer base cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,oven tower kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,oven tower sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,oven cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,oven cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,sink cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,sink cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,rangehood cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,rangehood cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,corner base cabinet kitchen,transactional,decide,proven,low,Kaboodle ranks a page per cabinet type
+J Cabinet taxonomy,corner base cabinet sizes,informational,learn,expansion,low,
+J Cabinet taxonomy,150mm base cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,150mm wall cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,150mm pantry cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,200mm base cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,200mm wall cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,200mm pantry cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,300mm base cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,300mm wall cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,300mm pantry cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,400mm base cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,400mm wall cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+J Cabinet taxonomy,400mm pantry cabinet,transactional,decide,proven,low,"exact-width searches, almost no competition outside Kaboodle"
+K Best-in-city,best kitchen designers sydney,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens sydney,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers brisbane,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens brisbane,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers melbourne,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens melbourne,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers perth,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens perth,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers adelaide,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens adelaide,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers newcastle,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens newcastle,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers gold coast,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens gold coast,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers sunshine coast,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens sunshine coast,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers central coast,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens central coast,commercial,consider,expansion,low,
+K Best-in-city,best kitchen designers northern beaches,commercial,consider,proven,med,Nobby Kitchens ranks this shape
+K Best-in-city,best flat pack kitchens northern beaches,commercial,consider,expansion,low,
+L Install cost,flat pack assembly cost,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+L Install cost,flat pack kitchen assembly cost,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+L Install cost,kitchen installation cost,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+L Install cost,kitchen cabinet installation cost,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+L Install cost,benchtop installation cost,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+L Install cost,cost to install a kitchen australia,commercial,consider,proven,low,whatsthedamage ranks assembly-cost queries
+M Trends,2026 kitchen trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2026 kitchen design trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2026 kitchen colour trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2026 kitchen benchtop trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2027 kitchen trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2027 kitchen design trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2027 kitchen colour trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"
+M Trends,2027 kitchen benchtop trends,informational,learn,proven,med,"year-stamped trend pages, refreshed annually"

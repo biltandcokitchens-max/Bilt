@@ -810,6 +810,30 @@ function assembledBlock(page) {
 
 /* ------------------------------------------------------------------ build */
 const api = { SITE, NAV, esc, rv, img, frame, BLOCKS, ctaBand, faqBlock, crumbs, layout, spotsNow };
+/* The rate card is published on the cost pages and used by the estimator.
+   If the two ever disagree the site quotes two prices for one thing, so the
+   build stops rather than shipping that. */
+(function checkRates() {
+  const R = require('./_rates.js');
+  const js = fs.readFileSync(path.join(__dirname, 'assets', 'js', 'main.js'), 'utf8');
+  // Normalise whitespace so formatting differences never trip the check.
+  const flat = js.replace(/\s+/g, '');
+  Object.keys(R.tiers).forEach((k) => {
+    const t = R.tiers[k];
+    const want = k + ':[' + t.lo + ',' + t.hi + ']';
+    if (flat.indexOf(want) === -1) {
+      throw new Error('Rate drift: _rates.js says ' + want + ' but the estimator in main.js does not. Fix one before publishing two prices for the same thing.');
+    }
+  });
+  Object.keys(R.bench).forEach((k) => {
+    const want = k + ':' + R.bench[k].add;
+    if (flat.indexOf(want) === -1) {
+      throw new Error('Rate drift: benchtop ' + want + ' not found in main.js.');
+    }
+  });
+  console.log('  ✓ rate card matches the estimator');
+})();
+
 const pages = require('./_pages.js')(api);
 
 const outDir = __dirname;

@@ -582,3 +582,36 @@ a:hover > .frame img,.card:hover .frame img{ transform:scale(1.04); }
 .offer > div{ flex:1 1 22rem; }
 .offer p:last-child{ margin-bottom:0; }
 @media (max-width:640px){ .offer{ padding:1.35rem; } .offer .btn{ width:100%; } }
+
+/* ---- Cost tables -------------------------------------------------------
+   Used by the cost pages. Figures are generated from _rates.js, so these
+   tables must stay readable at any column count and must scroll rather than
+   push the page sideways on a phone. */
+.tablewrap{ overflow-x:auto; margin-top:1.5rem; border:1px solid var(--line); background:var(--paper); }
+.costtable{ width:100%; min-width:34rem; border-collapse:collapse; font-size:.9375rem; }
+.costtable caption{
+  text-align:left; padding:.9rem 1rem; font-size:.75rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--brass);
+  border-bottom:1px solid var(--line); background:var(--sand,transparent);
+}
+.costtable th, .costtable td{
+  text-align:left; padding:.7rem 1rem; border-bottom:1px solid var(--line);
+  vertical-align:top; font-variant-numeric:tabular-nums;
+}
+.costtable thead th{
+  font-size:.6875rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--stone); white-space:nowrap;
+}
+.costtable tbody th{ font-weight:600; color:var(--ink); white-space:nowrap; }
+.costtable tbody tr:last-child th, .costtable tbody tr:last-child td{ border-bottom:0; }
+.costtable td.muted, .costtable .muted{ color:var(--stone); font-size:.875rem; }
+@media (max-width:640px){
+  .costtable{ font-size:.875rem; }
+  .costtable th, .costtable td{ padding:.6rem .75rem; }
+}
+
+/* A grid or flex child will not shrink below its content width unless it is
+   told it may. Without this a wide cost table pushes the whole page sideways
+   on a phone instead of scrolling inside its own wrapper. */
+.split > *, .grid > *{ min-width:0; }
+.tablewrap{ max-width:100%; }

@@ -8669,6 +8669,308 @@ module.exports = function (api) {
   const regionPages = NAT.REGIONS.map(regionPage);
   const townPages = NAT.REGIONS.flatMap((r) => r.towns.map((t, i) => townPage(t, r, i)));
 
+  /* ====================================================== cost platform */
+  /* Wave 1: the pillar and the methodology page. Every number below is
+     computed from RATES, which is also what the estimator uses, so the two
+     can never disagree. */
+  const R = require('./_rates.js');
+  const money = (n) => '$' + Math.round(n / 50) * 50 === n ? '$' + n.toLocaleString('en-AU') : '$' + (Math.round(n / 50) * 50).toLocaleString('en-AU');
+  const m$ = (n) => '$' + Math.round(n).toLocaleString('en-AU');
+  const range$ = (a, b) => m$(a) + ' ' + '&ndash;' + ' ' + m$(b);
+  const TIERKEYS = ['essence', 'maison', 'atelier'];
+
+  /* run x tier, laminate benchtop included in the rate */
+  function runTable() {
+    return `<div class="tablewrap"><table class="costtable">
+      <caption>Cabinetry supply by run length and collection, laminate benchtop included</caption>
+      <thead><tr><th scope="col">Run</th>${TIERKEYS.map((k) => `<th scope="col">${R.tiers[k].name}</th>`).join('')}</tr></thead>
+      <tbody>${R.runs.map((m) => `<tr><th scope="row">${m}m</th>${TIERKEYS.map((k) => {
+        const t = R.tiers[k];
+        return `<td>${range$(Math.max(R.floor, m * t.lo), Math.max(R.floor, m * t.hi))}</td>`;
+      }).join('')}</tr>`).join('')}</tbody>
+    </table></div>`;
+  }
+
+  /* per linear metre - the unit that actually fits cabinetry */
+  function lmTable() {
+    return `<div class="tablewrap"><table class="costtable">
+      <caption>Cost per linear metre of run</caption>
+      <thead><tr><th scope="col">Collection</th><th scope="col">Per linear metre</th><th scope="col">What it is</th></tr></thead>
+      <tbody>${TIERKEYS.map((k) => {
+        const t = R.tiers[k];
+        return `<tr><th scope="row">${t.name}</th><td>${range$(t.lo, t.hi)}</td><td class="muted">${t.blurb}</td></tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
+  }
+
+  /* benchtop materials */
+  function benchTable() {
+    const keys = ['laminate', 'stone', 'porcelain', 'natural'];
+    return `<div class="tablewrap"><table class="costtable">
+      <caption>Benchtop materials: what each adds over the laminate in the tier rate</caption>
+      <thead><tr><th scope="col">Material</th><th scope="col">Added cost</th><th scope="col">Durability</th><th scope="col">Care</th></tr></thead>
+      <tbody>${keys.map((k) => {
+        const b = R.bench[k];
+        const add = b.add === 0 ? 'Included' : '+' + range$(b.add, b.add * R.benchHiFactor);
+        return `<tr><th scope="row">${b.name}</th><td>${add}</td><td>${b.life}</td><td class="muted">${b.care}</td></tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
+  }
+
+  /* additions */
+  function extraTable() {
+    const keys = ['pantry', 'island', 'appliances', 'wine'];
+    return `<div class="tablewrap"><table class="costtable">
+      <caption>Additions, priced as their own line</caption>
+      <thead><tr><th scope="col">Addition</th><th scope="col">Cost</th></tr></thead>
+      <tbody>${keys.map((k) => {
+        const e = R.extras[k];
+        return `<tr><th scope="row">${e.name}</th><td>${range$(e.cost, e.cost * R.extraHiFactor)}</td></tr>`;
+      }).join('')}</tbody>
+    </table></div>`;
+  }
+
+  /* worked example: what a real budget buys, computed not asserted */
+  function workedExample() {
+    const run = 3.6, t = R.tiers.maison;
+    const cab = run * t.lo;
+    const bench = R.bench.stone.add;
+    const island = R.extras.island.cost;
+    const total = cab + bench + island;
+    const rows = [
+      ['Cabinetry, ' + run + 'm in ' + t.name, cab],
+      ['Engineered stone benchtop', bench],
+      ['Island', island],
+    ];
+    return `<div class="tablewrap"><table class="costtable">
+      <caption>Worked example: a ${run}m ${t.name} kitchen with a stone benchtop and an island</caption>
+      <thead><tr><th scope="col">Line</th><th scope="col">Cost</th><th scope="col">Share</th></tr></thead>
+      <tbody>${rows.map(([l, v]) => `<tr><th scope="row">${l}</th><td>${m$(v)}</td><td>${Math.round(v / total * 100)}%</td></tr>`).join('')}
+      <tr><th scope="row"><strong>Total, supplied</strong></th><td><strong>${m$(total)}</strong></td><td>100%</td></tr></tbody>
+    </table></div>
+    <p class="small muted mt-2">Freight to your postcode, appliances, and plumbing and electrical work are not in that figure. This is the low end of the ${t.name} range; the same kitchen at the top of the range is ${m$(run * t.hi + bench * R.benchHiFactor + island * R.extraHiFactor)}.</p>`;
+  }
+
+  const costFaq = [
+      { q: 'How much does a kitchen cost in Australia?', a: `Cabinetry supply runs from ${m$(R.tiers.essence.lo)} to ${m$(R.tiers.atelier.hi)} per linear metre depending on the collection. A ${R.runs[2]}m kitchen is therefore roughly ${range$(R.runs[2] * R.tiers.essence.lo, R.runs[2] * R.tiers.maison.hi)} supplied, before freight, appliances and trades.` },
+      { q: 'What is a kitchen priced per linear metre?', a: 'Cabinetry is made in runs along a wall, so the length of that run is what drives the cost. Per square metre is a renovation measure that includes floor area you are not buying cabinets for; per linear metre is the unit that actually describes cabinetry.' },
+      { q: 'What is not included in these figures?', a: 'Freight to your postcode, which is quoted separately and shown as its own line. Appliances unless you ask us to supply them. Plumbing and electrical work, which must be done by licensed trades. Installation outside Central Queensland. Demolition and disposal of an old kitchen.' },
+      { q: 'Is a cheaper kitchen worse?', a: 'Not in the way people assume. Every collection uses the same 18mm moisture-resistant board, the same laser-bonded edging and the same Blum hardware. What changes between them is the door range, the benchtop and the detailing, not the parts that decide how long it lasts.' },
+      { q: 'How accurate are these numbers?', a: `They are our own rates, reviewed ${R.reviewed}, not an average of other companies. A quote drawn to your measurements may land anywhere in the stated range depending on the cabinet mix. Nothing here is an estimate of what someone else would charge.` },
+      { q: 'Can I get a fixed price?', a: 'Yes. Send the wall measurements and ceiling height and you get a drawing and a fixed, itemised quote, with freight to your postcode on its own line. Nothing is due to see it and nothing is cut until you sign the drawing off.' },
+  ];
+
+  const costPillar = {
+    file: 'kitchen-cost-australia.html',
+    assembled: 'general',
+    service: {
+      name: 'Kitchen cabinetry supply, Australia-wide',
+      type: 'Kitchen cabinetry supply',
+      desc: 'Published per-linear-metre rates for custom kitchen cabinetry, supplied flat packed or assembled anywhere in Australia.',
+    },
+    title: 'Kitchen Cost Australia 2026 | Real Published Rates',
+    desc: `What a kitchen actually costs in Australia, from ${m$(R.tiers.essence.lo)} per linear metre. Our own published rates, not an industry average, with every figure broken down.`,
+    og: 'island-marble-brass',
+    priority: '0.9',
+    trail: [['index.html', 'Home'], ['kitchen-cost-australia.html', 'Kitchen cost']],
+    faq: costFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['#', 'Kitchen cost']])}
+        <span class="pill">Our own rates &middot; reviewed ${R.reviewed}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">What a kitchen<br><span class="italic brass">actually costs.</span></h1>
+        <p class="lede">Most cost guides average other people&rsquo;s prices. These are ours, published openly, and they are the same numbers our quotes are built from.</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>Cabinetry supply runs ${range$(R.tiers.essence.lo, R.tiers.atelier.hi)} per linear metre of bench, depending on the collection. A ${R.runs[2]}m kitchen is roughly ${range$(R.runs[2] * R.tiers.essence.lo, R.runs[2] * R.tiers.maison.hi)} supplied with a laminate benchtop. A stone benchtop adds ${m$(R.bench.stone.add)}, an island ${m$(R.extras.island.cost)}. Freight, appliances and licensed trades are separate and are never folded into the price.</p></div>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/how-we-price">How these figures are set</a>
+        </div>
+      </div>
+      <div>${frame('island-marble-brass', 'Stone island kitchen showing the cost of a mid-range specification', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>By run length</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">What your wall costs.</h2>
+      <p class="muted mt-2" ${rv()} data-rv-d="2">Measure the wall your kitchen runs along, wall to wall. That length is what drives the number more than anything else. These figures include a laminate benchtop and exclude freight.</p>
+      ${runTable()}
+      <p class="small muted mt-2">Nothing quotes below ${m$(R.floor)}, which is what the smallest kitchenette costs. <a href="/flat-pack-kitchenettes" style="color:var(--brass)">Kitchenettes</a> start there.</p>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Per linear metre</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">The unit that fits cabinetry.</h2>
+      <p class="muted mt-2" ${rv()} data-rv-d="2">Renovation guides price per square metre of floor. That is the wrong unit for cabinetry, because you are not buying cabinets for the middle of the room. Cabinetry is made in runs, so it is priced by the metre of run.</p>
+      ${lmTable()}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Benchtops</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">The second biggest decision.</h2>
+      <p class="muted mt-2" ${rv()} data-rv-d="2">After run length, the benchtop moves the number most. Laminate is included in every tier rate; the figures below are what each upgrade adds.</p>
+      ${benchTable()}
+      <p class="small muted mt-2">Stone and porcelain are templated on site after the cabinets are installed, by a fabricator near you, which is why they are quoted separately from the cabinetry. <a href="/guide-benchtop-thickness-compared" style="color:var(--brass)">Benchtop thickness</a> covers what a 40mm edge really is.</p>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Additions</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Priced as their own line.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">Each of these is quoted separately so you can see what it costs and take it off if it is not worth it to you. That is the point of an itemised quote.</p>
+        ${extraTable()}
+      </div>
+      <div ${rv()} data-rv-d="1">${workedExample()}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>What moves the number</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Six things, in order of effect.</h2>
+      <div class="grid cols-3 mt-3">
+        ${[
+          ['Run length', 'The single biggest factor. Cabinetry is priced by the metre, so an extra metre of bench costs roughly what a metre already costs. Shortening a run is the most effective saving available.'],
+          ['Benchtop material', `Laminate to engineered stone is ${m$(R.bench.stone.add)} on a typical kitchen; to natural stone, ${m$(R.bench.natural.add)}. Nothing else you choose moves the total by that much for a single decision.`],
+          ['Drawers against doors', 'Drawers cost more than doors because of the runners. They are usually worth it below the bench, and almost never worth it above. See <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">drawers vs cupboards</a>.'],
+          ['An island', `${m$(R.extras.island.cost)} and up, plus the services to reach it. An island is a second run of cabinetry and should be costed as one, not as a feature.`],
+          ['Appliance provision', 'Cabinets cut to take specific appliances cost more than plain boxes, and the model has to be confirmed before cutting. See <a href="/guide-appliance-cut-out-sizes" style="color:var(--brass)">cut-out sizes</a>.'],
+          ['Flat packed or assembled', 'Same cabinetry either way. What changes is the assembly line and the freight volume, both quoted separately. Over distance most orders go flat.'],
+        ].map(([h, b], i) => `<div class="card" ${rv()} data-rv-d="${(i % 3) + 1}"><div class="card__body"><h3 class="d4">${h}</h3><p>${b}</p></div></div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Spending less</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Six honest ways, and the trade-off on each.</h2>
+      <ol class="mt-3" style="max-width:48rem;display:grid;gap:1rem;padding-left:1.2rem">
+        ${[
+          ['Keep the layout', 'Moving the sink or the cooktop means new plumbing and electrical runs. The cabinetry barely changes; the trades bill does. This is the largest saving available on most renovations.'],
+          ['Laminate now, stone later', `A benchtop can be replaced without touching the cabinets. Starting with laminate saves ${m$(R.bench.stone.add)} and costs you nothing except doing it twice.`],
+          ['Fewer, wider cabinets', 'Each cabinet carries its own cost. Three 900mm cabinets cost less than four 675mm ones across the same wall, and store the same amount.'],
+          ['Drawers only where they earn it', 'Pot drawers below the cooktop and by the sink. Doors elsewhere. The usability gain is concentrated in two or three cabinets.'],
+          ['Take it flat packed', 'The cabinetry price is identical. You save the assembly line and part of the freight, and you spend a weekend instead.'],
+          ['Buy appliances separately', 'We will cut to any model. Appliance pricing moves constantly and you will usually beat a supply-and-install price by buying in a sale.'],
+        ].map(([h, b]) => `<li><strong>${h}.</strong> ${b}</li>`).join('')}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Not in these figures</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">What you still have to budget for.</h2>
+      <p class="muted mt-2" ${rv()} data-rv-d="2">We sell cabinetry. A finished kitchen needs more than that, and pretending otherwise would make every number above misleading. These are costs we do not quote and do not publish figures for, because we would be guessing.</p>
+      <div class="grid cols-4 mt-3">
+        ${[
+          ['Freight', 'Quoted to your postcode on your quote, as its own line.'],
+          ['Licensed trades', 'Plumbing and electrical connection. Required, and priced locally.'],
+          ['Installation', 'Our own team within Central Queensland. Elsewhere, your installer.'],
+          ['Demolition', 'Removing and disposing of the old kitchen.'],
+        ].map(([h, b], i) => `<div class="card" ${rv()} data-rv-d="${i + 1}"><div class="card__body"><h3 class="d4">${h}</h3><p class="small muted" style="margin:0">${b}</p></div></div>`).join('')}
+      </div>
+      <p class="small muted mt-3">Our <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">install guide</a> sets out the three trades and the order they work in, which is the best way to understand what the rest of the job will cost you locally.</p>
+    </div>
+  </section>
+
+  ${faqBlock(costFaq, 'Cost questions, answered plainly')}
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>About this guide</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Where these numbers come from.</h2>
+      <p class="muted mt-2" style="max-width:44rem" ${rv()} data-rv-d="2">Every figure on this page is our own rate card, reviewed ${R.reviewed}. They are not an average of the industry, not scraped from quote sites, and not estimates of what a competitor charges. They are the rates our own quotes are built from, published so you can hold them against anything else you are offered. <a href="/how-we-price" style="color:var(--brass)">How we price</a> sets out the method, what is excluded and how often it is reviewed.</p>
+    </div>
+  </section>
+
+  ${ctaBand({ eyebrow: 'Your kitchen', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: 'A fixed, itemised quote drawn to your room, flat packed and delivered assembled, with freight to your postcode on each. Nothing to pay to see it.', image: 'dark-island', alt: 'Kitchen cabinetry supplied and delivered' })}
+`,
+  };
+
+  const priceFaq = [
+      { q: 'Are these prices or estimates?', a: 'They are our rates. A quote drawn to your measurements will land within the published range for your collection, and the quote is fixed once you sign the drawing off.' },
+      { q: 'How often are the rates reviewed?', a: `They were last reviewed ${R.reviewed}. Material and freight costs move, so the rates are reviewed rather than fixed forever, and this page carries the date of the last review.` },
+      { q: 'Why publish them at all?', a: 'Because the alternative is a from-price with the catches left out, and because a buyer who can see the numbers can compare properly. It also means we have to stand behind them.' },
+      { q: 'Do you price-match?', a: 'No. Compare the specification line for line instead: board thickness and moisture rating, edging method, hardware brand. If someone matches those three and is cheaper, take their quote.' },
+  ];
+
+  const howWePrice = {
+    file: 'how-we-price.html',
+    assembled: 'general',
+    title: 'How We Price | Method, Exclusions, Review Dates',
+    desc: 'The method behind every figure we publish: what the rates cover, what they exclude, how a quote is built from them, and when they were last reviewed.',
+    og: 'studio-desk',
+    priority: '0.6',
+    trail: [['index.html', 'Home'], ['kitchen-cost-australia.html', 'Kitchen cost'], ['how-we-price.html', 'How we price']],
+    faq: priceFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['kitchen-cost-australia.html', 'Kitchen cost'], ['#', 'How we price']])}
+        <span class="pill">Last reviewed ${R.reviewed}</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">How we price,<br><span class="italic brass">and what we exclude.</span></h1>
+        <p class="lede">A cost guide is only worth reading if you can see how the figures were arrived at. This is ours.</p>
+        <div class="answer"><p class="eyebrow">The short answer</p><p>We publish our own rate card rather than an industry average. Cabinetry is priced per linear metre of run by collection, with benchtops and additions as separate lines. The published ranges are real ranges, not from-prices. Freight, licensed trades, installation outside Central Queensland, appliances and demolition are excluded and are never folded in.</p></div>
+      </div>
+      <div>${frame('studio-desk', 'Design desk with drawings and rate card', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <div ${rv()} style="margin-bottom:2.25rem">
+          <h2 class="d3">The unit</h2>
+          <p class="mt-1 muted">Cabinetry is priced per linear metre of run. Renovation guides commonly price per square metre of floor area, which includes space you are not buying cabinets for and makes small rooms look expensive and large ones look cheap. A run is what gets made, so a run is what gets priced.</p>
+        </div>
+        <div ${rv()} data-rv-d="2" style="margin-bottom:2.25rem">
+          <h2 class="d3">Why a range and not one number</h2>
+          <p class="mt-1 muted">Two kitchens of the same length can differ by a third depending on the cabinet mix. A run of drawer banks costs more than a run of doors. A corner needs a cabinet that holds less and costs more. Appliance cabinets are cut to specific models. The published range covers that spread honestly; a single figure would not.</p>
+        </div>
+        <div ${rv()} data-rv-d="3" style="margin-bottom:2.25rem">
+          <h2 class="d3">What is excluded, and why we do not estimate it</h2>
+          <p class="mt-1 muted">Freight varies by postcode and by whether the order is flat packed or assembled, so it is quoted per job rather than averaged. Plumbing and electrical work is done by licensed local trades at local rates we have no part in. Installation outside Central Queensland is arranged by you. Appliances we will cut for but generally do not supply. Demolition and disposal is a local cost. We could publish national averages for all of it; they would be guesses dressed as data.</p>
+        </div>
+        <div ${rv()} data-rv-d="4">
+          <h2 class="d3">How a quote is built from the rates</h2>
+          <p class="mt-1 muted">Your measurements produce a drawing. Every cabinet on that drawing is priced individually at the rate for its collection and width, the benchtop by material and linear metre, the hardware by brand, the additions as their own lines, and freight to your postcode as its own line. The total is the sum of those, not a rate multiplied by a length. The published per-metre figures are what that process averages out to, which is why they are a range.</p>
+        </div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">Standard on every collection</span>
+          <ul>
+            <li>18mm moisture-resistant board</li>
+            <li>Laser-bonded edging, no glue line</li>
+            <li>Blum soft-close hinges and runners</li>
+            <li>Cut to your drawing, not catalogue widths</li>
+            <li>Fixed quote, itemised, freight separate</li>
+            <li class="no">No from-prices or provisional sums</li>
+          </ul>
+          <a class="btn btn--block" href="/kitchen-cost-australia">See the rates</a>
+        </div>
+        <p class="small muted mt-2">The specification does not change between collections. What changes is the door range, the benchtop and the detailing &mdash; not the parts that decide how long a kitchen lasts.</p>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(priceFaq, 'Questions about the method')}
+  ${ctaBand({ eyebrow: 'Hold us to it', title: 'Compare the specification,<br><span class="italic" style="color:var(--brass-lite)">line for line.</span>', body: 'Board thickness and moisture rating, edging method, hardware brand. Ours are printed on every quote so you can hold them against anything else you are offered.', image: 'material-samples', alt: 'Door, board and hardware samples' })}
+`,
+  };
+
   /* ================================================================== 404 */
 
   const notFound = {
@@ -8691,5 +8993,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, costPillar, howWePrice, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };
