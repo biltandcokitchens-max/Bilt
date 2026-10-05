@@ -860,6 +860,21 @@ function contentHash(html) {
   return crypto.createHash('sha1').update(stable).digest('hex').slice(0, 16);
 }
 
+// Two generators producing the same file name writes one page over the top of
+// another and still reports both as built. Catch it before it ships.
+(function checkUniqueFiles() {
+  const seen = Object.create(null);
+  const dupes = [];
+  pages.forEach((p) => {
+    if (seen[p.file]) dupes.push(p.file);
+    seen[p.file] = true;
+  });
+  if (dupes.length) {
+    throw new Error('Duplicate page file names, one is overwriting another:\n  ' + dupes.join('\n  '));
+  }
+  console.log('  ✓ ' + pages.length + ' page file names are unique');
+})();
+
 let n = 0;
 let changed = 0;
 pages.forEach((p) => {

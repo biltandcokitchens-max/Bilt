@@ -25,3 +25,6 @@ desktop.ini
 # Local Netlify folder
 .netlify
 .indexnow-state.json
+
+# Generated reports, not part of the site
+SEARCH-CONSOLE-URLS.xlsx

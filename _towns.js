@@ -1,4 +1,4 @@
-/* National coverage dataset: 8 states and territories, 54 regions, 562 towns.
+/* National coverage dataset: 8 states and territories, 54 regions, 561 towns.
  *
  * Every field is checkable geography or a characterisation of the housing
  * stock. There are deliberately no distances in kilometres, populations,
@@ -238,7 +238,6 @@ const REGIONS = [
       ['flinders', 'Flinders', 'coastal'],
     ] },
   { slug: 'bellarine-surf-coast', name: 'the Bellarine and Surf Coast', state: 'VIC', climate: 'temperate', route: 'south along the Hume Highway', context: 'Salt-exposed coastal housing with a short, intense summer season for short-stay turnover.', towns: [['torquay', 'Torquay', 'coastal'], ['ocean-grove', 'Ocean Grove', 'coastal'], ['lorne', 'Lorne', 'lifestyle'], ['anglesea', 'Anglesea', 'coastal'], ['barwon-heads', 'Barwon Heads', 'coastal'],
-      ['geelong', 'Geelong', 'regional'],
       ['drysdale', 'Drysdale', 'commuter'],
       ['portarlington', 'Portarlington', 'coastal'],
       ['queenscliff', 'Queenscliff', 'coastal'],
