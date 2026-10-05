@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://biltstudio.com.au/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -67,8 +67,30 @@
     </image:image>
   </url>
   <url>
+    <loc>https://biltstudio.com.au/kitchen-styles</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://biltstudio.com.au/kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -90,7 +112,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/butlers-pantries</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -112,7 +134,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/joinery</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -134,7 +156,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/gallery</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -236,7 +258,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/investment</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -258,7 +280,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/process</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -280,7 +302,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/studio</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -302,7 +324,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/contact</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -312,7 +334,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-gladstone</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -334,7 +356,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-biloela</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -356,7 +378,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-yeppoon</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -378,7 +400,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-gracemere</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -400,7 +422,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchens-capricorn-coast</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -8606,7 +8628,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/fit-out</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8628,7 +8650,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/tiny-home-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8650,7 +8672,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/granny-flat-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8672,7 +8694,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/new-build-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8694,7 +8716,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/trade</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8716,7 +8738,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8738,7 +8760,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/assembled-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8760,7 +8782,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchenettes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8782,7 +8804,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/diy-flat-pack-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8804,7 +8826,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-cabinets</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8826,7 +8848,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchenettes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8848,7 +8870,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/short-stay-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8870,7 +8892,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/kitchen-islands</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8892,7 +8914,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/laundries</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8914,7 +8936,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/owner-builder-kitchen-supply</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8936,7 +8958,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/accessible-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8958,7 +8980,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/sda-kitchens-queensland</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -8980,7 +9002,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/aging-in-place-kitchens</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9002,7 +9024,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/motorised-pull-down-shelving</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9024,7 +9046,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchen-upgrades</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9046,7 +9068,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-nsw</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9068,7 +9090,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-victoria</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9090,7 +9112,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-airbnb</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9112,7 +9134,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-investors</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9134,7 +9156,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-container-homes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9156,7 +9178,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-kitchens-relocatable-homes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9178,7 +9200,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/remote-fifo-kitchen-supply</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9200,7 +9222,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/office-kitchenette-supply</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9222,7 +9244,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/display-home-kitchenette-supply</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9244,7 +9266,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/student-accommodation-kitchenette</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9266,7 +9288,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/medical-practice-kitchenette</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9288,7 +9310,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/gym-studio-kitchenette</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9310,7 +9332,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/community-hall-kitchen-supply</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9332,7 +9354,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/retirement-village-kitchenette</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9354,7 +9376,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/outdoor-kitchen-flat-pack</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9376,7 +9398,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-butlers-pantry</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9398,7 +9420,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-wardrobes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9420,7 +9442,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/scullery-walk-in-pantry-flat-pack</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9442,7 +9464,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/flat-pack-bar-cabinetry</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9464,7 +9486,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/galley-flat-pack-kitchen</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9486,7 +9508,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/l-shaped-flat-pack-kitchen</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9508,7 +9530,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/u-shaped-flat-pack-kitchen</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9530,7 +9552,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/one-wall-flat-pack-kitchen</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9552,7 +9574,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guides</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -9573,8 +9595,272 @@
     </image:image>
   </url>
   <url>
+    <loc>https://biltstudio.com.au/guide-french-provincial-kitchen</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-traditional-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-federation-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/detail-timber-joinery.jpg</image:loc>
+      <image:title>Laser-bonded edging, no glue line</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-victorian-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-art-deco-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-mediterranean-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-cottage-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-island.jpg</image:loc>
+      <image:title>Long island, one delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-transitional-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/island-calacatta.jpg</image:loc>
+      <image:title>New build, kitchen fitted at fit-off</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/hero-main.jpg</image:loc>
+      <image:title>Full-height joinery, fitted in days</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-01.jpg</image:loc>
+      <image:title>American oak and stone</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-shaker-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-luxe-bar.jpg</image:loc>
+      <image:title>Appliance garage, hardware fitted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/openplan-long.jpg</image:loc>
+      <image:title>A long run arrives as numbered assembled units</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-two-tone-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-03.jpg</image:loc>
+      <image:title>Oak run, doors hung and adjusted before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/dark-dining.jpg</image:loc>
+      <image:title>Kitchen into dining, one palette</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-contemporary-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/glossy-dark.jpg</image:loc>
+      <image:title>Gloss doors, adjusted to even gaps before delivery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/collection-marble-02.jpg</image:loc>
+      <image:title>Handleless rail on an assembled run</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/black-marble-bar.jpg</image:loc>
+      <image:title>Black joinery, marble bar</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biltstudio.com.au/guide-country-kitchen-style</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/timber-island.jpg</image:loc>
+      <image:title>Timber island, stone top</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/concrete-luxe.jpg</image:loc>
+      <image:title>Concrete-look doors, matte black hardware</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/signature-dark.jpg</image:loc>
+      <image:title>Navy cabinetry, open-plan island</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://biltstudio.com.au/assets/img/galley-stone.jpg</image:loc>
+      <image:title>Galley layout for a narrow room</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://biltstudio.com.au/guide-what-is-a-shadowline</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9596,7 +9882,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-what-is-a-return-panel</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9618,7 +9904,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-what-is-a-kitchen-bulkhead</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9640,7 +9926,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-undermount-vs-topmount-sink</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9662,7 +9948,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-under-cabinet-lighting-explained</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9684,7 +9970,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-soft-close-vs-push-to-open</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9728,7 +10014,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-kitchen-work-triangle-explained</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9750,7 +10036,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-kitchen-power-point-placement</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9772,7 +10058,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-standard-kitchen-cabinet-sizes-australia</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9816,7 +10102,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-hinge-overlay-explained</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9838,7 +10124,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-benchtop-thickness-compared</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9860,7 +10146,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-what-is-a-filler-panel</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9882,7 +10168,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-pot-drawers-vs-cupboards</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -9904,7 +10190,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-appliance-cut-out-sizes</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11268,7 +11554,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-hamptons-style-kitchen</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11290,7 +11576,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-modern-farmhouse-kitchen</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11312,7 +11598,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-japandi-kitchen-design</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11334,7 +11620,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-coastal-kitchen-design</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11356,7 +11642,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-industrial-style-kitchen</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -11378,7 +11664,7 @@
   </url>
   <url>
     <loc>https://biltstudio.com.au/guide-scandinavian-kitchen-design</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>

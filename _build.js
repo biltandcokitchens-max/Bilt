@@ -65,6 +65,8 @@ SITE.addressLine = `${SITE.suburb} ${SITE.state} ${SITE.postcode}`;
 
 const NAV = [
   ['kitchens.html', 'Kitchens'],
+  ['flat-pack-kitchens.html', 'Flat Pack'],
+  ['kitchen-styles.html', 'Styles'],
   ['butlers-pantries.html', "Butler's Pantries"],
   ['joinery.html', 'Joinery'],
   ['gallery.html', 'Gallery'],

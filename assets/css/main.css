@@ -169,11 +169,12 @@ strong{ color:var(--ink); font-weight:600; }
 /* ---------- Header ---------- */
 .head{ position:sticky; top:0; z-index:120; background:rgba(251,249,245,.92); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-soft); transition:box-shadow .3s var(--ease); }
 .head.solid{ box-shadow:var(--shadow-sm); }
-.head__in{ display:flex; align-items:center; justify-content:space-between; gap:2rem; padding-block:clamp(.85rem,1.4vw,1.15rem); }
+.head__in{ display:flex; align-items:center; justify-content:space-between; gap:clamp(1rem,1.6vw,2rem); padding-block:clamp(.85rem,1.4vw,1.15rem); }
 .brand{ display:flex; flex-direction:column; line-height:1; flex:none; }
 .brand__mark{ font-family:var(--display); font-size:clamp(1.375rem,2vw,1.75rem); font-weight:600; color:var(--ink); letter-spacing:-.02em; }
 .brand__sub{ font-size:.625rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--brass); margin-top:.35rem; }
-.nav{ display:flex; align-items:center; gap:clamp(1rem,1.9vw,2rem); }
+/* Nine items: the gap has to give before the row does. */
+.nav{ display:flex; align-items:center; gap:clamp(.85rem,1.25vw,1.5rem); }
 .nav a{ font-size:.9375rem; font-weight:500; color:var(--ink-2); padding-block:.35rem; border-bottom:2px solid transparent; transition:.25s var(--ease); white-space:nowrap; }
 .nav a:hover{ color:var(--brass); }
 .nav a[aria-current="page"]{ color:var(--ink); border-bottom-color:var(--brass); }
@@ -193,21 +194,31 @@ body.nav-open .burger span{ background:transparent; }
 body.nav-open .burger span::before{ transform:translateY(7px) rotate(45deg); }
 body.nav-open .burger span::after{ transform:translateY(-7px) rotate(-45deg); }
 
-@media (max-width:1080px){
+/* Nine nav items no longer fit beside the brand and the quote button at
+   1081px, so the burger takes over a little earlier. */
+@media (max-width:1200px){
   .burger{ display:flex; }
   .nav{
     position:fixed; inset:0; background:var(--paper); flex-direction:column;
-    align-items:flex-start; justify-content:center; gap:.35rem;
+    align-items:flex-start; gap:.35rem;
+    /* Centred while it fits. Plain `center` would push the first item above
+       the scroll origin on a short phone and make it unreachable. */
+    justify-content:center; justify-content:safe center;
     padding:5rem var(--gutter) 3rem; clip-path:inset(0 0 100% 0);
     transition:clip-path .55s var(--ease); overflow-y:auto;
   }
+  /* The header's backdrop-filter makes it the containing block for anything
+     fixed inside it, which pins the menu overlay to the height of the header
+     instead of the viewport. Drop the blur while the menu is open: the
+     overlay is opaque and covers the header anyway. */
+  body.nav-open .head{ backdrop-filter:none; -webkit-backdrop-filter:none; }
   body.nav-open .nav{ clip-path:inset(0 0 0 0); }
   .nav a{ font-family:var(--display); font-size:2rem; border:0; }
   .nav .nav__tel{ font-family:var(--sans); font-size:1.125rem; font-weight:700; color:var(--brass); margin-top:1.5rem; }
   .head__cta .btn{ display:none; }
 }
 .nav__tel{ display:none; }
-@media (max-width:1080px){ .nav__tel{ display:block; } }
+@media (max-width:1200px){ .nav__tel{ display:block; } }
 
 /* ---------- Hero ---------- */
 .hero{ position:relative; padding-block:clamp(2.5rem,5vw,4.5rem) clamp(3rem,6vw,5.5rem); overflow:hidden; }

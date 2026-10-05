@@ -166,9 +166,9 @@ module.exports = function (api) {
   /* Real customer reviews, carried across from biltstudio.com.au. Do not
      edit the wording — these are quoted as given. */
   const REVIEWS = [
-    ['For what we paid compared to what similar kitchens were costing elsewhere, we&rsquo;re extremely happy with it.', 'Sarah Wallace’, ’Rockhampton’, ’S'],
-    ['Could not be happier with our kitchen. The funny thing is, pretty much everyone who&rsquo;s come over since we installed it has asked who did our kitchen and assumed we spent a lot more than we actually did.', 'Brian T.’, ’Gladstone’, ’B'],
-    ['Once we saw it in person, it was a pretty easy decision. It looked even better than we expected.', 'Betty Miller’, ’Caboolture’, ’B'],
+    ['For what we paid compared to what similar kitchens were costing elsewhere, we&rsquo;re extremely happy with it.', 'Sarah Wallace', 'Rockhampton', 'S'],
+    ['Could not be happier with our kitchen. The funny thing is, pretty much everyone who&rsquo;s come over since we installed it has asked who did our kitchen and assumed we spent a lot more than we actually did.', 'Brian T.', 'Gladstone', 'B'],
+    ['Once we saw it in person, it was a pretty easy decision. It looked even better than we expected.', 'Betty Miller', 'Caboolture', 'B'],
   ];
 
   const reviews = `<section class="section bg-2">
@@ -246,11 +246,11 @@ module.exports = function (api) {
         </a>`).join('');
 
   const PROCESS = [
-    ['1', 'Free design consultation’, ’Ninety minutes at your kitchen table. We measure, photograph and listen — then tell you honestly what your budget buys in 2026.'],
-    ['2', '3D design &amp; selections’, ’A render of your actual room. We bring the doors, the stone offcuts and the handles to you, so you see them in your own light before anything is locked in.'],
-    ['3', 'Your fixed quote’, ’One document, every line itemised, signed and fixed. Revisions are free until you are happy. Valid 90 days.'],
-    ['4', 'Made to your millimetres’, ’Your cabinetry is manufactured to our specification and your measurements. It arrives assembled with doors hung and adjusted, or flat packed and labelled if you would rather build it — your call, both on the quote.'],
-    ['5', 'Installed &amp; handed over’, ’Seven to ten working days with one team and a written programme. Cleaned, adjusted, photographed and handed over with the drawings and paperwork.'],
+    ['1', 'Free design consultation', 'Ninety minutes at your kitchen table. We measure, photograph and listen — then tell you honestly what your budget buys in 2026.'],
+    ['2', '3D design &amp; selections', 'A render of your actual room. We bring the doors, the stone offcuts and the handles to you, so you see them in your own light before anything is locked in.'],
+    ['3', 'Your fixed quote', 'One document, every line itemised, signed and fixed. Revisions are free until you are happy. Valid 90 days.'],
+    ['4', 'Made to your millimetres', 'Your cabinetry is manufactured to our specification and your measurements. It arrives assembled with doors hung and adjusted, or flat packed and labelled if you would rather build it — your call, both on the quote.'],
+    ['5', 'Installed &amp; handed over', 'Seven to ten working days with one team and a written programme. Cleaned, adjusted, photographed and handed over with the drawings and paperwork.'],
   ];
 
   const processSteps = PROCESS.map(([no, h, p], i) => `
@@ -705,9 +705,9 @@ module.exports = function (api) {
       <h2 class="d2 mb-2" ${rv()} data-rv-d="1">Sized to your wall,<br>not to a brochure.</h2>
       <div class="grid cols-3 mt-3">
         ${[
-        ['The walk-through', '$4,000 – $6,600’, ’A corridor between kitchen and laundry or garage entry. Open shelving above, drawers below, a laminate or compact stone bench. The most efficient money in the whole renovation.'],
-        ['The second kitchen', '$7,700 – $14,200’, ’Full stone benchtop, second sink, dishwasher, floor-to-ceiling joinery, dedicated appliance run and a concealed door. This is what most clients build.'],
-        ['The scullery', '$14,200 +’, ’Where the pantry becomes a room in its own right — second oven, coffee station, glazed display cabinetry, a window, and the same materials as the kitchen it serves.'],
+        ['The walk-through', '$4,000 – $6,600', 'A corridor between kitchen and laundry or garage entry. Open shelving above, drawers below, a laminate or compact stone bench. The most efficient money in the whole renovation.'],
+        ['The second kitchen', '$7,700 – $14,200', 'Full stone benchtop, second sink, dishwasher, floor-to-ceiling joinery, dedicated appliance run and a concealed door. This is what most clients build.'],
+        ['The scullery', '$14,200 +', 'Where the pantry becomes a room in its own right — second oven, coffee station, glazed display cabinetry, a window, and the same materials as the kitchen it serves.'],
       ].map(([h, p, c], i) => `
         <div class="tier${i === 1 ? ' tier--feature' : ''}" ${rv()} data-rv-d="${i + 1}">
           ${i === 1 ? '<span class="tier__flag">Most popular</span>' : ''}
@@ -768,10 +768,10 @@ module.exports = function (api) {
   <section class="section">
     <div class="wrap grid cols-2">
       ${[
-        ['Walk-in wardrobes', '$3,600 – $9,900’, ’wardrobe-walkin’, ’Custom walk-in wardrobe with lit timber shelving and drawers, Rockhampton’, ’Hanging calculated against what you own rather than a standard. Soft-close drawers with felt-lined inserts, lighting on a door sensor, glazed or open fronts, and a bench if the room allows.'],
-        ['Laundries', '$2,800 – $7,700’, ’laundry-room’, ’Custom laundry joinery with overhead cabinets and folding bench, Rockhampton’, ’The most under-designed room in most Rockhampton homes — <a href="laundries.html" style="color:var(--brass)">see what a proper one costs</a>. Full-height broom storage, a proper folding bench, a drying rail out of sight, and a benchtop that survives a decade of detergent.'],
-        ['Vanities &amp; bathrooms', '$1,900 – $6,100’, ’vanity-bathroom’, ’Custom timber bathroom vanity with stone top and backlit mirror’, ’Wall-hung or floor-mounted in finishes that will not swell. Stone or porcelain tops with undermount or above-counter basins, and drawers that clear the plumbing properly rather than pretending to.'],
-        ['Media walls &amp; studies', '$4,300 – $13,100’, ’media-wall’, ’Built-in media wall and study joinery with integrated desk and shelving’, ’Cable management that actually works, ventilated equipment bays, display shelving lit from within, and desks built to your height rather than a catalogue&rsquo;s.'],
+        ['Walk-in wardrobes', '$3,600 – $9,900', 'wardrobe-walkin', 'Custom walk-in wardrobe with lit timber shelving and drawers, Rockhampton', 'Hanging calculated against what you own rather than a standard. Soft-close drawers with felt-lined inserts, lighting on a door sensor, glazed or open fronts, and a bench if the room allows.'],
+        ['Laundries', '$2,800 – $7,700', 'laundry-room', 'Custom laundry joinery with overhead cabinets and folding bench, Rockhampton', 'The most under-designed room in most Rockhampton homes — <a href="laundries.html" style="color:var(--brass)">see what a proper one costs</a>. Full-height broom storage, a proper folding bench, a drying rail out of sight, and a benchtop that survives a decade of detergent.'],
+        ['Vanities &amp; bathrooms', '$1,900 – $6,100', 'vanity-bathroom', 'Custom timber bathroom vanity with stone top and backlit mirror', 'Wall-hung or floor-mounted in finishes that will not swell. Stone or porcelain tops with undermount or above-counter basins, and drawers that clear the plumbing properly rather than pretending to.'],
+        ['Media walls &amp; studies', '$4,300 – $13,100', 'media-wall', 'Built-in media wall and study joinery with integrated desk and shelving', 'Cable management that actually works, ventilated equipment bays, display shelving lit from within, and desks built to your height rather than a catalogue&rsquo;s.'],
       ].map(([h, p, im, alt, c], i) => `
       <div class="card" ${rv()} data-rv-d="${(i % 2) + 1}">
         ${frame(im, alt, 'wide')}
@@ -811,30 +811,30 @@ module.exports = function (api) {
      completed projects. They are reference imagery until the real work is
      photographed, and the copy now says so. */
   const GAL = [
-    ['hero-main', 'Dark timber kitchen and dining room with a stone island and linear pendant lighting’, ’Dark timber, stone island’, ’Full-height joinery to the ceiling’, ’g-8 ar-43'],
-    ['dark-luxe-bar', 'Dark kitchen with timber bar stools and an integrated coffee station’, ’Integrated coffee station’, ’Appliance garage behind a lift door’, ’g-4 ar-34'],
-    ['collection-marble-01', 'Oak kitchen with a full-height marble splashback and stone island bench’, ’American oak and marble’, ’Full-height stone splashback’, ’g-4 ar-34'],
-    ['collection-marble-02', 'Marble splashback with brass wall lights above an oak kitchen run’, ’Brass lighting on stone’, ’Handleless rail, no visible hardware’, ’g-8 ar-43'],
-    ['island-marble-brass', 'Stone island bench with brushed brass tapware and a natural stone benchtop’, ’Brushed brass tapware’, ’Mitred stone edge, 40mm’, ’g-6 ar-43'],
-    ['signature-dark', 'Dark navy kitchen with leather bar seating opening to a living area’, ’Navy cabinetry, leather seating’, ’Open-plan island with seating for four’, ’g-6 ar-43'],
-    ['splashback-marble-01', 'Full-height marble splashback with matte black tapware over an induction cooktop’, ’Matte black tapware’, ’Induction, flush to the stone’, ’g-4 ar-34'],
-    ['detail-stone-black', 'Black stone benchtop with concealed under-cabinet lighting’, ’Black stone, concealed lighting’, ’LED to the underside of the overheads’, ’g-4 ar-34'],
-    ['island-calacatta', 'Calacatta marble waterfall island in a bright open kitchen’, ’Calacatta waterfall island’, ’Veining matched across the return’, ’g-4 ar-34'],
-    ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances’, ’Long island, integrated appliances’, ’Four metre run, single stone slab’, ’g-8 ar-43'],
-    ['matte-black-bank', 'Matte black handleless cabinetry with an appliance garage’, ’Matte black, handleless’, ’Push-to-open, no handles at all’, ’g-4 ar-34'],
-    ['galley-stone', 'Stone galley kitchen with pendant lighting and concealed handles’, ’Galley layout in stone’, ’Compact run, full-depth storage’, ’g-4 ar-34'],
-    ['glossy-dark', 'Dark gloss kitchen joinery with integrated ovens’, ’Gloss doors, integrated ovens’, ’Tall bank, floor to ceiling’, ’g-4 ar-34'],
-    ['dark-island', 'Dark island bench with pendant lighting and open living beyond’, ’Dark island, pendant lighting’, ’Seating on two sides’, ’g-4 ar-34'],
-    ['collection-marble-03', 'Marble splashback with brass lighting above a timber kitchen’, ’Timber and marble together’, ’Warm neutrals, matte finish’, ’g-6 ar-43'],
-    ['splashback-marble-02', 'Marble splashback and timber joinery with an integrated oven’, ’Stone splashback, timber doors’, ’Oven at bench height’, ’g-6 ar-43'],
-    ['concrete-luxe', 'Kitchen with a concrete ceiling, white island and bar stools’, ’White island, concrete above’, ’Minimal, no upper cabinets’, ’g-4 ar-34'],
-    ['black-marble-bar', 'Black marble bar with bar stools and concealed lighting’, ’Black marble bar’, ’Waterfall ends, both sides’, ’g-4 ar-34'],
-    ['island-marble-close', 'Marble island benchtop detail with pendant lights above’, ’Stone detail, close’, ’Mitred edge and shadow line’, ’g-4 ar-34'],
-    ['timber-island', 'Timber island and joinery in an open plan home’, ’Timber island’, ’Warm oak, hard-wax oil finish’, ’g-6 ar-43'],
-    ['wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery and integrated lighting’, ’Walk-in robe, glazed fronts’, ’Lighting on a door sensor’, ’g-6 ar-43'],
-    ['detail-timber-joinery', 'Timber media joinery and stone splashback detail’, ’Media joinery in timber’, ’Ventilated equipment bays’, ’g-6 ar-43'],
-    ['drawer-detail', 'Deep pot drawers with brass handles and internal organisers’, ’Deep drawers, organisers’, ’Blum full-extension runners’, ’g-6 ar-43'],
-    ['dark-dining', 'Dark timber kitchen and dining space with feature lighting’, ’Kitchen into dining’, ’One material palette throughout’, ’g-12 ar-219'],
+    ['hero-main', 'Dark timber kitchen and dining room with a stone island and linear pendant lighting', 'Dark timber, stone island', 'Full-height joinery to the ceiling', 'g-8 ar-43'],
+    ['dark-luxe-bar', 'Dark kitchen with timber bar stools and an integrated coffee station', 'Integrated coffee station', 'Appliance garage behind a lift door', 'g-4 ar-34'],
+    ['collection-marble-01', 'Oak kitchen with a full-height marble splashback and stone island bench', 'American oak and marble', 'Full-height stone splashback', 'g-4 ar-34'],
+    ['collection-marble-02', 'Marble splashback with brass wall lights above an oak kitchen run', 'Brass lighting on stone', 'Handleless rail, no visible hardware', 'g-8 ar-43'],
+    ['island-marble-brass', 'Stone island bench with brushed brass tapware and a natural stone benchtop', 'Brushed brass tapware', 'Mitred stone edge, 40mm', 'g-6 ar-43'],
+    ['signature-dark', 'Dark navy kitchen with leather bar seating opening to a living area', 'Navy cabinetry, leather seating', 'Open-plan island with seating for four', 'g-6 ar-43'],
+    ['splashback-marble-01', 'Full-height marble splashback with matte black tapware over an induction cooktop', 'Matte black tapware', 'Induction, flush to the stone', 'g-4 ar-34'],
+    ['detail-stone-black', 'Black stone benchtop with concealed under-cabinet lighting', 'Black stone, concealed lighting', 'LED to the underside of the overheads', 'g-4 ar-34'],
+    ['island-calacatta', 'Calacatta marble waterfall island in a bright open kitchen', 'Calacatta waterfall island', 'Veining matched across the return', 'g-4 ar-34'],
+    ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances', 'Long island, integrated appliances', 'Four metre run, single stone slab', 'g-8 ar-43'],
+    ['matte-black-bank', 'Matte black handleless cabinetry with an appliance garage', 'Matte black, handleless', 'Push-to-open, no handles at all', 'g-4 ar-34'],
+    ['galley-stone', 'Stone galley kitchen with pendant lighting and concealed handles', 'Galley layout in stone', 'Compact run, full-depth storage', 'g-4 ar-34'],
+    ['glossy-dark', 'Dark gloss kitchen joinery with integrated ovens', 'Gloss doors, integrated ovens', 'Tall bank, floor to ceiling', 'g-4 ar-34'],
+    ['dark-island', 'Dark island bench with pendant lighting and open living beyond', 'Dark island, pendant lighting', 'Seating on two sides', 'g-4 ar-34'],
+    ['collection-marble-03', 'Marble splashback with brass lighting above a timber kitchen', 'Timber and marble together', 'Warm neutrals, matte finish', 'g-6 ar-43'],
+    ['splashback-marble-02', 'Marble splashback and timber joinery with an integrated oven', 'Stone splashback, timber doors', 'Oven at bench height', 'g-6 ar-43'],
+    ['concrete-luxe', 'Kitchen with a concrete ceiling, white island and bar stools', 'White island, concrete above', 'Minimal, no upper cabinets', 'g-4 ar-34'],
+    ['black-marble-bar', 'Black marble bar with bar stools and concealed lighting', 'Black marble bar', 'Waterfall ends, both sides', 'g-4 ar-34'],
+    ['island-marble-close', 'Marble island benchtop detail with pendant lights above', 'Stone detail, close', 'Mitred edge and shadow line', 'g-4 ar-34'],
+    ['timber-island', 'Timber island and joinery in an open plan home', 'Timber island', 'Warm oak, hard-wax oil finish', 'g-6 ar-43'],
+    ['wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery and integrated lighting', 'Walk-in robe, glazed fronts', 'Lighting on a door sensor', 'g-6 ar-43'],
+    ['detail-timber-joinery', 'Timber media joinery and stone splashback detail', 'Media joinery in timber', 'Ventilated equipment bays', 'g-6 ar-43'],
+    ['drawer-detail', 'Deep pot drawers with brass handles and internal organisers', 'Deep drawers, organisers', 'Blum full-extension runners', 'g-6 ar-43'],
+    ['dark-dining', 'Dark timber kitchen and dining space with feature lighting', 'Kitchen into dining', 'One material palette throughout', 'g-12 ar-219'],
   ];
 
   const gallery = {
@@ -1054,10 +1054,10 @@ module.exports = function (api) {
       <h2 class="d2 mb-2" ${rv()} data-rv-d="1">Spend here first.</h2>
       <div class="grid cols-4 mt-3">
         ${[
-        ['1', 'Hardware’, ’Blum runners and hinges add roughly $1,200–$2,400 to a kitchen and are the one thing you touch every day for twenty years. Never the place to save.'],
-        ['2', 'Layout’, ’Costs nothing but thought. Getting the bin, dishwasher and prep zone in the right relationship is worth more than any finish.'],
-        ['3', 'Benchtop’, ’The largest visible surface and the one that takes the abuse. Porcelain and sintered stone perform best in a Central Queensland kitchen.'],
-        ['4', 'Doors’, ’Where taste lives — and where a budget can flex most safely. A beautiful door on cheap hardware is a false economy; the reverse is merely patient.'],
+        ['1', 'Hardware', 'Blum runners and hinges add roughly $1,200–$2,400 to a kitchen and are the one thing you touch every day for twenty years. Never the place to save.'],
+        ['2', 'Layout', 'Costs nothing but thought. Getting the bin, dishwasher and prep zone in the right relationship is worth more than any finish.'],
+        ['3', 'Benchtop', 'The largest visible surface and the one that takes the abuse. Porcelain and sintered stone perform best in a Central Queensland kitchen.'],
+        ['4', 'Doors', 'Where taste lives — and where a budget can flex most safely. A beautiful door on cheap hardware is a false economy; the reverse is merely patient.'],
       ].map(([no, h, p], i) => `
         <div class="step" ${rv()} data-rv-d="${i + 1}">
           <span class="step__no">${no}</span>
@@ -3176,6 +3176,50 @@ module.exports = function (api) {
     ],
   });
 
+  /* The flat pack range index, shown on the pillar. Grouped the way people
+     ask for it: the kitchen itself, then the shape of the room, then the
+     other rooms we pack the same way. */
+  const FP_GROUPS = [
+    ['The kitchen', 'Order it flat and build it, or have the same cabinetry arrive with the carcasses together and the doors already hung.',
+      ['assembled', 'diy-flat-pack', 'flat-pack-cabinets', 'flat-pack-upgrades']],
+    ['By the shape of the room', 'The constraints change with the layout. Each of these covers the clearances, the corner and what the shape costs you.',
+      ['galley-flat-pack', 'l-shaped-flat-pack', 'u-shaped-flat-pack', 'one-wall-flat-pack']],
+    ['The other rooms', 'The same board, the same edging and the same Blum hardware, packed flat for everything that is not the kitchen.',
+      ['kitchenette', 'flat-pack-butlers-pantry', 'scullery', 'flat-pack-wardrobes', 'bar-cabinetry', 'outdoor-kitchen']],
+  ];
+
+  const fpRange = `
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>The range</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Everything we pack flat.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">All of it cut to your measurements rather than picked from a list of standard widths, and all of it available <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> instead if you would rather not build it.</p>
+      ${FP_GROUPS.map(([label, blurb, slugs], gi) => `
+      <div class="mt-4">
+        <h3 class="d3" ${rv()}>${label}</h3>
+        <p class="muted mt-1" style="max-width:62ch" ${rv()} data-rv-d="1">${blurb}</p>
+        <div class="grid cols-3 mt-2">
+          ${slugs.map((sl, i) => {
+            const y = SEGMENTS.find((x) => x.slug === sl);
+            if (!y) return '';
+            return `
+          <a class="card" href="/${y.file.replace(/\.html$/, '')}" ${rv()} data-rv-d="${(i % 3) + 1}">
+            ${frame(y.img, y.alt, 'wide')}
+            <div class="card__body">
+              <h4 class="d4">${y.nav}</h4>
+              <p class="small">${y.price} &middot; ${y.range}</p>
+              <span class="link-u mt-1">See the detail &rarr;</span>
+            </div>
+          </a>`;
+          }).join('')}
+        </div>
+      </div>`).join('')}
+      <p class="muted mt-4" ${rv()}>Shipping flat to every state: <a href="/flat-pack-kitchens-nsw" style="color:var(--brass)">NSW</a>, <a href="/flat-pack-kitchens-victoria" style="color:var(--brass)">Victoria</a>, <a href="/flat-pack-kitchens-sydney" style="color:var(--brass)">Sydney</a>, <a href="/flat-pack-kitchens-melbourne" style="color:var(--brass)">Melbourne</a>, <a href="/flat-pack-kitchens-brisbane" style="color:var(--brass)">Brisbane</a>, <a href="/flat-pack-kitchens-perth" style="color:var(--brass)">Perth</a>, <a href="/flat-pack-kitchens-adelaide" style="color:var(--brass)">Adelaide</a>, <a href="/flat-pack-kitchens-canberra" style="color:var(--brass)">Canberra</a>, <a href="/flat-pack-kitchens-hobart" style="color:var(--brass)">Hobart</a> and <a href="/flat-pack-kitchens-darwin" style="color:var(--brass)">Darwin</a>.</p>
+    </div>
+  </section>`;
+
+  SEGMENTS.find((x) => x.slug === 'flat-pack').extra = fpRange;
+
   const segmentPages = SEGMENTS.map((s) => ({
     file: s.file,
     title: s.title,
@@ -3233,6 +3277,8 @@ module.exports = function (api) {
     ${s.placeholder ? `<!-- ${s.placeholder} -->` : ''}
   </section>
 
+  ${s.extra || ''}
+
   ${faqBlock(s.faq, s.nav + ' — questions')}
   ${reviews}
   ${ctaBand({ eyebrow: s.nav, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: 'A fixed, itemised quote with nothing hidden in it. If the number does not work for you, you owe us nothing and you keep the drawings.' })}
@@ -3248,12 +3294,492 @@ module.exports = function (api) {
   const GUIDE_SERIES = {'flatpack': ['flat-pack-vs-assembled-kitchen', 'how-to-order-a-flat-pack-kitchen', 'how-to-assemble-a-flat-pack-kitchen', 'how-long-do-flat-pack-kitchens-last', 'are-flat-pack-kitchens-good-quality', 'flat-pack-kitchen-shipping-and-freight', 'supply-your-own-kitchen', 'how-to-install-a-supplied-kitchen', 'how-to-measure-for-a-kitchen'], 'council': ['granny-flat-rules-qld', 'granny-flat-rules-rockhampton', 'class-1a-granny-flat-yeppoon', 'granny-flat-rules-isaac-regional', 'granny-flat-rules-mackay-regional', 'granny-flat-rules-whitsunday-regional', 'granny-flat-rent-rockhampton', 'granny-flat-rules-nsw', 'granny-flat-rules-victoria', 'granny-flat-rules-wa', 'granny-flat-rules-sa', 'granny-flat-rules-tasmania', 'secondary-residence-rules-act', 'granny-flat-rules-nt'], 'approvals': ['do-i-need-approval-kitchen-renovation', 'owner-builder-permit-qld', 'garage-conversion-approval-qld', 'tiny-home-laws-qld', 'short-stay-letting-rules-qld', 'multigenerational-living-queensland'], 'accessible': ['ndis-kitchen-modifications-queensland', 'sda-design-categories-explained'], 'money': ['kitchen-pc-item-new-build-contract', 'does-a-new-kitchen-add-value', 'flood-damage-kitchen-replacement-rockhampton', 'kitchen-renovation-checklist'], 'design': ['kitchen-layouts', 'benchtops-compared', 'kitchen-colours-2026', 'butlers-pantry-worth-it', 'queenslander-kitchen-renovation'],
     'glossary': ['what-is-a-filler-panel', 'what-is-a-shadowline', 'what-is-a-return-panel', 'what-is-a-kitchen-bulkhead', 'what-is-a-cabinet-carcass', 'what-is-a-kickboard', 'what-is-a-scribe-piece', 'what-is-edge-banding', 'what-is-a-full-extension-runner', 'soft-close-hinges-explained', 'what-is-a-handleless-kitchen', 'what-is-a-waterfall-benchtop-edge', 'what-is-a-mitred-join', 'what-is-a-kitchen-splashback', 'what-is-a-service-drawing', 'what-does-supply-only-mean', 'what-is-a-tall-pantry-unit', 'what-is-a-corner-carousel', 'what-is-a-blind-corner-cabinet', 'push-to-open-hardware-explained', 'what-is-moisture-resistant-board', 'what-is-an-overhead-cabinet'],
     'specs': ['standard-kitchen-cabinet-sizes-australia', 'standard-kitchen-bench-height', 'hinge-overlay-explained', 'benchtop-thickness-compared', 'pot-drawers-vs-cupboards', 'appliance-cut-out-sizes', 'undermount-vs-topmount-sink', 'under-cabinet-lighting-explained', 'soft-close-vs-push-to-open', 'drawer-runner-load-ratings-explained', 'kitchen-work-triangle-explained', 'kitchen-power-point-placement'],
-    'style': ['hamptons-style-kitchen', 'modern-farmhouse-kitchen', 'japandi-kitchen-design', 'coastal-kitchen-design', 'industrial-style-kitchen', 'scandinavian-kitchen-design'],
+    'style': ['hamptons-style-kitchen', 'modern-farmhouse-kitchen', 'japandi-kitchen-design', 'coastal-kitchen-design', 'industrial-style-kitchen', 'scandinavian-kitchen-design', 'shaker-kitchen-style', 'two-tone-kitchen-style', 'contemporary-kitchen-style', 'country-kitchen-style', 'french-provincial-kitchen', 'traditional-kitchen-style', 'federation-kitchen-style', 'victorian-kitchen-style', 'art-deco-kitchen-style', 'mediterranean-kitchen-style', 'cottage-kitchen-style', 'transitional-kitchen-style'],
     'materials': ['engineered-stone-benchtop-care-guide', 'is-porcelain-benchtop-worth-it', 'timber-benchtop-pros-and-cons', 'blum-legrabox-explained', 'handleless-kitchen-hardware-guide', 'brass-vs-matte-black-kitchen-hardware', '2-pack-vs-laminate-kitchen-doors', 'matte-vs-gloss-kitchen-doors', 'timber-veneer-vs-laminate-doors', '18mm-vs-16mm-cabinet-board', 'mdf-vs-particleboard-kitchen-cabinets', 'kitchen-sink-materials-compared', 'induction-vs-gas-cooktop', 'rangehood-types-explained'],
     'cost': ['flat-pack-kitchen-cost-per-linear-metre', 'average-kitchen-renovation-cost-australia', 'cost-to-replace-a-kitchen-benchtop-only', 'flat-pack-kitchen-cost-per-cabinet', 'how-much-does-a-granny-flat-kitchen-cost-australia', 'hidden-costs-in-a-kitchen-renovation'],
     'sustainability': ['e0-vs-e1-board-explained', 'is-flat-pack-furniture-bad-for-the-environment', 'blum-hardware-warranty-explained', 'kitchen-cabinet-warranty-what-to-check', 'bushfire-rebuild-kitchen-supply-australia', 'recyclable-low-waste-kitchen-cabinetry']};
   const SERIES_NAMES = {'flatpack': 'Flat pack and supply', 'council': 'Council rules for second dwellings', 'approvals': 'Approvals and permits', 'accessible': 'Accessible and SDA kitchens', 'money': 'Money and value', 'design': 'Design decisions', 'glossary': 'Kitchen &amp; cabinetry glossary', 'style': 'Kitchen styles', 'materials': 'Materials &amp; hardware guides', 'cost': 'Cost and pricing', 'sustainability': 'Sustainability, warranty &amp; compliance', 'specs': 'Sizes, hardware and services'};
   const GUIDES = [
+    {
+      slug: 'french-provincial-kitchen',
+      group: 'design',
+      nav: 'French provincial',
+      title: 'French Provincial Kitchens in Australia',
+      desc: 'What makes a kitchen French provincial, which details are essential and which are optional, and how it behaves in Australian light.',
+      h1: `French provincial,<br><span class="italic brass">without the pastiche.</span>`,
+      lede: 'The most ornamental style people still ask for, and the one that most easily tips into theme. The restraint is what saves it.',
+      img: 'collection-marble-01',
+      alt: 'French provincial style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A French provincial kitchen takes its cues from rural French farmhouses: profiled doors with a moulded edge, a soft chalky palette, visible curves on the range hood or island, and antiqued or aged hardware. The difference between a good one and a costume is how many of those cues you use. Two or three, done properly, read as considered. All of them at once reads as a set.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['The door is a profiled panel, not a Shaker', 'A <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> door has a flat square frame. A provincial door has a moulded inner edge on that frame, which catches the light and gives the softness the style depends on. It is the single detail that most defines the look, and it is also the one most often substituted for a cheaper Shaker door in a quote. Check the profile drawing, not the word.'],
+        ['Pick two cues, not six', 'The strong provincial signals are: the profiled door, a curved or mantel-style range hood, a furniture-style island with turned legs or a shaped apron, antiqued brass or pewter hardware, and open plate storage. Two or three of those reads French. All five reads like a display home. The island and the door are the two that carry the most for the least risk.'],
+        ['Palette in Australian light', 'The classic palette is chalky off-white, soft grey-green or dove, with timber. Under Australian light the greys read colder than they do in the photographs, so the warmer end — bone, mushroom, a muted sage — holds up better. Decide on physical samples in the room, morning and afternoon, before committing to a colour you have only seen on a screen.'],
+        ['What it costs', 'Profiled doors sit in our <a href="/kitchens#maison" style="color:var(--brass)">Maison</a> range and above. The carcasses, edging and hardware behind them are identical to every other collection; the door and the benchtop are what move the price. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> sets out what each collection runs per linear metre.'],
+      ],
+      faq: [
+        { q: 'What is a French provincial kitchen?', a: 'One with profiled, moulded-edge doors, a soft chalky palette, curved or furniture-style elements and antiqued hardware, drawn from rural French farmhouse interiors.' },
+        { q: 'Is French provincial the same as Hamptons?', a: 'No. Both use panelled doors and pale colours, but provincial is warmer, more ornamental and more rustic; Hamptons is cooler, crisper and more formal.' },
+        { q: 'Is French provincial out of style?', a: 'It has softened rather than disappeared. The current version uses fewer ornamental cues — the door and the island carry it, without the full set of curves and corbels.' },
+        { q: 'What colours suit a French provincial kitchen?', a: 'Chalky off-whites, bone, mushroom and muted sage. Cool greys read colder in Australian light than they do in European photographs.' },
+      ],
+    },
+    {
+      slug: 'traditional-kitchen-style',
+      group: 'design',
+      nav: 'Classic',
+      title: 'Traditional Kitchen Style: What It Means Now',
+      desc: 'What a traditional kitchen means in current Australian practice, how it differs from period reproduction, and how to build one that does not date.',
+      h1: `Traditional kitchens,<br><span class="italic brass">built for now.</span>`,
+      lede: 'Traditional does not mean a reproduction of a particular period. It means the proportions and detailing of one, with everything else current.',
+      img: 'collection-marble-02',
+      alt: 'Classic style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A traditional kitchen uses panelled or profiled doors, visible detail on the island and overheads, classic hardware and a restrained colour palette, without reproducing a specific historical period. The distinction matters: a period reproduction kitchen is a decorating project with a date on it. A traditional kitchen borrows the proportions — generous rails, deeper benchtop overhangs, furniture-like end panels — and keeps the storage, hardware and appliances entirely modern.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['What makes it traditional rather than modern', 'Three things: the door has a frame and a visible profile; the cabinetry is detailed as furniture rather than as boxes, with end panels, plinths and a defined cornice; and the hardware is visible and classical rather than hidden. Nothing about the interior changes — pot drawers, soft close, internal organisation are all the same as in a <a href="/guide-contemporary-kitchen-style" style="color:var(--brass)">contemporary kitchen</a>.'],
+        ['Where the proportions matter most', 'The island. A traditional island is detailed as a piece of furniture: a bench with an overhang, panelled ends, often a different colour from the main run. Treat it as cabinetry and the whole kitchen reads cheaper. The second place is the cornice and plinth — a traditional kitchen that runs to the ceiling without a defined top edge loses the proportion it depends on.'],
+        ['Avoiding the dated version', 'What dates a traditional kitchen is never the door. It is the finishes around it: heavily grained laminate, ornate corbels, a tiled splashback with a border, high-gloss stone. Keep the door traditional and everything else quiet and the kitchen stays current for a very long time. <a href="/guide-hamptons-style-kitchen" style="color:var(--brass)">Hamptons</a> and <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> are both narrower, more specific versions of the same idea.'],
+        ['The specification underneath', '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. A traditional kitchen asks more of the carcass than a flat one, because panelled doors are heavier and the hinge has to carry them without dropping. Blum hinges adjust in three directions, so the line between doors can be set and kept.'],
+      ],
+      faq: [
+        { q: 'What is a traditional kitchen?', a: 'One with panelled or profiled doors, furniture-style detailing on the island and end panels, and visible classical hardware, without reproducing a specific period.' },
+        { q: 'What is the difference between traditional and classic?', a: 'Nothing meaningful — the words are used interchangeably. Both describe framed doors and furniture detailing rather than a dated reproduction.' },
+        { q: 'Do traditional kitchens date?', a: 'The door rarely does. What dates is the finishes around it: tiled borders, ornate corbels, heavy grain and high-gloss stone.' },
+        { q: 'Can a traditional kitchen have modern appliances?', a: 'It should. Traditional describes the proportions and the door, not the equipment. Integrated appliances suit it particularly well.' },
+      ],
+    },
+    {
+      slug: 'federation-kitchen-style',
+      group: 'design',
+      nav: 'Federation',
+      title: 'Federation Kitchen Style for Australian Homes',
+      desc: 'How to put a kitchen into a Federation house without faking the period, and which details are worth keeping.',
+      h1: `Federation kitchens,<br><span class="italic brass">in a house that has opinions.</span>`,
+      lede: 'Federation houses were not built with kitchens like this. The job is not reproduction — it is working with the proportions the house already has.',
+      img: 'detail-timber-joinery',
+      alt: 'Federation style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A Federation kitchen sits in an Australian house built roughly between 1890 and 1915: high ceilings, picture rails, deep skirtings, leadlight, dark timber joinery. The original kitchens were small service rooms at the back and nobody wants one. What makes a kitchen read as Federation is matching the room rather than the era: full-height cabinetry that respects the picture rail, timber and painted finishes in the house palette, and a door with enough frame to sit beside the existing joinery.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Work to the picture rail', 'The most common mistake is cabinetry that stops at an arbitrary height and leaves a dusty gap below a three-metre ceiling. The two answers that work are running the overheads to the picture rail and stopping cleanly, or running right to the ceiling with a defined cornice. Anything between reads as unfinished. Measure the rail before anything else is decided.'],
+        ['Match the joinery, not the era', 'A Federation house already has architraves, skirtings and doors with a specific profile. A kitchen door with a comparable frame width sits beside them; a flat handleless front does not. This is why <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> and <a href="/guide-traditional-kitchen-style" style="color:var(--brass)">traditional</a> doors are the usual answers in these houses, and why the reproduction options rarely are.'],
+        ['The palette these houses carry', 'Federation interiors run warmer and deeper than Victorian ones: creams, deep reds, greens, and a lot of stained timber. A kitchen in heritage greens or a warm off-white with a timber island sits comfortably. Cold greys and stark white fight the existing timber, which is usually the one thing in the room you are not replacing.'],
+        ['What it costs', 'Nothing about the style adds cost on its own; what adds cost is the ceiling height, because full-height cabinetry means more cabinetry. Our <a href="/kitchen-cost-australia" style="color:var(--brass)">cost page</a> works in linear metres of run, so the tall bank is the line to look at. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+      ],
+      faq: [
+        { q: 'What is a Federation kitchen?', a: 'A kitchen built for an Australian house from roughly 1890 to 1915, working with its high ceilings, picture rails and existing timber joinery rather than reproducing a period kitchen.' },
+        { q: 'Should cabinetry go to the ceiling in a Federation house?', a: 'Either to the picture rail or to the ceiling with a defined cornice. Stopping somewhere between leaves a gap that reads as unfinished under a three-metre ceiling.' },
+        { q: 'What colours suit a Federation kitchen?', a: 'Warm creams, heritage greens and deep reds with timber. Cold greys fight the stained joinery that usually stays in the room.' },
+        { q: 'Can a Federation house have a modern kitchen?', a: 'Yes, but a flat handleless run beside heavy architraves and picture rails reads as a different building. A framed door bridges it.' },
+      ],
+    },
+    {
+      slug: 'victorian-kitchen-style',
+      group: 'design',
+      nav: 'Victorian',
+      title: 'Victorian Kitchen Style: Terraces and Cottages',
+      desc: 'Putting a kitchen into a Victorian terrace or cottage: narrow rooms, high ceilings, and what the period detailing actually asks for.',
+      h1: `Victorian kitchens,<br><span class="italic brass">in a room that is too narrow.</span>`,
+      lede: 'Almost every Victorian kitchen problem is the same problem: the room is long and narrow, and the ceiling is very high.',
+      img: 'galley-stone',
+      alt: 'Victorian style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A Victorian kitchen sits in a terrace, cottage or villa built roughly between 1840 and 1900. The period detailing — ornate cornices, ceiling roses, marble fireplaces, deep skirtings — is formal and quite ornamental, and the rooms are usually narrow with very high ceilings. The style question is less about door profiles than about proportion: how to fill a tall narrow room without making it feel like a corridor lined with cupboards.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Galley or single run, almost always', 'A Victorian terrace kitchen is usually too narrow for an island. A <a href="/guide-kitchen-layouts" style="color:var(--brass)">galley</a> with runs on both sides needs 1200mm clear between benches to work; below that one side has to be shallow or go. A single run with a tall bank at one end is often the better answer and feels far less enclosed.'],
+        ['Use the height, but break it', 'Cabinetry that runs unbroken to a 3.5 metre ceiling in a 2.4 metre wide room reads as a wall of doors. Break it: open shelving or a glazed section at high level, a different finish on the tall bank, or stopping the overheads and leaving the top of the wall to the original cornice. The ornament in a Victorian room is usually at ceiling level, which is an argument for not covering it.'],
+        ['Door profiles that suit the period', 'Victorian joinery is more ornamental than Federation. A profiled or beaded door suits it better than a plain Shaker, though Shaker is never wrong. Avoid the handleless options entirely — in a room this decorated they read as an unrelated insertion. <a href="/guide-traditional-kitchen-style" style="color:var(--brass)">Traditional</a> and <a href="/guide-french-provincial-kitchen" style="color:var(--brass)">French provincial</a> both sit comfortably here.'],
+        ['What it costs', 'The narrow room usually means less cabinetry, and the high ceiling usually means taller cabinetry, so the two roughly cancel. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> prices in linear metres of run. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+      ],
+      faq: [
+        { q: 'What is a Victorian kitchen?', a: 'A kitchen in an Australian house built roughly 1840 to 1900 — a terrace, cottage or villa — working around narrow rooms, very high ceilings and ornate ceiling detailing.' },
+        { q: 'Can you fit an island in a Victorian terrace?', a: 'Usually not. Most are too narrow. A single run with a tall bank at one end generally works better than forcing a galley with inadequate clearance.' },
+        { q: 'How much clearance does a galley need?', a: '1200mm clear between benches for two people to work. Below that, one side needs to be shallow or omitted.' },
+        { q: 'Should cabinetry cover a Victorian cornice?', a: 'Rarely. The ornament in these rooms is at ceiling level. Stopping the overheads below it, or glazing the high level, keeps what the room is known for.' },
+      ],
+    },
+    {
+      slug: 'art-deco-kitchen-style',
+      group: 'design',
+      nav: 'Art Deco',
+      title: 'Art Deco Kitchen Style in Australian Homes',
+      desc: 'What an Art Deco kitchen actually involves, which details carry the style, and how to avoid a themed room.',
+      h1: `Art Deco kitchens,<br><span class="italic brass">geometry, not costume.</span>`,
+      lede: 'A style defined by curves and geometry rather than ornament, which makes it one of the easier periods to reference without reproducing.',
+      img: 'black-marble-bar',
+      alt: 'Art Deco style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'An Art Deco kitchen draws on Australian houses built roughly between 1925 and 1940: curved corners, stepped geometry, strong horizontal banding, and a palette of deep colour with brass or chrome. It is a surprisingly workable style in a modern kitchen because the defining moves — a curved end to a run, a banded splashback, a bold two-tone split — are structural rather than decorative. You can reference it with three decisions and no ornament at all.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Curves are the signature', 'The single most Art Deco move available in cabinetry is a curved end panel on a run or an island. It costs more than a square end because it is a different piece of construction, and it does more for the style than any other decision. One curve in a kitchen is enough. Two is a lot. Three is a theme.'],
+        ['Banding and geometry', 'The second move is horizontal emphasis: a banded splashback, a contrasting plinth and cornice, or a benchtop detailed with a stepped edge. Deco is about repeating geometry, not applied ornament, which is why a <a href="/guide-two-tone-kitchen-style" style="color:var(--brass)">two-tone</a> split reads Deco when the colours are strong and the line is deliberate.'],
+        ['Palette and metal', 'Deep green, oxblood, black and cream, with brass or polished chrome. This is one of the few styles where a dark kitchen is historically correct rather than a current fashion, and where unlacquered brass sits naturally. Avoid matte black hardware, which reads contemporary and flattens the period reference immediately.'],
+        ['What it costs', 'Curved panels and specialist finishes sit in our <a href="/kitchens#atelier" style="color:var(--brass)">Atelier</a> range. The geometry alone — banding, two-tone, a strong palette — can be done in any collection. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> sets out what each runs.'],
+      ],
+      faq: [
+        { q: 'What is an Art Deco kitchen?', a: 'One drawing on 1925 to 1940 design: curved corners, stepped geometry, strong horizontal banding, deep colour, and brass or chrome.' },
+        { q: 'How do I make a kitchen Art Deco without it looking themed?', a: 'Three decisions, not ten. A curved end panel, a banded or two-tone split, and a deep palette with brass is enough.' },
+        { q: 'Are curved cabinets expensive?', a: 'A curved end panel is a different piece of construction from a square one, so yes, it costs more. One curve in a kitchen is usually the right number.' },
+        { q: 'What hardware suits Art Deco?', a: 'Brass or polished chrome. Matte black reads contemporary and undoes the period reference.' },
+      ],
+    },
+    {
+      slug: 'mediterranean-kitchen-style',
+      group: 'design',
+      nav: 'Mediterranean',
+      title: 'Mediterranean and Tuscan Kitchen Style in Australia',
+      desc: 'What a Mediterranean kitchen means here, how it differs from the Tuscan kitchens of the 2000s, and what carries the style now.',
+      h1: `Mediterranean kitchens,<br><span class="italic brass">warmth without the terracotta.</span>`,
+      lede: 'The Tuscan kitchen of twenty years ago gave this style a reputation it is still recovering from. The current version is far quieter.',
+      img: 'timber-island',
+      alt: 'Mediterranean style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A Mediterranean kitchen draws on southern European interiors: warm earth tones, textured and plastered finishes, arches, timber, and a strong preference for natural material over anything glossy. In Australia it suits strong light and open plans, and it has recently been rebuilt around texture rather than colour. The 2000s Tuscan kitchen — terracotta, heavy ornate timber, faux render — is a different thing and is what most people are reacting against.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Texture does the work now', 'The current Mediterranean kitchen is defined by surface rather than colour: microcement or plaster finishes, honed rather than polished stone, matte timber, and an arch somewhere if the room allows. Where the Tuscan version added colour and ornament, this one removes shine. It is why it photographs so well in Australian light, which is harsh on gloss.'],
+        ['The palette', 'Warm neutrals — bone, sand, clay, olive — with timber and natural stone. One deep accent at most. The distinguishing feature from a <a href="/guide-coastal-kitchen-design" style="color:var(--brass)">coastal kitchen</a> is temperature: coastal runs cool and blue-leaning, Mediterranean runs warm and earth-leaning, with the same restraint.'],
+        ['Where arches belong, and where they do not', 'An arched opening into a <a href="/butlers-pantries" style="color:var(--brass)">butler’s pantry</a> or a shaped niche in a splashback carries the style with one gesture. Arched cabinet doors do not — they read as the 2000s version almost immediately. Keep arches architectural, in the room rather than in the cabinetry.'],
+        ['What it costs', 'The style itself adds nothing; the finishes can. Honed natural stone is the dearest benchtop option and the most correct one here. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> shows the benchtop upgrade against each collection. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+      ],
+      faq: [
+        { q: 'What is a Mediterranean kitchen?', a: 'One drawing on southern European interiors: warm earth tones, textured plaster and timber finishes, honed stone, arches, and natural material over gloss.' },
+        { q: 'Is a Tuscan kitchen the same thing?', a: 'The 2000s Tuscan kitchen — terracotta, heavy ornate timber, faux render — is a specific dated version of it. The current style is built on texture rather than colour and ornament.' },
+        { q: 'What is the difference between Mediterranean and coastal?', a: 'Temperature. Coastal runs cool and blue-leaning; Mediterranean runs warm and earth-leaning. The restraint is similar.' },
+        { q: 'Should I use arched cabinet doors?', a: 'No. Arches belong in the architecture — an opening or a niche. Arched doors read as the dated version straight away.' },
+      ],
+    },
+    {
+      slug: 'cottage-kitchen-style',
+      group: 'design',
+      nav: 'Cottage',
+      title: 'Cottage Kitchen Style for Small Australian Homes',
+      desc: 'How a cottage kitchen works in a genuinely small room, which details are worth the space, and what to leave out.',
+      h1: `Cottage kitchens,<br><span class="italic brass">for a genuinely small room.</span>`,
+      lede: 'Most cottage kitchen photographs are of large rooms decorated to look small. A real one has about four metres of run to work with.',
+      img: 'openplan-long',
+      alt: 'Cottage style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A cottage kitchen is small, informal and warm: a short run of cabinetry, visible storage, a deep sink, painted timber and almost no hard edges. It is the one style where the constraint is the point rather than a problem to design around. The decisions that matter are about what to leave out, because in four metres of run every item you add costs you something that was already working.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['What to leave out', 'A cottage kitchen does not have room for a bank of tall cabinetry, a wide island, and a full set of overheads. Pick two. The most common successful version is a single run with a short tall bank at one end and open shelving instead of overheads, which keeps the room from feeling boxed. Our <a href="/guide-kitchen-layouts" style="color:var(--brass)">kitchen layouts guide</a> works through the trade-offs in detail.'],
+        ['Why drawers matter more here', 'In a small kitchen the depth of a cupboard is wasted space, because you cannot reach the back without emptying the front. <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">Pot drawers</a> recover that depth entirely, and in a four metre kitchen that difference is the difference between workable and not. It is the single best place to spend money in a cottage kitchen.'],
+        ['The warmth comes from material', 'Painted timber-look doors, a deep sink, an exposed timber shelf, visible crockery. Cottage warmth is about seeing things rather than hiding them, which is the opposite instruction from most small-kitchen advice. The compromise is open storage away from the cooktop and closed storage near it.'],
+        ['What it costs', 'Less than anything else, because there is less of it. A four metre cottage kitchen is the cheapest real kitchen we quote; <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> shows worked figures by run length. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+      ],
+      faq: [
+        { q: 'What is a cottage kitchen?', a: 'A small, informal, warm kitchen: a short run, visible storage, a deep sink and painted timber, with the constraint of the room treated as the point.' },
+        { q: 'How do I make a small cottage kitchen work?', a: 'Leave things out. A single run with a short tall bank and open shelving instead of overheads keeps a small room from feeling boxed in.' },
+        { q: 'Are drawers better than cupboards in a small kitchen?', a: 'Considerably. A cupboard wastes its depth because you cannot reach the back. Drawers recover it, which matters most when there is very little run.' },
+        { q: 'Is open shelving practical in a cottage kitchen?', a: 'Away from the cooktop, yes. Near it, grease makes it work. Closed storage near the heat is the compromise.' },
+      ],
+    },
+    {
+      slug: 'transitional-kitchen-style',
+      group: 'design',
+      nav: 'Transitional',
+      title: 'Transitional Kitchen Style: Between Traditional and Modern',
+      desc: 'What a transitional kitchen is, why it is the most requested style in Australia, and how to stop it reading as indecision.',
+      h1: `Transitional kitchens,<br><span class="italic brass">and how not to sit on the fence.</span>`,
+      lede: 'The most popular style in Australia, and the hardest to describe, because it is defined by what it sits between.',
+      img: 'island-calacatta',
+      alt: 'Transitional style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A transitional kitchen combines traditional form with contemporary restraint: a simple framed or lightly profiled door, clean lines, a quiet palette, and modern hardware and appliances. It exists because most people want neither a period reproduction nor a stark handleless box. Done well it reads as calm and unplaceable in time. Done badly it reads as two decisions that did not get resolved, which is the one real risk of the style.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Pick a side on each element', 'The way transitional fails is by compromising on every element at once — a half-profiled door, a half-visible handle, a mid-grey nobody chose. The way it works is picking a side on each: a clearly traditional door with clearly modern hardware, or a flat door with a traditional island and a classic benchtop. Commit on each decision and the whole reads deliberate.'],
+        ['The door is usually Shaker', 'A <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> door is the default transitional door, because its frame gives traditional form with no ornament to date. Pair it with a slim contemporary bar pull rather than a knob and the kitchen moves modern; pair it with a knob and it moves traditional. One hardware decision shifts the whole room.'],
+        ['Where to put the contemporary half', 'Usually the benchtop and the appliances. Honed stone with a slim 20mm edge, integrated appliances and a plain splashback give the modern half while the cabinetry does the traditional half. Reverse it — a flat door with an ornate splashback — and it rarely holds together.'],
+        ['What it costs', 'Shaker and lightly profiled doors sit in our <a href="/kitchens#maison" style="color:var(--brass)">Maison</a> range; flat doors start at <a href="/kitchens#essence" style="color:var(--brass)">Essence</a>. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> sets out the linear metre figures and what the benchtop upgrade adds. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+      ],
+      faq: [
+        { q: 'What is a transitional kitchen?', a: 'One combining traditional form — a framed or lightly profiled door — with contemporary restraint: clean lines, a quiet palette and modern hardware.' },
+        { q: 'Why is transitional so popular?', a: 'Most people want neither a period reproduction nor a stark handleless box. Transitional is the middle, and it dates slowly because it has no strong markers.' },
+        { q: 'How do I stop a transitional kitchen looking indecisive?', a: 'Pick a side on each element rather than compromising on all of them. A clearly traditional door with clearly modern hardware works; half-measures everywhere do not.' },
+        { q: 'What is the difference between transitional and modern?', a: 'Transitional keeps a framed door and visible hardware. Modern and contemporary kitchens go flat and handleless.' },
+      ],
+    },
+    {
+      slug: 'shaker-kitchen-style',
+      group: 'design',
+      nav: 'Shaker',
+      title: 'Shaker Kitchen Style: What It Is and What It Costs',
+      desc: 'What makes a kitchen Shaker, how the door is made, why it costs more than a flat door, and where it suits an Australian house.',
+      h1: `Shaker kitchens,<br><span class="italic brass">and what the frame costs.</span>`,
+      lede: 'The most requested style in Australia, and the one most often done badly. The difference is entirely in the door.',
+      img: 'collection-marble-03',
+      alt: 'Shaker style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A Shaker kitchen is defined by its door: a flat centre panel inside a square-edged frame, with no moulding or ornament. It came from nineteenth-century Shaker furniture, where the plainness was a religious principle rather than a design choice. In a kitchen it reads as timeless rather than trendy, which is why it survives fashion cycles. It costs more than a flat door because the frame is a separate construction, and the cheap versions fake it with a routed groove in a single board.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['How the door is actually made', 'A true Shaker door is five pieces: four frame rails and a centre panel sitting in a groove. That construction is why it costs more and why it stays flat — the panel can move with humidity without distorting the frame. A routed Shaker door is one board with a rectangle machined into it to imitate the shadow line. It is cheaper, it looks close from a distance, and it has none of the movement tolerance. Ask which you are being quoted.'],
+        ['Why it suits Australian houses', 'It sits comfortably in a Queenslander, a federation cottage, a beach house and a new build, which almost no other style does. The frame gives shadow and depth that a flat door cannot, so it reads as considered in a plain room, while staying quiet enough not to date. In a period house it is usually the correct answer; in a very modern one it can read as fussy.'],
+        ['Where people get it wrong', 'Handles. A Shaker door with a sleek modern pull fights itself. Knobs or simple bar pulls in an unlacquered finish suit it. The second mistake is pairing it with a high-gloss benchtop, which undoes the matte restraint the style depends on. Honed or matte stone is the better partner.'],
+        ['What it costs here', 'Shaker doors sit in our <a href="/kitchens#maison" style="color:var(--brass)">Maison</a> range and above, because of the frame construction. The carcasses, hardware and edging behind them are identical to every other collection — <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> sets out what the collections run per linear metre, and the door choice is what moves you between them.'],
+      ],
+      faq: [
+        { q: 'What is a Shaker kitchen?', a: 'One with doors made of a flat centre panel inside a square-edged frame, with no moulding. The plainness is the style.' },
+        { q: 'Is Shaker out of date?', a: 'It has outlasted every kitchen trend since the 1990s, largely because it has no ornament to date. It is the safest choice if you intend to stay in the house.' },
+        { q: 'Why do Shaker doors cost more?', a: 'A real one is five pieces of construction rather than a single flat panel. A routed imitation costs less and does not move with humidity the same way.' },
+        { q: 'What handles suit a Shaker kitchen?', a: 'Knobs or simple bar pulls. Sleek modern pulls fight the frame; so does a high-gloss benchtop.' },
+      ],
+    },
+    {
+      slug: 'two-tone-kitchen-style',
+      group: 'design',
+      nav: 'Two-tone',
+      title: 'Two-Tone Kitchens: How to Split the Colour',
+      desc: 'Where to put the second colour in a two-tone kitchen, which combinations work in Australian light, and why it costs no more than a single colour.',
+      h1: `Two-tone kitchens,<br><span class="italic brass">and where to split them.</span>`,
+      lede: 'The cheapest way to make a kitchen look designed rather than bought, because a second colour costs nothing extra when the doors are made to order.',
+      img: 'signature-dark',
+      alt: 'Two-tone style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A two-tone kitchen uses one colour on the base cabinets and another on the overheads, or a contrasting island against the main run. The convention that works is darker below and lighter above, because it grounds the room and keeps the eye up. Because our doors are made to your order rather than picked from stock, a second colour adds nothing to the price — which makes this the rare design decision that is free.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Where to put the split', 'Three placements work. <strong>Base dark, overheads light</strong> is the safest and makes a small room feel taller. <strong>Island contrasting</strong> against an otherwise uniform run makes the island the feature without any other effort. <strong>Tall bank in a third colour</strong>, usually a pantry and oven tower treated as a piece of furniture. What does not work is splitting a single run horizontally at bench height, which reads as an unfinished renovation.'],
+        ['Combinations that hold up', 'Deep green or navy below with off-white above is the pairing that has aged best in Australian houses. Charcoal with warm timber works in strong light and suits coastal and hinterland houses. Two neutrals a few shades apart — bone and stone, say — gives the depth without committing to a colour you may tire of. Avoid two strong colours of similar weight; they compete rather than contrast.'],
+        ['Australian light is not European light', 'A colour chosen from a European kitchen photograph will read lighter and harsher here, because our light is stronger and bluer. Dark colours hold up better in Australian light than they do in Northern Hemisphere interiors, which is why deep greens and navies work so well in Queensland houses and why mid-greys often look flat.'],
+        ['What it costs', 'Nothing extra. Doors are made to your order, so two colours is the same price as one. Decide on real samples in the actual room rather than on a screen — <a href="/contact" style="color:var(--brass)">ask for samples</a> and look at them morning and afternoon before committing.'],
+      ],
+      faq: [
+        { q: 'Does a two-tone kitchen cost more?', a: 'Not with made-to-order doors. A second colour is the same price as one, which makes it the cheapest way to add depth.' },
+        { q: 'Where should the darker colour go?', a: 'Usually on the base cabinets. Dark below and light above grounds the room and keeps the ceiling feeling high.' },
+        { q: 'What two-tone combinations work best?', a: 'Deep green or navy with off-white has aged best here. Charcoal with warm timber suits strong coastal light. Two neutrals a few shades apart is the low-risk version.' },
+        { q: 'Can I two-tone a small kitchen?', a: 'Yes, and it often helps. Darker bases and lighter overheads make a small room read taller.' },
+      ],
+    },
+    {
+      slug: 'contemporary-kitchen-style',
+      group: 'design',
+      nav: 'Contemporary',
+      title: 'Contemporary Kitchen Style: Flat, Quiet, Handleless',
+      desc: 'What makes a kitchen contemporary rather than modern, why the detail matters more than the colour, and what it demands of the cabinetry underneath.',
+      h1: `Contemporary kitchens,<br><span class="italic brass">where the detail is the design.</span>`,
+      lede: 'A style with nowhere to hide. Strip out the ornament and every gap, join and alignment becomes the thing people see.',
+      img: 'glossy-dark',
+      alt: 'Contemporary style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A contemporary kitchen is flat-fronted, handleless or near it, with long uninterrupted runs and minimal visual breaks. There is no moulding, no frame, no feature to draw the eye away from the cabinetry itself. That is what makes it demanding: with nothing to look at but the surfaces, the quality of the gaps between doors is the design. It needs square carcasses and adjustable hinges more than any other style.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['Contemporary is not the same as modern', 'Modern, strictly, means mid-century — a specific period with timber, tapered legs and warmth. Contemporary means now: flat fronts, handleless or shadowline, long horizontal lines, restrained colour. The words are used interchangeably in showrooms, which is why people end up with something other than what they pictured. Describe the detail you want rather than naming a style.'],
+        ['Why alignment becomes everything', 'A run of flat handleless doors shows every inconsistency. A gap that varies by a millimetre along a four metre run is visible, where the same variation beside a Shaker frame is not. This is the style where <a href="/guide-hinge-overlay-explained" style="color:var(--brass)">full overlay hinges</a> and three-way adjustment stop being a specification detail and become the whole look.'],
+        ['Choosing the opening method', 'Three ways to open a handleless door: a <a href="/guide-what-is-a-shadowline" style="color:var(--brass)">shadowline</a> recess, a J-pull profiled into the door, or <a href="/guide-push-to-open-hardware-explained" style="color:var(--brass)">push to open</a>. Each gives a different line. The shadowline is the most architectural; the J-pull the most practical; push to open the cleanest and the one with the most to go wrong. <a href="/guide-soft-close-vs-push-to-open" style="color:var(--brass)">Soft close versus push to open</a> covers why combining them costs more.'],
+        ['What it costs', 'A contemporary kitchen is not inherently dearer — a flat door is simpler than a framed one. What costs is the finish and the opening method. Our <a href="/kitchens#essence" style="color:var(--brass)">Essence</a> collection is flat-fronted and starts the range; <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> shows what each collection runs per linear metre.'],
+      ],
+      faq: [
+        { q: 'What is a contemporary kitchen?', a: 'Flat-fronted, handleless or near it, with long uninterrupted runs and no moulding or ornament.' },
+        { q: 'What is the difference between modern and contemporary?', a: 'Modern strictly means mid-century, with timber and warmth. Contemporary means current: flat, restrained, handleless. Showrooms use the words interchangeably.' },
+        { q: 'Do contemporary kitchens cost more?', a: 'Not inherently. A flat door is simpler than a framed one. The cost is in the finish and the opening method, not the style.' },
+        { q: 'Why do the gaps matter so much?', a: 'With no ornament to look at, the gaps between doors are what the eye reads. A variation that would be invisible on a Shaker kitchen is obvious on a flat run.' },
+      ],
+    },
+    {
+      slug: 'country-kitchen-style',
+      group: 'design',
+      nav: 'Country',
+      title: 'Country Kitchen Style for Australian Houses',
+      desc: 'What a country kitchen means in an Australian context rather than an English one, and the practical decisions that make one work.',
+      h1: `Country kitchens,<br><span class="italic brass">built for this country.</span>`,
+      lede: 'Most country kitchen photographs are of English houses with cold rooms and small windows. An Australian country kitchen has a different brief entirely.',
+      img: 'timber-island',
+      alt: 'Country style kitchen by Bilt & Co',
+      read: '6 min read',
+      answer: 'A country kitchen is informal, practical and built around a large central work surface, usually with visible storage, a deep sink and a freestanding feel rather than a fitted one. The Australian version diverges from the English one in ways that matter: hotter light, a verandah or back door that is really the main entrance, and a room that often doubles as the laundry route. Designing from a Cotswolds photograph gives you a dark room that does not work here.',
+      inlineCta: {
+        after: 2,
+        eyebrow: 'Any style, same specification',
+        title: 'The style is the door. Everything behind it is the same.',
+        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        label: 'Get my free quote',
+        href: '/contact',
+      },
+      cta: {
+        eyebrow: 'Your style',
+        title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>',
+        body: 'A fixed, itemised quote drawn to your room in the style you want, flat packed or delivered assembled.',
+        image: 'material-samples',
+        alt: 'Door, stone and hardware samples',
+      },
+      sections: [
+        ['What makes it Australian rather than English', 'Light. English country kitchens are dark because the rooms are dark and the palette compensates with warmth. An Australian room with the same palette reads gloomy under much stronger light. The local version runs lighter, with more timber and less painted depth, and relies on the view out rather than the warmth in. The second difference is the back door — in most country houses here it is the main entrance, and the kitchen has to tolerate boots and buckets.'],
+        ['The island does the work', 'A country kitchen is organised around one large central surface rather than a tight work triangle, because the room usually serves more people doing more things. Make it longer than looks necessary and leave the ends open. Timber on the island against stone elsewhere is the pairing that reads country without tipping into theme.'],
+        ['Visible storage, and the limit of it', 'Open shelves and a dresser-style bank are what signal country, and they are also what collects dust and grease. The workable compromise is open shelving away from the cooktop and closed storage near it. A <a href="/butlers-pantries" style="color:var(--brass)">butler’s pantry</a> does the rest, which is why so many country kitchens have one.'],
+        ['Specification for hard use', 'This is the style most likely to meet mud, heat and volume. 18mm moisture-resistant board, laser-bonded edging and Blum runners matter more here than in a style kitchen that gets used gently. <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">Pot drawers</a> earn their cost in a country kitchen faster than anywhere.'],
+      ],
+      faq: [
+        { q: 'What is a country kitchen?', a: 'An informal, practical kitchen organised around a large central work surface, with visible storage, a deep sink and a freestanding rather than fitted feel.' },
+        { q: 'How is an Australian country kitchen different?', a: 'Lighter. English country palettes read gloomy in Australian light. Ours runs more timber and less painted depth, and has to tolerate a back door that is really the main entrance.' },
+        { q: 'Do I need an island for a country kitchen?', a: 'It is the organising element of the style. Make it longer than seems necessary and leave the ends open.' },
+        { q: 'Is open shelving practical?', a: 'Away from the cooktop, yes. Near it, grease makes it work. Closed storage near the heat and open shelving elsewhere is the compromise that lasts.' },
+      ],
+    },
     {
       slug: 'what-is-a-shadowline',
       group: 'design',
@@ -3265,7 +3791,7 @@ module.exports = function (api) {
       img: 'detail-black-cabinetry',
       alt: 'Shadowline detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'A shadowline is a recess set into or behind the top edge of a door or drawer front, deep enough to get your fingers into, so the door opens without a handle. It reads as a dark line across the run @EM@ hence the name. It differs from a J-pull, where the door itself is profiled, and from a handle rail, where an aluminium channel is fixed behind the fronts. All three achieve a handleless look; the shadowline is the most architectural and the least forgiving of misalignment.',
+      answer: 'A shadowline is a recess set into or behind the top edge of a door or drawer front, deep enough to get your fingers into, so the door opens without a handle. It reads as a dark line across the run — hence the name. It differs from a J-pull, where the door itself is profiled, and from a handle rail, where an aluminium channel is fixed behind the fronts. All three achieve a handleless look; the shadowline is the most architectural and the least forgiving of misalignment.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3284,7 +3810,7 @@ module.exports = function (api) {
       sections: [
         ['How it differs from the alternatives', 'A <strong>J-pull</strong> shapes the door front itself into a hook you grip, so the profile is part of the door. A <strong>handle rail</strong> is a separate aluminium channel fixed behind the tops of the fronts. A <strong>shadowline</strong> is a recess formed in the cabinetry, usually by setting the front back from the carcass. Our <a href="/guide-what-is-a-handleless-kitchen" style="color:var(--brass)">handleless kitchen guide</a> compares all of them on cost and feel.'],
         ['What it does to the look', 'It removes the strongest horizontal interruption in a kitchen. Handles draw the eye in a repeating rhythm; a shadowline replaces that with one continuous line, which makes a run read as a single plane. On a long island or a full-height bank of doors the effect is significant. It also suits dark cabinetry, where the recess disappears entirely.'],
-        ['Where it costs you', 'Grip. A handle gives you something to pull with your whole hand; a shadowline gives you fingertips. For anyone with reduced hand strength that matters, and it is the reason a shadowline is rarely the right answer in an <a href="/accessible-kitchens" style="color:var(--brass)">accessible kitchen</a>. It also collects dust along the recess, and it is unforgiving @EM@ any variation in the gap between fronts is visible along the whole line.'],
+        ['Where it costs you', 'Grip. A handle gives you something to pull with your whole hand; a shadowline gives you fingertips. For anyone with reduced hand strength that matters, and it is the reason a shadowline is rarely the right answer in an <a href="/accessible-kitchens" style="color:var(--brass)">accessible kitchen</a>. It also collects dust along the recess, and it is unforgiving — any variation in the gap between fronts is visible along the whole line.'],
         ['Getting the gaps right', 'A shadowline only works if the fronts sit in a consistent plane, which means the carcasses have to be square and the hinges adjustable. Blum hinges adjust in three directions, so the line can be trued on site and kept true. Cabinets ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> arrive with the doors already hung and adjusted; <a href="/flat-pack-kitchens" style="color:var(--brass)">flat packed</a> means you set that line yourself.'],
       ],
       faq: [
@@ -3305,7 +3831,7 @@ module.exports = function (api) {
       img: 'media-wall',
       alt: 'Return panels detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'A return panel, also called an end panel, is a finished panel fixed to the exposed side of a cabinet where the run stops. Cabinet carcasses are usually made in a plain board that was never meant to be seen, so wherever a run ends in open space @EM@ at the end of an island, beside a fridge, where a bench turns a corner @EM@ a return panel in the door finish covers it. Without one you see the carcass edge and the kitchen reads as unfinished.',
+      answer: 'A return panel, also called an end panel, is a finished panel fixed to the exposed side of a cabinet where the run stops. Cabinet carcasses are usually made in a plain board that was never meant to be seen, so wherever a run ends in open space — at the end of an island, beside a fridge, where a bench turns a corner — a return panel in the door finish covers it. Without one you see the carcass edge and the kitchen reads as unfinished.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3325,7 +3851,7 @@ module.exports = function (api) {
         ['Where a kitchen needs them', 'The end of any run that is not against a wall. Both ends of an island. The side of a tall pantry that faces into the room. The exposed side beside a freestanding fridge or oven. Anywhere a bench turns and leaves a cabinet side in view. On an average kitchen that is usually between two and six panels.'],
         ['Why not just use a nice carcass board', 'Some suppliers do, matching the carcass to the door colour so no return panel is needed. It works, and it costs more per cabinet across the whole kitchen to solve a problem that exists on three of them. A return panel puts the finish only where it is seen, which is why it is the normal approach.'],
         ['Thickness and finish', 'A return panel is usually the same material and finish as the doors, so it reads as part of the same surface. On an island it is often thicker than a door to give the end weight, and it can be run past the bench edge or stopped under it depending on the look. Both are decisions made on the drawing.'],
-        ['On the quote', 'Return panels are listed individually with their sizes, so you can see how many the design needs and where. They are not an optional extra we add later @EM@ they are drawn in from the start. <a href="/contact" style="color:var(--brass)">send us the dimensions</a> and the drawing shows each one.'],
+        ['On the quote', 'Return panels are listed individually with their sizes, so you can see how many the design needs and where. They are not an optional extra we add later — they are drawn in from the start. <a href="/contact" style="color:var(--brass)">send us the dimensions</a> and the drawing shows each one.'],
       ],
       faq: [
         { q: 'What is a return panel?', a: 'A finished panel covering the exposed side of a cabinet where a run ends, so you see the door finish rather than the raw carcass.' },
@@ -3365,7 +3891,7 @@ module.exports = function (api) {
         ['Why the gap exists', 'Standard overhead cabinets are a set height, and ceilings are not. In a room with a 2.4m ceiling the overheads often land a few hundred millimetres short; with 2.7m ceilings the gap is substantial. Something has to happen in that space, and doing nothing is itself a choice.'],
         ['Bulkhead, build-to-ceiling, or open', 'A <strong>bulkhead</strong> gives a clean line and nothing to dust, and it is the cheapest of the three because plasterboard is cheaper than cabinetry. <strong>Building to the ceiling</strong> adds real storage, though the top shelf needs a step to reach, and it costs more because the cabinets are taller. <strong>Leaving it open</strong> suits a period house and gives display space, at the cost of a surface that collects grease and dust.'],
         ['What it does to the kitchen', 'Building to the ceiling makes a room feel taller and adds the storage most kitchens are short of. A bulkhead makes the run read as built-in and deliberate. An open gap reads informal. None is wrong; they suit different houses, and the deciding factor is often ceiling height rather than taste.'],
-        ['Deciding before we cut', 'Overhead height is set on the drawing, so this is settled before anything is made. Tell us the ceiling height in each corner @EM@ they differ, floors are rarely level @EM@ and whether a bulkhead already exists. Our <a href="/guide-how-to-measure-for-a-kitchen" style="color:var(--brass)">measuring guide</a> covers what to record.'],
+        ['Deciding before we cut', 'Overhead height is set on the drawing, so this is settled before anything is made. Tell us the ceiling height in each corner — they differ, floors are rarely level — and whether a bulkhead already exists. Our <a href="/guide-how-to-measure-for-a-kitchen" style="color:var(--brass)">measuring guide</a> covers what to record.'],
       ],
       faq: [
         { q: 'What is a bulkhead in a kitchen?', a: 'A boxed-in section of ceiling that drops down to meet the top of the overhead cabinets, closing the gap above them.' },
@@ -3385,7 +3911,7 @@ module.exports = function (api) {
       img: 'galley-stone',
       alt: 'Undermount vs topmount detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'A <strong>topmount</strong> or drop-in sink sits on top of the benchtop with its rim visible. An <strong>undermount</strong> is fixed beneath, so the benchtop edge forms the opening and you can sweep straight into the bowl. Undermount needs a benchtop that can take a sealed, finished cut-out @EM@ stone, porcelain or solid surface. Most laminate tops cannot, because the exposed core would take on water, so laminate usually means topmount.',
+      answer: 'A <strong>topmount</strong> or drop-in sink sits on top of the benchtop with its rim visible. An <strong>undermount</strong> is fixed beneath, so the benchtop edge forms the opening and you can sweep straight into the bowl. Undermount needs a benchtop that can take a sealed, finished cut-out — stone, porcelain or solid surface. Most laminate tops cannot, because the exposed core would take on water, so laminate usually means topmount.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3403,7 +3929,7 @@ module.exports = function (api) {
       },
       sections: [
         ['What changes day to day', 'With an undermount there is no rim on the bench, so crumbs and water go straight in and the whole surface wipes in one movement. With a topmount the rim sits proud and the seal around it is where grime collects over the years. That is the practical difference, and for most people it is the deciding one.'],
-        ['What your benchtop allows', 'Stone, engineered stone and porcelain take an undermount, because the cut edge is polished and sealed. Laminate generally does not @EM@ the chipboard core behind the laminate will swell if water reaches it, and a cut-out puts the core right at the wettest point in the kitchen. Some laminate products are rated for undermount; most are not, and the manufacturer decides, not the installer.'],
+        ['What your benchtop allows', 'Stone, engineered stone and porcelain take an undermount, because the cut edge is polished and sealed. Laminate generally does not — the chipboard core behind the laminate will swell if water reaches it, and a cut-out puts the core right at the wettest point in the kitchen. Some laminate products are rated for undermount; most are not, and the manufacturer decides, not the installer.'],
         ['Cost and fabrication', 'An undermount costs more because the cut-out has to be polished and the sink fixed and sealed from below, usually by the stone fabricator rather than the plumber. A topmount drops into a cut-out and clamps from above, which any installer can do. The difference is in labour, not the sink.'],
         ['Ordering either way', 'Tell us the sink model before we cut, or the cut-out dimensions from its specification sheet. Undermount sinks are set out by the fabricator when they template the stone, which happens after the cabinets are installed. Our <a href="/guide-appliance-cut-out-sizes" style="color:var(--brass)">cut-out guide</a> covers why the model matters before anything is made.'],
       ],
@@ -3443,8 +3969,8 @@ module.exports = function (api) {
       },
       sections: [
         ['Strip versus puck', 'A <strong>strip</strong> in an aluminium channel gives even light along the whole bench and, in a channel with a diffuser, no visible hot spots or reflections in a gloss splashback. <strong>Puck lights</strong> are cheaper and simpler but throw pools of light with dark gaps between, and they reflect as bright dots in any shiny surface behind the bench. For a stone or glass splashback the channel is worth the difference.'],
-        ['Warm or cool', 'Colour temperature changes how food and finishes look. Warmer light flatters timber and warm stone; cooler light reads cleaner and shows detail. What matters most is matching it to the other lighting in the room @EM@ a warm ceiling and a cool bench look like a mistake.'],
-        ['Where the driver goes', 'LED strip needs a transformer or driver, and it has to live somewhere accessible @EM@ inside an overhead cabinet, in a bulkhead, or in the pantry. If it is buried behind a fixed panel, replacing it later means taking cabinetry apart. Decide its location on the drawing.'],
+        ['Warm or cool', 'Colour temperature changes how food and finishes look. Warmer light flatters timber and warm stone; cooler light reads cleaner and shows detail. What matters most is matching it to the other lighting in the room — a warm ceiling and a cool bench look like a mistake.'],
+        ['Where the driver goes', 'LED strip needs a transformer or driver, and it has to live somewhere accessible — inside an overhead cabinet, in a bulkhead, or in the pantry. If it is buried behind a fixed panel, replacing it later means taking cabinetry apart. Decide its location on the drawing.'],
         ['What your electrician needs', 'Power at the right height and position before the overheads are fixed, plus a switch location. All of that is marked on the dimensioned service drawing that ships with every order, alongside the waste and water points. Our <a href="/guide-how-to-install-a-supplied-kitchen" style="color:var(--brass)">install guide</a> covers when the electrician does rough-in versus fit-off.'],
       ],
       faq: [
@@ -3482,7 +4008,7 @@ module.exports = function (api) {
         alt: 'Door, board and hardware samples',
       },
       sections: [
-        ['What each is for', 'Soft close is about longevity and noise. A drawer slammed daily for ten years loosens its joints and its runners; a damper removes that entirely, and it is why we fit it as standard. Push to open is about appearance @EM@ it lets a kitchen have no handles at all, without a shadowline or a J-pull.'],
+        ['What each is for', 'Soft close is about longevity and noise. A drawer slammed daily for ten years loosens its joints and its runners; a damper removes that entirely, and it is why we fit it as standard. Push to open is about appearance — it lets a kitchen have no handles at all, without a shadowline or a J-pull.'],
         ['Why they conflict', 'Push to open works by holding the front under slight tension and releasing it when pressed. Soft close resists movement at the end of travel. Put a basic version of each on the same drawer and the drawer either will not spring open or will not close softly. The combined mechanisms are engineered to sequence the two, which is why they are a separate, dearer product line.'],
         ['Which to choose', 'If you want handles or a shadowline, take soft close everywhere and be done. If you want a completely handle-free kitchen, decide whether the extra cost of combined mechanisms is worth it, or accept push to open without damping on those fronts. Our <a href="/guide-push-to-open-hardware-explained" style="color:var(--brass)">push-to-open guide</a> and <a href="/guide-soft-close-hinges-explained" style="color:var(--brass)">soft-close guide</a> cover each on its own.'],
         ['What we fit as standard', 'Soft close on every hinge and every drawer runner, from Blum, at no extra line on the quote. Push to open is quoted per cabinet where you want it, and we will tell you which mechanism combines the two and what it costs before you decide.'],
@@ -3562,7 +4088,7 @@ module.exports = function (api) {
         alt: 'Door, board and hardware samples',
       },
       sections: [
-        ['What the rule says', 'Keep the three points within comfortable walking distance of each other, keep no leg so short that two of them crowd, and keep traffic from cutting through the middle. In a galley or an L-shaped kitchen this works well and catches genuinely bad layouts @EM@ a fridge stranded at the far end of a run, or a sink with nowhere to stand.'],
+        ['What the rule says', 'Keep the three points within comfortable walking distance of each other, keep no leg so short that two of them crowd, and keep traffic from cutting through the middle. In a galley or an L-shaped kitchen this works well and catches genuinely bad layouts — a fridge stranded at the far end of a run, or a sink with nowhere to stand.'],
         ['Where it breaks down', 'Modern kitchens often have more than three points: a second sink in an island, a separate oven tower, a microwave drawer, a coffee station. They frequently have two people working at once, and an island that traffic is meant to pass. The triangle has nothing to say about any of that, and forcing a layout to satisfy it can produce a worse kitchen.'],
         ['The more useful idea', 'Think in zones instead: a wet zone at the sink and dishwasher, a hot zone at the cooktop and oven, a cold zone at the fridge, and a prep zone with clear bench between wet and hot. The single most valuable thing in most kitchens is uninterrupted bench between the sink and the cooktop, and no triangle rule tells you that.'],
         ['Testing it on a drawing', 'Walk your own current kitchen and notice where you actually go. Then check the drawing against it. Our <a href="/guide-kitchen-layouts" style="color:var(--brass)">kitchen layouts guide</a> compares galley, L, U and island plans on this. Every kitchen we draw comes back as a dimensioned plan you can walk through before anything is cut.'],
@@ -3585,7 +4111,7 @@ module.exports = function (api) {
       img: 'joinery-sketch',
       alt: 'Power point placement detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'There is no fixed number a kitchen needs, but almost every kitchen is planned with too few. Count the appliances that live on the bench permanently, add the ones used weekly, add the ones inside cabinets @EM@ microwave, dishwasher, oven, rangehood, bin motor, under-cabinet lighting @EM@ and then add spares, because you will buy appliances you have not thought of. All of it goes on the service drawing before rough-in, because moving a point after the splashback is on means removing the splashback.',
+      answer: 'There is no fixed number a kitchen needs, but almost every kitchen is planned with too few. Count the appliances that live on the bench permanently, add the ones used weekly, add the ones inside cabinets — microwave, dishwasher, oven, rangehood, bin motor, under-cabinet lighting — and then add spares, because you will buy appliances you have not thought of. All of it goes on the service drawing before rough-in, because moving a point after the splashback is on means removing the splashback.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3604,7 +4130,7 @@ module.exports = function (api) {
       sections: [
         ['Count what actually lives on the bench', 'Kettle, toaster, coffee machine and a phone charger is four before you have cooked anything. A stand mixer, blender or air fryer is more. Appliances that sit out permanently need a point they can stay plugged into; appliances used weekly need one within reach of where they are stored. Those are different positions.'],
         ['The ones that are easy to forget', 'The dishwasher and the oven need their own supply and often a dedicated circuit. The rangehood needs power above the cooktop. A microwave built into a cabinet needs a point inside that cabinet, positioned so the plug does not stop the appliance sliding back. Motorised bins and under-cabinet lighting each need their own. None of these are visible on a bench, and all of them are awkward to add later.'],
-        ['Height and position', 'Bench-height points sit above the splashback, and their exact height matters if the splashback is a single slab @EM@ the cut-outs are made when the slab is made. Points inside cabinets need to clear shelves and drawer boxes. An island needs its supply routed through the floor before the slab or the flooring is finished, which makes it one of the earliest decisions in the whole job.'],
+        ['Height and position', 'Bench-height points sit above the splashback, and their exact height matters if the splashback is a single slab — the cut-outs are made when the slab is made. Points inside cabinets need to clear shelves and drawer boxes. An island needs its supply routed through the floor before the slab or the flooring is finished, which makes it one of the earliest decisions in the whole job.'],
         ['How it gets recorded', 'Every order ships with a dimensioned service drawing marking each waste, water point and outlet, so your electrician roughs in to the plan rather than to a guess. That drawing is the single thing that prevents a cabinet being cut on site to clear a point nobody planned for. <a href="/contact" style="color:var(--brass)">send us the dimensions</a> and it comes back with the drawing.'],
       ],
       faq: [
@@ -3625,7 +4151,7 @@ module.exports = function (api) {
       img: 'detail-timber-joinery',
       alt: 'Standard cabinet sizes detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'Australian base cabinets are typically 720mm high before the kickboard, giving a finished bench height near 900mm, and typically 560 to 600mm deep. Overheads are usually 300 to 350mm deep. Widths run in 150mm steps from 300mm up to about 1200mm. Those are conventions driven by appliance sizes and by the width of the board the cabinets are cut from, not rules @EM@ and a cabinet cut to your wall will always fit better than one picked from the list.',
+      answer: 'Australian base cabinets are typically 720mm high before the kickboard, giving a finished bench height near 900mm, and typically 560 to 600mm deep. Overheads are usually 300 to 350mm deep. Widths run in 150mm steps from 300mm up to about 1200mm. Those are conventions driven by appliance sizes and by the width of the board the cabinets are cut from, not rules — and a cabinet cut to your wall will always fit better than one picked from the list.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3722,7 +4248,7 @@ module.exports = function (api) {
         alt: 'Door, board and hardware samples',
       },
       sections: [
-        ['Full overlay', 'The standard for contemporary kitchens. The door covers the cabinet side almost entirely, and adjacent doors are separated by a gap of a few millimetres. It hides the carcass completely, which means the carcass material matters less visually @EM@ and it makes even gaps essential, because a run of full-overlay doors shows any misalignment immediately.'],
+        ['Full overlay', 'The standard for contemporary kitchens. The door covers the cabinet side almost entirely, and adjacent doors are separated by a gap of a few millimetres. It hides the carcass completely, which means the carcass material matters less visually — and it makes even gaps essential, because a run of full-overlay doors shows any misalignment immediately.'],
         ['Half overlay', 'Used where two cabinets share a side and each door covers half of it. You see it in older kitchens and in some flat pack systems. It is not a worse choice, but it produces a wider line between doors, which reads as more traditional.'],
         ['Inset', 'The door sits inside the cabinet opening, flush with the frame. It is the hardest to execute because the gap around the door is visible on all four sides, so any movement in the carcass or the house shows. It suits Shaker and period kitchens and it demands a carcass that stays square.'],
         ['What we use', 'Full overlay as standard, on Blum hinges with three-way adjustment so the gaps can be brought true on site and kept true. If you want an inset look we will quote it, and we will be honest that it is less tolerant of an old house that moves. Cabinets arrive with doors already hung and adjusted when you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>.'],
@@ -3762,7 +4288,7 @@ module.exports = function (api) {
         alt: 'Door, board and hardware samples',
       },
       sections: [
-        ['What thickness actually affects', 'Appearance first. A 20mm top reads light and contemporary; a 40mm edge reads substantial and traditional. Weight second @EM@ a genuinely solid 40mm slab is heavy enough to affect what the cabinets and the floor have to carry. Cost third, and mostly through the extra fabrication a built-up edge needs rather than the material itself.'],
+        ['What thickness actually affects', 'Appearance first. A 20mm top reads light and contemporary; a 40mm edge reads substantial and traditional. Weight second — a genuinely solid 40mm slab is heavy enough to affect what the cabinets and the floor have to carry. Cost third, and mostly through the extra fabrication a built-up edge needs rather than the material itself.'],
         ['Mitred versus solid', 'A mitred edge joins a strip of the same slab at 45 degrees so the pattern runs around the corner and the join is almost invisible when done well. It is the normal way to get a thick look. A genuinely solid 40mm slab exists but costs considerably more and weighs roughly twice as much. Our <a href="/guide-what-is-a-mitred-join" style="color:var(--brass)">guide to mitred joins</a> covers how that edge is made.'],
         ['Laminate is different', 'Laminate benchtops come in standard thicknesses from the manufacturer, commonly around 33mm, with a postformed or square edge. You are choosing from what is made rather than specifying a thickness, and the decision is really about edge profile and colour.'],
         ['What we quote', 'Thickness and edge profile are separate lines on the quote, so you can see what the thicker look costs before committing to it. <a href="/contact" style="color:var(--brass)">send us the dimensions</a> and we will price the options side by side.'],
@@ -3785,7 +4311,7 @@ module.exports = function (api) {
       img: 'detail-stone-black',
       alt: 'Filler panels detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'A filler panel is a piece of matching board fitted between a cabinet and a wall, or between two cabinets, to close a gap that the cabinets do not fill. Catalogue kitchens come in fixed widths, so any wall that is not an exact multiple of those widths leaves a gap, and a filler covers it. Cut-to-size cabinetry sizes the cabinets to the wall instead, so fillers are used deliberately @EM@ for door clearance in a corner, for example @EM@ rather than to hide arithmetic.',
+      answer: 'A filler panel is a piece of matching board fitted between a cabinet and a wall, or between two cabinets, to close a gap that the cabinets do not fill. Catalogue kitchens come in fixed widths, so any wall that is not an exact multiple of those widths leaves a gap, and a filler covers it. Cut-to-size cabinetry sizes the cabinets to the wall instead, so fillers are used deliberately — for door clearance in a corner, for example — rather than to hide arithmetic.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3804,7 +4330,7 @@ module.exports = function (api) {
       sections: [
         ['Why catalogue kitchens need them', 'A cabinet range in 150mm steps cannot fill a 3140mm wall exactly. The run adds to 3000mm and a 140mm filler does the rest. That 140mm is space you paid for and cannot use, and on a kitchen with two such walls it adds up to most of a drawer bank.'],
         ['When a filler is the right answer anyway', 'In an internal corner, a filler gives the door or drawer clearance to open past the cabinet next to it. Against an out-of-square wall, a scribed filler absorbs the taper so the cabinet run stays straight. Beside a fridge, a filler keeps the door swing clear. All of those are deliberate, not waste.'],
-        ['Scribing', 'A filler against a wall is usually scribed @EM@ cut to follow the wall’s actual line rather than assuming it is straight. Walls rarely are. Our <a href="/guide-what-is-a-scribe-piece" style="color:var(--brass)">guide to scribe pieces</a> covers how that is done and why it matters more in older houses.'],
+        ['Scribing', 'A filler against a wall is usually scribed — cut to follow the wall’s actual line rather than assuming it is straight. Walls rarely are. Our <a href="/guide-what-is-a-scribe-piece" style="color:var(--brass)">guide to scribe pieces</a> covers how that is done and why it matters more in older houses.'],
         ['What we do', 'Cabinets are cut to your measured wall, so fillers appear where they earn their place and not where the catalogue ran out of sizes. Every filler is shown on the drawing before anything is cut, with its width, so you can see exactly what it is doing.'],
       ],
       faq: [
@@ -3825,7 +4351,7 @@ module.exports = function (api) {
       img: 'matte-black-bank',
       alt: 'Drawers vs cupboards detail on Bilt & Co cabinetry',
       read: '5 min read',
-      answer: 'A base cupboard with a shelf makes you kneel and reach to the back. A pot drawer brings the whole contents out to you. For anything heavy or deep @EM@ pots, pantry goods, appliances @EM@ drawers are substantially more usable, and full-extension runners mean you reach the back without moving anything at the front. They cost more per cabinet because of the hardware. The one place a cupboard still wins is under the sink, where the trap and the waste take up the space a drawer box would need.',
+      answer: 'A base cupboard with a shelf makes you kneel and reach to the back. A pot drawer brings the whole contents out to you. For anything heavy or deep — pots, pantry goods, appliances — drawers are substantially more usable, and full-extension runners mean you reach the back without moving anything at the front. They cost more per cabinet because of the hardware. The one place a cupboard still wins is under the sink, where the trap and the waste take up the space a drawer box would need.',
       inlineCta: {
         after: 2,
         eyebrow: 'Cut to your room',
@@ -3885,7 +4411,7 @@ module.exports = function (api) {
         ['Cut-out is not the same as appliance size', 'A 600mm cooktop is not a 600mm hole. The published cut-out is usually smaller, because the glass or steel edge sits on the benchtop around it. An oven described as 600mm needs a cabinet opening with its own specified height, width and depth plus ventilation clearance. Using the marketing size instead of the cut-out size is the classic mistake.'],
         ['Where to find the numbers', 'The manufacturer’s specification sheet, usually a PDF on their website under the model number, with a dimensioned diagram. The installation manual has the same figures. If the appliance is already in your possession, the numbers are often printed inside the door or on a label. Send us the model number and we will find them.'],
         ['Clearances matter as much as the opening', 'Ovens need air around them or they overheat and fail early. Dishwashers need room for the door to clear the bench overhang and the kickboard. Rangehoods have a minimum height above the cooktop that is a safety requirement, not a preference, and it differs between gas and induction. All of that goes on the drawing.'],
-        ['If you have not chosen appliances yet', 'Tell us the sizes you intend @EM@ 600mm oven, 900mm cooktop, standard dishwasher @EM@ and we will draw to the common cut-outs for those categories. Then confirm the actual models before we cut. Nothing goes to the saw until the numbers are signed off. <a href="/contact" style="color:var(--brass)">send us the dimensions</a>.'],
+        ['If you have not chosen appliances yet', 'Tell us the sizes you intend — 600mm oven, 900mm cooktop, standard dishwasher — and we will draw to the common cut-outs for those categories. Then confirm the actual models before we cut. Nothing goes to the saw until the numbers are signed off. <a href="/contact" style="color:var(--brass)">send us the dimensions</a>.'],
       ],
       faq: [
         { q: 'What is an appliance cut-out size?', a: 'The opening the appliance needs, published by the manufacturer. It differs from the appliance’s overall dimensions, sometimes by a significant margin.' },
@@ -7594,11 +8120,11 @@ module.exports = function (api) {
      upgrades page rather than competing with flat-pack-kitchens.html for its
      own head term. */
   const NATIONAL_CITIES = [
-    ['sydney', 'Sydney’], [’melbourne’, ’Melbourne’], [’perth’, ’Perth'],
-    ['adelaide', 'Adelaide’], [’canberra’, ’Canberra’], [’hobart’, ’Hobart'],
-    ['darwin', 'Darwin’], [’gold-coast’, ’the Gold Coast’], [’newcastle’, ’Newcastle'],
-    ['wollongong', 'Wollongong’], [’townsville’, ’Townsville’], [’cairns’, ’Cairns'],
-    ['geelong', 'Geelong’], [’toowoomba’, ’Toowoomba'],
+    ['sydney', 'Sydney'], ['melbourne', 'Melbourne'], ['perth', 'Perth'],
+    ['adelaide', 'Adelaide'], ['canberra', 'Canberra'], ['hobart', 'Hobart'],
+    ['darwin', 'Darwin'], ['gold-coast', 'the Gold Coast'], ['newcastle', 'Newcastle'],
+    ['wollongong', 'Wollongong'], ['townsville', 'Townsville'], ['cairns', 'Cairns'],
+    ['geelong', 'Geelong'], ['toowoomba', 'Toowoomba'],
   ];
 
   /* One small illustrative strip, reused as-is on every national page rather
@@ -8971,6 +9497,126 @@ module.exports = function (api) {
 `,
   };
 
+  /* Styles hub. Linked from the main nav. The style is the door; everything
+     behind it is the same specification, which is the point the page makes. */
+  /* The hub splits into the two halves people actually shop in. Within each
+     group, ordered by how often they are asked for rather than alphabetically. */
+  const STYLES_TRAD = [
+    ['hamptons-style-kitchen', 'Hamptons', 'collection-marble-01', 'Coastal formality: panelled doors, a pale palette, a generous island.'],
+    ['shaker-kitchen-style', 'Shaker', 'collection-marble-03', 'A flat panel in a square frame. The one that outlasts every trend.'],
+    ['french-provincial-kitchen', 'French provincial', 'collection-marble-02', 'Profiled doors and soft colour, with two cues rather than six.'],
+    ['traditional-kitchen-style', 'Classic', 'island-marble-brass', 'Furniture proportions and visible hardware, everything else current.'],
+    ['transitional-kitchen-style', 'Transitional', 'island-calacatta', 'Traditional form, contemporary restraint. The most asked for in Australia.'],
+    ['modern-farmhouse-kitchen', 'Modern farmhouse', 'timber-island', 'Shaker bones with a lighter, cleaner hand.'],
+    ['country-kitchen-style', 'Country', 'openplan-long', 'Built around one big surface, and for a back door that gets used.'],
+    ['cottage-kitchen-style', 'Cottage', 'galley-stone', 'For a genuinely small room, where leaving things out is the design.'],
+    ['federation-kitchen-style', 'Federation', 'detail-timber-joinery', 'High ceilings, picture rails, and joinery you are not replacing.'],
+    ['victorian-kitchen-style', 'Victorian', 'splashback-marble-01', 'Terraces and cottages: narrow rooms and very high ceilings.'],
+    ['art-deco-kitchen-style', 'Art Deco', 'black-marble-bar', 'Curves and geometry rather than ornament. Three decisions, not ten.'],
+    ['mediterranean-kitchen-style', 'Mediterranean', 'drawer-detail', 'Warm earth tones and texture, without the terracotta.'],
+  ];
+
+  const STYLES_MOD = [
+    ['contemporary-kitchen-style', 'Contemporary', 'glossy-dark', 'Flat, handleless, long runs. Nowhere for a bad gap to hide.'],
+    ['two-tone-kitchen-style', 'Two-tone', 'signature-dark', 'Dark below, light above. The only free design decision you get.'],
+    ['coastal-kitchen-design', 'Coastal', 'splashback-marble-02', 'Built for salt air as much as for the view.'],
+    ['scandinavian-kitchen-design', 'Scandinavian', 'collection-marble-04', 'Pale timber, restraint, and light doing the work.'],
+    ['japandi-kitchen-design', 'Japandi', 'matte-black-bank', 'Scandinavian warmth with Japanese discipline.'],
+    ['industrial-style-kitchen', 'Industrial', 'concrete-luxe', 'Concrete, black steel and nothing pretending to be timber.'],
+  ];
+
+  const styleCards = (list) => list.map(([slug, name, img, copy], i) => `
+        <a class="card" href="/guide-${slug}" ${rv()} data-rv-d="${(i % 3) + 1}">
+          ${frame(img, name + ' style kitchen', 'wide')}
+          <div class="card__body">
+            <h3 class="d4">${name}</h3>
+            <p>${copy}</p>
+            <span class="link-u mt-1">Read the ${name.toLowerCase()} guide &rarr;</span>
+          </div>
+        </a>`).join('');
+
+  const stylesFaq = [
+      { q: 'Does the style change the price?', a: 'The door does. The carcasses, edging and hardware are identical across every style and every collection, so what moves the price is the door range and the benchtop, not the look you are after.' },
+      { q: 'Which kitchen style dates fastest?', a: 'Anything built on a strong colour or a current hardware finish. Shaker and contemporary have both lasted because neither has ornament to go out of fashion. If you intend to stay in the house, that matters more than what is current.' },
+      { q: 'Can I mix styles?', a: 'Two-tone is a mix by definition and it works. Beyond that, mixing door profiles in one room rarely does. Pick one door and let the benchtop, handles and splashback carry the variation.' },
+      { q: 'What suits a Queenslander?', a: 'Shaker, country and Hamptons all sit comfortably in a period Queensland house. Contemporary can work but needs care, because a flat handleless run against VJ walls and high ceilings can read as a different building.' },
+  ];
+
+  const stylesHub = {
+    file: 'kitchen-styles.html',
+    assembled: 'general',
+    title: 'Kitchen Styles | 18 Looks, One Specification',
+    desc: 'Hamptons, Shaker, French provincial, transitional, Federation, Victorian, Art Deco, Mediterranean, coastal, Japandi and more — what each style actually asks for.',
+    og: 'collection-marble-03',
+    priority: '0.8',
+    trail: [['index.html', 'Home'], ['kitchen-styles.html', 'Kitchen styles']],
+    faq: stylesFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['#', 'Kitchen styles']])}
+        <span class="pill">18 styles &middot; one specification</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">The style is the door.<br><span class="italic brass">The rest does not change.</span></h1>
+        <p class="lede">Every kitchen here is built on the same 18mm moisture-resistant board, the same laser-bonded edging and the same Blum hardware. What you choose below changes what you see, not what holds it up.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/kitchen-cost-australia">See what each costs</a>
+        </div>
+      </div>
+      <div>${frame('collection-marble-03', 'Shaker kitchen in a pale palette with stone benchtop', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Traditional</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">A door with a frame.</h2>
+      <p class="muted mt-2" style="max-width:60ch" ${rv()} data-rv-d="2">Every one of these is built on a panelled or profiled door. What separates them is the palette, the proportion and how much of the period they reference.</p>
+      <div class="grid cols-3 mt-3">${styleCards(STYLES_TRAD)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Contemporary</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">A door with no frame.</h2>
+      <p class="muted mt-2" style="max-width:60ch" ${rv()} data-rv-d="2">Flat fronts, handleless or close to it. With no ornament to look at, the gaps between the doors become the design, which is why the carcass matters more here.</p>
+      <div class="grid cols-3 mt-3">${styleCards(STYLES_MOD)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Choosing one</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Pick the house, not the photograph.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">Most kitchens that look wrong look wrong because the style was chosen from a photograph of a different kind of house in a different kind of light. A Cotswolds country kitchen in Central Queensland reads as gloomy. A flat handleless run against VJ walls and three-metre ceilings reads as a different building bolted on.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">The useful question is not which style you like in a magazine. It is which one your house is already asking for, and then how far you want to push against that. Our <a href="/guide-queenslander-kitchen-renovation" style="color:var(--brass)">Queenslander guide</a> works through one version of that problem in detail.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">The same in every style</span>
+          <ul>
+            <li>18mm moisture-resistant board</li>
+            <li>Laser-bonded edging, no glue line</li>
+            <li>Blum soft-close hinges and runners</li>
+            <li>Cut to your room, not catalogue widths</li>
+            <li>Flat packed or delivered assembled</li>
+          </ul>
+          <a class="btn btn--block" href="/kitchen-cost-australia">What each costs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(stylesFaq, 'Questions about style')}
+  ${ctaBand({ eyebrow: 'Your kitchen', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>', body: 'A fixed, itemised quote drawn to your room, in the style you want, flat packed or delivered assembled.', image: 'dark-dining', alt: 'Kitchen and dining room in a dark timber palette' })}
+`,
+  };
+
   /* ================================================================== 404 */
 
   const notFound = {
@@ -8993,5 +9639,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, costPillar, howWePrice, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, costPillar, howWePrice, stylesHub, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };
