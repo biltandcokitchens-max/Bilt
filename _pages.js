@@ -23,7 +23,7 @@ module.exports = function (api) {
     const {
       id = 'lead-hero',
       heading = 'Send us your rough measurements.<br>We&rsquo;ll send back a price.',
-      sub = 'Five fields. We reply within one business day with a real number, not a "from" price.',
+      sub = 'A few fields. We reply within one business day with a real range for your room, not a "from" price.',
       cta = 'Get my free quote',
       ctaSub = 'No deposit &middot; No showroom visit &middot; No salesperson at your door',
     } = opts;
@@ -44,7 +44,19 @@ module.exports = function (api) {
         <div class="field"><label for="${id}-e">Email</label><input id="${id}-e" name="email" type="email" required autocomplete="email" placeholder="jane@example.com.au"></div>
         <div class="field"><label for="${id}-s">Suburb</label><input id="${id}-s" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
       </div>
+      <div class="form__row">
+        <div class="field"><label for="${id}-b">Budget for the cabinetry</label><select id="${id}-b" name="budget" required>
+            <option value="">Please choose&hellip;</option>
+            <option value="under-6k">Under $6,000</option>
+            <option value="6-10k">$6,000 &ndash; $10,000</option>
+            <option value="10-18k">$10,000 &ndash; $18,000</option>
+            <option value="18k-plus">$18,000 or more</option>
+            <option value="unsure">Not sure yet</option>
+          </select></div>
+        <div class="field"><label for="${id}-r">Total run <span class="muted">(metres)</span></label><input id="${id}-r" name="run_length" type="text" inputmode="decimal" placeholder="2.7"></div>
+      </div>
       <div class="field"><label for="${id}-m">Rough measurements <span class="muted">(optional)</span></label><input id="${id}-m" name="message" type="text" placeholder="5.4m wall, 2.4m ceiling, window on the left"></div>
+      <input type="hidden" name="source_page" value="">
       <button class="btn btn--lg btn--block" type="submit">${cta}<span class="btn__sub">${ctaSub}</span></button>
       <p class="form__note">${svg.shield} Your details stay with our Rockhampton studio. We never sell or share them &mdash; see our <a href="privacy.html">privacy policy</a></p>
     </form>`;
@@ -65,7 +77,7 @@ module.exports = function (api) {
       <dl class="proof" ${rv()}>
         <div><dt class="tabnums">75+</dt><dd>Kitchens delivered</dd></div>
         <div><dt class="tabnums">18mm</dt><dd>Moisture-resistant board</dd></div>
-        <div><dt class="tabnums">Lifetime</dt><dd>Blum hardware warranty</dd></div>
+        <div><dt class="tabnums">Named</dt><dd>Hardware brand on your quote</dd></div>
         <div><dt class="tabnums">7&ndash;10</dt><dd>Days on site, typical</dd></div>
       </dl>
     </div>
@@ -109,7 +121,7 @@ module.exports = function (api) {
 
   const GUARANTEES = [
     ['The price does not move', 'Once your design is signed off, the quote is fixed. We have never issued a surprise variation for our own scope of works. If we get a measurement wrong, we wear it.'],
-    ['Assembled before it arrives', 'Carcasses built square, Blum hardware fitted, doors hung and adjusted to even gaps. On site it is fitted, not built — and Blum’s lifetime mechanical warranty sits on every hinge and runner.'],
+    ['Assembled before it arrives', 'Carcasses built square, Blum hardware fitted, doors hung and adjusted to even gaps. On site it is fitted, not built — and the hardware brand on your job, with its warranty, is named on your quote.'],
     ['One team, drawing to handover', 'We specify your cabinetry to the millimetre, take delivery of it and install it ourselves. No subcontracted installers — the people in your house are on our payroll and their name is on the job.'],
     ['On the day we said', 'A written site programme before demolition, and a $200-a-day credit back to you for every working day we run past our own completion date.'],
     ['Your drawings are yours', 'If our quote does not work for you, you keep the 3D design and the measured drawings of your own room. No charge, no hard feelings.'],
@@ -151,7 +163,7 @@ module.exports = function (api) {
           <tbody>
             <tr><th scope="row">Who designs it</th><td>The person who measured your room</td><td>Usually the maker, in person</td><td class="no">A salesperson, then a designer elsewhere</td></tr>
             <tr><th scope="row">Carcass board</th><td>18mm moisture-resistant</td><td>Typically 18mm, varies by maker</td><td>16&ndash;18mm, varies by range</td></tr>
-            <tr><th scope="row">Hardware</th><td>Blum, lifetime warranty</td><td>Usually Blum or Hettich</td><td>Depends on the range you pick</td></tr>
+            <tr><th scope="row">Hardware</th><td>Named on the quote, with its warranty</td><td>Often unstated</td><td>Depends on the range you pick</td></tr>
             <tr><th scope="row">Lead time</th><td class="yes">8&ndash;12 weeks</td><td class="no">12&ndash;20 weeks, often longer</td><td>10&ndash;16 weeks</td></tr>
             <tr><th scope="row">Quote</th><td class="yes">Fixed and itemised before you start</td><td>Often estimated, refined later</td><td>Fixed, but showroom cost is in it</td></tr>
             <tr><th scope="row">Who installs it</th><td>Our own employed team</td><td>Usually the maker</td><td class="no">Commonly subcontracted</td></tr>
@@ -364,7 +376,7 @@ module.exports = function (api) {
         <p class="eyebrow" ${rv()}>Why Bilt &amp; Co</p>
         <h2 class="d2" ${rv()} data-rv-d="1">You will open these<br>drawers <span class="italic brass">40,000 times.</span></h2>
         <p class="lede mt-2" ${rv()} data-rv-d="2">A kitchen is the most-touched thing you will ever buy. It should feel expensive every morning &mdash; not just in the photos taken the week it was finished.</p>
-        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we specify to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Blum hardware with a lifetime mechanical warranty. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it.</p>
+        <p class="mt-2 muted" ${rv()} data-rv-d="3">So we specify to a standard, not to a price. Moisture-resistant carcasses because this is Central Queensland. Soft-close hardware with the brand named on your quote. Laser-bonded edges that will not lift in a Rockhampton February. Then we install it ourselves and put our name on it.</p>
         <a class="link-u mt-3" href="studio.html" ${rv()} data-rv-d="4">Meet the workshop &rarr;</a>
       </div>
     </div>
@@ -480,7 +492,7 @@ module.exports = function (api) {
           <ul class="list-check mt-3" ${rv()} data-rv-d="3">
             ${(c.name === 'Essence' ? [
       '18mm moisture-resistant carcasses, laser-bonded edging',
-      'Blum soft-close hinges and runners throughout',
+      'Soft-close hinges and full-extension runners',
       '20mm engineered stone benchtop, eight colours',
       'Handleless rail or slimline aluminium profile',
       'Design, documentation and installation included',
@@ -525,8 +537,8 @@ module.exports = function (api) {
           <tbody>
             <tr><th scope="row">Carcass</th><td>18mm moisture-resistant board</td><td>16mm standard board swells the first time water reaches a joint. In this climate that is when, not if.</td></tr>
             <tr><th scope="row">Edging</th><td>Laser-bonded, no glue line</td><td>Hot-melt glued edging lifts in heat and humidity. Laser bonding leaves no seam for it to start from.</td></tr>
-            <tr><th scope="row">Hinges</th><td>Blum soft-close, lifetime warranty</td><td>The part you touch most and notice least until it sags. Blum carries a lifetime mechanical warranty.</td></tr>
-            <tr><th scope="row">Runners</th><td>Blum full-extension</td><td>The whole drawer comes out, not two thirds. You use the back of every drawer instead of losing it.</td></tr>
+            <tr><th scope="row">Hinges</th><td>Soft-close, brand named on the quote</td><td>The part you touch most and notice least until it sags. The brand fitted to your job, and its warranty, is on your quote.</td></tr>
+            <tr><th scope="row">Runners</th><td>Full-extension, brand named on the quote</td><td>The whole drawer comes out, not two thirds. You use the back of every drawer instead of losing it.</td></tr>
             <tr><th scope="row">Benchtop</th><td>Stone, porcelain or laminate</td><td>Porcelain and sintered stone are the best performers in a room that gets afternoon sun.</td></tr>
             <tr><th scope="row">Install</th><td>Our own team, adjustable legs</td><td>Rockhampton floors are rarely level. Adjustable legs and scribed fillers mean that is our problem, not yours.</td></tr>
           </tbody>
@@ -738,6 +750,56 @@ module.exports = function (api) {
     { q: 'Is it cheaper to build it all at once?', a: 'Materially, yes. One design process, one delivery, one installation mobilisation and one set of sheet stock — clients typically save 10 to 15 percent against building the same joinery a year later.' },
   ];
 
+  /* Wardrobe fittings. Eight of them; the module shows four, rotated by the
+     page slug so /flat-pack-wardrobes and /joinery do not show the same set.
+     These argue for the joinery, not for themselves. */
+  const WARDROBE_FITTINGS = [
+    ['wrd-lift-rail', 'Pull-down hanging rail',
+      'The high rail comes down to you. It is what makes the top half of a tall robe usable instead of ceremonial.'],
+    ['wrd-trouser-rack', 'Pull-out trouser rack',
+      'Trousers hang full length on individual arms and pull out on runners, so you see every pair at once.'],
+    ['wrd-jewellery', 'Jewellery and accessory inserts',
+      'Fitted trays cut to the drawer, with compartments sized for what actually goes in them rather than a generic grid.'],
+    ['wrd-lit-drawer', 'Lit display drawer',
+      'A glazed, lit drawer for watches and the things worth seeing. It turns storage into the part of the robe you show people.'],
+    ['wrd-mirror', 'Pull-out mirror',
+      'Full-length, inside the robe, out of the way until you want it. It saves a wall in a room that rarely has one spare.'],
+    ['wrd-shoe-rack', 'Shoe storage',
+      'Angled and rotating racks that hold shoes in order and in view, instead of a stack of boxes on the floor.'],
+    ['wrd-valet', 'Valet rod and hooks',
+      'Somewhere to hang tomorrow, and racks that keep belts and ties straight rather than coiled in a drawer.'],
+    ['wrd-rail-light', 'Lit hanging rail',
+      'The rail is the light. You see colours properly at six in the morning, which is the only time it matters.'],
+  ];
+
+  function wardrobeFittings(opts) {
+    const { place = 'your', seed = 'wardrobe', heading, intro } = opts || {};
+    let h = 5;
+    for (const c of seed) h = (h * 33 + c.charCodeAt(0)) | 0;
+    h = Math.abs(h);
+    const N = WARDROBE_FITTINGS.length;
+    const picks = [0, 2, 4, 6].map((k) => WARDROBE_FITTINGS[(h + k) % N]);
+    return `
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Inside the robe</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">${heading || 'A wardrobe is a box<br>until you fit it out.'}</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">${intro || 'Hanging space and shelves are the easy part. What decides whether you use a wardrobe properly is the things inside it, and those are drawn into the plan before anything is cut.'}</p>
+      <div class="grid cols-4 mt-3">
+        ${picks.map(([img, name, copy], i) => `
+        <div class="card" ${rv()} data-rv-d="${(i % 4) + 1}">
+          ${frame(img, name + ' fitted to Bilt & Co joinery', 'wide')}
+          <div class="card__body">
+            <h3 class="d4">${name}</h3>
+            <p class="small">${copy}</p>
+          </div>
+        </div>`).join('')}
+      </div>
+      <p class="small muted mt-3" ${rv()}>Eight fittings in all, specified per robe on your quote. Flat packed they arrive with the cabinet they belong to; <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> they are fitted and adjusted before it ships.</p>
+    </div>
+  </section>`;
+  }
+
   const joinery = {
     file: 'joinery.html',
     service: { name: "Custom joinery, wardrobes and vanities", type: "Custom joinery" },
@@ -762,6 +824,7 @@ module.exports = function (api) {
       <div>${frame('wardrobe-robe', 'Custom walk-in wardrobe with glazed joinery, installed in Rockhampton', 'wide', { eager: true })}</div>
     </div>
   </section>
+  ${wardrobeFittings({ seed: 'joinery', heading: 'Joinery is judged<br>on what is inside it.', intro: 'A robe, a laundry or a media wall is a box with doors until it is fitted out. These are the fittings we draw into wardrobe joinery, specified per cabinet rather than sold as a package.' })}
 
   ${trustStrip}
 
@@ -977,7 +1040,7 @@ module.exports = function (api) {
       <h2 class="d2 mb-2" ${rv()} data-rv-d="1">What each number buys.</h2>
       <div class="grid cols-3 mt-3">
         ${[
-        ['Essence', '$15,000 – $23,000', false, ['18mm moisture-resistant carcasses', 'Laser-bonded edging on all fronts', 'Blum soft-close hinges &amp; runners', '20mm engineered stone benchtop', 'Handleless rail or slimline profile', 'Design, documentation &amp; installation']],
+        ['Essence', '$15,000 – $23,000', false, ['18mm moisture-resistant carcasses', 'Laser-bonded edging on all fronts', 'Soft-close hinges &amp; runners', '20mm engineered stone benchtop', 'Handleless rail or slimline profile', 'Design, documentation &amp; installation']],
         ['Maison', '$26,000 – $42,000', true, ['Everything in Essence, plus:', 'Timber veneer, two-pack or Fenix doors', '20–40mm stone or porcelain, mitred ends', 'Full-height stone or glass splashback', 'Blum Legrabox with internal organisers', 'Integrated LED task lighting', 'Butler&rsquo;s pantry option from $4,000']],
         ['Atelier', '$47,000 +', false, ['Everything in Maison, plus:', 'Book-matched and bespoke stone slabs', 'Curved, fluted and hand-finished work', 'Solid brass, bronze or nickel hardware', 'Wine wall, coffee station, appliance garages', 'Joinery carried through adjoining rooms', 'Principal designer on site throughout']],
       ].map(([n, p, feat, items], i) => `
@@ -1003,46 +1066,7 @@ module.exports = function (api) {
         <p class="mt-2 muted small" ${rv()} data-rv-d="3">An estimate, not a quote. A real fixed quote follows a free site measure and takes about a week.</p>
         <div class="mt-3" ${rv()} data-rv-d="4"><a class="btn" href="contact.html">Get my free quote</a></div>
       </div>
-      <form id="estimator" class="form form-card" ${rv()} data-rv-d="1" onsubmit="return false">
-        <div class="form__row">
-          <div class="field">
-            <label for="metres">Total cabinetry (linear metres)</label>
-            <input id="metres" name="metres" type="number" min="1" max="40" step="0.5" value="7" inputmode="decimal">
-          </div>
-          <div class="field">
-            <label for="tier">Collection</label>
-            <select id="tier" name="tier">
-              <option value="essence">Essence</option>
-              <option value="maison" selected>Maison</option>
-              <option value="atelier">Atelier</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="bench">Benchtop</label>
-          <select id="bench" name="bench">
-            <option value="laminate">Laminate / compact</option>
-            <option value="stone" selected>Engineered stone, 20mm</option>
-            <option value="porcelain">Porcelain or sintered stone, 20–40mm</option>
-            <option value="natural">Natural marble or granite</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Add to the project</label>
-          <div class="chips">
-            <label class="chip"><input type="checkbox" name="extra" value="pantry"><span>Butler's pantry</span></label>
-            <label class="chip"><input type="checkbox" name="extra" value="island" checked><span>Island bench</span></label>
-            <label class="chip"><input type="checkbox" name="extra" value="appliances"><span>Appliance garage</span></label>
-            <label class="chip"><input type="checkbox" name="extra" value="wine"><span>Wine wall</span></label>
-          </div>
-        </div>
-        <div class="readout">
-          <p class="lbl">Indicative investment</p>
-          <p class="val tabnums" data-est-out style="margin:0">&mdash;</p>
-          <p class="note" data-est-note style="margin:0"></p>
-        </div>
-        <a class="btn btn--block" href="contact.html">Get my free quote</a>
-      </form>
+      ${estimatorCard({ install: true })}
     </div>
   </section>
 
@@ -1092,7 +1116,7 @@ module.exports = function (api) {
         <p class="lede">The worst part of a renovation is not the cost. It is not knowing what happens next, or who to call. Here is the whole thing, in order &mdash; including why the kitchen arrives built and what that does to the timeline.</p>
         <div class="mt-3"><a class="btn btn--lg" href="contact.html">Get my free quote</a></div>
       </div>
-      <div>${frame('studio-desk', 'Design studio desk with drawings and material samples', 'wide', { eager: true })}</div>
+      <div>${frame('collection-marble-04', 'Marble splashback and brass lighting above a timber kitchen', 'wide', { eager: true })}</div>
     </div>
   </section>
 
@@ -1174,6 +1198,17 @@ module.exports = function (api) {
       <div>${frame('material-samples', 'Timber veneer and finish samples from the Bilt & Co Rockhampton workshop', 'wide', { eager: true })}</div>
     </div>
   </section>
+  <section class="section" style="padding-block:0 clamp(2rem,4vw,3rem)">
+    <div class="wrap">
+      <div class="grid cols-3">
+        ${[['collection-marble-04', 'Marble splashback and brass lighting above a timber kitchen'],
+           ['dark-island', 'Dark island bench with pendant lighting and open living beyond'],
+           ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances']]
+          .map(([f, a], n) => `<div ${rv()} data-rv-d="${n + 1}">${frame(f, a, 'wide')}</div>`).join('')}
+      </div>
+      <p class="small muted mt-2" ${rv()}>Kitchens we drew and supplied &mdash; more in <a href="/gallery" style="color:var(--brass)">the gallery</a>.</p>
+    </div>
+  </section>
 
   ${trustStrip}
 
@@ -1197,7 +1232,7 @@ module.exports = function (api) {
     <div class="wrap grid cols-3">
       ${[
         ['We say no.', 'If your budget will not buy what you are describing, you hear that at the first meeting rather than the fourth. We would rather lose a job than deliver a compromised one with our name on it.'],
-        ['We over-build.', '18mm moisture-resistant carcasses as standard, laser-bonded edging, Blum hardware throughout. In this climate, the cheap version of any of those three fails first.'],
+        ['We over-build.', '18mm moisture-resistant carcasses as standard, laser-bonded edging, soft-close hardware throughout. In this climate, the cheap version of any of those three fails first.'],
         ['We answer.', 'Warranty calls are answered by the people who built the kitchen, not a call centre. Everyone promises service; it is worth asking who actually picks up.'],
       ].map(([h, p], i) => `
       <div ${rv()} data-rv-d="${i + 1}">
@@ -1255,6 +1290,7 @@ module.exports = function (api) {
           <li>Materials and hardware in your hands</li>
           <li>A written fixed-price quote about a week later</li>
         </ul>
+        <div class="mt-3">${frame('collection-marble-01', 'Oak kitchen with a full-height marble splashback and a stone island bench', 'wide', { eager: true })}</div>
       </div>
       <div>
         <form class="form-card form" id="enquiry" name="consultation" method="POST"
@@ -1273,6 +1309,34 @@ module.exports = function (api) {
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="jane@example.com.au"></div>
             <div class="field"><label for="suburb">Suburb or town</label><input id="suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="Frenchville"></div>
           </div>
+          <p class="small muted" data-est-prefill hidden style="margin:0 0 .25rem"></p>
+          <div class="form__row">
+            <div class="field"><label for="budget">Budget for the cabinetry</label><select id="budget" name="budget" required>
+                <option value="">Please choose&hellip;</option>
+            <option value="under-6k">Under $6,000</option>
+            <option value="6-10k">$6,000 &ndash; $10,000</option>
+            <option value="10-18k">$10,000 &ndash; $18,000</option>
+            <option value="18k-plus">$18,000 or more</option>
+            <option value="unsure">Not sure yet</option>
+              </select></div>
+            <div class="field"><label for="run_length">Total run <span class="muted">(metres)</span></label><input id="run_length" name="run_length" type="text" inputmode="decimal" placeholder="2.7"></div>
+          </div>
+          <div class="form__row">
+            <div class="field"><label for="timeframe">When do you need it</label><select id="timeframe" name="timeframe">
+                <option value="">Please choose&hellip;</option>
+                <option value="now">Ready to order now</option>
+                <option value="1-3m">In the next 1&ndash;3 months</option>
+                <option value="3-6m">In 3&ndash;6 months</option>
+                <option value="researching">Just researching</option>
+              </select></div>
+            <div class="field"><label for="supply">Flat packed or assembled</label><select id="supply" name="supply">
+                <option value="">Please choose&hellip;</option>
+                <option value="flat-pack">Flat packed &mdash; I&rsquo;ll build it</option>
+                <option value="assembled">Delivered assembled</option>
+                <option value="unsure">Not sure, show me both</option>
+              </select></div>
+          </div>
+          <input type="hidden" name="source_page" value="">
           <div class="field">
             <label for="message">Rough measurements, or what you&rsquo;re after</label>
             <textarea id="message" name="message" rows="4" placeholder="Kitchen is 5.4m along one wall, 2.4m ceiling, window on the left. Want an island if it fits. Granny flat, so a kitchenette might do."></textarea>
@@ -1321,6 +1385,7 @@ module.exports = function (api) {
   const PRODUCT_FAMILIES = [
     { label: 'Flat pack and supply', slugs: ['flat-pack', 'flat-pack-upgrades', 'flat-pack-nsw', 'flat-pack-victoria', 'assembled', 'diy-flat-pack', 'flat-pack-cabinets', 'flat-pack-kitchenette', 'kitchenette', 'owner-builder', 'trade'] },
     { label: 'By layout', slugs: ['galley-flat-pack', 'l-shaped-flat-pack', 'u-shaped-flat-pack', 'one-wall-flat-pack', 'island'] },
+    { label: 'Storage and access fittings', slugs: ['pull-down-basket', 'magic-corner', 'tall-larder', 'drawer-organisers', 'plate-racks', 'under-sink', 'deep-drawers', 'pull-down'] },
     { label: 'More flat pack rooms', slugs: ['outdoor-kitchen', 'flat-pack-butlers-pantry', 'flat-pack-wardrobes', 'scullery', 'bar-cabinetry', 'laundry'] },
     { label: 'Kitchens for', slugs: ['granny-flat', 'tiny-home', 'new-builds', 'short-stay', 'island', 'laundry'] },
     { label: 'Accessible kitchens', slugs: ['accessible', 'sda', 'aging-in-place', 'pull-down', 'retirement-village'] },
@@ -1562,7 +1627,7 @@ module.exports = function (api) {
     { q: 'Are these included or extra?', a: 'Soft-close hinges and runners are standard on every Bilt & Co kitchen at no extra cost. Everything on this page is a paid option, priced individually and itemised on your quote so you can see exactly what each one adds.' },
     { q: 'Can fit-out options be added later?', a: 'Some can, most should not be. Pull-downs, carousels and pantry pull-outs depend on the cabinet being built to suit — width, internal clearance and in some cases power. Retrofitting means replacing the cabinet. Decide these at design stage and they cost a fraction of what they cost afterwards.' },
     { q: 'Which one is worth it if I can only pick one?', a: 'The blind-corner pull-out, almost every time. It is the only option here that creates storage you currently do not have, rather than making existing storage easier to reach. Every kitchen with an L-shaped corner is wasting roughly half a cabinet.' },
-    { q: 'Is this Blum hardware?', a: 'The runners, hinges and motion systems are Blum, which carries a lifetime mechanical warranty. Some specialist units — carousels and pull-down shelves in particular — come from other specialist manufacturers where they make a better product. We will tell you which is which on your quote.' },
+    { q: 'What hardware brand do you use?', a: 'It depends on the range, and the brand for your job is named on your quote rather than left vague. Blum is one of the brands we fit, and it carries a lifetime mechanical warranty. Some specialist units — carousels and pull-down shelves in particular — come from other specialist manufacturers where they make a better product. We will tell you which is which on your quote.' },
   ];
 
   const fitout = {
@@ -1632,8 +1697,8 @@ module.exports = function (api) {
       </div>
       <div ${rv()} data-rv-d="1">
         <ul class="list-check">
-          <li><strong>Blum soft-close hinges</strong> on every door, with a lifetime mechanical warranty</li>
-          <li><strong>Blum full-extension runners</strong> on every drawer &mdash; the whole drawer comes out, not two thirds of it</li>
+          <li><strong>Soft-close hinges</strong> on every door, brand and warranty named on your quote</li>
+          <li><strong>Full-extension runners</strong> on every drawer &mdash; the whole drawer comes out, not two thirds of it</li>
           <li><strong>18mm moisture-resistant carcasses</strong>, because this is Central Queensland</li>
           <li><strong>Laser-bonded edging</strong> with no glue line to lift</li>
           <li><strong>Adjustable legs and toe kicks</strong>, so an out-of-level floor is not your problem</li>
@@ -1662,7 +1727,7 @@ module.exports = function (api) {
     noindex: true,
     trail: [['index.html', 'Home'], ['thanks.html', 'Enquiry received']],
     body: `
-  <section class="section" style="min-height:62vh;display:flex;align-items:center">
+  <section class="section" style="min-height:38vh;display:flex;align-items:center">
     <div class="wrap">
       <div style="max-width:44rem">
         <p class="eyebrow" ${rv()}>Received</p>
@@ -1673,6 +1738,7 @@ module.exports = function (api) {
           <a class="btn" href="gallery.html">See the work while you wait</a>
           <a class="btn btn--ghost" href="investment.html">Read the price guide</a>
         </div>
+      <div class="mt-3" style="max-width:44rem">${frame('collection-marble-01', 'Oak kitchen with a full-height marble splashback and a stone island bench', 'wide', { eager: true })}<p class="small muted mt-2">A kitchen we drew and supplied. More in <a href="/gallery" style="color:var(--brass)">the gallery</a>.</p></div>
       </div>
     </div>
   </section>
@@ -1699,13 +1765,13 @@ module.exports = function (api) {
       price: 'From $5,300',
       range: '1.8m – 2.4m run',
       body: [
-        ['Small does not mean cheap hardware', 'The temptation in a tiny home is to save on the parts you touch. It is the wrong place to save, because in a kitchen this size you touch everything, constantly. Every Bilt &amp; Co tiny home kitchen gets the same Blum soft-close hinges and full-extension runners as a $40,000 kitchen. The drawer still comes all the way out.'],
+        ['Small does not mean cheap hardware', 'The temptation in a tiny home is to save on the parts you touch. It is the wrong place to save, because in a kitchen this size you touch everything, constantly. Every Bilt &amp; Co tiny home kitchen gets the same soft-close hinges and full-extension runners as a $40,000 kitchen. The drawer still comes all the way out.'],
         ['Designed around the actual footprint', 'We draw to your measurements, not to a module, and <a href="guide-kitchen-layouts.html" style="color:var(--brass)">the layout you choose</a> matters more here than in any other kitchen. That matters more here than anywhere else: a 40mm filler panel in a 2.4m kitchen is 40mm of bench you have lost forever. If your build is on a trailer, tell us the axle position and we will keep the weight where it belongs.'],
         ['Built for a house that moves', 'Tiny homes travel, flex and settle. We specify moisture-resistant carcasses and laser-bonded edging as standard, fix into the frame rather than the lining where we can, and check every unit before it goes in.'],
       ],
       list: [
         '1.8m to 2.4m runs, drawn to your exact dimensions',
-        'Blum soft-close hinges and full-extension runners throughout',
+        'Soft-close hinges and full-extension runners, brand named on the quote',
         '18mm moisture-resistant carcasses, laser-bonded edging',
         'Stone, porcelain or laminate benchtop',
         'Delivered assembled, or flat packed if you would rather build it',
@@ -1739,7 +1805,7 @@ module.exports = function (api) {
       list: [
         '2.4m to 3.0m runs, drawn to your exact dimensions',
         'Moisture-resistant carcasses — the first thing to fail in a rental',
-        'Blum hardware with a lifetime mechanical warranty',
+        'Soft-close hardware, brand and warranty named on your quote',
         'Stone, porcelain or laminate benchtop',
         'Delivered assembled and installed by our own team',
         'Delivered assembled, doors adjusted before it arrives',
@@ -1830,8 +1896,8 @@ module.exports = function (api) {
     desc: 'Custom flat pack kitchens cut to your measurements, shipped anywhere in Australia. 18mm board, Blum hardware, pre-drilled and labelled. Fixed itemised quotes.',
     h1: 'Flat pack kitchens,<br><span class="italic brass">cut to your room.</span>',
     lede: 'Not a catalogue of fixed cabinet sizes with filler panels to hide the gaps. The same cabinetry we deliver assembled, shipped flat to any address in Australia for you or your installer to build.',
-    img: 'drawer-detail',
-    alt: 'Flat pack kitchen drawer box with Blum full-extension runners',
+    img: 'openplan-long',
+    alt: 'Open plan kitchen with a long island bench and integrated appliances, supplied flat packed',
     price: 'Quoted to your drawing',
     range: 'shipped Australia-wide',
     body: [
@@ -1845,7 +1911,7 @@ module.exports = function (api) {
     list: [
       'Drawn to your measurements, not a fixed catalogue',
       '18mm moisture-resistant board, laser-bonded edging',
-      'Blum soft-close hinges and full-extension runners',
+      'Soft-close hinges and full-extension runners',
       'Pre-drilled, labelled, packed per cabinet',
       'Service drawings for your plumber and electrician',
       'Shipped to any address in Australia',
@@ -1880,11 +1946,11 @@ module.exports = function (api) {
     ],
     list: [
       'Carcasses built square, doors hung and adjusted',
-      'Blum soft-close hardware fitted before delivery',
+      'Soft-close hardware fitted before delivery',
       '18mm moisture-resistant board, laser-bonded edging',
       'Delivered to any address in Australia',
       'Installed by our own team in Central Queensland',
-      'Lifetime mechanical warranty on Blum hardware',
+      'Hardware brand and its warranty named on your quote',
     ],
     faq: [
       { q: 'What is a pre-assembled kitchen?', a: 'Cabinetry delivered as finished boxes rather than flat panels: carcasses built, hardware fitted, doors hung and adjusted. The installer fixes them in place and fits the benchtop.' },
@@ -1918,7 +1984,7 @@ module.exports = function (api) {
       '1.2m to 1.8m runs, cut to your dimensions',
       'Sink base, drawer bank, cold-storage provision',
       'Cooktop and microwave options; oven where it fits',
-      'Blum soft-close hinges and full-extension runners',
+      'Soft-close hinges and full-extension runners',
       'Pre-drilled, labelled, packed per cabinet',
       'Shipped to any address in Australia',
     ],
@@ -1953,7 +2019,7 @@ module.exports = function (api) {
     list: [
       'Cut to your measurements, not catalogue widths',
       'Pre-drilled for hinges and runners, labelled per cabinet',
-      'Blum soft-close hardware bagged with each carcass',
+      'Soft-close hardware bagged with each carcass',
       'Numbered drawing plus service drawing for your trades',
       '18mm moisture-resistant board, laser-bonded edging',
       'Shipped to any address in Australia',
@@ -1977,8 +2043,8 @@ module.exports = function (api) {
     desc: 'Custom flat pack cabinets for laundries, wardrobes, vanities and media walls, cut to your measurements and shipped Australia-wide. Same board and Blum hardware.',
     h1: 'Flat pack cabinets for<br><span class="italic brass">the rest of the house.</span>',
     lede: 'Laundries, robes, vanities, a study wall, the unit under the television. The same carcasses, edging and hardware as our kitchens, cut to the room and packed flat for you or your installer to build.',
-    img: 'wardrobe-walkin',
-    alt: 'Walk-in wardrobe drawer bank in custom flat pack cabinetry',
+    img: 'galley-stone',
+    alt: 'Stone galley kitchen with pendant lighting, built from flat pack cabinets',
     price: 'Quoted to your drawing',
     range: 'shipped Australia-wide',
     body: [
@@ -1991,7 +2057,7 @@ module.exports = function (api) {
       'Laundries, wardrobes, vanities, studies, media walls',
       'Cut to your dimensions and ceiling height',
       '18mm moisture-resistant board, laser-bonded edging',
-      'Blum soft-close hinges and full-extension runners',
+      'Soft-close hinges and full-extension runners',
       'Service drawings for vanity and laundry plumbing',
       'Shipped to any address in Australia',
     ],
@@ -2026,7 +2092,7 @@ module.exports = function (api) {
       '1.2m to 1.8m runs, drawn to your dimensions',
       'Sink, benchtop and cold storage as standard',
       'Cooktop and microwave options; oven where it fits',
-      'Blum soft-close hinges and full-extension runners',
+      'Soft-close hinges and full-extension runners',
       'Laminate, stone or porcelain benchtop',
       'Delivered assembled and installed by our own team',
     ],
@@ -2060,7 +2126,7 @@ module.exports = function (api) {
     list: [
       '2.4m to 4.0m runs, drawn to your dimensions',
       'Porcelain or sintered stone benchtop — heat and stain resistant',
-      'Blum full-extension runners rated for guest handling',
+      'Full-extension runners rated for guest handling',
       '18mm moisture-resistant carcasses, laser-bonded edging',
       'Layouts designed around turnover and cleaning',
       'Delivered assembled and installed by our own team',
@@ -2168,7 +2234,7 @@ module.exports = function (api) {
       'Delivered assembled — carcasses built, doors hung and adjusted',
       'Full service drawings for your plumber and electrician',
       '18mm moisture-resistant carcasses, laser-bonded edging',
-      'Blum soft-close hardware throughout',
+      'Soft-close hinges and runners, brand named on the quote',
       'Specification held for when your build is actually ready',
       'Delivered assembled, doors adjusted before it arrives',
     ],
@@ -2236,13 +2302,13 @@ module.exports = function (api) {
       ['Which design category', 'Improved Liveability, Fully Accessible, Robust and High Physical Support each carry different expectations, and they are not interchangeable. Robust in particular changes the specification materially: the cabinetry has to take deliberate impact, not just daily use, and that is a construction decision rather than a finish one. Tell us the category and the assessor’s requirements and we will build to them.'],
       ['What we build, and what we do not certify', 'We supply and install cabinetry, benchtops and hardware to the specification you provide. We are not SDA assessors and we do not certify the dwelling. If the assessor requires something specific of the joinery, put it in writing and it goes in the drawings — we would rather build it right than argue about it at inspection.'],
       ['Supply anywhere, install in Central Queensland', 'SDA builders operate across the state, and most already have their own installers. We install within about 150 kilometres of Rockhampton; beyond that we supply delivered assembled with a full set of service drawings, which is exactly how we already work with tiny home and granny flat builders. Repeat specifications are held, so a second dwelling to the same design is a confirmation rather than a fresh drawing.'],
-      ['Built to be used hard', 'Whatever the category, SDA housing works harder than a family kitchen and is occupied continuously. Our standard specification — 18mm moisture-resistant carcasses, Blum hardware with a lifetime mechanical warranty, laser-bonded edging — is the right starting point for that, and it is what we would build anyway.'],
+      ['Built to be used hard', 'Whatever the category, SDA housing works harder than a family kitchen and is occupied continuously. Our standard specification — 18mm moisture-resistant carcasses, soft-close hardware, laser-bonded edging — is the right starting point for that, and it is what we would build anyway.'],
     ],
     list: [
       'Built to your SDA design category and assessor requirements',
       'Robust category specification available',
       '18mm moisture-resistant carcasses, laser-bonded edging',
-      'Blum hardware, lifetime mechanical warranty',
+      'Soft-close hardware, warranty named on your quote',
       'Full service drawings for your trades',
       'Repeat specifications held for multi-dwelling builds',
       'Ship anywhere in Australia, install within 150km of Rockhampton',
@@ -2348,12 +2414,12 @@ module.exports = function (api) {
     body: [
       ['Why the base kitchen is already good', 'Essence, the entry collection, is not a stripped-down kitchen — it is 18mm moisture-resistant carcasses, laser-bonded edging and Blum soft-close hinges and runners, the same three things that actually decide how long a kitchen lasts. Nothing about starting at $15,000 means starting with a lesser board or a lesser hinge. It means a 20mm engineered stone benchtop and a handleless or slimline profile, done properly, with nothing yet spent on the parts that are optional.'],
       ['Stone and benchtop upgrades', `Engineered stone in a wider slab or a feature colour, a mitred waterfall edge instead of a square one, or a step up to porcelain or a book-matched natural stone slab. This is usually the single highest-impact upgrade in the kitchen, because it is the surface a hand touches and an eye lands on before anything else. Our <a href="/guide-benchtops-compared" style="color:var(--brass)">benchtops compared</a> guide runs through what each material actually costs to live with.`],
-      ['Hardware and hinges', 'Blum soft-close is standard on every collection. The upgrade path from there is Blum Legrabox drawers with integrated organisers, solid brass or bronze handles in place of a standard profile, and push-to-open on the runs where a handle would interrupt a handleless line. None of it changes how the carcass is built; all of it changes how the kitchen feels to use every day.'],
+      ['Hardware and hinges', 'Soft-close hinges and full-extension runners are standard on every collection. The upgrade path from there is Blum Legrabox drawers with integrated organisers, solid brass or bronze handles in place of a standard profile, and push-to-open on the runs where a handle would interrupt a handleless line. None of it changes how the carcass is built; all of it changes how the kitchen feels to use every day.'],
       ['Light and detail', 'Integrated LED task lighting under every overhead, a lit toe-kick, or a feature pendant over an island — the kind of detail that reads as considered rather than added later. Cheap to specify at drawing stage and disproportionately expensive to retrofit once the cabinetry is built, so this is worth deciding early even if you delay paying for it.'],
       ['How to order it', 'Send the room dimensions as normal and say which upgrades you want considered — the quote comes back with the base kitchen and each upgrade as its own line, so you can add or drop any of them before you sign off. Nothing is bundled in a way that hides what it costs.'],
     ],
     list: [
-      'Base spec: 18mm moisture-resistant board, Blum soft-close',
+      'Base spec: 18mm moisture-resistant board, soft-close hardware',
       'Stone, porcelain or natural slab benchtop upgrades',
       'Blum Legrabox, brass hardware, push-to-open',
       'Integrated LED task and toe-kick lighting',
@@ -2391,7 +2457,7 @@ module.exports = function (api) {
     ],
     list: [
       'Designed to your measurements in Rockhampton',
-      '18mm moisture-resistant board, Blum lifetime hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Flat packed or delivered assembled, your call',
       'Freight quoted to your exact NSW postcode',
       'Dedicated coverage for Sydney, Newcastle and Wollongong',
@@ -2427,7 +2493,7 @@ module.exports = function (api) {
     ],
     list: [
       'Designed to your measurements in Rockhampton',
-      '18mm moisture-resistant board, Blum lifetime hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Flat packed or delivered assembled, your call',
       'Freight quoted to your exact Victorian postcode',
       'Dedicated coverage for Melbourne and Geelong',
@@ -2462,7 +2528,7 @@ module.exports = function (api) {
     ],
     list: [
       'Specified for guest turnover, not daily family use',
-      'Blum full-extension runners rated for heavy handling',
+      'Full-extension runners rated for heavy handling',
       'Moisture-resistant carcasses, laser-bonded edging',
       'Layouts designed around cleaning and turnover speed',
       'Flat packed or delivered assembled, your call',
@@ -2567,7 +2633,7 @@ module.exports = function (api) {
     ],
     list: [
       'Specified to withstand transit vibration if fitted pre-transport',
-      'Blum hardware secured for repeated movement, not just daily use',
+      'Soft-close hardware secured for repeated movement, not just daily use',
       'Compact layouts suited to relocatable home floor plans',
       'Coordinated with your manufacturer\'s service locations',
       'Flat packed or delivered assembled, depending on build stage',
@@ -2612,7 +2678,7 @@ module.exports = function (api) {
       { q: 'Do you ship kitchens to remote or mining sites?', a: 'Yes — anywhere in Australia, with freight quoted to the actual delivery point, which may involve more than one carrier for genuinely remote locations.' },
       { q: 'Is flat pack cheaper than assembled for remote freight?', a: 'Considerably, and the saving grows with distance — a carton takes a fraction of the truck space an assembled carcass needs for the same kitchen.' },
       { q: 'Can I order the same kitchen multiple times for camp accommodation?', a: 'Yes — repeated or bulk specification is common for multi-unit remote builds. See our trade page for how volume ordering works.' },
-      { q: 'How do you handle warranty on a remote site?', a: 'The same Blum lifetime mechanical warranty applies regardless of location — we specify to a durable standard from the outset specifically because remote-site replacement is slow and expensive.' },
+      { q: 'How do you handle warranty on a remote site?', a: 'The hardware warranty is the same regardless of location — we specify to a durable standard from the outset specifically because remote-site replacement is slow and expensive.' },
     ],
   });
 
@@ -2903,7 +2969,7 @@ module.exports = function (api) {
     slug: 'flat-pack-butlers-pantry',
     nav: "Flat pack butler's pantry",
     title: "Flat Pack Butler's Pantry Australia-Wide | Bilt & Co",
-    desc: "A butler's pantry cut to your room and shipped flat pack anywhere in Australia — bench, storage and a second sink provision, same specification as our installed pantries.",
+    desc: "A butler's pantry cut to your room and shipped flat pack Australia-wide — bench, storage and second sink provision.",
     h1: "A butler's pantry,<br><span class=\"italic brass\">shipped flat to your door.</span>",
     lede: "The overflow kitchen that keeps mess out of sight, cut to your room and freighted anywhere in Australia for you or your installer to fit.",
     img: 'material-samples',
@@ -2919,7 +2985,7 @@ module.exports = function (api) {
       'Bench, concealed storage and second sink provision',
       'Cut to your room, packed flat, freighted nationally',
       'Full service drawings for your plumber and electrician',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Delivered assembled instead, if you prefer',
       'From $4,000 depending on size and specification',
     ],
@@ -2941,8 +3007,8 @@ module.exports = function (api) {
     desc: 'Built-in wardrobes and walk-in robes cut to your room and shipped flat pack anywhere in Australia. Same board and Blum hardware as our installed joinery.',
     h1: 'Built-in robes,<br><span class="italic brass">shipped flat to any address.</span>',
     lede: 'The same wardrobe joinery we install in Central Queensland, cut to your room and freighted flat pack for you or your own installer to fit.',
-    img: 'wardrobe-walkin',
-    alt: 'Walk-in wardrobe with drawer bank on Blum runners',
+    img: 'wrd-walkin',
+    alt: 'Walk-in wardrobe with lit shelving, hanging space and drawers',
     price: 'Quoted to your drawing',
     range: 'shipped Australia-wide',
     body: [
@@ -2988,7 +3054,7 @@ module.exports = function (api) {
     list: [
       'Deep shelving and appliance storage, drawn to your room',
       'Bench space for prep kept out of the main kitchen',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Packed flat, labelled per cabinet, freighted nationally',
       'Delivered assembled instead, if you prefer',
       'Freighted to any address in Australia',
@@ -3058,7 +3124,7 @@ module.exports = function (api) {
     list: [
       'Two parallel runs, cut to your exact room width',
       'No filler panels — cabinetry sized to the actual room',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Suits apartments, granny flats and tiny homes',
       'Flat packed for easier access into narrow spaces',
       'Freighted to any address in Australia',
@@ -3093,7 +3159,7 @@ module.exports = function (api) {
     list: [
       'Two runs meeting at a corner, cut to your exact dimensions',
       'Blind corner pull-out or carousel — your choice',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Opens naturally to dining or living space',
       'Flat packed or delivered assembled, your call',
       'Freighted to any address in Australia',
@@ -3129,7 +3195,7 @@ module.exports = function (api) {
       'Three runs, two corners, cut to your exact room',
       'Corner solutions specified for each corner individually',
       'Maximum bench and storage within a single step',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Flat packed or delivered assembled, your call',
       'Freighted to any address in Australia',
     ],
@@ -3164,7 +3230,7 @@ module.exports = function (api) {
       'Single run, cut to your exact wall length',
       'No wasted floor space at either end',
       'Tall units and full-height overheads to maximise storage',
-      '18mm moisture-resistant board, Blum hardware',
+      '18mm moisture-resistant board, soft-close hardware',
       'Flat packed for easy access into compact spaces',
       'Freighted to any address in Australia',
     ],
@@ -3218,7 +3284,582 @@ module.exports = function (api) {
     </div>
   </section>`;
 
-  SEGMENTS.find((x) => x.slug === 'flat-pack').extra = fpRange;
+  SEGMENTS.find((x) => x.slug === 'flat-pack-wardrobes').extra = wardrobeFittings({ seed: 'flat-pack-wardrobes' });
+
+  SEGMENTS.find((x) => x.slug === 'flat-pack').extra = `
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Before you send anything</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Price it yourself<br>in thirty seconds.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">Our published rates, applied to your run length. No email required and no salesperson calls you for doing it \u2014 if the number does not work, you have lost half a minute instead of a fortnight.</p>
+        <p class="small muted mt-2" ${rv()} data-rv-d="3">What it gives you is a range, not a quote. A fixed quote is drawn from your measurements and costs nothing either.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">${estimatorCard({ cta: 'Take this to a real quote' })}</div>
+    </div>
+  </section>` + fpRange;
+
+  SEGMENTS.push({
+    file: 'pull-down-wall-basket.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/magic-corner-kitchen', 'magic corners'], ['/tall-pantry-pull-out', 'tall larder pull-outs'], ['/motorised-pull-down-shelving', 'the motorised version']],
+    slug: 'pull-down-basket',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Pull-down wall basket',
+    title: 'Pull-Down Wall Baskets | The Top Shelf, Brought Down',
+    desc: 'A basket that pulls down out of a wall cabinet so the top shelf is reachable. What it fits, what it costs you in cupboard space, and who it suits.',
+    h1: 'The top shelf,<br><span class="italic brass">brought down to you.</span>',
+    lede: 'Most people stop using the top shelf of an overhead within a month of moving in. This is the fitting that gets it back.',
+    img: 'acc-pull-down-basket',
+    alt: 'Pull-down wall basket lowering out of an overhead kitchen cabinet',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What does a pull-down wall basket actually do?', 'It is a two-tier wire or steel basket mounted inside a wall cabinet on a sprung arm. You pull the handle, the basket swings down and forward, and what was at head height is now in front of you at about bench level. Let go and it returns. The whole point is the shelf you cannot see into, which in most kitchens is holding things you bought once.'],
+      ['Who gets the most out of one?', 'Anyone shorter than the cabinetry, which is most people, and anyone who does not want to keep a step stool in the kitchen. It is also one of the few fittings that genuinely helps in an <a href="/accessible-kitchens" style="color:var(--brass)">accessible kitchen</a>, because it brings storage down rather than asking the person to go up. In a rental or a <a href="/granny-flat-kitchens" style="color:var(--brass)">granny flat</a> it earns its place differently: it makes a small kitchen hold more without a bigger footprint.'],
+      ['What does it cost you in cupboard space?', 'Some. The mechanism takes room at the sides and the basket cannot be as deep as the cabinet, so you lose a little capacity in exchange for being able to use what is left. In a 600mm or 900mm overhead that trade is usually worth it. In a narrow cabinet it is usually not, and we will say so.'],
+      ['What will it safely hold?', 'Everyday crockery, glassware, packets and jars — which is what lives in an overhead anyway. The rated figure for the unit specified on your job is printed on your quote rather than estimated here. What does not belong up there is the heaviest thing in your kitchen: cast iron goes in a <a href="/deep-drawer-storage" style="color:var(--brass)">deep drawer</a>, near the floor, where lifting it is easiest.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Mounts inside a standard wall cabinet',
+      'Comes down to roughly bench height',
+      'Returns under its own spring',
+      'Specified to your cabinet width',
+      'Quoted as its own line, never bundled',
+    ],
+    faq: [
+      { q: 'What is a pull-down wall basket?', a: 'A sprung basket inside an overhead cabinet that swings down and forward when you pull it, bringing the top shelf to about bench height.' },
+      { q: 'Does it fit any wall cabinet?', a: 'It needs a reasonable width to work properly. We check it against your cabinet sizes when we draw the kitchen and tell you if the cabinet you have in mind is too narrow.' },
+      { q: 'Is it worth it in a small kitchen?', a: 'Often more than in a large one. A small kitchen cannot add cupboards, so making the existing overheads fully usable is one of the few ways to add real capacity.' },
+      { q: 'Can I add one later?', a: 'Yes, if the cabinet suits it. It is easier and cheaper to specify at the time of order, because the cabinet can be built around it.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'magic-corner-kitchen.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/pull-down-wall-basket', 'pull-down wall baskets'], ['/guide-kitchen-layouts', 'kitchen layouts'], ['/guide-what-is-a-blind-corner-cabinet', 'what a blind corner is']],
+    slug: 'magic-corner',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Magic corner pull-out',
+    title: 'Magic Corner Pull-Outs | The Blind Corner, Recovered',
+    desc: 'What a magic corner is, how it differs from a carousel, and whether the blind corner in your kitchen is worth the fitting.',
+    h1: 'The blind corner,<br><span class="italic brass">finally reachable.</span>',
+    lede: 'Every L-shaped and U-shaped kitchen has one cupboard nobody opens. This is the fitting that fixes it, and it is not the same thing as a carousel.',
+    img: 'acc-magic-corner',
+    alt: 'Magic corner pull-out swinging trays out of a blind corner cabinet',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What is a magic corner?', 'A two-part mechanism in a <a href="/guide-what-is-a-blind-corner-cabinet" style="color:var(--brass)">blind corner cabinet</a>. Pull the door and the front pair of trays comes out; as it clears the opening, the rear pair slides across to take its place. Everything that was buried in the corner ends up in front of the door. Nothing stays at the back, which is the entire problem it exists to solve.'],
+      ['How is it different from a carousel?', 'A <a href="/guide-what-is-a-corner-carousel" style="color:var(--brass)">carousel</a> is a rotating circular shelf, and it fits a corner cabinet with two doors meeting at the angle. A magic corner fits a blind corner, where one run runs past the other and a single door opens onto a deep void. Different cabinet, different problem. Carousels waste the corners of the circle; magic corners use rectangular trays but need the clearance to swing.'],
+      ['Fix the corner, or design it out?', 'Our rule: if the layout can put a bank of <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">drawers</a> where the corner would be, or run the bench past and leave the corner as a blanked panel, do that instead, because it is cheaper and works better. Most kitchens cannot. Where the corner is unavoidable — and in almost every L-shaped and U-shaped kitchen it is — a magic corner turns the worst cupboard in the room into the second-biggest. It is the single highest-impact fitting on this page, and it is the one we specify most often.'],
+      ['What does it need from the cabinet?', 'Clearance, mostly. The trays have to swing clear of the opening and of anything mounted on the adjacent run, including handles. This is a decision made at drawing stage rather than afterwards, which is why it goes on the plan before anything is cut.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Front trays pull out, rear trays follow',
+      'Fits a blind corner, not a two-door corner',
+      'Trays sized to the cabinet we draw',
+      'Clearance checked on the plan before cutting',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'What is a magic corner in a kitchen?', a: 'A mechanism in a blind corner cabinet where the front trays pull out and the rear trays slide across behind them, so nothing stays at the back of the corner.' },
+      { q: 'Is a magic corner better than a carousel?', a: 'They suit different cabinets. A carousel needs a corner with two doors; a magic corner suits a blind corner with one door opening onto a deep void.' },
+      { q: 'Do I need a magic corner?', a: 'Only if the layout leaves you a blind corner. If drawers or a blanked panel can go there instead, that is usually cheaper and more usable.' },
+      { q: 'Can a magic corner be added to an existing kitchen?', a: 'Sometimes, but the clearances rarely work out in a cabinet that was not drawn for one. It is far more reliable to specify it with the order.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'tall-pantry-pull-out.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/butlers-pantries', 'butler’s pantries'], ['/guide-what-is-a-tall-pantry-unit', 'what a tall pantry unit is'], ['/magic-corner-kitchen', 'magic corners']],
+    slug: 'tall-larder',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Tall larder pull-out',
+    title: 'Tall Larder Pull-Outs | A Pantry That Comes To You',
+    desc: 'A full-height pull-out pantry on runners. What it holds, where it beats a walk-in, and what it asks of the cabinet.',
+    h1: 'A pantry<br><span class="italic brass">that comes to you.</span>',
+    lede: 'A cupboard makes you reach past the front row. A larder pull-out brings every tier out into the room, both sides visible at once.',
+    img: 'acc-tall-larder',
+    alt: 'Tall larder pull-out with full-height tiers drawn out of a kitchen cabinet',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What is a tall larder pull-out?', 'A full-height frame of tiers on heavy runners inside a <a href="/guide-what-is-a-tall-pantry-unit" style="color:var(--brass)">tall pantry cabinet</a>. It comes out as one piece, so you see both faces of every tier at once and reach from either side. Compared with a cupboard of fixed shelves, nothing lives behind anything else.'],
+      ['Does it beat a butler’s pantry?', 'It is a different answer to the same question, and it is the right one when there is no room for a <a href="/butlers-pantries" style="color:var(--brass)">butler’s pantry</a>. A butler’s pantry is a room, with bench space and often a second sink; a larder is a cabinet. If the floor plan cannot give up the square metres, the larder gets you most of the storage without the walls.'],
+      ['What does it ask of the cabinet?', 'More than most fittings. It is the heaviest thing in the kitchen when it is full, so it needs a square carcass, correctly fixed to the wall, with runners rated for the load. That rating is specified for your job and stated on the quote. It also needs the door to open fully, so it is a poor choice directly beside a return wall.'],
+      ['One full-height unit, or two shorter ones?', 'Two shorter units are easier to load, easier to fix and usually cheaper, and they let the heavy things sit low. One full-height unit holds more and looks considerably better. If the kitchen is for a household that cooks daily we specify two; if it is the feature wall of an open-plan room, we specify one. Tell us which the room is and we will draw it that way.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Full-height tiers on heavy runners',
+      'Both faces of every tier reachable',
+      'Runner load rating stated on the quote',
+      'Needs a square carcass, fixed to the wall',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'What is a larder pull-out?', a: 'A full-height frame of tiers on runners inside a tall cabinet. It pulls out as one piece so both sides of every tier are reachable.' },
+      { q: 'Is a larder pull-out better than a pantry cupboard?', a: 'For reach, yes. Nothing sits behind anything else. A cupboard of fixed shelves is cheaper and holds awkward large items more easily.' },
+      { q: 'Does it replace a butler’s pantry?', a: 'It replaces the storage, not the bench space or the second sink. Where the floor plan has no room for a separate room, it is the practical answer.' },
+      { q: 'What stops a larder pull-out working?', a: 'A door that cannot open fully, a carcass that is not square, or runners under-specified for a loaded unit. All three are decided before it is cut.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'kitchen-drawer-organisers.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/plate-and-pot-drawer-racks', 'plate and pot racks'], ['/deep-drawer-storage', 'deep drawer fit-out'], ['/guide-pot-drawers-vs-cupboards', 'pot drawers versus cupboards']],
+    slug: 'drawer-organisers',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Drawer organisers',
+    title: 'Kitchen Drawer Organisers | Cut To The Drawer, Not The Shop',
+    desc: 'Fitted cutlery, knife and spice inserts made to your drawer rather than bought to fit roughly. What they change and what they are worth.',
+    h1: 'Inserts cut to your drawer,<br><span class="italic brass">not bought to fit roughly.</span>',
+    lede: 'The cheapest fitting on this list, and the one you touch most. A tray that fits wall to wall does not slide around; a tray from a shop does.',
+    img: 'acc-drawer-organisers',
+    alt: 'Fitted drawer organisers holding cutlery, utensils and spice jars',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What is the difference from a shop-bought tray?', 'Width. A drawer in a kitchen drawn to your wall is almost never a standard width, so an off-the-shelf tray leaves a gap, and the tray travels every time the drawer closes. An insert cut to the drawer fills it corner to corner and stays put. That is the whole difference, and it is the reason the fitted ones feel better than they sound.'],
+      ['Which drawers are worth doing?', 'The top one, always. After that it depends on what you cook. A knife block insert in the second drawer gets used daily by some households and never by others. Spice inserts are the one people most often regret skipping, because the alternative is a cupboard where every jar is behind another jar.'],
+      ['Which drawers should you do first?', 'Start with the top drawer. It is the cheapest insert in the kitchen, you open it more than any other, and it is the one people notice within a day. Then the spice drawer, because the alternative is a cupboard where every jar hides behind another jar. An organised drawer holds slightly less and gives you all of it; an unorganised one holds more and gives you the top layer.'],
+      ['What about the deep drawers?', 'Different problem, different fitting. A deep drawer needs dividers and rails rather than trays, so that pots and plates stand rather than stack. That is covered on <a href="/deep-drawer-storage" style="color:var(--brass)">deep drawer fit-out</a> and <a href="/plate-and-pot-drawer-racks" style="color:var(--brass)">plate and pot racks</a>.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Cut to the drawer, wall to wall',
+      'Cutlery, utensil, knife and spice layouts',
+      'Does not slide when the drawer closes',
+      'Specified per drawer, not per kitchen',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'Are fitted drawer organisers worth it?', a: 'For the top drawer, almost always. A tray cut to the drawer does not travel when the drawer closes, which is the single complaint people have about shop-bought ones.' },
+      { q: 'Can I organise only some drawers?', a: 'Yes. They are quoted per drawer, so most people do the top one and the spice drawer and leave the rest open.' },
+      { q: 'Do organisers reduce drawer capacity?', a: 'A little. You trade some capacity for being able to see and reach everything in it.' },
+      { q: 'What suits a deep drawer?', a: 'Dividers and rails rather than trays, so pots and plates stand upright instead of stacking into each other.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'plate-and-pot-drawer-racks.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/deep-drawer-storage', 'deep drawer fit-out'], ['/guide-pot-drawers-vs-cupboards', 'pot drawers versus cupboards'], ['/guide-drawer-runner-load-ratings-explained', 'runner load ratings']],
+    slug: 'plate-racks',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Plate and pot racks',
+    title: 'Plate And Pot Drawer Racks | Stop Stacking, Start Standing',
+    desc: 'Peg and rail systems inside a deep drawer so plates stand on edge and pots stop nesting. What they fit and when they are worth it.',
+    h1: 'Plates on edge,<br><span class="italic brass">pots that stop nesting.</span>',
+    lede: 'Stacked plates mean lifting four to reach the fifth. Nested pots mean the one you want is at the bottom. Both are drawer problems with the same fix.',
+    img: 'acc-plate-racks',
+    alt: 'Deep drawer with pegs and rails holding plates on edge and pots separated',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['How do peg systems work?', 'Movable pegs sit in a grid in the base of a deep drawer. You set them around a stack of plates or a pot so the item is held upright and cannot slide when the drawer moves. Because the pegs move, the layout changes when your crockery does, which matters more than it sounds over ten years.'],
+      ['Why not keep plates in an overhead?', 'Plenty of people do, and if you are tall and the cupboard is at a sensible height it works. A drawer wins on reach, because you look down into it rather than up and blind. It also wins on safety, since a stack of plates at shoulder height is the most dangerous thing in most kitchens.'],
+      ['Will a drawer take the weight?', 'That depends on the runner specified for the drawer, and the rating for your job is on the quote rather than estimated here. A plate drawer is one of the heaviest in a kitchen, so it is a place where the runner specification earns its money. <a href="/guide-drawer-runner-load-ratings-explained" style="color:var(--brass)">Runner load ratings</a> covers how that number is arrived at.'],
+      ['Where should the plate drawer go?', 'Near the dishwasher if you can, because that is the journey you make most. Second choice is near where you plate up. The worst place is the far end of the run from both, which is where it usually ends up if nobody plans it.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Movable pegs, reset when your crockery changes',
+      'Plates stand on edge rather than stacking',
+      'Pots held apart instead of nesting',
+      'Runner rating stated on the quote',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'What is a plate peg system?', a: 'Movable pegs set into the base of a deep drawer that hold plates upright so they cannot slide when the drawer opens.' },
+      { q: 'Are plates better in a drawer or a cupboard?', a: 'A drawer, for reach and for safety. You look down into a drawer rather than up into a cupboard, and a heavy stack at shoulder height is worth avoiding.' },
+      { q: 'Can the pegs be moved later?', a: 'That is the point of them. The layout resets when your crockery changes.' },
+      { q: 'Where is the best place for a plate drawer?', a: 'Near the dishwasher, because unloading is the trip you make most often.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'under-sink-storage.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/guide-undermount-vs-topmount-sink', 'undermount versus topmount sinks'], ['/kitchen-drawer-organisers', 'drawer organisers'], ['/magic-corner-kitchen', 'magic corners']],
+    slug: 'under-sink',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Under-sink storage',
+    title: 'Under-Sink Storage | Organisers Shaped Around The Trap',
+    desc: 'The most wasted cupboard in the kitchen, and the fittings that work around the waste and the trap instead of pretending they are not there.',
+    h1: 'The cupboard<br><span class="italic brass">shaped around the plumbing.</span>',
+    lede: 'Under the sink is the one cupboard where a square shelf is useless. The pipework is in the middle of it, which is why most people give up and stack bottles.',
+    img: 'acc-under-sink',
+    alt: 'Under-sink pull-out storage working around the waste and trap',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['Why is this cupboard always wasted?', 'Because the trap and the waste run straight through the middle of it, and nothing rectangular fits around them. A fixed shelf has to stop short, so the space behind the pipe is unreachable and the space in front holds a row of bottles two deep. The fittings that work here are the ones designed around the obstruction rather than in spite of it.'],
+      ['What actually fits?', 'Two approaches. A U-shaped or split pull-out passes either side of the trap and brings both halves out to you. A door-mounted rack uses the inside face of the door, which is the only part of the cupboard the plumbing cannot reach. Most kitchens that solve this properly use both.'],
+      ['What about the bin?', 'This is the same cupboard in most kitchens, and the two fight. A bin under the sink is in the right place because that is where you scrape plates, but it leaves almost nothing for anything else. If the layout allows a bin drawer elsewhere in the run, the under-sink cupboard becomes genuinely useful. We will raise it at drawing stage rather than leave it for you to discover.'],
+      ['Does the sink type change what fits?', 'Yes. An <a href="/guide-undermount-vs-topmount-sink" style="color:var(--brass)">undermount sink</a> and a deep bowl take more vertical space than people expect, and a waste disposal unit takes more again. These are measured off your chosen sink before the fitting is specified, not after.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Pull-outs shaped around the trap',
+      'Door-mounted racks for the face the plumbing cannot reach',
+      'Measured against your chosen sink',
+      'Bin placement raised at drawing stage',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'Why is under-sink storage always wasted?', a: 'The trap and waste run through the middle of the cupboard, so nothing rectangular fits around them and a fixed shelf has to stop short.' },
+      { q: 'What fits under a sink?', a: 'U-shaped or split pull-outs that pass either side of the trap, and door-mounted racks on the inside face of the door.' },
+      { q: 'Should the bin go under the sink?', a: 'It is in the right place for scraping plates, but it uses almost the whole cupboard. If a bin drawer can go elsewhere in the run, the under-sink cupboard becomes far more useful.' },
+      { q: 'Does the sink affect what will fit?', a: 'Considerably. A deep undermount bowl, and a waste disposal unit especially, take more vertical space than most people allow for.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'deep-drawer-storage.html',
+    parent: ['kitchen-storage-accessories.html', 'Storage accessories'],
+    related: [['/plate-and-pot-drawer-racks', 'plate and pot racks'], ['/kitchen-drawer-organisers', 'drawer organisers'], ['/guide-pot-drawers-vs-cupboards', 'pot drawers versus cupboards']],
+    slug: 'deep-drawers',
+    ctaLabel: 'Have us draw your kitchen',
+    nav: 'Deep drawer fit-out',
+    title: 'Deep Drawer Fit-Out | Dividers, Rails And Why They Matter',
+    desc: 'A deep drawer without dividers is a pile you dig through. What goes inside one, and why drawers beat cupboards for the heavy things.',
+    h1: 'A deep drawer<br><span class="italic brass">that is not just a pile.</span>',
+    lede: 'Deep drawers are the best thing to happen to kitchens in thirty years, and an empty one turns into a single heap within a fortnight.',
+    img: 'acc-deep-drawers',
+    alt: 'Deep kitchen drawer fitted with dividers holding pots and lids upright',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['Why do deep drawers beat cupboards?', 'Because the whole contents come to you. A cupboard of the same volume makes you kneel and reach past the front row to find anything at the back, and the back is where things go to be forgotten. <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">Pot drawers versus cupboards</a> goes through the comparison properly, including the cost difference, which is real.'],
+      ['What goes inside one?', 'Dividers that stand pots apart so they do not nest, rails that hold lids upright instead of flat, and a non-slip base so nothing travels when the drawer closes. The dividers matter most. A pot inside a pot is two items you have to move to reach the third.'],
+      ['Where should the heavy things go?', 'Low, in a deep drawer, every time. The heaviest items belong near the floor where you lift with your legs rather than your back and anything dropped has the shortest distance to fall. It is one of the few storage decisions that is about your body rather than your kitchen, and it is the reason we draw the pot drawers before anything else in the run.'],
+      ['What decides whether it works?', 'The runner. A deep drawer full of cast iron is the hardest-working part of a kitchen and the first place an under-specified runner shows up, usually as a drag on one side that gets worse. The rating specified for your drawers is on the quote; <a href="/guide-drawer-runner-load-ratings-explained" style="color:var(--brass)">runner load ratings</a> explains what the number means.'],
+      ['How does it arrive?', 'If you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> it is fitted and adjusted before the carton is closed. Flat packed, it arrives with the cabinet it belongs to and you fit it as you build that cabinet.'],
+      ['Why this matters when you pick who builds it', 'Nothing above is exotic. It is the ordinary detail of specifying a kitchen properly, and the reason it is written down is that most quotes do not account for any of it. A cabinet maker who has not thought about the clearance on your corner, the runner rating under your pot drawer or the trap under your sink will still quote you a number \u2014 it will just be a number for a kitchen that works less well than it could have. We draw these decisions into the plan before anything is cut, on every kitchen, at every price. That is what you are actually choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Dividers so pots stand apart',
+      'Rails that hold lids upright',
+      'Non-slip base so nothing travels',
+      'Runner rating stated on the quote',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'What should go in a deep kitchen drawer?', a: 'Pots, pans, lids and the heavy things, with dividers so they stand apart rather than nesting inside each other.' },
+      { q: 'Are deep drawers better than cupboards?', a: 'For access, clearly. The contents come to you instead of you reaching past the front row. They cost more, which is the honest trade.' },
+      { q: 'Where should heavy items go?', a: 'Low down, in a deep drawer. You lift with your legs rather than your back and anything dropped has less distance to fall.' },
+      { q: 'What makes a deep drawer fail?', a: 'An under-specified runner. A loaded drawer is the hardest-working part of a kitchen and a weak runner shows up as drag on one side.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-lift-rail.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-lift-rail-p',
+    nav: 'Pull-down hanging rail',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Wardrobe Lift Rails | The High Rail, Brought Down',
+    desc: 'A hanging rail that pulls down to you, manual or motorised. What it fits, what it holds, and when a tall robe needs one.',
+    h1: 'The high rail,<br><span class="italic brass">brought down to you.</span>',
+    lede: 'The top half of a tall wardrobe is usually ceremonial. This is the fitting that makes it storage again.',
+    img: 'wrd-lift-rail',
+    alt: 'Pull-down hanging rail lowering out of a tall wardrobe',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What does a wardrobe lift rail do?', 'It is a hanging rail on a sprung or motorised arm. Pull the handle and the rail comes down and forward, bringing a full row of hanging clothes to chest height, then returns when you let go. It exists because the usable height of a wardrobe is about two metres and the available height is often three.'],
+      ['Manual or motorised?', 'Manual is a gas-strut or spring mechanism and it is the right answer for most robes: nothing to wire, nothing to fail, and it costs less. Motorised suits a very high rail, a heavy load, or anyone who cannot comfortably pull a loaded rail down. It needs power into the cabinet, which has to be on the plan before the carcass is built, not afterwards.'],
+      ['How much weight will it take?', 'The rated load is specified for the unit on your job and printed on your quote rather than guessed here. What matters more in practice is that the rail is only as good as what it is fixed to — a lift rail in a carcass that is not square, or not properly fixed to the wall, will not stay true however good the mechanism is.'],
+      ['Where it is worth it, and where it is not', 'Worth it in a robe over about 2.4 metres, in a room with high ceilings, and in any <a href="/accessible-kitchens" style="color:var(--brass)">accessible</a> fit-out, because it brings storage down rather than asking someone to go up. Not worth it in a standard-height robe, where the top shelf is reachable anyway and the mechanism costs you hanging depth for nothing.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Manual or motorised, specified per robe',
+      'Comes down to about chest height',
+      'Rated load stated on your quote',
+      'Needs a square carcass, fixed to the wall',
+      'Power on the plan if motorised',
+    ],
+    faq: [
+      { q: 'What is a wardrobe lift rail?', a: 'A hanging rail on a sprung or motorised arm that pulls down and forward, bringing a full row of clothes from high in the robe to chest height.' },
+      { q: 'Is a manual or motorised lift rail better?', a: 'Manual suits most robes — nothing to wire and less to fail. Motorised suits a very high rail, a heavy load, or anyone who cannot pull a loaded rail down comfortably.' },
+      { q: 'Does a lift rail need power?', a: 'Only the motorised version, and it has to be on the plan before the carcass is built rather than added later.' },
+      { q: 'When is a lift rail not worth it?', a: 'In a standard-height robe. The top shelf is already reachable and the mechanism costs you hanging depth for no gain.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-trouser-rack.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-trouser-p',
+    nav: 'Pull-out trouser rack',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Pull-Out Trouser Racks For Wardrobes',
+    desc: 'Trousers hanging full length on individual arms, pulled out on runners. What it holds and what it costs you in robe width.',
+    h1: 'Every pair visible,<br><span class="italic brass">none of them creased.</span>',
+    lede: 'Folded over a rail, trousers crease at the knee and you can only see the top pair. On arms, you see all of them.',
+    img: 'wrd-trouser-rack',
+    alt: 'Pull-out trouser rack with individual arms drawn out of a wardrobe',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['How does a trouser rack work?', 'A frame of individual arms on full-extension runners. Each pair hangs full length from its own arm, the frame pulls out of the robe, and every pair is visible and reachable at once. The alternative — folded over a rail, stacked — creases them at the fold and hides everything behind the first pair.'],
+      ['How much space does it take?', 'Less than people expect in width, more than they expect in depth, because trousers hang full length. That makes it a poor fit for a shallow robe and a natural fit for a walk-in. We check it against the robe depth on the drawing, and will tell you when it does not fit rather than letting you find out on delivery.'],
+      ['Side-mounted or full width?', 'A side-mounted rack takes a narrow slice and suits a shared robe where one person needs it. A full-width pull-out holds considerably more and suits a dedicated section. The decision is about how the robe is divided between people, which is why it is worth saying at drawing stage who is using what.'],
+      ['What about belts and ties?', 'Usually the same section of the robe and usually a different fitting — a pull-out rack with hooks, covered on <a href="/wardrobe-valet-and-racks" style="color:var(--brass)">valet rods and racks</a>. The two go together often enough that we draw them as a pair.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Individual arms, trousers hang full length',
+      'Full-extension runners, every pair visible',
+      'Side-mounted or full width',
+      'Checked against your robe depth on the drawing',
+      'Specified per robe on your quote',
+    ],
+    faq: [
+      { q: 'What is a pull-out trouser rack?', a: 'A frame of individual arms on runners where each pair of trousers hangs full length, so all of them are visible when the frame is pulled out.' },
+      { q: 'How deep does a wardrobe need to be for a trouser rack?', a: 'Deeper than most people allow, because trousers hang full length. We check it against your robe depth when the joinery is drawn.' },
+      { q: 'Side-mounted or full width?', a: 'Side-mounted takes a narrow slice and suits a shared robe. Full width holds much more and suits a dedicated section.' },
+      { q: 'Will a trouser rack crease trousers?', a: 'Not the way a rail does. Each pair hangs from its own arm rather than folded over a bar, so there is no crease at the knee.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-drawer-inserts.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-inserts-p',
+    nav: 'Jewellery and accessory inserts',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Wardrobe Drawer Inserts | Cut To The Drawer',
+    desc: 'Fitted trays for jewellery, watches and accessories, cut to the drawer rather than bought to fit roughly.',
+    h1: 'Fitted to the drawer,<br><span class="italic brass">not rattling around in it.</span>',
+    lede: 'A drawer of loose jewellery is a drawer you sort through. Compartments sized for what goes in them is the whole difference.',
+    img: 'wrd-jewellery',
+    alt: 'Fitted wardrobe drawer insert with compartments for jewellery and accessories',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['Why fitted rather than bought?', 'Because a drawer in joinery drawn to your room is almost never a standard width. An off-the-shelf tray leaves a gap, and the tray travels every time the drawer closes — which, in a drawer of jewellery, means everything ends up in one corner. An insert cut to the drawer fills it wall to wall and stays where it is.'],
+      ['What goes in which compartment?', 'The useful split is by shape rather than by category: long and thin for chains and watches, shallow and square for rings and cufflinks, deeper and open for bulkier pieces and sunglasses. Lined compartments matter here in a way they do not in a kitchen, because the things in them scratch.'],
+      ['Is a lit drawer worth it?', 'For watches and the pieces you are choosing between, yes — covered on <a href="/wardrobe-lighting" style="color:var(--brass)">wardrobe lighting</a>. A glazed lit drawer turns storage into display, and it is the one fitting in a robe that people show other people. For everyday jewellery it is an indulgence and we will say so.'],
+      ['Which drawers are worth doing?', 'The top one, always, because it is the one you open daily. Beyond that it depends on how much small, loose, scratchable material you own. Most people do one and are glad of it; a few do three.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Cut to the drawer, wall to wall',
+      'Compartments sized by shape, not category',
+      'Lined where the contents scratch',
+      'Specified per drawer, not per robe',
+      'Quoted as its own line',
+    ],
+    faq: [
+      { q: 'Are fitted wardrobe drawer inserts worth it?', a: 'For the drawer you open daily, almost always. A tray cut to the drawer does not travel when it closes, which is the one complaint people have about shop-bought ones.' },
+      { q: 'How should jewellery drawer compartments be divided?', a: 'By shape rather than category — long and thin for chains and watches, shallow for rings, deeper for bulkier pieces.' },
+      { q: 'Should the compartments be lined?', a: 'In a wardrobe, yes. Unlike kitchen inserts, the contents scratch.' },
+      { q: 'Can I do just one drawer?', a: 'Yes. They are specified per drawer, so most people do the top one only.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'pull-out-wardrobe-mirror.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-mirror-p',
+    nav: 'Pull-out mirror',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Pull-Out Wardrobe Mirrors | Full Length, Out Of The Way',
+    desc: 'A full-length mirror inside the robe that slides out when you want it. Where it fits and what it saves you.',
+    h1: 'Full length,<br><span class="italic brass">and out of the way.</span>',
+    lede: 'A bedroom rarely has a spare wall. A mirror that lives inside the robe does not need one.',
+    img: 'wrd-mirror',
+    alt: 'Full-length pull-out mirror drawn out from inside a wardrobe',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['How does a pull-out mirror work?', 'A full-length mirror on runners, mounted inside the robe, usually at the end of a hanging section. It slides out, swivels where the fitting allows, and goes back. Closed, the robe looks like any other; open, you have a full-length mirror in the right place, which is next to the clothes.'],
+      ['Why not just put one on the door?', 'A door mirror works and costs less, and for many robes it is the right answer. Where it fails is a walk-in with no suitable door, a robe whose doors slide rather than swing, or a bedroom where a mirrored door is more reflective surface than you want to live with. The pull-out solves all three.'],
+      ['What does it cost you inside the robe?', 'A slice of hanging width, usually around the depth of the mirror plus the runner. In a generous robe that is nothing; in a tight one it is a real decision, and the honest comparison is against what you would otherwise hang in that slice.'],
+      ['Where should it go?', 'At the end of a hanging run rather than the middle, so pulling it out does not mean pushing clothes aside, and on the side nearer the light. These sound like small decisions and they are the difference between using it daily and forgetting it is there.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Full length, mounted inside the robe',
+      'Slides out on runners, swivels where fitted',
+      'No wall and no mirrored door needed',
+      'Placed at the end of a hanging run',
+      'Specified per robe on your quote',
+    ],
+    faq: [
+      { q: 'What is a pull-out wardrobe mirror?', a: 'A full-length mirror on runners inside the robe that slides out when you want it and stays hidden when you do not.' },
+      { q: 'Is a pull-out mirror better than a mirrored door?', a: 'Not always. A door mirror is cheaper and works well on swing doors. The pull-out suits sliding doors, walk-ins, and bedrooms where you do not want a wall of reflection.' },
+      { q: 'How much space does a pull-out mirror use?', a: 'Roughly the depth of the mirror plus its runner, taken out of hanging width.' },
+      { q: 'Where is the best place for one?', a: 'At the end of a hanging run, on the side nearer the light, so you are not pushing clothes aside to use it.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-shoe-storage.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-shoes-p',
+    nav: 'Shoe storage',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Wardrobe Shoe Storage | Angled, Rotating And In View',
+    desc: 'Shoe racks that hold pairs in order and in sight instead of a stack of boxes. What suits a built-in and what suits a walk-in.',
+    h1: 'In order,<br><span class="italic brass">and in sight.</span>',
+    lede: 'Shoes in boxes are shoes you forget you own. The whole job of this fitting is keeping them visible.',
+    img: 'wrd-shoe-rack',
+    alt: 'Wardrobe shoe storage with angled racks holding pairs in view',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['Angled racks, flat shelves or rotating?', 'Angled racks show the whole shoe and fit more pairs into the same height, which is why they are the default. Flat shelves suit boots and anything that will not sit on an angle. A rotating rack holds the most in the least floor area and suits a walk-in corner, where it turns the hardest part of the room into the most useful.'],
+      ['How many pairs, realistically?', 'More than you plan for. The number people give at drawing stage is almost always the number they own today rather than the number they will own, and shoe storage is the fitting most often regretted as too small. If it is a close call we draw the larger one.'],
+      ['Where should it go in the robe?', 'Low, for the obvious reason, and near the door of a walk-in rather than the back. Shoes are the thing you reach for last and in a hurry. Putting them at the far end of a walk-in is a small daily annoyance that compounds.'],
+      ['What about boots and sports shoes?', 'Boots need height and will not sit on an angled rack, so they want a dedicated flat section — worth saying at drawing stage if you own several pairs. Sports shoes want ventilation more than anything, which is an argument for open racks rather than a closed cabinet.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Angled, flat or rotating to suit the room',
+      'Rotating racks for a walk-in corner',
+      'Drawn low and near the door',
+      'Flat sections where you own boots',
+      'Specified per robe on your quote',
+    ],
+    faq: [
+      { q: 'What is the best wardrobe shoe storage?', a: 'Angled racks for most shoes, flat shelves for boots, and a rotating rack where a walk-in has an awkward corner to use up.' },
+      { q: 'How many pairs should I plan for?', a: 'More than you own now. Shoe storage is the fitting most often regretted as too small.' },
+      { q: 'Where should shoe storage go in a wardrobe?', a: 'Low, and near the door of a walk-in rather than at the back, because shoes are what you reach for last and in a hurry.' },
+      { q: 'Do boots need different storage?', a: 'Yes. They need height and will not sit on an angled rack, so they want a dedicated flat section.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-lighting.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-light-p',
+    nav: 'Wardrobe lighting',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Wardrobe Lighting | Lit Rails, Shelves And Display Drawers',
+    desc: 'LED rails, shelf lighting and glazed display drawers, switched by sensor. What it changes and where it earns its place.',
+    h1: 'You cannot judge<br><span class="italic brass">a colour in the dark.</span>',
+    lede: 'Most wardrobes are lit by the bedroom light, behind you, casting your own shadow onto the clothes. That is the problem this solves.',
+    img: 'wrd-rail-light',
+    alt: 'Wardrobe hanging rail with integrated LED lighting above hanging clothes',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['Why light a wardrobe at all?', 'Because the usual arrangement puts the light source behind you and your shadow on the thing you are looking at. At six in the morning that is the difference between navy and black. Light inside the robe, in front of the clothes, is the only arrangement that actually works.'],
+      ['Rail, shelf or drawer?', 'A lit rail is the one that matters most, because it lights hanging clothes where you look. Shelf lighting suits folded storage and open shelving in a walk-in. A glazed lit drawer is for watches and jewellery and is as much display as function — see <a href="/wardrobe-drawer-inserts" style="color:var(--brass)">drawer inserts</a>.'],
+      ['Sensor or switch?', 'Sensor, almost always. A light that comes on as the door opens or the drawer slides is a light you never think about, and never leave on. The exception is a walk-in you spend real time in, where a switch you control is less irritating than a sensor that times out while you are deciding.'],
+      ['What does it need from the joinery?', 'Power into the cabinet, which has to be on the plan before the carcass is built. Retrofitting lighting into finished joinery means a visible cable or a cut you can see, so it is one of the decisions worth making early even if you install later.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Lit rails, shelf strips and display drawers',
+      'Sensor switching as standard',
+      'Power on the plan before the carcass',
+      'Warm or neutral colour temperature',
+      'Specified per robe on your quote',
+    ],
+    faq: [
+      { q: 'Why does a wardrobe need lighting?', a: 'Because the bedroom light sits behind you and casts your shadow onto the clothes. Light inside the robe is the only arrangement that shows a colour properly.' },
+      { q: 'Should wardrobe lights be sensor or switched?', a: 'Sensor for most robes — it comes on as the door opens and is never left on. A walk-in you spend time in is better on a switch.' },
+      { q: 'Can wardrobe lighting be added later?', a: 'Power needs to be on the plan before the carcass is built. Retrofitting means a visible cable or a visible cut.' },
+      { q: 'What is a lit display drawer?', a: 'A glazed, lit drawer for watches and jewellery. It is as much display as storage, and the one fitting in a robe people show other people.' },
+    ],
+  });
+
+  SEGMENTS.push({
+    file: 'wardrobe-valet-and-racks.html',
+    parent: ['wardrobe-storage.html', 'Wardrobe fittings'],
+    related: [['/wardrobe-storage', 'the full wardrobe range'], ['/flat-pack-wardrobes', 'flat pack wardrobes'], ['/joinery', 'joinery']],
+    slug: 'wrd-valet-p',
+    nav: 'Valet rod and racks',
+    ctaLabel: 'Have us draw your joinery',
+    title: 'Wardrobe Valet Rods, Belt And Tie Racks',
+    desc: 'A rod to hang tomorrow on, and pull-out racks that keep belts and ties straight. Small fittings, daily use.',
+    h1: 'Somewhere to hang<br><span class="italic brass">tomorrow.</span>',
+    lede: 'The cheapest fittings in a wardrobe and among the most used. A valet rod costs almost nothing and gets used every day it exists.',
+    img: 'wrd-valet',
+    alt: 'Wardrobe valet rod with hooks for belts and ties',
+    price: 'Specified on the plan',
+    range: 'before anything is cut',
+    body: [
+      ['What is a valet rod for?', 'A short rod that pulls out of the robe at about shoulder height. You hang tomorrow on it, or today’s outfit while you are deciding, or a shirt straight off the ironing board. It sounds trivial and it is the fitting people most often say they would not be without, because it is used daily and costs very little.'],
+      ['Belts and ties', 'Both want to hang straight rather than coil, which is what a drawer does to them. A pull-out rack with hooks holds them full length and lets you see all of them at once. Ties in particular do not recover from being folded in a drawer for a year.'],
+      ['Where should they go?', 'The valet rod near the door of the robe and clear of hanging clothes, so pulling it out does not push something aside. Belt and tie racks are better in the same section as shirts, because that is the order you get dressed in. These are drawing-stage decisions, not fit-out afterthoughts.'],
+      ['Is it worth it in a small robe?', 'The valet rod, yes — it takes almost no space and does real work. A full belt and tie rack in a small robe is harder to justify against the hanging width it uses, and a simple hook strip on the inside of a door often does enough.'],
+      ['How does it arrive?', 'Flat packed it arrives with the cabinet it belongs to and you fit it as you build that cabinet. Ordered <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>, it is fitted and adjusted before the carton is closed.'],
+      ['Why this matters when you pick who builds it', 'None of this is exotic. It is the ordinary detail of specifying joinery properly, and the reason it is written down is that most quotes do not account for any of it. Someone who has not thought about the drop height on your rail, the clearance your drawer needs or where the mirror sits when it is open will still quote you a number — it will just be a number for a robe that works less well than it could have. We draw these decisions into the plan before anything is cut. That is what you are choosing when you choose who to buy from.'],
+    ],
+    list: [
+      'Valet rod pulls out at shoulder height',
+      'Belts and ties hang straight, not coiled',
+      'Full-length and visible at once',
+      'Drawn near the door and clear of clothes',
+      'Specified per robe on your quote',
+    ],
+    faq: [
+      { q: 'What is a wardrobe valet rod?', a: 'A short pull-out rod at about shoulder height for hanging tomorrow’s outfit, or today’s while you decide.' },
+      { q: 'How should belts and ties be stored?', a: 'Hanging straight on a pull-out rack rather than coiled in a drawer. Ties in particular do not recover from being folded for a year.' },
+      { q: 'Is a valet rod worth it in a small wardrobe?', a: 'Yes. It takes almost no space and gets used daily. A full belt and tie rack is harder to justify in a small robe.' },
+      { q: 'Where should a valet rod go?', a: 'Near the door of the robe and clear of hanging clothes, so pulling it out does not push anything aside.' },
+    ],
+  });
+
+  /* NSW and Victoria are sold on their own product pages, so the generated
+     state hub is skipped for both. That left their regions and towns with no
+     inbound path from anywhere a crawler could reach. This is that path. */
+  function regionIndexFor(code, label) {
+    // required here rather than via NAT, which is declared further down the file
+    const rs = require('./_towns.js').REGIONS.filter((r) => r.state === code);
+    const towns = rs.reduce((n, r) => n + r.towns.length, 0);
+    return `
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Where we ship in ${label}</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Every region,<br>every postcode.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">${rs.length} regions and ${towns} towns, freighted flat packed or delivered assembled. Freight is quoted to your postcode as its own line on the quote.</p>
+      <div class="grid cols-3 mt-3">
+        ${rs.map((r, i) => `
+        <a class="card" href="/flat-pack-kitchens-${r.slug}" ${rv()} data-rv-d="${(i % 3) + 1}">
+          <div class="card__body">
+            <h3 class="d4">${r.name.charAt(0).toUpperCase() + r.name.slice(1)}</h3>
+            <p class="small">${r.towns.slice(0, 4).map((t) => t[1]).join(', ')}${r.towns.length > 4 ? ' and ' + (r.towns.length - 4) + ' more' : ''}</p>
+            <span class="link-u mt-1">See the region &rarr;</span>
+          </div>
+        </a>`).join('')}
+      </div>
+    </div>
+  </section>`;
+  }
+
+  SEGMENTS.find((x) => x.slug === 'flat-pack-nsw').extra = regionIndexFor('NSW', 'New South Wales');
+  SEGMENTS.find((x) => x.slug === 'flat-pack-victoria').extra = regionIndexFor('VIC', 'Victoria');
 
   const segmentPages = SEGMENTS.map((s) => ({
     file: s.file,
@@ -3239,7 +3880,7 @@ module.exports = function (api) {
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${s.h1}</h1>
         <p class="lede">${s.lede}</p>
         <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
-          <a class="btn btn--lg" href="contact.html">${s.slug === 'trade' ? 'Open a trade account' : 'Get my free quote'}</a>
+          <a class="btn btn--lg" href="contact.html">${s.ctaLabel || (s.slug === 'trade' ? 'Open a trade account' : 'Get my free quote')}</a>
           <a class="btn btn--ghost btn--lg" href="investment.html">See the price bands</a>
         </div>
       </div>
@@ -3248,6 +3889,32 @@ module.exports = function (api) {
   </section>
 
   ${trustStrip}
+  ${(() => {
+    /* Products whose hero is a detail shot never show a finished kitchen.
+       One goes here, under the hero. Wardrobes and laundries are left out:
+       they are not kitchens, and the photograph has to match the page. */
+    const DETAIL = /^(detail-|splashback-|material-samples|joinery-sketch|studio-desk|drawer-detail|vanity-|wardrobe-|laundry-room|media-wall)/;
+    const NOT_KITCHEN = ['flat-pack-wardrobes', 'laundry'];
+    if (!DETAIL.test(s.img) || NOT_KITCHEN.includes(s.slug)) return '';
+    const POOL = [
+      ['collection-marble-01', 'Oak kitchen with a full-height marble splashback and a stone island bench'],
+      ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances'],
+      ['galley-stone', 'Stone galley kitchen with pendant lighting and concealed handles'],
+      ['signature-dark', 'Navy kitchen with leather bar seating opening to a living area'],
+      ['island-marble-brass', 'Stone island bench with brushed brass tapware'],
+      ['collection-marble-04', 'Marble splashback and brass lighting above a timber kitchen'],
+    ];
+    let hh = 5;
+    for (const c of s.slug) hh = (hh * 33 + c.charCodeAt(0)) | 0;
+    const [file, alt] = POOL[Math.abs(hh) % POOL.length];
+    return `
+  <section class="section" style="padding-block:clamp(1.75rem,3.5vw,2.75rem)">
+    <div class="wrap">
+      ${frame(file, alt, 'wide')}
+      <p class="small muted mt-2" ${rv()}>Cut to the room it goes in, not picked from a catalogue &mdash; <a href="/gallery" style="color:var(--brass)">see more kitchens</a> or <a href="/contact" style="color:var(--brass)">send us your measurements</a>.</p>
+    </div>
+  </section>`;
+  })()}
 
   <section class="section">
     <div class="wrap split" style="align-items:start">
@@ -3263,7 +3930,7 @@ module.exports = function (api) {
           <span class="tier__tag">What you get</span>
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">${s.price}<small>${s.range}</small></div>
           <ul>${s.list.map((x) => `<li>${x}</li>`).join('')}</ul>
-          <a class="btn btn--block" href="contact.html">${s.slug === 'trade' ? 'Talk to us about trade' : 'Get my free quote'}</a>
+          <a class="btn btn--block" href="contact.html">${s.ctaLabel || (s.slug === 'trade' ? 'Talk to us about trade' : 'Get my free quote')}</a>
         </div>
         ${s.related ? `<p class="small muted mt-2">Also: ${s.related.map((r) => `<a href="${r[0]}" style="color:var(--brass)">${r[1]}</a>`).join(" &middot; ")}</p>` : ''}
         ${(() => {
@@ -3316,7 +3983,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3356,7 +4023,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3371,7 +4038,7 @@ module.exports = function (api) {
         ['What makes it traditional rather than modern', 'Three things: the door has a frame and a visible profile; the cabinetry is detailed as furniture rather than as boxes, with end panels, plinths and a defined cornice; and the hardware is visible and classical rather than hidden. Nothing about the interior changes — pot drawers, soft close, internal organisation are all the same as in a <a href="/guide-contemporary-kitchen-style" style="color:var(--brass)">contemporary kitchen</a>.'],
         ['Where the proportions matter most', 'The island. A traditional island is detailed as a piece of furniture: a bench with an overhang, panelled ends, often a different colour from the main run. Treat it as cabinetry and the whole kitchen reads cheaper. The second place is the cornice and plinth — a traditional kitchen that runs to the ceiling without a defined top edge loses the proportion it depends on.'],
         ['Avoiding the dated version', 'What dates a traditional kitchen is never the door. It is the finishes around it: heavily grained laminate, ornate corbels, a tiled splashback with a border, high-gloss stone. Keep the door traditional and everything else quiet and the kitchen stays current for a very long time. <a href="/guide-hamptons-style-kitchen" style="color:var(--brass)">Hamptons</a> and <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> are both narrower, more specific versions of the same idea.'],
-        ['The specification underneath', '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. A traditional kitchen asks more of the carcass than a flat one, because panelled doors are heavier and the hinge has to carry them without dropping. Blum hinges adjust in three directions, so the line between doors can be set and kept.'],
+        ['The specification underneath', '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. A traditional kitchen asks more of the carcass than a flat one, because panelled doors are heavier and the hinge has to carry them without dropping. Blum hinges adjust in three directions, so the line between doors can be set and kept.'],
       ],
       faq: [
         { q: 'What is a traditional kitchen?', a: 'One with panelled or profiled doors, furniture-style detailing on the island and end panels, and visible classical hardware, without reproducing a specific period.' },
@@ -3396,7 +4063,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3411,7 +4078,7 @@ module.exports = function (api) {
         ['Work to the picture rail', 'The most common mistake is cabinetry that stops at an arbitrary height and leaves a dusty gap below a three-metre ceiling. The two answers that work are running the overheads to the picture rail and stopping cleanly, or running right to the ceiling with a defined cornice. Anything between reads as unfinished. Measure the rail before anything else is decided.'],
         ['Match the joinery, not the era', 'A Federation house already has architraves, skirtings and doors with a specific profile. A kitchen door with a comparable frame width sits beside them; a flat handleless front does not. This is why <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> and <a href="/guide-traditional-kitchen-style" style="color:var(--brass)">traditional</a> doors are the usual answers in these houses, and why the reproduction options rarely are.'],
         ['The palette these houses carry', 'Federation interiors run warmer and deeper than Victorian ones: creams, deep reds, greens, and a lot of stained timber. A kitchen in heritage greens or a warm off-white with a timber island sits comfortably. Cold greys and stark white fight the existing timber, which is usually the one thing in the room you are not replacing.'],
-        ['What it costs', 'Nothing about the style adds cost on its own; what adds cost is the ceiling height, because full-height cabinetry means more cabinetry. Our <a href="/kitchen-cost-australia" style="color:var(--brass)">cost page</a> works in linear metres of run, so the tall bank is the line to look at. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+        ['What it costs', 'Nothing about the style adds cost on its own; what adds cost is the ceiling height, because full-height cabinetry means more cabinetry. Our <a href="/kitchen-cost-australia" style="color:var(--brass)">cost page</a> works in linear metres of run, so the tall bank is the line to look at. 18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection.'],
       ],
       faq: [
         { q: 'What is a Federation kitchen?', a: 'A kitchen built for an Australian house from roughly 1890 to 1915, working with its high ceilings, picture rails and existing timber joinery rather than reproducing a period kitchen.' },
@@ -3436,7 +4103,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3451,7 +4118,7 @@ module.exports = function (api) {
         ['Galley or single run, almost always', 'A Victorian terrace kitchen is usually too narrow for an island. A <a href="/guide-kitchen-layouts" style="color:var(--brass)">galley</a> with runs on both sides needs 1200mm clear between benches to work; below that one side has to be shallow or go. A single run with a tall bank at one end is often the better answer and feels far less enclosed.'],
         ['Use the height, but break it', 'Cabinetry that runs unbroken to a 3.5 metre ceiling in a 2.4 metre wide room reads as a wall of doors. Break it: open shelving or a glazed section at high level, a different finish on the tall bank, or stopping the overheads and leaving the top of the wall to the original cornice. The ornament in a Victorian room is usually at ceiling level, which is an argument for not covering it.'],
         ['Door profiles that suit the period', 'Victorian joinery is more ornamental than Federation. A profiled or beaded door suits it better than a plain Shaker, though Shaker is never wrong. Avoid the handleless options entirely — in a room this decorated they read as an unrelated insertion. <a href="/guide-traditional-kitchen-style" style="color:var(--brass)">Traditional</a> and <a href="/guide-french-provincial-kitchen" style="color:var(--brass)">French provincial</a> both sit comfortably here.'],
-        ['What it costs', 'The narrow room usually means less cabinetry, and the high ceiling usually means taller cabinetry, so the two roughly cancel. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> prices in linear metres of run. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+        ['What it costs', 'The narrow room usually means less cabinetry, and the high ceiling usually means taller cabinetry, so the two roughly cancel. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> prices in linear metres of run. 18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection.'],
       ],
       faq: [
         { q: 'What is a Victorian kitchen?', a: 'A kitchen in an Australian house built roughly 1840 to 1900 — a terrace, cottage or villa — working around narrow rooms, very high ceilings and ornate ceiling detailing.' },
@@ -3476,7 +4143,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3516,7 +4183,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3531,7 +4198,7 @@ module.exports = function (api) {
         ['Texture does the work now', 'The current Mediterranean kitchen is defined by surface rather than colour: microcement or plaster finishes, honed rather than polished stone, matte timber, and an arch somewhere if the room allows. Where the Tuscan version added colour and ornament, this one removes shine. It is why it photographs so well in Australian light, which is harsh on gloss.'],
         ['The palette', 'Warm neutrals — bone, sand, clay, olive — with timber and natural stone. One deep accent at most. The distinguishing feature from a <a href="/guide-coastal-kitchen-design" style="color:var(--brass)">coastal kitchen</a> is temperature: coastal runs cool and blue-leaning, Mediterranean runs warm and earth-leaning, with the same restraint.'],
         ['Where arches belong, and where they do not', 'An arched opening into a <a href="/butlers-pantries" style="color:var(--brass)">butler’s pantry</a> or a shaped niche in a splashback carries the style with one gesture. Arched cabinet doors do not — they read as the 2000s version almost immediately. Keep arches architectural, in the room rather than in the cabinetry.'],
-        ['What it costs', 'The style itself adds nothing; the finishes can. Honed natural stone is the dearest benchtop option and the most correct one here. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> shows the benchtop upgrade against each collection. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+        ['What it costs', 'The style itself adds nothing; the finishes can. Honed natural stone is the dearest benchtop option and the most correct one here. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> shows the benchtop upgrade against each collection. 18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection.'],
       ],
       faq: [
         { q: 'What is a Mediterranean kitchen?', a: 'One drawing on southern European interiors: warm earth tones, textured plaster and timber finishes, honed stone, arches, and natural material over gloss.' },
@@ -3556,7 +4223,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3571,7 +4238,7 @@ module.exports = function (api) {
         ['What to leave out', 'A cottage kitchen does not have room for a bank of tall cabinetry, a wide island, and a full set of overheads. Pick two. The most common successful version is a single run with a short tall bank at one end and open shelving instead of overheads, which keeps the room from feeling boxed. Our <a href="/guide-kitchen-layouts" style="color:var(--brass)">kitchen layouts guide</a> works through the trade-offs in detail.'],
         ['Why drawers matter more here', 'In a small kitchen the depth of a cupboard is wasted space, because you cannot reach the back without emptying the front. <a href="/guide-pot-drawers-vs-cupboards" style="color:var(--brass)">Pot drawers</a> recover that depth entirely, and in a four metre kitchen that difference is the difference between workable and not. It is the single best place to spend money in a cottage kitchen.'],
         ['The warmth comes from material', 'Painted timber-look doors, a deep sink, an exposed timber shelf, visible crockery. Cottage warmth is about seeing things rather than hiding them, which is the opposite instruction from most small-kitchen advice. The compromise is open storage away from the cooktop and closed storage near it.'],
-        ['What it costs', 'Less than anything else, because there is less of it. A four metre cottage kitchen is the cheapest real kitchen we quote; <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> shows worked figures by run length. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+        ['What it costs', 'Less than anything else, because there is less of it. A four metre cottage kitchen is the cheapest real kitchen we quote; <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> shows worked figures by run length. 18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection.'],
       ],
       faq: [
         { q: 'What is a cottage kitchen?', a: 'A small, informal, warm kitchen: a short run, visible storage, a deep sink and painted timber, with the constraint of the room treated as the point.' },
@@ -3596,7 +4263,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3611,7 +4278,7 @@ module.exports = function (api) {
         ['Pick a side on each element', 'The way transitional fails is by compromising on every element at once — a half-profiled door, a half-visible handle, a mid-grey nobody chose. The way it works is picking a side on each: a clearly traditional door with clearly modern hardware, or a flat door with a traditional island and a classic benchtop. Commit on each decision and the whole reads deliberate.'],
         ['The door is usually Shaker', 'A <a href="/guide-shaker-kitchen-style" style="color:var(--brass)">Shaker</a> door is the default transitional door, because its frame gives traditional form with no ornament to date. Pair it with a slim contemporary bar pull rather than a knob and the kitchen moves modern; pair it with a knob and it moves traditional. One hardware decision shifts the whole room.'],
         ['Where to put the contemporary half', 'Usually the benchtop and the appliances. Honed stone with a slim 20mm edge, integrated appliances and a plain splashback give the modern half while the cabinetry does the traditional half. Reverse it — a flat door with an ornate splashback — and it rarely holds together.'],
-        ['What it costs', 'Shaker and lightly profiled doors sit in our <a href="/kitchens#maison" style="color:var(--brass)">Maison</a> range; flat doors start at <a href="/kitchens#essence" style="color:var(--brass)">Essence</a>. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> sets out the linear metre figures and what the benchtop upgrade adds. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection.'],
+        ['What it costs', 'Shaker and lightly profiled doors sit in our <a href="/kitchens#maison" style="color:var(--brass)">Maison</a> range; flat doors start at <a href="/kitchens#essence" style="color:var(--brass)">Essence</a>. <a href="/kitchen-cost-australia" style="color:var(--brass)">The cost page</a> sets out the linear metre figures and what the benchtop upgrade adds. 18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection.'],
       ],
       faq: [
         { q: 'What is a transitional kitchen?', a: 'One combining traditional form — a framed or lightly profiled door — with contemporary restraint: clean lines, a quiet palette and modern hardware.' },
@@ -3636,7 +4303,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3676,7 +4343,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3716,7 +4383,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3756,7 +4423,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Any style, same specification',
         title: 'The style is the door. Everything behind it is the same.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware on every collection. The style changes what you see, not what holds it up.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every collection. The style changes what you see, not what holds it up.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3796,7 +4463,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3836,7 +4503,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3876,7 +4543,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3916,7 +4583,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3956,7 +4623,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -3996,7 +4663,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4036,7 +4703,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4051,7 +4718,7 @@ module.exports = function (api) {
         ['What the rating actually covers', 'Two things: the weight, and the number of open-close cycles at that weight. A runner rated to 40kg is not rated to hold 40kg once; it is rated to carry it repeatedly for a tested life. That second half is what separates a branded runner from an unmarked one, and it is the half that never appears in a sales description.'],
         ['Where it matters most', 'Pot drawers under a cooktop, which carry cast iron. Pantry drawers, which people fill more heavily than they expect. Wide drawers, because the same weight on a longer runner puts more leverage on the mounting. A 900mm drawer full of crockery is the test case for whether the specification was honest.'],
         ['How to tell before buying', 'Ask the brand and the rating, and ask for it in writing on the quote. A supplier who names Blum, Hettich or Grass and gives a figure is telling you something checkable. A supplier who says "soft close runners" and nothing further is telling you something too. Our <a href="/guide-what-is-a-full-extension-runner" style="color:var(--brass)">full-extension runner guide</a> covers the other half of the specification.'],
-        ['What we fit', 'Blum full-extension runners with soft close as standard on every drawer, at no separate line. The brand and the rating go on the quote so you can hold them against any other quote you get.'],
+        ['What we fit', 'Full-extension runners with soft close on every drawer, at no separate line. The brand and the rating go on the quote so you can hold them against any other quote you get.'],
       ],
       faq: [
         { q: 'What is a drawer runner load rating?', a: 'The weight a manufacturer certifies a pair of runners to carry, over a tested number of open-close cycles.' },
@@ -4076,7 +4743,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4116,7 +4783,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4156,7 +4823,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4196,7 +4863,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4236,7 +4903,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4276,7 +4943,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4316,7 +4983,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4356,7 +5023,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4371,7 +5038,7 @@ module.exports = function (api) {
         ['What you actually gain', 'Access to the back of the cabinet without kneeling. A shelf in a 600mm deep cupboard has roughly a third of its depth effectively unreachable without emptying the front. A full-extension drawer presents everything at once. For a household that cooks, that is the difference between using the whole kitchen and using the front of it.'],
         ['What it costs', 'Drawers cost more than doors because a drawer needs a box and a pair of runners, and the runners are the expensive part if they are any good. The difference is per cabinet, so it scales with how many you convert. It is quoted as its own line so you can decide cabinet by cabinet.'],
         ['Where a cupboard still wins', 'Under the sink, where the trap, the waste and often a bin take the space. Under a cooktop, where the burner box may intrude. And for a small number of very tall items, where a single full-height space beats three drawers. Everything else below the bench is usually better as a drawer.'],
-        ['What we specify', 'Blum full-extension runners with soft close as standard on every drawer, rated to carry a loaded pot drawer without sagging. <a href="/guide-what-is-a-full-extension-runner" style="color:var(--brass)">Full-extension runners</a> explains why partial-extension runners are the false economy here. Cabinets arrive with runners fitted when you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>.'],
+        ['What we specify', 'Full-extension runners with soft close on every drawer, rated to carry a loaded pot drawer without sagging. <a href="/guide-what-is-a-full-extension-runner" style="color:var(--brass)">Full-extension runners</a> explains why partial-extension runners are the false economy here. Cabinets arrive with runners fitted when you order <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a>.'],
       ],
       faq: [
         { q: 'Are pot drawers worth the extra cost?', a: 'For most households below the bench, yes. You get access to the whole cabinet rather than the front third. The exception is the sink cabinet, where the plumbing takes the space.' },
@@ -4396,7 +5063,7 @@ module.exports = function (api) {
         after: 2,
         eyebrow: 'Cut to your room',
         title: 'Drawn to your measurements, not a catalogue.',
-        body: '18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
+        body: '18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Flat packed or delivered assembled, shipped anywhere in Australia.',
         label: 'Get my free quote',
         href: '/contact',
       },
@@ -4948,7 +5615,7 @@ module.exports = function (api) {
         ['Hardware is what you touch', 'Hinges and drawer runners are the moving parts, and moving parts wear. Unbranded runners sag, stick and drop drawers; unbranded hinges lose adjustment so doors stop lining up. Blum hinges and runners carry a lifetime mechanical warranty because they are built to be opened a hundred thousand times. On a flat pack, hardware is often where the price was cut, because it is the part you cannot see in a photograph.'],
         ['Assembly can shorten all of it', 'A carcass built out of square puts constant load on every joint and every hinge. Cam locks over-driven with a drill split the board around them. A back panel fitted last holds whatever shape the box was in. None of it shows on day one; all of it shows by year three as doors that will not line up and drawers that rub. This is the one way flat pack differs from assembled: with assembled, the squareness is done on a bench by someone who does it daily.'],
         ['Where it lives matters', 'Coastal humidity, a rental with tenants, a short-stay unit turned over weekly, a laundry with a machine vibrating beside the cabinet — all of these shorten the life of cheap board and hardware faster than a family kitchen does. The specification that survives them is the same one: 18mm moisture-resistant, laser-bonded, Blum. Buying to a lower specification for a hard-use room is buying twice.'],
-        ['How to buy a flat pack that lasts', `Ask three questions and get the answers in writing: board thickness and moisture rating, edging method, hardware brand. If any answer is vague, that is the answer. Then either build it square — our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> covers how — or have it <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> so the squareness is done before it arrives. Our <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack kitchens</a> are 18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard, because there is no honest way to answer this question otherwise.`],
+        ['How to buy a flat pack that lasts', `Ask three questions and get the answers in writing: board thickness and moisture rating, edging method, hardware brand. If any answer is vague, that is the answer. Then either build it square — our <a href="/guide-how-to-assemble-a-flat-pack-kitchen" style="color:var(--brass)">assembly guide</a> covers how — or have it <a href="/assembled-kitchens" style="color:var(--brass)">delivered assembled</a> so the squareness is done before it arrives. Our <a href="/flat-pack-kitchens" style="color:var(--brass)">flat pack kitchens</a> are 18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard, because there is no honest way to answer this question otherwise.`],
       ],
       faq: [
         { q: 'How many years does a flat pack kitchen last?', a: 'There is no fixed number. Good board, edging and hardware, built square, last as long as a custom kitchen. Cheap board with glued edging and unbranded runners in a humid room often needs replacing within a decade, and the edges and drawers go first.' },
@@ -4973,7 +5640,7 @@ module.exports = function (api) {
         after: 3,
         eyebrow: 'Cut to the room, not the catalogue',
         title: 'Flat pack that passes all four.',
-        body: '18mm moisture-resistant board, laser-bonded edging, Blum hardware, and every cabinet drawn to your measurements. Shipped anywhere in Australia, flat pack or assembled.',
+        body: '18mm moisture-resistant board, laser-bonded edging, soft-close hardware, and every cabinet drawn to your measurements. Shipped anywhere in Australia, flat pack or assembled.',
         label: 'Get my free quote',
         href: '/flat-pack-kitchens',
       },
@@ -4997,7 +5664,7 @@ module.exports = function (api) {
         { q: 'Are flat pack kitchens as good as custom?', a: 'They can be. If the board, edging and hardware match and the cabinets are cut to the room, a flat pack is the same kitchen delivered in cartons. The difference is who assembles it.' },
         { q: 'What makes a flat pack kitchen poor quality?', a: '16mm standard board, glued edging, unbranded hardware and catalogue widths with filler panels. Any one of those is a warning; all four is the bottom of the market.' },
         { q: 'Is a more expensive flat pack worth it?', a: 'If the extra money is in the board, edging and hardware, yes, because those decide how the kitchen looks at year ten. If it is in the brand name or the showroom, no.' },
-        { q: 'Are your flat pack kitchens good quality?', a: '18mm moisture-resistant board, laser-bonded edging, Blum soft-close hardware, every cabinet cut to your drawing. It is the same specification as our assembled kitchens and it is printed on the quote.' },
+        { q: 'Are your flat pack kitchens good quality?', a: '18mm moisture-resistant board, laser-bonded edging, soft-close hardware, every cabinet cut to your drawing. It is the same specification as our assembled kitchens and it is printed on the quote.' },
       ],
     },
     {
@@ -7307,7 +7974,7 @@ module.exports = function (api) {
       faq: [
         { q: 'Is Legrabox better than a standard drawer?', a: 'It offers more internal capacity for the same external cabinet size, a more integrated soft-close mechanism, and easier organisational inserts — a genuine functional upgrade, not purely cosmetic.' },
         { q: 'Is Legrabox worth the extra cost on every drawer?', a: 'Not necessarily — many kitchens specify it on the highest-use drawers such as pots and pantry, and use a standard soft-close drawer elsewhere to manage cost.' },
-        { q: 'Does Legrabox come with a warranty?', a: 'Blum backs its hardware with a mechanical warranty, consistent with the lifetime mechanical warranty we carry across Blum hardware on every collection.' },
+        { q: 'Does Legrabox come with a warranty?', a: 'Blum backs its hardware with a mechanical warranty, consistent with the lifetime mechanical warranty we carry across soft-close hinges and full-extension runners on every collection.' },
         { q: 'What colours does Legrabox come in?', a: 'Blum offers Legrabox in a range of finishes, commonly including matte white, matte black, orion grey and stainless steel look — confirm current options with your supplier at quote stage.' },
       ],
     },
@@ -8191,11 +8858,11 @@ module.exports = function (api) {
   const NAT_ANSWER = [
     (p, r) => `We design and cut every kitchen in Rockhampton, Queensland, and freight it to ${p} ${r.route} — flat packed, or delivered assembled with the doors already hung and adjusted. We do not install in ${p}; your own builder or installer fits it from our drawings. Send the room dimensions and the quote comes back both ways, fixed and itemised, with freight to your postcode on its own line.`,
     (p, r) => `Yes, we ship to ${p}. The kitchen is drawn to your measurements, cut in Rockhampton and freighted ${r.route}. You choose flat packed or delivered assembled on the same quote, and your own trades fit it — we install in Central Queensland only. Nothing is due to see the drawing or the price, and nothing is cut until you sign the drawing off.`,
-    (p, r) => `Every cabinet is cut to your wall lengths rather than picked from catalogue widths, then freighted to ${p} ${r.route}. 18mm moisture-resistant board, laser-bonded edging and Blum hardware as standard. Installation in ${p} is by your builder or kitchen installer, working from the dimensioned service drawings that ship with the order.`,
+    (p, r) => `Every cabinet is cut to your wall lengths rather than picked from catalogue widths, then freighted to ${p} ${r.route}. 18mm moisture-resistant board, laser-bonded edging and soft-close hardware as standard. Installation in ${p} is by your builder or kitchen installer, working from the dimensioned service drawings that ship with the order.`,
     (p, r) => `Yes &mdash; ${p} is on the network. Your kitchen is drawn from your own measurements, cut in Rockhampton and freighted ${r.route}, either flat packed or delivered assembled with the doors already hung. Every cabinet is 18mm moisture-resistant board with laser-bonded edging and Blum soft-close hardware. We do not install in ${p}: your builder, carpenter or installer fits it from the dimensioned drawings that ship with the order, and a licensed plumber and electrician do their parts.`,
     (p, r) => `We supply ${p}, we do not install there. The cabinetry is cut to your wall lengths and ceiling height rather than selected from catalogue widths, then freighted ${r.route} as flat cartons or as assembled cabinets, whichever your quote compares better on. Specification is the same either way and the same in every state: 18mm moisture-resistant board, laser-bonded edging, Blum hinges and full-extension runners.`,
     (p, r) => `A ${p} kitchen is quoted from your measurements and photographs, not from a site visit, and the quote is fixed and itemised with freight shown as its own line. It is cut in Rockhampton and ships ${r.route}. You choose flat packed or delivered assembled on the same drawing. Fitting is done by your own trades &mdash; our installation team works Central Queensland only.`,
-    (p, r) => `Yes. Nothing about ${p} changes the product: 18mm moisture-resistant board, laser-bonded edging and Blum soft-close hardware on every cabinet, cut to your drawing and freighted ${r.route}. What changes is the freight line on the quote and who fits it, because installation outside Central Queensland is your own builder or installer rather than us.`,
+    (p, r) => `Yes. Nothing about ${p} changes the product: 18mm moisture-resistant board, laser-bonded edging and soft-close hardware on every cabinet, cut to your drawing and freighted ${r.route}. What changes is the freight line on the quote and who fits it, because installation outside Central Queensland is your own builder or installer rather than us.`,
     (p, r) => `Kitchens for ${p} are drawn in Rockhampton from the measurements you send, approved by you before anything is cut, then packed flat or assembled and freighted ${r.route}. The quote itemises every cabinet, the benchtop by material and metre, the hardware by brand and the freight separately. We supply only &mdash; your trades install it.`,
   ];
 
@@ -8230,7 +8897,7 @@ module.exports = function (api) {
   };
   const KIND_VAR = {
     coastal: [
-      `Salt air is relentless on hardware. It gets into unbranded runners and hinges and they stiffen, then sag, and the doors stop lining up. Every cabinet runs Blum soft-close hinges and full-extension runners as standard.`,
+      `Salt air is relentless on hardware. It gets into unbranded runners and hinges and they stiffen, then sag, and the doors stop lining up. Every cabinet runs soft-close hinges and full-extension runners.`,
       `Near the water it is never the doors that go first, it is everything that moves. Salt finds the cheapest component in the kitchen and works on it. Specifying the hardware properly at the start is most of what a coastal kitchen needs.`,
       `A house within reach of sea air is a harder brief than it looks: the finish has to survive the light and the hardware has to survive the salt. We answer the second with Blum on every hinge and runner, and the first with a finish you choose off real samples.`,
     ],
@@ -8270,7 +8937,7 @@ module.exports = function (api) {
     (p, r, k) => `A kitchen cut to your measurements rather than picked from catalogue widths, packed flat for the run to ${p} or delivered with the doors already hung and adjusted.`,
     (p, r, k) => `We do not have a showroom in ${p} and we do not need one. Send the measurements, a designer draws it, and you see the drawing and the price before anything is cut.`,
     (p, r, k) => `Every cabinet cut to your wall lengths and ceiling height, pre-drilled, labelled and freighted to ${p} with the hardware bagged against the cabinet it belongs to.`,
-    (p, r, k) => `${p} is one freight run from our door in Rockhampton. What arrives is a kitchen drawn for your room, in 18mm moisture-resistant board with Blum hardware throughout.`,
+    (p, r, k) => `${p} is one freight run from our door in Rockhampton. What arrives is a kitchen drawn for your room, in 18mm moisture-resistant board with soft-close hardware throughout.`,
     (p, r, k) => `No showroom, no design portal and no catalogue of fixed widths. You send the measurements and the photographs, a designer draws your ${p} kitchen, and the quote comes back fixed and itemised with freight on its own line.`,
     (p, r, k) => `The cabinetry that goes into a ${p} kitchen is the same cabinetry we put in our own installed jobs: 18mm moisture-resistant board, laser-bonded edging, Blum hardware. What differs is that your trades fit it rather than ours.`,
     (p, r, k) => `Cut to your wall lengths and your ceiling height, pre-drilled, labelled per cabinet and freighted to ${p} flat or assembled. You decide which after you see both on the same quote.`,
@@ -8354,7 +9021,7 @@ module.exports = function (api) {
           <div class="tier__price" style="font-size:clamp(1.5rem,2.4vw,2rem)">From $15,000<small>Flat packed, freighted to ${place}</small></div>
           <ul>
             <li>Designed to your measurements in Rockhampton</li>
-            <li>18mm moisture-resistant board, Blum lifetime hardware</li>
+            <li>18mm moisture-resistant board, soft-close hardware</li>
             <li>Packed flat, pre-drilled and labelled per cabinet</li>
             <li>Stone, brass and lighting upgrades available</li>
             <li>Fixed, itemised quote, freight shown as its own line</li>
@@ -8548,7 +9215,7 @@ module.exports = function (api) {
       parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
       parentTown: '/kitchens-yeppoon', parentTownLabel: 'kitchens in Yeppoon',
       council: LIVINGSTONE,
-      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Moisture-resistant carcasses for coastal humidity', 'Blum hardware with a lifetime mechanical warranty', 'Stone, porcelain or laminate benchtop', 'Installed by our own team, forty minutes away', 'Delivered assembled, doors adjusted before it arrives'],
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Moisture-resistant carcasses for coastal humidity', 'Soft-close hardware, brand and warranty named on your quote', 'Stone, porcelain or laminate benchtop', 'Installed by our own team, forty minutes away', 'Delivered assembled, doors adjusted before it arrives'],
       sections: [
         ['Livingstone Shire, not Rockhampton', `This is the one that trips people up. Yeppoon, Cooee Bay, Lammermoor, Taranganba, Barmaryee, Zilzie and Emu Park are all ${LIVINGSTONE}, with their own planning scheme. Whether a secondary dwelling is permitted on your block, how big it can be, and whether it can be tenanted separately are all their decisions, not ours and not Rockhampton’s. Ask them before you spend anything — we cover what the classification means for the kitchen in <a href="/guide-class-1a-granny-flat-yeppoon" style="color:var(--brass)">our Class 1a guide</a>.`],
         ['Salt air is a specification problem', 'Coastal humidity and salt do two things to cabinetry: they get into unsealed board edges, and they corrode cheap hardware. Neither shows up in year one. We specify moisture-resistant carcasses and laser-bonded edging as standard, which matters more here than fifty kilometres inland, and we would not use unbranded runners on a coastal job at any price.'],
@@ -8574,7 +9241,7 @@ module.exports = function (api) {
       parentSeg: '/short-stay-kitchens', parentSegLabel: 'Short-stay kitchens',
       parentTown: '/kitchens-capricorn-coast', parentTownLabel: 'kitchens on the Capricorn Coast',
       council: LIVINGSTONE,
-      list: ['2.4m to 4.0m runs, drawn to your dimensions', 'Porcelain or sintered stone benchtop', 'Moisture-resistant carcasses for coastal air', 'Blum full-extension runners rated for guest handling', 'Layouts designed around turnover and cleaning', 'Installed by our own team, forty minutes away'],
+      list: ['2.4m to 4.0m runs, drawn to your dimensions', 'Porcelain or sintered stone benchtop', 'Moisture-resistant carcasses for coastal air', 'Full-extension runners rated for guest handling', 'Layouts designed around turnover and cleaning', 'Installed by our own team, forty minutes away'],
       sections: [
         ['The listing photograph does the selling', 'Guests scroll. On this coast they are comparing your place against a dozen others with the same view, so the kitchen photograph is doing real work. That means uncluttered rather than expensive: full-height storage to hide the mess, an unbroken run of bench, and a splashback that does not fight the camera. We design knowing the first person to see it will see it at 400 pixels wide.'],
         ['Salt, humidity and people who do not live there', 'Three forces, all working on the same cabinetry. Coastal air gets into unsealed edges; guests shut soft-close drawers like ordinary ones; and turnover means it is cleaned harder and more often than a family kitchen. Moisture-resistant carcasses, laser-bonded edging and proper runners handle all three. This is not the room to save on hardware.'],
@@ -8626,7 +9293,7 @@ module.exports = function (api) {
       parentSeg: '/granny-flat-kitchens', parentSegLabel: 'Granny flat kitchens',
       parentTown: '/kitchens-gladstone', parentTownLabel: 'kitchens in Gladstone',
       council: GLADSTONE_C,
-      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Specified for tenant turnover, not first impressions', 'Moisture-resistant carcasses, laser-bonded edging', 'Blum hardware with a lifetime mechanical warranty', 'Installed by our own team', 'Delivered assembled, doors adjusted before it arrives'],
+      list: ['2.4m to 3.0m runs, drawn to your dimensions', 'Specified for tenant turnover, not first impressions', 'Moisture-resistant carcasses, laser-bonded edging', 'Soft-close hardware, brand and warranty named on your quote', 'Installed by our own team', 'Delivered assembled, doors adjusted before it arrives'],
       sections: [
         ['An industrial city rents differently', 'Gladstone housing turns over with the projects, and a secondary dwelling here is often an income decision rather than a family one. That means the kitchen gets a new occupant more often than most, and the parts that fail are always the same three: glued edging, standard runners, and chipboard carcasses that swell at the first dripping tap. Spend there and keep the finishes simple.'],
         ['Settle the approval before the design', `Whether a secondary dwelling can be tenanted separately on your block is a ${GLADSTONE_C} planning matter, and some approvals restrict occupation to the household of the main dwelling. That single answer decides whether the project makes sense. Our guide on <a href="/guide-granny-flat-rent-rockhampton" style="color:var(--brass)">renting out a secondary dwelling</a> covers the questions to ask, and the same logic applies here.`],
@@ -8699,6 +9366,33 @@ module.exports = function (api) {
   </section>
 
   ${trustStrip}
+  ${(() => {
+    /* Guides whose hero is a detail or workshop shot never show the reader a
+       finished kitchen. One goes here, directly under the hero, so it lands
+       inside the first third of the page on every guide. */
+    const DETAIL = /^(detail-|splashback-|material-samples|joinery-sketch|studio-desk|drawer-detail|vanity-|wardrobe-|laundry-room|media-wall)/;
+    if (!DETAIL.test(g.img)) return '';
+    const POOL = [
+      ['collection-marble-01', 'Oak kitchen with a full-height marble splashback and a stone island bench'],
+      ['openplan-long', 'Open plan kitchen with a long island bench and integrated appliances'],
+      ['signature-dark', 'Navy kitchen with leather bar seating opening to a living area'],
+      ['galley-stone', 'Stone galley kitchen with pendant lighting and concealed handles'],
+      ['island-marble-brass', 'Stone island bench with brushed brass tapware'],
+      ['timber-island', 'Timber island and joinery in an open plan home'],
+      ['collection-marble-04', 'Marble splashback and brass lighting above a timber kitchen'],
+      ['concrete-luxe', 'Kitchen with a concrete ceiling, white island and bar stools'],
+    ];
+    let h = 5;
+    for (const c of g.slug) h = (h * 33 + c.charCodeAt(0)) | 0;
+    const [file, alt] = POOL[Math.abs(h) % POOL.length];
+    return `
+  <section class="section" style="padding-block:clamp(1.75rem,3.5vw,2.75rem)">
+    <div class="wrap">
+      ${frame(file, alt, 'wide')}
+      <p class="small muted mt-2" ${rv()}>A kitchen we drew and supplied. Every one is cut to the room it goes in &mdash; <a href="/gallery" style="color:var(--brass)">see more</a> or <a href="/contact" style="color:var(--brass)">send us your measurements</a>.</p>
+    </div>
+  </section>`;
+  })()}
 
   <section class="section">
     <div class="wrap">
@@ -8950,7 +9644,7 @@ module.exports = function (api) {
           <ul>
             <li>18mm moisture-resistant board</li>
             <li>Laser-bonded edging, no glue line</li>
-            <li>Blum soft-close hinges and runners</li>
+            <li>Soft-close hinges and full-extension runners</li>
             <li>Cut to your drawing, not catalogue widths</li>
             <li>Pre-drilled and labelled per cabinet</li>
             <li>Fixed itemised quote, freight its own line</li>
@@ -8964,6 +9658,52 @@ module.exports = function (api) {
 
 
   /* ------------------------------------------------------------- towns */
+  /* Storage and access fittings. Nine of them, three shown per town page,
+     chosen by the same slug hash that picks the body sections so a town and
+     its neighbour do not show the same trio. Order here is deliberate: the
+     two that solve a problem people complain about out loud come first. */
+  const ACCESSORIES = [
+    ['acc-pull-down-basket', 'Pull-down wall basket', 'pull-down-wall-basket',
+      'The top shelf of an overhead, brought down to where you can reach it. The shelf you stopped using becomes storage again.'],
+    ['acc-magic-corner', 'Magic corner pull-out', 'magic-corner-kitchen',
+      'The blind corner stops being the cupboard you empty twice a year. The front tray swings out and the back tray follows it.'],
+    ['acc-tall-larder', 'Tall larder pull-out', 'tall-pantry-pull-out',
+      'Full-height tiers on runners, so nothing lives at the back where you forget you bought it.'],
+    ['acc-drawer-organisers', 'Drawer organisers', 'kitchen-drawer-organisers',
+      'Cutlery, knives and spices in fitted trays cut to the drawer, instead of a plastic tray that slides around in it.'],
+    ['acc-plate-racks', 'Plate and pot racks', 'plate-and-pot-drawer-racks',
+      'Pegs and rails inside a deep drawer so plates stand up and pots stop stacking into each other.'],
+    ['acc-under-sink', 'Under-sink storage', 'under-sink-storage',
+      'Organisers shaped around the trap and the waste, which is the reason that cupboard is usually wasted.'],
+    ['acc-deep-drawers', 'Deep drawer fit-out', 'deep-drawer-storage',
+      'Dividers and rails that keep a deep drawer from turning into a single pile you dig through.'],
+  ];
+
+  function accessoryBlock(place, h) {
+    const N = ACCESSORIES.length;
+    const picks = [ACCESSORIES[h % N], ACCESSORIES[(h + 3) % N], ACCESSORIES[(h + 6) % N]];
+    return `
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>What goes inside it</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Anyone can sell you boxes.<br>This is the part that takes knowing.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">Carcasses and doors decide how long it lasts. The fittings decide whether you like using it. We draw these into the plan before anything is cut, on every ${place} kitchen, at every price. Judge us on the detail — it is what separates one quote from another.</p>
+      <div class="grid cols-3 mt-3">
+        ${picks.map(([img, name, slug, copy], i) => `
+        <a class="card" href="/${slug}" ${rv()} data-rv-d="${i + 1}">
+          ${frame(img, name + ' fitted to Bilt & Co cabinetry', 'wide')}
+          <div class="card__body">
+            <h3 class="d4">${name}</h3>
+            <p>${copy}</p>
+            <span class="link-u mt-1">See how it works &rarr;</span>
+          </div>
+        </a>`).join('')}
+      </div>
+      <p class="small muted mt-3" ${rv()}>There are seven in all &mdash; <a href="/kitchen-storage-accessories" style="color:var(--brass)">see the full range</a>.</p>
+    </div>
+  </section>`;
+  }
+
   function townPage(town, region, idx) {
     const [slug, place, kind] = town;
     const stateInfo = NAT.STATES[region.state];
@@ -8981,13 +9721,18 @@ module.exports = function (api) {
       { q: `Do you install kitchens in ${place}?`, a: `No. Our own installation team works Central Queensland only. In ${place} your builder, carpenter or kitchen installer fits it, working from the dimensioned service drawings that ship with every order. Our install guide covers the three trades and the order they work in.` },
       { q: `Should I order flat pack or assembled to ${place}?`, a: `Both are quoted on the same drawing. Flat cartons ship for less and get through tight doorways; assembled arrives with carcasses built and doors adjusted so your installer is fitting rather than building. Over this distance most ${region.name} orders go flat.` },
       { q: `Who can do the plumbing and electrical in ${place}?`, a: `A licensed plumber and a licensed electrician, and you should check both licences yourself before they start. In ${stateInfo.name}, ${stateInfo.body} is the register to check against.` },
-      { q: `What board and hardware do you use?`, a: `18mm moisture-resistant board, laser-bonded edging and Blum soft-close hinges and runners on every cabinet, in every state. The specification is printed on your quote so you can hold it against anything else you are offered.` },
+      { q: `What board and hardware do you use?`, a: `18mm moisture-resistant board, laser-bonded edging and soft-close hinges and full-extension runners on every cabinet, in every state, with the hardware brand named on your quote. The specification is printed on your quote so you can hold it against anything else you are offered.` },
       [
         { q: `How long will a ${place} order take?`, a: `It depends on the kitchen and the freight route, so it is stated on your quote for your job rather than guessed here. What you can plan around is the sequence: drawing, your sign-off, cutting, then freight.` },
         { q: `Can I see a sample before ordering in ${place}?`, a: `Yes. Door, board and edging samples are posted out, and for most people that settles the colour question better than a screen does. Ask when you send the dimensions through.` },
         { q: `Is there a deposit to get a ${place} quote?`, a: `No. The drawing and the itemised quote cost nothing and carry no obligation. Payment terms for the order itself are stated on that quote.` },
       ][(h + idx) % 3],
     ];
+    faq.push({
+      q: `Can I add pull-downs and organisers to a ${place} kitchen?`,
+      a: `Yes, and they are quoted per item rather than bundled into a package you did not ask for. Pull-down wall baskets, magic corners, tall larder pull-outs and drawer organisers can all go into a ${place} order. If you order delivered assembled they are fitted before it ships; flat packed, they arrive with the cabinet they belong to.`,
+    });
+
     // The three picked sections are visible on the page as question and
     // answer, so they belong in the schema with the accordion's six. Nine
     // question/answer pairs per town, no two towns picking the same three.
@@ -9060,7 +9805,7 @@ module.exports = function (api) {
           <ul>
             <li>Drawn to your measurements, not catalogue widths</li>
             <li>18mm moisture-resistant board, laser-bonded edging</li>
-            <li>Blum soft-close hinges and full-extension runners</li>
+            <li>Soft-close hinges and full-extension runners</li>
             <li>Pre-drilled and labelled per cabinet</li>
             <li>Service drawings for your plumber and electrician</li>
             <li>Fixed itemised quote, freight its own line</li>
@@ -9075,6 +9820,7 @@ module.exports = function (api) {
   </section>
 
   ${natSpecStrip(region.climate, idx)}
+  ${accessoryBlock(place, h)}
   ${orderCta(place)}
   ${faqBlock(faq, `${place} &mdash; questions`)}
   ${ctaBand({ eyebrow: `${place}, ${region.state}`, title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: `A fixed, itemised quote for your ${place} kitchen, flat packed and delivered assembled, with freight to your postcode on each. Nothing to pay to see it.`, image: natImg(slug + 'cta', HERO_DARK), alt: `Kitchen cabinetry freighted to ${place}` })}
@@ -9088,7 +9834,7 @@ module.exports = function (api) {
     const faq = [
       { q: `Do you deliver flat pack kitchens across ${region.name}?`, a: `Yes, to every town in the region ${region.route}. Freight is quoted to your postcode on the same document as the cabinetry, as its own line.` },
       { q: `Do you install in ${region.name}?`, a: `No. Installation is Central Queensland only. Everywhere else your own builder or installer fits it from the dimensioned drawings that ship with the order.` },
-      { q: `Is the specification different this far from Rockhampton?`, a: `No. 18mm moisture-resistant board, laser-bonded edging and Blum hardware on every cabinet, in every state. What changes with distance is the freight line, which is why most orders out here go flat packed.` },
+      { q: `Is the specification different this far from Rockhampton?`, a: `No. 18mm moisture-resistant board, laser-bonded edging and soft-close hardware on every cabinet, in every state, with the brand named on your quote. What changes with distance is the freight line, which is why most orders out here go flat packed.` },
     ];
     return {
       file: `flat-pack-kitchens-${region.slug}.html`,
@@ -9210,7 +9956,7 @@ module.exports = function (api) {
           <ul>
             <li>Every postcode, flat packed or assembled</li>
             <li>18mm moisture-resistant board, laser-bonded edging</li>
-            <li>Blum soft-close hinges and full-extension runners</li>
+            <li>Soft-close hinges and full-extension runners</li>
             <li>Service drawings for your plumber and electrician</li>
             <li>Fixed itemised quote, freight its own line</li>
             <li class="no">Installation not offered in ${st.name}</li>
@@ -9354,6 +10100,17 @@ module.exports = function (api) {
       <div>${frame('island-marble-brass', 'Stone island kitchen showing the cost of a mid-range specification', 'wide', { eager: true })}</div>
     </div>
   </section>
+  <section class="section bg-2">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Work it out now</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Your room,<br>your number.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">These are the published rates applied to your measurements. Add up the length of your cabinetry runs, including the island, and the figure below is the same range we would give you on the phone.</p>
+        <p class="small muted mt-2" ${rv()} data-rv-d="3">It carries through to the quote form, so you do not type it twice.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">${estimatorCard({ cta: 'Take this to a real quote' })}</div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="wrap">
@@ -9487,7 +10244,7 @@ module.exports = function (api) {
         <p class="lede">A cost guide is only worth reading if you can see how the figures were arrived at. This is ours.</p>
         <div class="answer"><p class="eyebrow">The short answer</p><p>We publish our own rate card rather than an industry average. Cabinetry is priced per linear metre of run by collection, with benchtops and additions as separate lines. The published ranges are real ranges, not from-prices. Freight, licensed trades, installation outside Central Queensland, appliances and demolition are excluded and are never folded in.</p></div>
       </div>
-      <div>${frame('studio-desk', 'Design desk with drawings and rate card', 'wide', { eager: true })}</div>
+      <div>${frame('island-marble-brass', 'Stone island bench with brushed brass tapware in a finished kitchen', 'wide', { eager: true })}</div>
     </div>
   </section>
 
@@ -9517,7 +10274,7 @@ module.exports = function (api) {
           <ul>
             <li>18mm moisture-resistant board</li>
             <li>Laser-bonded edging, no glue line</li>
-            <li>Blum soft-close hinges and runners</li>
+            <li>Soft-close hinges and full-extension runners</li>
             <li>Cut to your drawing, not catalogue widths</li>
             <li>Fixed quote, itemised, freight separate</li>
             <li class="no">No from-prices or provisional sums</li>
@@ -9639,7 +10396,7 @@ module.exports = function (api) {
           <ul>
             <li>18mm moisture-resistant board</li>
             <li>Laser-bonded edging, no glue line</li>
-            <li>Blum soft-close hinges and runners</li>
+            <li>Soft-close hinges and full-extension runners</li>
             <li>Cut to your room, not catalogue widths</li>
             <li>Flat packed or delivered assembled</li>
           </ul>
@@ -9651,6 +10408,382 @@ module.exports = function (api) {
 
   ${faqBlock(stylesFaq, 'Questions about style')}
   ${ctaBand({ eyebrow: 'Your kitchen', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it your way.</span>', body: 'A fixed, itemised quote drawn to your room, in the style you want, flat packed or delivered assembled.', image: 'dark-dining', alt: 'Kitchen and dining room in a dark timber palette' })}
+`,
+  };
+
+  /* Storage accessories hub. Two groups: reach and capacity. Those are the
+     two complaints people actually have about a kitchen they already own. */
+  const ACC_REACH = [
+    ['acc-pull-down-basket', 'Pull-down wall basket', 'pull-down-wall-basket',
+      'The top shelf of an overhead comes down to about bench height, then springs back.'],
+    ['acc-magic-corner', 'Magic corner pull-out', 'magic-corner-kitchen',
+      'The front trays pull out of a blind corner and the rear trays slide across behind them.'],
+    ['acc-tall-larder', 'Tall larder pull-out', 'tall-pantry-pull-out',
+      'Full-height tiers that come out as one piece, reachable from both sides.'],
+  ];
+  const ACC_FIT = [
+    ['acc-drawer-organisers', 'Drawer organisers', 'kitchen-drawer-organisers',
+      'Cutlery, knife and spice inserts cut to your drawer, so they do not travel when it shuts.'],
+    ['acc-plate-racks', 'Plate and pot racks', 'plate-and-pot-drawer-racks',
+      'Movable pegs hold plates on edge and keep pots from nesting inside each other.'],
+    ['acc-deep-drawers', 'Deep drawer fit-out', 'deep-drawer-storage',
+      'Dividers and lid rails, so a deep drawer does not become one pile you dig through.'],
+    ['acc-under-sink', 'Under-sink storage', 'under-sink-storage',
+      'Pull-outs shaped around the trap, plus the inside of the door the plumbing cannot reach.'],
+  ];
+
+  const accCards = (list) => list.map(([img, name, slug, copy], i) => `
+        <a class="card" href="/${slug}" ${rv()} data-rv-d="${(i % 3) + 1}">
+          ${frame(img, name + ' fitted to Bilt & Co cabinetry', 'wide')}
+          <div class="card__body">
+            <h3 class="d4">${name}</h3>
+            <p>${copy}</p>
+            <span class="link-u mt-1">See how it works &rarr;</span>
+          </div>
+        </a>`).join('');
+
+  const accFaq = [
+    { q: 'What do kitchen storage accessories cost?', a: 'Each one is quoted as its own line on your quote rather than bundled into a package. That way you can take any of them off and see exactly what comes back, which is not true of a kitchen sold as a package with the fit-out included.' },
+    { q: 'Do I have to decide on these when I order?', a: 'It is much easier if you do. Most of them need the cabinet drawn around them \u2014 clearances for a magic corner, runner ratings for a loaded larder, the width of a wall cabinet for a pull-down. Adding them later is sometimes possible and always more awkward.' },
+    { q: 'Are they fitted before delivery?', a: 'If you order delivered assembled, yes \u2014 fitted and adjusted before the carton is closed. Flat packed, each one arrives with the cabinet it belongs to and you fit it as you build that cabinet.' },
+    { q: 'Which ones are actually worth it?', a: 'If you only do one, make it drawer organisers in the top drawer, because it is the cheapest and you touch it every day. After that it depends on the room: a blind corner makes the magic corner worth it, a tall cabinet makes the larder worth it, and overheads you cannot reach make the pull-down basket worth it.' },
+    { q: 'Can I add accessories to a kitchen I already have?', a: 'Some, if the cabinet suits. Drawer organisers are the easiest because they are cut to the drawer you have. Anything that needs clearance or a particular runner is far less reliable retrofitted than specified from the start.' },
+  ];
+
+  const accHub = {
+    file: 'kitchen-storage-accessories.html',
+    assembled: 'general',
+    title: 'Kitchen Storage Accessories | How We Specify Them',
+    desc: 'Magic corners, pull-down baskets, larder pull-outs, drawer organisers and under-sink storage — how we specify the fittings inside a kitchen.',
+    og: 'acc-magic-corner',
+    preload: 'acc-magic-corner',
+    priority: '0.8',
+    trail: [['index.html', 'Home'], ['kitchen-storage-accessories.html', 'Storage accessories']],
+    faq: accFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['#', 'Storage accessories']])}
+        <span class="pill">Specified on the plan &middot; on every kitchen we draw</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">Anyone can sell you boxes.<br><span class="italic brass">This is the part that takes knowing.</span></h1>
+        <p class="lede">Carcasses and doors decide how long a kitchen lasts. The fittings decide whether you like using it. Here is how we think about every one of them, so you can judge for yourself whether we know the trade before you send us a measurement.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Have us draw your kitchen</a>
+          <a class="btn btn--ghost btn--lg" href="/kitchen-cost-australia">What a kitchen costs</a>
+        </div>
+      </div>
+      <div>${frame('acc-magic-corner', 'Magic corner pull-out swinging trays out of a blind corner cabinet', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Things you cannot reach</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Storage you own<br>but never open.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">The top shelf of an overhead, the back of a blind corner, the bottom of a tall cupboard. Every kitchen has at least one, and the space is already paid for.</p>
+      <div class="grid cols-3 mt-3">${accCards(ACC_REACH)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Things that will not stay put</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">A drawer is only as good<br>as what is in it.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">Deep drawers were the best thing to happen to kitchens in thirty years, and an empty one becomes a single heap within a fortnight. These are what stop that.</p>
+      <div class="grid cols-3 mt-3">${accCards(ACC_FIT)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Why we write this down</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Judge us on the detail.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">You are going to get two or three quotes and they will all show a number and a pretty render. None of that tells you whether the person drawing it has thought about the clearance on your blind corner or what sits under your sink. This is the detail that separates the quotes, which is why we publish it instead of saving it for the appointment.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">We publish the rates for the same reason — <a href="/kitchen-cost-australia" style="color:var(--brass)">the cost page</a> sets out what a kitchen costs per linear metre before anyone asks you for a measurement.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">On every kitchen we draw</span>
+          <ul>
+            <li>Clearances checked before anything is cut</li>
+            <li>Runner ratings specified to the loaded weight</li>
+            <li>Sink and trap measured before the cabinet</li>
+            <li>Fittings on the plan, not added afterwards</li>
+            <li>Every line itemised, nothing bundled</li>
+          </ul>
+          <a class="btn btn--block" href="/contact">Get my free quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(accFaq, 'Storage accessories &mdash; questions')}
+  ${ctaBand({ eyebrow: 'Your kitchen', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: 'A fixed, itemised quote with every fitting on its own line, flat packed or delivered assembled.', image: 'drawer-detail', alt: 'Deep pot drawers with internal organisers' })}
+`,
+  };
+
+  /* The estimator. One per page; the script in main.js binds to #estimator.
+     `install` is true only where we actually install, so the readout does not
+     promise installation to someone in Perth. */
+  function estimatorCard(opts) {
+    const { install = false, cta = 'Get my free quote' } = opts || {};
+    return `<form id="estimator" data-est-install="${install ? '1' : '0'}" class="form form-card" ${rv()} data-rv-d="1" onsubmit="return false">
+        <div class="form__row">
+          <div class="field">
+            <label for="metres">Total cabinetry (linear metres)</label>
+            <input id="metres" name="metres" type="number" min="1" max="40" step="0.5" value="7" inputmode="decimal">
+          </div>
+          <div class="field">
+            <label for="tier">Collection</label>
+            <select id="tier" name="tier">
+              <option value="essence">Essence</option>
+              <option value="maison" selected>Maison</option>
+              <option value="atelier">Atelier</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bench">Benchtop</label>
+          <select id="bench" name="bench">
+            <option value="laminate">Laminate / compact</option>
+            <option value="stone" selected>Engineered stone, 20mm</option>
+            <option value="porcelain">Porcelain or sintered stone, 20–40mm</option>
+            <option value="natural">Natural marble or granite</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Add to the project</label>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="extra" value="pantry"><span>Butler's pantry</span></label>
+            <label class="chip"><input type="checkbox" name="extra" value="island" checked><span>Island bench</span></label>
+            <label class="chip"><input type="checkbox" name="extra" value="appliances"><span>Appliance garage</span></label>
+            <label class="chip"><input type="checkbox" name="extra" value="wine"><span>Wine wall</span></label>
+          </div>
+        </div>
+        <div class="readout">
+          <p class="lbl">Indicative investment</p>
+          <p class="val tabnums" data-est-out style="margin:0">&mdash;</p>
+          <p class="note" data-est-note style="margin:0"></p>
+        </div>
+        <a class="btn btn--block" href="contact.html" data-est-go>${cta}</a>
+      </form>`;
+  }
+
+
+  /* Wardrobe fittings hub. Grouped by what the robe is failing at: you
+     cannot reach it, you cannot see it, or it is creasing. */
+  const WRD_REACH = [
+    ['wrd-lift-rail', 'Pull-down hanging rail', 'wardrobe-lift-rail',
+      'The high rail comes down to chest height, manual or motorised. It is what makes the top half of a tall robe storage rather than ceremony.'],
+    ['wrd-mirror', 'Pull-out mirror', 'pull-out-wardrobe-mirror',
+      'Full length, inside the robe, out of the way until you want it. No spare wall and no mirrored door needed.'],
+    ['wrd-shoe-rack', 'Shoe storage', 'wardrobe-shoe-storage',
+      'Angled, flat or rotating. Low, near the door, and sized larger than the number of pairs you own today.'],
+  ];
+  const WRD_SEE = [
+    ['wrd-rail-light', 'Wardrobe lighting', 'wardrobe-lighting',
+      'Lit rails, shelf strips and glazed display drawers, on sensors. The bedroom light puts your shadow on the clothes; this does not.'],
+    ['wrd-jewellery', 'Drawer inserts', 'wardrobe-drawer-inserts',
+      'Fitted trays cut to the drawer, compartments sized by shape, lined where the contents scratch.'],
+    ['wrd-trouser-rack', 'Trouser rack', 'wardrobe-trouser-rack',
+      'Individual arms on runners so trousers hang full length. No crease at the knee and every pair visible at once.'],
+    ['wrd-valet', 'Valet rod and racks', 'wardrobe-valet-and-racks',
+      'Somewhere to hang tomorrow, and racks that keep belts and ties straight instead of coiled in a drawer.'],
+  ];
+
+  const wrdCards = (list) => list.map(([img, name, slug, copy], i) => `
+        <a class="card" href="/${slug}" ${rv()} data-rv-d="${(i % 3) + 1}">
+          ${frame(img, name + ' fitted to Bilt & Co wardrobe joinery', 'wide')}
+          <div class="card__body">
+            <h3 class="d4">${name}</h3>
+            <p>${copy}</p>
+            <span class="link-u mt-1">See how it works &rarr;</span>
+          </div>
+        </a>`).join('');
+
+  const wrdFaq = [
+    { q: 'What do wardrobe fittings cost?', a: 'Each is specified per robe and appears as its own line on the quote rather than bundled into a package. You can take any of them off and see exactly what comes back.' },
+    { q: 'Do I have to decide on fittings when I order?', a: 'Nearly all of them need the cabinet drawn around them \u2014 the drop height for a lift rail, the depth for a trouser rack, power for lighting. Adding them later is sometimes possible and always more awkward.' },
+    { q: 'Which fittings are actually worth it?', a: 'If you do one, make it the valet rod: it costs almost nothing and gets used daily. After that it depends on the robe. A tall one justifies the lift rail, a walk-in justifies the lighting and the rotating shoe rack, and anyone who owns more than a few pairs of trousers notices the trouser rack immediately.' },
+    { q: 'Can fittings go into a wardrobe I already have?', a: 'Drawer inserts, usually, because they are cut to the drawer you have. Anything needing clearance, a particular runner or power is far less reliable retrofitted than specified from the start.' },
+    { q: 'Do you supply wardrobes flat packed?', a: 'Yes, and delivered assembled. Flat packed, each fitting arrives with the cabinet it belongs to. Assembled, it is fitted and adjusted before the carton is closed. Installation is Central Queensland only; everywhere else your own installer fits it.' },
+  ];
+
+  const wrdHub = {
+    file: 'wardrobe-storage.html',
+    assembled: 'general',
+    title: 'Wardrobe Fittings | How We Specify Them',
+    desc: 'Pull-down rails, trouser racks, drawer inserts, pull-out mirrors, shoe storage and lighting \u2014 how we specify the fittings inside a wardrobe.',
+    og: 'wrd-walkin',
+    preload: 'wrd-walkin',
+    priority: '0.8',
+    trail: [['index.html', 'Home'], ['joinery.html', 'Joinery'], ['wardrobe-storage.html', 'Wardrobe fittings']],
+    faq: wrdFaq,
+    body: `
+  <section class="phero">
+    <div class="wrap phero__grid">
+      <div>
+        ${crumbs([['index.html', 'Home'], ['joinery.html', 'Joinery'], ['#', 'Wardrobe fittings']])}
+        <span class="pill">Specified on the plan &middot; before anything is cut</span>
+        <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">A wardrobe is a box<br><span class="italic brass">until you fit it out.</span></h1>
+        <p class="lede">Hanging space and shelves are the easy part, and every quote you get will include them. What decides whether you actually use the robe is the seven things below, and most quotes do not mention any of them.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a class="btn btn--lg" href="/contact">Have us draw your joinery</a>
+          <a class="btn btn--ghost btn--lg" href="/flat-pack-wardrobes">Flat pack wardrobes</a>
+        </div>
+      </div>
+      <div>${frame('wrd-walkin', 'Walk-in wardrobe with lit shelving, hanging space and drawers', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Things you cannot reach</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">The parts of a robe<br>that go unused.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">The top metre of a tall wardrobe, the floor, and whatever is behind the first row. All of it is space you have already paid for.</p>
+      <div class="grid cols-3 mt-3">${wrdCards(WRD_REACH)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>Things you cannot see</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">You own more<br>than you wear.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">Mostly because you cannot see it. Light, visible storage and fittings that hold things in order rather than in a heap are what close that gap.</p>
+      <div class="grid cols-4 mt-3">${wrdCards(WRD_SEE)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Why we write this down</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Judge us on the detail.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">You will get two or three quotes for the same robe and they will all show a number and a render. None of that tells you whether the person drawing it has thought about the drop height on your rail or where the mirror sits when it is open. That is the detail that separates the quotes, which is why it is published rather than saved for the appointment.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">The same applies in the kitchen &mdash; <a href="/kitchen-storage-accessories" style="color:var(--brass)">how we specify kitchen storage</a> covers that side of it.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="tier">
+          <span class="tier__tag">On every robe we draw</span>
+          <ul>
+            <li>Drop heights and clearances on the plan</li>
+            <li>Runner ratings specified to the load</li>
+            <li>Power drawn in before the carcass is built</li>
+            <li>Fittings on the drawing, not added after</li>
+            <li>Every line itemised, nothing bundled</li>
+          </ul>
+          <a class="btn btn--block" href="/contact">Have us draw your joinery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${faqBlock(wrdFaq, 'Wardrobe fittings &mdash; questions')}
+  ${ctaBand({ eyebrow: 'Your joinery', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will draw it properly.</span>', body: 'A fixed, itemised quote with every fitting on its own line, flat packed or delivered assembled.', image: 'wrd-walkin', alt: 'Walk-in wardrobe with lit shelving and drawers' })}
+`,
+  };
+
+  /* ------------------------------------------- lifestyle homepage (test) */
+  /* A register test, not a replacement. Outcome first, specification as the
+     reason the outcome lasts, and the form after the reader wants it rather
+     than before. Noindexed while it is being judged. */
+  const homeLifestyle = {
+    file: 'home-lifestyle.html',
+    noindex: true,
+    priority: '0.1',
+    title: 'Bilt & Co | The best room in the house',
+    desc: 'A test of a lifestyle-led register for the Bilt & Co homepage.',
+    og: 'hero-main',
+    preload: 'hero-main',
+    trail: [['index.html', 'Home'], ['home-lifestyle.html', 'Homepage test']],
+    body: `
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 class="d1" ${rv()}>The best room<br>in the house<br><span class="italic brass">should feel like it.</span></h1>
+        <p class="lede" ${rv()} data-rv-d="2">You will open these drawers forty thousand times. Make the coffee before anyone else is up. Find the good knife without looking. Close a cupboard without waking the house. A kitchen earns its money in those moments, not in the photograph.</p>
+        <p class="lede" ${rv()} data-rv-d="3" style="margin-top:1rem">It should feel expensive every morning &mdash; not just on the day it goes in.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="4">
+          <a class="btn btn--lg" href="/gallery">See what we draw</a>
+          <a class="btn btn--ghost btn--lg" href="/kitchen-cost-australia">What one costs</a>
+        </div>
+      </div>
+      <div class="hero__media" ${rv()} data-rv-d="2">${frame('hero-main', 'Kitchen and dining room with a stone island, warm timber and linear pendant lighting', 'wide', { eager: true })}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow" ${rv()}>What actually changes</p>
+      <h2 class="d2" ${rv()} data-rv-d="1">Nobody misses their old kitchen.<br>They miss the hour it used to take.</h2>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">The difference a kitchen makes is not visible in a photograph. It is in four or five moments a day that either work or irritate, every day, for about fifteen years.</p>
+      <div class="grid cols-2 mt-4">
+        ${[
+          ['openplan-long', 'Open plan kitchen with a long island bench',
+            'Six in the morning',
+            'The light comes on as the drawer opens, so you are not squinting at a dark cupboard. The coffee, the cups and the bin are within one turn of each other because somebody drew them that way. You are out of the house eight minutes earlier and you never work out why.'],
+          ['galley-stone', 'Stone galley kitchen with pendant lighting',
+            'Unpacking the shopping',
+            'Everything has somewhere, and the somewhere is where you would look for it. The pantry comes out to you instead of you going into it. Nothing lives at the back, so nothing goes off at the back.'],
+          ['island-marble-brass', 'Stone island bench with brushed brass tapware',
+            'Two people, one room',
+            'The dishwasher is open and you can still get to the sink. Somebody is at the island not in the way. This is almost entirely a question of clearances, and it is the single thing people get wrong when they draw their own.'],
+          ['dark-dining', 'Kitchen opening to a dining space with feature lighting',
+            'When people come over',
+            'The bench is clear because the things that usually cover it have a home. You are in the room with everyone instead of facing a wall. The kitchen stops being the place you apologise for.'],
+        ].map(([img, alt, when, copy], i) => `
+        <div ${rv()} data-rv-d="${(i % 2) + 1}">
+          ${frame(img, alt, 'wide')}
+          <h3 class="d3 mt-2">${when}</h3>
+          <p class="muted mt-1">${copy}</p>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-2">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Why it still feels like that in ten years</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">The boring part<br>is the whole point.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">None of the specification below is interesting. It is worth knowing because it is the difference between a kitchen that still feels like the first morning and one that starts to annoy you in the third year, and because almost nobody quoting you will put it in writing.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">We print it on the quote so you can hold it against anything else you are offered &mdash; <a href="/kitchen-cost-australia" style="color:var(--brass)">the rates are published too</a>.</p>
+        <div class="mt-3" ${rv()} data-rv-d="4"><a class="btn" href="/kitchens">See the collections</a></div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <ul class="list-check">
+          <li><strong>18mm moisture-resistant board.</strong> The panel under the sink is still flat in ten years. You will never think about it, which is the point.</li>
+          <li><strong>Laser-bonded edging, no glue line.</strong> Nothing for water to track along, so the edge by the dishwasher does not lift and go dark.</li>
+          <li><strong>Soft-close hinges, full-extension runners.</strong> Nobody wakes the baby closing a cupboard, and the pan at the back comes to you instead of you kneeling on the floor.</li>
+          <li><strong>Cut to your wall, not to catalogue widths.</strong> No filler panel. The run goes wall to wall and looks like it was always there.</li>
+          <li><strong>Hardware brand named on your quote.</strong> Not described, named &mdash; so you can compare it with the quote that does not.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  ${trustStrip}
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>When you are ready</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">Start with the room,<br>not the sales call.</h2>
+        <p class="muted mt-2" ${rv()} data-rv-d="2">Send the rough measurements and we will draw your actual room and send back a fixed, itemised price. Free, and you keep the drawings whatever you decide.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">If you would rather work out the number yourself first, <a href="/kitchen-cost-australia" style="color:var(--brass)">the estimator uses our published rates</a> and nobody rings you for using it.</p>
+        <p class="small muted mt-3" ${rv()} data-rv-d="4">No deposit. No showroom visit. Nobody at your door.</p>
+      </div>
+      <div ${rv()} data-rv-d="1">${leadForm({ heading: 'Send us the room.', sub: 'A few fields. We reply within one business day with a real range for your room, not a \u201cfrom\u201d price.' })}</div>
+    </div>
+  </section>
+
+  ${ctaBand({ eyebrow: 'Your kitchen', title: 'Send us the dimensions.<br><span class="italic" style="color:var(--brass-lite)">We will send back a number.</span>', body: 'A fixed, itemised quote drawn to your room, flat packed or delivered assembled.', image: 'dark-island', alt: 'Dark island bench with pendant lighting and open living beyond' })}
 `,
   };
 
@@ -9676,5 +10809,5 @@ module.exports = function (api) {
   </section>`,
   };
 
-  return [home, costPillar, howWePrice, stylesHub, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
+  return [home, costPillar, howWePrice, stylesHub, accHub, wrdHub, homeLifestyle, kitchens, pantry, joinery, gallery, investment, process, studio, contact, ...areaPages, caloundra, ...supplyPages, ...flatPackCityPages, ...statePages, ...regionPages, ...townPages, ...comboPages, fitout, ...segmentPages, guidesHub, ...guidePages, privacy, thanks, notFound];
 };

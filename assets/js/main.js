@@ -98,8 +98,14 @@
 
       if (!metres) { out.textContent = 'Enter your run length'; note.textContent = ''; return; }
       out.textContent = fmt(lo) + ' – ' + fmt(hi);
-      note.textContent = 'Indicative supply and installation for ' + metres + ' linear metres, ' +
-        est.querySelector('[name="tier"]').selectedOptions[0].text.toLowerCase() + '. Excludes appliances, plumbing, electrical and any structural work.';
+      var installs = est.getAttribute('data-est-install') === '1';
+      note.textContent = 'Indicative ' + (installs ? 'supply and installation' : 'supply') + ' for ' + metres +
+        ' linear metres, ' + est.querySelector('[name="tier"]').selectedOptions[0].text.toLowerCase() +
+        '. Excludes appliances, plumbing, electrical and any structural work' +
+        (installs ? '' : ', freight, and installation — we install in Central Queensland only') + '.';
+      // Hand the figures to the quote form so nobody types them twice.
+      est.setAttribute('data-est-metres', metres);
+      est.setAttribute('data-est-mid', Math.round((lo + hi) / 2));
     }
     est.addEventListener('input', calc);
     est.addEventListener('change', calc);
@@ -370,4 +376,66 @@
   /* ---- Current year ---- */
   var yr = document.querySelectorAll('[data-year]');
   Array.prototype.forEach.call(yr, function (el) { el.textContent = new Date().getFullYear(); });
+})();
+  /* Which page the enquiry came from. A lead off the cost page has already
+     seen the rates; one off a town page has not, and that changes the reply.
+     Filled on submit rather than on load so a cached page cannot carry a
+     stale value. */
+  (function sourcePage() {
+    var meta = document.querySelector('meta[name="bilt-page"]');
+    var type = meta ? (meta.getAttribute('content') || '').split('|')[0] : 'other';
+    document.addEventListener('submit', function (e) {
+      var f = e.target;
+      if (!f || !f.querySelector) return;
+      var h = f.querySelector('input[name="source_page"]');
+      if (h) h.value = location.pathname + ' (' + type + ')';
+    }, true);
+  })();
+
+/* ---- Estimator hands off to the quote form ---------------------------
+   The estimator is the best pre-qualifying asset on the site: someone who
+   has seen a real range before sending an enquiry is a different prospect
+   from someone who has not. Carrying the numbers across means they arrive
+   at the form already answered, and it means the budget band on the quote
+   reflects what they were actually shown. */
+(function estimatorHandoff() {
+  var BANDS = [[6000, 'under-6k'], [10000, '6-10k'], [18000, '10-18k'], [Infinity, '18k-plus']];
+
+  function bandFor(mid) {
+    for (var i = 0; i < BANDS.length; i++) if (mid < BANDS[i][0]) return BANDS[i][1];
+    return '18k-plus';
+  }
+
+  var est = document.getElementById('estimator');
+  var go = est && est.querySelector('[data-est-go]');
+  if (go) {
+    go.addEventListener('click', function (e) {
+      var m = est.getAttribute('data-est-metres');
+      var mid = parseInt(est.getAttribute('data-est-mid'), 10);
+      if (!m || !mid) return;                       // nothing computed yet
+      e.preventDefault();
+      if (window.track) window.track('estimator_to_quote', { metres: m, midpoint: mid });
+      var q = '?m=' + encodeURIComponent(m) + '&b=' + encodeURIComponent(bandFor(mid));
+      location.href = go.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '') + q;
+    });
+  }
+
+  /* Receiving end: fill the quote form from what the estimator worked out. */
+  var p = new URLSearchParams(location.search);
+  var m = p.get('m'), b = p.get('b');
+  if (!m && !b) return;
+  document.querySelectorAll('form').forEach(function (f) {
+    var run = f.querySelector('[name="run_length"]');
+    var bud = f.querySelector('[name="budget"]');
+    if (run && m && !run.value) run.value = m;
+    if (bud && b && !bud.value) {
+      var has = Array.prototype.some.call(bud.options, function (o) { return o.value === b; });
+      if (has) bud.value = b;
+    }
+  });
+  var note = document.querySelector('[data-est-prefill]');
+  if (note && m) {
+    note.hidden = false;
+    note.textContent = 'Carried over from the estimator: ' + m + ' linear metres. Change anything that is not right.';
+  }
 })();

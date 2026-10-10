@@ -194,6 +194,20 @@ function footer() {
       ['flat-pack-kitchens-canberra.html', 'Canberra'],
       ['flat-pack-kitchens-hobart.html', 'Hobart'],
       ['flat-pack-kitchens-darwin.html', 'Darwin'],
+    ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('')
+    // The state hubs are the only way down into the region and town network.
+    // Without them the footer reached seven capitals and the other 625 geo
+    // pages were unreachable by link from anywhere on the site.
+    + '<li style="margin-top:.9rem;color:#8B8375;font-size:.8125rem">Every state</li>'
+    + [
+      ['flat-pack-kitchens-queensland.html', 'Queensland'],
+      ['flat-pack-kitchens-nsw.html', 'New South Wales'],
+      ['flat-pack-kitchens-victoria.html', 'Victoria'],
+      ['flat-pack-kitchens-south-australia.html', 'South Australia'],
+      ['flat-pack-kitchens-western-australia.html', 'Western Australia'],
+      ['flat-pack-kitchens-tasmania.html', 'Tasmania'],
+      ['flat-pack-kitchens-northern-territory.html', 'Northern Territory'],
+      ['flat-pack-kitchens-act.html', 'ACT'],
     ].map(([h, l]) => `<li><a href="${h}">${l}</a></li>`).join('');
 
   return `<footer class="foot">
@@ -231,6 +245,20 @@ function footer() {
             <li><a href="sda-kitchens-queensland.html">SDA kitchens</a></li>
             <li><a href="aging-in-place-kitchens.html">Aging in place</a></li>
             <li><a href="motorised-pull-down-shelving.html">Pull-down shelving</a></li>
+            <li><a href="kitchen-storage-accessories.html">Kitchen storage fittings</a></li>
+            <li><a href="wardrobe-storage.html">Wardrobe fittings</a></li>
+            <li><a href="flat-pack-wardrobes.html">Flat pack wardrobes</a></li>
+            <li><a href="flat-pack-kitchens-airbnb.html">Kitchens for Airbnb hosts</a></li>
+            <li><a href="flat-pack-kitchens-investors.html">Kitchens for investors</a></li>
+            <li><a href="flat-pack-kitchens-container-homes.html">Container home kitchens</a></li>
+            <li><a href="flat-pack-kitchens-relocatable-homes.html">Relocatable home kitchens</a></li>
+            <li><a href="remote-fifo-kitchen-supply.html">Remote &amp; FIFO supply</a></li>
+            <li><a href="office-kitchenette-supply.html">Office kitchenettes</a></li>
+            <li><a href="display-home-kitchenette-supply.html">Display home kitchenettes</a></li>
+            <li><a href="student-accommodation-kitchenette.html">Student accommodation</a></li>
+            <li><a href="medical-practice-kitchenette.html">Medical &amp; allied health</a></li>
+            <li><a href="gym-studio-kitchenette.html">Gym &amp; studio kitchenettes</a></li>
+            <li><a href="community-hall-kitchen-supply.html">Community hall kitchens</a></li>
             <li><a href="kitchens-gladstone.html">Kitchens Gladstone</a></li>
             <li><a href="kitchens-biloela.html">Kitchens Biloela</a></li>
             <li><a href="trade.html">Trade &amp; builders</a></li>

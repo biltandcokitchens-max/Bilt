@@ -114,8 +114,11 @@ strong{ color:var(--ink); font-weight:600; }
 }
 .btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); background:#000; }
 .btn:active{ transform:translateY(0); }
-.btn--brass{ background:var(--brass); border-color:var(--brass); color:#fff; }
-.btn--brass:hover{ background:#86642B; }
+/* A shade darker than the brand brass. White on var(--brass) measures 4.27:1,
+   under the 4.5 needed at this size; this lands at 4.72. The brand colour
+   itself is unchanged, only the solid button it sits behind. */
+.btn--brass{ background:#926D30; border-color:#926D30; color:#fff; }
+.btn--brass:hover{ background:#7E5D28; }
 .btn--ember{ background:var(--ember); border-color:var(--ember); color:#fff; }
 .btn--ember:hover{ background:#8F3721; }
 .btn--ghost{ background:transparent; color:var(--ink); border-color:var(--line); box-shadow:none; }
@@ -584,15 +587,22 @@ a:hover > .frame img,.card:hover .frame img{ transform:scale(1.04); }
 .answer .eyebrow{ margin-bottom:.5rem; }
 .answer p:last-child{ margin:0; font-size:1.0625rem; line-height:1.6; color:var(--ink); }
 
-/* Offer card placed mid-article, at the point the reader has their answer. */
-.offer{
+/* Offer card placed mid-article, at the point the reader has their answer.
+   Scoped to aside.offer: the dark offer card above is div.offer, and an
+   unscoped rule here overrode its background, leaving pale text on a pale
+   card everywhere that card appears. */
+aside.offer{
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
   gap:1.5rem; margin:2.75rem 0; padding:1.75rem;
   background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
+  color:var(--body); box-shadow:none;
 }
-.offer > div{ flex:1 1 22rem; }
-.offer p:last-child{ margin-bottom:0; }
-@media (max-width:640px){ .offer{ padding:1.35rem; } .offer .btn{ width:100%; } }
+aside.offer h2,aside.offer h3{ color:var(--ink); }
+aside.offer p,aside.offer .lede{ color:var(--body); }
+aside.offer .small{ color:var(--muted); }
+aside.offer > div{ flex:1 1 22rem; }
+aside.offer p:last-child{ margin-bottom:0; }
+@media (max-width:640px){ aside.offer{ padding:1.35rem; } aside.offer .btn{ width:100%; } }
 
 /* ---- Cost tables -------------------------------------------------------
    Used by the cost pages. Figures are generated from _rates.js, so these

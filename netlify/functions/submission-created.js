@@ -75,9 +75,64 @@ function welcomeHtml(d) {
 </table></td></tr></table></body></html>`;
 }
 
+/* Cheapest thing we sell, per linear metre, from _rates.js. Anything under
+   this cannot be quoted at all, so a budget band below it is a decline
+   rather than a negotiation. */
+const FLOOR_PER_M = 1970;
+/* The midpoint of Essence. Comparing a budget against the absolute floor
+   lets the marginal ones through: a 2.7m run clears $1,970/m at $5,319, so
+   an "Under $6,000" band technically fits - and that is the enquiry that
+   cost an afternoon's drawing. A band that only reaches the bottom of the
+   bottom tier is a conversation, not a job. */
+const TYPICAL_PER_M = 2410;
+const BUDGET_TOP = {
+  'under-6k': 6000, '6-10k': 10000, '10-18k': 18000, '18k-plus': Infinity, 'unsure': null,
+};
+const BUDGET_LABEL = {
+  'under-6k': 'Under $6,000', '6-10k': '$6,000-$10,000', '10-18k': '$10,000-$18,000',
+  '18k-plus': '$18,000+', 'unsure': 'Not sure yet',
+};
+
+/* One line at the top of the studio email so the decision takes two seconds
+   and no drawing starts before it is made. */
+function triage(d) {
+  const run = parseFloat(String(d.run_length || '').replace(/[^0-9.]/g, ''));
+  const band = d.budget || '';
+  const top = BUDGET_TOP[band];
+  const label = BUDGET_LABEL[band] || '(not given)';
+
+  if (!band) return ['NO BUDGET GIVEN', 'Ask for a band before drawing anything.'];
+  if (band === 'unsure') {
+    return ['UNSURE ON BUDGET',
+      'Send the range for their run length and ask them to confirm before you draw.'];
+  }
+  if (!run || isNaN(run)) {
+    return ['NO RUN LENGTH', 'Budget ' + label + '. Ask for the metres, then send a range.'];
+  }
+  const floor = Math.round(run * FLOOR_PER_M);
+  const typical = Math.round(run * TYPICAL_PER_M);
+  if (top !== null && top < floor) {
+    return ['BELOW FLOOR - DO NOT DRAW',
+      run + 'm starts at about $' + floor.toLocaleString('en-AU') +
+      ' in Essence. Their band tops out at $' + top.toLocaleString('en-AU') +
+      '. Reply with the number and the cost page; do not draw.'];
+  }
+  if (top !== null && top < typical) {
+    return ['MARGINAL - RANGE FIRST, NO DRAWING',
+      run + 'm is about $' + floor.toLocaleString('en-AU') + '-$' +
+      Math.round(run * 2850).toLocaleString('en-AU') + ' in Essence and their band tops out at $' +
+      top.toLocaleString('en-AU') + '. Only the very bottom of the range fits. ' +
+      'Send the numbers and get it in writing that they are comfortable before you draw.'];
+  }
+  return ['WORTH QUOTING',
+    run + 'm from about $' + floor.toLocaleString('en-AU') +
+    ' in Essence, and their band is ' + label + '. Confirm the range by reply, then draw.'];
+}
+
 function studioText(d, meta) {
+  const [verdict, note] = triage(d);
   const rows = Object.entries(d).filter(([k]) => !/^(bot-field|form-name)$/.test(k)).map(([k, v]) => `${k}: ${v}`).join('\n');
-  return `New enquiry via ${meta.form || 'website form'}\n\n${rows}\n\nSubmitted: ${meta.created_at || new Date().toISOString()}\nReply to: ${d.email || '(no email given)'}\n`;
+  return `${verdict}\n${note}\n\n--\n\nNew enquiry via ${meta.form || 'website form'}\n\n${rows}\n\nSubmitted: ${meta.created_at || new Date().toISOString()}\nReply to: ${d.email || '(no email given)'}\n`;
 }
 
 async function send(apiKey, msg) {

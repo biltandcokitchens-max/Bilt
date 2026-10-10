@@ -17,7 +17,7 @@ const RATES = {
   // Per linear metre of run, [low, high]
   tiers: {
     essence: { name: 'Essence', lo: 1970, hi: 2850,
-      blurb: 'Soft-matte doors, 18mm moisture-resistant carcasses, Blum soft-close throughout, laminate benchtop.' },
+      blurb: 'Soft-matte doors, 18mm moisture-resistant carcasses, soft-close hinges and full-extension runners, laminate benchtop.' },
     maison: { name: 'Maison', lo: 3070, hi: 5040,
       blurb: 'Deeper door range, stone benchtop, integrated appliance provision, full-height joinery where the room allows.' },
     atelier: { name: 'Atelier', lo: 6150, hi: 8700,

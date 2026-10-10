@@ -28,3 +28,7 @@ desktop.ini
 
 # Generated reports, not part of the site
 SEARCH-CONSOLE-URLS.xlsx
+GSC-DAILY-INDEXING-PLAN.xlsx
+
+# Local preview screenshots, not part of the site
+_preview-*.png
