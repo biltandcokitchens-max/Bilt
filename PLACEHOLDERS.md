@@ -41,7 +41,7 @@ Resolved with the client on 29 August 2026. Everything below is now either true 
 | "640+ kitchens delivered" | **Corrected to 75+.** |
 | "17 years" / "Est. 2009" | **Removed.** The business is one year old; the client has asked that this not be advertised, so no figure replaces it. `foundingDate` is also out of the schema. |
 | Showroom / street address | **Removed.** There is no public premises. The address, map embed, geo coordinates and opening hours are all out of the schema, and every "showroom" reference in the copy now describes consultations at the client's kitchen table. |
-| Phone | **Real:** 0401 821 848. |
+| Phone | **Real:** (07) 4863 5788. |
 | Email | **Real:** hello@biltstudio.com.au. |
 | 10-year warranty | Still to confirm against the written terms. |
 | "4 design spots left this month" | **Still unverified.** A scarcity claim that must be true and kept current, or removed. Search `counter` and `pill` in `_pages.js`. |

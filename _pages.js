@@ -19,6 +19,48 @@ module.exports = function (api) {
   };
 
   /** The short above-the-fold lead form — the primary conversion device */
+  /* The offer, in one place. Everything that mentions it reads from here, so
+     changing its scope is a single edit rather than a sweep of 858 pages. */
+  /* The offer. Inclusion as the differentiator rather than price, because
+     price is the argument we lose against Bunnings and win against nobody. */
+  const upgradesBand = () => `
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div>
+        <p class="eyebrow" ${rv()}>Included, not extra</p>
+        <h2 class="d2" ${rv()} data-rv-d="1">The upgrades most<br><span class="italic brass">suppliers do not offer.</span></h2>
+        <p class="lede mt-2" ${rv()} data-rv-d="2">A showroom sells you the kitchen, then sells you the inside of it &mdash; the corner that works, the pantry that comes to you, the drawer that holds plates upright. Those are quoted at the end, once the number is already agreed.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="3">A flat pack supplier mostly does not offer them at all. You get boxes and doors and the rest is your problem.</p>
+        <p class="muted mt-2" ${rv()} data-rv-d="4">We put them in the kitchen. Same cabinetry, same 18mm board and laser-bonded edging, fitted out the way the showroom version would be &mdash; and you are not paying for the showroom.</p>
+        <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:.75rem" ${rv()} data-rv-d="5">
+          <a class="btn btn--lg" href="/contact">Get my free quote</a>
+          <a class="btn btn--ghost btn--lg" href="/kitchen-storage-accessories">See what is included</a>
+        </div>
+      </div>
+      <div ${rv()} data-rv-d="1">
+        <div class="grid cols-2" style="gap:1rem">
+          ${[['acc-magic-corner', 'Magic corner pull-out', 'The blind corner stops being the cupboard you empty twice a year.'],
+             ['acc-tall-larder', 'Tall larder pull-out', 'Full-height tiers that come out to you, so nothing lives at the back.'],
+             ['acc-pull-down-basket', 'Pull-down wall basket', 'The top shelf of an overhead, brought down to where you can reach it.'],
+             ['acc-deep-drawers', 'Deep drawer fit-out', 'Dividers and rails, so a deep drawer is not one pile you dig through.']]
+            .map(([f, n, c], i) => `
+          <div ${rv()} data-rv-d="${(i % 2) + 1}">
+            ${frame(f, n + ' included in a Bilt & Co kitchen', 'wide')}
+            <h3 class="d4 mt-1" style="font-size:1rem">${n}</h3>
+            <p class="small muted">${c}</p>
+          </div>`).join('')}
+        </div>
+        <p class="small muted mt-2" ${rv()}>Seven fittings in all &mdash; <a href="/kitchen-storage-accessories" style="color:var(--brass)">the full range</a>.</p>
+      </div>
+    </div>
+  </section>`;
+
+  const OFFER = {
+    short: 'Storage fittings included',
+    line: 'The storage fittings most suppliers quote as extras \u2014 magic corners, pull-downs, larder pull-outs, drawer organisers \u2014 are included in your kitchen.',
+    why: 'A showroom sells you the kitchen, then sells you the inside of it. We put the inside in the price.',
+  };
+
   function leadForm(opts = {}) {
     const {
       id = 'lead-hero',
@@ -362,6 +404,7 @@ module.exports = function (api) {
   </section>
 
   ${trustStrip}
+  ${upgradesBand()}
 
   <section class="section--tight">
     <div class="wrap split">
@@ -1272,7 +1315,7 @@ module.exports = function (api) {
   const contact = {
     file: 'contact.html',
     title: 'Contact Bilt & Co | Free Kitchen Design, Rockhampton',
-    desc: 'Book a free kitchen design consultation in Rockhampton. Call 0401 821 848 or send your project details for a fixed-price quote within a week.',
+    desc: 'Book a free kitchen design consultation in Rockhampton. Call (07) 4863 5788 or send your project details for a fixed-price quote within a week.',
     og: 'island-marble-brass',
     preload: 'signature-dark',
     trail: [['index.html', 'Home'], ['contact.html', 'Contact']],
@@ -1892,13 +1935,13 @@ module.exports = function (api) {
     related: [['/flat-pack-kitchen-upgrades', 'flat pack kitchen upgrades'], ['/diy-flat-pack-kitchens', 'DIY flat pack kitchens'], ['/flat-pack-cabinets', 'flat pack cabinets for the rest of the house'], ['/assembled-kitchens', 'delivered assembled instead'], ['/guide-how-to-assemble-a-flat-pack-kitchen', 'how to assemble a flat pack kitchen'], ['/guide-how-long-do-flat-pack-kitchens-last', 'how long they last']],
     slug: 'flat-pack',
     nav: 'Flat pack kitchens',
-    title: 'Flat Pack Kitchens Australia | Cut to Your Room | Bilt & Co',
-    desc: 'Custom flat pack kitchens cut to your measurements, shipped anywhere in Australia. 18mm board, Blum hardware, pre-drilled and labelled. Fixed itemised quotes.',
-    h1: 'Flat pack kitchens,<br><span class="italic brass">cut to your room.</span>',
+    title: 'Flat Pack Kitchens Australia | Fittings Included | Bilt & Co',
+    desc: 'The showroom kitchen without the showroom \u2014 cut to your measurements, shipped anywhere in Australia, with the storage fittings most suppliers charge extra for included.',
+    h1: 'The showroom kitchen,<br><span class="italic brass">without the showroom.</span>',
     lede: 'Not a catalogue of fixed cabinet sizes with filler panels to hide the gaps. The same cabinetry we deliver assembled, shipped flat to any address in Australia for you or your installer to build.',
     img: 'openplan-long',
     alt: 'Open plan kitchen with a long island bench and integrated appliances, supplied flat packed',
-    price: 'Quoted to your drawing',
+    price: 'Fittings included',
     range: 'shipped Australia-wide',
     body: [
       ['What flat pack means here', 'Every carcass is cut to your wall lengths, your ceiling height and your appliances, then packed flat with the hardware, the doors and a labelled drawing. Panels are pre-drilled for hinges and runners so nothing is measured on site. It is the same 18mm moisture-resistant board, laser-bonded edging and Blum soft-close hardware as our assembled kitchens — the only thing that changes is who puts the carcasses together. Flat pack, flatpack, kit kitchen: same thing, and ours is cut to the room rather than pulled from a shelf.'],
@@ -1931,12 +1974,12 @@ module.exports = function (api) {
     slug: 'assembled',
     nav: 'Assembled kitchens',
     title: 'Pre-Assembled Kitchens Delivered Australia-wide | Bilt & Co',
-    desc: 'Kitchen cabinetry delivered assembled: carcasses built, doors hung, Blum hardware fitted. Shipped anywhere in Australia; installed in Central Queensland.',
+    desc: 'Kitchen cabinetry delivered built \u2014 carcasses assembled, doors hung and adjusted, storage fittings already fitted. Shipped Australia-wide; installed in Central Queensland.',
     h1: 'Delivered assembled.<br><span class="italic brass">Fit it, don’t build it.</span>',
     lede: 'Carcasses built, hardware fitted, doors hung and adjusted before it leaves. On site you are fixing cabinets to a wall, not assembling them on the floor of a house you are still finishing.',
     img: 'dark-island',
     alt: 'Assembled dark cabinetry kitchen with island, delivered ready to fit',
-    price: 'Quoted to your drawing',
+    price: 'Fittings included',
     range: 'delivered Australia-wide',
     body: [
       ['What assembled means here', 'Each carcass arrives as a finished box: glued and screwed square, Blum hinges and runners fitted, drawers in, doors hung and adjusted to even gaps. Legs are on. The installer levels the run, fixes it to the wall, fits the kickboards and end panels, and the benchtop goes on top. The slow, fiddly part of a kitchen is already done, and it was done on a bench rather than a floor.'],
@@ -3286,7 +3329,9 @@ module.exports = function (api) {
 
   SEGMENTS.find((x) => x.slug === 'flat-pack-wardrobes').extra = wardrobeFittings({ seed: 'flat-pack-wardrobes' });
 
-  SEGMENTS.find((x) => x.slug === 'flat-pack').extra = `
+  SEGMENTS.find((x) => x.slug === 'assembled').extra = upgradesBand();
+  SEGMENTS.find((x) => x.slug === 'kitchenette').extra = upgradesBand();
+  SEGMENTS.find((x) => x.slug === 'flat-pack').extra = upgradesBand() + `
   <section class="section">
     <div class="wrap split" style="align-items:start">
       <div>
@@ -8842,13 +8887,13 @@ module.exports = function (api) {
   ];
 
   const NAT_H1 = [
-    (p) => `Flat pack kitchens<br><span class="italic brass">delivered to ${p}.</span>`,
+    (p) => `The kitchen, delivered.<br><span class="italic brass">Fitted out, not stripped back.</span>`,
     (p) => `${p} kitchens,<br><span class="italic brass">cut to your room.</span>`,
     (p) => `Custom kitchens<br><span class="italic brass">freighted to ${p}.</span>`,
     (p) => `A kitchen drawn for ${p},<br><span class="italic brass">not for a catalogue.</span>`,
-    (p) => `Flat pack or assembled,<br><span class="italic brass">delivered to ${p}.</span>`,
+    (p) => `Built or flat packed,<br><span class="italic brass">delivered to ${p}.</span>`,
     (p) => `A kitchen for ${p},<br><span class="italic brass">drawn to your walls.</span>`,
-    (p) => `Flat pack kitchens,<br><span class="italic brass">freighted into ${p}.</span>`,
+    (p) => `A kitchen worth keeping,<br><span class="italic brass">freighted into ${p}.</span>`,
     (p) => `${p} orders,<br><span class="italic brass">cut to the millimetre.</span>`,
     (p) => `Your ${p} kitchen,<br><span class="italic brass">packed flat or built.</span>`,
     (p) => `Kitchen cabinetry<br><span class="italic brass">shipped to ${p}.</span>`,
@@ -9687,7 +9732,7 @@ module.exports = function (api) {
     <div class="wrap">
       <p class="eyebrow" ${rv()}>What goes inside it</p>
       <h2 class="d2" ${rv()} data-rv-d="1">Anyone can sell you boxes.<br>This is the part that takes knowing.</h2>
-      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">Carcasses and doors decide how long it lasts. The fittings decide whether you like using it. We draw these into the plan before anything is cut, on every ${place} kitchen, at every price. Judge us on the detail — it is what separates one quote from another.</p>
+      <p class="muted mt-2" style="max-width:62ch" ${rv()} data-rv-d="2">Carcasses and doors decide how long it lasts. The fittings decide whether you like using it — and most suppliers charge for them at the end. These are included in your ${place} kitchen, not quoted as extras once the number is agreed. That is the difference, and it is the one most suppliers will not match.</p>
       <div class="grid cols-3 mt-3">
         ${picks.map(([img, name, slug, copy], i) => `
         <a class="card" href="/${slug}" ${rv()} data-rv-d="${i + 1}">
@@ -9749,8 +9794,8 @@ module.exports = function (api) {
         desc: `Custom flat pack and assembled kitchen cabinetry cut to your room in Rockhampton and freighted to ${place}, ${region.state}.`,
         areas: [place, region.name],
       },
-      title: `Flat Pack Kitchens ${place} ${region.state} | Delivered`,
-      desc: `Flat pack and assembled kitchens delivered to ${place}, ${region.state}. Cut to your measurements in 18mm board with Blum hardware. Fixed itemised quotes.`,
+      title: `Flat Pack Kitchens ${place} ${region.state} | Fittings Included`,
+      desc: `Kitchens cut to your room and delivered to ${place}, ${region.state} — flat packed or assembled, with the storage fittings most suppliers charge extra for included. Fixed itemised quotes.`,
       og: hero,
       priority: '0.5',
       faq: schemaFaq,
@@ -9760,7 +9805,7 @@ module.exports = function (api) {
     <div class="wrap phero__grid">
       <div>
         ${crumbs([['index.html', 'Home'], [`flat-pack-kitchens-${stateInfo.slug}.html`, stateInfo.name], [`flat-pack-kitchens-${region.slug}.html`, region.name], ['#', place]])}
-        <span class="pill">Cut to your drawing &middot; freighted to ${place}</span>
+        <span class="pill">${OFFER.short} &middot; freighted to ${place}</span>
         <h1 class="d1" style="font-size:clamp(2.1rem,4.6vw,3.6rem)">${h1}</h1>
         <p class="lede">${NAT_LEAD[(h + idx) % NAT_LEAD.length](place, region, kind)}</p>
         <div class="answer"><p class="eyebrow">The short answer</p><p>${answer}</p></div>
